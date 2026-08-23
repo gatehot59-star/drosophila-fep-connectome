@@ -1,0 +1,46 @@
+poblaciones afferent: visual=10854  olfactory=2279  mechanosensory=2656  gustatory=408
+  visual listo (26s)
+  olfactory listo (28s)
+  mechanosensory listo (27s)
+  gustatory listo (27s)
+
+variante                                      15      60      80     120     180     195
+Tabla 7 del paper                         0.6869  0.6304  0.6797  0.8071  0.8318  0.8328
+float32, 3 modalidades (3 pares)          0.0043  0.0818  0.5998  0.7636  0.7830  0.7842
+float32, 4 modalidades (6 pares)          0.4225  0.4452  0.6876  0.7410  0.7439  0.7435
+float64, 3 modalidades (medido antes)     0.0043  0.0818  0.5998  0.7636  0.7830  0.7842
+
+float32 vs float64, 3 modalidades: peor difabs = 4.861e-5
+
+=== VARIANTES DE PARTICION, corrida anterior en float64, 3 modalidades ===
+S=18664  A=1481  mu=118480
+
+variante                                          15      60      80     120     180     195
+Tabla 7 del paper                             0.6869  0.6304  0.6797  0.8071  0.8318  0.8328
+A. todos los anotados (literal del codigo)    0.0043  0.0818  0.5998  0.7636  0.7830  0.7842
+B. solo intrinsecas (mu)                      0.7070  0.9248  0.9623  0.9700  0.9508  0.9476
+C. anotados menos los estimulados             0.9468  0.9001  0.8711  0.8178  0.8048  0.8051
+D. solo no-aferentes                          0.9371  0.9301  0.9341  0.9408  0.9524  0.9538
+
+=== POR QUE LA VARIANTE A ARRANCA EN CERO ===
+En que super_class caen los aferentes de cada modalidad:
+  visual         {"sensory":10854}
+  olfactory      {"sensory":2279}
+  mechanosensory {"sensory":2656}
+Las tres en el mismo bin: a t bajo los tres vectores son casi paralelos
+y el coseno da ~1, o sea RDI ~0 por construccion.
+
+=== LA TABLA 7 NO ESTA EN EL CORPUS ARCHIVADO ===
+notebooks en el corpus: 29
+  0.6869   -> 0
+  0.6304   -> 0
+  0.6797   -> 0
+  0.8071   -> 0
+  0.8318   -> 0
+  0.8328   -> 0
+  1559     -> 0
+  1,559    -> 0
+
+=== UNICIDAD DE LA DEFINICION ===
+definiciones DISTINTAS de rdi_cosine en los 29 notebooks: 2
+  difieren solo en espacios en blanco; el cuerpo es identico

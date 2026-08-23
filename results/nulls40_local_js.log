@@ -1,0 +1,46 @@
+[87.4s] cargado N=138639 E=15091983
+[89.6s] grupos: other=34668 visual=10855 olfactory=2279 mechano=2656 gustatory=408 hygro=74 thermo=29 AN=2231 unk_sens=131 MOTOR=1485 KenyonCell=5177 MBON=96 DAN=331 MBIN=4 ALPN=685 optic_intr=77530
+[96.8s] hash real size=15091983 (E=15091983)
+[102.4s] REAL rec=4014518
+[102.4s] swaps objetivo por null=45275949  nulls=40
+[290.5s] null 0 ok=44612308 (98.5%) hsize=15091983 indeg_bad=0 rec=85690
+[489.1s] null 1 ok=44613211 (98.5%) hsize=15091983 indeg_bad=0 rec=85882
+[674.4s] null 2 ok=44611657 (98.5%) hsize=15091983 indeg_bad=0 rec=86076
+[872.9s] null 3 ok=44613047 (98.5%) hsize=15091983 indeg_bad=0 rec=85558
+[1063.6s] null 4 ok=44611500 (98.5%) hsize=15091983 indeg_bad=0 rec=85294
+[1267.1s] null 5 ok=44612213 (98.5%) hsize=15091983 indeg_bad=0 rec=85664
+[1474.9s] null 6 ok=44612791 (98.5%) hsize=15091983 indeg_bad=0 rec=85750
+[1668.5s] null 7 ok=44614168 (98.5%) hsize=15091983 indeg_bad=0 rec=85412
+[1869.4s] null 8 ok=44613194 (98.5%) hsize=15091983 indeg_bad=0 rec=85402
+[2065.1s] null 9 ok=44614060 (98.5%) hsize=15091983 indeg_bad=0 rec=85950
+[2253.9s] null 10 ok=44613732 (98.5%) hsize=15091983 indeg_bad=0 rec=85708
+[2451.8s] null 11 ok=44612091 (98.5%) hsize=15091983 indeg_bad=0 rec=85446
+[2622.1s] null 12 ok=44613817 (98.5%) hsize=15091983 indeg_bad=0 rec=86728
+[2787.9s] null 13 ok=44613377 (98.5%) hsize=15091983 indeg_bad=0 rec=85550
+[2960.0s] null 14 ok=44612850 (98.5%) hsize=15091983 indeg_bad=0 rec=85652
+[3125.4s] null 15 ok=44612909 (98.5%) hsize=15091983 indeg_bad=0 rec=85772
+[3300.9s] null 16 ok=44613237 (98.5%) hsize=15091983 indeg_bad=0 rec=85444
+[3463.2s] null 17 ok=44612972 (98.5%) hsize=15091983 indeg_bad=0 rec=85696
+[3630.0s] null 18 ok=44615514 (98.5%) hsize=15091983 indeg_bad=0 rec=86370
+[3795.2s] null 19 ok=44612128 (98.5%) hsize=15091983 indeg_bad=0 rec=86304
+[3963.8s] null 20 ok=44613923 (98.5%) hsize=15091983 indeg_bad=0 rec=85010
+[4132.5s] null 21 ok=44612317 (98.5%) hsize=15091983 indeg_bad=0 rec=85694
+[4304.7s] null 22 ok=44612410 (98.5%) hsize=15091983 indeg_bad=0 rec=84874
+[4479.8s] null 23 ok=44613123 (98.5%) hsize=15091983 indeg_bad=0 rec=85388
+[4655.4s] null 24 ok=44613655 (98.5%) hsize=15091983 indeg_bad=0 rec=85834
+[4825.1s] null 25 ok=44611895 (98.5%) hsize=15091983 indeg_bad=0 rec=86126
+[4995.5s] null 26 ok=44612579 (98.5%) hsize=15091983 indeg_bad=0 rec=85524
+[5169.8s] null 27 ok=44614544 (98.5%) hsize=15091983 indeg_bad=0 rec=85198
+[5337.5s] null 28 ok=44614029 (98.5%) hsize=15091983 indeg_bad=0 rec=85170
+[5502.7s] null 29 ok=44613866 (98.5%) hsize=15091983 indeg_bad=0 rec=84970
+[5678.8s] null 30 ok=44613673 (98.5%) hsize=15091983 indeg_bad=0 rec=85154
+[5842.2s] null 31 ok=44612762 (98.5%) hsize=15091983 indeg_bad=0 rec=85690
+[6011.6s] null 32 ok=44612637 (98.5%) hsize=15091983 indeg_bad=0 rec=85532
+[6183.0s] null 33 ok=44613451 (98.5%) hsize=15091983 indeg_bad=0 rec=85468
+[6357.4s] null 34 ok=44612079 (98.5%) hsize=15091983 indeg_bad=0 rec=85236
+[6546.7s] null 35 ok=44612617 (98.5%) hsize=15091983 indeg_bad=0 rec=86110
+[6709.6s] null 36 ok=44612977 (98.5%) hsize=15091983 indeg_bad=0 rec=85342
+[6882.8s] null 37 ok=44612261 (98.5%) hsize=15091983 indeg_bad=0 rec=85992
+[7045.7s] null 38 ok=44613627 (98.5%) hsize=15091983 indeg_bad=0 rec=85850
+[7174.2s] null 39 ok=44613189 (98.5%) hsize=15091983 indeg_bad=0 rec=85524
+[7174.2s] FIN
