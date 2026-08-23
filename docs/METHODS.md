@@ -54,7 +54,7 @@ Measured class by class, v3.0.0 against v3.1.0:
 | Class | v3.0.0 | v3.1.0 | Delta | Relative |
 | --- | --- | --- | --- | --- |
 | mechanosensory | 2,671 | 2,668 | -3 | 0.11% |
-| visual | 11,391 minus 6 = 11,385 | 11,391 | +6 | 0.05% |
+| visual | 11,385 | 11,391 | +6 | 0.05% |
 | olfactory, gustatory, hygrosensory, thermosensory, AN, unknown sensory | unchanged | unchanged | 0 | 0 |
 | Kenyon_Cell, MBON, DAN, ALPN | unchanged | unchanged | 0 | 0 |
 
