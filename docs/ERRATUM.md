@@ -1,12 +1,13 @@
 # Erratum to Mendieta (2026a)
 
 Corrections to *Signal propagation properties in the Drosophila melanogaster
-connectome*, Zenodo, March 2026. Six items. Items 1 and 2 change reported values and one
-qualitative conclusion; items 3 to 6 are factual corrections.
+connectome*, Zenodo, March 2026. Seven items. Items 1 and 2 change reported values and one
+qualitative conclusion; items 3 to 6 are factual corrections; **item 7 strengthens a
+result that is currently under-reported.**
 
-None of these corrections weaken the paper. Item 1 makes the central finding stronger
-and more specific, and item 2 removes a number that cannot survive scrutiny and replaces
-it with one that can.
+None of these corrections weaken the paper. Item 1 makes the central finding stronger and
+more specific, item 2 removes a number that cannot survive scrutiny and replaces it with
+one that can, and item 7 is the result that should have been the headline.
 
 ## 1. Graph density, and the motor-access table that depends on it
 
@@ -59,6 +60,11 @@ any class. Under that null the spread between extremes is 283x rather than 991x,
 ordering within the depleted group shifts: olfactory rather than visual is the most
 depleted class. Both figures are reported; the degree-preserving one is the defensible
 one, because part of the density-based spread was attributable to the degree sequence.
+
+One limit of this test should be stated with it: those 40 nulls preserve degree but not
+modular structure. The routing hierarchy has **not** been tested against a
+community-preserving null, so the correct claim is that it exceeds what the degree
+sequence explains, with the contribution of modular architecture unmeasured.
 
 ## 3. The amplification ratio reported as 1,559x
 
@@ -133,6 +139,51 @@ chain in docs/CITATION.md.
    Systems, carries the wrong author list. The same title and journal appear elsewhere as
    Betzel, Puxeddu, Seguin and Misic (2026), 3(3), e0000091. The author list requires
    verification against the published article before the erratum is filed.
+
+## 7. Under-reported: the result that survives both null families
+
+This item adds rather than corrects, and it exists because the strongest result in the
+study was at risk of being buried under the six items above.
+
+**Temporal RDI separates the real connectome from both null families at the permutation
+floor.** Tested against 19 community-preserving nulls and 19 degree-preserving nulls:
+
+| t | Real | vs CP (19) | vs MS (19) |
+| --- | --- | --- | --- |
+| 30 | 0.099155 | 2.613x, z 36.1, 0/19 | 5.375x, z 2.8, 1/19 |
+| 60 | 0.216050 | 3.387x, z 49.2, 0/19 | 7.414x, z 5.6, 0/19 |
+| 80 | 0.655220 | **3.051x, z 79.9, 0/19** | 5.921x, z 13.3, 0/19 |
+| 100 | 0.694287 | 3.041x, z 65.0, 0/19 | 6.756x, z 18.4, 0/19 |
+| 140 | 0.739882 | 3.271x, z 32.2, 0/19 | 30.753x, z 55.9, 0/19 |
+| 200 | 0.742355 | 3.496x, z 15.0, 0/19 | **110.694x, z 197.0, 0/19** |
+
+The CP column is what matters. Those nulls preserve degree **and** the super-class
+connectivity matrix, so they leave the modular architecture of the brain intact and only
+randomise the fine wiring. A three-fold separation against that null, with no null out of
+19 reaching the real value at any t >= 60, is a statement about specific wiring and not
+about modular organisation.
+
+A caveat that belongs with it rather than in a footnote: z-scores in the hundreds here
+reflect very small null variance (sd 0.0055 at t = 80), not extraordinary effect sizes.
+Report the ratio and the count of nulls exceeding the real value. The paper's own section
+on reported statistics already argues this, and the argument applies to these numbers too.
+
+### Two neighbouring claims that do not have the same standing
+
+These should be reported next to the above, not merged with it:
+
+| Measurement | Real | vs CP | vs MS |
+| --- | --- | --- | --- |
+| Spectral radius rho | 0.989886 | 2.186x, **2 of 19 nulls reached it**, p 0.15 | 4.597x, z 21.3, 0/19 |
+| One-hop RDI | 0.401440 | **0.906x, all 19 nulls scored higher**, p 1.0 | 3.918x, z 5.6, 0/19 |
+| One-hop RDI, >= 5 synapses | 0.753272 | 0.988x, all 19 higher | 4.100x, z 6.3, 0/19 |
+
+Both exceed what the degree sequence explains and neither exceeds what the modular
+architecture explains. **That is a positive finding and should be written as one:** these
+two quantities are properties of how the brain's modules are arranged, while temporal RDI
+is a property of the wiring within and between them. Presenting all three as equally
+supported would not survive review; presenting the distinction is a stronger paper than
+omitting it.
 
 ## What is not corrected
 
