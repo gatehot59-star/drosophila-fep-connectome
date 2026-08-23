@@ -1,0 +1,98 @@
+[dl] parquet
+[dl] annotations
+N= 138639 E= 15091983 peso_min= -2405.0 peso_max= 1897.0 syn_min= 1 syn_max= 2405
+regiones= 11 sin_anotacion= 14
+labels= {'central': 0, 'visual_projection': 1, 'endocrine': 2, 'descending': 3, 'optic': 4, 'motor': 5, 'visual_centrifugal': 6, 'sensory': 7, 'ascending': 8, 'sensory_ascending': 9, 'unk': 10}
+poblaciones {'visual': 10855, 'mechanosensory': 2656, 'olfactory': 2279, 'gustatory': 334}
+filtro >=5 sinapsis: 2700513 de 15091983 (17.89%)
+bloques (src_reg,dst_reg) no vacios= 106
+
+=== REAL ===
+REAL rdi1h= 0.40144 rdi1h_ge5= 0.753272 rho= 0.98988626 drift= 0.00022809924063593723
+REAL dyn= {'1': 0.0, '5': 0.0, '10': 0.0, '30': 0.099155, '60': 0.21605, '80': 0.65522, '100': 0.694287, '140': 0.739882, '200': 0.742355}
+  ( 114.4 s)
+
+CP 1 /19 seed= 42 dgrado= 0 dup= 149820 movidas= 15086349 | rdi1h= 0.450334 rho= 0.334023 dyn80= 0.206033 dyn200= 0.27728 ( 118.1 s)
+CP 2 /19 seed= 2042 dgrado= 0 dup= 149548 movidas= 15086280 | rdi1h= 0.439532 rho= 0.348506 dyn80= 0.213785 dyn200= 0.193567 ( 116.7 s)
+CP 3 /19 seed= 4042 dgrado= 0 dup= 150171 movidas= 15086263 | rdi1h= 0.441282 rho= 0.340814 dyn80= 0.207618 dyn200= 0.247754 ( 102.2 s)
+CP 4 /19 seed= 6042 dgrado= 0 dup= 149720 movidas= 15086455 | rdi1h= 0.438388 rho= 0.693297 dyn80= 0.220414 dyn200= 0.205889 ( 99.4 s)
+CP 5 /19 seed= 8042 dgrado= 0 dup= 149493 movidas= 15086364 | rdi1h= 0.443663 rho= 0.99 dyn80= 0.214125 dyn200= 0.190624 ( 97.9 s)
+CP 6 /19 seed= 10042 dgrado= 0 dup= 149903 movidas= 15086474 | rdi1h= 0.440054 rho= 0.379878 dyn80= 0.215489 dyn200= 0.186319 ( 97.6 s)
+CP 7 /19 seed= 12042 dgrado= 0 dup= 149327 movidas= 15086335 | rdi1h= 0.452273 rho= 0.388204 dyn80= 0.214558 dyn200= 0.235951 ( 98.6 s)
+CP 8 /19 seed= 14042 dgrado= 0 dup= 149609 movidas= 15086442 | rdi1h= 0.44361 rho= 0.346894 dyn80= 0.208824 dyn200= 0.195027 ( 103.3 s)
+CP 9 /19 seed= 16042 dgrado= 0 dup= 149227 movidas= 15086296 | rdi1h= 0.433522 rho= 0.345802 dyn80= 0.219049 dyn200= 0.2528 ( 97.8 s)
+CP 10 /19 seed= 18042 dgrado= 0 dup= 149757 movidas= 15086373 | rdi1h= 0.447001 rho= 0.352036 dyn80= 0.211638 dyn200= 0.222519 ( 97.0 s)
+CP 11 /19 seed= 20042 dgrado= 0 dup= 149839 movidas= 15086237 | rdi1h= 0.437119 rho= 0.359798 dyn80= 0.216593 dyn200= 0.272254 ( 96.1 s)
+CP 12 /19 seed= 22042 dgrado= 0 dup= 149864 movidas= 15086378 | rdi1h= 0.448404 rho= 0.361823 dyn80= 0.207423 dyn200= 0.196092 ( 97.1 s)
+CP 13 /19 seed= 24042 dgrado= 0 dup= 149574 movidas= 15086294 | rdi1h= 0.437665 rho= 0.494971 dyn80= 0.20955 dyn200= 0.154639 ( 96.0 s)
+CP 14 /19 seed= 26042 dgrado= 0 dup= 149910 movidas= 15086465 | rdi1h= 0.471281 rho= 0.99 dyn80= 0.212852 dyn200= 0.210745 ( 95.4 s)
+CP 15 /19 seed= 28042 dgrado= 0 dup= 149533 movidas= 15086431 | rdi1h= 0.436027 rho= 0.35537 dyn80= 0.221882 dyn200= 0.219523 ( 95.8 s)
+CP 16 /19 seed= 30042 dgrado= 0 dup= 149364 movidas= 15086369 | rdi1h= 0.437224 rho= 0.422162 dyn80= 0.217118 dyn200= 0.197909 ( 95.4 s)
+CP 17 /19 seed= 32042 dgrado= 0 dup= 149015 movidas= 15086289 | rdi1h= 0.436407 rho= 0.33719 dyn80= 0.217529 dyn200= 0.242567 ( 95.5 s)
+CP 18 /19 seed= 34042 dgrado= 0 dup= 150205 movidas= 15086301 | rdi1h= 0.442341 rho= 0.374214 dyn80= 0.217804 dyn200= 0.15786 ( 95.2 s)
+CP 19 /19 seed= 36042 dgrado= 0 dup= 150024 movidas= 15086282 | rdi1h= 0.446291 rho= 0.389091 dyn80= 0.227482 dyn200= 0.174757 ( 95.6 s)
+
+MS 1 /19 seed= 42 swaps= 45463773 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.041341 rho= 0.203866 dyn80= 0.086707 dyn200= 0.005408 ( 319.2 s)
+MS 2 /19 seed= 43 swaps= 45460162 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.10429 rho= 0.204459 dyn80= 0.09671 dyn200= 0.003315 ( 327.0 s)
+MS 3 /19 seed= 44 swaps= 45464279 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.081879 rho= 0.204855 dyn80= 0.081638 dyn200= 0.001948 ( 321.0 s)
+MS 4 /19 seed= 45 swaps= 45467193 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.177814 rho= 0.207763 dyn80= 0.102343 dyn200= 0.008266 ( 323.5 s)
+MS 5 /19 seed= 46 swaps= 45459817 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.223254 rho= 0.20721 dyn80= 0.136511 dyn200= 0.010596 ( 324.9 s)
+MS 6 /19 seed= 47 swaps= 45467176 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.053956 rho= 0.20412 dyn80= 0.09164 dyn200= 0.003044 ( 328.4 s)
+MS 7 /19 seed= 48 swaps= 45464432 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.114343 rho= 0.208168 dyn80= 0.099781 dyn200= 0.003293 ( 325.6 s)
+MS 8 /19 seed= 49 swaps= 45467252 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.218984 rho= 0.207576 dyn80= 0.255571 dyn200= 0.003201 ( 325.8 s)
+MS 9 /19 seed= 50 swaps= 45464584 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.1262 rho= 0.206127 dyn80= 0.154577 dyn200= 0.010408 ( 338.1 s)
+MS 10 /19 seed= 51 swaps= 45454932 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.070119 rho= 0.364799 dyn80= 0.111723 dyn200= 0.006159 ( 329.3 s)
+MS 11 /19 seed= 52 swaps= 45458724 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.064932 rho= 0.205199 dyn80= 0.078278 dyn200= 0.009032 ( 318.4 s)
+MS 12 /19 seed= 53 swaps= 45457855 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.110272 rho= 0.207074 dyn80= 0.085475 dyn200= 0.00627 ( 320.0 s)
+MS 13 /19 seed= 54 swaps= 45462754 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.068293 rho= 0.207753 dyn80= 0.110945 dyn200= 0.013398 ( 327.3 s)
+MS 14 /19 seed= 55 swaps= 45461991 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.051228 rho= 0.217442 dyn80= 0.143056 dyn200= 0.013404 ( 323.1 s)
+MS 15 /19 seed= 56 swaps= 45459019 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.078433 rho= 0.206065 dyn80= 0.100422 dyn200= 0.01188 ( 323.7 s)
+MS 16 /19 seed= 57 swaps= 45465076 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.088336 rho= 0.208187 dyn80= 0.090051 dyn200= 0.003558 ( 324.1 s)
+MS 17 /19 seed= 58 swaps= 45459532 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.079564 rho= 0.202735 dyn80= 0.086688 dyn200= 0.003999 ( 322.3 s)
+MS 18 /19 seed= 59 swaps= 45461919 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.132597 rho= 0.207618 dyn80= 0.095668 dyn200= 0.004138 ( 325.0 s)
+MS 19 /19 seed= 60 swaps= 45461393 / 45275949 dup= 0 dgrado= 0 | rdi1h= 0.061058 rho= 0.210748 dyn80= 0.094602 dyn200= 0.006106 ( 332.5 s)
+
+##### RESUMEN FINAL #####
+n_CP= 19  n_MS= 19
+rdi_1hop real= 0.40144
+    CP mu=0.443285 sd=0.008559 ratio=0.906 z=-4.9 n_ge_real=19 p_perm=1.0
+    MS mu=0.102468 sd=0.053384 ratio=3.918 z=5.6 n_ge_real=0 p_perm=0.05
+rdi_1hop_ge5 real= 0.753272
+    CP mu=0.762586 sd=0.005814 ratio=0.988 z=-1.6 n_ge_real=19 p_perm=1.0
+    MS mu=0.183703 sd=0.09105 ratio=4.1 z=6.3 n_ge_real=0 p_perm=0.05
+rho real= 0.989886
+    CP mu=0.452846 sd=0.206502 ratio=2.186 z=2.6 n_ge_real=2 p_perm=0.15
+    MS mu=0.215356 sd=0.036327 ratio=4.597 z=21.3 n_ge_real=0 p_perm=0.05
+
+##### RDI DINAMICO POR t #####
+t= 1 real= 0.0
+    CP mu=0.0 sd=0.0 ratio=0.0 z=0.0 n_ge_real=19 p_perm=1.0
+    MS mu=0.0 sd=0.0 ratio=0.0 z=0.0 n_ge_real=19 p_perm=1.0
+t= 5 real= 0.0
+    CP mu=0.0 sd=0.0 ratio=0.0 z=0.0 n_ge_real=19 p_perm=1.0
+    MS mu=0.0 sd=0.0 ratio=0.0 z=0.0 n_ge_real=19 p_perm=1.0
+t= 10 real= 0.0
+    CP mu=0.0 sd=0.0 ratio=0.0 z=0.0 n_ge_real=19 p_perm=1.0
+    MS mu=0.0 sd=0.0 ratio=0.0 z=0.0 n_ge_real=19 p_perm=1.0
+t= 30 real= 0.099155
+    CP mu=0.03795 sd=0.001697 ratio=2.613 z=36.1 n_ge_real=0 p_perm=0.05
+    MS mu=0.018446 sd=0.02913 ratio=5.375 z=2.8 n_ge_real=1 p_perm=0.1
+t= 60 real= 0.21605
+    CP mu=0.063797 sd=0.003096 ratio=3.387 z=49.2 n_ge_real=0 p_perm=0.05
+    MS mu=0.029142 sd=0.03319 ratio=7.414 z=5.6 n_ge_real=0 p_perm=0.05
+t= 80 real= 0.65522
+    CP mu=0.214724 sd=0.005515 ratio=3.051 z=79.9 n_ge_real=0 p_perm=0.05
+    MS mu=0.110652 sd=0.040877 ratio=5.921 z=13.3 n_ge_real=0 p_perm=0.05
+t= 100 real= 0.694287
+    CP mu=0.228331 sd=0.007165 ratio=3.041 z=65.0 n_ge_real=0 p_perm=0.05
+    MS mu=0.102769 sd=0.03223 ratio=6.756 z=18.4 n_ge_real=0 p_perm=0.05
+t= 140 real= 0.739882
+    CP mu=0.226171 sd=0.015966 ratio=3.271 z=32.2 n_ge_real=0 p_perm=0.05
+    MS mu=0.024059 sd=0.012808 ratio=30.753 z=55.9 n_ge_real=0 p_perm=0.05
+t= 200 real= 0.742355
+    CP mu=0.21232 sd=0.035239 ratio=3.496 z=15.0 n_ge_real=0 p_perm=0.05
+    MS mu=0.006706 sd=0.003734 ratio=110.694 z=197.0 n_ge_real=0 p_perm=0.05
+
+ARCHIVO: /kaggle/working/nulls19_resultados.json
+TIEMPO TOTAL: 136.9 min
+FIN19

@@ -1,0 +1,92 @@
+[0.0s] descargando parquet
+[6.0s] descargando anotaciones pinneadas al SHA 17fc57722002e1a7d38cdd0c89ac382bf92718da
+[8.4s] md5 parquet     = 3d802fd542b5d18570ba1ba0bb0abed9   esperado 3d802fd542b5d18570ba1ba0bb0abed9   OK
+[8.4s] md5 annotations = 719904abad876c68ace1b5690c9b9b63   esperado 719904abad876c68ace1b5690c9b9b63   OK
+[9.3s] N=138639  E=15091983
+[12.6s] filas TSV = 139248   mapeadas al grafo = 138625
+[12.7s] comm por etiqueta = [32379, 8038, 76, 1299, 77530, 110, 524, 16352, 1736, 581, 14]
+[12.7s]    esperado        = [32379, 8038, 76, 1299, 77530, 110, 524, 16352, 1736, 581, 14]   OK
+[12.7s] submodulos = [32379, 77530, 524, 8038]   esperado [32379, 77530, 524, 8038]
+[12.7s] modalidades = [10855, 2656, 2279]   esperado [10855, 2656, 2279]
+[12.7s] poblaciones identicas al original: SI
+[13.9s] bloques CP = 106   aristas cubiertas = 15091983
+[13.9s] corridas previas embebidas: real + 19 nulls, semillas 42..36042
+[13.9s] 
+[13.9s] ===== VALIDACION: reproducir las semillas 42 y 2042 con el port =====
+[38.8s] semilla 42  (25s)
+[38.8s]   par                    dHn_port      dHn_orig      difabs       dH_port      dH_orig      difabs
+[38.8s]   visual/mu_central          0.576001      0.576001    2.44e-15     -8.785813    -8.785813    1.78e-15
+[38.8s]   visual/mu_optic            1.263829      1.263829    8.22e-15     -9.032698    -9.032698    1.78e-15
+[38.8s]   visual/mu_vis_centrif      0.818432      0.818432    5.55e-16     -9.126151    -9.126151    3.55e-15
+[38.8s]   visual/mu_vis_project      0.759743      0.759743    2.22e-16     -9.370736    -9.370736    0.00e+00
+[38.8s]   mechanose/mu_central       0.576291      0.576291    7.77e-16    -11.610681   -11.610681    1.78e-15
+[38.8s]   mechanose/mu_optic         0.290609      0.290609    3.77e-15     -9.263841    -9.263841    1.78e-15
+[38.8s]   mechanose/mu_vis_centrif   0.886655      0.886655    8.88e-16    -10.647176   -10.647176    0.00e+00
+[38.8s]   mechanose/mu_vis_project   0.284752      0.284752    2.55e-15     -9.570275    -9.570275    1.78e-15
+[38.8s]   olfactory/mu_central       0.740806      0.740806    3.66e-15    -11.503057   -11.503057    0.00e+00
+[38.8s]   olfactory/mu_optic         0.525192      0.525192    1.05e-14     -8.640169    -8.640169    1.78e-15
+[38.8s]   olfactory/mu_vis_centrif   0.380565      0.380565    5.55e-16     -9.852306    -9.852306    1.78e-15
+[38.8s]   olfactory/mu_vis_project   0.372142      0.372142    2.22e-15     -8.919870    -8.919870    7.11e-15
+[63.8s] semilla 2042  (25s)
+[63.8s]   par                    dHn_port      dHn_orig      difabs       dH_port      dH_orig      difabs
+[63.8s]   visual/mu_central          0.185240      0.185240    2.00e-15     -9.213188    -9.213188    1.78e-15
+[63.8s]   visual/mu_optic            0.727469      0.727469    3.77e-15     -9.882923    -9.882923    5.33e-15
+[63.8s]   visual/mu_vis_centrif      0.811442      0.811442    4.44e-16     -9.265264    -9.265264    5.33e-15
+[63.8s]   visual/mu_vis_project      0.636555      0.636555    1.55e-15     -9.477903    -9.477903    1.78e-15
+[63.8s]   mechanose/mu_central       0.472058      0.472058    1.22e-15    -11.519407   -11.519407    0.00e+00
+[63.8s]   mechanose/mu_optic         0.142618      0.142618    1.11e-15     -9.580178    -9.580178    1.78e-15
+[63.8s]   mechanose/mu_vis_centrif   0.969250      0.969250    1.11e-16    -10.538120   -10.538120    1.78e-15
+[63.8s]   mechanose/mu_vis_project   0.724053      0.724053    1.78e-15     -9.234403    -9.234403    0.00e+00
+[63.8s]   olfactory/mu_central       0.732429      0.732429    4.11e-15    -11.145664   -11.145664    1.78e-15
+[63.8s]   olfactory/mu_optic         0.483901      0.483901    7.77e-16     -8.623502    -8.623502    0.00e+00
+[63.8s]   olfactory/mu_vis_centrif   0.027956      0.027956    2.22e-16     -9.459142    -9.459142    0.00e+00
+[63.8s]   olfactory/mu_vis_project   0.566203      0.566203    2.22e-16     -8.611454    -8.611454    3.55e-15
+[63.8s] 
+[63.8s] peor diferencia absoluta sobre 24 comparaciones:  dH_norm = 1.055e-14   dH = 7.105e-15
+[63.8s] VEREDICTO: el port reproduce el original a mejor que 1e-6. Es el mismo instrumento.
+[63.8s] 
+[63.8s] ===== 21 nulls nuevos, semillas 38042..78042 =====
+[88.8s] CP 20/40  seed= 38042  (25s)  dHn: 0.057 0.446 0.525 0.797 0.613 0.412 0.918 0.360 0.745 0.493 0.361 0.537
+[113.6s] CP 21/40  seed= 40042  (25s)  dHn: 0.356 0.651 0.586 0.690 0.507 0.617 0.967 0.608 0.741 0.145 0.224 0.343
+[138.9s] CP 22/40  seed= 42042  (25s)  dHn: 0.319 0.665 0.740 0.660 0.520 -0.282 0.560 0.444 0.707 -0.132 0.167 0.402
+[163.8s] CP 23/40  seed= 44042  (25s)  dHn: 1.034 0.697 0.667 0.811 0.642 0.009 0.557 0.605 0.772 0.316 0.260 0.377
+[188.5s] CP 24/40  seed= 46042  (25s)  dHn: 0.293 0.610 0.532 0.672 0.432 0.598 0.799 0.195 0.756 0.317 0.192 0.586
+[213.2s] CP 25/40  seed= 48042  (25s)  dHn: 0.264 0.828 0.599 0.730 0.708 0.028 0.898 0.671 0.735 0.090 0.406 0.411
+[238.2s] CP 26/40  seed= 50042  (25s)  dHn: 0.338 0.401 0.477 0.659 0.605 0.131 0.830 0.378 0.762 0.536 0.146 0.508
+[263.3s] CP 27/40  seed= 52042  (25s)  dHn: 0.410 0.600 0.791 0.885 0.500 0.519 0.853 0.331 0.707 0.671 0.261 0.544
+[288.5s] CP 28/40  seed= 54042  (25s)  dHn: 0.423 0.894 1.095 0.747 0.640 -0.034 0.655 0.745 0.755 0.472 0.234 0.360
+[313.6s] CP 29/40  seed= 56042  (25s)  dHn: 0.386 0.922 0.995 0.339 0.700 0.096 0.883 0.728 0.764 0.072 -0.002 0.516
+[338.4s] CP 30/40  seed= 58042  (25s)  dHn: 0.292 0.741 1.130 0.752 0.621 0.388 0.809 0.534 0.748 0.170 0.320 0.334
+[363.2s] CP 31/40  seed= 60042  (25s)  dHn: 0.306 0.479 0.805 0.721 0.607 -0.118 0.987 0.384 0.747 -0.043 0.067 0.260
+[388.5s] CP 32/40  seed= 62042  (25s)  dHn: 0.081 0.633 0.546 0.619 0.500 0.367 0.501 0.297 0.734 0.159 0.168 0.555
+[413.3s] CP 33/40  seed= 64042  (25s)  dHn: 0.505 0.611 1.055 0.649 0.553 0.165 0.907 0.593 0.756 0.151 0.294 0.568
+[437.8s] CP 34/40  seed= 66042  (24s)  dHn: 0.246 0.985 0.651 0.487 0.571 0.135 0.818 0.551 0.726 0.590 0.357 0.394
+[462.6s] CP 35/40  seed= 68042  (25s)  dHn: 0.493 0.415 0.834 0.495 0.597 0.283 0.892 0.557 0.753 -0.084 0.131 0.307
+[487.7s] CP 36/40  seed= 70042  (25s)  dHn: 0.570 0.848 0.551 0.608 0.493 0.287 0.661 0.641 0.709 0.123 0.268 0.386
+[512.5s] CP 37/40  seed= 72042  (25s)  dHn: 0.090 0.843 0.972 0.799 0.599 0.128 0.755 0.588 0.752 0.209 0.296 0.453
+[537.1s] CP 38/40  seed= 74042  (25s)  dHn: 0.149 0.603 0.692 0.812 0.572 0.788 0.723 0.493 0.685 0.086 -0.091 0.569
+[561.9s] CP 39/40  seed= 76042  (25s)  dHn: 0.177 0.746 0.473 0.713 0.515 0.315 0.851 0.555 0.686 0.323 0.054 0.478
+[586.4s] CP 40/40  seed= 78042  (24s)  dHn: -0.080 1.017 0.721 0.468 0.480 0.296 0.941 0.606 0.652 0.069 0.233 0.538
+[586.4s] 
+[586.4s] ########## TEST GLOBAL 1 - dH_norm (FORMA sin escala), 12 pares  (n = 40 nulls) ##########
+[586.4s]   S(real)   = 131.0     minimo posible 12   maximo 492   esperado 252.0
+[586.4s]   S(nulls)  mu = 255.0   sd = 45.8   min = 146.0   max = 351.0
+[586.4s]   z         = -2.71
+[586.4s]   nulls con S <= S(real): 0/40     nulls con S >= S(real): 40/40
+[586.4s]   p una cola   = 0.0244
+[586.4s]   p DOS COLAS  = 0.0488     piso alcanzable con n=40: 0.0488
+[586.4s]   el real es el minimo en 7/12 pares; el mejor null en 1/12
+[586.4s]   pares de grafos separados por menos que el error del port: 0  (si es 0, el orden de rangos es seguro)
+[586.4s] 
+[586.4s] ########## TEST GLOBAL 2 - dH (con escala), la metrica del paper  (n = 40 nulls) ##########
+[586.4s]   S(real)   = 492.0     minimo posible 12   maximo 492   esperado 252.0
+[586.4s]   S(nulls)  mu = 246.0   sd = 44.2   min = 137.0   max = 324.0
+[586.4s]   z         = 5.56
+[586.4s]   nulls con S <= S(real): 40/40     nulls con S >= S(real): 0/40
+[586.4s]   p una cola   = 1.0000
+[586.4s]   p DOS COLAS  = 0.0488     piso alcanzable con n=40: 0.0488
+[586.4s]   el real es el minimo en 0/12 pares; el mejor null en 2/12
+[586.4s]   pares de grafos separados por menos que el error del port: 0  (si es 0, el orden de rangos es seguro)
+[586.4s] 
+[586.4s] FIN  nulls nuevos=21   minutos=9.8
+FINNULLS21
