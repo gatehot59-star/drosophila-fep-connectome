@@ -10,6 +10,10 @@ Companion code to Mendieta (2026a), *Signal propagation properties in the Drosop
 melanogaster connectome*, Zenodo. **See [docs/ERRATUM.md](docs/ERRATUM.md) before using
 any number from the published version.**
 
+The connectome and its annotations are not this author's work. See
+[docs/CITATION.md](docs/CITATION.md) for the four references their authors require and
+for the full provenance of the connectivity matrix.
+
 ## What this repository claims, and what it does not
 
 The measurements here are split into two layers with very different robustness. The
@@ -22,6 +26,11 @@ split is not cosmetic: it is the main methodological result.
 
 Everything in `results/nulls40.json` is structural. The dynamic results of the companion
 papers are reported as a **negative methodological result**, not as a validated model.
+
+One dependency that survives the split and should be stated plainly: excitatory counts
+rest on the `Excitatory x Connectivity` column, which is an excitatory/inhibitory
+assignment inherited from the Shiu et al. model, not a FlyWire measurement. A count is
+free of analysis parameters; it is not free of its input's assumptions.
 
 ## Headline structural results
 
@@ -80,16 +89,19 @@ results/nulls40.json         raw output: real plus 40 nulls, 16x16 group matrice
 results/nulls40.log          verbatim run log with per-null invariant checks
 results/dualbrain_bench.*    embedded line: 6 models, 4 tasks, 10 seeds, gate ablation
 results/MANIFEST.md          checksums and current push state of the evidence files
-docs/METHODS.md              exact data provenance, pinned SHA, checksums
+docs/METHODS.md              provenance, the two annotation pins, and the null model
+docs/CITATION.md             the four required data citations and the full input chain
 docs/ERRATUM.md              corrections to the published version of Mendieta (2026a)
 ```
 
 ## Reproducing
 
-See [docs/METHODS.md](docs/METHODS.md). The short version: the annotation file is pinned
-to a commit SHA, not to a branch. Pinning is not optional here, because the file on the
-live branch changed between March and August 2026. Details and the exact drift are in
-METHODS.
+See [docs/METHODS.md](docs/METHODS.md). The short version: pin the annotations to a
+**tagged release**, not a branch, and note that there are two different pins depending
+on what you want to reproduce. Release **v3.0.0** reproduces the published paper
+(139,244 rows); release **v3.1.0** reproduces the null analysis in this repository
+(139,248 rows). Using the wrong one is the difference between closing the figures to the
+digit and not.
 
 ## Licence
 
@@ -97,3 +109,6 @@ GPLv3 for this analysis code. The embedded inference engine and network topologi
 dual-licensed GPLv3 plus commercial; contact the author for commercial terms. Note that
 the published paper states AGPL v3, which is superseded by this repository and recorded
 in the erratum.
+
+The input data is third-party, carries no declared licence, and is not redistributed
+here. See [docs/CITATION.md](docs/CITATION.md).

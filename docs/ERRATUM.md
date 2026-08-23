@@ -1,12 +1,12 @@
 # Erratum to Mendieta (2026a)
 
 Corrections to *Signal propagation properties in the Drosophila melanogaster
-connectome*, Zenodo, March 2026. Five items. Items 1 and 2 change reported values and
-one qualitative conclusion; items 3 to 5 are factual corrections.
+connectome*, Zenodo, March 2026. Six items. Items 1 and 2 change reported values and one
+qualitative conclusion; items 3 to 6 are factual corrections.
 
 None of these corrections weaken the paper. Item 1 makes the central finding stronger
-and more specific, and item 2 removes a number that cannot survive scrutiny and
-replaces it with one that can.
+and more specific, and item 2 removes a number that cannot survive scrutiny and replaces
+it with one that can.
 
 ## 1. Graph density, and the motor-access table that depends on it
 
@@ -36,9 +36,9 @@ are. The corrected table:
 Summary as published: 0 enriched, 7 depleted. Corrected: **4 enriched, 4 depleted**.
 
 Reciprocity is affected in the opposite direction, and here the error understated the
-result: reciprocity is 26.60 per cent against a chance expectation of 0.0785 per cent,
-a ratio of **338.8x**, not 36x. The reciprocal edge count, 4,014,518, is unchanged and
-has since been reproduced by three independent implementations.
+result: reciprocity is 26.60 per cent against a chance expectation of 0.0785 per cent, a
+ratio of **338.8x**, not 36x. The reciprocal edge count, 4,014,518, is unchanged and has
+since been reproduced by three independent implementations.
 
 ## 2. The claim that the topology concentrates rather than proliferates
 
@@ -53,17 +53,17 @@ olfactory pathways, which must first construct a scene or an odour identity, are
 depleted.
 
 This replacement claim has since been tested against a stricter null model that
-preserves in-degree and out-degree exactly (40 nulls, this repository). It survives
-with the sign preserved in 8 of 8 classes and no null out of 40 reaching the real value
-in any class. Under that null the spread between extremes is 283x rather than 991x, and
-the ordering within the depleted group shifts: olfactory rather than visual is the most
+preserves in-degree and out-degree exactly (40 nulls, this repository). It survives with
+the sign preserved in 8 of 8 classes and no null out of 40 reaching the real value in
+any class. Under that null the spread between extremes is 283x rather than 991x, and the
+ordering within the depleted group shifts: olfactory rather than visual is the most
 depleted class. Both figures are reported; the degree-preserving one is the defensible
 one, because part of the density-based spread was attributable to the degree sequence.
 
 ## 3. The amplification ratio reported as 1,559x
 
-This value appears nine times in the published version, including the abstract. It is
-a quotient whose denominator is 0.0005 with a standard deviation of 0.0003, that is, a
+This value appears nine times in the published version, including the abstract. It is a
+quotient whose denominator is 0.0005 with a standard deviation of 0.0003, that is, a
 dispersion of 60 per cent of its own mean. Within one standard deviation of that
 denominator the quotient ranges from about 1,041x to about 4,164x, so the value is not
 determined to better than a factor of four by its own control.
@@ -73,13 +73,13 @@ The trajectory confirms the diagnosis: between t = 80 and t = 195 the ratio grow
 control decaying toward zero, not the real system separating further.
 
 The quotient is withdrawn and replaced by the **difference, 0.832 on a [0, 1] range**,
-which is a large effect and does not depend on dividing by a quantity near its
-numerical floor. Quotients are additionally reported at t = 60 (1.3x) and t = 80 (6.1x),
-where the denominator is measurable, with an explicit statement that beyond t = 120 the
-control is at the numerical floor and the quotient is not interpretable.
+which is a large effect and does not depend on dividing by a quantity near its numerical
+floor. Quotients are additionally reported at t = 60 (1.3x) and t = 80 (6.1x), where the
+denominator is measurable, with an explicit statement that beyond t = 120 the control is
+at the numerical floor and the quotient is not interpretable.
 
-The ratios in Table 1 have the same defect, with denominators of 1.0e-7 and 7.3e-8 and
-a single control. The paper already labelled them descriptive and not statistically
+The ratios in Table 1 have the same defect, with denominators of 1.0e-7 and 7.3e-8 and a
+single control. The paper already labelled them descriptive and not statistically
 tested; they should not have reached the abstract on that basis and are withdrawn from
 it.
 
@@ -97,23 +97,41 @@ following the published link found nothing, and no redirect exists.
 The licence stated as AGPL v3 is superseded: GPLv3 for the analysis code, and GPLv3 plus
 commercial for the embedded inference engine and network topologies. See LICENSE.
 
-## 5. Pinned data, and two smaller items
+## 5. Data provenance: the annotation version, and citations that were missing
 
-The annotation table was fetched from a live branch and has since changed. Methods
-should read: annotations pinned to commit
-17fc57722002e1a7d38cdd0c89ac382bf92718da, md5 719904abad876c68ace1b5690c9b9b63.
-The v783 version string pins the connectome only. See METHODS.md for the measured
-drift.
+The paper cites FlyWire v783. That string pins the connectome and **not** the
+annotations, which are versioned separately in a public repository and have been revised
+since. Methods should state the annotation release explicitly.
 
-Two further corrections:
+Measured against the tagged releases, the analysis used **v3.0.0** (2025-10-09,
+139,244 rows, md5 16ee17446c428bd27cf2bdefb83af4fd), which matches the March 2026 run
+at the digit. That is the pin required to reproduce the published figures.
+
+This has a consequence for the reference list that is easy to miss. The annotation
+authors require, for any version at or above 3.0.0, that **four** works be cited: Berg
+et al. (2025), Schlegel et al. (2024), Matsliah et al. (2024) and Dorkenwald et al.
+(2024). The release matching Schlegel et al. alone is v2.1.0, which is **not** the
+version used. Citing the connectome and the Schlegel annotations while omitting Berg et
+al. misattributes the annotation version actually analysed.
+
+A second provenance gap, and it touches a column the results depend on. The connectivity
+matrix was not read from the primary FlyWire release but from a third-party re-host
+derived from the Shiu et al. leaky integrate-and-fire model
+(doi:10.1101/2023.05.02.539144). The `Excitatory x Connectivity` column, which every
+excitatory count in the paper uses, is that model's excitatory/inhibitory assignment
+derived from neurotransmitter predictions, not a FlyWire measurement. The paper should
+say so, because a reader who disputes those calls disputes the motor-access table. Full
+chain in docs/CITATION.md.
+
+## 6. Two smaller items
 
 1. The swap acceptance rate is **98.5 per cent**, as stated in this paper. A companion
    document states 100 per cent, which is not attainable under the stated constraints
-   and is the value that requires correction. The swap target, 45,275,949, is correct
-   and has been reproduced.
+   and is the value that requires correction. The swap target, 45,275,949, is correct and
+   has been reproduced.
 2. The reference given as Barsotti et al. (2026), Cascades and convergence, PLOS Complex
-   Systems, carries the wrong author list. The same title and journal appear elsewhere
-   as Betzel, Puxeddu, Seguin and Misic (2026), 3(3), e0000091. The author list requires
+   Systems, carries the wrong author list. The same title and journal appear elsewhere as
+   Betzel, Puxeddu, Seguin and Misic (2026), 3(3), e0000091. The author list requires
    verification against the published article before the erratum is filed.
 
 ## What is not corrected
