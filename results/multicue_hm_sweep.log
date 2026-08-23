@@ -1,0 +1,35 @@
+device= cpu  seeds= 10
+
+====================================================================
+  BARRIDO DE h_m EN MultiCue
+  n = 10 semillas por punto. Presupuesto objetivo 1400
+====================================================================
+
+  REFERENCIAS al mismo presupuesto:
+    LSTM     hidden= 16  params= 1361  MSE=0.000081 +-0.000011  [20s/seed]
+    GRU      hidden= 19  params= 1388  MSE=0.000138 +-0.000037  [19s/seed]
+    MinGRU   hidden= 24  params= 1369  MSE=0.000191 +-0.000045  [17s/seed]
+
+  DualBrain barriendo h_m:
+    h_m  h_r  params      MSE          sd      vs_LSTM
+      5   30   1401   0.000326  0.000117   4.05x  [43s/seed]
+      6   29   1424   0.000194  0.000062   2.41x  [42s/seed]
+      8   25   1368   0.000104  0.000015   1.29x  [42s/seed]
+     10   22   1427   0.000095  0.000025   1.18x  [43s/seed]
+     13   13   1379   0.000131  0.000030   1.62x  [43s/seed]
+     16    6   1593   0.000183  0.000026   2.27x  [41s/seed]
+
+====================================================================
+  VEREDICTO
+====================================================================
+  h_m=5, lo que eligio el calibrador original: MSE=0.000326  vs LSTM=4.05x
+  mejor punto: h_m=10  h_r=22  MSE=0.000095  vs LSTM=1.18x
+  mejora contra el punto original: 3.44x
+  Welch h_m=5 contra h_m=10: t=6.13  p=8.59e-10
+
+  HIPOTESIS REFUTADA: ni con h_m=10 DualBrain alcanza al
+  LSTM en MultiCue. La limitacion del paper queda como esta y es de la
+  arquitectura, no del presupuesto.
+
+FIN  minutos=51.6
+FINHM
