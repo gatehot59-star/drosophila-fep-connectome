@@ -14,43 +14,52 @@ The connectome and its annotations are not this author's work. See
 [docs/CITATION.md](docs/CITATION.md) for the four references their authors require and
 for the full provenance of the connectivity matrix.
 
-## What this repository claims, and what it does not
+## What matters is which null model a result is tested against
 
-The measurements here are split into two layers with very different robustness. The
-split is not cosmetic: it is the main methodological result.
+There are two null families in use here, and they answer different questions:
 
-| Layer | Depends on | Effect of changing the analysis choices |
-| --- | --- | --- |
-| **Structural** (pure counts on the raw matrix) | nothing: no normalisation, no tau, no entropy estimator, no propagation | none. A count has no free parameters |
-| **Dynamic** (lambda_F, retention asymmetry R, entropy, temporal RDI) | five free choices, all defensible | severe. R crosses 1 depending on normalisation; lambda_F varies 3x |
+| Null | Preserves | Destroys | Question it answers |
+| --- | --- | --- | --- |
+| **MS** (Maslov-Sneppen) | in-degree and out-degree, exactly | block structure, modularity | is this more than the degree sequence? |
+| **CP** (community-preserving) | degree **and** the super-class connectivity matrix | fine wiring within and between blocks | is this more than the modular architecture? |
 
-Everything in `results/nulls40.json` is structural. The dynamic results of the companion
-papers are reported as a **negative methodological result**, not as a validated model.
+CP is the harder test. A result that separates against MS but not against CP is **not
+refuted**: it means the modular architecture accounts for it, which is a finding, not a
+loss. Those two verdicts are reported separately below and never merged into one.
 
-One dependency that survives the split and should be stated plainly: excitatory counts
-rest on the `Excitatory x Connectivity` column, which is an excitatory/inhibitory
-assignment inherited from the Shiu et al. model, not a FlyWire measurement. A count is
-free of analysis parameters; it is not free of its input's assumptions.
+`p = 0.05` with n = 19 nulls and `p = 0.0244` with n = 40 are permutation **floors**: they
+mean no null reached the real value, not that p equals that number.
 
-## Headline structural results
+## Results, one row per measurement
 
-All tested against **40 Maslov-Sneppen nulls** that preserve in-degree and out-degree
-exactly (verified: 0 degree mismatches across 138,639 neurons in all 40 nulls, and no
-multi-edges created). `p = 0.0244` is the permutation floor with n = 40, i.e. no null
-out of 40 matched or exceeded the real value.
-
-| Measurement | Real | Null mean +- sd | Ratio | p |
+| Measurement | Real | vs CP | vs MS | Verdict |
 | --- | --- | --- | --- | --- |
-| Reciprocal edges | 4,014,518 | 84,932 +- 401 | **47.3x** | 0.0244 |
-| Kenyon cell -> MBON edges | 62,261 | 2,568 +- 48 | **24.3x** | 0.0244 |
-| Dopaminergic -> Kenyon cell | 47,404 | 1,735 +- 39 | **27.3x** | 0.0244 |
-| Sensory -> Kenyon cell (direct) | **0** | 1,533 to 2,640 | **0.00x** | 0.0244 |
-| MBON -> motor | 364 | 891 +- 34 | 0.41x | 0.0244 |
+| **Dynamic RDI, t = 80** | 0.65522 | **3.051x**, z 79.9, 0/19 | **5.921x**, z 13.3, 0/19 | survives both |
+| **Dynamic RDI, t = 200** | 0.742355 | **3.496x**, z 15.0, 0/19 | **110.694x**, z 197.0, 0/19 | survives both |
+| Dynamic RDI, t = 30 / 60 / 100 / 140 | 0.099 / 0.216 / 0.694 / 0.740 | 2.6x to 3.4x, 0/19 | 5.4x to 30.8x, 0/19 (t=30: 1/19) | survives both |
+| Spectral radius rho | 0.989886 | 2.186x, **2/19**, p 0.15 | 4.597x, z 21.3, 0/19 | MS only; modularity accounts for it |
+| One-hop RDI | 0.40144 | **0.906x**, 19/19, p 1.0 | 3.918x, z 5.6, 0/19 | MS only; CP nulls score *higher* |
+| One-hop RDI, >= 5 synapses | 0.753272 | 0.988x, 19/19 | 4.1x, z 6.3, 0/19 | MS only |
+| Reciprocal edges | 4,014,518 | *not tested* | **47.3x**, 0/40 | degree only; modularity **unmeasured** |
+| Kenyon cell -> MBON | 62,261 | *not tested* | **24.25x**, 0/40 | degree only; modularity **unmeasured** |
+| Dopaminergic -> Kenyon cell | 47,404 | *not tested* | **27.33x**, 0/40 | degree only; modularity **unmeasured** |
+| Sensory -> Kenyon cell, direct | **0** | *not tested* | 0.00x, 40/40 | degree only; modularity **unmeasured** |
+| MBON -> motor | 364 | *not tested* | 0.41x, 40/40 | degree only; modularity **unmeasured** |
+| Sensory-to-motor routing, 8 classes | see below | *not tested* | sign preserved 8/8, 0/40 each | degree only; modularity **unmeasured** |
+| Distribution **shape** after decay, 12 pairs, global test | S = 67 of 240 | **1st of 20 graphs**, 0/19, p 0.10 two-sided | *not tested* | direction is post-hoc; needs n >= 39 |
+| Distribution **scale** after decay, 12 pairs | S = 240 of 240 | worst of 20 in **12/12** pairs | *not tested* | separates perfectly, in the **opposite** direction to the published claim |
+| Retention asymmetry R | 1.31 reported | — | — | fails for a different reason: crosses 1 depending on normalisation (1.879 to 0.811) |
+| lambda_F | — | — | — | varies 3x across normalisation schemes |
+
+**The rows marked *not tested* are the honest label for a real gap.** The 40 nulls behind
+them are MS. Reciprocity in particular is largely intra-block, so a CP null could
+reproduce a meaningful share of it. How much is unknown and is not estimated here.
 
 ### Sensory-to-motor routing hierarchy
 
-Excitatory edges from each sensory class to motor neurons, against the degree-preserving
-null. Sign is preserved in 8 of 8 classes; the spread between extremes is **283x**.
+Excitatory edges from each sensory class to motor neurons, against 40 degree-preserving
+nulls. Sign preserved in 8 of 8 classes, no null of 40 reaching the real value in any
+class, spread between extremes **283x**.
 
 | Class | N | Ratio vs null | Verdict |
 | --- | --- | --- | --- |
@@ -64,8 +73,8 @@ null. Sign is preserved in 8 of 8 classes; the spread between extremes is **283x
 | mechanosensory | 2,656 | 9.693x | enriched |
 
 Pathways that must reach muscle within milliseconds are enriched; pathways that must
-first build a scene or an odour identity are depleted. This is a routing hierarchy
-aligned with behavioural urgency, not uniform frugality.
+first build a scene or an odour identity are depleted. A routing hierarchy aligned with
+behavioural urgency, not uniform frugality.
 
 ### Plastic fraction of the brain
 
@@ -73,35 +82,53 @@ The canonical plasticity circuit (Kenyon cells, MBONs, DANs, MBINs) is **5,608 o
 neurons = 4.045%**, and the canonical plasticity site (KC -> MBON) is **62,261 of
 15,091,983 edges = 0.41%**, carrying **0.47% of the 54,492,922 synapses**.
 
-Two consequences, and they point the same way: the learning centre is small, and it is
-also **wired shut**. No sensory neuron connects directly to a Kenyon cell anywhere in
-this brain (exactly zero edges, where the degree-preserving null places 1,533 to 2,640),
-and MBON output to motor neurons is depleted 0.41x. What the circuit can learn about and
-what it can act on are both fixed by structure.
+The learning centre is also wired shut at both ends: no sensory neuron connects directly
+to a Kenyon cell anywhere in this brain (exactly zero edges, where the degree-preserving
+null places 1,533 to 2,640), and MBON output to motor neurons is depleted 0.41x. Subject
+to the *not tested* caveat above.
+
+## Two dependencies that no null model addresses
+
+Both of these sit upstream of every table here and are not fixed by adding nulls.
+
+1. **Excitatory counts inherit an assumption.** They rest on the
+   `Excitatory x Connectivity` column, which is an excitatory/inhibitory assignment from
+   the Shiu et al. model derived from neurotransmitter predictions, not a FlyWire
+   measurement. A count has no analysis parameters; it is not free of its input's
+   assumptions. See [docs/CITATION.md](docs/CITATION.md).
+2. **Entropy results depend on the estimator.** Histogram and KDE estimators over the
+   same activations invert the conclusion in this dataset. The estimator used here is a
+   50-bin histogram, which is a choice and is stated as one in
+   [docs/METHODS.md](docs/METHODS.md).
 
 ## Layout
 
 ```
-src/nulls40_structural.py    the 40-null experiment, as run on Kaggle CPU (180.6 min)
-src/analyze_nulls40.mjs      statistics over results/nulls40.json
-src/routing_hierarchy.mjs    the routing table and its range
-results/nulls40.json         raw output: real plus 40 nulls, 16x16 group matrices
-results/nulls40.log          verbatim run log with per-null invariant checks
-results/dualbrain_bench.*    embedded line: 6 models, 4 tasks, 10 seeds, gate ablation
-results/MANIFEST.md          checksums and current push state of the evidence files
-docs/METHODS.md              provenance, the two annotation pins, and the null model
-docs/CITATION.md             the four required data citations and the full input chain
-docs/ERRATUM.md              corrections to the published version of Mendieta (2026a)
+src/nulls40_structural.py       the 40-null MS experiment, as run on Kaggle CPU (180.6 min)
+src/analyze_nulls40.mjs         statistics over results/nulls40.json
+src/routing_hierarchy.mjs       the routing table and its range
+results/nulls40.json            raw output: real plus 40 MS nulls, 16x16 group matrices
+results/nulls40.log             verbatim run log with per-null invariant checks
+results/nulls40_local_js.log    independent replication in JavaScript, different seeds
+results/dualbrain_bench.*       embedded line: 6 models, 4 tasks, 10 seeds, gate ablation
+results/MANIFEST.md             checksums and current push state of the evidence files
+docs/METHODS.md                 provenance, the two annotation pins, and the null models
+docs/CITATION.md                the four required data citations and the full input chain
+docs/ERRATUM.md                 corrections to the published version of Mendieta (2026a)
 ```
 
 ## Reproducing
 
-See [docs/METHODS.md](docs/METHODS.md). The short version: pin the annotations to a
-**tagged release**, not a branch, and note that there are two different pins depending
-on what you want to reproduce. Release **v3.0.0** reproduces the published paper
-(139,244 rows); release **v3.1.0** reproduces the null analysis in this repository
-(139,248 rows). Using the wrong one is the difference between closing the figures to the
-digit and not.
+See [docs/METHODS.md](docs/METHODS.md). Pin the annotations to a **tagged release**, not
+a branch, and note that there are two pins depending on what you want to reproduce.
+Release **v3.0.0** reproduces the published paper (139,244 rows); release **v3.1.0**
+reproduces the null analysis here (139,248 rows).
+
+The MS experiment has been run twice independently, in Python on a Kaggle worker and in
+JavaScript on a different machine with different seeds and a different swap-accounting
+convention. Null means differ by 0.8 per cent (84,932 against 85,626 reciprocal edges),
+the cause is visible in the logs, and the verdict is identical in both: 0 of 40 nulls
+reach the real value. Both logs are in `results/`.
 
 ## Licence
 
