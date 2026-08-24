@@ -1,0 +1,179 @@
+device= cpu  seeds= 10
+
+=== A. RESPUESTA EN FRECUENCIA (BODE) ===
+  Se entrena DualBrain en Gated, despues se le inyectan senoidales
+  puras y se mide la amplitud de cada dimension de h_m.
+  presupuesto objetivo 1400
+    DualBrain   1399 {'h_r': 26, 'h_m': 8}
+    DualNoGate  1399 {'h_r': 26, 'h_m': 8}
+    GRU         1461 {'hidden_dim': 20}
+    LSTM        1446 {'hidden_dim': 17}
+    MinGRU      1426 {'hidden_dim': 25}
+    LTC         1401 {'hidden_dim': 25}
+  entrenado. midiendo...
+  freq(ciclos/muestra)  ganancia_media  ganancia_max  tau_medio
+   0.00195            0.04906        0.13196      0.2261
+   0.00347            0.03578        0.06803      0.2258
+   0.00615            0.03063        0.06394      0.2256
+   0.01092            0.02898        0.06224      0.2257
+   0.01938            0.02746        0.05925      0.2256
+   0.03439            0.02511        0.05073      0.2256
+   0.06102            0.02215        0.04284      0.2255
+   0.10830            0.01923        0.04271      0.2254
+   0.19220            0.01697        0.04290      0.2254
+   0.34110            0.01568        0.04313      0.2253
+   0.50000            0.01274        0.04073      0.2252
+
+  Corte a -3dB por dimension de h_m (ciclos/muestra):
+    ['0.0504', '0.0035', '0.0035', '0.0035', '0.0074', '0.0020', '0.0194', '0.0610']
+  rango de cortes: 0.00195 a 0.06102  ->  factor 31.2x entre la dimension
+  mas lenta y la mas rapida. Si el factor fuera ~1, las 16
+  dimensiones serian el MISMO filtro y el banco seria decorativo.
+
+================================================================
+  TAREA Gated  : |x|*c (rectificacion x referencia)
+  MSE, n= 10 semillas. Optimo: 0.000
+================================================================
+  presupuesto objetivo 1400
+    DualBrain   1399 {'h_r': 26, 'h_m': 8}
+    DualNoGate  1399 {'h_r': 26, 'h_m': 8}
+    GRU         1461 {'hidden_dim': 20}
+    LSTM        1446 {'hidden_dim': 17}
+    MinGRU      1426 {'hidden_dim': 25}
+    LTC         1401 {'hidden_dim': 25}
+  DualBrain   MSE=0.000236 +-0.000137  min=0.000075 max=0.000548  [50s/seed]
+  DualNoGate  MSE=0.025539 +-0.003665  min=0.016475 max=0.028466  [44s/seed]
+  GRU         MSE=0.004076 +-0.002636  min=0.001959 max=0.009246  [21s/seed]
+  LSTM        MSE=0.014727 +-0.008291  min=0.003435 max=0.025178  [21s/seed]
+  MinGRU      MSE=0.025426 +-0.008113  min=0.002377 max=0.028636  [19s/seed]
+  LTC         MSE=0.027958 +-0.000480  min=0.027178 max=0.028670  [21s/seed]
+
+================================================================
+  TAREA LinScale  : x*c (lineal, 1 ref) CONTROL
+  MSE, n= 10 semillas. Optimo: 0.000
+================================================================
+  presupuesto objetivo 1400
+    DualBrain   1399 {'h_r': 26, 'h_m': 8}
+    DualNoGate  1399 {'h_r': 26, 'h_m': 8}
+    GRU         1461 {'hidden_dim': 20}
+    LSTM        1446 {'hidden_dim': 17}
+    MinGRU      1426 {'hidden_dim': 25}
+    LTC         1401 {'hidden_dim': 25}
+  DualBrain   MSE=0.000055 +-0.000018  min=0.000030 max=0.000083  [50s/seed]
+  DualNoGate  MSE=0.001192 +-0.000440  min=0.000710 max=0.002088  [44s/seed]
+  GRU         MSE=0.000203 +-0.000032  min=0.000155 max=0.000255  [21s/seed]
+  LSTM        MSE=0.000247 +-0.000046  min=0.000204 max=0.000346  [21s/seed]
+  MinGRU      MSE=0.000245 +-0.000043  min=0.000177 max=0.000309  [19s/seed]
+  LTC         MSE=0.027322 +-0.040812  min=0.002343 max=0.109749  [20s/seed]
+
+================================================================
+  TAREA MultiCue  : x*(c1+c2)/2 (lineal, 2 refs)
+  MSE, n= 10 semillas. Optimo: 0.000
+================================================================
+  presupuesto objetivo 1400
+    DualBrain   1401 {'h_r': 30, 'h_m': 5}
+    DualNoGate  1401 {'h_r': 30, 'h_m': 5}
+    GRU         1388 {'hidden_dim': 19}
+    LSTM        1361 {'hidden_dim': 16}
+    MinGRU      1369 {'hidden_dim': 24}
+    LTC         1451 {'hidden_dim': 25}
+  DualBrain   MSE=0.000326 +-0.000117  min=0.000220 max=0.000606  [39s/seed]
+  DualNoGate  MSE=0.019235 +-0.021256  min=0.002257 max=0.056153  [34s/seed]
+  GRU         MSE=0.000138 +-0.000037  min=0.000096 max=0.000200  [17s/seed]
+  LSTM        MSE=0.000081 +-0.000011  min=0.000062 max=0.000098  [16s/seed]
+  MinGRU      MSE=0.000191 +-0.000045  min=0.000135 max=0.000286  [15s/seed]
+  LTC         MSE=0.038195 +-0.022258  min=0.003843 max=0.056649  [16s/seed]
+
+================================================================
+  TAREA CR  : x*cue, cue en +-1 (inversion de fase)
+  MSE, n= 10 semillas. Optimo: 0.000
+================================================================
+  presupuesto objetivo 1400
+    DualBrain   1401 {'h_r': 30, 'h_m': 5}
+    DualNoGate  1401 {'h_r': 30, 'h_m': 5}
+    GRU         1388 {'hidden_dim': 19}
+    LSTM        1361 {'hidden_dim': 16}
+    MinGRU      1369 {'hidden_dim': 24}
+    LTC         1451 {'hidden_dim': 25}
+  DualBrain   MSE=0.000054 +-0.000027  min=0.000023 max=0.000101  [27s/seed]
+  DualNoGate  MSE=0.001979 +-0.000520  min=0.001324 max=0.002764  [24s/seed]
+  GRU         MSE=0.000108 +-0.000022  min=0.000068 max=0.000148  [12s/seed]
+  LSTM        MSE=0.000076 +-0.000015  min=0.000055 max=0.000110  [11s/seed]
+  MinGRU      MSE=0.000136 +-0.000024  min=0.000111 max=0.000188  [11s/seed]
+  LTC         MSE=0.000511 +-0.000126  min=0.000347 max=0.000714  [12s/seed]
+
+################################################################
+  RESUMEN: DualBrain contra cada competidor
+  t de Welch, p a dos colas, d de Cohen. n= 10
+################################################################
+
+  Gated  (|x|*c (rectificacion x referencia))
+   DualBrain  MSE=0.000236
+   vs DualNoGate  MSE=0.025539  ratio= 108.11x  t= -21.82  p=1.56e-105  d= -9.76  gana=DualBrain
+   vs GRU         MSE=0.004076  ratio=  17.26x  t=  -4.60  p=4.21e-06  d= -2.06  gana=DualBrain
+   vs LSTM        MSE=0.014727  ratio=  62.34x  t=  -5.53  p=3.28e-08  d= -2.47  gana=DualBrain
+   vs MinGRU      MSE=0.025426  ratio= 107.63x  t=  -9.82  p=9.58e-23  d= -4.39  gana=DualBrain
+   vs LTC         MSE=0.027958  ratio= 118.35x  t=-175.72  p=0.00e+00  d=-78.58  gana=DualBrain
+
+  LinScale  (x*c (lineal, 1 ref) CONTROL)
+   DualBrain  MSE=0.000055
+   vs DualNoGate  MSE=0.001192  ratio=  21.85x  t=  -8.16  p=3.36e-16  d= -3.65  gana=DualBrain
+   vs GRU         MSE=0.000203  ratio=   3.72x  t= -12.54  p=4.24e-36  d= -5.61  gana=DualBrain
+   vs LSTM        MSE=0.000247  ratio=   4.54x  t= -12.29  p=1.06e-34  d= -5.49  gana=DualBrain
+   vs MinGRU      MSE=0.000245  ratio=   4.50x  t= -12.80  p=1.72e-37  d= -5.72  gana=DualBrain
+   vs LTC         MSE=0.027322  ratio= 500.98x  t=  -2.11  p=3.46e-02  d= -0.94  gana=DualBrain
+
+  MultiCue  (x*(c1+c2)/2 (lineal, 2 refs))
+   DualBrain  MSE=0.000326
+   vs DualNoGate  MSE=0.019235  ratio=  58.97x  t=  -2.81  p=4.91e-03  d= -1.26  gana=DualBrain
+   vs GRU         MSE=0.000138  ratio=   0.42x  t=   4.87  p=1.13e-06  d=  2.18  gana=GRU
+   vs LSTM        MSE=0.000081  ratio=   0.25x  t=   6.63  p=3.27e-11  d=  2.97  gana=LSTM
+   vs MinGRU      MSE=0.000191  ratio=   0.59x  t=   3.42  p=6.17e-04  d=  1.53  gana=MinGRU
+   vs LTC         MSE=0.038195  ratio= 117.11x  t=  -5.38  p=7.45e-08  d= -2.41  gana=DualBrain
+
+  CR  (x*cue, cue en +-1 (inversion de fase))
+   DualBrain  MSE=0.000054
+   vs DualNoGate  MSE=0.001979  ratio=  36.72x  t= -11.69  p=1.38e-31  d= -5.23  gana=DualBrain
+   vs GRU         MSE=0.000108  ratio=   2.01x  t=  -4.93  p=8.16e-07  d= -2.21  gana=DualBrain
+   vs LSTM        MSE=0.000076  ratio=   1.40x  t=  -2.23  p=2.56e-02  d= -1.00  gana=DualBrain
+   vs MinGRU      MSE=0.000136  ratio=   2.52x  t=  -7.17  p=7.74e-13  d= -3.20  gana=DualBrain
+   vs LTC         MSE=0.000511  ratio=   9.49x  t= -11.26  p=2.02e-29  d= -5.04  gana=DualBrain
+
+################################################################
+  LA COMPARACION QUE DECIDE EL MECANISMO
+################################################################
+  Gated  = |x|*c   (no lineal en x)
+  LinScale = x*c   (lineal en x)
+  Misma longitud, misma referencia, misma mascara.
+  La UNICA diferencia es el sign(x).
+
+  modelo        MSE_Gated    MSE_LinScale   cociente
+  DualBrain    0.000236     0.000055        4.33x
+  DualNoGate   0.025539     0.001192       21.43x
+  GRU          0.004076     0.000203       20.12x
+  LSTM         0.014727     0.000247       59.52x
+  MinGRU       0.025426     0.000245      103.71x
+  LTC          0.027958     0.027322        1.02x
+
+  ventaja de DualBrain sobre LSTM:
+    en Gated (rectificado): 62.34x
+    en LinScale (lineal)  : 4.54x
+
+  Si la ventaja se mantiene en LinScale, el mecanismo es la
+  MULTIPLICACION por referencia retenida.
+  Si desaparece, el mecanismo es la NO LINEALIDAD en x, y el
+  gate multiplicativo del readout es lo que la provee.
+
+################################################################
+  ABLACION DEL GATE (DualBrain vs DualNoGate)
+  Mismos parametros, misma celda, mismo encoder.
+  La unica diferencia: g*h_m contra h_m.
+################################################################
+  Gated     con_gate=0.000236  sin_gate=0.025539  el gate AYUDA (108.11x, p=1.56e-105)
+  LinScale  con_gate=0.000055  sin_gate=0.001192  el gate AYUDA (21.85x, p=3.36e-16)
+  MultiCue  con_gate=0.000326  sin_gate=0.019235  el gate AYUDA (58.97x, p=4.91e-03)
+  CR        con_gate=0.000054  sin_gate=0.001979  el gate AYUDA (36.72x, p=1.38e-31)
+
+ARCHIVO: /kaggle/working/paper_dualbrain.json
+TIEMPO: 98.3 min
+FINPAPER

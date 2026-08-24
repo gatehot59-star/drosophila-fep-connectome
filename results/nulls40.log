@@ -1,0 +1,54 @@
+[0.0s] descargando parquet
+[1.8s] descargando anotaciones pinneadas al SHA 17fc57722002e1a7d38cdd0c89ac382bf92718da
+[2.6s] md5 parquet     = 3d802fd542b5d18570ba1ba0bb0abed9  bytes=100804642
+[2.6s] md5 annotations = 719904abad876c68ace1b5690c9b9b63  bytes=31718505
+[4.2s] N=138639  E=15091983  sinapsis=54492922
+[8.9s] ids unicos en el grafo = 138639
+[9.8s] filas TSV = 139248
+[9.8s] filas mapeadas al grafo = 138625
+[10.0s] grupos: other=34668 visual=10855 olfactory=2279 mechano=2656 gustatory=408 hygro=74 thermo=29 AN=2231 unk_sens=131 MOTOR=1485 KenyonCell=5177 MBON=96 DAN=331 MBIN=4 ALPN=685 optic_intr=77530
+[10.0s] suma grupos = 138639  (N=138639)
+[28.9s] REAL aristas_unicas=15091983  reciprocas=4014518  densidad=0.000785197
+[28.9s] objetivo de swaps por null = 45275949   nulls = 40
+[289.8s] null 0  swaps=46294265  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84594  [260.9s]
+[552.7s] null 1  swaps=46299618  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84276  [262.9s]
+[820.3s] null 2  swaps=46304909  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84736  [267.7s]
+[1089.2s] null 3  swaps=46296232  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84758  [268.8s]
+[1356.6s] null 4  swaps=46294718  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84902  [267.4s]
+[1626.8s] null 5  swaps=46300172  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85278  [270.2s]
+[1893.8s] null 6  swaps=46298011  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85684  [267.0s]
+[2165.2s] null 7  swaps=46289641  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85054  [271.4s]
+[2442.3s] null 8  swaps=46298474  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85478  [277.1s]
+[2718.2s] null 9  swaps=46304925  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85610  [275.9s]
+[2994.7s] null 10  swaps=46293104  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85072  [276.5s]
+[3271.9s] null 11  swaps=46302111  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85304  [277.1s]
+[3549.4s] null 12  swaps=46304745  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85038  [277.6s]
+[3824.8s] null 13  swaps=46290791  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85106  [275.4s]
+[4101.6s] null 14  swaps=46304124  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84260  [276.8s]
+[4376.2s] null 15  swaps=46305427  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84764  [274.6s]
+[4646.5s] null 16  swaps=46291077  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84626  [270.3s]
+[4917.2s] null 17  swaps=46307400  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84566  [270.7s]
+[5190.9s] null 18  swaps=46295887  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85188  [273.7s]
+[5466.2s] null 19  swaps=46301291  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84302  [275.2s]
+[5740.2s] null 20  swaps=46305096  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85044  [274.0s]
+[6012.4s] null 21  swaps=46295288  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84914  [272.2s]
+[6284.6s] null 22  swaps=46288240  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84744  [272.2s]
+[6554.9s] null 23  swaps=46299813  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85472  [270.3s]
+[6821.3s] null 24  swaps=46299720  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85010  [266.4s]
+[7087.7s] null 25  swaps=46302425  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85114  [266.4s]
+[7350.9s] null 26  swaps=46293331  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85052  [263.2s]
+[7617.2s] null 27  swaps=46301465  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84408  [266.4s]
+[7888.6s] null 28  swaps=46295530  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84746  [271.4s]
+[8154.4s] null 29  swaps=46291945  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84600  [265.7s]
+[8421.5s] null 30  swaps=46296727  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84906  [267.2s]
+[8691.0s] null 31  swaps=46303498  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84762  [269.5s]
+[8959.4s] null 32  swaps=46291396  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84750  [268.4s]
+[9226.2s] null 33  swaps=46299906  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=83964  [266.7s]
+[9491.6s] null 34  swaps=46295936  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85756  [265.4s]
+[9759.0s] null 35  swaps=46298350  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84954  [267.3s]
+[10027.4s] null 36  swaps=46305011  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85490  [268.4s]
+[10294.0s] null 37  swaps=46296900  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85028  [266.5s]
+[10561.7s] null 38  swaps=46304549  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=84880  [267.6s]
+[10835.8s] null 39  swaps=46299100  lotes=40  aristas=15091983  indeg_malos=0  outdeg_malos=0  rec=85100  [274.1s]
+[10835.8s] FIN  nulls=40  minutos=180.6
+FINNULLS40

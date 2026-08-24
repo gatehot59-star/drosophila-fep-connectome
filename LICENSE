@@ -1,0 +1,21 @@
+Copyright (c) 2026 Jorge Abraham Mendieta
+
+ANALYSIS CODE (this repository): GNU General Public License v3.0.
+The full text is at https://www.gnu.org/licenses/gpl-3.0.txt
+
+EMBEDDED INFERENCE ENGINE AND NETWORK TOPOLOGIES: dual-licensed.
+GPLv3 for open use, or a separate commercial licence. Commercial use without a
+commercial licence is not granted by this file. Contact the author for terms.
+
+A contributor licence agreement is required for outside contributions, so that the
+dual-licensing arrangement remains enforceable.
+
+NOTE ON THE PUBLISHED PAPER: Mendieta (2026a) states AGPL v3 in its Data
+Availability section. That statement is superseded by this file and is recorded in
+docs/ERRATUM.md, item 8.
+
+THIRD-PARTY DATA, not covered by this licence and not redistributed here:
+  FlyWire connectome v783 and the FlyWire community annotations are the property of
+  their respective authors and carry their own terms. See docs/METHODS.md for exact
+  sources, the pinned commit SHA and checksums. The analysis scripts download these
+  inputs directly from source; no copy is included in this repository.
