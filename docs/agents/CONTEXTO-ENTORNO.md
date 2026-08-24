@@ -1,6 +1,6 @@
 # CONTEXTO VIVO · EL ENTORNO DE EJECUCIóN
 
-**Última medición:** 2026-08-24 15:06 UTC (12:06 America/Buenos_Aires) · **Se sobreescribe, no se acumula.**
+**Última medición:** 2026-08-24 15:06 UTC (12:06 America/Buenos_Aires) · **ampliada 15:15 UTC (12:15), ver §12** · **Se sobreescribe, no se acumula.**
 
 <p><br/></p>
 
@@ -229,3 +229,127 @@ Archivos de primer nivel ya conocidos: `motor.py` (30.644 B), `scriptR.py` (10.3
 3. Si Abraham instala algo, **entra acá con su versión y su prueba de que funciona**, no con su nombre.
 
 **El criterio de suficiencia:** una capacidad se declara presente **solo con la salida cruda de haberla usado**. "Está en el PATH" no es "funciona": el `clang` del NDK está en el disco y falla sin `--target`.
+
+---
+
+## 12. AMPLIACIÓN 2026-08-24 15:15 UTC · cinco mediciones nuevas
+
+**Cómo se hizo, y por qué importa el cómo:** este archivo ya existía cuando volví a medir el entorno a las 12:15 (había perdido el hilo de haberlo escrito seis minutos antes). Al intentar crearlo de nuevo, GitHub lo rechazó por conflicto de existencia. **Ese rechazo evitó que sobrescribiera las secciones 0 a 11 con una versión que NO contenía el hallazgo del ESP32.** Las secciones 0 a 11 no se tocaron: esta §12 es puro agregado.
+
+**Es la prueba de que el método funciona:** el trabajo no se perdió con el chat. Lo que se perdió fue la memoria de haberlo hecho, y el archivo la reemplazó.
+
+### 12.1 `tsc` no solo se instala: **compila y puede dar ROJO**
+
+La §3 decía "`tsc` no está pero `npm` sí, o sea que se instala". Eso era una **inferencia**. Ahora está **probado**:
+
+```
+$ cd /tmp/tsctest && npm install typescript@5.9.2 --no-audit --no-fund
+added 1 package in 4s
+
+$ ./node_modules/.bin/tsc --version
+Version 5.9.2
+
+$ printf 'const x: number = "roto";\n' > t.ts && ./node_modules/.bin/tsc t.ts
+t.ts(1,7): error TS2322: Type 'string' is not assignable to type 'number'.
+```
+
+**Lo que agrega sobre la §9: el instrumento PUEDE DAR ROJO.** Un compilador que no puede fallar no sirve de testigo (W-01). Los PRs **#64** y **#68** dicen *"el TypeScript NO se compiló"* y su causa declarada era *"no tengo toolchain local"*: **la causa es falsa y ahora está refutada con la salida de error, no con el PATH.**
+
+### 12.2 El modelo del LLM local **ya está bajado**
+
+```
+-rw-r--r-- 1 1000 1000 102039904 Aug 16 02:57
+  /home/estudiante/Android/SmolLM2-135M-Instruct-Q4_K_S.gguf
+```
+
+**102.039.904 B, del 16-ago.** Los docs de MUDH-Mobile lo listan como *"HuggingFaceTB/SmolLM2-135M-Instruct-GGUF, 97.3 MB < 100 MB"* y como algo a conseguir. **Está en el disco desde hace 8 días.**
+
+### 12.3 `adb` **arranca su daemon y responde**
+
+La §4 dice que `adb` "está presente". Medido, hace más que estar:
+
+```
+$ /home/estudiante/Android/platform-tools/adb devices
+* daemon not running; starting now at tcp:5037
+* daemon started successfully
+List of devices attached
+(vacio)
+```
+
+**El binario funciona y levanta el servidor.** La lista vacía es un dato distinto: **no hay device conectado al momento de medir**, ni emulador corriendo.
+
+### 12.4 El emulador falla por una **librería gráfica**, no por imposibilidad
+
+```
+$ /home/estudiante/Android/emulator/emulator -list-avds
+emulator: error while loading shared libraries: libX11.so.6:
+          cannot open shared object file: No such file or directory
+```
+
+**Distinción que importa y que la §10 dejaba abierta como "no verifiqué si arranca":** no es que el emulador no pueda correr, es que **le falta `libX11.so.6`**. Las dos vías obvias (`-no-window` para headless, o instalar la librería) **NO se probaron**. Es un estado NO MEDIDO con causa identificada, que es mejor que un NO MEDIDO a secas.
+
+### 12.5 El NDK tiene **DOS** versiones, no una
+
+La §4 lista `28.2.13676358`. Medido:
+
+```
+$ ls /home/estudiante/Android/ndk
+28.2.13676354
+28.2.13676358
+```
+
+**Dos builds del NDK 28.2 conviviendo.** No sé si son iguales ni cuál usó Abraham, y **eso hay que resolverlo antes de compilar nada nativo**: elegir uno al azar y reportar el resultado sin decir cuál sería el patrón del sujeto equivocado (E-01).
+
+### 12.6 Coincidencias que confirman la medición de las 12:06
+
+Lo re-medido cerró con lo que ya estaba, y eso vale como validación cruzada del instrumento:
+
+| Cantidad | 12:06 | 12:15 |
+|---|---|---|
+| SO | Debian 13 trixie | idéntico |
+| Host | `d250f65d4cc4` | idéntico |
+| CPU / RAM | 2 / 7.989.580 kB | idéntico |
+| `/workspace` | 406G, 229G usados, 60% | idéntico |
+| Uptime | 275.200 s | **275.566,63 s** (+366 s, consistente con los 6 min entre mediciones) |
+| npm | 11.16.0 | idéntico |
+| java | 17.0.20 | idéntico |
+| Red | pypi/github alcanzables | `pypi=200`, `github=200` |
+
+**El delta de uptime de +366 s contra 6 minutos de reloj es la prueba de que las dos mediciones son del mismo container vivo**, y no de dos instancias distintas.
+
+### 12.7 Discrepancia de conteo de `/workspace`, y gana el número mayor
+
+La §6 dice **999 archivos, 528,3 MB**. Mi conteo de las 12:15 dio **375 archivos, 507 MB**, pero con `find -maxdepth 2`: **conté menos profundidad, no menos archivos**. **Gana la §6.** Lo dejo escrito porque un número menor obtenido con otro comando no es una contradicción del dato: es una medición distinta mal comparada, y confundirlas es cómo se "corrige" un archivo hacia atrás.
+
+Lo que mi conteo sí agrega: **20 `.py` en la raíz** enumerados (`motor.py`, `scriptR.py`, `scriptR_v1_buggy.py`, `cp40.py`, `hm_sweep.py`, `hm_base.py`, `tres_brazos.py`, `nulls40_kaggle.py`, `nulls19.py`, `nulls19b.py`, `n21.py`, `esp32c.py`, `paper_db.py`, `dualbrain_src.py`, `cmp_db.py`, `chkmap.py`, `pchk.py`, `synchk.py`, `_t.py`, `x.py`) y **74 `.json`/`.log`** en la raíz. **En git hay 6 `.py` y 2 `.log`.**
+
+### 12.8 NO MEDIDO de esta ampliación
+
+- **El emulador headless** (`-no-window`) y si `libX11` se puede instalar.
+- **Si las dos versiones del NDK son idénticas** y cuál corresponde usar.
+- **Si `pip install` funciona.** Se infiere de la red de `npm` y `curl`. **Inferir es lo que esta sección vino a corregir en el caso de `tsc`, así que queda como inferencia declarada.**
+- **No re-verifiqué el toolchain del ESP32** en esta pasada. La §1 lo tiene medido a las 12:06 y no lo toqué.
+- **No comparé este archivo línea por línea** después de la fusión. La verificación hecha fue por lectura de vuelta y chequeo de que las secciones 0 a 11 sigan presentes con su contenido clave.
+
+```
+--- METODO TITAN ---
+Accion delicada: SI. Sobrescritura de un archivo de contexto existente en main.
+                 Mitigacion aplicada: se leyo el archivo completo ANTES de
+                 escribir, se paso el sha dff60f3efe8f9e1ac585a000b62b2a97abf1b263
+                 para que un cambio concurrente aborte la escritura, y las
+                 secciones 0 a 11 se reprodujeron sin editar una linea. Todo lo
+                 nuevo esta confinado a la seccion 12.
+Modo aplicado:   TITAN FULL
+Rubrica:         se emite en la respuesta 033, que documenta la fusion.
+N/A declarados:  pendiente
+Review externo:  el falsador de esta escritura fue GITHUB, no una persona: el
+                 conflicto de existencia del archivo impidio que sobrescribiera
+                 el hallazgo del ESP32 con una version que no lo tenia. Es el
+                 caso mas puro de W-01: la independencia es del instrumento.
+Instrumento:     gateway build.run sobre brain-env, 7 llamadas (6 de lectura y
+                 una escritura efimera en /tmp/tsctest).
+                 Evidencia cruda verbatim en 12.1 a 12.5, sin recortar.
+                 Prueba clave: tsc 5.9.2 instalado en 4 s y devolviendo
+                 error TS2322 sobre codigo roto a proposito.
+                 NO MEDIDO: seccion 12.8.
+```
