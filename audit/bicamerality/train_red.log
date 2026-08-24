@@ -1,0 +1,12 @@
+    [   Princip s42] 1,174p -> R=   0.3 g:0.44->0.44 a:0.37  [13s]
+    [   Princip s123] 1,174p -> R=  -0.7 g:0.52->0.52 a:0.43  [12s]
+    [      Dual s42] 1,084p -> R=  -4.4 g:0.64->0.64  [9s]
+    [      Dual s123] 1,084p -> R=  -0.0 g:0.63->0.63  [9s]
+    [       MLP s42] 1,219p -> R=   1.4  [3s]
+    [       MLP s123] 1,219p -> R=  -0.1  [3s]
+
+=========== RESULTADO REDUCIDO  n_ep=40  seeds=2 ===========
+ Princip  align=0.5442 +-0.0558   R=   1.96   27s
+    Dual  align=0.4679 +-0.0868   R=  -2.24   19s
+     MLP  align=0.4353 +-0.0332   R=  -4.48   6s
+FINTRAIN

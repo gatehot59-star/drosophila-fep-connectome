@@ -1,0 +1,16 @@
+    [   Princip s42] 1,174p -> R=   3.0 g:0.44->0.46 a:0.47  [97s]
+
+TRAYECTORIA DEL VETO en PureMemory (energy_lb CONSTANTE = 1.0)
+bloque_de_ep   alpha_medio   veto_shift   factor_sobre_std   gate_medio
+   0-40        0.3742       -1.252        0.2860        0.4413
+  40-80        0.3965       -1.207        0.2991        0.4408
+  80-120       0.4177       -1.165        0.3121        0.4401
+ 120-160       0.4291       -1.142        0.3193        0.4480
+ 160-200       0.4518       -1.096        0.3341        0.4467
+ 200-240       0.4758       -1.048        0.3505        0.4578
+
+alpha primeros 40 = 0.3742   ultimos 40 = 0.4758
+gate  primeros 40 = 0.4413   ultimos 40 = 0.4578
+align primeros 40 = 0.5045   ultimos 40 = 0.5297
+segundos = 99
+FINVETO

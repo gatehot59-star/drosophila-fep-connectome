@@ -1,0 +1,32 @@
+{
+ "sr_ortogonal": 1.0000001192092896,
+ "sr_random": 1.3328672647476196,
+ "rho_chaos": 1.0,
+ "delta_division": 1.7881393432617188e-07,
+ "rho_real": 0.3966430723667145,
+ "pm_rew_min": -0.49981507658958435,
+ "pm_rew_max": 0.49829211831092834,
+ "pm_n_danger": 0,
+ "pm_energy_uniq": [
+  1.0
+ ],
+ "sw_frac_danger": 0.028089887640449437,
+ "sw_energy_min": -0.1339999999999999,
+ "params_PureMemory": {
+  "principia": 1174,
+  "dual": 1084,
+  "mlp": 1219,
+  "ratio": 1.0830258302583027
+ },
+ "params_SurvivalWorld": {
+  "principia": 1912,
+  "dual": 1822,
+  "mlp": 1957,
+  "ratio": 1.0493962678375413
+ },
+ "zen_hits": 0,
+ "zen_max_norm": 1.3949190378189087,
+ "grad_energy_head": 0.04057217761874199,
+ "grad_danger_head": 6.147829532623291,
+ "grad_log_std": 0.0
+}

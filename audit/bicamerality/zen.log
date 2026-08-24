@@ -1,0 +1,13 @@
+COTA ANALITICA: h = h*(1-tau) + tanh(.)*tau  con tau en (0,1)
+cada componente queda en [-1,1] => norma <= sqrt(H)
+
+ H   sqrt(H)   max_norm   alcanzable   max_visto_1000pasos
+  4    2.0000        3.0           NO                1.7060
+  8    2.8284        3.0           NO                1.8238
+  9    3.0000        3.0           NO                1.9479
+ 10    3.1623        3.0           SI                1.9097
+ 16    4.0000        3.0           SI                2.1187
+ 32    5.6569        3.0           SI                3.3720
+
+VEREDICTO: con H_chaos=8 la cota es sqrt(8)=2.8284 < 3.0
+=> la rama del clamp es INALCANZABLE por construccion, no por suerte

@@ -1,0 +1,57 @@
+celda1 importada  torch 2.13.0+cpu
+
+########## T0 CONTROL DEL CONTROL ##########
+  OK    una_matriz_ortogonal_TIENE_sr_1: sr=1.0000001192 -> T1 puede medir algo
+  OK    una_matriz_random_NO_tiene_sr_1: sr=1.332867 -> el test distingue
+
+########## T1 LA NORMALIZACION EDGE-OF-CHAOS ##########
+  OK    W_rec_quedo_ortogonal: norma_inf(W Wt - I) = 1.729e-06
+  OK    rho_W_rec_es_1: rho = 1.0000000000
+  OK    la_division_por_sr_es_NO_OP: max abs(W - W/sr) = 1.788e-07 con sr = 1.0000002384
+
+########## T2 LA CELDA DE ORDEN NO TIENE rho CONTROLADO ##########
+  OK    rho_LiquidRealCell_NO_es_1: rho = 0.396643 default de nn.Linear sin control
+
+########## T3 LA ETIQUETA danger EN PureMemory ##########
+  OK    PureMemory_NUNCA_dispara_danger: reward en [-0.4998, 0.4983] sobre 2000 pasos; rew menor a -1.0 en 0
+
+########## T4 LA ETIQUETA energy EN PureMemory ##########
+  OK    PureMemory_energy_es_CONSTANTE_1: valores distintos de energy: [1.0]
+
+########## T5 CONSECUENCIA: EL VETO ES INERTE EN PureMemory ##########
+     alpha=1.0 -> veto_shift=-0.00
+     alpha=0.5 -> veto_shift=-1.00
+     alpha=0.0 -> veto_shift=-2.00
+  OK    veto_shift_es_0_cuando_alpha_es_1: con energy_lb constante en 1 el veto no modula nada
+
+########## T6 SurvivalWorld: FRECUENCIA REAL DE danger ##########
+     pasos=1958  danger=1 en 55  fraccion=0.02809
+     reward en [-6.952, 6.179]   energy en [-0.134, 1.000]
+  OK    SurvivalWorld_SI_dispara_danger: 55 de 1958 pasos
+  OK    danger_NO_esta_severamente_desbalanceado: fraccion=0.02809; por debajo de 0.01 la BCE colapsa a predecir 0 siempre
+
+########## T7 PRESUPUESTO DE PARAMETROS ##########
+     PureMemory     Principia= 1174  Dual= 1084  MLP= 1219   P/D=1.083
+  FAIL  presupuesto_pareado_PureMemory: Principia/Dual = 1.083 con tolerancia 0.05
+     SurvivalWorld  Principia= 1912  Dual= 1822  MLP= 1957   P/D=1.049
+  OK    presupuesto_pareado_SurvivalWorld: Principia/Dual = 1.049 con tolerancia 0.05
+
+########## T8 SMOKE: LOS TRES CEREBROS CORREN ##########
+  OK    forward_Principia: salidas=5 mean_finito=True recurrente=True
+  OK    forward_Dual: salidas=5 mean_finito=True recurrente=True
+  OK    forward_MLP: salidas=5 mean_finito=True recurrente=False
+
+########## T9 EL ZEN CLAMP SE ACTIVA ALGUNA VEZ ##########
+  FAIL  zen_clamp_se_activa: activaciones=0 de 12800  max_norma_vista=1.3949 umbral 3.0
+
+########## T10 GRADIENTE: LA AUX LOSS ENTRENA EL ESTIMADOR ##########
+  OK    aux_loss_entrena_energy_head: suma_abs_grad = 4.057218e-02
+  OK    aux_loss_entrena_danger_head: suma_abs_grad = 6.147830e+00
+  OK    el_veto_NO_recibe_gradiente_por_el_detach: suma_abs_grad log_std = 0.000e+00 esperado 0 porque alpha esta detacheado
+
+==============================================================
+TESTS EN ROJO: 2
+   - presupuesto_pareado_PureMemory
+   - zen_clamp_se_activa
+==============================================================
+FINAUDIT
