@@ -1,0 +1,27 @@
+SEGUNDO INTENTO, recalibrado con dist.log: clamp_frac=0.97 -> max_norm=2.7436
+
+patch.py actualizado clamp_frac 0.6 -> 0.97
+sujeto md5  9d89a158f809ff5f3765f42848502665
+fix 1 aplicado: max_norm auto + ValueError si es inalcanzable
+fix 1b aplicado: contadores clamp_hits / clamp_calls
+fix 2 aplicado: veto_enabled propagado a veto_shift
+fix 3 aplicado: guard de tautologia por termino + contadores
+
+reemplazos aplicados: 7 de 7
+cell1_fixed.py  bytes 37471  md5 57c91b7f5c30fd9e1ad4c02fbf340226
+max_norm recalibrado = 2.7436  cota sqrt(8) = 2.8284
+
+########## G2b EL CLAMP COMO RED DE SEGURIDAD ##########
+     regimen        escala_x   activaciones / llamadas
+     NORMAL             2.0     0 / 230400
+     ESTRES           100.0     122097 / 230400
+  OK    clamp_INERTE_en_regimen_normal: 0 activaciones de 230400: no distorsiona la dinamica de trabajo
+  OK    clamp_SI_DISPARA_bajo_estres: 122097 activaciones de 230400: la rama es alcanzable de verdad
+  OK    sigue_rechazando_un_umbral_inalcanzable: max_norm=3.0 con H=8 levanta ValueError
+
+########## G2c EL ORIGINAL BAJO EL MISMO ESTRES ##########
+     max norma con escala 100 = 2.828427   umbral original = 3.0
+  OK    el_original_NUNCA_dispara_ni_bajo_estres_extremo: max=2.828427 < 3.0 = sqrt(8) es 2.8284, el umbral esta FUERA del rango alcanzable
+
+TESTS EN ROJO: 0
+FINREFIX2

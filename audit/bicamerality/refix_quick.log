@@ -1,0 +1,30 @@
+PRIMER INTENTO DE FIX, con clamp_frac=0.6 -> max_norm=1.6971
+Quedo en ROJO: analiticamente alcanzable pero empiricamente 0 activaciones.
+Se conserva el log porque es el falsador de mi propio fix.
+
+cell1.py y cell1_fixed.py importados  torch 2.13.0+cpu
+
+########## G0 CONTROL DEL CONTROL ##########
+  OK    matriz_ortogonal_TIENE_sr_1: sr=1.0000001192
+
+########## G1 EL FIX RECHAZA UN max_norm INALCANZABLE ##########
+  OK    el_fix_RECHAZA_max_norm_3_con_H_8: max_norm=3.0 es INALCANZABLE: la cota analitica con H=8 es sqrt(H)=2.8284. Un guard cuya rama nunca se ejecuta
+  OK    el_ORIGINAL_lo_acepta_en_silencio: sin este contraste el test G1 no mediria nada
+  OK    max_norm_auto_es_alcanzable: max_norm=1.6971 cota sqrt(H)=2.8284
+
+########## G2 AHORA EL CLAMP SE ACTIVA ##########
+     ORIGINAL  umbral=3.0000  activaciones=0 de 12800  max_norma=1.3949
+     FIXED     umbral=1.6971  activaciones=0 de 12800  max_norma=1.3949
+  FAIL  clamp_se_activa_en_el_FIX: 0 activaciones de 12800
+  OK    clamp_NO_se_activaba_en_el_ORIGINAL: 0 activaciones: el rojo original queda reproducido
+
+########## G3 EL PRESUPUESTO SIGUE SIN PAREAR ##########
+     H_order=24  Principia=1174  Dual=1084  P/D=1.083
+     H_order=23  Principia=1117  Dual=1084  P/D=1.030
+     H_order=22  Principia=1062  Dual=1084  P/D=0.980
+     H_order=21  Principia=1009  Dual=1084  P/D=0.931
+  OK    presupuesto_sigue_desparejo_NO_lo_arregle: P/D=1.083. Solo se pidieron max_norm y el guard, no toque H_order
+
+TESTS EN ROJO: 1
+   - clamp_se_activa_en_el_FIX
+FINQUICK

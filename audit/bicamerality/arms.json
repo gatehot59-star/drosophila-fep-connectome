@@ -1,0 +1,50 @@
+{
+ "guard_PureMemory": {
+  "danger_no_testeable": 56,
+  "energy_no_testeable": 56,
+  "danger_usada": 0,
+  "energy_usada": 0
+ },
+ "guard_SurvivalWorld": {
+  "danger_no_testeable": 13,
+  "energy_no_testeable": 0,
+  "danger_usada": 23,
+  "energy_usada": 36
+ },
+ "A_original": {
+  "alpha_ini": 0.37419252125918867,
+  "alpha_fin": 0.47577623490244153,
+  "veto_shift_ini": -1.2516149574816227,
+  "veto_shift_fin": -1.048447530195117,
+  "factor_std_ini": 0.2860424772087508,
+  "factor_std_fin": 0.3504814388219704,
+  "align_ini": 0.5044736842105263,
+  "align_fin": 0.5297368421052632,
+  "R_fin": 1.5565124185290187,
+  "secs": 67.2549798488617
+ },
+ "B_guard_veto_ON": {
+  "alpha_ini": 0.3645412017703057,
+  "alpha_fin": 0.3812693817615509,
+  "veto_shift_ini": -1.2709175964593886,
+  "veto_shift_fin": -1.2374612364768982,
+  "factor_std_ini": 0.2805740498681606,
+  "factor_std_fin": 0.2901198294123992,
+  "align_ini": 0.5044736842105263,
+  "align_fin": 0.5307894736842106,
+  "R_fin": 1.7702126754214986,
+  "secs": 64.49114990234375
+ },
+ "C_guard_veto_OFF": {
+  "alpha_ini": 0.36439109162241223,
+  "alpha_fin": 0.38296919130533935,
+  "veto_shift_ini": 0.0,
+  "veto_shift_fin": 0.0,
+  "factor_std_ini": 1.0,
+  "factor_std_fin": 1.0,
+  "align_ini": 0.49947368421052635,
+  "align_fin": 0.523157894736842,
+  "R_fin": 1.8423463750630618,
+  "secs": 63.839897871017456
+ }
+}

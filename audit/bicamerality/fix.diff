@@ -1,0 +1,90 @@
+--- cell1.py
++++ cell1_fixed.py
+@@ LiquidChaosCell.__init__ @@
+-    def __init__(self, H, max_norm=3.0):
++    def __init__(self, H, max_norm=None, clamp_frac=0.97):
+         super().__init__()
+         self.H = H
+-        self.max_norm = max_norm
++        # FIX 1. La actualizacion h = h*(1-tau) + tanh(.)*tau con tau en (0,1)
++        # deja cada componente en [-1,1], asi que la norma esta acotada por
++        # sqrt(H). Con H=8 la cota es 2.8284 y el max_norm original era 3.0:
++        # la rama del clamp era INALCANZABLE. Medido: 0 de 12800 activaciones,
++        # y 0 tambien con estimulo x100, donde la norma llega a 2.828427 exacto.
++        self.norm_bound = float(H) ** 0.5
++        if max_norm is None:
++            max_norm = clamp_frac * self.norm_bound
++        if max_norm >= self.norm_bound:
++            raise ValueError(
++                'max_norm=' + repr(max_norm) + ' es INALCANZABLE: la cota '
++                'analitica con H=' + repr(H) + ' es sqrt(H)=' +
++                format(self.norm_bound, '.4f') + '. Un guard cuya rama nunca '
++                'se ejecuta no protege nada y hace creer que si.')
++        self.max_norm = max_norm
++        self.clamp_hits = 0
++        self.clamp_calls = 0
+
+@@ LiquidChaosCell.forward @@
+         h_norm = torch.norm(h_new, dim=-1, keepdim=True)
+-        scale = torch.where(h_norm > self.max_norm,
++        over = h_norm > self.max_norm
++        self.clamp_calls += int(h_norm.numel())
++        self.clamp_hits += int(over.sum().item())
++        scale = torch.where(over,
+                             self.max_norm / (h_norm + 1e-8),
+                             torch.ones_like(h_norm))
+
+@@ PrincipiaBrain.__init__ @@
+-    def __init__(self, obs_dim, act_dim, H_chaos=8, H_order=24):
++    def __init__(self, obs_dim, act_dim, H_chaos=8, H_order=24, veto_enabled=True):
+         super().__init__()
+         self.H_chaos = H_chaos
++        # FIX 2. Si la etiqueta energy no lleva informacion, el estimador
++        # regresiona contra una constante y su salida NO mide energia. Usarla
++        # igual como veto produce un handicap de exploracion permanente:
++        # medido, alpha se queda en 0.37-0.48 durante 240 episodios, o sea
++        # 29-35 por ciento del std nominal. Con veto_enabled=False el shift es 0.
++        self.veto_enabled = veto_enabled
+
+@@ PrincipiaBrain.forward @@
+-        veto_shift = -2.0 * (1.0 - alpha)  # dying->-2, healthy->0
++        veto_shift = (-2.0 * (1.0 - alpha)) if self.veto_enabled else torch.zeros_like(alpha)  # dying->-2, healthy->0
+
+@@ antes de ppo_seq_update @@
++AUX_GUARD = {'danger_no_testeable': 0, 'energy_no_testeable': 0,
++             'danger_usada': 0, 'energy_usada': 0}
++
++
+ def ppo_seq_update(brain, opt, chunks, epochs=4, clip=0.2,
+
+@@ ppo_seq_update, survival loss @@
++                # FIX 3. Guard de tautologia, POR TERMINO. Si una etiqueta
++                # tiene sd == 0 en el batch, ese termino no puede ensenar nada:
++                # regresionar contra una constante solo empuja el estimador a
++                # un valor fijo. Se cuenta como NO TESTEABLE y se excluye.
++                # Medido en PureMemory: danger = 0 en 2000 de 2000 pasos y
++                # energy = 1.0 constante. Los dos terminos eran tautologicos.
+                 aux_loss = torch.tensor(0.0, device=device)
+                 if danger_preds:
+                     dp = torch.stack(danger_preds, dim=1)
+                     ep = torch.stack(energy_preds, dim=1)
+-                    aux_loss = (F.binary_cross_entropy(dp, danger_lb)
+-                                + F.mse_loss(ep, energy_lb))
+-                    loss = loss + aux_weight * aux_loss
++                    terms = []
++                    if float(danger_lb.std()) > 0.0:
++                        terms.append(F.binary_cross_entropy(dp, danger_lb))
++                        AUX_GUARD['danger_usada'] += 1
++                    else:
++                        AUX_GUARD['danger_no_testeable'] += 1
++                    if float(energy_lb.std()) > 0.0:
++                        terms.append(F.mse_loss(ep, energy_lb))
++                        AUX_GUARD['energy_usada'] += 1
++                    else:
++                        AUX_GUARD['energy_no_testeable'] += 1
++                    if terms:
++                        aux_loss = sum(terms)
++                        loss = loss + aux_weight * aux_loss
+
+# Total: 8 lineas eliminadas, 53 agregadas (la mayoria comentarios y el guard).
+# Generado con: diff -u cell1.py cell1_fixed.py

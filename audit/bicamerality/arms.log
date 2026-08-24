@@ -1,0 +1,15 @@
+########## GUARD DE TAUTOLOGIA: DISPARA DONDE DEBE ##########
+    [  P-PureMe s42] 1,174p -> R=  -3.4 g:0.45->0.45 a:0.36  [5s]
+     PureMemory      danger: usada=0 NO_TESTEABLE=56   energy: usada=0 NO_TESTEABLE=56
+    [  P-Surviv s42] 1,912p -> R=  11.4 g:0.55->0.55 a:0.44  [9s]
+     SurvivalWorld   danger: usada=23 NO_TESTEABLE=13   energy: usada=36 NO_TESTEABLE=0
+
+########## TRES BRAZOS DEL VETO  PureMemory 240ep seed42 ##########
+    [A_original s42] 1,174p -> R=   3.0 g:0.44->0.46 a:0.47  [67s]
+     A_original         alpha 0.3742->0.4758   factor_std 0.2860->0.3505   align 0.5045->0.5297   [67s]
+    [B_guard_ve s42] 1,174p -> R=   3.0 g:0.44->0.45 a:0.38  [64s]
+     B_guard_veto_ON    alpha 0.3645->0.3813   factor_std 0.2806->0.2901   align 0.5045->0.5308   [64s]
+    [C_guard_ve s42] 1,174p -> R=   3.1 g:0.44->0.45 a:0.38  [64s]
+     C_guard_veto_OFF   alpha 0.3644->0.3830   factor_std 1.0000->1.0000   align 0.4995->0.5232   [64s]
+
+FINARMS
