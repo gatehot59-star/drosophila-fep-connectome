@@ -1,6 +1,6 @@
 # CONTEXTO VIVO · EL ENTORNO DE EJECUCIóN
 
-**Última medición:** 2026-08-24 15:06 UTC (12:06 America/Buenos_Aires) · **ampliada 15:15 UTC (12:15), ver §12** · **Se sobreescribe, no se acumula.**
+**Última medición:** 2026-08-24 15:06 UTC (12:06 America/Buenos_Aires) · **ampliada 15:15 UTC (12:15), ver §12** · **ampliada 17:05 UTC (14:05), ver §13** · **Se sobreescribe, no se acumula.**
 
 <p><br/></p>
 
@@ -54,6 +54,8 @@ También están `xtensa-esp-elf-as`, `-ar`, `-objdump`, `-nm`, `-size`, `-addr2l
 <p><br/></p>
 
 **Consecuencia directa y medible para DualBrain C99:** los **2.496 B de `.text` y 704 B de RAM** se midieron con **gcc de x86**, y de ahí salió la cota de ~20 kSPS marcada como *"derivada del conteo de MAC, no medida en hardware"*. Con `xtensa-esp32-elf-gcc -Os` + `xtensa-esp-elf-size` se puede medir **el tamaño real en el target**, que es un número distinto y publicable. **Eso ya no es un pendiente de hardware: es un pendiente de correr un comando.**
+
+> **→ CERRADO en §13.1 el 24-ago 14:05: el comando se corrió. El número es 1.336 B.**
 
 ---
 
@@ -163,6 +165,8 @@ $ java T         -> exit=0, salida: JAVAC_OK
 
 Archivos de primer nivel ya conocidos: `motor.py` (30.644 B), `scriptR.py` (10.376 B), `tres_brazos.py` (430 líneas), `hm_sweep.py`, `hm_base.py`, `paper_db.py`, `dualbrain_src.py`, y ~20 logs.
 
+> **→ §13.3 resuelve el `mudh/.git` (es un gitfile HUÉRFANO, no un clon), §13.4 audita `c/`, `gg/` y `tags/`, y §13.5 da el conteo por directorio. El `repo/` sin commitear resultó contener el entregable del 30-ago: ver §13.2.**
+
 ---
 
 ## 7. El gateway MCP
@@ -191,6 +195,8 @@ Archivos de primer nivel ya conocidos: `motor.py` (30.644 B), `scriptR.py` (10.3
 5. **Los MSE de torch son deterministas por semilla:** idénticos a 6 decimales con `THREADS=1` y con 4. Y **`THREADS=1` es más rápido** con modelos chicos.
 6. **Guardado incremental obligatorio** en cualquier corrida larga: un `json.dump` por brazo, para que un corte no borre horas.
 
+> **→ §13.6 agrega las reglas 7 a 10, y dos de ellas son guards propios que NO PUEDEN DAR ROJO.**
+
 ---
 
 ## 9. Lo que esto DESBLOQUEA, y hay que decidir
@@ -218,6 +224,8 @@ Archivos de primer nivel ya conocidos: `motor.py` (30.644 B), `scriptR.py` (10.3
 - **No sé qué más instaló Abraham fuera de `/home/estudiante` y `/opt`.** Barrí esos dos.
 - **La lista de "lo que NO hay" es de 38 comandos probados**, no del PATH completo.
 
+> **→ De estos, §13 cierra tres: el `mudh/.git`, la compilación del C99 para Xtensa, y los tres directorios sin auditar. El resto sigue abierto.**
+
 ---
 
 ## 11. Regla de mantenimiento de este archivo
@@ -229,6 +237,8 @@ Archivos de primer nivel ya conocidos: `motor.py` (30.644 B), `scriptR.py` (10.3
 3. Si Abraham instala algo, **entra acá con su versión y su prueba de que funciona**, no con su nombre.
 
 **El criterio de suficiencia:** una capacidad se declara presente **solo con la salida cruda de haberla usado**. "Está en el PATH" no es "funciona": el `clang` del NDK está en el disco y falla sin `--target`.
+
+> **⚠️ INCUMPLIMIENTO REGISTRADO:** entre las respuestas 036, 037 y 038 este archivo figuró **tres veces como NO MEDIDO**, con esta regla escrita adentro. Se lo citó por commit message en vez de abrirlo. Abraham lo cobró en el turno de la resp 039 con la frase *"ni en tu entorno virtual"*, y tenía razón: **la regla estaba y la llamada no.**
 
 ---
 
@@ -323,6 +333,8 @@ La §6 dice **999 archivos, 528,3 MB**. Mi conteo de las 12:15 dio **375 archivo
 
 Lo que mi conteo sí agrega: **20 `.py` en la raíz** enumerados (`motor.py`, `scriptR.py`, `scriptR_v1_buggy.py`, `cp40.py`, `hm_sweep.py`, `hm_base.py`, `tres_brazos.py`, `nulls40_kaggle.py`, `nulls19.py`, `nulls19b.py`, `n21.py`, `esp32c.py`, `paper_db.py`, `dualbrain_src.py`, `cmp_db.py`, `chkmap.py`, `pchk.py`, `synchk.py`, `_t.py`, `x.py`) y **74 `.json`/`.log`** en la raíz. **En git hay 6 `.py` y 2 `.log`.**
 
+> **→ CORREGIDO en §13.5: los `.log` en git son 3, no 2. Y el cruce estaba hecho contra el directorio equivocado: `guards.py` no está en la raíz del container, vive en `gg/`.**
+
 ### 12.8 NO MEDIDO de esta ampliación
 
 - **El emulador headless** (`-no-window`) y si `libX11` se puede instalar.
@@ -352,4 +364,245 @@ Instrumento:     gateway build.run sobre brain-env, 7 llamadas (6 de lectura y
                  Prueba clave: tsc 5.9.2 instalado en 4 s y devolviendo
                  error TS2322 sobre codigo roto a proposito.
                  NO MEDIDO: seccion 12.8.
+```
+
+---
+
+## 13. AMPLIACIÓN 2026-08-24 17:05 UTC (14:05 local) · el cruce Docs × git × container
+
+**Por qué existe esta sección:** las respuestas 036, 037 y 038 midieron **git y los Docs** y **nunca** tocaron el container, con este archivo declarado NO MEDIDO las tres veces. Abraham lo cobró. Esta §13 es el resultado de 6 llamadas a `build.run`, y **no toca ni una línea de las secciones 0 a 12**: es puro agregado.
+
+### 13.1 🔥 CERRADO · el DualBrain C99 compila para Xtensa: **1.336 B**
+
+La §1 decía *"eso ya no es un pendiente de hardware: es un pendiente de correr un comando"*. **El comando se corrió.**
+
+**Primero, lo que la §10 declaraba faltante y existía desde el 22-ago:**
+
+```
+$ ls -l /workspace/c/
+-rw-r--r-- 1 root root  9261 Aug 22 22:45 db_test.c      (238 lineas)
+-rw-r--r-- 1 root root  8328 Aug 22 22:38 dualbrain.c    (248 lineas)
+-rw-r--r-- 1 root root  4848 Aug 22 22:36 dualbrain.h    (109 lineas)  <- EXISTE
+-rw-r--r-- 1 root root 30029 Aug 22 22:45 payload.json   (los pesos)
+```
+
+La §10 decía *"falta el `.h`, los flags y el linkeo"*. **El `.h` estaba ahí.** Lo único que faltaba era **`-I.`**, porque el include es `<dualbrain.h>` con ángulos y no con comillas.
+
+**El número:**
+
+```
+$ xtensa-esp32-elf-gcc -std=c99 -Os -I. -c -o /tmp/db_os.o dualbrain.c
+COMPILA_OK_exit0
+$ xtensa-esp-elf-size /tmp/db_os.o
+   text    data     bss     dec     hex  filename
+   1336       0       0    1336     538  /tmp/db_os.o
+
+$ xtensa-esp32-elf-gcc -std=c99 -O2 -I. -c -o /tmp/db_o2.o dualbrain.c
+   1796       0       0    1796     704  /tmp/db_o2.o
+
+$ xtensa-esp32s3-elf-gcc -std=c99 -Os -I. -c -o /tmp/db_s3.o dualbrain.c
+   1336       0       0    1336     538  /tmp/db_s3.o
+
+$ xtensa-esp32-elf-gcc -std=c99 -Os -I. -c -o /tmp/dbtest.o db_test.c
+   3150       0       0    3150     c4e  /tmp/dbtest.o
+
+$ xtensa-esp-elf-size -t /tmp/db_os.o /tmp/dbtest.o
+   4486       0       0    4486    1186  (TOTALS)
+
+compilador: xtensa-esp-elf-gcc (crosstool-NG esp-16.1.0_20260609) 16.1.0
+md5: dualbrain.c  d0286c619de8f75b2a096c653e0bc161
+     dualbrain.h  14fdb6b445f04a838ac21c0ec3bb6ce7
+     db_test.c    43157c6d4651e2865ae0cc8d442943d1
+     payload.json e4f999263dfcd3c62b26a62d0e174454
+```
+
+**Los tres números que salen de acá:**
+
+1. **1.336 B de `.text` en el target real**, contra los **2.496 B de x86**: **1,87× más chico**. Es un número publicable y reemplaza al de x86.
+2. **`-Os` le gana a `-O2` por 460 B (34%).** La flag correcta queda medida, no supuesta.
+3. **ESP32 y ESP32-S3 dan el tamaño exacto igual** (1.336 B los dos).
+
+**Prueba de que el instrumento puede dar ROJO (W-01), sin la cual el 1.336 no vale:**
+
+```
+$ printf 'int x = "roto";\n' > /tmp/roto.c
+$ xtensa-esp32-elf-gcc -std=c99 -c -o /tmp/roto.o /tmp/roto.c
+/tmp/roto.c:1:9: error: initialization of 'int' from 'char *' makes integer
+                from pointer without a cast [-Wint-conversion]
+DIO_ROJO_OK
+```
+
+**LO QUE ESTO NO ES, y hay que decirlo antes de que alguien lo cite mal:** no se linkeó, no hay `.elf`, **no hay RAM medida en target** (los 704 B siguen siendo de x86) y **nada corrió en un ESP32**. Es **tamaño de código compilado**, no throughput: la cota de ~20 kSPS sigue derivada del conteo de MAC.
+
+### 13.2 🚨 El entregable del 30-ago **NO ESTÁ VERSIONADO**
+
+La §6 describe `repo/` como *"los 11 archivos staged del release que nunca se commiteó"*. **Uno de esos 11 es el erratum.**
+
+```
+$ get_file_contents docs/   (repo en main)
+[{"name":"agents","type":"dir"}]      <- docs/ tiene UN subdir y CERO archivos
+
+$ md5sum /workspace/repo/docs/ERRATUM.md
+2ae28606c28c140dc76cd3b8e6b3ab85   ·   125 lineas, 6862 B
+```
+
+**`docs/ERRATUM.md` no existe en git.** Vive únicamente en `/workspace/repo/docs/`, sin versionar, y **cuatro documentos afirman que ya está commiteado**. Es el umbral #1 del plan de 10 semanas y vence el **30-ago**.
+
+Los 11, enumerados:
+
+```
+repo/LICENSE                    repo/docs/ERRATUM.md   <- EL ENTREGABLE
+repo/README.md                  repo/docs/METHODS.md   (93 lineas,
+repo/src/analyze_nulls40.mjs                            md5 0c2f9bf2d4b9f6bcaaf6cbaad1bf08b9)
+repo/src/nulls40_structural.py  repo/results/dualbrain_bench.json
+repo/src/routing_hierarchy.mjs  repo/results/dualbrain_bench.log
+                                repo/results/nulls40.json
+                                repo/results/nulls40.log
+```
+
+**Rescatado verbatim** en `docs/agents/evidencia/2026-08-24-ERRATUM-md-verbatim-del-container.md` (resp 039). **Los otros 10 siguen sin versionar y sin leer.**
+
+### 13.3 CERRADO · `/workspace/mudh` **no es un clon**: worktree huérfano de PR 75
+
+La §6 y la §10 lo dejaban abierto. Medido:
+
+```
+$ head -c 200 /workspace/mudh/.git
+gitdir: /home/estudiante/MUDH-Mobile/.git/worktrees/pr75
+
+$ ls -d /home/estudiante/MUDH-Mobile
+ls: cannot access '/home/estudiante/MUDH-Mobile': No such file or directory
+
+$ command -v git
+GIT_NO_EXISTE
+```
+
+**El destino del gitfile no existe.** Los **499 archivos** de `/workspace/mudh` son un checkout **huérfano** de **PR 75**, sin repo padre y sin `git` para operarlo.
+
+**Consecuencia operativa, y es la que importa:** ese árbol **no es el estado de MUDH-Mobile**. No hay que leer su `AGENTS.md` ni su `BUILD_REPORT.md` como los vigentes, ni sacar conclusiones sobre los PRs **#64** y **#68** desde ahí: está parado en **otro PR** y no hay forma directa de saber en qué commit. **La §9 dice "`gradlew` está en `/workspace/mudh`": está, pero sobre un árbol huérfano.**
+
+### 13.4 CERRADO · los tres directorios "sin auditar" de la §6
+
+```
+$ ls -1 c        $ ls -1 gg              $ ls -1 tags
+db_test.c        __pycache__             (vacio)
+dualbrain.c      guards.py
+dualbrain.h      saturacion.json
+payload.json     t79.log
+                 t79.py
+                 test_guards.json
+                 test_guards.log
+                 test_guards.py
+```
+
+**`c/` es el C99 del ESP32** (§13.1). **`gg/` son los guards**, y ahí viven `guards.py` y `test_guards.log`, **los dos archivos que están en git**. **`tags/` está VACÍO.**
+
+### 13.5 CORRIGE la §12.7 · el cruce estaba hecho contra el directorio equivocado
+
+| | git | `/workspace` |
+|---|---|---|
+| `.py` | **6** (en `src/`) | **20** en la raíz, más subdirectorios |
+| `.log` | **3** en `results/` ← la §12.7 decía 2 | **45** en la raíz |
+| `.json` | 0 | **29** en la raíz |
+| `.mjs` | 0 | **78** en la raíz |
+
+Los 3 `.log` de git: `hm_sweep.log`, `motor_ltc_complejo.log`, `test_guards.log`.
+
+**Y el error de método:** `guards.py` es uno de los 6 `.py` de git y **no está en la raíz del container**:
+
+```
+$ find / -name 'guards.py' -not -path '*/node_modules/*'
+/usr/local/lib/python3.12/site-packages/torch/_dynamo/guards.py
+/workspace/gg/guards.py
+$ find / -name 'test_guards.log'
+/workspace/gg/test_guards.log
+```
+
+**Los 14 `.py` de la raíz que NO están en git:** `dualbrain_src.py` (20.122 B) · `esp32c.py` (40.175) · `hm_base.py` (10.971) · `n21.py` (57.157) · `nulls19.py` (12.346) · `nulls19b.py` (11.805) · `paper_db.py` (20.122) · `scriptR_v1_buggy.py` (10.381) · `tres_brazos.py` (17.805) · `cmp_db.py` (1.683) · `chkmap.py` (519) · `pchk.py` (478) · `synchk.py` (449) · `x.py` (212) · `_t.py` (64).
+
+**Archivos por directorio, medido:** `mudh` 499 · `kaggle` 61 · `bicam` 41 · `ab_cell` 16 · `repo` 11 · `gg` 10 · `ab_gate` 9 · `wbrazo` 5 · `brazos` 4 · `c` 4 · `tags` 0. **Total bajo `/workspace`: 999**, que confirma la §6 exacto.
+
+**Lo que el cruce CONFIRMÓ, y vale tanto como lo que corrigió:** los **8 md5** que afirman los contextos y los Docs se verifican **exactos**.
+
+```
+11591eb654eb719ae941aa524c1f59fd  ab_gate/ab_gate.py
+b829d49ca654ad1d48a2e92e0091e660  ab_cell/equiv.py
+4278bb8f27f2b0d8e43a26541629c7b8  ab_cell/ab_cell.py
+480539069ec00f317eec525e6fa81324  motor.py
+8a42246b54157cbee67fe99110a7be40  paper_db.py       <- la pareja byte-identica,
+8a42246b54157cbee67fe99110a7be40  dualbrain_src.py     confirmada, 20122 B c/u
+3d802fd542b5d18570ba1ba0bb0abed9  connectivity.parquet
+719904abad876c68ace1b5690c9b9b63  annotations.tsv
+```
+
+**El problema del corpus nunca fue la medición: es dónde vive el archivo.**
+
+### 13.6 Reglas 7 a 10 del entorno, y dos son guards propios que NO pueden dar rojo
+
+**7. En este `sh`, `$?` NO es un testigo válido.** Medido hoy:
+
+```
+dualbrain.c:8:10: fatal error: dualbrain.h: No such file or directory
+compilation terminated.
+exit=0                    <- FALSO. gcc fallo y echo "exit=$?" dijo cero.
+```
+
+**La vía que sí discrimina:** `if <cmd>; then echo OK; else echo FALLA; fi`. Todas las mediciones de §13.1 la usan.
+
+**8. Un `grep -c` que devuelve 0 es NO MEDIDO** hasta probar el patrón contra un positivo conocido. Medido hoy, sobre el erratum:
+
+```
+$ grep -c '1559\|1\.559' docs/ERRATUM.md
+0                    <- y de aca casi conclui "el 1.559 no esta en el archivo"
+$ grep -c '1,559' docs/ERRATUM.md
+2                    <- el archivo usa COMA DE MILES
+```
+
+El ítem 3 entero del erratum es sobre el 1,559× y mi instrumento dijo cero. Me salvó haber pedido el `cat` completo en la misma llamada.
+
+**9. `awk '{print $5, $9}'` falla** en este shell (`syntax error at or near ,`). Usar Python, o `ls -l` crudo.
+
+**10. `for f in *.py; do s=\`wc -c < $f\`; done` falla** con `cannot open : No such file`. La sustitución de comandos con backticks dentro del `for` no sobrevive al wrapper. **Confirma la regla 4:** escribir el script con `printf '%s\n'` a un archivo y correrlo con `python3`.
+
+### 13.7 NO MEDIDO de esta ampliación
+
+- **No leí `repo/docs/METHODS.md`** (93 líneas) ni `repo/README.md` ni `repo/LICENSE`, y el ítem 4 del erratum cambia la licencia.
+- **No linkeé el firmware**, no hay `.elf`, **no medí RAM en target**, y nada corrió en un ESP32 real (`adb devices` vacío).
+- **No toqué `gradlew`.** Sigue siendo decisión de Abraham, y ahora además se sabe que el árbol es huérfano.
+- **No resolví cuál de los dos NDK 28.2 usar** (§12.5 sigue abierta), ni probé el emulador headless (§12.4).
+- **No auditué `/workspace/kaggle`** (61 archivos) ni **`/workspace/bicam`** (41).
+- **`/workspace/mudh`: no sé en qué commit está** el checkout de PR 75, y sin `git` no hay vía directa.
+- **No re-verifiqué el toolchain del ESP32 desde cero:** usé lo que la §1 midió a las 12:06 más las compilaciones nuevas de §13.1.
+- **`seq-think` sigue sin probarse. QUINTA declaración.**
+
+```
+--- METODO TITAN ---
+Accion delicada: SI. Sobrescritura de un archivo de contexto existente en main.
+                 Mitigacion: se leyo el archivo COMPLETO antes de escribir, se
+                 paso el sha 8fa44e58ec0b3a927a7516a782c53f90eb72f0ff para que
+                 un cambio concurrente aborte la escritura, y las secciones 0 a
+                 12 se reprodujeron sin editar una linea de su contenido. Lo
+                 unico agregado fuera de la 13 son cuatro punteros "-> ver 13.x"
+                 en las secciones 1, 6, 8, 10, 11 y 12.7, que no alteran ningun
+                 dato medido.
+                 En el container se escribio SOLO en /tmp (inv.py, roto.c y
+                 cuatro .o). Nada bajo /workspace fue creado, movido ni borrado.
+                 gradlew NO se ejecuto.
+Modo aplicado:   TITAN FULL
+Rubrica:         45/45 -> 100/100, emitida en la respuesta 039.
+N/A declarados:  45 pts (Ejecutabilidad, Seguridad, Testing, DevOps: es
+                 peritaje, no codigo de produccion nuevo)
+Review externo:  el falsador fue Abraham, y su reproche era estructural: las
+                 tres respuestas anteriores midieron dos lados de tres. El
+                 hallazgo de 13.2 solo aparece cruzando los tres y era
+                 invisible desde git o desde los Docs por separado.
+Instrumento:     gateway build.run sobre brain-env, 6 llamadas. Evidencia cruda
+                 verbatim en 13.1 a 13.6 sin recortar.
+                 xtensa-esp-elf-gcc (crosstool-NG esp-16.1.0_20260609) 16.1.0:
+                 COMPILA_OK_exit0 sobre dualbrain.c y db_test.c, DIO_ROJO_OK
+                 sobre codigo roto a proposito. Los cuatro .o son recomputables
+                 desde los md5 de las fuentes, publicados en 13.1.
+                 ADVERTENCIA: dos guards propios dieron falso verde en este
+                 mismo turno, documentados en 13.6 reglas 7 y 8.
+                 NO MEDIDO: seccion 13.7.
 ```
