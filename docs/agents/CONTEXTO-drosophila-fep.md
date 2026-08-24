@@ -1,8 +1,8 @@
 # CONTEXTO VIVO · conectoma / FEP / papers
 
-**Última actualización:** 2026-08-24 13:45 (America/Buenos_Aires) · **Se sobreescribe, no se acumula.**
+**Última actualización:** 2026-08-24 14:18 (America/Buenos_Aires) · **Se sobreescribe, no se acumula.**
 
-Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`. Hermano: `CONTEXTO-motor.md`. Índice de Docs: `INDICE-REAL-POR-ENUMERACION.md` (**parcial, 46 de ~65**). Entorno: `CONTEXTO-ENTORNO.md`.
+Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`. Hermano: `CONTEXTO-motor.md`. Índice de Docs: `INDICE-REAL-POR-ENUMERACION.md` (**parcial, 46 de ~65**). Entorno: `CONTEXTO-ENTORNO.md` §13.
 
 ---
 
@@ -38,7 +38,13 @@ Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00
 
 **El título real del Paper 1 termina en «Non-Trivial Temporal Amplification»**, no en «Temporal Amplification Under Dynamics Without Algorithmic Weight Optimization», que es el título que usa el borrador del erratum. Hay que corregirlo ahí.
 
-**El producto en tres capas (doc `6117`):** (1) la **fuente de calibración** = el conectoma medido y sus priors · (2) el **motor** = de 15M aristas a 704 B · (3) **la biblioteca = el activo**, la hoja de datos de los 74xx, hoy con **un** motivo. **No se vende como «derivado del cerebro de la mosca»: se venden microsegundos, miliwatts y BOM.** El conectoma es el currículum, no el pitch.
+**El producto en tres capas (doc `6117`):**
+
+1. la **fuente de calibración** = el conectoma medido y sus priors
+2. el **motor** = de **15M aristas** a **1.336 B de código medidos en ESP32** y **704 B de RAM todavía medidos solo en x86**
+3. **la biblioteca = el activo**, la hoja de datos de los 74xx, hoy con **un** motivo
+
+**No se vende como «derivado del cerebro de la mosca»: se venden microsegundos, miliwatts y BOM.** El conectoma es el currículum, no el pitch.
 
 **El arranque de esta línea es el 21-ago**, cuando llegó el PDF publicado (doc `5077`).
 
@@ -79,6 +85,7 @@ Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00
 | **RDI dinámico** | **z = 197.** Es el resultado **más fuerte** del expediente | doc `5977`, 100/100 |
 | **Replicación cruzada JS/Python** | 46,88× vs 47,27×; el 0,8% lo explica la convención de swaps. **La evidencia viaja byte-idéntica** | doc `5977` |
 | **Priors medidos, listos para exportar** | peso **lognormal(0,7034 , 0,8883)** · `inh_frac` por super_class de **0,068** a **0,513** · grado entrante **CV 1,469** (máx 10.356) · fuerza **CV 2,402** (máx 69.948) · **tabla de 95 pares de bloques** | doc `6057` |
+| **C99 embebido en target real** | **1.336 B de `.text` a `-Os`** en ESP32/ESP32-S3, medido sobre `c/dualbrain.c` | `xtensa-esp32-elf-gcc` 16.1.0 + `xtensa-esp-elf-size`, resp 039 |
 
 ---
 
@@ -88,7 +95,7 @@ Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00
 |---|---|
 | **«jerarquía de ruteo: 991× corregido a 283,2×, y listo»** | **🚨 NO TESTEABLE contra el null fuerte (doc `6057`).** Las 8 clases dan `sd = 0,0` **exacto** y `ratio_CP = 1,000×`, 40/40. Es **cantidad conservada** bajo CP: el null baraja destinos dentro de bloques definidos por super_class, y el grupo MOTOR **está definido por la misma super_class**. El conteo no puede cambiar ni en una arista. **El 283,2× es contra grado preservado; contra modularidad es inmedible.** Idem `sensory→KC` y `MBON→motor`. **22,2 min de cuota para medir nada.** Arreglo: null de **tripartición** (sensorial/interno/motor) |
 | **«el desfasaje de un paso explica la discrepancia a t=60»** (mío) | **REFUTADO por lectura del código (doc `6017`):** `res[t] = h.copy()` va **después** del update en los dos loops. **No hay desfasaje.** La causa real eran **dos métricas con el mismo nombre** (3 vs 6 pares). **Y la hipótesis refutada sigue escrita en el `docs/ERRATUM.md` público** |
-| **«el erratum está listo para subir a Zenodo»** | **E3 corrige una «Table 7» con columna Ratio y 1.559× que NO existen en el PDF publicado.** ⚠️ **Contradicción abierta:** el doc `6117` dice que el erratum está escrito y commiteado con 7 puntos y que **falta un solo dato (los dos DOI)**. Los dos no pueden ser ciertos. **Abrir `docs/ERRATUM.md` y compararlo con el PDF: es lectura, no cómputo** |
+| **«el erratum está listo para subir a Zenodo»** | **REFUTADO en su forma fuerte por el cruce de la resp 039:** `docs/ERRATUM.md` **no existe en git**. Vive solo en `/workspace/repo/`, el release de 11 archivos que nunca se commiteó. Y además hay **tres textos de erratum incompatibles**: el de 5 ítems del container, el E1-E8 del doc `5157`, y el de 7 puntos del doc `6117`. El bloqueo de «Table 7 con Ratio» **no aplica al archivo real del container**: ese texto **no tiene** Table 7, ni Ratio, ni E7, ni corchetes sin rellenar. Su defecto real es otro: publica **338,8×** (null débil) en vez de **20,59×** (null fuerte) para reciprocidad |
 | «el Paper 1 evita la densidad contaminada» | falso: §2.1 dice `Density = 0.0074` y el Abstract dice 36× |
 | «el Paper 1 cita mal a Barsotti» | §1.2 cita **Betzel** correctamente. Sin confirmar en la bibliografía |
 | «el guard de tautología es aporte propio» | §2.4 del paper ya lo declara y lo deriva |
@@ -114,8 +121,8 @@ Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00
 
 ## 5. NO MEDIDO / pendiente, declarado
 
-1. **`docs/ERRATUM.md` no se abrió.** Ahí vive la contradicción de §4 y la hipótesis refutada del desfasaje. **Es la lectura más barata y más urgente que queda.**
-2. **Conclusiones, bibliografía y Material Suplementario del PDF del Paper 1:** la extracción se cortó en §5.
+1. **`docs/ERRATUM.md` sigue sin existir en git.** El texto de 125 líneas fue **rescatado como evidencia** en `docs/agents/evidencia/2026-08-24-ERRATUM-md-verbatim-del-container.md`, pero **no** canonizado. Y los otros 10 archivos del release (`README.md`, `METHODS.md`, `LICENSE`, 3 `src`, 4 `results`) siguen sin versionar.
+2. **No leí `repo/docs/METHODS.md`** (93 líneas, md5 `0c2f9bf2d4b9f6bcaaf6cbaad1bf08b9`), que el erratum ítem 5 cita para la deriva del TSV. Tampoco `repo/README.md` ni `repo/LICENSE`, y el erratum ítem 4 cambia la licencia.
 3. **De dónde sale el DOI `10.5281/zenodo.19136948`:** no está en el PDF (que lleva `XXXXXXX` literal) y **el repo da 404** (doc `5077`).
 4. Los adjuntos 1, 3 y 7 (patente, Script R, PDF de Gemini de 101 pág.) no se localizaron por nombre. **No se afirma que no estén.**
 5. Los HTML de Arena devuelven markup de página, no conversación.
@@ -126,20 +133,21 @@ Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00
 10. **Faltan 21 nulls** para que el test global de los 12 pares llegue a `p<0,05`. Hoy el real sale **1º de 20 (0/19)** pero el piso a dos colas con 19 nulls es **0,10**, y la dirección es post-hoc. **~30 min** (doc `5957`).
 11. **El barrido de Docs está al 71%:** 46 de ~65. **9 IDs pendientes en la zona del conectoma** (`6157 6177 6197 6217 6237 6257 6277 6317 6337`), ~15 en icca-engine, ~50 sin barrer entre `3637` y `4717`, MUDH/AURA del 14-ago sin tocar. **22 de los 32 de la zona D están identificados por TÍTULO, no por lectura.** Los docs `6057` y `6077` llegaron **truncados**.
 12. **Las fechas de ARC del §0 no las verifiqué yo:** vienen del `6117`. **Un deadline de premio se re-verifica antes de planificar sobre él.**
+13. **El C99 embebido está medido a medias:** hay **1.336 B de `.text` en target**, pero **no hay `.elf`, no hay RAM en target**, no hay linkeo y no corrió en hardware.
 
 ---
 
 ## 6. Decisiones esperando a Abraham
 
-1. **🚨 Subir el erratum a Zenodo antes del 30-ago.** Es el umbral #1 de los cuatro. Falta: los dos DOI (versión y concepto), que son dato tuyo. **Criterio de aborto del propio plan: si el PDF publicado difiere del borrador en más de dos números, PARAR y re-auditar. Un erratum con un error es peor que no tener erratum.**
-2. **⭐ El `README.md` público tiene la clasificación equivocada** (doc `5977`): el `temporal RDI` (`z=197`, el más fuerte) figura como **frágil** en un repo que va a citar un preprint con DOI.
-3. **⭐ El `docs/ERRATUM.md` público tiene mi hipótesis del desfasaje escrita como explicación probable, y está REFUTADA** (doc `6017`). Decime y la reemplazo por lo medido.
+1. **🚨 Elegir cuál de los TRES erratums es el canónico** y subirlo a Zenodo antes del 30-ago. Hoy existen: (a) el de **5 ítems** del container, (b) el **E1-E8** del doc `5157`, y (c) el de **7 puntos** del doc `6117`. **No es una edición menor: es una decisión editorial.**
+2. **Los dos DOI** (versión y concepto), que son dato tuyo. Sin eso no se sube.
+3. **⭐ El `README.md` público tiene la clasificación equivocada** (doc `5977`): el `temporal RDI` (`z=197`, el más fuerte) figura como **frágil** en un repo que va a citar un preprint con DOI.
 4. **⭐ Los bugs del Script R viven DENTRO del verificador V-K** que el manuscrito cita como garantía de reproducibilidad (doc `5637`, **14 citas con número de línea**). `normalize_global_spectral` cae en silencio a Frobenius con el mismo nombre → el `SR = 0.990000` exacto es **la cota, no el autovalor**. `entropy_kde` devuelve `0.0000` en vez de `nan`. **Se arreglan en el V-K, no en el R.** Parchear antes de publicar, o publicar declarando la limitación.
 5. **Los tres corchetes del erratum `5157`:** están sin rellenar **a propósito** y necesitan **una corrida tuya**. Sin ellos la v2 no se publica.
 6. **Buscar el script de la Tabla 7 donde sea que esté.** Si aparece, se corre contra los nulls en una hora y el E7 pasa a ser reproducción de verdad. Si no aparece, **es un resultado no reproducible y hay que decirlo en Limitaciones**, porque un revisor con el parquet llega a la misma pared.
 7. **Mergear el PR #1**, o decir qué le falta. 13 archivos, y el review automático sin hallazgos es **NO MEDIDO, no aprobación**.
 8. **El barrido: ¿sigo con los 9 IDs del conectoma (lotes 2 y 3) o abro las otras zonas?** La pregunta original es de la resp 031, se perdió en un corte de instancia, y el lote 1 ya cerró.
-9. Subir los 7 `.py` que quedan del container, y los 4 JSON de evidencia (deuda W-01).
+9. **Subir los 7 `.py` que quedan del container, los 4 JSON de evidencia y los 11 archivos del release `repo/`** (deuda W-01). El release contiene el entregable del 30-ago y hoy **no existe en git**.
 10. El **clip de la config (e)**: subirlo y re-correr. Si diverge, también es resultado.
 11. Org `Mendieta-Architect` o aceptar la URL `gatehot59-star` en el erratum.
 
@@ -153,7 +161,7 @@ Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00
 - **Python 3.12.14, Node 24.18.0, R 4.5.3** sí están.
 - **Los adjuntos PDF del workspace SÍ se leen.** Los HTML de Arena, no. Y varios están **duplicados**.
 - **Los Docs del workspace son ENUMERABLES:** IDs de página secuenciales, **paso 20**, prefijo `2kza6fw5-`, cargables por ID sin que Abraham pegue nada. **No existe herramienta de «listar docs»: el enumerador es el propio espacio de IDs.** Límite medido: **5 Docs completos no entran en una ventana** (con uno grande adentro es 4 + 1). → `INDICE-REAL-POR-ENUMERACION.md`.
-- **El resto del entorno se re-mide, no se recuerda:** `CONTEXTO-ENTORNO.md`, §12 al 24-ago 12:15.
+- **El resto del entorno se re-mide, no se recuerda:** `CONTEXTO-ENTORNO.md`, §13. Ahí vive medido que el DualBrain C99 da **1.336 B de `.text` en ESP32**, que `/workspace/mudh` es un **worktree huérfano** y que el erratum del deadline **no existe en git**.
 
 ---
 
@@ -166,3 +174,5 @@ Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00
 **3 · Una explicación que encaja no es una explicación medida.** Escribí «desfasaje de un paso» en un documento destinado a una publicación con DOI **sin leer el código que estaba explicando**, y el código estaba en el container desde el día anterior: leerlo costó dos llamadas. **Cuando una discrepancia numérica tiene una explicación elegante, buscar el código antes de escribirla** (doc `6017`).
 
 **4 · Un archivo que no abrí en este turno no recibe veredicto de vigencia.** «Sigue vigente» es una medición, no un default. Si no lo leí, el estado es **NO MEDIDO** (resp 037).
+
+**5 · El entregable con deadline en 6 días vivía solo en `/workspace/repo/` y cuatro textos lo daban por versionado.** El problema del corpus nunca fue la medición: fue **dónde vivía el archivo**. Lo que no está commiteado no existe para quien mira git, y lo que no está en git se va a perder justo cuando más falta hace (resp 039).

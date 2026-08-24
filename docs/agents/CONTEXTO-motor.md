@@ -1,8 +1,8 @@
 # CONTEXTO VIVO · motor / DualBrain / línea embebida
 
-**Última actualización:** 2026-08-24 13:45 (America/Buenos_Aires) · **Se sobreescribe, no se acumula.**
+**Última actualización:** 2026-08-24 14:18 (America/Buenos_Aires) · **Se sobreescribe, no se acumula.**
 
-Protocolo: `00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`. Hermano: `CONTEXTO-drosophila-fep.md` (**leer su §0: hay un plan con fechas y la primera vence el 30-ago**). Entorno **medido**: `CONTEXTO-ENTORNO.md`, §12 al 24-ago 12:15.
+Protocolo: `00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`. Hermano: `CONTEXTO-drosophila-fep.md` (**leer su §0: hay un plan con fechas y la primera vence el 30-ago**). Entorno **medido**: `CONTEXTO-ENTORNO.md`, §13 al 24-ago 14:05.
 
 **Por qué este archivo existe aparte:** el motor es el activo monetizable y se lo trató como apéndice de los papers durante 24 h. Los papers son el test suite del motor, no al revés.
 
@@ -40,7 +40,36 @@ Se midió, brazo por brazo, **qué cambió de verdad** entre el `DualBrain` de B
 |---|---|---|---|
 | **SparseLTC** | `src/motor.py` (702 líneas, md5 `480539069ec00f317eec525e6fa81324`), `src/scriptR.py` | 138.639 neuronas reales, τ por neurona, esparsa | **NO. Cero torch, cero Adam, cero backward** |
 | **`LiquidCell` denso** | `src/hm_sweep.py`, `tres_brazos.py`, brazo W, `ab_gate.py`, `ab_cell.py` | 8 unidades, densa, Adam | Sí |
-| **DualBrain embebido** | `esp32c.py`, C99 | **704 B de RAM**, dos vías + gate | Vía lenta sí, vía rápida no |
+| **DualBrain embebido** | `esp32c.py` genera C99 (`c/dualbrain.c`, `c/dualbrain.h`) | **704 B de RAM en x86** · **1.336 B de `.text` en ESP32/ESP32-S3 a `-Os`**, medido · dos vías + gate | Vía lenta sí, vía rápida no |
+
+**Número nuevo, y ya no es "pendiente de hardware":**
+
+```
+xtensa-esp32-elf-gcc -std=c99 -Os -I. -c dualbrain.c  ->  COMPILA_OK_exit0
+xtensa-esp-elf-size /tmp/db_os.o
+  text data bss dec hex
+  1336    0   0 1336 538
+
+xtensa-esp32-elf-gcc -std=c99 -O2 -I. -c dualbrain.c  ->  1796 B
+xtensa-esp32s3-elf-gcc -std=c99 -Os -I. -c dualbrain.c -> 1336 B exactos
+```
+
+**Consecuencias medibles:**
+
+- El código en el target real es **1,87× más chico** que los **2.496 B** medidos con gcc de x86.
+- **`-Os` le gana a `-O2` por 460 B (34%)**. La flag correcta deja de ser supuesto.
+- **ESP32 y ESP32-S3 dan el mismo tamaño exacto** para este objeto.
+- El `.h` que `CONTEXTO-ENTORNO.md` §10 declaraba faltante **existía desde el 22-ago**. Lo único que faltaba era `-I.` porque el include usa `<dualbrain.h>`.
+
+**Lo que este número NO es:** no hay `.elf`, no hay linkeo, no hay **RAM en target** medida todavía, y **704 B** sigue siendo el número de x86. El throughput sigue derivado del conteo de MAC: **no corrió en hardware**.
+
+**Prueba de que el instrumento puede dar ROJO (W-01):**
+
+```
+printf 'int x = "roto";\n' > /tmp/roto.c
+xtensa-esp32-elf-gcc -std=c99 -c /tmp/roto.c
+  -> error de int-conversion, DIO_ROJO_OK
+```
 
 **Consecuencia grave:** el brazo W congela una submatriz de 26 nodos dentro del motor **denso**, no dentro de SparseLTC, y **no congela τ**. Su veredicto «0/4, se retira la analogía del 96% fijo» **no refuta la hipótesis: nunca la testeó.** Estado correcto: **NO MEDIDO**.
 
@@ -74,6 +103,7 @@ z ← (1−τ)·z + τ·f(Wᵗz + s)
 | Gate multiplicativo | ayuda en **4 de 4** tareas | tres brazos |
 | Óptimo interior de reparto react/memoria | h_m=10 / h_r=22 → **1,18× sobre LSTM**; el 4,05× publicado es el **peor punto** de la curva. Mejora 3,44×, Welch `p = 8,59×10⁻¹⁰` | `results/hm_sweep.log`, 10 semillas por punto |
 | Escape compilado | ganancia **40×** vs detector vecino no cableado (LC4+LPLC2 = 0,704 · LC6 = 0,017) | motor propio |
+| **DualBrain C99 en target real** | **1.336 B de `.text` a `-Os`** en ESP32/ESP32-S3 · `-O2` da 1.796 B | `xtensa-esp32-elf-gcc` 16.1.0 + `xtensa-esp-elf-size`, resp 039 |
 
 **⚠️ Y uno que estaba mal listado acá hasta el 24-ago 13:45:** *«el brazo más congelado (42,5% entrenable) le gana a un modelo 100% entrenado sin estructura por 3,2× a 35×, 4/4 tareas»*. **El doc `6137` lo declara INDICATIVO, NO concluyente:** los números de `DualNoGate` vienen de **otra corrida**, con `h_r=30 h_m=5` en vez de `26/8`. Es comparación **entre corridas**. El fix es un cuarto brazo `D` en el mismo kernel, **~25 min de CPU**, y convierte una comparación sugestiva en una medición limpia. **Hasta entonces no se cita como resultado.**
 
@@ -103,7 +133,7 @@ z ← (1−τ)·z + τ·f(Wᵗz + s)
 
 ## 5. El producto, en una línea
 
-**Que el motor deje de necesitar entrenamiento para funcionar.** Topología cableada de fábrica: vía rápida por estructura (reflejo, sin memoria), vía lenta con τ heterogénea acumulando contexto, gate decidiendo cuál manda. Funciona **el primer día, sin dataset**, en 704 B.
+**Que el motor deje de necesitar entrenamiento para funcionar.** Topología cableada de fábrica: vía rápida por estructura (reflejo, sin memoria), vía lenta con τ heterogénea acumulando contexto, gate decidiendo cuál manda. Funciona **el primer día, sin dataset**, con **1.336 B de código medidos en ESP32** y **704 B de RAM todavía medidos solo en x86**.
 
 - **Es cedible:** un motor con pesos entrenados necesita quien sepa entrenarlo; uno cuya vía rápida es estructura necesita un compilador y una tabla de priors. Lo mantiene un aprendiz.
 - **Escala por unidades, no por parámetros.** Lo que hay que escalar es **el compilador**.
@@ -135,7 +165,7 @@ z ← (1−τ)·z + τ·f(Wᵗz + s)
 9. **7 de los 17 `.py` siguen fuera de git.** Orden pendiente en `respuestas/2026-08-23-006`.
 10. **Nada de las 4 tareas del benchmark se probó sobre señal real.** Son sintéticas. El barrido de Bode sigue pendiente.
 11. **Resuelto:** el duplicado `paper_db.py` / `dualbrain_src.py` es **copia byte-idéntica** (md5 `8a42246b54157cbee67fe99110a7be40`). No son dos instrumentos.
-12. **Línea embebida, desbloqueada y sin usar:** `xtensa-esp32-elf-gcc 16.1.0` **compila** (exit=0), medido a las 12:15. El cruce al ESP32 no está bloqueado por el entorno. **Nadie lo cruzó todavía.**
+12. **Línea embebida, desbloqueada y medida a medias:** `xtensa-esp32-elf-gcc 16.1.0` **compila** (exit=0), y el C99 real da **1.336 B de `.text` en target**. **Nadie lo linkeó ni lo corrió todavía.** La RAM en target sigue sin medir.
 13. **Motivos nuevos para la biblioteca: cero avance.** Hacen falta ≥ 3 con 0/40 y hay **1**. Candidatos con inhibición: lateral del cuerpo fungiforme (APL), coordinación del complejo central. **Aborto del plan: si en su semana no hay al menos dos con 0/40, P3 sale de las 10 semanas.**
 
 ---
@@ -154,4 +184,6 @@ z ← (1−τ)·z + τ·f(Wᵗz + s)
 2. **Antes de lanzar un brazo de control, escribir en una línea qué afirmación exacta cambia según su resultado.** Si la afirmación no menciona la propiedad que el brazo manipula, el brazo está mal armado. La afirmación decía «cableado» y el brazo manipulaba «entrenado sí/no»: **se veía en una lectura y costó 69,8 minutos de cuota**.
 3. **Si `sd(null) == 0`, el null conserva la cantidad y el test no puede fallar.** Reportar **NO TESTEABLE**, no `1,000×`. Cuatro líneas, 22,2 minutos ahorrados.
 4. **Este archivo estuvo una hora vencido** (resp 036) y además citaba un resultado **cross-run como si fuera concluyente** hasta la resp 038. La acumulación se actualiza sola; el estado vivo no.
-5. El polling de logs con `sleep 45-58` funciona; el timeout del gateway está entre 45 y 75 s. `ps` no existe: liveness con `grep -al <patrón> /proc/[0-9]*/cmdline`.
+5. **En este shell, `echo "$?"` dio `exit=0` sobre una compilación fallida.** El guard válido es `if <cmd>; then ... else ... fi` (resp 039).
+6. **El `.h` no faltaba: faltaba leer el include.** La medición vieja declaró una ausencia que se cerraba con `ls -l c/` y una lectura de línea 8 (`#include <dualbrain.h>`). Otro caso de sujeto equivocado.
+7. El polling de logs con `sleep 45-58` funciona; el timeout del gateway está entre 45 y 75 s. `ps` no existe: liveness con `grep -al <patrón> /proc/[0-9]*/cmdline`.
