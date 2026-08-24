@@ -1,0 +1,25 @@
+########## T6 EL TARGET IMPOSIBLE DE energy ##########
+     energy_est = sigmoid(.) vive en (0,1) ABIERTO
+     pero el env deja que energy sea NEGATIVA
+     pasos=2545  energy en [-0.1340, 1.0000]  negativos=5
+  OK    el_env_SI_produce_energy_negativa: 5 de 2545 pasos (0.196 por ciento)
+
+     Cuanto puede acercarse una sigmoid al target mas negativo?
+     logit=   0.0  sigmoid=5.000e-01  error_al_target=0.634000
+     logit=  -5.0  sigmoid=6.693e-03  error_al_target=0.140693
+     logit= -10.0  sigmoid=4.540e-05  error_al_target=0.134045
+     logit= -20.0  sigmoid=2.061e-09  error_al_target=0.134000
+     logit= -40.0  sigmoid=4.248e-18  error_al_target=0.134000
+     error MINIMO alcanzable = 0.134000 y solo en el limite logit -> -inf
+  OK    el_target_negativo_es_INALCANZABLE: target=-0.1340 y sigmoid es siempre > 0: el error nunca llega a cero
+
+     CONSECUENCIA MEDIDA: la MSE empuja el logit a -inf en esos pasos.
+     Y alpha = energy_est, asi que alpha -> 0 y veto_shift -> -2.0,
+     o sea factor sobre el std = exp(-2) = 0.1353
+     El caso donde el veto MAS deberia apretar es el que rompe el estimador.
+
+     FIX correcto: clampear el target a [0,1] o usar energy normalizada.
+     p1 de energy = 0.0409   fraccion negativa = 0.196 por ciento
+
+TESTS EN ROJO: 0
+FINENERGY

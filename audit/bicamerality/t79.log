@@ -1,0 +1,34 @@
+########## T7 LA SATURACION QUE scriptR.py NO REPORTA ##########
+     config          modalidad     max_abs_h60   clip   veredicto_del_script
+     a_col099       visual        0.9575       2.0    ok
+     a_col099       olfactory     0.9495       2.0    ok
+     a_col099       mechanosensory0.9379       2.0    ok
+     b_row099       visual        0.9982       2.0    ok
+     b_row099       olfactory     0.9982       2.0    ok
+     b_row099       mechanosensory0.9982       2.0    ok
+     c_col101       visual        0.9591       5.0    ok
+     c_col101       olfactory     0.9513       5.0    ok
+     c_col101       mechanosensory0.9395       5.0    ok
+     d_global099    visual        0.7664       2.0    ok
+     d_global099    olfactory     0.9976       2.0    ok
+     d_global099    mechanosensory0.8345       2.0    ok
+     e_col099_lin   visual        2.0000       2.0    SATURADO y reporta diverged=False
+     e_col099_lin   olfactory     2.0000       2.0    SATURADO y reporta diverged=False
+     e_col099_lin   mechanosensory1.9600       2.0    ok
+
+     celdas pegadas al clip: 2 de 15
+     el guard del script con clip=2.0: CODIGO MUERTO
+     o sea que 2 celdas saturadas se reportaron como sanas.
+
+########## T8 INTEGRACION: guards.py dentro del codigo real ##########
+    [    integr s1] 1,174p -> R=   1.1 g:0.47->0.47 a:0.56  [4s]
+     guards.py sobre PureMemory:
+       energy   {'usada': 0, 'no_testeable': 12, 'frac_no_testeable': 1.0, 'verdict': 'NO_MEDIDO'}
+       veto     {'depende_de': ['energy'], 'habilitado_en_el_ultimo_lote': False}
+     coincide con el AUX_GUARD ad-hoc del parche: energy NO TESTEABLE en todos los lotes
+
+########## T9 EL PRESUPUESTO, RESUELTO ##########
+     H_order=24  Principia=1174  Dual=1084  P/D=1.0830
+     H_order=23  Principia=1117  Dual=1084  P/D=1.0304  <-- dentro de 5 por ciento
+     H_order=22  Principia=1062  Dual=1084  P/D=0.9797  <-- dentro de 5 por ciento
+FINT79

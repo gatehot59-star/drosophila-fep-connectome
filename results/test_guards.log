@@ -1,0 +1,48 @@
+########## T0 CONTROL DEL CONTROL ##########
+  OK    un_umbral_ALCANZABLE_pasa: 0.5 contra cota 1.0 no levanta nada, o sea que el guard distingue
+  OK    un_umbral_INALCANZABLE_se_rechaza: 1.5 contra cota 1.0 levanta ReachabilityError
+
+########## T1 CASO REAL: src/scriptR.py:88-90 del PROYECTO ##########
+     el codigo hace np.clip(h,-clip,clip) y despues if mx > 1e6
+     clip=2.0  umbral=1e6  ->  CODIGO MUERTO
+  OK    scriptR_guard_divergencia_clip_2.0: con clip=2.0 la condicion mx>1e6 es inalcanzable
+     clip=5.0  umbral=1e6  ->  CODIGO MUERTO
+  OK    scriptR_guard_divergencia_clip_5.0: con clip=5.0 la condicion mx>1e6 es inalcanzable
+
+########## T2 CASO REAL: BICAMERALITY max_norm ##########
+     H=8  max_norm=3.0000  cota=2.8284  ->  CODIGO MUERTO
+     H=8  max_norm=2.7436  cota=2.8284  ->  alcanzable
+     H=10  max_norm=3.0000  cota=3.1623  ->  alcanzable
+  OK    bicam_H8_max_norm_3_es_muerto: cota sqrt(8)=2.8284 < 3.0, reproducido por el modulo
+  OK    la_cota_coincide_con_la_medicion: sqrt(8)=2.828427 y la norma medida con estimulo x100 fue 2.828427
+
+########## T3 guarded_ratio ES FAIL-CLOSED ##########
+  OK    null_sin_varianza_da_NO_MEDIDO: el null conserva esta cantidad (sd=0)
+  OK    y_NO_expone_la_clave_ratio: claves: ['n', 'name', 'null_mean', 'null_sd', 'real', 'reason', 'verdict']
+  OK    un_consumidor_que_lea_ratio_EXPLOTA: KeyError en vez de un 1.000x falso: es fail-closed
+  OK    null_con_varianza_SI_da_ratio: ratio=2.0000  p_floor=0.4000
+
+########## T4 LA PROPAGACION AL CONSUMIDOR ##########
+     replica de PureMemory: energy constante 1.0, danger constante 0.0
+     energy   usada=0  NO_TESTEABLE=56
+     danger   usada=0  NO_TESTEABLE=56
+     veto habilitado = False
+  OK    el_termino_se_excluye: 0 de 56 lotes usados
+  OK    Y_EL_CONSUMIDOR_SE_APAGA: esto es lo que faltaba: el brazo B lo tenia prendido y quedo PEOR que no hacer nada
+  OK    la_amigdala_tambien_se_apaga: danger constante 0.0 en 56 de 56 lotes
+
+     replica de SurvivalWorld: energy varia, danger 2.8 por ciento
+     energy   usada=36  NO_TESTEABLE=0
+     danger   usada=15  NO_TESTEABLE=21
+  OK    en_SurvivalWorld_energy_SI_se_usa: 36 de 36 lotes: el guard NO apaga lo que informa
+  OK    en_SurvivalWorld_danger_se_usa_a_veces: 15 de 36: con 2.8 por ciento de positivos hay lotes enteros sin evento
+  OK    el_veto_queda_HABILITADO_ahi: energy informa en el ultimo lote
+
+########## T5 FAIL-CLOSED DEL REGISTRO ##########
+  OK    observar_sin_registrar_EXPLOTA: sin declarar consumidores no hay propagacion, asi que se prohibe
+  OK    un_consumidor_sin_observacion_esta_APAGADO: fail-closed: no observado se trata como no informativo, no como informativo
+
+==============================================================
+TESTS EN ROJO: 0
+==============================================================
+FINGUARDS
