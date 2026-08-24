@@ -17,6 +17,26 @@ not. Item 2 makes the motor-access result stronger and more specific.
 
 ---
 
+## Reference works cited throughout this erratum
+
+Stated once, in full, because two companion papers published in the same issue of the same
+journal are easy to conflate and this erratum corrects figures against both:
+
+- **Dorkenwald, S., Matsliah, A., et al. and the FlyWire Consortium (2024).** *Neuronal
+  wiring diagram of an adult brain.* **Nature 634, 124–138.** The data paper: the
+  connectome itself, 139,255 proofread neurons, and the source of the figure of **12.6
+  synapses per connection**.
+- **Lin, A., Yang, R., et al. (2024).** *Network statistics of the whole-brain connectome
+  of Drosophila.* **Nature 634, 153–165.** The network-analysis paper: the source of the
+  **connection probability 0.000161** and the **connection reciprocity 0.138**, both
+  measured on the v630 snapshot under a five-synapse threshold.
+
+**v1.0 cites the first and does not cite the second.** Since Lin et al. is the
+network-analysis paper for the same connectome, and this work is a network analysis of
+that connectome, the omission is corrected: both are cited in v2.0.
+
+---
+
 ## 1. Graph density, its cause, and everything normalised by it
 
 Section 2.1 of v1.0 reports `Density = 0.0074`. This value is incorrect. The correct
@@ -179,6 +199,19 @@ The quotient against a uniform density expectation is reported for continuity on
 Quotients against uniform density are the weakest of the three comparisons available and
 should not have been the headline figure.
 
+**A further qualification, and it is not a consequence of the density error.** Lin et al.
+(2024) report reciprocity and clustering coefficients for five connectomes side by side
+(this fly brain, hermaphrodite and male *C. elegans*, larval zebrafish hindbrain and mouse
+visual cortex) and conclude that *"the values of reciprocity and clustering coefficient
+are comparable across all five datasets"*. Reciprocity in this connectome is therefore
+elevated **relative to randomised controls** but **not unusual relative to other measured
+nervous systems**, and the over-representation of reciprocal connections in brains is
+described there as well established. The comparison against controls reported here stands;
+the implication that the magnitude is distinctive of this connectome does not, and any
+such wording is withdrawn. What remains specific to this work is the **decomposition of
+reciprocity by circuit type** (Table 7: intra-motor 41.3 per cent down to optic-to-motor
+0.0 per cent), which the published network analyses report only as a single global figure.
+
 ---
 
 ## 4. The 1,559x amplification ratio: withdrawn as out of scope
@@ -208,9 +241,11 @@ quoted.**
 
 ## 5. Reciprocity differs from the published value for the same connectome, and the cause is measured
 
-v1.0 reports reciprocity of 26.6 per cent. Dorkenwald et al. (2024, *Nature* 634:124-138)
-and the associated network-statistics analyses of the same connectome report 13.8 per cent
-for FlyWire v630 under a **five-synapse threshold**, which v1.0 does not apply.
+v1.0 reports reciprocity of 26.6 per cent. **Lin et al. (2024, Nature 634:153–165)** report
+**0.138** for FlyWire v630 under a **five-synapse threshold**, which v1.0 does not apply.
+The same paper reports a connection probability of **0.000161** under that criterion, and
+cites **Dorkenwald et al. (2024, Nature 634:124–138)** for a mean of **12.6 synapses per
+connection**.
 
 The threshold accounts for the gap. Measured on the same matrix used in v1.0:
 
@@ -231,9 +266,10 @@ reconstruction version (v783 here, v630 there).
 
 **The two values are therefore consistent and the apparent disagreement is a difference of
 inclusion criterion, not of measurement.** This version states the criterion used and
-reports both.
+reports both. Agreement on three independently reported quantities, one of which was not
+sought, is the basis for that conclusion.
 
-A cross-criterion comparison appearing in earlier working notes, in which the untresholded
+A cross-criterion comparison appearing in earlier working notes, in which the unthresholded
 reciprocity of this work was divided by the thresholded connection probability of the
 published analysis, yielded a factor of 1,652x. That comparison mixes two inclusion
 criteria and is **withdrawn**. Paired within a single criterion the factor is 995x, and
@@ -288,7 +324,7 @@ in this repository for future work.
 
 ---
 
-## 8. Data availability, licence and pinned data
+## 8. Data availability, licence, pinned data and references
 
 **The repository URL in Data Availability is wrong, not merely unpopulated.** v1.0 gives
 `github.com/Mendieta-Architect/drosophila-connectome-propagation`. No repository was ever
@@ -313,6 +349,11 @@ changed. Methods should read: annotations pinned to commit
 `17fc57722002e1a7d38cdd0c89ac382bf92718da`, md5 `719904abad876c68ace1b5690c9b9b63`. The
 connectivity matrix used throughout has md5 `3d802fd542b5d18570ba1ba0bb0abed9`. The
 string "v783" pins the connectome only, not the annotations.
+
+**A missing reference.** v1.0 cites the connectome data paper (Dorkenwald et al. 2024) but
+does not cite **Lin et al. (2024), Nature 634:153–165**, the network-analysis paper for the
+same connectome, against whose figures items 3 and 5 of this erratum are stated. It is
+added to the bibliography of v2.0.
 
 **One further correction.** The swap acceptance rate is **98.5 per cent**, as stated in
 Section 2.4 of v1.0. A companion document states 100 per cent, which is not attainable
@@ -392,9 +433,19 @@ did not reach.
    pipeline** which is not among the archived notebooks. That they are the code that
    produced the published tables is supported by their reproducing eight of nine ratios of
    Table 5, but is not established.
-6. **Whether the published reciprocity of the reference analysis applies the threshold as
-   applied here** (`synapse count >= 5`) has not been confirmed against that paper's
-   methods; the agreement of three independent quantities is consistent with it.
+6. **Whether Lin et al. apply the synapse threshold as applied here** (`synapse count >= 5`)
+   has not been confirmed against their Methods; the agreement of three independently
+   reported quantities is consistent with it.
+7. **Prior art for the community-preserving null.** Section 2.4 of v1.0 presents the
+   community-preserving null as a methodological contribution. Lin et al. (2024) describe a
+   **neuropil connection (NPC) model** that constrains a degree-preserving random network
+   by enforcing the measured connection probabilities between 78 anatomically defined
+   neuropils, and a **neuron-neuron distance (NND) model** with spatially varying
+   connection probability. The NPC model belongs to the same family as the null used here,
+   at a different granularity (78 anatomical neuropils against 10 functional super-classes).
+   **The two have not been implemented side by side and compared**, so whether they yield
+   equivalent ensembles is not established. The prior work is cited in v2.0 regardless, and
+   the claim of novelty for the null model is narrowed accordingly.
 
 ---
 
@@ -409,5 +460,12 @@ warning on the same expression, which no amount of reading the code would have p
 The scope of the damage was bounded by inspecting all 40 archived notebooks across both
 compute accounts rather than the subset available locally.
 
+The qualifications in items 3 and 5, and the prior art in Outstanding verification 7, were
+found by reading the companion network-analysis paper for the same connectome. They are
+not arithmetic errors and no recomputation would have surfaced them: a figure can be
+correct and still not be notable, and a method can be sound and still not be new.
+
 This is recorded because it is reusable: a numerical discrepancy with an elegant
-explanation should be executed before the explanation is written down.
+explanation should be executed before the explanation is written down, and a figure
+intended for an abstract should be compared against whoever measured the same quantity in
+another system before it is called distinctive.
