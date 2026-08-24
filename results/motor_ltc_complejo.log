@@ -1,0 +1,55 @@
+STATUS {"status":"complete","failureMessage":"","hasFailureMessage":false}
+LOG bytes=3910
+[0.0s] python 3.12.13  numpy 2.0.2  scipy 1.16.3
+[0.0s] 
+[0.0s] ########## TESTS DE UNIDAD ##########
+[0.0s]   OK    tau_limit_es_0.473116: 0.473116
+[0.0s]   OK    tau_acepta_el_default: (0.01, 0.15) con Re=0.119
+[0.0s]   OK    tau_rechaza_0.48: |1-tau| seria 1.003275 > 1
+[0.0s]   OK    tanh_cruda_explota: |tanh| max = 9.998e+11
+[0.0s]   OK    tanh_acotada_respeta_el_clip: |f| max = 2.000000
+[0.0s]   OK    el_clip_preserva_la_fase: desvio maximo de fase = 0.000e+00
+[0.0s] 
+[0.0s] ########## CARGA Y VERIFICACION DE DATOS ##########
+[7.7s]   OK    md5_parquet: 3d802fd542b5d18570ba1ba0bb0abed9
+[7.7s]   OK    md5_annotations: 719904abad876c68ace1b5690c9b9b63  (SHA 17fc5772)
+[14.9s]   N=138639  E=15091983  regiones=10
+[14.9s]   poblaciones estimuladas: [('visual', 10854), ('olfactory', 2279), ('mechanosensory', 2656)]
+[14.9s] 
+[14.9s] ########## TESTS SOBRE LOS DATOS REALES ##########
+[15.1s]   OK    ley_de_Dale_sin_neuronas_mixtas: 0 mixtas de 138005 con salidas  (E puras 96672, I puras 41333)
+[17.2s]   OK    CP_preserva_grado_entrante: 0 nodos alterados de 138639
+[17.8s]        CP crea 149589 multi-aristas (esperado: el CP las admite)
+[17.8s]   OK    CP_preserva_grado_saliente: 0 nodos alterados
+[18.2s]   OK    el_metodo_uniforme_ROMPE_el_grado: 106948 nodos alterados -> el test anterior puede fallar, o sea que mide
+[18.2s] 
+[18.2s] ########## EXPERIMENTO ##########
+[18.2s]   tau compleja: Re=0.119  Im en (0.01,0.15)  limite de estabilidad=0.473116
+[18.2s]   tau real: 0.119 + 0j  (el control de la aritmetica compleja)
+[18.2s]   nulls=9  pasos=200  snapshots=[60, 120, 199]
+[18.2s] 
+[171.6s]   REAL            rho=2153.6528  rdi_cplx=0.3598  rdi_real=0.1634  ventaja=+0.1964
+[307.4s]   CP 1/9          rho=652.3789  rdi_cplx=0.0141  rdi_real=0.0179  ventaja=-0.0038
+[444.4s]   CP 2/9          rho=673.1619  rdi_cplx=0.0083  rdi_real=0.0121  ventaja=-0.0038
+[583.0s]   CP 3/9          rho=712.2781  rdi_cplx=0.0119  rdi_real=0.0701  ventaja=-0.0582
+[718.7s]   CP 4/9          rho=685.4027  rdi_cplx=0.0072  rdi_real=0.0397  ventaja=-0.0324
+[854.2s]   CP 5/9          rho=735.2409  rdi_cplx=0.0218  rdi_real=0.0252  ventaja=-0.0034
+[990.6s]   CP 6/9          rho=699.3498  rdi_cplx=0.0159  rdi_real=0.0392  ventaja=-0.0232
+[1126.4s]   CP 7/9          rho=699.4599  rdi_cplx=0.0061  rdi_real=0.0688  ventaja=-0.0627
+[1262.5s]   CP 8/9          rho=621.1696  rdi_cplx=0.0059  rdi_real=0.0489  ventaja=-0.0429
+[1398.1s]   CP 9/9          rho=708.4012  rdi_cplx=0.0291  rdi_real=0.0427  ventaja=-0.0137
+[1398.1s] 
+[1398.1s] ########## RESULTADO ##########
+[1398.1s]   rdi_cplx_t60              real=+0.02034  null_mu=+0.12771  sd=0.01133  n_ge=9/9  p2=0.2000
+[1398.1s]   rdi_cplx_t120             real=+0.80747  null_mu=+0.45317  sd=0.04048  n_ge=0/9  p2=0.2000
+[1398.1s]   rdi_cplx_t199             real=+0.35985  null_mu=+0.01337  sd=0.00745  n_ge=0/9  p2=0.2000
+[1398.1s]   ventaja_compleja_t60      real=+0.00150  null_mu=+0.00856  sd=0.00125  n_ge=9/9  p2=0.2000
+[1398.1s]   ventaja_compleja_t120     real=-0.02973  null_mu=-0.04066  sd=0.02475  n_ge=4/9  p2=1.0000
+[1398.1s]   ventaja_compleja_t199     real=+0.19644  null_mu=-0.02713  sd=0.02200  n_ge=0/9  p2=0.2000
+[1398.1s] 
+[1398.1s]   TEST GLOBAL sobre 6 de 6 estadisticos
+[1398.1s]     S_real=38.0  S_null_mu=32.4  sd=5.4  min=27.0
+[1398.1s]     nulls por debajo=8/9   p dos colas=0.6000   piso alcanzable=0.2000
+[1398.1s] 
+[1398.1s] FIN  tests en rojo=0  minutos=23.3
+FINMOTOR
