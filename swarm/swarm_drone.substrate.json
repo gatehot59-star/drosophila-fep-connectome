@@ -1,0 +1,622 @@
+{
+  "proyecto": "swarm_drone",
+  "version": "3.1",
+  "metadata": {
+    "N": 34,
+    "E": 83,
+    "tau_uniform": 0.119,
+    "tau_q15": 3899,
+    "spectral_radius_bound": 6.1729,
+    "spectral_radius": 0.85,
+    "normalization_scale": 1.164706,
+    "audit": {
+      "maslov_sneppen": {
+        "rdi_diseno": 0.0,
+        "rdi_controles_esperados": ">0 (mezcla de modalidades)",
+        "z_score": ">2.0 (estructural, por aislamiento P1 absoluto)",
+        "gate": "PASS"
+      },
+      "gabaergica": {
+        "firewalls": [],
+        "motor_starvation": "NO",
+        "gate": "PASS"
+      },
+      "p3": {
+        "warning": "PITCH/ALT reciben de OCELLI+HALTERE (no lateralizado) -> OK; ROLL recibe fb_l(+0.5) y fb_r(-0.5) y oc_head_sin: canal lateral con infraestructura unica, sin contaminacion cruzada L/R en el integrador (espejo implicito por signo). Sin warning critico."
+      }
+    }
+  },
+  "regions": [
+    {
+      "name": "LAMINA",
+      "type": "S",
+      "tau_backbone": -0.8,
+      "size": 4,
+      "neurons": [
+        "lam_flow_f",
+        "lam_flow_b",
+        "lam_flow_l",
+        "lam_flow_r"
+      ],
+      "index_range": [
+        0,
+        3
+      ],
+      "x": 0,
+      "y": 0
+    },
+    {
+      "name": "ANTENNA",
+      "type": "S",
+      "tau_backbone": -0.8,
+      "size": 4,
+      "neurons": [
+        "ant_prox_f",
+        "ant_prox_b",
+        "ant_prox_l",
+        "ant_prox_r"
+      ],
+      "index_range": [
+        4,
+        7
+      ],
+      "x": 16,
+      "y": 0
+    },
+    {
+      "name": "OCELLI",
+      "type": "S",
+      "tau_backbone": -0.8,
+      "size": 2,
+      "neurons": [
+        "oc_head_sin",
+        "oc_head_cos"
+      ],
+      "index_range": [
+        8,
+        9
+      ],
+      "x": 32,
+      "y": 0
+    },
+    {
+      "name": "HALTERE",
+      "type": "S",
+      "tau_backbone": -0.8,
+      "size": 2,
+      "neurons": [
+        "hal_alt",
+        "hal_climb"
+      ],
+      "index_range": [
+        10,
+        11
+      ],
+      "x": 40,
+      "y": 0
+    },
+    {
+      "name": "GIANT_FIBER",
+      "type": "I",
+      "tau_backbone": -0.5,
+      "size": 4,
+      "neurons": [
+        "gf_f",
+        "gf_b",
+        "gf_l",
+        "gf_r"
+      ],
+      "index_range": [
+        12,
+        15
+      ],
+      "x": 48,
+      "y": 0
+    },
+    {
+      "name": "LOBULA_WTA",
+      "type": "C",
+      "tau_backbone": -1.0,
+      "size": 4,
+      "neurons": [
+        "wta_f",
+        "wta_b",
+        "wta_l",
+        "wta_r"
+      ],
+      "index_range": [
+        16,
+        19
+      ],
+      "x": 64,
+      "y": 0
+    },
+    {
+      "name": "LAT_HORN",
+      "type": "C",
+      "tau_backbone": -1.0,
+      "size": 4,
+      "neurons": [
+        "lh_f",
+        "lh_b",
+        "lh_l",
+        "lh_r"
+      ],
+      "index_range": [
+        20,
+        23
+      ],
+      "x": 80,
+      "y": 0
+    },
+    {
+      "name": "FAN_BODY",
+      "type": "C",
+      "tau_backbone": -1.0,
+      "size": 2,
+      "neurons": [
+        "fb_l",
+        "fb_r"
+      ],
+      "index_range": [
+        24,
+        25
+      ],
+      "x": 96,
+      "y": 0
+    },
+    {
+      "name": "PB",
+      "type": "G",
+      "tau_backbone": -3.0,
+      "size": 4,
+      "neurons": [
+        "pb_alt",
+        "pb_pitch",
+        "pb_roll",
+        "pb_head"
+      ],
+      "index_range": [
+        26,
+        29
+      ],
+      "x": 104,
+      "y": 0
+    },
+    {
+      "name": "MOTOR",
+      "type": "M",
+      "tau_backbone": -1.0,
+      "size": 4,
+      "neurons": [
+        "mot_fl",
+        "mot_fr",
+        "mot_bl",
+        "mot_br"
+      ],
+      "index_range": [
+        30,
+        33
+      ],
+      "x": 120,
+      "y": 0
+    }
+  ],
+  "connections": [
+    [
+      "lam_flow_f",
+      "gf_f",
+      32767
+    ],
+    [
+      "ant_prox_f",
+      "gf_f",
+      26716
+    ],
+    [
+      "lam_flow_b",
+      "gf_b",
+      32767
+    ],
+    [
+      "ant_prox_b",
+      "gf_b",
+      26716
+    ],
+    [
+      "lam_flow_l",
+      "gf_l",
+      32767
+    ],
+    [
+      "ant_prox_l",
+      "gf_l",
+      26716
+    ],
+    [
+      "lam_flow_r",
+      "gf_r",
+      32767
+    ],
+    [
+      "ant_prox_r",
+      "gf_r",
+      26716
+    ],
+    [
+      "gf_f",
+      "mot_bl",
+      26716
+    ],
+    [
+      "gf_f",
+      "mot_br",
+      26716
+    ],
+    [
+      "gf_f",
+      "mot_fl",
+      -26716
+    ],
+    [
+      "gf_f",
+      "mot_fr",
+      -26716
+    ],
+    [
+      "gf_b",
+      "mot_fl",
+      26716
+    ],
+    [
+      "gf_b",
+      "mot_fr",
+      26716
+    ],
+    [
+      "gf_b",
+      "mot_bl",
+      -26716
+    ],
+    [
+      "gf_b",
+      "mot_br",
+      -26716
+    ],
+    [
+      "gf_l",
+      "mot_fr",
+      26716
+    ],
+    [
+      "gf_l",
+      "mot_br",
+      26716
+    ],
+    [
+      "gf_l",
+      "mot_fl",
+      -26716
+    ],
+    [
+      "gf_l",
+      "mot_bl",
+      -26716
+    ],
+    [
+      "gf_r",
+      "mot_fl",
+      26716
+    ],
+    [
+      "gf_r",
+      "mot_bl",
+      26716
+    ],
+    [
+      "gf_r",
+      "mot_fr",
+      -26716
+    ],
+    [
+      "gf_r",
+      "mot_br",
+      -26716
+    ],
+    [
+      "lam_flow_f",
+      "lh_f",
+      30532
+    ],
+    [
+      "lam_flow_b",
+      "lh_b",
+      30532
+    ],
+    [
+      "lam_flow_l",
+      "lh_l",
+      30532
+    ],
+    [
+      "lam_flow_r",
+      "lh_r",
+      30532
+    ],
+    [
+      "lh_f",
+      "wta_b",
+      30532
+    ],
+    [
+      "lh_b",
+      "wta_f",
+      30532
+    ],
+    [
+      "lh_l",
+      "wta_r",
+      30532
+    ],
+    [
+      "lh_r",
+      "wta_l",
+      30532
+    ],
+    [
+      "wta_f",
+      "wta_f",
+      19083
+    ],
+    [
+      "wta_f",
+      "wta_b",
+      -9541
+    ],
+    [
+      "wta_f",
+      "wta_l",
+      -9541
+    ],
+    [
+      "wta_f",
+      "wta_r",
+      -9541
+    ],
+    [
+      "wta_b",
+      "wta_b",
+      19083
+    ],
+    [
+      "wta_b",
+      "wta_f",
+      -9541
+    ],
+    [
+      "wta_b",
+      "wta_l",
+      -9541
+    ],
+    [
+      "wta_b",
+      "wta_r",
+      -9541
+    ],
+    [
+      "wta_l",
+      "wta_l",
+      19083
+    ],
+    [
+      "wta_l",
+      "wta_f",
+      -9541
+    ],
+    [
+      "wta_l",
+      "wta_b",
+      -9541
+    ],
+    [
+      "wta_l",
+      "wta_r",
+      -9541
+    ],
+    [
+      "wta_r",
+      "wta_r",
+      19083
+    ],
+    [
+      "wta_r",
+      "wta_f",
+      -9541
+    ],
+    [
+      "wta_r",
+      "wta_b",
+      -9541
+    ],
+    [
+      "wta_r",
+      "wta_l",
+      -9541
+    ],
+    [
+      "wta_f",
+      "mot_fl",
+      19083
+    ],
+    [
+      "wta_f",
+      "mot_fr",
+      19083
+    ],
+    [
+      "wta_b",
+      "mot_bl",
+      19083
+    ],
+    [
+      "wta_b",
+      "mot_br",
+      19083
+    ],
+    [
+      "wta_l",
+      "mot_fl",
+      19083
+    ],
+    [
+      "wta_l",
+      "mot_bl",
+      19083
+    ],
+    [
+      "wta_r",
+      "mot_fr",
+      19083
+    ],
+    [
+      "wta_r",
+      "mot_br",
+      19083
+    ],
+    [
+      "ant_prox_l",
+      "fb_l",
+      22899
+    ],
+    [
+      "ant_prox_r",
+      "fb_r",
+      22899
+    ],
+    [
+      "fb_l",
+      "pb_roll",
+      19083
+    ],
+    [
+      "fb_r",
+      "pb_roll",
+      -19083
+    ],
+    [
+      "oc_head_sin",
+      "pb_roll",
+      19083
+    ],
+    [
+      "oc_head_cos",
+      "pb_pitch",
+      19083
+    ],
+    [
+      "oc_head_sin",
+      "pb_head",
+      15266
+    ],
+    [
+      "hal_alt",
+      "pb_alt",
+      26716
+    ],
+    [
+      "hal_climb",
+      "pb_alt",
+      11450
+    ],
+    [
+      "pb_alt",
+      "pb_alt",
+      32440
+    ],
+    [
+      "pb_pitch",
+      "pb_pitch",
+      32440
+    ],
+    [
+      "pb_roll",
+      "pb_roll",
+      32440
+    ],
+    [
+      "pb_head",
+      "pb_head",
+      32440
+    ],
+    [
+      "pb_alt",
+      "mot_fl",
+      15266
+    ],
+    [
+      "pb_alt",
+      "mot_fr",
+      15266
+    ],
+    [
+      "pb_alt",
+      "mot_bl",
+      15266
+    ],
+    [
+      "pb_alt",
+      "mot_br",
+      15266
+    ],
+    [
+      "pb_pitch",
+      "mot_fl",
+      15266
+    ],
+    [
+      "pb_pitch",
+      "mot_fr",
+      15266
+    ],
+    [
+      "pb_pitch",
+      "mot_bl",
+      -15266
+    ],
+    [
+      "pb_pitch",
+      "mot_br",
+      -15266
+    ],
+    [
+      "pb_roll",
+      "mot_fl",
+      15266
+    ],
+    [
+      "pb_roll",
+      "mot_bl",
+      15266
+    ],
+    [
+      "pb_roll",
+      "mot_fr",
+      -15266
+    ],
+    [
+      "pb_roll",
+      "mot_br",
+      -15266
+    ],
+    [
+      "pb_head",
+      "mot_fl",
+      11450
+    ],
+    [
+      "pb_head",
+      "mot_br",
+      11450
+    ]
+  ]
+}
