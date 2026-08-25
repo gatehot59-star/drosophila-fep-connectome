@@ -5,20 +5,34 @@
 # exit 0. La bateria de src/test_guards_negativo.py existe y corre a mano; sin CI,
 # nada la ejecuta, y un test que nadie corre es documentacion.
 #
-# HISTORIA DE ESTE ARCHIVO, porque su primera version fallo y eso importa:
-# la v1 embebia la mutacion con `python - <<'EOF'` indentado dentro del bloque
-# `run:`. Bash pasa las lineas al stdin de python CON la indentacion del YAML, asi
-# que python abortaba con IndentationError antes de leer una linea util, y el CI
-# dio failure en 6 de 6 corridas por un bug del PASO y no por lo que el paso mide.
-# Ahora la mutacion vive en src/ci_mutate_guards.py: un archivo con nombre, que se
-# corre a mano, se revisa en un diff y tiene su propio guard.
+# ------------------------------------------------------------------------------
+# HISTORIA DE ESTE ARCHIVO, porque sus dos primeras versiones dieron ROJO
+# ------------------------------------------------------------------------------
+# v1: embebia la mutacion con `python - <<'EOF'` indentado dentro de un bloque
+#     `run:`. Bash pasa las lineas al stdin de python CON la indentacion del YAML,
+#     asi que python abortaba con IndentationError antes de leer una linea util.
+#     El CI fallo por un bug del PASO, no por lo que el paso mide.
+#     Arreglo: la mutacion vive en src/ci_mutate_guards.py, un archivo con nombre.
+#
+# v2: los cuatro pins de requirements.txt estaban puestos de memoria y uno
+#     (pandas 2.3.4) no existe en PyPI, asi que pip abortaba. Arreglo: los pins
+#     salen de correr el interprete y se verificaron contra PyPI.
+#     Y un segundo bug del mismo YAML: el paso 3 escribia mutado.log en el arbol y
+#     el paso 6 exigia arbol limpio, asi que el 6 iba a fallar SIEMPRE por el
+#     archivo que el 3 crea. Un guard que no puede dar verde es tan inutil como
+#     uno que no puede dar rojo. El log se movio a /tmp.
+#
+# Las dos veces la causa fue mia y las dos veces la encontro el CI. Eso es B-01
+# funcionando: cuando existe medicion externa, gana la externa.
+# ------------------------------------------------------------------------------
 #
 # Lo que este workflow hace, y nada mas:
-#   1. instala dependencias PINNEADAS y IMPRIME las versiones medidas;
+#   1. instala dependencias PINNEADAS e IMPRIME las versiones medidas;
 #   2. corre la bateria de guards y exige verde;
 #   3. MUTA guards.py a proposito y exige ROJO, porque un test que no puede
 #      fallar no mide nada;
-#   4. restaura y exige verde otra vez.
+#   4. restaura y exige verde otra vez;
+#   5. comprueba que el job no dejo el arbol sucio.
 # Sin continue-on-error y sin `|| true`, que es el antipatron que A-01 denuncia.
 #
 # Lo que este workflow NO hace, declarado: no corre ninguna medicion cientifica.
@@ -47,7 +61,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
 
-      - name: python pinneado
+      - name: python 3.12
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -66,13 +80,13 @@ jobs:
 
       - name: 3 - la bateria DEBE dar rojo sobre el archivo mutado
         run: |
-          if python src/test_guards_negativo.py > mutado.log 2>&1; then
+          if python src/test_guards_negativo.py > /tmp/mutado.log 2>&1; then
             echo "GUARD_FAILED la bateria dio VERDE sobre un guards.py roto a proposito"
-            tail -20 mutado.log
+            tail -20 /tmp/mutado.log
             exit 1
           fi
           echo "OK la bateria detecto la mutacion y dio rojo"
-          grep '^FAIL' mutado.log || true
+          grep '^FAIL' /tmp/mutado.log || true
 
       - name: 4 - restaurar guards.py
         run: python src/ci_mutate_guards.py restore

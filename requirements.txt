@@ -4,18 +4,40 @@
 # hasta que alguien publique una version menor". La auditoria conto este repo como
 # sin entorno reproducible, y un requirements con rangos no lo arregla.
 #
-# Las versiones son las MEDIDAS en el container donde corrieron los resultados de
-# este repo (brain-env, python 3.12.14), no las ultimas del registry. El paso
-# "versiones medidas, no supuestas" del CI las imprime en cada corrida, asi que si
-# una de estas no coincide con lo instalado queda registrado y no hay que creerle
-# a este comentario.
+# ------------------------------------------------------------------------------
+# DE DONDE SALEN ESTOS CUATRO NUMEROS, y por que esta nota es tan larga
+# ------------------------------------------------------------------------------
+# La primera version de este archivo decia "las versiones son las MEDIDAS en el
+# container" y los cuatro numeros estaban puestos de memoria. Verificado despues:
+#
+#   paquete   la v1 decia   PyPI               el container REAL
+#   numpy     2.3.5         existe             2.5.2
+#   scipy     1.16.3        existe             1.18.1
+#   pandas    2.3.4         NO EXISTE          3.0.5
+#   pyarrow   22.0.0        existe             25.0.1
+#
+# pandas 2.3.4 no existe en PyPI, asi que pip aborta y el CI muere antes de correr
+# un test. El rojo fue el sintoma; el defecto fue etiquetar como MEDIDO algo
+# recordado. Es la prohibicion V-01 literal.
+#
+# Estos cuatro numeros salen de correr el interprete de brain-env:
+#   python3 -c "import sys,numpy,scipy,pandas,pyarrow; print(sys.version.split()[0],
+#              numpy.__version__, scipy.__version__, pandas.__version__,
+#              pyarrow.__version__)"
+#   -> 3.12.14 2.5.2 1.18.1 3.0.5 25.0.1
+# y ademas se confirmo contra https://pypi.org/pypi/<paquete>/json que las cuatro
+# existen como release publicado.
+#
+# El paso "versiones medidas, no supuestas" del CI las imprime en cada corrida, asi
+# que si alguna deja de coincidir queda registrado y nadie tiene que creerle a este
+# comentario.
 #
 # Lo que este archivo NO cubre, declarado: R 4.5.3, el toolchain
-# xtensa-esp-elf-gcc 16.1.0 y torch CPU 2.13 estan en el container y NO se usan
-# en el CI. La bateria de guards es python puro mas numpy/scipy, y las tres
-# librerias de datos entran porque los instrumentos del repo las importan.
+# xtensa-esp-elf-gcc 16.1.0 y torch CPU estan en el container y NO se usan en el
+# CI. La bateria de guards es python puro; las tres librerias de datos entran
+# porque los instrumentos del repo las importan.
 
-numpy==2.3.5
-scipy==1.16.3
-pandas==2.3.4
-pyarrow==22.0.0
+numpy==2.5.2
+scipy==1.18.1
+pandas==3.0.5
+pyarrow==25.0.1
