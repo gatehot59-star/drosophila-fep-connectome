@@ -1,21 +1,27 @@
 # CONTEXTO VIVO · conectoma / FEP / papers
 
-**Última actualización:** 2026-08-24 23:45 (America/Buenos_Aires) · **Se sobreescribe, no se acumula.**
+**Última actualización:** 2026-08-25 08:45 (America/Buenos_Aires) · **Se sobreescribe, no se acumula.**
 
-Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`. Hermano: `CONTEXTO-motor.md`. Índice de Docs: `INDICE-REAL-POR-ENUMERACION.md` (**parcial, 46 de ~65**). Entorno: `CONTEXTO-ENTORNO.md` §13. Kaggle: `MANIFIESTO-KAGGLE.md` (**40 kernels, no 29**).
+Leer esto **antes** de responder cualquier cosa de este proyecto. Protocolo: `00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`. Hermano: `CONTEXTO-motor.md` (**⚠️ VENCIDO: no se abrió el 25-ago, no recibe veredicto de vigencia**). Índice de Docs: `INDICE-REAL-POR-ENUMERACION.md` (**parcial, 46 de ~65**). Entorno: `CONTEXTO-ENTORNO.md` §13 (**se re-mide, no se recuerda**). Kaggle: `MANIFIESTO-KAGGLE.md` (**40 kernels, no 29**).
+
+**Rama de trabajo: `titan/twohop-nulls`.** Respuestas al día: **074** (no existe una 072). Este archivo cubre hasta la **resp 075**.
 
 ---
 
-## 0. 🚨 EL RELOJ · el erratum vence el 30-ago, y el texto ya está escrito Y CORREGIDO
+## 0. 🚨 EL RELOJ · el erratum vence el 30-ago y el texto ya está escrito
 
-**Fuente: doc `6117`, «PLAN MAESTRO 10 SEMANAS · 24-ago al 8-nov 2026».** Hoy es el 24-ago: **la S1 es esta semana.**
+**Fuente: doc `6117`, «PLAN MAESTRO 10 SEMANAS · 24-ago al 8-nov 2026».** Hoy es el **25-ago**: día 2 de la **S1**.
 
 | # | El número que decide el éxito | Umbral | Estado |
 |---|---|---|---|
-| 1 | **Erratum en Zenodo** | **antes del 30-ago** | ✅ **texto listo, en git y con el claim falso retirado (resp 057-059)**; falta subirlo, y eso es de Abraham |
+| 1 | **Erratum en Zenodo** | **antes del 30-ago (5 días)** | ✅ **texto listo en `docs/ERRATUM.md`**, 9 ítems, claim falso retirado, Bates citado. **Falta la acción de Abraham** |
 | 2 | Motivos con 0/40 en la biblioteca | ≥ 3 (hoy hay **1**) | sin avance |
 | 3 | Nulls del motor complejo | **40** (piso de `p` 0,20 → 0,0488) | hoy 9 |
 | 4 | Papers subidos | ≥ 2 antes del 8-nov | 0 |
+
+**El erratum NO está en riesgo por la auditoría externa:** ninguno de los 13 hallazgos toca sus nueve ítems, y Tao lo confirma explícitamente.
+
+**🔴 Y hay un conflicto de cronograma abierto, que es decisión de Abraham:** la reparación de infraestructura que dictaminó la auditoría son **días**, y **no estaba en ninguno de los cinco entregables del plan**. O se corre el plan, o se mata un entregable.
 
 **Deadlines externos — ✅ VERIFICADOS EN VIVO el 24-ago contra `arcprize.org/competitions/2026`:**
 
@@ -36,7 +42,7 @@ Premios: **Paper Prize $450K** (Top Paper $75K garantizado: 1º $50K, 2º $20K, 
 
 **Los 5 papers:** **P1** auditoría de connectomíca dinámica · **P2** el 0,41% blindado · P3 biblioteca (**1 de 3-4 motivos**) · P4 ARC · P5 Paper 2 como negativo.
 
-**El riesgo real no es técnico:** son cinco entregables en diez semanas de **una persona**. El orden **es** la protección.
+**El riesgo real no es técnico:** cinco entregables en diez semanas de **una persona**. El orden **es** la protección. **Y la auditoría propuso un orden mejor que el mío:** *«primero lo que vuelve confiable al testigo; después lo que amplía el claim»*.
 
 ---
 
@@ -47,7 +53,7 @@ Premios: **Paper Prize $450K** (Top Paper $75K garantizado: 1º $50K, 2º $20K, 
 | **PAPER 1** | *Signal Propagation Properties in the Drosophila melanogaster Connectome: Intermodal Isolation, Differential Motor Access, and Non-Trivial Temporal Amplification*, Mendieta 2026a. **7 páginas, leído completo el 24-ago** | Zenodo 20-mar-2026. **DOI placeholder `XXXXXXX` literal en el header** |
 | **PAPER 2** | *Topological Retention and Selective Convergence* — FEP, Markov blanket, Script R | Borrador. Va como resultado **negativo** (P5) o no va |
 | **PATENTE** provisional | Congelada antes del erratum. Doc `5717`: **la patente tiene razón, el FALSIFIED es un artefacto** | En pausa |
-| **Motor** | SparseLTC / DualBrain, C99 + ESP32 | **El activo real.** Ver `CONTEXTO-motor.md` |
+| **Motor** | SparseLTC / DualBrain, C99 + ESP32 | **El activo real.** Ver `CONTEXTO-motor.md`, **vencido** |
 
 **El producto en tres capas:** (1) la **fuente de calibración** = el conectoma medido y sus priors · (2) el **motor** = de 15M aristas a **1.336 B de código medidos en ESP32** y 704 B de RAM todavía solo en x86 · (3) **la biblioteca = el activo**, hoy con **un** motivo. **No se vende como «derivado del cerebro de la mosca»: se venden microsegundos, miliwatts y BOM.**
 
@@ -74,13 +80,12 @@ Premios: **Paper Prize $450K** (Top Paper $75K garantizado: 1º $50K, 2º $20K, 
 
 **Por qué esta sección existe:** hasta el 24-ago 21:00 este archivo decía **«Lin» a secas** en cinco lugares, sin autor completo, sin año, sin revista y sin páginas. **Una referencia incompleta se completa mal en el turno siguiente.**
 
-**Son DOS papers distintos, del mismo número de la misma revista, más uno de 2026:**
-
 | Referencia | Qué es | Páginas | De ahí sale |
 |---|---|---|---|
 | **Dorkenwald, S., Matsliah, A., et al. + FlyWire Consortium (2024).** *Neuronal wiring diagram of an adult brain.* Nature | **634:124–138** | el paper de **DATOS** | **12,6 sinapsis por conexión** · grado medio 20,5 |
 | **Lin, A., Yang, R., et al. (2024).** *Network statistics of the whole-brain connectome of Drosophila.* Nature | **634:153–165** | el paper de **ANÁLISIS DE RED** | **densidad 0,000161** · **reciprocidad 0,138** · clustering 0,0463 · rich club · **y la reciprocidad POR NEUROPILO** |
 | **Bates, A. S., Phelps, J. S., Kim, M., Yang, H. H., et al. (2026).** *Distributed control circuits across a brain-and-cord connectome.* Nature | doi:10.1038/s41586-026-10735-w | **cerebro + cordón**, publicado **8-jun-2026**, preprint **31-jul-2025**, **188.259 neuronas** | métrica de **influence** lineal, `R² = 0,94` en 94.278 pares |
+| **Kind, E., et al. (2024)** + **Cell Type Explorer de `flywire-fafb:v783b`** | 🔴 **publican la tabla de ruteo del sistema visual** que yo iba a medir. Ver §4 | — | resp 066-067 |
 
 **Verificado el 24-ago** contra `nature.com`, PMC (`PMC11446825`, `PMC11446842`, `PMC12324551`) y bioRxiv.
 
@@ -88,9 +93,9 @@ Premios: **Paper Prize $450K** (Top Paper $75K garantizado: 1º $50K, 2º $20K, 
 
 **Otros números de Lin:** rich club de **30%** con cutoff de grado 37 y probabilidad interna 0,000870 = **5,4×** la global · small-worldness **SΔ = 141** · SCC gigante 93,3% · WCC 98,8% · camino dirigido medio **4,42 saltos**, todos alcanzables en 13 · **77.607 de 127.978** neuronas participan de al menos una conexión recíproca · **1.863 NSRNs** · cuatro nulls: **ER, CFG (grado), NPC (neuropilos) y NND (distancia)**.
 
-**Su Table 2, leída fila por fila, y hay que tenerla a mano:** reciprocidad 0,138 = **×858 vs ER, ×43,8 vs CFG, ×45,9 vs NND, ×7,22 vs NPC**. Clustering 0,0463 = ×144 / ×7,57 / ×10,9 / ×2,88.
+**Su Table 2, leída fila por fila:** reciprocidad 0,138 = **×858 vs ER, ×43,8 vs CFG, ×45,9 vs NND, ×7,22 vs NPC**. Clustering 0,0463 = ×144 / ×7,57 / ×10,9 / ×2,88.
 
-> **🔑 El dato más útil de esa tabla, y hay que usarlo como calibración de expectativas:** pasar de un null de **grado** (CFG, ×43,8) a uno **anatómico** (NPC, ×7,22) **se come el 84% del efecto**. Cualquier resultado propio medido solo contra grado hay que leerlo sabiendo que un null espacial se lleva ese orden de magnitud.
+> **🔑 La calibración de expectativas, y el 25-ago se quedó CORTA:** pasar de un null de **grado** (CFG, ×43,8) a uno **anatómico** (NPC, ×7,22) se come el **84%** del efecto en Lin. **En mis propios 2 saltos se comió el 100% y encima dio vuelta tres signos.** Cualquier resultado propio medido solo contra grado está **NO TESTEADO**, no «establecido».
 
 ### 🔴 Lo que Lin le hace al framing del Paper 1
 
@@ -120,7 +125,7 @@ Verbatim de Lin:
 
 Lin, por **random walk espectral**: **attractors** (3% de neuronas, 61,2% de las visitas) *«often make connections in the **gnathal ganglia**… contains many connections to the **ventral nerve cord**»* → la salida motora. **repellers** (3%, 42,4%) *«include many with synapses in the **antennal lobes (AL) and medullae (ME)**»* → periferia olfatoria y visual.
 
-Y el Paper 1, **por conteo de aristas contra nulls que preservan grado**, mide que **olfactory y visual son las más depletadas** en acceso motor. **Dos métodos que no comparten nada llegando al mismo ruteo.** Va como *«consistente con la estructura de atractores y repulsores reportada independientemente por Lin et al. (2024)»*. **NO MEDIDO: la convergencia es cualitativa, el solapamiento no está cuantificado.**
+Y el Paper 1, **por conteo de aristas contra nulls que preservan grado**, mide que **olfactory y visual son las más depletadas** en acceso motor. **Dos métodos que no comparten nada llegando al mismo ruteo.** Va como *«consistente con la estructura de atractores y repulsores reportada independientemente por Lin et al. (2024)»*. **NO MEDIDO: la convergencia es cualitativa, el solapamiento no está cuantificado.** ⚠️ **Y ojo: el null anatómico del 25-ago sugiere que esa coincidencia puede ser co-localización en los dos métodos.**
 
 ### 🔴 El null CP tiene PRIOR ART: el NPC model de Lin
 
@@ -142,9 +147,9 @@ Sus 2 menciones son prosa. **Una importa y hay que citarla:** *«The CNS network
 
 Verbatim: *«a linear dynamical systems description of signal propagation… injecting a sustained signal into the source neurons… the weighted sum of its inputs… as a fraction of the total synaptic input of the postsynaptic cell»*, validado sobre **FAFB v783** con `R² = 0,94` en **94.278 pares**. **Es el modelo lineal del Paper 1 con normalización por columna: el campo eligió el mismo método.**
 
-Y declara **dos renuncias**: *«we take its **steady-state response**»* y *«adjusted influence is an **unsigned quantity**»*. **Sin signo** no hay cancelación GABAérgica → Propiedad 1 invisible. **Sin transitorio** no hay post-estímulo → Propiedad 3 también. **El campo llegó al método y se detuvo donde empieza el aporte.**
+Y declara **dos renuncias**: *«we take its **steady-state response**»* y *«adjusted influence is an **unsigned quantity**»*. **Sin signo** no hay cancelación GABAérgica → Propiedad 1 invisible. **Sin transitorio** no hay post-estímulo → Propiedad 3 también. **El campo llegó al método y se detuvo donde empieza el aporte, y el 25-ago ese hueco pasó a ser el activo principal (ver §3).**
 
-**Y dos frases más de BANC que conviene tener:** que las regiones cognitivas son *«supervisory but not essential for action»* (apoya el framing del 0,41% encerrado), y que los efectores *«are primarily influenced by sensory neurons in the **same body part**»* (la explicación rival de localidad, ver §5.13).
+**Y dos frases más de BANC que conviene tener:** que las regiones cognitivas son *«supervisory but not essential for action»* (apoya el framing del 0,41% encerrado), y que los efectores *«are primarily influenced by sensory neurons in the **same body part**»* ← **esta explicación rival GANÓ a granularidad de neuropilo el 25-ago. Ver §3.bis.**
 
 ### El veredicto de relación: **SECUENCIALES**
 
@@ -152,12 +157,88 @@ Lin: estructura. Paper 1: primera película dinámica. BANC: institucionalizaci�
 
 ---
 
-## 3. VALIDADO
+## 3. ⭐ EL ACTIVO PRINCIPAL, y cambió el 25-ago
+
+> **La topología de este circuito define selectividad temporal en el TRANSITORIO POST-ESTÍMULO, no en la amplitud de pico.**
+
+**Doble instrumento, misma corrida, y el contraste está pareado por construcción (resp 070-071, `src/signshuffle_selpost.py` md5 `5a292cbc4f0a6b2d445405ad5c86ad80`; null que respeta Dale en `src/signshuffle_dale.py` md5 `d6f43b30050d192c6f3ae32956d92858`):**
+
+| Medición | Número |
+|---|---|
+| `sel_post` observado | **4,3287** |
+| null de **topología** (permuta pesos, conserva signo) | 1,1896 ± 0,0173 → **z = +181,4**, **0/40** |
+| null de **signo por arista** | 1,9101 ± 0,3242 → **z = +7,46**, 0/40 |
+| null de **signo que PRESERVA DALE** (por neurona presináptica) | 1,7983 ± 0,401 → **z = +6,31**, 0/40 |
+| `sel_peak` en la misma corrida | **DEBAJO** de su null (z = −2,41), en 6 de 7 configuraciones |
+| actividad post-estímulo **absoluta** (`post_looming`) | **2,77 contra 16,09** del null → el circuito **resuena 5,8× MENOS y 3,6× más diferencial** |
+
+**Se repite a spread de τ 8 y 30: 0/40 en 7 de 7 configuraciones.**
+
+**Por qué vale, y es el argumento del paper:** es cualitativa y cuantitativamente **la Propiedad 3 del Paper 1** (RDI post-estímulo, `z = 197` medido en el conectoma, doc `5977`). **Dos instrumentos independientes, mismo fenómeno.** Y es exactamente el territorio que **BANC declara no cubrir** (steady-state y sin signo).
+
+**Lo que este hallazgo mató, y era mío:** «la topología define ruteo y ganancia, **no** selectividad» (el 1,04× del escape compilado). **Medí `sel_peak` seis días, y el pico es lo único que este circuito NO discrimina.**
+
+---
+
+## 3.bis 🔴 EL NULL ANATÓMICO · la refutación más caras del expediente (resp 063)
+
+**El dato existía a una llamada:** Zenodo `10676866`, v783.0, `per_neuron_neuropil_count_pre/post_783.feather`, **79 etiquetas de neuropilo**, solo 283 neuronas sin neuropilo de salida y 495 sin entrada sobre 138.639. **El ítem que decía «no es testeable» era un límite de UN archivo (`annotations.tsv`), no del entorno.**
+
+**El ensemble:** permuta destinos **solo dentro de grupos de aristas que comparten el par (neuropilo de origen, neuropilo de destino)**. Familia del **NPC de Lin**. 40 realizaciones, semillas `1000 + 7i`. Instrumento: `src/twohop_nulls.py` md5 `a3d52df61a2bc2ccbb332a01c1353dba`.
+
+### `P2` (caminos de 2 saltos hasta motoras de cabeza), umbral 1
+
+| Clase | Null de GRADO | Null de NEUROPILO | ¿Cambia el signo? |
+|---|---|---|---|
+| **olfactory** | 0,0228× (z −51,8, 40/40) | **0,368×** (z −4,44, 40/40) | no, pero el efecto se divide por **16** |
+| **visual** | 0,0606× (z −54,0, 40/40) | **1,531×** (z **+4,10**, 0/40) | 🔴 **SÍ: pasa a ENRIQUECIDA** |
+| **mechanosensory** | 7,365× (z +342, 0/40) | **0,803×** (z **−20,6**, 40/40) | 🔴 **SÍ: pasa a DEPLETADA** |
+| **gustatory** | 6,545× (z +249, 0/40) | **0,632×** (z **−37,2**, 40/40) | 🔴 **SÍ: pasa a DEPLETADA** |
+| **CTRL arbitrario** | 0,652× | **1,010×** | 🔴 **el piso desaparece** |
+
+**Umbral 5, mismo patrón:** olfactory 0,121× · visual **4,872× (z +10,9)** · mechano 0,974× (z −1,59, **38/40, no significativo**) · gustatory 0,376× · CTRL 1,147×.
+
+**El spread de 323× colapsa a 2,4×** (1,531 / 0,632) y **el orden entre clases se invierte con los dos umbrales.**
+
+### POR QUÉ, medido: las cuatro clases NO eran «igual de locales»
+
+```
+SALIDA_DOMINANTE_MOTORAS {'GNG': 89, 'PRW': 15, 'IPS_L': 3, 'IPS_R': 2, 'FLA_R': 1}
+SALIDA_DOM olfactory      {'AL_L': 1295, 'AL_R': 981}
+SALIDA_DOM visual         {'LA_L': 4250, 'LA_R': 3836, 'ME_R': 1315, 'ME_L': 1307}
+SALIDA_DOM mechanosensory {'GNG': 1712, 'SAD': 468, 'AMMC_R': 242, 'AMMC_L': 164}
+SALIDA_DOM gustatory      {'GNG': 353, 'PRW': 52, 'SAD': 3}
+```
+
+**DOS clases son locales al neuropilo motor y DOS son locales a neuropilos sensoriales. Eso es el efecto entero.** El argumento «la localidad no explica 323× entre poblaciones todas locales» **no era débil: era falso**, y a granularidad de neuropilo **gana BANC**.
+
+### 🟢 Y lo que sobrevive es mejor: el blindaje está del otro lado
+
+Acceso motor directo (`R1`) contra el null anatómico:
+
+| Clase | Observado | Lo que predice su co-localización | z | nulls ≥ real |
+|---|---|---|---|---|
+| **gustatory** | **10** | **101,6 ± 1,2** | **−78,9** | 40/40 |
+| **mechanosensory** | **64** | **98,6 ± 1,6** | **−21,7** | 40/40 |
+| olfactory | 0 | 1,0 ± 0,9 | −1,2 | 40/40 |
+| visual | 0 | 0,03 ± 0,16 | −0,2 | 40/40 |
+
+A umbral 5: gustativa **2 contra 91,0**; mechano **33 contra 89,2**; olfatoria y visual, el null predice **exactamente 0,0**.
+
+> **El enunciado correcto es el inverso del que tenía:** el cero de olfatorio y visual **no es blindaje, es geometría que el null predice exactamente**. El blindaje real está en las clases que **SÍ comparten neuropilo con las motoras**: gustativa entra al mismo neuropilo y conecta con **10 de 110** donde su co-localización predice **102**.
+
+**⚠️ Salvedad que NO rescata el claim viejo:** para `R1` de olfatorio y visual el null **conserva la cantidad medida** (media ≈ 0) → esas dos filas son **NO TESTEABLES**, no refutadas. Para `P2` el null se mueve (`sd` 349 sobre media 2.451) y ahí el test es válido.
+
+**Y el umbral de 5 arregla un artefacto:** sin umbral `R2` daba `sd = 0,0` (los 40 nulls al techo de 110); a umbral 5 el `sd` es **1,04** y el reach es estimable: olfatorio **1 de 109** contra 107,3 ± 1,0 (**z = −102**), visual **8** contra 107,3 (**z = −96**). Retención del umbral: **2.700.513 de 15.091.983 aristas (17,89%)**, 134.181 nodos, 109 de 110 motoras.
+
+---
+
+## 3.ter VALIDADO · el resto de la tabla
 
 | Hallazgo | Número | Instrumento |
 |---|---|---|
-| Densidad real del grafo | **7,85197×10⁻⁴** · y la publicada, 0,0074, es un **overflow de `int32`** reproducido a 8 cifras | resp 043 |
-| **Reciprocidad** | 26,60% · 4.014.518 aristas · **rank 1º de 41, 20,59× vs CP, 0/40** ← **lo publicable** · 47,27× vs MS. **Pero la MAGNITUD no es distintiva Y el desglose tiene prior art anatómico** | 40 nulls CP (`6057`) |
+| Densidad real del grafo | **7,85197×10⁻⁴** · la publicada, 0,0074, es un **overflow de `int32`** reproducido a 8 cifras | resp 043 |
+| **Reciprocidad** | 26,60% · 4.014.518 aristas · **rank 1º de 41, 20,59× vs CP, 0/40** · 47,27× vs MS. **La MAGNITUD no es distintiva y el desglose tiene prior art anatómico** | 40 nulls CP (`6057`) |
 | **Tabla 5 recomputada** | **4 enriquecidas, 4 depletadas, 1 ≈esperada** (el paper dice 0 y 7) | resp 043 + 046 |
 | Sensorial → KC directo | **0** en el real, 40/40 nulls MS dan 1.533–2.640 | nulls MS |
 | Fracción plástica | 4,045% neuronas · 0,41% conexiones · 0,47% sinapsis | conteo puro |
@@ -166,46 +247,18 @@ Lin: estructura. Paper 1: primera película dinámica. BANC: institucionalizaci�
 | **`DAN→KC`** | 47.404 · **8,71× vs CP, 0/40** → firma presináptica. Es 23,5× `DAN→MBON` | 40 nulls CP |
 | **`KC→KC`** | 293.762 · **7,26× vs CP, 0/40** | 40 nulls CP |
 | `ALPN→KC` | 27.848 · 1,70× vs CP (débil pero 0/40) | 40 nulls CP |
-| Script R completo | **30/30 valores** reproducidos, máx. 5×10⁻⁵ | 4 instrumentos |
-| Circuito de escape | 9,1× LC4→GF · LC6→GF = 0 aristas · 0/40 | 40 nulls CP |
+| Script R completo | **30/30 valores** reproducidos, máx. 5×10⁻⁵. ⚠️ **A-10: si el mapeo `id2i` está mal, esto reproduce un bug** | 4 instrumentos |
+| **`LC6→GF` = 0 CONTRA EL NULL ANATÓMICO** | el null predice **17,2 ± 3,1** socios, hay **0**, **z = −5,6** ← **este cero SÍ es una prohibición, no geometría** | resp 065 |
 | Escape compilado | ganancia **40×** vs detector vecino no cableado | motor propio |
 | **Los 40 nulls sobre las 12 clases** | **0/40 en 12/12.** El centro de aprendizaje está **BLINDADO** | doc `5937` |
-| **RDI dinámico** | **z = 197.** El resultado **más fuerte** del expediente, **y el territorio que BANC declara no cubrir** | doc `5977` |
+| **RDI dinámico** | **z = 197**, y es el mismo fenómeno que el `sel_post` de §3 | doc `5977` |
 | **La brecha con Lin, CERRADA** | con umbral ≥5: reciprocidad **13,98%** vs su 13,8% (1,30%) · sinapsis/conexión **12,647** vs 12,6 (0,37%) · densidad 1,405e-4 vs 1,61e-4 (12,7%, v783 vs v630) | resp 045 |
 | Replicación cruzada JS/Python | 46,88× vs 47,27×; el 0,8% lo explica la convención de swaps | doc `5977` |
 | **Priors medidos** | peso **lognormal(0,7034 , 0,8883)** · `inh_frac` de **0,068** a **0,513** · grado entrante CV 1,469 · fuerza CV 2,402 · **tabla de 95 pares de bloques** | doc `6057` |
 | **C99 embebido en target** | **1.336 B de `.text` a `-Os`** en ESP32/ESP32-S3 | resp 039 |
-| **⭐ ACCESO MOTOR A 2 SALTOS CONTRA 40 NULLS DE GRADO** | ver el bloque de abajo. **0/40 y 40/40 en los cuatro, spread 323,2×** | **resp 061** |
+| **2 saltos contra 40 nulls de GRADO** | 0/40 y 40/40 en las cuatro clases, spread 323,2×. **Los NÚMEROS se reproducen con código independiente; LA INTERPRETACIÓN se cayó (§3.bis)** | resp 061 + 063 |
 
-### ⭐ El acceso motor a 2 saltos, con null · resp 061
-
-**Estadístico: `P2` = cantidad de caminos de 2 saltos hasta motoras de cabeza.** R2 (motoras distintas alcanzadas) **se satura**: los 40 nulls dan 110 de 110, `sd = 0`, así que sirve la dirección pero **no el tamaño de efecto**. `P2` es graduado y es el que responde al grado.
-
-| Clase | Real | Null μ | Null sd | Ratio crudo | **Ratio vs el piso 0,652** | z | nulls ≥ real |
-|---|---|---|---|---|---|---|---|
-| **olfactory** | 901 | 39.522,6 | 745,7 | 0,0228× | **0,0350×** (28,6× depletado) | **−51,8** | **40/40** |
-| **visual** | 1.413 | 23.311,6 | 405,3 | 0,0606× | **0,0929×** (10,8× depletado) | **−54,0** | **40/40** |
-| **mechanosensory** | 293.022 | 39.787,8 | 740,2 | 7,37× | **11,29×** | **+342,1** | **0/40** |
-| **gustatory** | 67.439 | 10.304,1 | 229,7 | 6,54× | **10,03×** | **+248,8** | **0/40** |
-
-**El spread entre extremos es 323,2× y es invariante a la normalización.** A 1 salto contra nulls de grado el spread daba **283×**: dos profundidades, dos mediciones independientes, mismo orden.
-
-**El cero de 1 salto ahora tiene expectativa, y es lo más limpio:** motoras distintas alcanzadas a 1 salto, **olfactory 0 contra 71,3 ± 4,6 (z = −15,4)** y **visual 0 contra 52,3 ± 5,2 (z = −10,0)**. Ningún null bajó de 56 ni de 43.
-
-**🆕 El piso de 0,652×, que corrige mis propios números:** un control de 10.855 nodos **al azar** da `P2` real 312.457 contra null 479.030 ± 7.189, o sea **0,652×**. El conectoma real tiene menos caminos de 2 saltos que un grafo de configuración **en general**, no solo para las sensoriales. **Los ratios crudos se leen contra 0,652, no contra 1,0**, o un revisor que corra su propio control lo encuentra. *Salvedad: el control no está pareado en grado (1.187.513 aristas contra 57.764–98.782), es un orden de magnitud.*
-
-**Los dos guards, y los dos pueden dar rojo:**
-
-```
-GUARD in-degree permutacion vs real: IGUAL_OK
-CONTROL NEGATIVO dst uniforme (DEBE romper grado): DISTINTO_OK_el_guard_puede_dar_rojo
-  nodos con in-degree roto por el uniforme: 138142 de 138639
-ESPEJO A PROPOSITO _EDGES_INTO_MOT: real 19860, null 19860, sd 0.0, 40/40
-```
-
-El segundo es una cantidad **conservada por construcción**, metida en la misma corrida: si el estadístico principal se hubiera comportado así, el veredicto era **NO TESTEABLE**. **No se comportó así, y ahora está demostrado en vez de argumentado.**
-
-### ✅ Y el 105 vs 110 está CERRADO (resp 061)
+### ✅ El 105 vs 110 está CERRADO (resp 061)
 
 ```
 110 (super_class == 'motor')  =  105 brain_motor_neuron  +  1 neck_motor_neuron  +  4 sin cell_class
@@ -214,9 +267,7 @@ nerve: {'PhN': 40, 'MxLbN': 26, 'CV': 20, 'AN': 14, 'ON': 10}
 status: 101 sin status, 9 'outlier_seg'
 ```
 
-La resp 053b usó `cell_class == 'brain_motor_neuron'` (105) y la 057 `super_class == 'motor'` (110). **Ninguna estaba mal: eran dos poblaciones anidadas y no se declaró.** La resp 061 mide **con los dos denominadores en paralelo** y el veredicto no cambia.
-
-**La Tabla 5, con las poblaciones REALES del paper** (`cell_class`, `motor_n = 1485` **exacto**, `p_exc = 0,600272`):
+**La Tabla 5 con las poblaciones REALES del paper** (`cell_class`, `motor_n = 1485` exacto, `p_exc = 0,600272`):
 
 ```
 clase         N_paper   N_mio   obs_exc   r_paper  r_ovf    ratio_OK    veredicto
@@ -231,135 +282,178 @@ visual          10853   10855       137     0.002  0.002     0.018    DEPLETADO
 vis. optic      77521   77530      1679     0.003  0.003     0.031    DEPLETADO
 ```
 
-**8 de 9 filas reproducen el ratio publicado con la densidad overflowed**, así que la fórmula y las poblaciones están **establecidas, no inferidas**.
+**8 de 9 filas reproducen el ratio publicado con la densidad overflowed** → la fórmula y las poblaciones están **establecidas, no inferidas**.
 
 ---
 
-## 4. REFUTADO / NO TESTEABLE / RETIRADO
+## 4. 🔴 LAS OCHO AUTORREFUTACIONES DEL 24/25-ago, y todas tienen la misma forma
+
+1. el **desglose de reciprocidad** era prior art de Lin (Fig. 5c, ED Fig. 6c)
+2. el **cero de motoras de cabeza** era **geometría**, no prohibición
+3. **«las cuatro clases son igual de locales» era FALSO** (104 de 110 motoras viven en GNG/PRW, y mechano y gustativa también)
+4. el **piso de 0,652×** era anatomía, no propiedad del conectoma (contra neuropilos: 1,010×)
+5. la **tabla de ruteo del sistema visual ya estaba publicada**, y **desde mi mismo snapshot** (Kind 2024 + Cell Type Explorer de `flywire-fafb:v783b`, resp 066-067)
+6. el **«0 inhibitorias» del GF describía un recorte del 20%**: el GF es **67,6% central y 49,8% inhibitorio** (resp 068)
+7. el **AMMC al 33,5%** era **localización de sinapsis**, no origen de señal; la real es **2,0%** (resp 068)
+8. medí **`sel_peak` seis días**, y el pico es **lo único que este circuito no discrimina** (resp 070-071)
+
+> **La forma común: medí bien y después afirmé sobre la NOVEDAD o la CAUSA sin medir eso. Las mediciones no fallaron nunca.**
+
+**Las dos reglas que salen, y son las más caras:**
+- **Buscar el prior art ANTES de medir.** El barrido de literatura costó menos que la corrida que lo precedió.
+- **Antes de medir un par en un conectoma público, buscar si existe un CATÁLOGO NAVEGABLE de ese snapshot.** El conteo ya está publicado por construcción: **el null es el producto, no el número.**
+
+**Y una refutación más, del 25-ago:** compilar **las 962** neuronas refutó mi predicción — el recorte **sobreestimaba** la selectividad de pico (resp 069). **τ heterogénea no rescata nada** (resp 070).
+
+---
+
+## 4.bis REFUTADO / NO TESTEABLE / RETIRADO · el resto
 
 | Claim | Qué lo tumbó |
 |---|---|
-| **«la magnitud de la reciprocidad es distintiva de este conectoma»** | **🔴 NO SOSTENIDA (resp 050).** Lin la encuentra **comparable en CINCO conectomas**. **Hay que bajar el claim del abstract** |
-| **«el desglose de reciprocidad por circuito es propio porque Nature da solo una cifra global»** (mío, resp 052 + pivote v1) | **🔴 FALSO, VERIFICADO Y RETIRADO (resp 057).** Lin descompone reciprocidad **por neuropilo en la Fig. 5c**, y en la **ED Fig. 6c normalizada por densidad** en los 78. **Estaba en el `ERRATUM.md` ítem 3, que va a Zenodo.** Corregido en la resp 059. **Lo que queda: el EJE, no la existencia del desglose** |
-| **«el cero visual/olfatorio→motoras de cabeza refuta la localidad de BANC»** (mío, resp 053b) | **🟡 SE DEGRADA (resp 057).** Refuta la localidad a escala de **parte del cuerpo**, y **confirma** la de **neuropilo**: las ORN proyectan solo al AL y los fotorreceptores solo a lámina/médula (literatura de 2000-2004), y **17.503 de los 21.019 socios de visual a 1 salto son del propio lóbulo óptico**. Encima **gustatory sí llega a 10 motoras a 1 salto**. **E-01 sobre la ESCALA de la explicación rival.** → **rescatado a 2 saltos con null, resp 061, ver §3 y §5.13** |
-| **«el null CP es aporte propio»** (§2.4 del paper) | **🔴 PRIOR ART: el NPC model de Lin et al. 2024.** Misma familia, otra granularidad |
-| **«1.652× con la densidad de Lin»** (doc `5117`) | **🔴 RETIRADO (resp 045).** **Comparación cruzada.** Pareada da **995×**, y el publicable es **20,59× contra 40 nulls CP** |
-| **«jerarquía de ruteo: 283,2× y listo»** | **NO TESTEABLE contra el null fuerte** (doc `6057`): `sd = 0,0` exacto y 40/40. **Es cantidad conservada** bajo CP. Arreglo: null de **tripartición**, sin correr |
-| **«el desfasaje de un paso explica la discrepancia a t=60»** (mío) | **REFUTADO por lectura del código** (doc `6017`). La causa eran **dos métricas con el mismo nombre** |
-| **«el erratum corrige un 1.559× que aparece 9 veces»** (borrador) | **🔴 RETIRADO (resp 046):** el 1.559 **no existe en el PDF**. **Un erratum que corrige un claim que el paper no hizo es él mismo un error** ← **y esta misma falla se repitió apuntando a Nature** |
-| **«el contexto cita a Lin con las páginas de Dorkenwald»** (mío, resp 050) | **🔴 IMPRECISO (resp 051).** El defecto era una referencia **incompleta**, no **miscitada** |
-| **«el erratum está listo / no está listo / no existe en git»** | **CERRADO: `docs/ERRATUM.md` existe, 9 ítems, cero placeholders, claim falso retirado, Bates citado.** Falta **subirlo a Zenodo** |
-| **«los 2 saltos son una observación cruda sin null»** | ✅ **CERRADO (resp 061): 40 nulls de grado, 0/40 y 40/40 en las cuatro clases, spread 323,2×.** Pero sigue **sin null anatómico** |
-| **«hay una discrepancia sin resolver entre 105 y 110 motoras»** | ✅ **CERRADO (resp 061):** conjuntos anidados, la diferencia son 1 `neck_motor_neuron` + 4 sin `cell_class` |
-| «el Paper 1 evita la densidad contaminada» | falso: §2.1 dice `Density = 0.0074` y el Abstract dice 36× |
-| «el guard de tautología es aporte propio» | §2.4 del paper ya lo declara y lo deriva |
-| «0 clases enriquecidas / 7 depletadas» (el paper) | con la densidad correcta: **4 enriquecidas, 4 depletadas, 1 ≈esperada** |
-| «**4 de 9 clases pasan a enriquecidas**», retirado por el `5177` | **🔄 EL RETIRO SE REVIERTE (resp 043).** El `5177` usó el **85.821 de la Tabla 4, que es una SUMA DE PESOS**, como conteo de aristas; el real es **23.010** |
-| «reciprocidad 36×» | **es el MISMO overflow**: `0,266/0,00739526 = 35,97` |
-| «τ_m = 8,4 ms, centro del rango» | **dos defectos:** el centro de 5-20 es **12,5** (y 3,3 está **debajo**), **y** la derivación correcta es `-1/ln(1-τ) = 7,89`, error 6,47% |
-| «R = 1,31, retención selectiva» | cruza 1 en las tres modalidades según normalización (visual 1,878 → 0,811) |
+| **«la magnitud de la reciprocidad es distintiva de este conectoma»** | **🔴 NO SOSTENIDA (resp 050).** Lin la encuentra comparable en CINCO conectomas |
+| **«el desglose de reciprocidad por circuito es propio»** | **🔴 FALSO Y RETIRADO (resp 057-059).** Queda **el EJE**, no la existencia del desglose |
+| **«el null CP es aporte propio»** (§2.4) | **🔴 PRIOR ART: el NPC model de Lin et al. 2024** |
+| **«1.652× con la densidad de Lin»** (doc `5117`) | **🔴 RETIRADO (resp 045).** Comparación cruzada; pareada da 995×, el publicable es 20,59× |
+| **«jerarquía de ruteo: 283,2× y listo»** | **NO TESTEABLE contra el null fuerte:** `sd = 0,0` y 40/40 = cantidad conservada. Arreglo: null de **tripartición**, sin correr |
+| **«el spread de 323× a 2 saltos es el resultado central de la v2»** | **🔴 REFUTADO por el null anatómico (resp 063): colapsa a 2,4× y tres signos se invierten.** `docs/SECCION-V2-DOS-SALTOS.md` **NO se publica como está** |
+| **«la topología define ruteo y ganancia, no selectividad»** | **🔴 RETIRADO (resp 071): define selectividad POST-ESTÍMULO.** El 1,04× era la métrica equivocada |
+| **«el erratum corrige un 1.559× que aparece 9 veces»** | **🔴 RETIRADO (resp 046):** el 1.559 **no existe en el PDF** |
+| **«el desfasaje de un paso explica la discrepancia a t=60»** | **REFUTADO leyendo el código:** eran **dos métricas con el mismo nombre** |
+| **«hay una discrepancia sin resolver entre 105 y 110 motoras»** | ✅ **CERRADO (resp 061):** conjuntos anidados |
+| «el Paper 1 evita la densidad contaminada» | falso: §2.1 dice `Density = 0.0074` |
+| «el guard de tautología es aporte propio» | §2.4 del paper ya lo declara |
+| «0 clases enriquecidas / 7 depletadas» (el paper) | con la densidad correcta: **4 / 4 / 1** |
+| «reciprocidad 36×» | **el MISMO overflow**: `0,266/0,00739526 = 35,97` |
+| «τ_m = 8,4 ms, centro del rango» | el centro de 5-20 es **12,5**, y la derivación correcta es `-1/ln(1-τ) = 7,89` (error 6,47%) |
+| «R = 1,31, retención selectiva» | cruza 1 en las tres modalidades según normalización |
 | col-norm «respeta la varianza local» | lleva el CV de 2,402 a **cero** |
-| **Tabla 8 reproducible** | **4 particiones con la definición EXACTA del código y ninguna reproduce la FORMA.** Los 6 valores **no existen en ninguno de los 40 notebooks**: falta el instrumento |
+| **Tabla 8 reproducible** | **4 particiones con la definición EXACTA y ninguna reproduce la FORMA.** Los 6 valores no existen en los 40 notebooks: **falta el instrumento** |
 | «hace falta una SNN para latencias» | la métrica al 10% del pico da mechano 4 < gust 5 < visual 6 < olf 10 |
 | «el control lineal descarta saturación» | clipea: `max h = 2,0000` exacto en 2 de 3 modalidades |
-| «la topología explica la función» | el escape compilado da selectividad temporal 1,04×. **Define ruteo y ganancia, no selectividad** |
-| «la entropía baja distingue biología» | los nulls bajan más: dH −9,79 vs −2,88. Doc `5777`: **la FORMA sí, 7/12** |
-| «visual es la vía con menos acceso motor» | **a 1 salto no: es olfactory** (doc `5937`, y confirmado en resp 061: olfactory 0,0228× contra visual 0,0606×). **A 2 saltos visual toca menos motoras (15 vs 23) pero está menos depletada en caminos.** Son dos preguntas distintas |
-| «sinapsis vs conexiones» explica el bug de densidad | **existe como defecto de redacción pero NO es la causa**: es el overflow |
-| «Therianos me refuta» | **retirado:** Lin mide 13,8% en el adulto y Therianos usa conectoma **larval** |
-| «el `temporal RDI` es frágil» (mío) | **error de eje** (doc `5977`). **El eje es CONTRA QUÉ NULL** |
+| «la entropía baja distingue biología» | los nulls bajan más: dH −9,79 vs −2,88. **La FORMA sí, 7/12** |
+| «visual es la vía con menos acceso motor» | **a 1 salto es olfactory.** Y contra neuropilos **visual pasa a enriquecida** |
+| «sinapsis vs conexiones» explica el bug | existe como defecto de redacción, **la causa es el overflow** |
+| «Therianos me refuta» | **retirado:** Lin mide 13,8% en adulto, Therianos usa conectoma **larval** |
+| «el `temporal RDI` es frágil» | **error de eje.** El eje es CONTRA QUÉ NULL |
 | «KC→MBON cae contra CP» (predicción mía) | **refutada: sobrevive con 7,81×, 0/40** |
 
 ---
 
-## 5. NO MEDIDO / pendiente, declarado
+## 5. 🔴 LA AUDITORÍA EXTERNA DE TAO · 62/100, RECHAZADO como release
 
-1. **La décima clase de la Tabla 5.** §2.3 declara 10, la tabla muestra 9. **Cuál falta: no establecido.**
-2. **La fila AN no es reproducible.** `N=495` no sale de ningún filtro consistente. Declarada así en el erratum.
-3. **Si los `p` de la Tabla 5 usan `p_edge_exc`** u otra probabilidad.
-4. **El script de la Tabla 8: no está en el corpus.** Cero de 6 valores en 40 notebooks.
-5. **Null de tripartición: no corrió.**
-6. **Faltan 21 nulls** para el test global de los 12 pares (~30 min, doc `5957`).
-7. **Verificaciones externas pendientes:** los dos **DOI** contra Zenodo, y **Betzel** (PLOS Complex Systems 3(3), e0000091). ✅ Lin, Dorkenwald, Bates y las fechas de ARC están verificados.
-8. **🔴 Los valores de la Fig. 5c y la ED Fig. 6c de Lin NO se leyeron fila por fila.** Sé qué miden por el pie de figura y el texto. **Si algún neuropilo corresponde funcionalmente a un circuito de la Table 7, «ortogonal» es demasiado generoso.** Y **no busqué si publican la tabla numérica como Supplementary Data**.
-9. **De Lin leí el cuerpo, no su Discussion ni sus Methods.** La **Table 2 sí está leída fila por fila**. **No leí Dorkenwald et al.**
-10. **NPC vs CP no se compararon midiendo.**
-11. ✅ **CERRADO (resp 061): los 2 saltos ya tienen 40 nulls de grado.** Ver §3. **Lo que sigue abierto es la §5.13.**
-12. ✅ **CERRADO (resp 061): el 105 vs 110.** Conjuntos anidados, diferencia de 5 neuronas identificadas.
-13. **🔴 EL HUECO PRINCIPAL AHORA: no hay null ANATÓMICO, y no es testeable con los datos locales.** Un null de grado baraja destinos por todo el cerebro sin respetar neuropilos, así que **cualquier restricción espacial se ve como un efecto enorme**. Calibración de cuánto puede costar: en Lin, pasar de CFG (×43,8) a NPC (×7,22) **se come el 84% del efecto**. `annotations.tsv` tiene **31 columnas y ninguna es neuropilo**: hay que bajar la asignación de sinapsis a neuropilos, o posiciones para un NND. **Estado correcto: establecido contra grado, NO testeado contra anatomía.**
-   **🟢 Lo que SÍ aguanta sin el NPC, y es el argumento a escribir:** la comparación **entre clases**. Mechanosensorial y gustativa **también** tienen árboles localizados y **también** entran por nervios de la cabeza, y dan **+7,37× y +6,54×** donde visual y olfatoria dan 0,02× y 0,06×. **La localidad no explica 323× entre cuatro poblaciones que son todas locales.**
-14. **Del barrido de 2 saltos (resp 061), lo no medido:** `P2` cuenta caminos **con multiplicidad y sin excluir intermediarios motores**; el null genera **317 self-loops** y aristas múltiples (familia configuración, no MS con rechazo), sesgo que va **a favor** del lado depletado; **ignora signo y peso**; **sin umbral de ≥5 sinapsis**, o sea **no comparable con Lin ni Bates**; **9 de las 110 motoras son `outlier_seg`** y no se midió si excluirlas cambia algo; **no se corrieron 3 saltos**; y el control aleatorio **no está pareado en grado**.
-15. **No barrí exhaustivamente si el cero ya está publicado.** Lo más cercano: **Miroschnikow et al. 2018** (eLife, citado por BANC) muestra sensorial→motor monosináptico **sí existe** en la **larva**; y los papers de grooming de cabeza (Hampel 2015, Eichler 2024, Calle-Schuler 2026, Nat Commun abr-2026) trabajan con circuitos multicapa **como supuesto, no como cero medido**. **Apoyado, no establecido.**
-16. **Los tres notebooks con overflow se declaran descendientes** de un «pipeline original» que **no está en el corpus**. **Apoyado** por reproducir 8 de 9 ratios, **no establecido**.
-17. **Un solo patrón de overflow barrido** (`N*(N-1)`). No barrí `N**2`.
-18. **El barrido de Docs está al 71%:** 46 de ~65. **9 IDs pendientes** (`6157 6177 6197 6217 6237 6257 6277 6317 6337`), ~15 en icca-engine, ~50 entre `3637` y `4717`, MUDH/AURA sin tocar.
-19. **Los dos `.mjs` del release no corren en un clon ajeno:** rutas absolutas `/workspace/...`. **Declarado en README y METHODS, no parcheado.** Mi test de «clon limpio» dio un **falso verde** (resp 047).
-20. **Los dos JSON grandes van por md5**, no commiteados: `nulls40.json` (191.443 B, `38bf1fcadaf37a3b125f83d22b6f4d8e`) y `dualbrain_bench.json` (31.527 B, `1025d60b4e9521d7e4a21ed282935049`).
-21. **Los 6 `.py` de deuda siguen fuera de git.** Manifiesto en `MANIFIESTO-KAGGLE.md`.
-22. **El C99 embebido está medido a medias:** 1.336 B de `.text` en target, **sin `.elf`, sin RAM en target**, no corrió en hardware.
-23. **No corrí el review automático** sobre los archivos nuevos. **K-02: deuda declarada.**
-24. **El `README.md` y `docs/METHODS.md` NO tienen la evidencia nueva** de las resp 053b, 057 ni 061. Y sigue pendiente la reclasificación del `temporal RDI`.
+**Rama `titan/auditoria-integra-2026-08-25`, PR #3.** 13 hallazgos, **13 aceptados, 0 rechazados** (resp 073). Verifiqué tres independientemente (A-02, A-06, A-09) y los tres dieron **CONFIRMADO**. A-06 era **peor** que su texto: mi shuffle por arista dejaba **862 de 864 neuronas mixtas** donde el grafo real tiene 0. **Corrí el null correcto y el `sel_post` sobrevivió.**
+
+**Su diagnóstico, verbatim, y es el mejor resumen del estado real:**
+
+> *«El problema no es que el proyecto no tenga resultados; es que **la rama pública, el ejecutor y el testigo no están alineados**.»*
+
+**Los cinco bloqueantes, todos de INFRAESTRUCTURA:**
+
+| # | Qué |
+|---|---|
+| **A-01** | los guards **imprimen rojo y salen con 0** |
+| **A-02** | `src/guards.py` de `main` **confunde conservación con saturación** |
+| **A-03** | no hay entorno reproducible: sin pins, sin lockfile, sin CI |
+| **A-04** | los JSON chicos (191 KB y 31 KB) no están en `results/` |
+| **A-05** | el clon fresco **no corre**: rutas `/workspace/` absolutas |
+
+**El que más puede doler y NO verifiqué: A-10.** Si el mapeo `id2i` de `scriptR.py` no coincide con el índice real del parquet, **los 30/30 valores reproducidos reproducen un bug. Prioridad técnica máxima.**
+
+**Lo que más vale de su auditoría, y no es un hallazgo:** mis ocho autorrefutaciones son **todas científicas**; sus cinco bloqueantes son **todos de infraestructura**, porque yo nunca miré ahí. **Es el sesgo de selección que un instrumento propio no cubre.**
 
 ---
 
-## 6. Decisiones esperando a Abraham
+## 6. NO MEDIDO / pendiente, declarado
 
-1. **🔴 SUBIR LA v2 A ZENODO antes del 30-ago.** El texto está en **`docs/ERRATUM.md`**, 9 ítems, cero placeholders, **con el claim falso sobre Lin retirado y Bates citado**. **W-01: soy el único testigo de que la corrección es correcta; leerlo una vez antes de subir.**
-2. **Re-verificar los dos DOI contra Zenodo** antes de pegarlos, y **verificar Betzel**.
-3. **🔴 El `README.md` público clasifica los resultados dinámicos como «negative methodological result»**, y **lo dinámico es lo único que BANC declara no cubrir**. **Le puse un bloque «Pending revision»; reclasificarlo es tu decisión.**
-4. **Bajar el 36× y el «massive reciprocity» del abstract**, y poner en su lugar el **eje funcional** de la Table 7. Texto listo en **`docs/PIVOTE-RECIPROCIDAD.md`**.
-5. **Citar a Lin, el NPC model y Bates et al. como prior art** en la v2.
-6. **Agregar el párrafo de convergencia** attractor/repeller. Lo más barato del plan.
-7. **¿Adoptar el umbral de 5 sinapsis?** **Los TRES papers de referencia lo usan.** El Paper 1 es el único que no. **Y ahora también afecta al barrido de 2 saltos, que corrió sin umbral.**
-8. **⭐ Los bugs del Script R viven DENTRO del verificador V-K** (doc `5637`), que **comparte el overflow** (resp 044). **Es el ítem 9 del erratum.**
-9. **Buscar el script de la Tabla 8.** Si aparece, se corre en una hora.
+1. **A-10: el mapeo `id2i` sin verificar.** Lo primero de la lista técnica.
+2. **A-01 y A-02:** falta un `require()` único que aborte y tests negativos con exit ≠ 0. **Ya hay un ejemplo funcionando en `src/signshuffle_dale.py`** (returncode 2 verificado con `subprocess`, porque **el `$?` de este shell miente**).
+3. **A-03:** pins, lockfile, CI mínimo. **A-04:** commitear los JSON chicos con su SHA-256. **A-05:** rutas por argumento — **los cinco scripts nuevos ya lo hacen, los dos `.mjs` del release no.**
+4. **A-07 y A-08:** baseline **pareado en grado** y null anatómico **por sinapsis** en vez de neuropilo dominante.
+5. **El neuropilo dominante es una aproximación.** El NPC de Lin asigna **por sinapsis**; este ensemble es de la **misma familia, no idéntico**, y **no se comparó midiendo**.
+6. **No se corrió el NND** (distancia física). Las posiciones están en `annotations.tsv` (`pos_x/y/z`, `soma_x/y/z`) y **no se usaron**.
+7. **El ensemble de neuropilos no preserva el grado entrante exacto**, solo dentro de bloque, y **los dos nulls no se combinaron**.
+8. **No se midió la pureza de los bloques** (qué fracción de las aristas de cada bloque es de la clase medida) → no sé cuánto margen de movimiento le queda al null.
+9. **El hallazgo de gustativa (10 contra 102) no tiene control de tripartición ni de distancia, y NO se barrió literatura.** Es el mismo error de la §4 si lo doy por propio.
+10. **Del claim `sel_post`:** falta barrer la **ventana de integración** (integra 120 pasos cuando la memoria efectiva es ~8) y **τ compleja**, el banco de osciladores del motor real.
+11. **La décima clase de la Tabla 5** (§2.3 declara 10, la tabla muestra 9): **no establecido cuál**. **La fila AN no es reproducible.** **Si los `p` usan `p_edge_exc`: no establecido.**
+12. **El script de la Tabla 8 no está en el corpus.** Cero de 6 valores en 40 notebooks.
+13. **Null de tripartición: no corrió.** **Faltan 21 nulls** para el test global de los 12 pares (~30 min, doc `5957`).
+14. **Verificaciones externas pendientes:** los dos **DOI** contra Zenodo y **Betzel** (PLOS Complex Systems 3(3), e0000091). ✅ Lin, Dorkenwald, Bates y ARC verificados.
+15. **Los valores de la Fig. 5c y la ED Fig. 6c de Lin NO se leyeron fila por fila**, y no busqué si publican la tabla numérica como Supplementary Data. **De Lin leí el cuerpo, no su Discussion ni sus Methods. No leí Dorkenwald.**
+16. **`P2` cuenta caminos con multiplicidad y sin excluir intermediarios motores**; el null de grado genera **317 self-loops**; ignora signo y peso; **9 de las 110 motoras son `outlier_seg`** y no se midió excluirlas; **no se corrieron 3 saltos**.
+17. **El barrido de Docs está al 71%:** 46 de ~65. **9 IDs pendientes** (`6157 6177 6197 6217 6237 6257 6277 6317 6337`), ~15 en icca-engine, ~50 entre `3637` y `4717`, MUDH/AURA sin tocar.
+18. **Los dos JSON grandes van por md5:** `nulls40.json` (191.443 B, `38bf1fcadaf37a3b125f83d22b6f4d8e`) y `dualbrain_bench.json` (31.527 B, `1025d60b4e9521d7e4a21ed282935049`). **Los 6 `.py` de deuda siguen fuera de git** (`MANIFIESTO-KAGGLE.md`).
+19. **Las tres figuras de 2 saltos no están commiteadas** (política del repo): `fig_twohop_a_pathcount.svg` `8a1806e9b16db8c4d3210523d51622ef` · `_b_reach.svg` `c420213caa112be0db40bb7049fc81a9` · `_c_normalised.svg` `6ffc18be441974d6fbe7239c6daef572`. **El generador es determinista y sí está commiteado.**
+20. **El C99 embebido está medido a medias:** 1.336 B de `.text`, **sin `.elf`, sin RAM en target**, no corrió en hardware.
+21. **`README.md` y `docs/METHODS.md` NO tienen la evidencia de las resp 053b, 057, 061, 063, 065 ni 071**, y sigue pendiente la reclasificación del `temporal RDI`.
+22. **No corrió el review automático** sobre los archivos nuevos. **K-02: deuda declarada, no aprobación.**
+23. **`CONTEXTO-motor.md` NO se abrió el 25-ago:** A-12 está cerrado **a la mitad** y ese archivo **no recibe veredicto de vigencia** (modo de falla 4).
+
+---
+
+## 7. Decisiones esperando a Abraham
+
+1. **🔴 SUBIR EL ERRATUM A ZENODO antes del 30-ago.** `docs/ERRATUM.md`, 9 ítems, cero placeholders. **W-01: soy el único testigo de que la corrección está bien; leelo una vez.**
+2. **🔴 EL CRONOGRAMA.** La infraestructura son días y no estaba en los cinco entregables. **O se corre el plan, o se mata un entregable.**
+3. **¿Abro los 13 issues de la auditoría?** Son 5+ escrituras. Sin issues, los hallazgos son **deuda sin dueño**.
+4. **Mergear o partir el PR #2** (nueve respuestas y siete scripts) y **cerrar o retargetear el PR #1**, que está viejo.
+5. **Reclasificar el `temporal RDI` del `README`**, que hoy lo llama «negative methodological result» cuando **es lo único que BANC no cubre**.
+6. **¿Adoptar el umbral de 5 sinapsis?** Los tres papers de referencia lo usan **y es técnicamente mejor**: destapó un estadístico que sin él no se podía usar.
+7. **Reescribir `docs/SECCION-V2-DOS-SALTOS.md` con el veredicto invertido** (el blindaje de gustativa) en vez de con el spread de 323×.
+8. **Bajar el 36× y el «massive reciprocity» del abstract** y poner el eje funcional (texto en `docs/PIVOTE-RECIPROCIDAD.md`). **Citar a Lin, el NPC y Bates como prior art.** **Agregar el párrafo de convergencia attractor/repeller** (lo más barato del plan).
+9. **Los bugs del Script R viven DENTRO del verificador V-K** (doc `5637`), que **comparte el overflow**. Es el ítem 9 del erratum.
 10. **¿ARC-AGI-2 en vez de ARC-AGI-3** para la elegibilidad? Ahorra la S7 entera.
-11. **Mergear el PR #1**, o decir qué le falta.
-12. **¿Arreglo las rutas absolutas de los dos `.mjs`?**
-13. **El barrido de Docs: ¿sigo con los 9 IDs del conectoma o abro las otras zonas?**
-14. **Subir los 6 `.py` de deuda y los dos JSON grandes.**
-15. Org `Mendieta-Architect` o aceptar la URL `gatehot59-star` en el erratum.
-16. **🆕 El resultado de 2 saltos está listo para la v2 del paper y NO está escrito en ninguna parte del paper.** Es material nuevo, no una corrección de v1.0, así que **no va al erratum**. ¿Lo redacto como sección de la v2?
-17. **🆕 ¿Consigo la asignación a neuropilos para poder correr el null anatómico?** Es lo único que separa el resultado de 2 saltos de «establecido contra grado» a «establecido, punto». Sin eso, la §5.13 queda como limitación declarada.
+11. **¿Arreglo las rutas absolutas de los dos `.mjs`?** **¿Subo los 6 `.py` y los dos JSON?**
+12. **El barrido de Docs: ¿los 9 IDs del conectoma u otras zonas?** Org `Mendieta-Architect` o aceptar `gatehot59-star` en el erratum.
+13. **¿Unifico también `CONTEXTO-motor.md`?** Es el otro medio A-12 y sale en un turno.
 
 ---
 
-## 7. Estado de git y del entorno, medido
+## 8. Estado de git y del entorno
 
-**Ya en el repo:** `docs/ERRATUM.md` (**9 ítems, corregido el 24-ago 23:15**) · `docs/PIVOTE-RECIPROCIDAD.md` (**corregido**) · `README.md` · `LICENSE` · `docs/METHODS.md` · `src/` con 8 archivos · `results/` con 5 logs · `docs/agents/` con los cuatro contextos, el índice, el manifiesto de Kaggle, la evidencia y **61 respuestas**.
+**Rama de trabajo `titan/twohop-nulls`.** PRs abiertos: **#1** (viejo), **#2** (nueve respuestas + siete scripts), **#3** (la auditoría de Tao, rama `titan/auditoria-integra-2026-08-25`). **`main` intacta.**
 
-**Verificado por md5 desde los dos lados (resp 045):** cuatro archivos de `src/` son **byte-idénticos** al código que corrió en Kaggle (`motor.py`, `cp40.py`, `nulls40_kaggle.py`, `hm_sweep.py`).
+**Ya en el repo:** `docs/ERRATUM.md` (9 ítems) · `docs/PIVOTE-RECIPROCIDAD.md` · `docs/SECCION-V2-DOS-SALTOS.md` (**a reescribir**) · `README.md` · `LICENSE` · `docs/METHODS.md` · `src/` (incluye `twohop_nulls.py`, `signshuffle_selpost.py`, `signshuffle_dale.py`) · `results/` con 5 logs · `docs/agents/` con los contextos, el índice, el manifiesto, la evidencia y **75 respuestas**.
 
-**Entorno:** el container **no es efímero** (uptime 3,2 días medido), `git` no está instalado y todo pasa por la integración de GitHub, `nexus.db` **no existe**. Python 3.12.14, Node 24.18.0, R 4.5.3. **`pypdf` no venía instalado y se instala con `pip` (hay red).** **Los Docs son ENUMERABLES:** IDs de página secuenciales **paso 20**, prefijo `2kza6fw5-`. Límite medido: **5 Docs completos no entran en una ventana**.
+**Verificado por md5 desde los dos lados (resp 045):** `motor.py`, `cp40.py`, `nulls40_kaggle.py` y `hm_sweep.py` son **byte-idénticos** al código que corrió en Kaggle.
 
-**🆕 El shell del gateway NO acepta saltos de línea ni heredocs:** un `python3 -c` multilínea llega con los `\n` literales y tira `SyntaxError`. **Todo script va en UNA línea con `;` y comprensiones**, o se lanza con `nohup ... &` redirigiendo a un log y se polea con `tail`. **El timeout de una llamada está entre 45 y 75 s**: una corrida de 292 s **hay que mandarla al fondo**. Y `sep='\t'` no sobrevive: usar `sep=chr(9)`.
+**Entorno (medido el 24-ago, `CONTEXTO-ENTORNO.md` §13 · SE RE-MIDE, NO SE RECUERDA):** el container **no es efímero** (uptime 3,2 días), `git` no está instalado y todo pasa por la integración de GitHub, `nexus.db` no existe. Python 3.12.14, Node 24.18.0, R 4.5.3. `pypdf` se instala con `pip` (hay red). **Los Docs son ENUMERABLES:** IDs de página secuenciales **paso 20**, prefijo `2kza6fw5-`. Límite medido: **5 Docs completos no entran en una ventana.**
 
-**Datos:** `/workspace/connectivity.parquet` (100.804.642 B, 15.091.983 filas, md5 `3d802fd542b5d18570ba1ba0bb0abed9`) y `/workspace/annotations.tsv` (31.718.505 B, md5 `719904abad876c68ace1b5690c9b9b63`). **Columnas de anotación: 31, y NINGUNA es neuropilo** — por eso la §5.13.
+**🔴 El shell del gateway NO acepta saltos de línea ni heredocs:** un `python3 -c` multilínea llega con los `\n` literales y tira `SyntaxError`. **Todo script va en UNA línea con `;` y comprensiones**, o se lanza con `nohup … &` a un log y se polea con `tail`. **El timeout de una llamada está entre 45 y 75 s**: una corrida de 288-292 s **va al fondo**. Y `sep='\t'` no sobrevive: usar `sep=chr(9)`.
+
+**Datos:** `/workspace/connectivity.parquet` (100.804.642 B, 15.091.983 filas, md5 `3d802fd542b5d18570ba1ba0bb0abed9`) y `/workspace/annotations.tsv` (31.718.505 B, md5 `719904abad876c68ace1b5690c9b9b63`). **31 columnas de anotación y ninguna es neuropilo** → los neuropilos vienen de **Zenodo `10676866` v783.0** (`per_neuron_neuropil_count_pre/post_783.feather`, 79 etiquetas).
 
 ---
 
-## 8. Modos de falla propios de esta línea, y cada uno ya costó
+## 9. Modos de falla propios de esta línea, y cada uno ya costó
 
-**1 · Una lista hecha de lo que está a mano solo contiene lo que está a mano.** Dos veces: el `INDICE-DE-ENLACES.md` cosechado del chat, y el corpus de Kaggle (**29 archivos locales contra 40 kernels reales**). **El denominador se mide en la fuente, no en la copia.**
+**1 · Una lista hecha de lo que está a mano solo contiene lo que está a mano.** El `INDICE-DE-ENLACES.md` cosechado del chat, y el corpus de Kaggle (**29 archivos locales contra 40 kernels reales**). **El denominador se mide en la fuente, no en la copia.**
 
-**2 · Un null cuyos invariantes incluyen la cantidad medida no es un control, es un espejo.** **Si `sd(null) == 0`, reportar NO TESTEABLE**, no `1,000×`. **Antídoto que ya se aplicó (resp 061): meter en la misma corrida una cantidad conservada A PROPÓSITO** (`_EDGES_INTO_MOT`, sd 0,0, 40/40) para demostrar que el estadístico principal **no** se comporta así. **Y su primo: un estadístico con `sd = 0` por SATURACIÓN (el null llega al techo) NO es un espejo** — ahí el null difiere del real, la dirección vale y lo que no es estimable es el **tamaño** del efecto. Se reporta **censurado**.
+**2 · Un null cuyos invariantes incluyen la cantidad medida no es un control, es un espejo.** **Si `sd(null) == 0`, reportar NO TESTEABLE.** Antídoto aplicado (resp 061): meter una cantidad conservada **a propósito** (`_EDGES_INTO_MOT`, sd 0,0, 40/40) en la misma corrida. **Su primo:** `sd = 0` por **SATURACIÓN** no es espejo, es **censura** — la dirección vale, el tamaño no. **Y el 25-ago se descubrió que la censura de `R2` era un artefacto de no usar umbral.**
 
-**3 · Una explicación que encaja no es una explicación medida.** El «desfasaje» se escribió en un documento destinado a un DOI **sin leer el código**. Y la **causa** del overflow apareció solo al **ejecutar**.
+**3 · Una explicación que encaja no es una explicación medida.** Y su versión más caras: **dar por cerrado un problema porque UNA herramienta no lo resuelve.** El null anatómico se declaró no testeable durante días y el dato estaba en Zenodo, **a una llamada**.
 
 **4 · Un archivo que no abrí en este turno no recibe veredicto de vigencia.**
 
-**5 · Comparar dos cantidades medidas con criterios distintos. CINCO veces.** El `5177`, el `5117`, el borrador del erratum, el `1,18× sobre LSTM` contra el `4× en contra`, **y la Table 7 sin umbral conviviendo con el 13,98% con umbral**.
+**5 · Comparar dos cantidades medidas con criterios distintos. CINCO veces.**
 
-**6 · Un test que no puede dar rojo no es un test. Y este es el que más reincide: CUATRO veces.** El `$?` reportando `exit=0` sobre una compilación fallida, un `grep -c` con falso cero por la coma de miles, un «clon limpio» que leía rutas absolutas, **y el 24-ago un `grado_check_in` que comparaba `bincount(dst)` contra SÍ MISMO** (resp 061), cometido **en el mismo turno en que se citaba este modo de falla**. **Antídotos que funcionaron: control negativo con nombre (`ZZQQXX` en los conteos de términos) y un método alternativo que DEBE romper el invariante** (el `dst` uniforme rompió el grado en 138.142 de 138.639 nodos, o sea el guard puede dar rojo).
+**6 · Un test que no puede dar rojo no es un test. CUATRO veces.** El `$?` sobre una compilación fallida, un `grep -c` con falso cero por la coma de miles, un «clon limpio» que leía rutas absolutas, y un `grado_check_in` que comparaba `bincount(dst)` **contra sí mismo**, cometido **en el mismo turno en que se citaba este modo de falla**. Antídotos que funcionaron: **control negativo con nombre** (`ZZQQXX`) y **un método alternativo que DEBE romper el invariante** (el `dst` uniforme rompió el grado en 138.142 de 138.639 nodos).
 
 **7 · Lo que no está commiteado se pierde justo cuando más falta hace.**
 
-**8 · Un erratum aritmético no arregla un problema de framing.** **Antes de poner un número en un abstract, buscar quién midió lo mismo en otro sistema.**
+**8 · Un erratum aritmético no arregla un problema de framing.**
 
-**9 · Una referencia incompleta se completa mal en el turno siguiente.** Y el corolario: **antes de afirmar que una cita está mal, verificar EN QUÉ está mal**.
+**9 · Una referencia incompleta se completa mal en el turno siguiente.** Corolario: **antes de afirmar que una cita está mal, verificar EN QUÉ está mal.**
 
-**10 · Un claim de novedad se verifica contra las FIGURAS del trabajo previo, no contra su abstract.** El erratum llegó a decir que Lin *«reporta solo una cifra global»* porque leí su abstract, su Table 2 y su sección de reciprocidad, **y no su lista de figuras**. **Un paper no anuncia en el abstract todo lo que midió.**
+**10 · Un claim de novedad se verifica contra las FIGURAS del trabajo previo, no contra su abstract.**
 
-**11 · Verificar el sujeto no alcanza: hay que verificar la ESCALA a la que la explicación rival es cierta.** Refuté «localidad anatómica» a escala de parte del cuerpo y canté victoria, cuando a escala de **neuropilo** la localidad **explica** el cero. **Una explicación rival puede ser falsa a una granularidad y verdadera a otra: hay que decir a cuál.** **Antídoto que funcionó (resp 061): cuando no se puede construir el null que controla la rival, buscar el contraste que la rival NO puede explicar** — acá, que cuatro poblaciones **igual de locales** difieran 323×.
+**11 · Verificar el sujeto no alcanza: hay que verificar la ESCALA a la que la explicación rival es cierta.** Y el 25-ago este modo **volvió a cobrar**: escribí «las cuatro clases son igual de locales» **sin medir dónde vive cada una**, y cuando lo medí, la rival explicaba el efecto entero.
 
-**12 · 🆕 Un ratio contra un null necesita saber cuánto da un sujeto CUALQUIERA contra ese mismo null.** El control aleatorio de la resp 061 dio **0,652×**, o sea que el grafo real tiene menos caminos de 2 saltos que un grafo de configuración **en general**. Sin ese control, los ratios crudos estaban inflados **en los dos sentidos** y el número «43,9× depletado» se publicaba cuando el correcto es **28,6×**. **El control barato es un sujeto al azar, y hay que correrlo ANTES de citar un ratio.**
+**12 · Un ratio contra un null necesita saber cuánto da un sujeto CUALQUIERA contra ese mismo null.** El control arbitrario dio **0,652×** contra grado **y 1,010× contra neuropilos**: el «piso del conectoma» era anatomía. **El control barato es un sujeto al azar, y se corre ANTES de citar un ratio.**
+
+**13 · 🆕 Buscar el prior art ANTES de medir.** Tres claims de novedad murieron por barridos de literatura que costaron menos que la corrida que los precedió.
+
+**14 · 🆕 Antes de contar un par en un conectoma público, buscar si existe un CATÁLOGO NAVEGABLE de ese snapshot.** El Cell Type Explorer de `flywire-fafb:v783b` publica la tabla entera. **El conteo ya está publicado por construcción: el null es el producto, no el número.**
+
+**15 · 🆕 Un instrumento propio no cubre el sesgo de selección de su dueño.** Mis ocho autorrefutaciones son todas **científicas**; los cinco bloqueantes de la auditoría externa son todos de **infraestructura**, porque yo nunca miré ahí. **W-01 no es burocracia: es el único modo de encontrar la clase de error que no busco.**
