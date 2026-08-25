@@ -29,11 +29,20 @@ journal are easy to conflate and this erratum corrects figures against both:
 - **Lin, A., Yang, R., et al. (2024).** *Network statistics of the whole-brain connectome
   of Drosophila.* **Nature 634, 153–165.** The network-analysis paper: the source of the
   **connection probability 0.000161** and the **connection reciprocity 0.138**, both
-  measured on the v630 snapshot under a five-synapse threshold.
+  measured on the v630 snapshot under a five-synapse threshold. This paper also reports
+  reciprocity **resolved by anatomical neuropil** (its Fig. 5c), **normalised by
+  connection density for all 78 neuropils** (its Extended Data Fig. 6c), and as a map of
+  reciprocal pairs **between** neuropils (its Fig. 5h), together with a population of
+  neuropil-specific highly reciprocal neurons. This is relevant to item 3.
+- **Bates, A. S., Phelps, J. S., Kim, M., Yang, H. H., et al. (2026).** *Distributed
+  control circuits across a brain-and-cord connectome.* **Nature**,
+  doi:10.1038/s41586-026-10735-w. The combined brain and nerve-cord connectome, cited in
+  item 3 for its treatment of reciprocal connectivity between high-influence networks and
+  for its adoption of the five-synapse criterion.
 
-**v1.0 cites the first and does not cite the second.** Since Lin et al. is the
-network-analysis paper for the same connectome, and this work is a network analysis of
-that connectome, the omission is corrected: both are cited in v2.0.
+**v1.0 cites the first and does not cite the second or the third.** Since Lin et al. is
+the network-analysis paper for the same connectome, and this work is a network analysis of
+that connectome, the omission is corrected: all three are cited in v2.0.
 
 ---
 
@@ -208,9 +217,48 @@ elevated **relative to randomised controls** but **not unusual relative to other
 nervous systems**, and the over-representation of reciprocal connections in brains is
 described there as well established. The comparison against controls reported here stands;
 the implication that the magnitude is distinctive of this connectome does not, and any
-such wording is withdrawn. What remains specific to this work is the **decomposition of
-reciprocity by circuit type** (Table 7: intra-motor 41.3 per cent down to optic-to-motor
-0.0 per cent), which the published network analyses report only as a single global figure.
+such wording is withdrawn.
+
+### The claim of a novel decomposition is narrowed, and a false statement about the prior work is retracted
+
+An earlier draft of this erratum stated that what remains specific to this work is the
+decomposition of reciprocity by circuit type, *"which the published network analyses report
+only as a single global figure"*. **That statement is false and is retracted here.**
+
+Lin et al. (2024) do resolve reciprocity below the whole-brain level, in the body of their
+paper and not only in supplementary material:
+
+- **their Fig. 5c** reports reciprocity within each of 78 neuropil subnetworks;
+- **their Extended Data Fig. 6c** reports reciprocity **normalised by connection density**
+  for all 78 neuropils, which is the region-resolved counterpart of the ratio this work
+  reported as a single whole-brain figure;
+- **their Fig. 5h** maps reciprocal pairs between neuropils, and they define a population
+  of neuropil-specific highly reciprocal neurons.
+
+Bates et al. (2026) additionally describe the CNS networks with high influence on effectors
+as *"directly linked in a nearly all-to-all pattern of reciprocal connectivity"*, reported
+qualitatively rather than as a network statistic.
+
+**The corrected claim is narrower and concerns the axis of decomposition, not its
+existence.** The decomposition in Table 7 is defined over **directed pairs of functional
+cell classes** (intra-motor 41.3 per cent, intra-visual-centrifugal 36.9 per cent,
+intra-optic 32.0 per cent, intra-sensory 30.7 per cent, sensory-to-central 24.2 per cent,
+sensory-to-descending 8.7 per cent, sensory-to-motor 3.6 per cent, optic-to-motor 0.0 per
+cent), whereas the decomposition of Lin et al. is defined over **anatomical subnetworks**.
+The two axes answer different questions: theirs, how recurrence varies across brain
+regions; ours, how it varies along the sensory-to-motor axis. They are complementary, and
+no priority is claimed for decomposing reciprocity as such.
+
+**This narrowing is stated rather than quietly dropped**, for the same reason as item 4: an
+erratum that attributes to another published work a deficiency it does not have is itself
+an error, and one addressed to named authors in a citable document.
+
+**Two limits on the present statement are declared.** The values of Lin et al. Fig. 5c and
+Extended Data Fig. 6c have not been read region by region, only their definitions from the
+figure captions and body text; if any of their neuropils corresponds closely to a circuit
+class of Table 7, the overlap is greater than "complementary" conveys. And the eight values
+of Table 7 are computed **without** a synapse threshold, whereas the 13.98 per cent of item
+5 is computed **with** one, so the two are not directly comparable to each other.
 
 ---
 
@@ -268,6 +316,13 @@ reconstruction version (v783 here, v630 there).
 inclusion criterion, not of measurement.** This version states the criterion used and
 reports both. Agreement on three independently reported quantities, one of which was not
 sought, is the basis for that conclusion.
+
+**The five-synapse criterion is the field standard for this connectome**, adopted by
+Dorkenwald et al. (2024), by Lin et al. (2024) and by Bates et al. (2026). v1.0 applies no
+threshold and does not state that it is departing from that convention. The departure is
+declared here; whether to adopt the threshold throughout is a decision for a future
+version, not a correction, and the unthresholded values are reported alongside the
+thresholded ones above so that either convention can be applied by a reader.
 
 A cross-criterion comparison appearing in earlier working notes, in which the unthresholded
 reciprocity of this work was divided by the thresholded connection probability of the
@@ -350,9 +405,10 @@ changed. Methods should read: annotations pinned to commit
 connectivity matrix used throughout has md5 `3d802fd542b5d18570ba1ba0bb0abed9`. The
 string "v783" pins the connectome only, not the annotations.
 
-**A missing reference.** v1.0 cites the connectome data paper (Dorkenwald et al. 2024) but
+**Missing references.** v1.0 cites the connectome data paper (Dorkenwald et al. 2024) but
 does not cite **Lin et al. (2024), Nature 634:153–165**, the network-analysis paper for the
-same connectome, against whose figures items 3 and 5 of this erratum are stated. It is
+same connectome, against whose figures items 3 and 5 of this erratum are stated. Nor does
+it cite **Bates et al. (2026)**, published after v1.0 and cited in items 3 and 5. Both are
 added to the bibliography of v2.0.
 
 **One further correction.** The swap acceptance rate is **98.5 per cent**, as stated in
@@ -408,6 +464,9 @@ Section 2.4 of v1.0 already derives and declares the analytical invariance of ne
 is noted here because item 2 extends the same reasoning to the routing hierarchy, where
 v1.0 did not apply it.
 
+The eight circuit-resolved reciprocity values of Table 7 are unchanged. What changes in
+item 3 is the claim of priority attached to them, not the numbers.
+
 ---
 
 ## Outstanding verification
@@ -446,6 +505,18 @@ did not reach.
    **The two have not been implemented side by side and compared**, so whether they yield
    equivalent ensembles is not established. The prior work is cited in v2.0 regardless, and
    the claim of novelty for the null model is narrowed accordingly.
+8. **The neuropil-resolved reciprocity of Lin et al. has not been read value by value.**
+   Item 3 characterises their Fig. 5c and Extended Data Fig. 6c from the figure captions
+   and body text, not from the plotted values, and their numerical table, if published as
+   downloadable supplementary data, has not been retrieved. The statement that the two
+   decompositions are complementary rests on the axes being different in definition
+   (anatomical subnetwork against directed functional class pair), not on a measured
+   comparison of the two sets of values. If a neuropil corresponds closely to a circuit
+   class of Table 7, the overlap is greater than stated.
+9. **Table 7 and item 5 use different inclusion criteria.** The circuit-resolved values are
+   computed without a synapse threshold; the 13.98 per cent of item 5 is computed with the
+   five-synapse threshold. Table 7 has not been recomputed under the threshold, so the two
+   sets of figures should not be divided by or compared with each other.
 
 ---
 
@@ -465,7 +536,14 @@ found by reading the companion network-analysis paper for the same connectome. T
 not arithmetic errors and no recomputation would have surfaced them: a figure can be
 correct and still not be notable, and a method can be sound and still not be new.
 
+The retraction inside item 3 was found later still, and by a different means: by checking a
+claim of novelty against the figure list of the work it was implicitly compared with,
+rather than against its abstract and its headline numbers. A claim that another paper
+reports only an aggregate is a claim about that paper's contents, and it has to be verified
+in that paper, not inferred from what it chose to emphasise.
+
 This is recorded because it is reusable: a numerical discrepancy with an elegant
-explanation should be executed before the explanation is written down, and a figure
-intended for an abstract should be compared against whoever measured the same quantity in
-another system before it is called distinctive.
+explanation should be executed before the explanation is written down; a figure intended
+for an abstract should be compared against whoever measured the same quantity in another
+system before it is called distinctive; and an assertion that a result is novel should be
+checked against the prior work's own figures before it is filed.
