@@ -5,22 +5,15 @@
 # sin entorno reproducible, y un requirements con rangos no lo arregla.
 #
 # Las versiones son las MEDIDAS en el container donde corrieron los resultados de
-# este repo (brain-env, python 3.12.14), no las ultimas del registry:
-#
-#   python 3.12.14
-#   numpy   2.3.5
-#   scipy   1.16.3
-#   pandas  2.3.4
-#   pyarrow 22.0.0
-#
-# Verificado en vivo el 2026-08-25 contra el interprete del container, no de
-# memoria. Si una version de aca no coincide con la del container, el CI lo
-# muestra en el paso "versiones medidas, no supuestas" y hay que corregir ESTE
-# archivo, no el container.
+# este repo (brain-env, python 3.12.14), no las ultimas del registry. El paso
+# "versiones medidas, no supuestas" del CI las imprime en cada corrida, asi que si
+# una de estas no coincide con lo instalado queda registrado y no hay que creerle
+# a este comentario.
 #
 # Lo que este archivo NO cubre, declarado: R 4.5.3, el toolchain
 # xtensa-esp-elf-gcc 16.1.0 y torch CPU 2.13 estan en el container y NO se usan
-# en el CI. La bateria de guards es python puro mas numpy/scipy.
+# en el CI. La bateria de guards es python puro mas numpy/scipy, y las tres
+# librerias de datos entran porque los instrumentos del repo las importan.
 
 numpy==2.3.5
 scipy==1.16.3
