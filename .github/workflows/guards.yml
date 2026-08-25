@@ -6,36 +6,38 @@
 # nada la ejecuta, y un test que nadie corre es documentacion.
 #
 # ------------------------------------------------------------------------------
-# HISTORIA DE ESTE ARCHIVO, porque sus TRES primeras versiones dieron ROJO
+# HISTORIA DE ESTE ARCHIVO: sus CUATRO primeras versiones dieron ROJO, y las
+# cuatro causas fueron mias. Va escrita porque el patron se repitio cuatro veces.
 # ------------------------------------------------------------------------------
-# v1: embebia la mutacion con `python - <<'EOF'` indentado dentro de un bloque
-#     `run:`. Bash pasa las lineas al stdin de python CON la indentacion del YAML,
-#     asi que python abortaba con IndentationError antes de leer una linea util.
-#     Fallo por un bug del PASO, no por lo que el paso mide.
+# v1: la mutacion iba con `python - <<'EOF'` indentado dentro de un bloque `run:`.
+#     Bash pasa las lineas al stdin de python CON la indentacion del YAML, asi que
+#     python aborta con IndentationError antes de leer una linea util. El paso
+#     fallaba por un bug del paso, no por lo que el paso mide.
+#     -> la mutacion salio a src/ci_mutate_guards.py, un archivo con nombre.
 #
-# v2: los cuatro pins de requirements.txt estaban puestos de memoria bajo la
-#     etiqueta "MEDIDAS", y uno (pandas 2.3.4) no existe en PyPI, asi que pip
-#     abortaba. Ademas el paso 3 escribia mutado.log en el arbol y el paso 6
-#     exigia arbol limpio: el 6 iba a fallar SIEMPRE por el archivo que el 3 crea.
+# v2: los cuatro pins de requirements.txt estaban puestos DE MEMORIA bajo la
+#     etiqueta "MEDIDAS en el container", y pandas 2.3.4 no existe en PyPI, asi que
+#     pip abortaba. Prohibicion V-01 literal.
+#     Y un segundo bug del mismo archivo: el paso 3 escribia mutado.log en el arbol
+#     y el paso 6 exigia arbol limpio, asi que el 6 iba a fallar SIEMPRE por el
+#     archivo que el 3 crea. -> el log se movio a /tmp.
 #
-# v3: con los pins corregidos a los reales del container (numpy 2.5.2, scipy
-#     1.18.1, pandas 3.0.5, pyarrow 25.0.1) el job seguia rojo en la instalacion.
+# v3: con los pins corregidos a los reales (numpy 2.5.2, scipy 1.18.1, pandas
+#     3.0.5, pyarrow 25.0.1) el job seguia rojo en la instalacion.
+#     -> se midio QUE IMPORTA el codigo del job: math, sys, subprocess, os,
+#        shutil. Todo stdlib. El pip install no aportaba nada y era la unica
+#        fuente de fragilidad. Se fue.
 #
-# v4, esta: se midio QUE IMPORTA el codigo del job, en vez de seguir peleando con
-#     pip. Resultado:
-#       src/guards.py                -> math, sys
-#       src/test_guards_negativo.py  -> subprocess, sys, os, guards
-#       src/ci_mutate_guards.py      -> sys, os, shutil
-#     Todo libreria estandar. La bateria corre con `python3 -S`, o sea con
-#     site-packages deshabilitado, y devuelve 0; el ciclo de mutacion completo da
-#     0/1/0 con el md5 de guards.py restaurado exacto.
-#     Asi que el paso de instalacion no aportaba nada y era la unica fuente de
-#     fragilidad. Se va. requirements.txt SE QUEDA porque los instrumentos
-#     cientificos del repo si necesitan esos pins, y A-03 los pedia.
+# v4: rojo en 8 segundos. Causa: importar guards crea src/__pycache__/ y el paso 6
+#     lo ve como archivo sin seguimiento. Reproducido en un repo git recien
+#     inicializado:  git status --porcelain -> ?? src/__pycache__/
+#     -> PYTHONDONTWRITEBYTECODE=1 a nivel de job, mas un .gitignore.
 #
-# La leccion, y es la que no aplique tres veces seguidas: antes de arreglar por que
-# falla una instalacion, preguntar si la instalacion hace falta. Un job que no
-# depende de la red no se rompe cuando PyPI cambia, y ese es el punto de A-03.
+# EL PATRON COMUN DE LAS CUATRO, y es el que hay que leer: mi banco de pruebas no
+# reproducia la condicion que el paso mide. Verifique el ciclo en /tmp/ci_repro,
+# que NO es un repo git, asi que el paso 6 nunca se ejecuto en mi prueba. Es E-01
+# aplicado a un workflow: correr el experimento correcto sobre el sujeto
+# equivocado se siente como rigor y no lo es.
 # ------------------------------------------------------------------------------
 #
 # Lo que este workflow hace, y nada mas:
@@ -68,6 +70,10 @@ jobs:
     name: bateria de guards (debe poder dar rojo)
     runs-on: ubuntu-24.04
     timeout-minutes: 10
+    env:
+      # Sin esto, importar guards crea src/__pycache__/ y el paso 6 falla.
+      # Fue la causa del cuarto rojo, reproducida antes de escribir esta linea.
+      PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - name: checkout
         uses: actions/checkout@v4
