@@ -24,21 +24,72 @@ src/motor.py:383 ya hace bien la mitad: marca NO_TESTEABLE y omite la clave
 falso, y excluye el estadistico del test global. Este modulo generaliza eso y
 le agrega la propagacion explicita a consumidores arbitrarios.
 
-Evidencia: results/test_guards.log (16 tests, 0 en rojo).
+--------------------------------------------------------------------------
+A-02 de la auditoria externa de Tao (2026-08-25), ACEPTADO Y REPARADO ACA
+--------------------------------------------------------------------------
+La version anterior de guarded_ratio devolvia, ante sd(null) == 0:
+
+    "el null conserva esta cantidad (sd=0)"
+
+SIN comparar null_mean con real. Su contraejemplo es exacto:
+
+    guarded_ratio(15, [110]*40)
+
+real=15, null=110, sd=0. Eso NO es conservacion: el null esta PEGADO A UN
+TECHO y difiere del real en 95 unidades. Son dos situaciones opuestas que la
+version vieja fundia en un solo veredicto:
+
+  CONSERVADO  null_mean == real  -> el null es un ESPEJO. Ni direccion ni
+                                    tamano. NO_MEDIDO de verdad.
+  CENSURADO   null_mean != real  -> el null difiere del real pero esta
+                                    degenerado (techo o piso). La DIRECCION
+                                    es valida, el TAMANO del efecto no es
+                                    estimable. Se reporta censurado, con su
+                                    direccion y su cota.
+
+Medido en este repo, las dos formas aparecieron de verdad:
+  - CONSERVADO: _EDGES_INTO_MOT, real 19860 == null 19860, sd 0.0, 40/40.
+    Metido a proposito en la corrida de la resp 061 como espejo de control.
+  - CENSURADO:  R2 (motoras alcanzadas a 2 saltos) sin umbral, real 0 o 8
+    contra 40 nulls que daban 110 de 110, sd 0.0. La resp 063 midio que con
+    umbral de 5 sinapsis el sd pasa a 1.04, o sea que la censura era un
+    artefacto de no aplicar umbral. Direccion z=-102 y z=-96, validas.
+
+Y A-01, la mitad que faltaba: require() aborta con exit code distinto de cero.
+Un guard que imprime rojo y devuelve 0 no es un guard. El $? de este shell
+miente (modo de falla 6 del proyecto, medido), asi que el test negativo se
+verifica con subprocess.run().returncode, no con $?.
+
+Evidencia: results/test_guards.log (16 tests, 0 en rojo) y
+docs/agents/evidencia/2026-08-25-guards-A01-A02-evidencia-cruda.md
 """
 import math
+import sys
 
 __all__ = [
     "ReachabilityError",
+    "GuardFailure",
+    "require",
     "convex_state_bound",
     "assert_threshold_reachable",
     "guarded_ratio",
     "TautologyGuard",
+    "BIEN",
+    "MAL",
+    "NO_MEDIDO",
+    "CONSERVADO",
+    "CENSURADO",
 ]
 
 BIEN = "BIEN"
 MAL = "MAL"
 NO_MEDIDO = "NO_MEDIDO"
+
+# Los dos subestados de sd(null) == 0, que A-02 senalo fundidos en uno.
+CONSERVADO = "NO_MEDIDO_CONSERVADO"
+CENSURADO = "CENSURADO"
+
+EXIT_GUARD_FAILED = 2
 
 
 class ReachabilityError(ValueError):
@@ -48,6 +99,31 @@ class ReachabilityError(ValueError):
     guard decorativo, porque el proximo que lo lea va a razonar sobre un caso
     que no existe.
     """
+
+
+class GuardFailure(AssertionError):
+    """Un guard que fallo. Se propaga hasta abortar el proceso.
+
+    Existe porque A-01 midio que los guards de este repo imprimian rojo y
+    salian con exit 0, asi que un CI o un pipeline los leia como verdes.
+    """
+
+
+def require(condition, message, exit_code=EXIT_GUARD_FAILED):
+    """Aborta el proceso con exit_code si condition es falsa.
+
+    No imprime y sigue. No devuelve un booleano que alguien pueda ignorar.
+    Escribe en stderr y llama a sys.exit(exit_code), asi que el proceso muere
+    con un codigo distinto de cero y un CI lo ve rojo.
+
+    Verificado con subprocess.run().returncode == 2, no con el $? del shell,
+    que en este entorno miente (modo de falla 6, medido).
+    """
+    if condition:
+        return True
+    sys.stderr.write("GUARD_FAILED " + str(message) + "\n")
+    sys.stderr.flush()
+    raise SystemExit(int(exit_code))
 
 
 def convex_state_bound(H):
@@ -79,33 +155,69 @@ def assert_threshold_reachable(threshold, bound, name="umbral", margin=0.0):
     return t
 
 
-def guarded_ratio(real, null_samples, name="estadistico"):
+def guarded_ratio(real, null_samples, name="estadistico", atol=0.0):
     """Ratio real/null solo cuando el null tiene varianza. Fail-closed.
 
-    Si sd(null) == 0 el null CONSERVA la cantidad y el test no puede fallar:
-    cualquier ratio seria una tautologia con forma de resultado. En ese caso el
-    dict devuelto NO tiene la clave "ratio", asi que un consumidor que la lea
-    explota en vez de leer un 1.000x falso. Es el patron que ya usa
-    src/motor.py:383, generalizado.
+    Si sd(null) > 0 devuelve el ratio con su p y su piso de p.
+
+    Si sd(null) == 0 el null esta degenerado, y A-02 obliga a distinguir DOS
+    casos que la version anterior fundia:
+
+      CONSERVADO (null_mean == real dentro de atol)
+          el null es un espejo: sus invariantes incluyen la cantidad medida.
+          Ni direccion ni tamano. La clave "ratio" NO se incluye, asi que un
+          consumidor que la lea explota en vez de leer un 1.000x falso.
+
+      CENSURADO (null_mean != real)
+          el null difiere del real pero esta pegado a un techo o a un piso.
+          La DIRECCION es valida y se reporta en "direction"; el TAMANO del
+          efecto no es estimable. La clave "ratio" tampoco se incluye, pero se
+          agrega "ratio_censored" con el cociente y "bound_side", para que
+          quien lo lea sepa que es una cota y no una estimacion.
+
+    Las dos formas existen medidas en este repo, ver el docstring del modulo.
     """
     col = [float(x) for x in null_samples]
     n = len(col)
     if n == 0:
         return {"name": name, "verdict": NO_MEDIDO,
+                "sd_zero_reason": None,
                 "reason": "no hay muestras del null"}
+    r = float(real)
     mu = sum(col) / n
     var = sum((x - mu) ** 2 for x in col) / n
     sd = var ** 0.5
     if sd == 0.0:
-        return {"name": name, "verdict": NO_MEDIDO,
-                "reason": "el null conserva esta cantidad (sd=0)",
-                "real": float(real), "null_mean": mu, "null_sd": 0.0,
-                "n": n}
-    ge = sum(1 for x in col if x >= real)
-    le = sum(1 for x in col if x <= real)
-    return {"name": name, "verdict": BIEN, "real": float(real),
+        if abs(mu - r) <= float(atol):
+            # ESPEJO. El invariante del null incluye la cantidad medida.
+            return {"name": name, "verdict": NO_MEDIDO,
+                    "sd_zero_reason": CONSERVADO,
+                    "reason": "el null CONSERVA esta cantidad: sd=0 y"
+                              " null_mean == real. Es un espejo, no un"
+                              " control. Ni direccion ni tamano.",
+                    "real": r, "null_mean": mu, "null_sd": 0.0, "n": n}
+        # SATURACION. Difiere del real, pero degenerado.
+        side = "techo" if mu > r else "piso"
+        return {"name": name, "verdict": CENSURADO,
+                "sd_zero_reason": CENSURADO,
+                "reason": "sd=0 por SATURACION, no por conservacion: el null"
+                          " esta pegado al " + side + " (" + format(mu, ".6f")
+                          + ") y difiere del real (" + format(r, ".6f") + ")."
+                          " La direccion es valida, el TAMANO del efecto no es"
+                          " estimable. Reportar censurado.",
+                "real": r, "null_mean": mu, "null_sd": 0.0, "n": n,
+                "direction": ("real_por_debajo_del_null" if r < mu
+                              else "real_por_encima_del_null"),
+                "bound_side": side,
+                "ratio_censored": (r / mu) if mu != 0 else float("inf"),
+                "n_ge": sum(1 for x in col if x >= r),
+                "n_le": sum(1 for x in col if x <= r)}
+    ge = sum(1 for x in col if x >= r)
+    le = sum(1 for x in col if x <= r)
+    return {"name": name, "verdict": BIEN, "real": r,
+            "sd_zero_reason": None,
             "null_mean": mu, "null_sd": sd, "n": n,
-            "ratio": (float(real) / mu) if mu != 0 else float("inf"),
+            "ratio": (r / mu) if mu != 0 else float("inf"),
             "n_ge": ge, "n_le": le,
             "p_two": min(1.0, 2.0 * min(ge + 1.0, le + 1.0) / (n + 1.0)),
             "p_floor": 2.0 / (n + 1.0)}

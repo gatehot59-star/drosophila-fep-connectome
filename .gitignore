@@ -1,0 +1,28 @@
+# Cinturon y tirantes del paso 6 del CI, que exige arbol limpio.
+#
+# Por que existe: el CI dio rojo por cuarta vez porque importar src/guards.py crea
+# src/__pycache__/ y el paso "el arbol de trabajo quedo limpio" lo veia como
+# archivo sin seguimiento. El job ya define PYTHONDONTWRITEBYTECODE=1, asi que
+# python no deberia escribir .pyc; este archivo cubre el caso de quien corra la
+# bateria a mano sin esa variable.
+#
+# Reproducido antes de escribirlo, en un repo git recien inicializado:
+#   git status --porcelain  ->  ?? src/__pycache__/
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Salidas de los instrumentos. Los resultados chicos SI van commiteados (A-04);
+# lo que se ignora son los intermedios de una corrida local.
+*.log.tmp
+.venv/
+venv/
+
+# Artefactos derivados: la politica del repo es no commitear binarios ni datasets
+# grandes, van referenciados por checksum (ver docs/METHODS.md).
+*.o
+*.elf
+*.feather
+connectivity.parquet
+annotations.tsv

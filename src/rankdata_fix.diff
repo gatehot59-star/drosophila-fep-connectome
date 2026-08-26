@@ -1,0 +1,69 @@
+# Fix de `rankdata` en motor_v2.py  ·  2026-08-26
+#
+# Se aplica con:   patch -p1 < src/rankdata_fix.diff
+#
+# QUE ARREGLA
+#   La funcion se documentaba "vectorizado" y tenia un loop de Python sobre los
+#   valores UNICOS, con una asignacion de slice de numpy por iteracion. Con datos
+#   sin empates ese loop es de largo n.
+#
+# CUANTO CUESTA EL DEFECTO, medido (min de 3, perf_counter, brain-env):
+#   5k  sin empates : 0,057854 s -> 0,001034 s   =  55,9x
+#   50k sin empates : 0,567109 s -> 0,011701 s   =  48,5x
+#   50k, 100 valores: 0,008773 s -> 0,007298 s   =   1,2x
+#   40  (el uso real): 0,000693 s -> 0,000307 s  =   2,3x
+#
+#   NOTA que corrige a la respuesta 106: ahi dije "impacto nulo en el experimento
+#   actual". Es 2,3x en el tamano real de uso (40 elementos). Chico, pero NO nulo.
+#
+# QUE LO AUTORIZA
+#   tools/test_rankdata_v3.py, corrido antes de tocar el motor:
+#     - 14 casos x 3 implementaciones de referencia (v1, v2 naive, v2 vectorizada),
+#       incluyendo un solo elemento, todos iguales, cero negativo, infinitos,
+#       1e300/1e-300, ya ordenado y orden inverso;
+#     - 4 propiedades por caso: suma de rangos = n(n+1)/2, empates con rango igual,
+#       monotonia, y rango dentro de 1..n;
+#     - 5 mutantes a proposito, y la suite DETECTA los 5. Un test que pasa con el
+#       codigo roto no autoriza a tocar el instrumento.
+#   Y despues del cambio, run_self_tests() del propio motor devuelve [] (cero rojos),
+#   incluido su test rankdata_vectorizado_coincide_con_el_ingenuo con desvio 0.000e+00.
+#
+# CADENA DE md5, para que la corrida de Kaggle en curso siga auditable
+#   pre-fix  8f7ad4740727478bf62b7cd0663fb341   <- es el que embeben los 5 kernels
+#   post-fix 22f9904bcae82225876d8f0be9fac127   <- el del container
+#   Los kernels llevan su copia embebida y verifican su md5 al arrancar, asi que el
+#   cambio NO contamina la corrida en vuelo.
+
+--- a/src/motor_v2.py
++++ b/src/motor_v2.py
+@@
+ def rankdata(v):
+-    """Rangos con promedio en empates, vectorizado. Sin dependencias externas."""
++    """Rangos con promedio en empates, vectorizado SIN loop de Python.
++
++    El rango promedio de un grupo de empates que arranca en la posicion start y
++    tiene c elementos es  start + (c-1)/2 + 1 , con el +1 porque los rangos son
++    1-based (el primer elemento tiene rango 1, no 0).
++    np.unique da start y c de cada grupo; np.repeat los expande. Sin bucles.
++    """
+     a = np.asarray(v, dtype=np.float64)
+     n = a.shape[0]
+     order = np.argsort(a, kind="stable")
+     sorted_a = a[order]
+-    ranks_sorted = np.empty(n, dtype=np.float64)
+-    start = 0
+-    uniq, counts = np.unique(sorted_a, return_counts=True)
+-    for u, c in zip(uniq, counts):
+-        avg = start + (c - 1) / 2.0 + 1.0
+-        ranks_sorted[start:start + c] = avg
+-        start += int(c)
++    # FIX 2026-08-26: la version anterior tenia un loop de Python sobre los valores
++    # UNICOS, con una asignacion de slice por iteracion. Con datos sin empates ese
++    # loop es de largo n y costaba 48-56x mas que estas dos primitivas. Medido en
++    # docs/agents/evidencia/2026-08-26-106-cierre-no-medidos-evidencia-cruda.md y
++    # autorizado por tools/test_rankdata_v3.py (14 casos x 3 referencias, 5/5 mutantes).
++    _uniq, idx_start, counts = np.unique(sorted_a, return_index=True, return_counts=True)
++    ranks_sorted = np.repeat(idx_start + (counts - 1) / 2.0 + 1.0, counts)
+     out = np.empty(n, dtype=np.float64)
+     out[order] = ranks_sorted
+     return out

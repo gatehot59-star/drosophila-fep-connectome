@@ -1,0 +1,114 @@
+name: probe-entorno
+
+# Mide los runners de verdad y commitea su propia evidencia cruda.
+#
+# Existe por una razon de metodo: BRAIN no tiene herramienta para leer el TEXTO
+# de un log de Actions. Medido hoy: /actions/runs/<id>/logs devuelve 403 incluso
+# en repo publico y sin token. Si la evidencia no vuelve al repo, para el
+# expediente no existe. Es la misma regla que ya estaba escrita en el AGENTS.md
+# de mudh-mobile, seccion 2.
+#
+# El trigger esta acotado a este archivo y a tools/, asi que el commit de
+# evidencia (que cae en docs/) NO vuelve a disparar el workflow: no hay loop.
+
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-entorno.yml'
+      - 'tools/probe_c99.c'
+      - 'tools/probe_maquina.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  medir:
+    name: medir ${{ matrix.etiqueta }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 25
+
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - runner: ubuntu-latest
+            etiqueta: x64
+          - runner: ubuntu-24.04-arm
+            etiqueta: arm64
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Medir maquina, herramientas y paralelismo
+        run: python3 tools/probe_maquina.py probe-maquina.txt
+
+      - name: Compilar C99 nativo y ejecutarlo
+        run: |
+          set +e
+          echo '=== gcc -std=c99 -O2 -Wall -Wextra -Werror ===' > probe-c99.txt
+          gcc -std=c99 -O2 -Wall -Wextra -Werror -o probe_c99 tools/probe_c99.c >> probe-c99.txt 2>&1
+          echo "exit_compilacion=$?" >> probe-c99.txt
+          echo '=== ejecucion ===' >> probe-c99.txt
+          ./probe_c99 >> probe-c99.txt 2>&1
+          echo "exit_ejecucion=$?" >> probe-c99.txt
+          echo '=== tamano del binario (lo mismo que medimos en ESP32) ===' >> probe-c99.txt
+          size probe_c99 >> probe-c99.txt 2>&1
+          cat probe-c99.txt
+
+      - name: Probar Docker de verdad
+        run: |
+          set +e
+          echo '=== docker info ===' > probe-docker.txt
+          docker info --format '{{.ServerVersion}} {{.OSType}}/{{.Architecture}}' >> probe-docker.txt 2>&1
+          echo "exit=$?" >> probe-docker.txt
+          echo '=== docker run alpine ===' >> probe-docker.txt
+          docker run --rm alpine:3.21 sh -c 'echo dentro-del-container; uname -m' >> probe-docker.txt 2>&1
+          echo "exit=$?" >> probe-docker.txt
+          cat probe-docker.txt
+
+      - name: Consolidar y commitear la evidencia al expediente
+        run: |
+          set -eu
+          mkdir -p docs/agents/evidencia
+          DEST="docs/agents/evidencia/2026-08-26-124-runner-${{ matrix.etiqueta }}-medido-en-vivo.md"
+          {
+            echo "# Evidencia cruda - runner ${{ matrix.etiqueta }} de GitHub Actions, MEDIDO EN VIVO"
+            echo
+            echo "**Instrumento:** el propio runner de GitHub Actions. Este archivo"
+            echo "lo escribio el job, no BRAIN. Cualquiera puede reejecutar el"
+            echo "workflow y contradecirlo (W-01)."
+            echo
+            echo "- workflow: .github/workflows/probe-entorno.yml"
+            echo "- runner solicitado: ${{ matrix.runner }}"
+            echo "- run: ${GITHUB_RUN_ID} intento ${GITHUB_RUN_ATTEMPT}"
+            echo "- commit disparador: ${GITHUB_SHA}"
+            echo
+            echo "## Maquina, herramientas y paralelismo"
+            echo '```plain'
+            cat probe-maquina.txt
+            echo '```'
+            echo
+            echo "## Compilacion C99 nativa (lo que brain-env no puede)"
+            echo '```plain'
+            cat probe-c99.txt
+            echo '```'
+            echo
+            echo "## Docker"
+            echo '```plain'
+            cat probe-docker.txt
+            echo '```'
+          } > "$DEST"
+          rm -f probe-maquina.txt probe-c99.txt probe-docker.txt probe_c99
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$DEST"
+          if git diff --cached --quiet; then
+            echo 'sin cambios que commitear'
+          else
+            git commit -m "probe-entorno: evidencia cruda del runner ${{ matrix.etiqueta }}, medida por el propio runner"
+            git pull --rebase origin "${GITHUB_REF_NAME}"
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi

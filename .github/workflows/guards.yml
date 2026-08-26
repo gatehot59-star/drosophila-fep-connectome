@@ -1,0 +1,120 @@
+# CI minimo - A-03 de la auditoria externa.
+#
+# Por que existe: la auditoria midio que este repo no tiene entorno reproducible
+# (sin pins, sin lockfile, sin CI), y que sus guards imprimian rojo y salian con
+# exit 0. La bateria de src/test_guards_negativo.py existe y corre a mano; sin CI,
+# nada la ejecuta, y un test que nadie corre es documentacion.
+#
+# ------------------------------------------------------------------------------
+# HISTORIA DE ESTE ARCHIVO: sus CUATRO primeras versiones dieron ROJO, y las
+# cuatro causas fueron mias. Va escrita porque el patron se repitio cuatro veces.
+# ------------------------------------------------------------------------------
+# v1: la mutacion iba con `python - <<'EOF'` indentado dentro de un bloque `run:`.
+#     Bash pasa las lineas al stdin de python CON la indentacion del YAML, asi que
+#     python aborta con IndentationError antes de leer una linea util. El paso
+#     fallaba por un bug del paso, no por lo que el paso mide.
+#     -> la mutacion salio a src/ci_mutate_guards.py, un archivo con nombre.
+#
+# v2: los cuatro pins de requirements.txt estaban puestos DE MEMORIA bajo la
+#     etiqueta "MEDIDAS en el container", y pandas 2.3.4 no existe en PyPI, asi que
+#     pip abortaba. Prohibicion V-01 literal.
+#     Y un segundo bug del mismo archivo: el paso 3 escribia mutado.log en el arbol
+#     y el paso 6 exigia arbol limpio, asi que el 6 iba a fallar SIEMPRE por el
+#     archivo que el 3 crea. -> el log se movio a /tmp.
+#
+# v3: con los pins corregidos a los reales (numpy 2.5.2, scipy 1.18.1, pandas
+#     3.0.5, pyarrow 25.0.1) el job seguia rojo en la instalacion.
+#     -> se midio QUE IMPORTA el codigo del job: math, sys, subprocess, os,
+#        shutil. Todo stdlib. El pip install no aportaba nada y era la unica
+#        fuente de fragilidad. Se fue.
+#
+# v4: rojo en 8 segundos. Causa: importar guards crea src/__pycache__/ y el paso 6
+#     lo ve como archivo sin seguimiento. Reproducido en un repo git recien
+#     inicializado:  git status --porcelain -> ?? src/__pycache__/
+#     -> PYTHONDONTWRITEBYTECODE=1 a nivel de job, mas un .gitignore.
+#
+# EL PATRON COMUN DE LAS CUATRO, y es el que hay que leer: mi banco de pruebas no
+# reproducia la condicion que el paso mide. Verifique el ciclo en /tmp/ci_repro,
+# que NO es un repo git, asi que el paso 6 nunca se ejecuto en mi prueba. Es E-01
+# aplicado a un workflow: correr el experimento correcto sobre el sujeto
+# equivocado se siente como rigor y no lo es.
+# ------------------------------------------------------------------------------
+#
+# Lo que este workflow hace, y nada mas:
+#   1. corre la bateria de guards y exige VERDE;
+#   2. MUTA guards.py a proposito y exige ROJO, porque un test que no puede
+#      fallar no mide nada;
+#   3. restaura y exige verde otra vez;
+#   4. comprueba que el job no dejo el arbol sucio.
+# Sin continue-on-error y sin `|| true`, que es el antipatron que A-01 denuncia.
+#
+# Lo que este workflow NO hace, declarado: no corre ninguna medicion cientifica.
+# El conectoma no esta en el repo (100 MB de parquet), asi que ningun job de CI
+# puede reproducir un null. Eso es una limitacion, no una promesa.
+
+name: guards
+
+on:
+  push:
+    branches:
+      - main
+      - 'titan/**'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guards:
+    name: bateria de guards (debe poder dar rojo)
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      # Sin esto, importar guards crea src/__pycache__/ y el paso 6 falla.
+      # Fue la causa del cuarto rojo, reproducida antes de escribir esta linea.
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: python del runner, medido y no supuesto
+        run: |
+          python3 --version
+          python3 -c "import sys; print('ejecutable', sys.executable)"
+
+      - name: la bateria NO importa nada fuera de la stdlib
+        run: |
+          grep -n '^import\|^from' src/guards.py src/test_guards_negativo.py src/ci_mutate_guards.py
+          echo "--- si algo de esto no fuera stdlib, el paso siguiente con -S lo rompe ---"
+
+      - name: 1 - bateria de guards, sin site-packages (exige VERDE)
+        run: python3 -S src/test_guards_negativo.py
+
+      - name: 2 - mutar guards.py a proposito
+        run: python3 -S src/ci_mutate_guards.py mutate
+
+      - name: 3 - la bateria DEBE dar rojo sobre el archivo mutado
+        run: |
+          if python3 -S src/test_guards_negativo.py > /tmp/mutado.log 2>&1; then
+            echo "GUARD_FAILED la bateria dio VERDE sobre un guards.py roto a proposito"
+            tail -20 /tmp/mutado.log
+            exit 1
+          fi
+          echo "OK la bateria detecto la mutacion y dio rojo"
+          grep '^FAIL' /tmp/mutado.log || true
+
+      - name: 4 - restaurar guards.py
+        run: python3 -S src/ci_mutate_guards.py restore
+
+      - name: 5 - la bateria vuelve a dar verde con el archivo restaurado
+        run: python3 -S src/test_guards_negativo.py
+
+      - name: 6 - el arbol de trabajo quedo limpio
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "GUARD_FAILED el job dejo el arbol sucio:"
+            git status --porcelain
+            exit 1
+          fi
+          echo "OK el arbol quedo identico al checkout"
