@@ -1,0 +1,227 @@
+name: probe-entorno
+
+# Mide el runner de verdad y commitea su propia evidencia cruda.
+# Existe porque BRAIN no tiene herramienta para leer logs de Actions:
+# si la evidencia no vuelve al repo, para el expediente no existe (W-01).
+#
+# Trigger acotado a este mismo archivo para que el commit de evidencia
+# NO vuelva a disparar el workflow.
+
+on:
+  push:
+    paths:
+      - '.github/workflows/probe-entorno.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  medir:
+    name: medir el runner x64
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Medir hardware, kernel y herramientas
+        run: |
+          set -u
+          OUT=probe-x64.txt
+          {
+            echo "===== IDENTIDAD DEL RUNNER ($(date -u +%Y-%m-%dT%H:%M:%SZ)) ====="
+            echo "runner_os=${RUNNER_OS} runner_arch=${RUNNER_ARCH}"
+            echo "image: ${ImageOS:-desconocida} version: ${ImageVersion:-desconocida}"
+            echo "repo=${GITHUB_REPOSITORY} ref=${GITHUB_REF} sha=${GITHUB_SHA}"
+            echo
+            echo "===== HARDWARE MEDIDO ====="
+            echo "nproc: $(nproc)"
+            grep -m1 'model name' /proc/cpuinfo || true
+            echo "MemTotal: $(awk '/MemTotal/{print $2" "$3}' /proc/meminfo)"
+            echo "MemAvailable: $(awk '/MemAvailable/{print $2" "$3}' /proc/meminfo)"
+            uname -a
+            echo "--- disco ---"
+            df -h / /home/runner 2>/dev/null | head -5
+            echo "--- soy root? ---"
+            id
+            echo "sudo disponible: $(command -v sudo || echo NO)"
+            echo
+            echo "===== GPU ====="
+            if command -v nvidia-smi >/dev/null 2>&1; then
+              nvidia-smi | head -12
+            else
+              echo "nvidia-smi: AUSENTE"
+            fi
+            ls /dev/nvidia* 2>/dev/null || echo "/dev/nvidia*: no existe"
+            echo
+            echo "===== LAS 13 CAPACIDADES QUE brain-env NO TIENE ====="
+            for b in gcc cc g++ gfortran git ps pgrep top free docker podman buildah \
+                     gradle java javac cmake ninja bazel jq yq gh sqlite3 psql mysql \
+                     google-chrome firefox chromedriver geckodriver aws az gcloud \
+                     make cargo rustc node npm python3 pip3 unzip zip wget curl less \
+                     nvm helm kubectl minikube pulumi packer ansible; do
+              if command -v "$b" >/dev/null 2>&1; then
+                printf 'OK    %-14s %s\n' "$b" "$(command -v "$b")"
+              else
+                printf 'FALTA %-14s\n' "$b"
+              fi
+            done
+            echo
+            echo "===== VERSIONES CLAVE ====="
+            gcc --version 2>&1 | head -1
+            g++ --version 2>&1 | head -1
+            git --version 2>&1 | head -1
+            docker --version 2>&1 | head -1
+            java -version 2>&1 | head -1
+            python3 --version 2>&1 | head -1
+            node --version 2>&1 | head -1
+            cmake --version 2>&1 | head -1
+            gh --version 2>&1 | head -1
+            echo
+            echo "===== ANDROID SDK (para MUDH-Mobile) ====="
+            echo "ANDROID_HOME=${ANDROID_HOME:-vacio}"
+            echo "ANDROID_SDK_ROOT=${ANDROID_SDK_ROOT:-vacio}"
+            ls "${ANDROID_HOME:-/usr/local/lib/android/sdk}/platforms" 2>/dev/null | head -8 \
+              || echo "platforms: no listable"
+            ls "${ANDROID_HOME:-/usr/local/lib/android/sdk}/ndk" 2>/dev/null | head -5 \
+              || echo "ndk: no listable"
+            echo
+            echo "===== JDKs INSTALADOS ====="
+            ls /usr/lib/jvm 2>/dev/null || echo "no listable"
+          } > "$OUT" 2>&1
+          echo "--- resumen en consola ---"
+          head -30 "$OUT"
+
+      - name: PRUEBA REAL 1 - compilar C99 y ejecutarlo (lo que brain-env no puede)
+        run: |
+          set -u
+          cat > /tmp/prueba_c99.c <<'EOF'
+          /* Prueba minima del tipo de aritmetica que usa DualBrain:
+             gate escalar contra memoria, en enteros de ancho fijo. */
+          #include <stdio.h>
+          #include <stdint.h>
+          #include <string.h>
+
+          static int32_t gate(int32_t reflejo, int32_t memoria, int32_t umbral) {
+              return (memoria > umbral) ? memoria : reflejo;
+          }
+
+          int main(void) {
+              int32_t acc = 0;
+              for (int i = 0; i < 1000; ++i) {
+                  acc = gate(i, acc + (i % 7), 500);
+              }
+              printf("gate_acc=%d\n", acc);
+              printf("sizeof(int32_t)=%zu sizeof(long)=%zu\n",
+                     sizeof(int32_t), sizeof(long));
+              /* deteccion de overflow int32, el bug real del expediente */
+              int32_t big = 2147483647;
+              int64_t seguro = (int64_t)big + 1;
+              printf("int32_max+1 en int64 = %lld\n", (long long)seguro);
+              return 0;
+          }
+EOF
+          {
+            echo "===== COMPILACION C99 NATIVA ====="
+            echo "$ gcc -std=c99 -O2 -Wall -Wextra -Werror -o /tmp/prueba_c99 /tmp/prueba_c99.c"
+            gcc -std=c99 -O2 -Wall -Wextra -Werror -o /tmp/prueba_c99 /tmp/prueba_c99.c 2>&1
+            echo "exit=$?"
+            echo "$ /tmp/prueba_c99"
+            /tmp/prueba_c99 2>&1
+            echo "exit=$?"
+            echo "$ size /tmp/prueba_c99"
+            size /tmp/prueba_c99 2>&1 || true
+          } > probe-c99.txt 2>&1
+          cat probe-c99.txt
+
+      - name: PRUEBA REAL 2 - Docker corriendo de verdad
+        run: |
+          set -u
+          {
+            echo "===== DOCKER ====="
+            echo "$ docker info --format '{{.ServerVersion}} {{.OSType}}/{{.Architecture}}'"
+            docker info --format '{{.ServerVersion}} {{.OSType}}/{{.Architecture}}' 2>&1
+            echo "$ docker run --rm alpine:3.21 sh -c 'echo dentro-del-container; uname -m'"
+            docker run --rm alpine:3.21 sh -c 'echo dentro-del-container; uname -m' 2>&1
+            echo "exit=$?"
+          } > probe-docker.txt 2>&1
+          cat probe-docker.txt
+
+      - name: PRUEBA REAL 3 - paralelismo con las 4 CPU
+        run: |
+          set -u
+          python3 - <<'PY' > probe-paralelo.txt 2>&1
+          import os, time, multiprocessing as mp
+
+          def carga(n):
+              # trabajo puro de CPU, comparable entre maquinas
+              s = 0.0
+              for i in range(1, n):
+                  s += (i ** 0.5) / i
+              return s
+
+          N = 2_000_000
+          cpus = os.cpu_count()
+          print(f"cpu_count={cpus}")
+
+          t0 = time.perf_counter()
+          carga(N)
+          serie = time.perf_counter() - t0
+          print(f"1 tarea en serie:        {serie:.3f} s")
+
+          t0 = time.perf_counter()
+          with mp.Pool(cpus) as p:
+              p.map(carga, [N] * cpus)
+          paralelo = time.perf_counter() - t0
+          print(f"{cpus} tareas en paralelo:  {paralelo:.3f} s")
+          print(f"speedup real vs {cpus} en serie: {(serie*cpus)/paralelo:.2f}x")
+          PY
+          cat probe-paralelo.txt
+
+      - name: Consolidar y commitear la evidencia al expediente
+        run: |
+          set -eu
+          mkdir -p docs/agents/evidencia
+          DEST=docs/agents/evidencia/2026-08-26-124-runner-actions-medido-en-vivo.md
+          {
+            echo "# Evidencia cruda · el runner de GitHub Actions MEDIDO EN VIVO"
+            echo
+            echo "**Instrumento:** el propio runner de GitHub Actions. Este archivo lo"
+            echo "escribio el job, no BRAIN. Cualquiera puede repetir el workflow y"
+            echo "contradecirlo (W-01)."
+            echo
+            echo "- workflow: \`.github/workflows/probe-entorno.yml\`"
+            echo "- run: ${GITHUB_RUN_ID} intento ${GITHUB_RUN_ATTEMPT}"
+            echo "- commit disparador: ${GITHUB_SHA}"
+            echo
+            echo '```plain'
+            cat probe-x64.txt
+            echo '```'
+            echo
+            echo "## Compilacion C99 nativa"
+            echo '```plain'
+            cat probe-c99.txt
+            echo '```'
+            echo
+            echo "## Docker"
+            echo '```plain'
+            cat probe-docker.txt
+            echo '```'
+            echo
+            echo "## Paralelismo real"
+            echo '```plain'
+            cat probe-paralelo.txt
+            echo '```'
+          } > "$DEST"
+          rm -f probe-x64.txt probe-c99.txt probe-docker.txt probe-paralelo.txt
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$DEST"
+          if git diff --cached --quiet; then
+            echo 'sin cambios que commitear'
+          else
+            git commit -m 'probe-entorno: evidencia cruda del runner, medida por el propio runner'
+            git push origin HEAD:"${GITHUB_REF_NAME}"
+          fi
