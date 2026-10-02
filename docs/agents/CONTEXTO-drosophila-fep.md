@@ -1,10 +1,12 @@
 # CONTEXTO VIVO · conectoma / FEP / H4
 
-**Última actualización:** 2026-10-02 14:17 (America/Buenos_Aires)  
+**Última actualización:** 2026-10-02 14:25 (America/Buenos_Aires)  
 **Estado canónico:** este archivo se sobreescribe, no se acumula. La bitácora append-only vive en `docs/agents/respuestas/`.  
 **Protocolo:** `docs/agents/00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`.  
-**Auditoría independiente del turno:** [docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md).  
-**Doc público de cierre:** [H4 cerrado correctamente: fuerte NO MEDIDA, pipeline bloqueado por reloj](https://app.clickup.com/90171457413/docs/2kza6fw5-17737).
+**Auditoría anterior:** [docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md).  
+**Segunda auditoría:** [docs/auditorias/2026-10-02-003-segunda-auditoria-proyecto-chat-h4.md](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/auditorias/2026-10-02-003-segunda-auditoria-proyecto-chat-h4.md).  
+**Doc público de cierre:** [H4 cerrado correctamente: fuerte NO MEDIDA, pipeline bloqueado por reloj](https://app.clickup.com/90171457413/docs/2kza6fw5-17737).  
+**Doc público de segunda auditoría:** [Segunda auditoría H4: GitHub main correcto, brain-env atrasado](https://app.clickup.com/90171457413/docs/2kza6fw5-17757).
 
 ## 0. Veredicto operativo
 
@@ -95,3 +97,15 @@ Las labels DAART son predicciones, no una anotación manual independiente. `co2_
 ## 9. Regla de cierre
 
 Hasta que todos los bloqueos de la sección 5 tengan evidencia commiteada, **no se debe afirmar que H4 fue confirmada, refutada, generalizable o estable**. El único cierre correcto hoy es: **H4 fuerte NO MEDIDA; el pipeline anterior no es evidencia biológica; siguiente paso: alineación oficial con guard negativo.**
+
+## 10. Rojo operativo agregado por la segunda auditoría
+
+El checkout de `brain-env` no está sincronizado con GitHub `main` y no debe usarse para verificar el estado público actual hasta reconstruirse o sincronizarse desde el SHA público:
+
+```text
+checkout local HEAD: 08b3b01bc0a6c678ae09fe6adeabadfe6cd94b63
+origin/main local:   08b3b01bc0a6c678ae09fe6adeabadfe6cd94b63
+main GitHub:         ccf59eb8e359edf92539476bb81c8e1f0fd56752
+```
+
+El checkout local no contiene la auditoría 001, la auditoría 003 ni el recibo 002; su contexto todavía era de agosto. Toda medición nueva debe declarar primero el SHA exacto del checkout y compararlo con la fuente pública que pretende verificar.
