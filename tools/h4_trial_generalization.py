@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from h4_block_null import BlockNullError, TrialData, _normalized_segments, load_trial
+from h4_block_null import BlockNullError, TrialData, _normalized, load_trial
 
 SCHEMA = "h4-trial-generalization/v1"
 TARGET_LABELS = ("walking", "resting")
@@ -38,7 +38,7 @@ class Observation:
 
 def _observations(trial: TrialData) -> list[Observation]:
     """Return bout observations for one trial."""
-    segments = _normalized_segments(trial)
+    segments = _normalized(trial)
     output: list[Observation] = []
     for segment_index, segment in enumerate(segments):
         cursor = 0
@@ -60,10 +60,7 @@ def _centroids(observations: Sequence[Observation], labels: Sequence[str]) -> di
     if any(not groups[label] for label in labels):
         missing = [label for label in labels if not groups[label]]
         raise BlockNullError(f"training fold lacks labels: {','.join(missing)}")
-    return {
-        label: tuple(sum(vector[i] for vector in groups[label]) / len(groups[label]) for i in range(len(groups[label][0])))
-        for label in labels
-    }
+    return {label: tuple(sum(vector[i] for vector in groups[label]) / len(groups[label]) for i in range(len(groups[label][0]))) for label in labels}
 
 
 def _predict(vector: Sequence[float], centroids: Mapping[str, Sequence[float]]) -> str:
@@ -78,8 +75,7 @@ def balanced_accuracy(observations: Sequence[Observation], centroids: Mapping[st
         group = [observation for observation in observations if observation.label == label]
         if not group:
             continue
-        correct = sum(_predict(observation.vector, centroids) == label for observation in group)
-        recalls.append(correct / len(group))
+        recalls.append(sum(_predict(observation.vector, centroids) == label for observation in group) / len(group))
     if not recalls:
         raise BlockNullError("test fold has none of the requested labels")
     return sum(recalls) / len(recalls)
@@ -87,7 +83,7 @@ def balanced_accuracy(observations: Sequence[Observation], centroids: Mapping[st
 
 def _permuted_test_observations(trial: TrialData, seed: int, labels: Sequence[str]) -> list[Observation]:
     """Shuffle complete bout tokens within each context segment for one test trial."""
-    segments = _normalized_segments(trial)
+    segments = _normalized(trial)
     rng = random.Random(seed)
     output: list[Observation] = []
     for segment_index, segment in enumerate(segments):
@@ -119,24 +115,10 @@ def _distribution(observed: float, null_scores: Sequence[float]) -> dict[str, fl
     mean = sum(null_scores) / len(null_scores)
     sd = math.sqrt(sum((score - mean) ** 2 for score in null_scores) / len(null_scores))
     extreme = sum(score >= observed - 1e-15 for score in null_scores)
-    return {
-        "observed": observed,
-        "null_n": len(null_scores),
-        "null_mean": mean,
-        "null_sd": sd,
-        "p_greater_equal": (1 + extreme) / (1 + len(null_scores)),
-        "z": 0.0 if sd == 0.0 else (observed - mean) / sd,
-    }
+    return {"observed": observed, "null_n": len(null_scores), "null_mean": mean, "null_sd": sd, "p_greater_equal": (1 + extreme) / (1 + len(null_scores)), "z": 0.0 if sd == 0.0 else (observed - mean) / sd}
 
 
-def analyze_trials(
-    paths: Sequence[Path],
-    *,
-    labels: Sequence[str] = TARGET_LABELS,
-    context: str = "co2_off",
-    permutations: int = 999,
-    seed: int = 20261002,
-) -> dict[str, Any]:
+def analyze_trials(paths: Sequence[Path], *, labels: Sequence[str] = TARGET_LABELS, context: str = "co2_off", permutations: int = 999, seed: int = 20261002) -> dict[str, Any]:
     """Run leave-one-trial-out generalization for one animal."""
     if len(paths) < 3:
         raise BlockNullError("at least three trials are required for leave-one-trial-out generalization")
@@ -161,49 +143,11 @@ def analyze_trials(
             shuffled = _permuted_test_observations(test_trial, seed + fold_index * 1009 + permutation, label_tuple)
             null_scores.append(balanced_accuracy(shuffled, centroids, label_tuple))
         distribution = _distribution(observed, null_scores)
-        fold_results.append({
-            "trial": test_trial.trial,
-            "animal": test_trial.animal,
-            "train_trials": [trial.trial for trial in ordered if trial.trial != test_trial.trial],
-            "train_bouts": len(train_observations),
-            "test_bouts": len(test_observations),
-            "test_label_bouts": dict(sorted(Counter(observation.label for observation in test_observations if observation.label in label_tuple).items())),
-            "distribution": distribution,
-            "null_scores": null_scores,
-        })
+        fold_results.append({"trial": test_trial.trial, "animal": test_trial.animal, "train_trials": [trial.trial for trial in ordered if trial.trial != test_trial.trial], "train_bouts": len(train_observations), "test_bouts": len(test_observations), "test_label_bouts": dict(sorted(Counter(observation.label for observation in test_observations if observation.label in label_tuple).items())), "distribution": distribution, "null_scores": null_scores})
         null_matrix.append(null_scores)
     pooled_observed = sum(result["distribution"]["observed"] for result in fold_results) / len(fold_results)
     pooled_null = [sum(row[index] for row in null_matrix) / len(null_matrix) for index in range(permutations)]
-    return {
-        "schema": SCHEMA,
-        "verdict": "BIEN",
-        "analysis": {
-            "scope": "within_animal_leave_one_trial_out",
-            "animal": animals[0],
-            "context": context,
-            "n_trials": len(ordered),
-            "cross_animal": False,
-            "causal": False,
-            "unit": "bout",
-            "feature_level": "ROI",
-        },
-        "parameters": {"labels": list(label_tuple), "permutations": permutations, "seed": seed},
-        "inputs": [{"path": str(path), "bytes": path.stat().st_size, "sha256": _sha256(path)} for path in sorted(paths)],
-        "null_contract": {
-            "permuted_within": "each target-context segment of the held-out trial",
-            "preserved": ["animal and trial identity", "context segments", "complete bout token lengths", "label bout counts", "ROI time order"],
-            "destroyed": ["held-out label-to-neural-time alignment"],
-            "not_tested": ["anatomical route identity", "causal silencing", "cross-animal generalization"],
-        },
-        "folds": fold_results,
-        "pooled": {**_distribution(pooled_observed, pooled_null), "null_scores": pooled_null},
-        "limitations": [
-            "All trials belong to one animal; this is not cross-animal evidence.",
-            "The nearest-centroid score is descriptive decoding, not route selection or causality.",
-            "ROI channels are preserved but not mapped to cell type or neuropil.",
-            "Labels are DAART predictions, not manual independent annotations.",
-        ],
-    }
+    return {"schema": SCHEMA, "verdict": "BIEN", "analysis": {"scope": "within_animal_leave_one_trial_out", "animal": animals[0], "context": context, "n_trials": len(ordered), "cross_animal": False, "causal": False, "unit": "bout", "feature_level": "ROI"}, "parameters": {"labels": list(label_tuple), "permutations": permutations, "seed": seed}, "inputs": [{"path": str(path), "bytes": path.stat().st_size, "sha256": _sha256(path)} for path in sorted(paths)], "null_contract": {"permuted_within": "each target-context segment of the held-out trial", "preserved": ["animal and trial identity", "context segments", "complete bout token lengths", "label bout counts", "ROI time order"], "destroyed": ["held-out label-to-neural-time alignment"], "not_tested": ["anatomical route identity", "causal silencing", "cross-animal generalization"]}, "folds": fold_results, "pooled": {**_distribution(pooled_observed, pooled_null), "null_scores": pooled_null}, "limitations": ["All trials belong to one animal; this is not cross-animal evidence.", "The nearest-centroid score is descriptive decoding, not route selection or causality.", "ROI channels are preserved but not mapped to cell type or neuropil.", "Labels are DAART predictions, not manual independent annotations."]}
 
 
 def write_result(path: Path, result: Mapping[str, Any]) -> None:
