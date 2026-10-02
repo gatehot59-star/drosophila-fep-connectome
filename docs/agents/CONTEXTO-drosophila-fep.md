@@ -3,7 +3,7 @@
 **Última actualización:** 2026-10-02 14:17 (America/Buenos_Aires)  
 **Estado canónico:** este archivo se sobreescribe, no se acumula. La bitácora append-only vive en `docs/agents/respuestas/`.  
 **Protocolo:** `docs/agents/00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`.  
-**Auditoría independiente del turno:** `docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md`.  
+**Auditoría independiente del turno:** [docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md).  
 **Doc público de cierre:** [H4 cerrado correctamente: fuerte NO MEDIDA, pipeline bloqueado por reloj](https://app.clickup.com/90171457413/docs/2kza6fw5-17737).
 
 ## 0. Veredicto operativo
@@ -29,7 +29,7 @@ Los siguientes resultados no son evidencia biológica y no deben citarse como ta
 - estabilidad temporal `early_to_late` y `late_to_early`;
 - cualquier conclusión de que la representación no generaliza entre animales o es temporalmente inestable.
 
-La causa está medida: los runners `h4_cross_animal.py` y `h4_temporal_stability.py` usaron `roi_dFF_2p.pkl` y unieron por el entero `Frame`.
+La causa está medida: los runners `h4_cross_animal.py` y `h4_temporal_stability.py` de la rama H4 usaron `roi_dFF_2p.pkl` y unieron por el entero `Frame`.
 
 ```text
 conducta:       54.000 frames, Frame 0..53.999
@@ -43,11 +43,11 @@ Eso mezcla el reloj de 2P con el reloj conductual y produce un desfase aproximad
 
 | Instrumento | Estado | Veredicto |
 |---|---|---|
-| `h4_actions.py` | ejecutado sobre conectoma/anotaciones | H4 débil refutada en su alcance estrecho |
-| `h4_neural_behavior_all.py` | ocho trials Aymanns | screening descriptivo; no H4 fuerte |
-| `h4_cross_animal.py` | merge por `Frame` incompatible | resultados biológicos invalidados |
-| `h4_temporal_stability.py` | merge por `Frame` incompatible | resultados biológicos invalidados |
-| `h4_timealigned_features.py` | interpolación parcial | no concluyente; no equivale al loader oficial |
+| [`h4_actions.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_actions.py) | ejecutado sobre conectoma/anotaciones | H4 débil refutada en su alcance estrecho |
+| [`h4_neural_behavior_all.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_neural_behavior_all.py) | ocho trials Aymanns | screening descriptivo; no H4 fuerte |
+| [`h4_cross_animal.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_cross_animal.py) | merge por `Frame` incompatible | resultados biológicos invalidados |
+| [`h4_temporal_stability.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_temporal_stability.py) | merge por `Frame` incompatible | resultados biológicos invalidados |
+| [`h4_timealigned_features.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_timealigned_features.py) | interpolación parcial | no concluyente; no equivale al loader oficial |
 
 ## 4. Features: límite de categoría
 
@@ -68,17 +68,17 @@ Las labels DAART son predicciones, no una anotación manual independiente. `co2_
 
 - Rama de trabajo H4: `titan/auditoria-hipotesis-2026-10-01`.
 - HEAD auditado: `6112bdd25daf29d68e83d96eecd5f802d0fe8920`.
-- `main` conserva la bitácora y este contexto actualizado, pero no incorpora la rama científica H4.
+- `main` conserva la bitácora, la auditoría y este contexto actualizado, pero no incorpora la rama científica H4.
 - No hay PR abierto desde la rama H4. Los PR existentes son históricos y no deben tratarse como entrega H4.
-- La auditoría independiente está en `docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md`.
+- La auditoría independiente está en `main`; los instrumentos y recibos H4 están anclados arriba a la rama auditada.
 
 ## 7. Fuentes canónicas de esta fase
 
-- `docs/agents/respuestas/2026-10-02-072-falsador-neural-8-trials-Aymanns.md`
-- `docs/agents/respuestas/2026-10-02-073-validacion-cross-animal-H4.md`
-- `docs/agents/respuestas/2026-10-02-074-estabilidad-temporal-intra-animal.md`
-- `docs/agents/respuestas/2026-10-02-075-auditoria-features-H4.md`
-- `docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md`
+- [`recibo 072`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/docs/agents/respuestas/2026-10-02-072-falsador-neural-8-trials-Aymanns.md)
+- [`recibo 073`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/docs/agents/respuestas/2026-10-02-073-validacion-cross-animal-H4.md)
+- [`recibo 074`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/docs/agents/respuestas/2026-10-02-074-estabilidad-temporal-intra-animal.md)
+- [`recibo 075`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/docs/agents/respuestas/2026-10-02-075-auditoria-features-H4.md)
+- [`recibo 002 de cierre`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/agents/respuestas/2026-10-02-002-cierre-correcto-H4.md)
 
 ## 8. NO MEDIDO
 
