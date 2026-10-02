@@ -1,0 +1,37 @@
+name: h4-generalization
+
+on:
+  push:
+    branches:
+      - 'titan/**'
+    paths:
+      - 'tools/h4_trial_generalization.py'
+      - 'tools/h4_block_null.py'
+      - 'tests/test_h4_trial_generalization.py'
+      - 'tests/test_h4_block_null.py'
+      - '.github/workflows/h4-generalization.yml'
+  pull_request:
+    paths:
+      - 'tools/h4_trial_generalization.py'
+      - 'tools/h4_block_null.py'
+      - 'tests/test_h4_trial_generalization.py'
+      - 'tests/test_h4_block_null.py'
+      - '.github/workflows/h4-generalization.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: block null contracts
+        run: python3 -S tests/test_h4_block_null.py
+      - name: generalization contracts
+        run: python3 -S tests/test_h4_trial_generalization.py
