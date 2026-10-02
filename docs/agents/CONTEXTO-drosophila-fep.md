@@ -1,12 +1,14 @@
 # CONTEXTO VIVO · conectoma / FEP / H4
 
-**Última actualización:** 2026-10-02 14:25 (America/Buenos_Aires)  
+**Última actualización:** 2026-10-02 15:54 (America/Buenos_Aires)  
 **Estado canónico:** este archivo se sobreescribe, no se acumula. La bitácora append-only vive en `docs/agents/respuestas/`.  
 **Protocolo:** `docs/agents/00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`.  
 **Auditoría anterior:** [docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md).  
 **Segunda auditoría:** [docs/auditorias/2026-10-02-003-segunda-auditoria-proyecto-chat-h4.md](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/auditorias/2026-10-02-003-segunda-auditoria-proyecto-chat-h4.md).  
+**Plan de materialización:** [docs/PLAN-MATERIALIZACION-2026-10-02.md](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/PLAN-MATERIALIZACION-2026-10-02.md).  
 **Doc público de cierre:** [H4 cerrado correctamente: fuerte NO MEDIDA, pipeline bloqueado por reloj](https://app.clickup.com/90171457413/docs/2kza6fw5-17737).  
-**Doc público de segunda auditoría:** [Segunda auditoría H4: GitHub main correcto, brain-env atrasado](https://app.clickup.com/90171457413/docs/2kza6fw5-17757).
+**Doc público de segunda auditoría:** [Segunda auditoría H4: GitHub main correcto, brain-env atrasado](https://app.clickup.com/90171457413/docs/2kza6fw5-17757).  
+**Doc público de materialización:** [Materialización H4: guard de alineación temporal y plan de producto](https://app.clickup.com/90171457413/docs/2kza6fw5-17817).
 
 ## 0. Veredicto operativo
 
@@ -45,11 +47,12 @@ Eso mezcla el reloj de 2P con el reloj conductual y produce un desfase aproximad
 
 | Instrumento | Estado | Veredicto |
 |---|---|---|
-| [`h4_actions.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_actions.py) | ejecutado sobre conectoma/anotaciones | H4 débil refutada en su alcance estrecho |
-| [`h4_neural_behavior_all.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_neural_behavior_all.py) | ocho trials Aymanns | screening descriptivo; no H4 fuerte |
-| [`h4_cross_animal.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_cross_animal.py) | merge por `Frame` incompatible | resultados biológicos invalidados |
-| [`h4_temporal_stability.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_temporal_stability.py) | merge por `Frame` incompatible | resultados biológicos invalidados |
-| [`h4_timealigned_features.py`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/tools/h4_timealigned_features.py) | interpolación parcial | no concluyente; no equivale al loader oficial |
+| `h4_actions.py` | ejecutado sobre conectoma/anotaciones | H4 débil refutada en su alcance estrecho |
+| `h4_neural_behavior_all.py` | ocho trials Aymanns | screening descriptivo; no H4 fuerte |
+| `h4_cross_animal.py` | merge por `Frame` incompatible | resultados biológicos invalidados |
+| `h4_temporal_stability.py` | merge por `Frame` incompatible | resultados biológicos invalidados |
+| `h4_timealigned_features.py` | interpolación parcial | no concluyente; no equivale al loader oficial |
+| `h4_alignment_guard.py` | branch de materialización + CI | **VERDE: 7 tests y mutación negativa detectada** |
 
 ## 4. Features: límite de categoría
 
@@ -60,19 +63,19 @@ Las labels DAART son predicciones, no una anotación manual independiente. `co2_
 ## 5. Bloqueos que deben cerrarse antes de interpretar H4
 
 1. Usar `roi_dFF.pkl` o el loader oficial Aymanns, no `roi_dFF_2p.pkl` para el cruce directo.
-2. Implementar `alignment_guard` para animal, trial, reloj, monotonía de `Time`, cobertura y pérdidas.
-3. Agregar prueba negativa: un merge por `Frame` con relojes incompatibles debe fallar con exit distinto de cero.
-4. Repetir cross-animal y temporal por bouts/trials, con nulls por bloques temporales y balance de clases.
-5. Conservar identidad anatómica y mapear ROIs a FlyWire/cell type o declarar el resultado como señal global.
-6. Solo después ejecutar SparseLTC sobre el subgrafo real, null anatómico pareado y silenciamientos cruzados.
+2. Usar `tools/h4_alignment_guard.py`: exige animal, trial, timebase, eje monotónico, cobertura y rechaza `Frame`.
+3. Repetir cross-animal y temporal por bouts/trials, con nulls por bloques temporales y balance de clases.
+4. Conservar identidad anatómica y mapear ROIs a FlyWire/cell type o declarar el resultado como señal global.
+5. Solo después ejecutar SparseLTC sobre el subgrafo real, null anatómico pareado y silenciamientos cruzados.
 
 ## 6. Estado de publicación y ramas
 
-- Rama de trabajo H4: `titan/auditoria-hipotesis-2026-10-01`.
-- HEAD auditado: `6112bdd25daf29d68e83d96eecd5f802d0fe8920`.
-- `main` conserva la bitácora, la auditoría y este contexto actualizado, pero no incorpora la rama científica H4.
-- No hay PR abierto desde la rama H4. Los PR existentes son históricos y no deben tratarse como entrega H4.
-- La auditoría independiente está en `main`; los instrumentos y recibos H4 están anclados arriba a la rama auditada.
+- Rama científica H4 histórica: `titan/auditoria-hipotesis-2026-10-01`, HEAD `6112bdd25daf29d68e83d96eecd5f802d0fe8920`.
+- Rama de materialización: `titan/materializacion-h4-guard-main-2026-10-02`.
+- PR activo: [#7, alignment guard fail-closed](https://github.com/gatehot59-star/drosophila-fep-connectome/pull/7).
+- CI del PR #7: **2 check runs verdes**, localmente 7 tests verdes y mutación negativa detectada.
+- PR duplicado histórico #6: cerrado en favor del #7 porque arrastraba toda la rama H4 en vez del bloque mínimo.
+- `main` conserva bitácora, auditorías, informe maestro, plan y estado vivo; el código nuevo queda en PR hasta decisión humana.
 
 ## 7. Fuentes canónicas de esta fase
 
@@ -81,31 +84,42 @@ Las labels DAART son predicciones, no una anotación manual independiente. `co2_
 - [`recibo 074`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/docs/agents/respuestas/2026-10-02-074-estabilidad-temporal-intra-animal.md)
 - [`recibo 075`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/auditoria-hipotesis-2026-10-01/docs/agents/respuestas/2026-10-02-075-auditoria-features-H4.md)
 - [`recibo 002 de cierre`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/agents/respuestas/2026-10-02-002-cierre-correcto-H4.md)
+- [`plan de materialización`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/PLAN-MATERIALIZACION-2026-10-02.md)
+- [`informe maestro`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/agents/respuestas/2026-10-02-004-informe-maestro-historial-conectoma.md)
 
 ## 8. NO MEDIDO
 
 - asset `roi_dFF.pkl` íntegro y loader oficial ejecutado de punta a punta;
 - equivalencia manual versus loader oficial;
-- `alignment_guard` y prueba negativa;
 - rerun corregido cross-animal/temporal;
 - mapping ROI→FlyWire/cell type;
 - null anatómico pareado;
 - causalidad por silenciamiento de rutas;
 - robustez con más trials, bouts y controles de autocorrelación;
-- review externo del pipeline H4.
+- review externo del pipeline H4;
+- merge humano del PR #7.
 
 ## 9. Regla de cierre
 
-Hasta que todos los bloqueos de la sección 5 tengan evidencia commiteada, **no se debe afirmar que H4 fue confirmada, refutada, generalizable o estable**. El único cierre correcto hoy es: **H4 fuerte NO MEDIDA; el pipeline anterior no es evidencia biológica; siguiente paso: alineación oficial con guard negativo.**
+Hasta que todos los bloqueos de la sección 5 tengan evidencia commiteada, **no se debe afirmar que H4 fue confirmada, refutada, generalizable o estable**. El único cierre correcto hoy es: **H4 fuerte NO MEDIDA; el pipeline anterior no es evidencia biológica; alignment gate materializado; siguiente paso: loader oficial y manifest por trial.**
 
 ## 10. Rojo operativo agregado por la segunda auditoría
 
-El checkout de `brain-env` no está sincronizado con GitHub `main` y no debe usarse para verificar el estado público actual hasta reconstruirse o sincronizarse desde el SHA público:
+El checkout de `brain-env` fue sincronizado y verificado el 2026-10-02:
 
 ```text
-checkout local HEAD: 08b3b01bc0a6c678ae09fe6adeabadfe6cd94b63
-origin/main local:   08b3b01bc0a6c678ae09fe6adeabadfe6cd94b63
-main GitHub:         ccf59eb8e359edf92539476bb81c8e1f0fd56752
+HEAD=78d0e644e07eb98088d8a843fa2efbc55a783ce3
+origin/main=78d0e644e07eb98088d8a843fa2efbc55a783ce3
 ```
 
-El checkout local no contiene la auditoría 001, la auditoría 003 ni el recibo 002; su contexto todavía era de agosto. Toda medición nueva debe declarar primero el SHA exacto del checkout y compararlo con la fuente pública que pretende verificar.
+Toda medición nueva debe declarar primero el SHA exacto del checkout y compararlo con la fuente pública que pretende verificar.
+
+## 11. Primer bloque de materialización
+
+El branch [titan/materializacion-h4-guard-main-2026-10-02](https://github.com/gatehot59-star/drosophila-fep-connectome/tree/titan/materializacion-h4-guard-main-2026-10-02) agrega:
+
+- `tools/h4_alignment_guard.py`;
+- `tests/test_h4_alignment_guard.py`;
+- `.github/workflows/h4-alignment.yml`.
+
+El guard es fail-closed: rechaza `Frame`, exige `animal/trial/timebase`, comprueba monotonicidad, duración, cobertura y gaps. La mutación que hacía pasar `Frame` fue detectada por la suite. Esto materializa el gate de alineación, no el resultado biológico.
