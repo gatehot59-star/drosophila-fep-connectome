@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import pickle
 import sys
@@ -25,6 +26,15 @@ def load_pickle(path: Path) -> Any:
     """Load one persisted dataset object."""
     with path.open("rb") as handle:
         return pickle.load(handle)
+
+
+def sha256_file(path: Path) -> str:
+    """Return the SHA-256 checksum of a source asset."""
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def rising_edges(line: Sequence[float]) -> Any:
@@ -125,13 +135,25 @@ def build_manifest(*, h5_path: Path, capture_path: Path, dff_path: Path, behavio
         behavior_metadata={"animal": animal, "trial": trial, "timebase": "thor_sync_seconds"},
         join_key="Time",
     )
+    overlap_start = alignment["overlap_start"]
+    overlap_end = alignment["overlap_end"]
+    source_paths = (("h5", h5_path), ("capture", capture_path), ("dff", dff_path), ("behavior", behavior_path))
+    sources = {name: {"name": path.name, "bytes": path.stat().st_size, "sha256": sha256_file(path)} for name, path in source_paths}
+    losses = {
+        "behavior_labels_unpaired": int(abs(len(labels) - len(behavior_times))),
+        "roi_arrays_with_wrong_length": 0,
+        "neural_frames_before_overlap": int(np.sum(neural_times < overlap_start)),
+        "neural_frames_after_overlap": int(np.sum(neural_times > overlap_end)),
+        "behavior_frames_before_overlap": int(np.sum(behavior_times < overlap_start)),
+        "behavior_frames_after_overlap": int(np.sum(behavior_times > overlap_end)),
+    }
     return {
         "schema": "h4-alignment-manifest/v1", "verdict": "BIEN",
         "method": "ThorSync-equivalent: Basler metadata crop, Frame Counter steps_per_frame=3, 30 kHz seconds, explicit Time join",
         "identity": {"animal": animal, "trial": trial, "timebase": "thor_sync_seconds"},
-        "sources": {name: {"name": path.name, "bytes": path.stat().st_size} for name, path in (("h5", h5_path), ("capture", capture_path), ("dff", dff_path), ("behavior", behavior_path))},
+        "sources": sources,
         "counts": {"basler_rising_edges": int(len(rising_edges(basler))), "camera_frames": int(len(behavior_times)), "neural_frames": int(len(neural_times)), "behavior_labels": int(len(labels)), "roi_count": int(len(roi_lengths))},
-        "roi_lengths": roi_lengths, "alignment": alignment,
+        "losses": losses, "roi_lengths": roi_lengths, "alignment": alignment,
         "axes": {"neural_seconds": neural_times.tolist(), "behavior_seconds": behavior_times.tolist()},
     }
 
@@ -148,7 +170,7 @@ def main() -> int:
     except (OSError, KeyError, TypeError, ValueError) as exc:
         print(json.dumps({"verdict": "MAL", "error": str(exc)}, sort_keys=True)); return 2
     args.out.write_text(json.dumps(manifest, indent=2) + "\n")
-    print(json.dumps({"verdict": manifest["verdict"], "counts": manifest["counts"], "alignment": manifest["alignment"]}, indent=2)); return 0
+    print(json.dumps({"verdict": manifest["verdict"], "counts": manifest["counts"], "losses": manifest["losses"], "alignment": manifest["alignment"]}, indent=2)); return 0
 
 
 if __name__ == "__main__":
