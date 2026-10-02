@@ -15,7 +15,7 @@ El pipeline anterior unió conducta y DFF por el entero `Frame`, aunque conducta
 4. rechaza cualquier join por `Frame`;
 5. rechaza ROI truncadas o con longitudes mezcladas;
 6. delega monotonicidad, duración, cobertura y gaps al alignment guard;
-7. escribe provenance, conteos, ejes y veredicto `BIEN`/`MAL`.
+7. escribe provenance, conteos, pérdidas, ejes y veredicto `BIEN`/`MAL`.
 
 ## Alternativas descartadas
 
@@ -33,20 +33,30 @@ Trial 7, identidad `R65D11-tdTomGC6fopt-fly1`, dataset Aymanns:
 - 1.067 frames 2P/ROI;
 - 7.440 etiquetas conductuales;
 - duración neural 248,6562 s y conductual 247,9128 s;
-- error relativo de duración 0,0029898;
-- cobertura neural 0,9970102 y conductual 1,0;
+- error relativo de duración 0,0029898041;
+- cobertura neural 0,9970101959 y conductual 1,0;
 - join `Time`, timebase `thor_sync_seconds`;
 - 2 ROI, ambas de 1.067 muestras;
-- manifest SHA-256 `8025aa0b966d4d358c8b108c23009f8b6501c6997dce36802d6310bfca542f36`.
+- pérdidas: 0 etiquetas sin pareja, 0 ROI con longitud incorrecta, 1 frame neural antes del solapamiento y 4 después, 0 frames conductuales fuera del solapamiento;
+- manifest completo: 200.599 bytes, SHA-256 `a5142a7b3271d71cc812ca3a60ce15614a046b522d71b56af02c9641052cb272`.
+
+Hashes de fuentes:
+
+```text
+h5       347266042dbab40f92672dac446eaccb7fc7d05cf4e797c782df05732762d516
+capture  e6c5de8145ce172f68e646571e47a2230629b14196515a13a747e46e32157cc0
+dff      0bd81f452ccc92abeddad233ed81b4e05eed3a21ec610cddcc550d49f9709755
+behavior 05ecc1f980cbb3ea7f2c9455cb3872484a0dfa1cc92c7badc4a5141a6e50f180
+```
 
 ## Consecuencia
 El manifest de un trial es un artefacto verificable antes de construir features. `BIEN` demuestra alineación del instrumento, no selección contextual, causalidad ni generalización entre animales. Esos claims requieren nulls por bloques, mapping anatómico y silenciamiento.
 
 ## Criterio de éxito
-Un trial real produce un manifest con `verdict=BIEN`, identidad completa, ejes monotónicos, cobertura suficiente, conteos y longitudes ROI. Un trial incompatible termina con `verdict=MAL` y exit code 2; no produce una corrida interpretable.
+Un trial real produce un manifest con `verdict=BIEN`, identidad completa, ejes monotónicos, cobertura suficiente, conteos, pérdidas y longitudes ROI. Un trial incompatible termina con `verdict=MAL` y exit code 2; no produce una corrida interpretable.
 
 ## Estado actual
-Tests locales: 7 alignment + 6 loader, verdes. Mutación que desactiva el rechazo de DFF vacío: detectada; restauración: verde. CI del workflow queda como verificador limpio del PR.
+Tests locales: 7 alignment + 6 loader, verdes. Mutación que desactiva el rechazo de DFF vacío: detectada; restauración: verde. Loader real del trial 7: `RETURN_CODE=0`, manifest `BIEN`. CI del workflow queda como verificador limpio del PR.
 
 --- METODO PROMETEO ---
 Accion delicada: NO
