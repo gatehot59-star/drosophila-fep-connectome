@@ -54,19 +54,7 @@ def interpolate_series(
     source_values: Sequence[float],
     target_times: Sequence[float],
 ) -> list[float]:
-    """Interpolate one ROI without extrapolation.
-
-    Args:
-        source_times: Strictly increasing timestamps for the ROI samples.
-        source_values: ROI values, one per source timestamp.
-        target_times: Strictly increasing timestamps to receive values.
-
-    Returns:
-        Linearly interpolated values at every target timestamp.
-
-    Raises:
-        FeatureAlignmentError: If lengths, monotonicity or coverage are invalid.
-    """
+    """Interpolate one ROI without extrapolation."""
     source = _finite_axis("source_times", source_times)
     target = _finite_axis("target_times", target_times)
     values = [float(value) for value in source_values]
@@ -95,12 +83,7 @@ def interpolate_series(
 
 
 def derive_bouts(labels: Sequence[str], contexts: Sequence[str]) -> list[dict[str, int]]:
-    """Create contiguous bout ids, positions and lengths.
-
-    A bout breaks when either the predicted action or the CO2 context changes.
-    This is an explicit block structure for later nulls; it is not a biological
-    claim about the animal's latent state.
-    """
+    """Create contiguous bout ids, positions and lengths."""
     if len(labels) != len(contexts):
         raise FeatureAlignmentError("labels and contexts must have equal length")
     if not labels:
@@ -116,11 +99,7 @@ def derive_bouts(labels: Sequence[str], contexts: Sequence[str]) -> list[dict[st
     for bout_id, (left, right) in enumerate(spans):
         length = right - left
         output.extend(
-            {
-                "bout_id": bout_id,
-                "bout_position": position,
-                "bout_length": length,
-            }
+            {"bout_id": bout_id, "bout_position": position, "bout_length": length}
             for position in range(length)
         )
     return output
@@ -256,6 +235,7 @@ def build_aligned_features(
     metadata = {
         "record_type": "metadata",
         "schema": "h4-aligned-features/v1",
+        "verdict": "BIEN",
         "identity": manifest["identity"],
         "source_manifest": {
             "schema": manifest["schema"],
