@@ -7,6 +7,7 @@ correspondiente. El resultado no habilita claims sobre root_id FlyWire.
 from __future__ import annotations
 import argparse
 import glob
+import json
 import pickle
 import sys
 import types
@@ -14,12 +15,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import StratifiedKFold, cross_val_score
+from sklearn.model_selection import cross_val_score
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import accuracy_score
 
-# Pickles publicados con pandas antiguo.
+
 def patch_old_pandas() -> None:
     module = types.ModuleType("pandas.core.indexes.numeric")
     module.Int64Index = pd.Index
@@ -60,12 +60,13 @@ def run(behaviour_dir: Path, dff_dir: Path) -> dict:
         y = labels[keep]
         if len(np.unique(y)) < 2:
             continue
-        model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=2000, multi_class="auto"))
-        folds = min(5, int(np.min(np.bincount(pd.Categorical(y).codes))))
-        score = float(np.mean(cross_val_score(model, x, y, cv=max(2, folds), scoring="accuracy")))
+        model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=2000))
+        counts = np.unique(y, return_counts=True)[1]
+        folds = max(2, min(5, int(np.min(counts))))
+        score = float(np.mean(cross_val_score(model, x, y, cv=folds, scoring="accuracy")))
         rng = np.random.default_rng(1000 + trial_id)
         shuffled = rng.permutation(y)
-        null = float(np.mean(cross_val_score(model, x, shuffled, cv=max(2, folds), scoring="accuracy")))
+        null = float(np.mean(cross_val_score(model, x, shuffled, cv=folds, scoring="accuracy")))
         means = {label: np.mean(x[y == label], axis=0).tolist() for label in sorted(np.unique(y))}
         rows = []
         for left in sorted(means):
@@ -85,8 +86,8 @@ def main() -> None:
     parser.add_argument("--out", type=Path, required=True)
     args = parser.parse_args()
     result = run(args.behaviour_dir, args.dff_dir)
-    args.out.write_text(__import__("json").dumps(result, indent=2))
-    print(__import__("json").dumps(result, indent=2))
+    args.out.write_text(json.dumps(result, indent=2))
+    print(json.dumps(result, indent=2))
 
 
 if __name__ == "__main__":
