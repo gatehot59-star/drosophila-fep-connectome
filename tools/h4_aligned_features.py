@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Materialize ROI-preserving, time-aligned H4 features.
-
-This is deliberately not a classifier. It turns the validated ThorSync clocks
-into frame records that retain ROI identity, CO2 context and bout boundaries.
-The resulting JSONL is a derived artifact and must be referenced by checksum,
-not committed as a dataset.
-"""
+"""Materialize ROI-preserving, time-aligned H4 features."""
 from __future__ import annotations
 
 import argparse
@@ -47,6 +41,13 @@ def _finite_axis(name: str, values: Iterable[float]) -> list[float]:
     if any(right <= left for left, right in zip(axis, axis[1:])):
         raise FeatureAlignmentError(f"{name}: values must be strictly increasing")
     return axis
+
+
+def overlap_indices(source_times: Sequence[float], target_times: Sequence[float]) -> list[int]:
+    """Return target positions covered by the source axis, without extrapolation."""
+    source = _finite_axis("source_times", source_times)
+    target = _finite_axis("target_times", target_times)
+    return [index for index, value in enumerate(target) if source[0] <= value <= source[-1]]
 
 
 def interpolate_series(
@@ -212,17 +213,23 @@ def build_aligned_features(
         trial=trial,
     )
     neural_times = manifest["axes"]["neural_seconds"]
-    behavior_times = manifest["axes"]["behavior_seconds"]
+    behavior_times_all = manifest["axes"]["behavior_seconds"]
+    valid_indices = overlap_indices(neural_times, behavior_times_all)
+    if not valid_indices:
+        raise FeatureAlignmentError("no behavior frames overlap neural coverage")
+    behavior_times = [behavior_times_all[index] for index in valid_indices]
     behavior = load_pickle(behavior_path)
-    labels = behavior["Prediction"].astype(str).to_numpy().tolist()
+    labels_all = behavior["Prediction"].astype(str).to_numpy().tolist()
+    labels = [labels_all[index] for index in valid_indices]
     dff = load_pickle(dff_path)
     roi_features = {
         str(name): interpolate_series(neural_times, values, behavior_times)
         for name, values in sorted(dff.items())
     }
-    contexts, context_samples = context_by_camera_frame(
-        h5_path, capture_path, expected_frames=len(behavior_times)
+    contexts_all, context_samples = context_by_camera_frame(
+        h5_path, capture_path, expected_frames=len(behavior_times_all)
     )
+    contexts = [contexts_all[index] for index in valid_indices]
     records = frame_records(
         animal=animal,
         trial=trial,
@@ -243,6 +250,10 @@ def build_aligned_features(
             "losses": manifest["losses"],
             "alignment": manifest["alignment"],
             "sources": manifest["sources"],
+        },
+        "feature_losses": {
+            "behavior_frames_dropped_outside_neural_coverage": len(behavior_times_all) - len(valid_indices),
+            "behavior_frames_materialized": len(valid_indices),
         },
         "roi_names": sorted(roi_features),
         "n_records": len(records),
