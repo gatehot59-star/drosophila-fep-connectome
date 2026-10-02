@@ -59,16 +59,15 @@ def main() -> None:
         model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=2000, class_weight="balanced"))
         model.fit(x_train, y_train)
         pred = model.predict(x_test)
-        labels = sorted(set(ACTIONS) & set(y_test))
-        score = float(balanced_accuracy_score(y_test, pred, labels=labels))
-        majority = max((np.mean(y_test == label) for label in labels), default=0.0)
+        score = float(balanced_accuracy_score(y_test, pred))
+        majority = max((np.mean(y_test == label) for label in np.unique(y_test)), default=0.0)
         null_scores = []
         for seed in range(10):
             rng = np.random.default_rng(7000 + seed + int(held_out.replace("Fly", "")))
             shuffled = rng.permutation(y_train)
             null_model = make_pipeline(StandardScaler(), LogisticRegression(max_iter=2000, class_weight="balanced"))
             null_model.fit(x_train, shuffled)
-            null_scores.append(float(balanced_accuracy_score(y_test, null_model.predict(x_test), labels=labels)))
+            null_scores.append(float(balanced_accuracy_score(y_test, null_model.predict(x_test))))
         results.append({"held_out": held_out, "n_test": int(len(y_test)), "class_counts": {k: int(v) for k, v in zip(*np.unique(y_test, return_counts=True))}, "balanced_accuracy": score, "majority_accuracy": float(majority), "shuffle_mean": float(np.mean(null_scores)), "shuffle_sd": float(np.std(null_scores, ddof=1)), "shuffle_scores": null_scores})
     output = {"method": "population summary features (9 stats), denoised DFF, every Nth frame, leave-one-fly-out; no frames from held-out fly in training", "stride": args.stride, "n_flies": len(data), "results": results, "mean_balanced_accuracy": float(np.mean([r["balanced_accuracy"] for r in results])), "mean_shuffle": float(np.mean([r["shuffle_mean"] for r in results]))}
     args.out.write_text(json.dumps(output, indent=2))
