@@ -1,0 +1,26 @@
+{
+  "analysis": {
+    "animal": "R65D11-tdTomGC6fopt-fly1",
+    "causal": false,
+    "context": "co2_off",
+    "cross_animal": false,
+    "feature_level": "ROI",
+    "n_trials": 8,
+    "scope": "within_animal_leave_one_trial_out",
+    "unit": "bout"
+  },
+  "parameters": {"labels": ["resting", "walking"], "permutations": 999, "seed": 20261002},
+  "pooled": {"null_mean": 0.5081554609448383, "null_n": 999, "null_sd": 0.02091634629331271, "observed": 0.5018855395873556, "p_greater_equal": 0.623, "z": -0.2997617877213725},
+  "folds": [
+    {"trial":"1","observed":0.4571428571428572,"p":0.847,"null_mean":0.5225975975975976,"null_sd":0.06476160942558226,"resting_bouts":20,"walking_bouts":28},
+    {"trial":"2","observed":0.41666666666666663,"p":0.889,"null_mean":0.495704037370704,"null_sd":0.06893174477285492,"resting_bouts":18,"walking_bouts":28},
+    {"trial":"3","observed":0.47101449275362317,"p":0.741,"null_mean":0.5133096864980923,"null_sd":0.06333781040866658,"resting_bouts":23,"walking_bouts":30},
+    {"trial":"4","observed":0.5315151515151515,"p":0.432,"null_mean":0.518078078078078,"null_sd":0.059434014601201644,"resting_bouts":25,"walking_bouts":33},
+    {"trial":"5","observed":0.5746753246753247,"p":0.141,"null_mean":0.5167900584567252,"null_sd":0.05710897385422453,"resting_bouts":28,"walking_bouts":33},
+    {"trial":"6","observed":0.5669800235017627,"p":0.153,"null_mean":0.49772451652592664,"null_sd":0.0628704740193779,"resting_bouts":23,"walking_bouts":37},
+    {"trial":"7","observed":0.5625,"p":0.095,"null_mean":0.488013013013013,"null_sd":0.05487551933424443,"resting_bouts":32,"walking_bouts":40},
+    {"trial":"8","observed":0.43458980044345896,"p":0.911,"null_mean":0.5130267000185699,"null_sd":0.05762646387522166,"resting_bouts":33,"walking_bouts":41}
+  ],
+  "verdict": "BIEN",
+  "full_result_sha256": "54f4a1aa2df7c41fff8fa5cc69d5b1c8ca5d030a0a31d48a87096e32dfed6810"
+}
