@@ -1,0 +1,44 @@
+{
+  "schema": "h4-aligned-features-summary/v1",
+  "verdict": "BIEN",
+  "identity": {
+    "animal": "R65D11-tdTomGC6fopt-fly1",
+    "trial": "7",
+    "timebase": "thor_sync_seconds"
+  },
+  "join_key": "Time",
+  "n_records": 7440,
+  "n_bouts": 102,
+  "roi_names": ["ROI_0", "ROI_1"],
+  "label_counts": {
+    "background": 37,
+    "foreleg_grooming": 70,
+    "head_grooming": 315,
+    "hind_grooming": 20,
+    "resting": 2046,
+    "walking": 4952
+  },
+  "context_sample_counts": {
+    "co2_off": 7237993,
+    "co2_on": 228950
+  },
+  "source_losses": {
+    "behavior_labels_unpaired": 0,
+    "roi_arrays_with_wrong_length": 0,
+    "neural_frames_before_overlap": 1,
+    "neural_frames_after_overlap": 4,
+    "behavior_frames_before_overlap": 0,
+    "behavior_frames_after_overlap": 0
+  },
+  "derived_artifact": {
+    "format": "JSONL",
+    "bytes": 2320599,
+    "sha256": "32f06e564f4fc723df846d420bf8eb77f68190aafb04600a334cc385152672e9",
+    "persistent_path": "brain-env:/workspace/h4_data/aymanns/aligned_features_trial_7.jsonl"
+  },
+  "innovation": [
+    "ROI identity retained per frame",
+    "CO2 context reconstructed on the shared camera clock",
+    "contiguous label/context bouts materialized for block-aware nulls"
+  ]
+}
