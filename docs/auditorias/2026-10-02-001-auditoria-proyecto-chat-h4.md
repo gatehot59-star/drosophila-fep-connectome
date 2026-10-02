@@ -22,7 +22,7 @@ Evidencia: [auditoría de features](https://github.com/gatehot59-star/drosophila
 
 Los recibos `073` y `074` sí presentan números y hashes, pero sus instrumentos medían el emparejamiento incorrecto. Por eso `0,1816 vs 0,2019` y los deltas temporales no son resultados biológicos: son diagnósticos históricos del pipeline. El recibo `075` corrige el estado y no intenta salvarlos.
 
-Evidencia: [recibo cross-animal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/docs/agents/respuestas/2026-10-02-073-validacion-cross-animal-H4.md), [recibo temporal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83e83d96eecd5f802d0fe8920/docs/agents/respuestas/2026-10-02-074-estabilidad-temporal-intra-animal.md).
+Evidencia: [recibo cross-animal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/docs/agents/respuestas/2026-10-02-073-validacion-cross-animal-H4.md), [recibo temporal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0/docs/agents/respuestas/2026-10-02-074-estabilidad-temporal-intra-animal.md).
 
 ### R3 · NO MEDIDO: la supuesta equivalencia con el loader oficial no está demostrada
 
