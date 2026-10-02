@@ -21,7 +21,7 @@ from typing import Any, Mapping, Sequence
 
 import h4_block_null
 from h4_block_null import BlockNullError, load_trial
-_normalized = getattr(h4_block_null, "_normalized", getattr(h4_block_null, "_normalized_segments"))
+_normalized = getattr(h4_block_null, "_normalized", None) or getattr(h4_block_null, "_normalized_segments")
 
 SCHEMA = "h4-trial-generalization/v1"
 TARGET_LABELS = ("walking", "resting")
