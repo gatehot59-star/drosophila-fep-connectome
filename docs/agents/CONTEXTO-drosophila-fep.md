@@ -1,6 +1,6 @@
 # CONTEXTO VIVO · conectoma / FEP / H4
 
-**Última actualización:** 2026-10-02 16:xx (America/Buenos_Aires)  
+**Última actualización:** 2026-10-02 16:26 (America/Buenos_Aires)  
 **Estado canónico:** este archivo se sobreescribe, no se acumula. La bitácora append-only vive en `docs/agents/respuestas/`.  
 **Protocolo:** `docs/agents/00-PROTOCOLO-BITACORA-DE-RESPUESTAS.md`.  
 **Auditoría anterior:** [docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/auditorias/2026-10-02-001-auditoria-proyecto-chat-h4.md).  
@@ -16,13 +16,14 @@
 
 **H4 débil queda REFUTADA en su alcance estrecho:** el runner sobre poblaciones anotadas de escape, grooming y feeding produjo perfiles casi idénticos entre condiciones. Eso no usa conducta neural contextual real y no decide H4 fuerte.
 
-**No se cierra H4 como descubrimiento biológico.** Se cerró el bloqueo de alineación, no la hipótesis.
+**No se cierra H4 como descubrimiento biológico.** Se cerró el bloqueo de alineación y se materializó la primera representación con identidad ROI, no la hipótesis.
 
 ## 1. Qué queda validado
 
 - La auditoría de features identificó correctamente el error principal del pipeline.
 - Los ocho trials Aymanns aportan actividad neural y conducta con acciones alternativas descriptivas.
 - El loader oficial ThorSync-equivalente pasó **8/8 trials reales** con el mismo contrato.
+- El materializador de features del trial 7 produjo 7.440 registros, 2 ROI conservadas y 102 bouts label/contexto.
 - Los hallazgos anatómicos previos del conectoma siguen siendo evidencia de capacidad/restricción estructural, no de selección contextual dinámica.
 
 ## 2. Qué queda invalidado o retirado
@@ -46,6 +47,7 @@ La causa está medida: el pipeline anterior usó `roi_dFF_2p.pkl` y unió por el
 | `h4_timealigned_features.py` | interpolación parcial | no concluyente; no loader oficial |
 | `h4_alignment_guard.py` | branch de materialización + CI | verde: 7 tests y mutación negativa detectada |
 | `h4_official_loader.py` | brain-env, 8 trials reales | **8/8 BIEN, pérdidas explícitas y hashes** |
+| `h4_aligned_features.py` | PR #9, trial 7 real | **7.440 registros, 102 bouts, 2 ROI, CI verde** |
 
 ## 4. Resultado del alignment gate real
 
@@ -61,16 +63,24 @@ Animal: `R65D11-tdTomGC6fopt-fly1`. Timebase: `thor_sync_seconds`. Join: `Time`.
 
 El resumen versionado está en [`results/h4_all_trials_manifest_summary.json`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/h4-official-loader-2026-10-02/results/h4_all_trials_manifest_summary.json). El recibo completo está en [`2026-10-02-006-h4-loader-all-trials.md`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/h4-official-loader-2026-10-02/docs/agents/respuestas/2026-10-02-006-h4-loader-all-trials.md).
 
-## 5. Features: límite de categoría
+## 5. Features materializadas, límite y siguiente prueba
 
-Las nueve estadísticas globales por frame sirven como control de señal global, pero eliminan identidad ROI, signo individual, fase, posición anatómica y módulo causal. Una clasificación positiva con ellas solo demostraría señal decodificable, no activación/desactivación de rutas.
+El trial 7 ya tiene JSONL derivado en brain-env, con:
 
-Las labels DAART son predicciones, no una anotación manual independiente. `co2_off` es un contexto amplio. Frames consecutivos no son observaciones independientes y el shuffle simple no preserva bouts, transiciones ni autocorrelación.
+- `ROI_0` y `ROI_1` preservadas por frame;
+- CO2 `co2_on/co2_off` reconstruido sobre la cámara ThorSync;
+- `bout_id`, posición y longitud por cambios de label/contexto;
+- 7.440 registros, 102 bouts;
+- JSONL de 2.320.599 bytes, SHA-256 `32f06e564f4fc723df846d420bf8eb77f68190aafb04600a334cc385152672e9`.
+
+Esto **no es un clasificador** y no demuestra H4. Reemplaza las nueve estadísticas globales como instrumento principal porque conserva identidad ROI y deja construir nulls por bloques.
+
+Las labels DAART son predicciones, no una anotación manual independiente. `co2_off` es un contexto amplio. Frames consecutivos no son observaciones independientes.
 
 ## 6. Bloqueos que quedan antes de interpretar H4
 
-1. Rehacer features conservando identidad ROI y, si existe, cell type/neuropilo.
-2. Repetir cross-animal y temporal por bouts/trials, con nulls por bloques temporales y balance de clases.
+1. Ejecutar el materializador sobre los ocho trials y hashear los ocho JSONL.
+2. Repetir cross-animal y temporal por bouts/trials, con nulls por bloques y balance de clases.
 3. Mapear ROIs a FlyWire/cell type o declarar explícitamente el resultado como señal global.
 4. Construir null anatómico pareado con grado, neuropilo, distancia y signo.
 5. Solo después ejecutar SparseLTC sobre el subgrafo real y hacer silenciamientos cruzados.
@@ -80,7 +90,8 @@ Las labels DAART son predicciones, no una anotación manual independiente. `co2_
 - Rama científica H4 histórica: `titan/auditoria-hipotesis-2026-10-01`, HEAD `6112bdd25daf29d68e83d96eecd5f802d0fe8920`.
 - Rama de materialización base: `titan/materializacion-h4-guard-main-2026-10-02`.
 - PR #7: alignment guard fail-closed, 2 checks verdes.
-- PR #8: [loader oficial y manifest por trial](https://github.com/gatehot59-star/drosophila-fep-connectome/pull/8), encadenado sobre PR #7; contracts CI verde.
+- PR #8: [loader oficial y manifest por trial](https://github.com/gatehot59-star/drosophila-fep-connectome/pull/8), contracts CI verde.
+- PR #9: [features con identidad ROI, contexto y bouts](https://github.com/gatehot59-star/drosophila-fep-connectome/pull/9), contracts CI verde.
 - El código nuevo sigue esperando decisión humana de merge.
 
 ## 8. Fuentes canónicas de esta fase
@@ -89,18 +100,20 @@ Las labels DAART son predicciones, no una anotación manual independiente. `co2_
 - [`recibo 004 informe maestro`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/main/docs/agents/respuestas/2026-10-02-004-informe-maestro-historial-conectoma.md)
 - [`recibo 005 trial 7`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/h4-official-loader-2026-10-02/docs/agents/respuestas/2026-10-02-005-h4-loader-trial7.md)
 - [`recibo 006 ocho trials`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/h4-official-loader-2026-10-02/docs/agents/respuestas/2026-10-02-006-h4-loader-all-trials.md)
+- [`recibo 007 features trial 7`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/h4-aligned-features-2026-10-02/docs/agents/respuestas/2026-10-02-007-h4-aligned-features-trial7.md)
 - [`resumen de ocho manifests`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/h4-official-loader-2026-10-02/results/h4_all_trials_manifest_summary.json)
+- [`summary de features trial 7`](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/titan/h4-aligned-features-2026-10-02/results/h4_aligned_features_trial_7_summary.json)
 
 ## 9. NO MEDIDO
 
-- Rerun biológico cross-animal/temporal con las alineaciones válidas.
-- Features con identidad ROI/cell type/neuropilo.
+- Materialización de features en los otros 7 trials.
+- Rerun biológico cross-animal/temporal con las features válidas.
 - Null por bloques temporales y null anatómico pareado.
 - Equivalencia manual versus loader oficial más allá de la reproducción del procedimiento ThorSync-equivalente.
 - Causalidad por silenciamiento de rutas.
 - SparseLTC sobre subgrafos observados.
 - H4 fuerte como fenómeno biológico.
-- Merge humano del PR #8 y de su base PR #7.
+- Merge humano de PR #9 y de sus PR base #8/#7.
 
 ## 10. Entorno
 
@@ -115,4 +128,4 @@ Toda medición nueva debe declarar primero el SHA exacto del checkout y comparar
 
 ## 11. Regla de cierre
 
-Hasta que los bloqueos de la sección 6 tengan evidencia commiteada, **no se debe afirmar que H4 fue confirmada, refutada, generalizable o estable**. Estado correcto: **alignment verificado en 8/8 trials; H4 fuerte NO MEDIDA; siguiente paso: features con identidad y nulls por bloques.**
+Hasta que los bloqueos de la sección 6 tengan evidencia commiteada, **no se debe afirmar que H4 fue confirmada, refutada, generalizable o estable**. Estado correcto: **alignment verificado en 8/8 trials; features ROI/bouts materializadas en 1/8; H4 fuerte NO MEDIDA; siguiente paso: features en los otros 7 y nulls por bloques.**
