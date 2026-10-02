@@ -13,11 +13,12 @@ from h4_aligned_features import (  # noqa: E402
     derive_bouts,
     frame_records,
     interpolate_series,
+    overlap_indices,
 )
 
 
 class H4AlignedFeaturesTests(unittest.TestCase):
-    """Exercise valid records and the failure modes that would falsify them."""
+    """Exercise valid records and failure modes that would falsify them."""
 
     def test_interpolates_linear_roi_without_extrapolation(self):
         """A linear signal is reconstructed exactly at an interior time."""
@@ -28,6 +29,10 @@ class H4AlignedFeaturesTests(unittest.TestCase):
         """The feature path refuses endpoint extrapolation."""
         with self.assertRaisesRegex(FeatureAlignmentError, "extrapolation"):
             interpolate_series([0.0, 1.0], [1.0, 2.0], [-0.1, 0.5])
+
+    def test_reports_only_target_frames_inside_source_coverage(self):
+        """Edge behavior frames are dropped explicitly instead of extrapolated."""
+        self.assertEqual(overlap_indices([0.1, 1.0], [0.0, 0.5, 1.0, 1.1]), [1, 2])
 
     def test_rejects_roi_length_mismatch(self):
         """An ROI with a missing aligned row cannot silently disappear."""
