@@ -101,5 +101,5 @@ Rubrica: 34/40 -> 85/100
 N/A declarados: seguridad, deployment y testing de producto no aplican a esta auditoría científica; no entran al denominador
 Review externo: no pedido; deuda K-02 declarada
 Instrumento: GitHub branches, commits, archivos y PRs; `build.run` sobre `/workspace/drosophila-fep-connectome`; evidencia cruda en este archivo
-Artefactos: `docs/auditorias/2026-10-02-003-segunda-auditoria-proyecto-chat-h4.md` + Doc público espejo pendiente de creación
+Artefactos: `docs/auditorias/2026-10-02-003-segunda-auditoria-proyecto-chat-h4.md` + [Segunda auditoría H4: GitHub main correcto, brain-env atrasado](https://app.clickup.com/90171457413/docs/2kza6fw5-17757)
 NO MEDIDO: loader oficial, rerun alineado, mapping anatómico, causalidad y sincronización del checkout
