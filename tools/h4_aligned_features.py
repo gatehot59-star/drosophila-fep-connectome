@@ -26,7 +26,6 @@ from h4_official_loader import (  # noqa: E402
     load_pickle,
     process_camera_line,
     process_frame_counter,
-    sync_seconds,
 )
 
 ACTIONS = frozenset(
@@ -113,31 +112,18 @@ def derive_bouts(labels: Sequence[str], contexts: Sequence[str]) -> list[dict[st
             spans.append((start, index))
             start = index
     spans.append((start, len(labels)))
-    output: list[dict[str, int]] = [None] * len(labels)  # type: ignore[list-item]
+    output: list[dict[str, int]] = []
     for bout_id, (left, right) in enumerate(spans):
         length = right - left
-        for position, index in enumerate(range(left, right)):
-            output[index] = {
+        output.extend(
+            {
                 "bout_id": bout_id,
                 "bout_position": position,
                 "bout_length": length,
             }
+            for position in range(length)
+        )
     return output
-
-
-def _context_by_camera_frame(h5_path: Path, expected_frames: int) -> list[str]:
-    """Reconstruct CO2 context per camera frame using the shared ThorSync clock."""
-    import h5py
-    import numpy as np
-
-    with h5py.File(h5_path, "r") as handle:
-        basler = handle["DI/Basler"][:].squeeze()
-        counter = handle["CI/Frame Counter"][:].squeeze()
-        capture = handle["DI/Capture On"][:].squeeze().astype(bool)
-        co2 = handle["DI/CO2_Stim"][:].squeeze().astype(float)
-    camera = process_camera_line(basler, json.loads(Path(h5_path).with_name("missing.json").read_text()))
-    del camera
-    raise FeatureAlignmentError("capture metadata is required to reconstruct CO2 context")
 
 
 def context_by_camera_frame(
