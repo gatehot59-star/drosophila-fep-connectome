@@ -1,6 +1,6 @@
 # Auditoría independiente del proyecto de este chat: H4
 
-**Fecha:** 2026-10-02 14:xx ART  
+**Fecha:** 2026-10-02 14:04 ART  
 **Sujeto auditado:** rama `titan/auditoria-hipotesis-2026-10-01`, HEAD `6112bdd25daf29d68e83d96eecd5f802d0fe8920`  
 **Referencia pública:** `main` estaba en `08b3b01bc0a6c678ae09fe6adeabadfe6cd94b63` al auditar.
 
@@ -16,19 +16,19 @@ La H4 débil sobre poblaciones anotadas queda refutada en su alcance estrecho. L
 
 El recibo `2026-10-02-075-auditoria-features-H4.md` registra conducta de 54.000 frames frente a `roi_dFF_2p` de 8.767/8.768 frames y DFF de 0 a ~539,65 s. Los runners anteriores hacen `merge` por `Frame` en `h4_cross_animal.py` y `h4_temporal_stability.py`; por tanto, el mismo número entero no representa el mismo instante. La retractación biológica de los resultados cross-animal y temporal es correcta.
 
-Evidencia: [auditoría de features](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/docs/agents/respuestas/2026-10-02-075-auditoria-features-H4.md), [cross-animal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/tools/h4_cross_animal.py), [temporal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/tools/h4_temporal_stability.py).
+Evidencia: [auditoría de features](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/docs/agents/respuestas/2026-10-02-075-auditoria-features-H4.md), [cross-animal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f8020/tools/h4_cross_animal.py), [temporal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f8020/tools/h4_temporal_stability.py).
 
 ### R2 · CONFIRMADO: los números invalidados no deben reaparecer como biología
 
 Los recibos `073` y `074` sí presentan números y hashes, pero sus instrumentos medían el emparejamiento incorrecto. Por eso `0,1816 vs 0,2019` y los deltas temporales no son resultados biológicos: son diagnósticos históricos del pipeline. El recibo `075` corrige el estado y no intenta salvarlos.
 
-Evidencia: [recibo cross-animal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/docs/agents/respuestas/2026-10-02-073-validacion-cross-animal-H4.md), [recibo temporal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/docs/agents/respuestas/2026-10-02-074-estabilidad-temporal-intra-animal.md).
+Evidencia: [recibo cross-animal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/docs/agents/respuestas/2026-10-02-073-validacion-cross-animal-H4.md), [recibo temporal](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83e83d96eecd5f802d0fe8920/docs/agents/respuestas/2026-10-02-074-estabilidad-temporal-intra-animal.md).
 
 ### R3 · NO MEDIDO: la supuesta equivalencia con el loader oficial no está demostrada
 
 `h4_neural_behavior_all.py` implementa una alineación manual ThorSync-equivalente y usa archivos DFF por trial, pero no hay una comparación de salida contra el loader oficial `roi_dFF.pkl`, ni un test de referencia que fuerce diferencias a rojo. El recibo `072` puede sostener que hubo una corrida reproducible del runner, no que la equivalencia oficial quedó validada.
 
-Evidencia: [runner de ocho trials](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/tools/h4_neural_behavior_all.py), [recibo 072](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f8020/does-not-exist).
+Evidencia: [runner de ocho trials](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f802d0fe8920/tools/h4_neural_behavior_all.py), [recibo 072](https://github.com/gatehot59-star/drosophila-fep-connectome/blob/6112bdd25daf29d68e83d96eecd5f8020/docs/agents/respuestas/2026-10-02-072-falsador-neural-8-trials-Aymanns.md).
 
 ### R4 · ROJO: el intento de corrección todavía no es una medición válida
 
