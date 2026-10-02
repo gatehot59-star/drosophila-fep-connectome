@@ -19,7 +19,9 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Mapping, Sequence
 
-from h4_block_null import BlockNullError, TrialData, _normalized, load_trial
+import h4_block_null
+from h4_block_null import BlockNullError, load_trial
+_normalized = getattr(h4_block_null, "_normalized", getattr(h4_block_null, "_normalized_segments"))
 
 SCHEMA = "h4-trial-generalization/v1"
 TARGET_LABELS = ("walking", "resting")
@@ -36,9 +38,8 @@ class Observation:
     order: int
 
 
-def _observations(trial: TrialData) -> list[Observation]:
-    """Return bout observations for one trial."""
-    segments = _normalized(trial)
+def _observations(segments: Sequence[Any]) -> list[Observation]:
+    """Return bout observations from pre-normalized trial segments."""
     output: list[Observation] = []
     for segment_index, segment in enumerate(segments):
         cursor = 0
@@ -81,9 +82,8 @@ def balanced_accuracy(observations: Sequence[Observation], centroids: Mapping[st
     return sum(recalls) / len(recalls)
 
 
-def _permuted_test_observations(trial: TrialData, seed: int, labels: Sequence[str]) -> list[Observation]:
+def _permuted_test_observations(segments: Sequence[Any], seed: int, labels: Sequence[str]) -> list[Observation]:
     """Shuffle complete bout tokens within each context segment for one test trial."""
-    segments = _normalized(trial)
     rng = random.Random(seed)
     output: list[Observation] = []
     for segment_index, segment in enumerate(segments):
@@ -129,7 +129,8 @@ def analyze_trials(paths: Sequence[Path], *, labels: Sequence[str] = TARGET_LABE
     if len(animals) != 1:
         raise BlockNullError("multiple animals supplied; cross-animal claims are forbidden")
     label_tuple = tuple(sorted(set(labels)))
-    prepared = {trial.trial: _observations(trial) for trial in trials}
+    normalized = {trial.trial: _normalized(trial) for trial in trials}
+    prepared = {trial.trial: _observations(normalized[trial.trial]) for trial in trials}
     fold_results: list[dict[str, Any]] = []
     null_matrix: list[list[float]] = []
     ordered = sorted(trials, key=lambda trial: trial.trial)
@@ -140,7 +141,7 @@ def analyze_trials(paths: Sequence[Path], *, labels: Sequence[str] = TARGET_LABE
         observed = balanced_accuracy(test_observations, centroids, label_tuple)
         null_scores: list[float] = []
         for permutation in range(permutations):
-            shuffled = _permuted_test_observations(test_trial, seed + fold_index * 1009 + permutation, label_tuple)
+            shuffled = _permuted_test_observations(normalized[test_trial.trial], seed + fold_index * 1009 + permutation, label_tuple)
             null_scores.append(balanced_accuracy(shuffled, centroids, label_tuple))
         distribution = _distribution(observed, null_scores)
         fold_results.append({"trial": test_trial.trial, "animal": test_trial.animal, "train_trials": [trial.trial for trial in ordered if trial.trial != test_trial.trial], "train_bouts": len(train_observations), "test_bouts": len(test_observations), "test_label_bouts": dict(sorted(Counter(observation.label for observation in test_observations if observation.label in label_tuple).items())), "distribution": distribution, "null_scores": null_scores})
