@@ -1,0 +1,10 @@
+{
+  "schema": "h4-temporal-halves/v1",
+  "verdict": "BIEN",
+  "scientific_interpretation": "NO EVIDENCIA ROBUSTA DE ESTABILIDAD TEMPORAL POOLED POR ENCIMA DEL NULL",
+  "analysis": {"scope": "within_animal_temporal_halves", "animal": "R65D11-tdTomGC6fopt-fly1", "n_trials": 8, "context": "co2_off", "labels": ["resting", "walking"], "unit": "bout", "feature_level": "ROI", "cross_animal": false, "causal": false},
+  "parameters": {"permutations": 999, "seed": 20261002, "split": "nearest complete-bout midpoint by target-context frames"},
+  "pooled": {"observed_bidirectional_transfer": 0.5327595514498719, "null_mean": 0.5018239610724393, "null_sd": 0.019476626168946264, "p_greater_equal": 0.055, "z": 1.588344413918904, "null_n": 999},
+  "validation": {"complete_bouts_not_split": true, "legacy_Frame_join": "rejected", "null_preserves_slot_lengths": true, "null_preserves_slot_vectors": true, "real_run_repeat": "byte-identical", "raw_result_sha256": "c2c0e2f2093bc85650daa6bb487b8dcd4bf1ae38278d64de24fd040abb202d98"},
+  "limitations": ["All eight trials belong to one animal; this is not cross-animal evidence.", "Pooled p=0.055 is above the prespecified 0.05 threshold: suggestive, not a positive result.", "The result is descriptive decoding, not anatomical route identification or causal evidence.", "ROI channels remain unmapped to cell type or neuropil."]
+}
