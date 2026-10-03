@@ -5,11 +5,12 @@ from __future__ import annotations
 import json
 import tempfile
 import unittest
+from collections import Counter
 from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from h4_temporal_halves import TemporalHalvesError, analyze_trials, balanced_accuracy  # noqa: E402
+from h4_temporal_halves import TemporalHalvesError, _shuffle_labels, analyze_trials, balanced_accuracy  # noqa: E402
 
 
 def write_trial(path: Path, animal: str, trial: str, legacy_frame: bool = False) -> None:
@@ -76,6 +77,20 @@ class TemporalHalvesTests(unittest.TestCase):
         score = balanced_accuracy(observations, {"walking": (1.0,), "resting": (-1.0,)}, ("walking", "resting"))
         self.assertGreaterEqual(score, 0.0)
         self.assertLessEqual(score, 1.0)
+
+    def test_null_preserves_tokens_inside_each_segment(self):
+        """The null cannot move a bout token across context segments."""
+        observations = [
+            {"segment": 0, "label": "walking", "length": 2, "vector": (1.0,)},
+            {"segment": 0, "label": "resting", "length": 3, "vector": (-1.0,)},
+            {"segment": 1, "label": "walking", "length": 4, "vector": (2.0,)},
+            {"segment": 1, "label": "resting", "length": 5, "vector": (-2.0,)},
+        ]
+        shuffled = _shuffle_labels(observations, seed=19)
+        for segment in (0, 1):
+            before = Counter((item["label"], item["length"]) for item in observations if item["segment"] == segment)
+            after = Counter((item["label"], item["length"]) for item in shuffled if item["segment"] == segment)
+            self.assertEqual(before, after)
 
 
 if __name__ == "__main__":
