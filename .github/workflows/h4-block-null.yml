@@ -1,0 +1,31 @@
+name: h4-block-null
+
+on:
+  push:
+    branches:
+      - 'titan/**'
+    paths:
+      - 'tools/h4_block_null.py'
+      - 'tests/test_h4_block_null.py'
+      - '.github/workflows/h4-block-null.yml'
+  pull_request:
+    paths:
+      - 'tools/h4_block_null.py'
+      - 'tests/test_h4_block_null.py'
+      - '.github/workflows/h4-block-null.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: block null contracts
+        run: python3 -S tests/test_h4_block_null.py

@@ -1,0 +1,17 @@
+{
+  "animal": "R65D11-tdTomGC6fopt-fly1",
+  "context": "co2_off",
+  "count": 999,
+  "encoding": "base64 of little-endian IEEE-754 binary64",
+  "n_trials": 8,
+  "null_mean": 0.06104563938527175,
+  "null_sd": 0.017371858516985278,
+  "observed": 0.35831155721189717,
+  "p_greater_equal": 0.001,
+  "permutations": 999,
+  "raw_bytes": 7992,
+  "raw_sha256": "74eb80de8891a01660284e26fba0b4c4e3138d632359d0d34c836faf12a8f01f",
+  "schema": "h4-block-null-pooled-exact-f64/v1",
+  "seed": 20261002,
+  "z": 17.11192372053771
+}
