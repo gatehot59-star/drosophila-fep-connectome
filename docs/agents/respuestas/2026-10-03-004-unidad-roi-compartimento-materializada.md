@@ -1,5 +1,7 @@
 # Unidad ROI-compartimento/población materializada
 
+**Doc público asociado:** [Unidad ROI-compartimento materializada: 16 registros UNMAPPED y contrato poblacional](https://app.clickup.com/90171457413/docs/2kza6fw5-18737)
+
 **Pedido:** ejecutar la elección A y avanzar con `ROI_COMPARTMENT/POPULATION`, sin tratar `ROI_0` ni `ROI_1` como neuronas.
 
 ## Veredicto
@@ -55,3 +57,14 @@ Diseñar el null regional/poblacional sobre esta unidad, pero antes decidir qué
 - Causalidad.
 - SparseLTC→DBC3 sobre señal biológica.
 - CI del PR, porque la rama aún no está mergeada.
+
+--- METODO PROMETEO ---
+Accion delicada: NO
+Modo aplicado: PROMETEO FULL
+Rubrica: N/A (contrato fail-closed y tests, sin merge ni cambio del main)
+N/A declarados: deployment y producto no aplican; testing sí fue ejecutado
+Review externo: no solicitado; silencio no es aprobación
+Instrumento: GitHub API para escritura; MUDH Gateway `build` en brain-env para unittest y manifest público; evidencia cruda en este archivo
+Maquina: brain-env + GitHub API
+Artefactos: `tools/h4_roi_compartment_manifest.py` + `tests/test_h4_roi_compartment_manifest.py` + `docs/adr/2026-10-03-h4-roi-compartment-unit.md` + `docs/agents/evidencia/2026-10-03-004-r65d11-compartment-manifest.json` + este archivo + [Doc público](https://app.clickup.com/90171457413/docs/2kza6fw5-18737)
+NO MEDIDO: mapping regional real, población root_id real, null anatómico regional/poblacional, causalidad y SparseLTC→DBC3 biológico
