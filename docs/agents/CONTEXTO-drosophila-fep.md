@@ -1,13 +1,13 @@
 # CONTEXTO VIVO · conectoma / FEP / H4
 
-**Última actualización:** 2026-10-03 (cierre del paso 1, `NO_MAPPED_ROIS`)  
+**Última actualización:** 2026-10-03 (búsqueda pública 2P agotada; decisión de unidad pendiente)  
 **Estado canónico de `main`:** auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 
 ## Veredicto operativo
 
 **H4 fuerte: NO MEDIDA.** La cadena de instrumentos H4 está materializada y auditada, pero no demuestra mapping anatómico ni causalidad. H4 débil queda refutada solo en su alcance estrecho de poblaciones anotadas.
 
-**Paso 1 anatómico: cerrado como `NO_MAPPED_ROIS`.** El origen de `DFF_dic.p` fue localizado, pero el dataset público R65D11 no conserva máscaras, centros, coordenadas, imágenes 2P ni un registro que permita asignar `ROI_0` o `ROI_1` a una célula o root ID.
+**Paso 1 anatómico: `NO_MAPPED_ROIS`.** El origen de `DFF_dic.p` fue localizado y la búsqueda pública del raw 2P se agotó. El dataset R65D11 publicado no conserva máscaras, centros, coordenadas, imágenes 2P ni registro funcional contra confocal/FlyWire.
 
 ## Estado confirmado en main
 
@@ -27,14 +27,18 @@
 - Animal: `R65D11-tdTomGC6fopt-fly1`.
 - Trials: 1 a 8, mantenidos separados.
 - `DFF_dic.p`: dos claves, `ROI_0` y `ROI_1`, 1.067 muestras `float64` cada una.
+- Dataverse search `R65D11`: exactamente dos datasets, `DVN/YU1N1A` y `DVN/KTQT27`.
+- `DVN/YU1N1A`: catálogo con `file_count=56`, sin `roi_centers`, `mean_green.tif`, `crop_parameters.csv`, máscaras o stacks 2P en los archivos publicados.
+- `DVN/KTQT27`: confocal LSM MCFO; referencia morfológica separada, no mapping funcional.
+- Preprocessing original: exige `2p/roi_centers.txt`, `2p/crop_parameters.csv`, `2p/warped_green.tif` y `2p/denoised_green.tif` para extraer parches DFF de `3x2`.
 - Inventario H4 inspeccionado: 104 archivos, ningún candidato de geometría espacial.
 - H5: solo `AI`, `CI`, `DI`, `Global`; no identidad anatómica.
 - Gate: `schema=h4-roi-anatomy-map/v1`, `verdict=BIEN`, `mapping_verdict=NO_MAPPED_ROIS`, `mapped_rois=0`, `unmapped_rois=2`, `annotation_rows=139248`.
 - Snapshot FlyWire: annotations MD5 `719904abad876c68ace1b5690c9b9b63`.
 
-La tabla explícita se encuentra en `docs/agents/evidencia/2026-10-03-002-r65d11-roi-mapping.tsv`; el manifest en `docs/agents/evidencia/2026-10-03-002-r65d11-roi-manifest.json`. Ningún `root_id` fue asignado.
+La tabla explícita está en `docs/agents/evidencia/2026-10-03-002-r65d11-roi-mapping.tsv`; el manifest en `docs/agents/evidencia/2026-10-03-002-r65d11-roi-manifest.json`. Ningún `root_id` fue asignado.
 
-## Decisión anatómica
+## Decisión anatómica actual
 
 `ROI_0` y `ROI_1` quedan con:
 
@@ -44,20 +48,23 @@ La tabla explícita se encuentra en `docs/agents/evidencia/2026-10-03-002-r65d11
 - `confidence=0`;
 - `root_id=null`.
 
-El campo `ROI` dentro de `capture_metadata.json` se descartó porque describe el recorte de las siete cámaras de conducta (`960x480`, offsets `512,392`), no la segmentación del calcio. `Experiment.xml` aporta parámetros de adquisición, pero `Pockels maskEnable=0` y `maskPath=""`; no hay una máscara celular.
+No se adoptó todavía una unidad alternativa. La decisión pendiente es:
 
-Existe un dataset separado de confocal R65D11 (`doi:10.7910/DVN/KTQT27`) con morfología MCFO. Es referencia anatómica, no mapping funcional: falta registrar cada imagen funcional de trial contra esa muestra y contra FlyWire.
+- **A:** adoptar unidad `ROI_COMPARTMENT/POPULATION` y continuar solo con claims descriptivos y un futuro null regional/poblacional;
+- **B:** recuperar una copia no pública del directorio 2P y mantener abierto el mapping celular.
+
+La recomendación operativa es A si el objetivo es avanzar con el dataset público; B requiere una fuente del operador o del directorio original que no está publicado.
 
 ## Estado de producto y ciencia
 
 SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham. SparseLTC→DBC3 sobre señal biológica real, mapping ROI→FlyWire/cell type/neuropilo, null anatómico pareado y silenciamiento causal siguen **NO MEDIDOS**. ComplexVectorLTC queda experimental hasta demostrar una tarea donde fase/acoplamiento IQ sean necesarios.
 
-## Próximo paso, sin saltar el orden
+## Próximo paso bloqueado por decisión
 
-1. Buscar el directorio original de 2P y, si existe, `roi_centers.txt`, `mean_green.tif`, `crop_parameters.csv`, máscaras y anotaciones del operador.
-2. Si no aparece, elegir formalmente una fuente experimental mejor o cambiar la unidad de análisis a población/región.
-3. Solo con geometría y provenance reproducibles diseñar el mapping y el null anatómico pareado.
-4. Mantener bloqueado SparseLTC→DBC3 sobre señal real hasta que exista una unidad anatómica o poblacional defendible.
+1. Elegir A o B para fijar la unidad de análisis.
+2. Si A: diseñar contrato `ROI_COMPARTMENT/POPULATION`, preservar `animal_id`, `trial_id`, `roi_name`, y mantener bloqueada toda lectura celular.
+3. Si B: cargar los archivos originales de 2P y reconstruir `roi_centers`, máscaras, crop y registro.
+4. Solo después diseñar null anatómico regional/poblacional o celular, respectivamente.
 
 ## Fuentes
 
@@ -67,6 +74,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham. SparseLTC→DBC3 sobr
 - `docs/agents/respuestas/2026-10-02-013-h4-temporal-halves.md`
 - `docs/agents/respuestas/2026-10-03-001-paso-1-identidad-experimental-roi.md`
 - `docs/agents/respuestas/2026-10-03-002-paso-1-no-mapped-rois.md`
+- `docs/agents/respuestas/2026-10-03-003-busqueda-publica-2p-agotada.md`
 - `docs/agents/evidencia/2026-10-03-002-r65d11-roi-mapping.tsv`
 - `docs/agents/evidencia/2026-10-03-002-r65d11-roi-manifest.json`
 
@@ -76,18 +84,19 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham. SparseLTC→DBC3 sobr
 - Mapping anatómico ROI→root_id/cell type/neuropilo.
 - Si cada ROI es individual, axonal o poblacional.
 - Registro espacial reproducible.
-- Null anatómico pareado.
+- Existencia de una copia privada accesible del raw 2P.
+- Null anatómico regional/poblacional o celular.
 - Corrida biológica end-to-end post-merge.
 - Equivalencia SparseLTC→DBC3 sobre señal real.
 - Review externo del pipeline; silencio no es aprobación.
 
---- METODO TITAN ---
+--- METODO PROMETEO ---
 Accion delicada: NO
-Modo aplicado: TITAN FULL
-Rubrica: N/A (actualizacion de contexto y estado de medicion)
-N/A declarados: deployment, producto y causalidad no aplican; provenance y gate anatómico sí
+Modo aplicado: PROMETEO FULL
+Rubrica: N/A (actualizacion de contexto y decision pendiente)
+N/A declarados: deployment, producto, testing de código y causalidad no aplican
 Review externo: no solicitado; silencio no es aprobación
-Instrumento: MUDH Gateway `build` en brain-env, GitHub API, Dataverse API, gate `h4_roi_anatomy_manifest.py`; evidencia cruda en `docs/agents/respuestas/2026-10-03-002-paso-1-no-mapped-rois.md` y `docs/agents/evidencia/`
+Instrumento: GitHub API, Dataverse API, MUDH Gateway `build` en brain-env y búsqueda web; evidencia en `docs/agents/respuestas/2026-10-03-003-busqueda-publica-2p-agotada.md`
 Maquina: brain-env + GitHub API + Dataverse API
-Artefactos: `docs/agents/CONTEXTO-drosophila-fep.md` + [Doc público](https://app.clickup.com/90171457413/docs/2kza6fw5-18637)
-NO MEDIDO: correspondencia funcional ROI→confocal, ROI→root_id, unidad individual/poblacional, null anatómico pareado y causalidad
+Artefactos: `docs/agents/CONTEXTO-drosophila-fep.md` + [Doc público](https://app.clickup.com/90171457413/docs/2kza6fw5-18717)
+NO MEDIDO: mapping funcional ROI→confocal, ROI→root_id, unidad individual/poblacional, raw 2P privado, null anatómico y causalidad
