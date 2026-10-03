@@ -1,0 +1,52 @@
+{
+  "counts": {
+    "annotation_rows": 139248,
+    "mapped_rois": 0,
+    "roi_count": 2,
+    "unmapped_rois": 2
+  },
+  "expected_roi_names": [
+    "ROI_0",
+    "ROI_1"
+  ],
+  "inputs": {
+    "annotations": {
+      "bytes": 31718505,
+      "md5": "719904abad876c68ace1b5690c9b9b63",
+      "path": "/workspace/annotations.tsv"
+    },
+    "mapping": {
+      "bytes": 291,
+      "md5": "51c5b0e4d4781645480193ef7df18512",
+      "path": "docs/agents/evidencia/2026-10-03-002-r65d11-roi-mapping.tsv"
+    }
+  },
+  "limitations": [
+    "This manifest validates declared evidence; it never infers anatomy from ROI signal or ROI index.",
+    "A PARTIAL or NO_MAPPED_ROIS manifest cannot support an anatomical H4 claim.",
+    "Annotation membership does not establish causal route identity."
+  ],
+  "mapping_verdict": "NO_MAPPED_ROIS",
+  "rois": [
+    {
+      "annotation": {},
+      "confidence": 0.0,
+      "evidence_kind": "unmapped",
+      "mapping_status": "UNMAPPED",
+      "notes": "No se encontro mascara, coordenada o root_id experimental en el dataset publico R65D11",
+      "roi_name": "ROI_0",
+      "root_id": null
+    },
+    {
+      "annotation": {},
+      "confidence": 0.0,
+      "evidence_kind": "unmapped",
+      "mapping_status": "UNMAPPED",
+      "notes": "No se encontro mascara, coordenada o root_id experimental en el dataset publico R65D11",
+      "roi_name": "ROI_1",
+      "root_id": null
+    }
+  ],
+  "schema": "h4-roi-anatomy-map/v1",
+  "verdict": "BIEN"
+}
