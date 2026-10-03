@@ -1,0 +1,47 @@
+{
+  "schema": "h4-alignment-manifest-summary/v1",
+  "verdict": "BIEN",
+  "identity": {
+    "animal": "R65D11-tdTomGC6fopt-fly1",
+    "trial": "7",
+    "timebase": "thor_sync_seconds"
+  },
+  "counts": {
+    "basler_rising_edges": 7469,
+    "camera_frames": 7440,
+    "neural_frames": 1067,
+    "behavior_labels": 7440,
+    "roi_count": 2
+  },
+  "losses": {
+    "behavior_labels_unpaired": 0,
+    "roi_arrays_with_wrong_length": 0,
+    "neural_frames_before_overlap": 1,
+    "neural_frames_after_overlap": 4,
+    "behavior_frames_before_overlap": 0,
+    "behavior_frames_after_overlap": 0
+  },
+  "alignment": {
+    "join_key": "Time",
+    "duration_relative_error": 0.0029898041284846877,
+    "coverage_neural": 0.9970101958715153,
+    "coverage_behavior": 1.0,
+    "neural_start": 0.000033333333333333335,
+    "neural_end": 248.65623333333335,
+    "behavior_start": 0.006666666666666667,
+    "behavior_end": 247.91943333333336,
+    "neural_median_step": 0.2332666666666654,
+    "behavior_median_step": 0.03333333333333144
+  },
+  "sources": {
+    "h5": {"name": "trial_7.h5", "bytes": 320232008, "sha256": "347266042dbab40f92672dac446eaccb7fc7d05cf4e797c782df05732762d516"},
+    "capture": {"name": "trial_7.json", "bytes": 2789411, "sha256": "e6c5de8145ce172f68e646571e47a2230629b14196515a13a747e46e32157cc0"},
+    "dff": {"name": "7.p", "bytes": 17300, "sha256": "0bd81f452ccc92abeddad233ed81b4e05eed3a21ec610cddcc550d49f9709755"},
+    "behavior": {"name": "6315819.pkl", "bytes": 391780, "sha256": "05ecc1f980cbb3ea7f2c9455cb3872484a0dfa1cc92c7badc4a5141a6e50f180"}
+  },
+  "full_manifest": {
+    "bytes": 200599,
+    "sha256": "a5142a7b3271d71cc812ca3a60ce15614a046b522d71b56af02c9641052cb272",
+    "persistent_artifact": "brain-env:/workspace/h4_data/aymanns/manifest_trial_7.json"
+  }
+}
