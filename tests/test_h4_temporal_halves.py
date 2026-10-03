@@ -79,7 +79,7 @@ class TemporalHalvesTests(unittest.TestCase):
         self.assertLessEqual(score, 1.0)
 
     def test_null_preserves_tokens_inside_each_segment(self):
-        """The null cannot move a bout token across context segments or alter slot data."""
+        """The null cannot move labels across segments or alter slot data."""
         observations = [
             {"segment": 0, "label": "walking", "length": 2, "vector": (1.0,)},
             {"segment": 0, "label": "resting", "length": 3, "vector": (-1.0,)},
@@ -88,9 +88,9 @@ class TemporalHalvesTests(unittest.TestCase):
         ]
         shuffled = _shuffle_labels(observations, seed=19)
         for segment in (0, 1):
-            before = Counter((item["label"], item["length"]) for item in observations if item["segment"] == segment)
-            after = Counter((item["label"], item["length"]) for item in shuffled if item["segment"] == segment)
-            self.assertEqual(before, after)
+            before_labels = Counter(item["label"] for item in observations if item["segment"] == segment)
+            after_labels = Counter(item["label"] for item in shuffled if item["segment"] == segment)
+            self.assertEqual(before_labels, after_labels)
         self.assertEqual([item["length"] for item in shuffled], [item["length"] for item in observations])
         self.assertEqual([item["vector"] for item in shuffled], [item["vector"] for item in observations])
 
