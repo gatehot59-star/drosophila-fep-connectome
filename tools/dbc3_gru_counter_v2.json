@@ -1,0 +1,12 @@
+{
+  "target_parameters": 6888,
+  "cell": "torch.GRUCell",
+  "formula": "3*h*(d+h+2) + h*d_out + d_out",
+  "dimensions": {"d_in": 36, "d_out": 12},
+  "selected_hidden": 31,
+  "reported_parameters": 6801,
+  "absolute_difference": 87,
+  "bias_accounting": "weight_ih + weight_hh + bias_ih + bias_hh",
+  "previous_formula_error": "used +1 instead of +2 and selected h=32 with reported 7116 in the actual model",
+  "status": "CORRECTED_AND_RELAUNCHED"
+}
