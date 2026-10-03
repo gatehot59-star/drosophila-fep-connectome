@@ -3,6 +3,7 @@ name: H4 integrated regression
 on:
   push:
     branches:
+      - main
       - 'titan/**'
     paths:
       - 'tools/**'
