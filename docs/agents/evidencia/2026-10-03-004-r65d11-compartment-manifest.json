@@ -1,0 +1,31 @@
+{
+  "schema": "h4-roi-compartment-map/v1",
+  "verdict": "BIEN",
+  "mapping_verdict": "UNMAPPED",
+  "counts": {
+    "row_count": 16,
+    "unmapped_rows": 16,
+    "region_rows": 0,
+    "population_rows": 0,
+    "annotation_rows": 139248
+  },
+  "expected_pairs": "trials 1..8 x ROI_0,ROI_1",
+  "animal_id": "R65D11-tdTomGC6fopt-fly1",
+  "inputs": {
+    "annotations": {
+      "bytes": 31718505,
+      "md5": "719904abad876c68ace1b5690c9b9b63",
+      "path": "/workspace/annotations.tsv"
+    },
+    "mapping": {
+      "bytes": 1662,
+      "md5": "108d10c596f881ddc5f77d615966c25c",
+      "path": "/tmp/r65d11_compartment.tsv"
+    }
+  },
+  "limitations": [
+    "This manifest describes compartments, regions or populations; it never claims a single ROI is a neuron.",
+    "UNMAPPED rows support descriptive analysis only.",
+    "A REGION_MAPPED or POPULATION_MAPPED row does not establish causal route identity."
+  ]
+}
