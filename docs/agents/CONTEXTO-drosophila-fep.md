@@ -1,99 +1,58 @@
 # CONTEXTO VIVO · conectoma / FEP / H4
 
-**Última actualización:** 2026-10-03 (stress test regional fail-closed)  
+**Última actualización:** 2026-10-03 (anatomía confocal R65D11 medida)  
 **Estado canónico de `main`:** auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 
 ## Veredicto operativo
 
-**H4 fuerte: NO MEDIDA.** La cadena de instrumentos H4 está materializada y auditada, pero no demuestra mapping anatómico ni causalidad. H4 débil queda refutada solo en su alcance estrecho de poblaciones anotadas.
+**H4 fuerte: NO MEDIDA.** La cadena H4 está materializada y auditada, pero no demuestra mapping anatómico funcional ni causalidad. H4 débil queda refutada solo en su alcance estrecho de poblaciones anotadas.
 
-**Paso 1 anatómico:** `NO_MAPPED_ROIS` a nivel celular; por decisión del usuario, la unidad pública pasa a ser `ROI_COMPARTMENT/POPULATION` para análisis descriptivo, sin llamar neurona individual a ninguna ROI.
+**Paso anatómico:** el gate celular cerró `NO_MAPPED_ROIS`; la unidad pública pasa a `ROI_COMPARTMENT/POPULATION` para análisis descriptivo. El stress test regional pasó 10/10 y permanece fail-closed.
 
-**Stress test regional:** `PASS_FAIL_CLOSED`, 10/10 casos. El guard rechaza el manifiesto público porque tiene 16 filas `UNMAPPED` y 0 filas `REGION_MAPPED`. El null regional biológico permanece `NO MEDIDO`.
+**Anatomía nueva:** se midió la geometría física de los stacks confocales R65D11, pero siguen sin existir una transformación funcional 2P→confocal ni un mapping de `ROI_0`/`ROI_1` a región o `root_id`.
 
-## Estado confirmado en main
+## Estado H4 confirmado
 
-- Alignment guard: 7 contratos.
-- Loader oficial: 6 contratos; 8/8 trials Aymanns reales con manifests `BIEN` en la corrida original.
-- Features ROI/contexto/bouts: 7 contratos; 8/8 trials materializados en la corrida original.
-- Null por bouts: 5 contratos; distribución pooled exacta de 999 scores publicada.
-- Generalización intra-animal: 4 contratos; `balanced accuracy=0.5018855395873556`, `p=0.623`, sin evidencia de generalización entre trials.
-- Estabilidad temporal: 5 contratos; `observed=0.5327595514498719`, `p=0.055`, sugestivo pero no positivo.
-- Regresión integrada: 34 contratos pasaron en el head pre-merge `646c0343c7b8aa28d7ee6d2395e2e34465a07b92`.
-- Auditoría main final: `docs/auditorias/2026-10-02-004-auditoria-main-final-34-contratos.md`, score 36/40.
+- Pipeline corregido: 41 contratos.
+- Animal: `R65D11-tdTomGC6fopt-fly1`; trials 1 a 8 separados.
+- Null ROI-label por bouts: observado `0.35831155721189717`, null mean `0.06104563938527175`, `p=0.001`, `z=17.11192372053771`; es descriptivo dentro de un animal.
+- Generalización leave-one-trial-out: balanced accuracy `0.5018855395873556`, `p=0.623`; sin evidencia de generalización.
+- Estabilidad temporal: observado `0.5327595514498719`, `p=0.055`; sugestivo, no positivo.
+- Manifiesto público: 16 filas `UNMAPPED`, 0 regionales, 0 poblacionales.
+- Stress regional: `case_count=10`, `passed_cases=10`, `failed_cases=0`, `PASS_FAIL_CLOSED`.
 
-## Paso 1 medido
+## Anatomía confocal medida
 
-- Animal: `R65D11-tdTomGC6fopt-fly1`.
-- Trials: 1 a 8, separados.
-- `DFF_dic.p`: `ROI_0` y `ROI_1`, 1.067 muestras `float64` cada una.
-- Dataset público R65D11: 56 archivos catalogados; no incluye centros, máscaras, stacks o crop 2P.
-- Preprocessing original exige `2p/roi_centers.txt`, `2p/crop_parameters.csv`, `2p/warped_green.tif` y `2p/denoised_green.tif`.
-- Inventario H4: 104 archivos, ningún candidato de geometría espacial.
-- Gate celular: `mapping_verdict=NO_MAPPED_ROIS`, `mapped_rois=0`, `unmapped_rois=2`.
-- Snapshot FlyWire: annotations MD5 `719904abad876c68ace1b5690c9b9b63`.
+Dataset público: `doi:10.7910/DVN/KTQT27`, licencia CC0 1.0.
 
-## Contrato ROI-compartimento materializado
+- Brain 40x: `352×2×1024×1024`, voxel `0.142084×0.142084×0.330 µm`, campo `145.494×145.494×116.160 µm`.
+- VNC 40x: `353×2×1024×1024`, voxel `0.312585×0.312585×0.330 µm`, campo `320.087×320.087×116.490 µm`.
+- Herramienta: `tools/h4_anatomy_measure.py`; tests: 3/3 OK.
+- Evidencia: `docs/agents/evidencia/2026-10-03-006-r65d11-confocal-anatomy-geometry.json`.
+- Respuesta: `docs/agents/respuestas/2026-10-03-006-anatomia-confocal-medida.md`.
 
-Archivos:
+Esto mide anatomía de la muestra GAL4, no identidad funcional individual. La segmentación completa por canal, bounding boxes, registro 2P→confocal, región real, root IDs, null anatómico y causalidad siguen `NO MEDIDO`.
 
-- `tools/h4_roi_compartment_manifest.py`.
-- `tests/test_h4_roi_compartment_manifest.py`.
-- `tools/h4_regional_null_stress.py`.
-- `docs/adr/2026-10-03-h4-roi-compartment-unit.md`.
-- `docs/agents/evidencia/2026-10-03-004-r65d11-compartment-manifest.json`.
-- `docs/agents/evidencia/2026-10-03-005-regional-null-stress.json`.
-- `docs/agents/respuestas/2026-10-03-004-unidad-roi-compartimento-materializada.md`.
-- `docs/agents/respuestas/2026-10-03-005-null-regional-fail-closed.md`.
+## Conectoma y motor
 
-Tests: `Ran 6 tests in 0.011s`, `OK`. El dataset público produce 16 filas: 8 trials × 2 ROI, todas `UNMAPPED`; `row_count=16`, `unmapped_rows=16`, `region_rows=0`, `population_rows=0`, `verdict=BIEN`.
+FlyWire v783: aproximadamente 138.639 neuronas, 15.091.983 aristas dirigidas agregadas y 54.492.922 contactos. SparseLTC corre sobre CSR y estados temporales; el adaptador SparseLTC→DBC3 compila, pero el end-to-end con señal biológica real y pesos DBC3 reales sigue pendiente.
 
-Stress test regional en `brain-env`: `case_count=10`, `passed_cases=10`, `failed_cases=0`, `stress_verdict=PASS_FAIL_CLOSED`, `exit_code=0`.
+## Próximo orden
 
-La tabla conserva `animal_id`, `trial_id` y `roi_name`. `UNMAPPED` tiene `root_ids=[]`, `root_weights=[]`, `evidence_kind=unmapped` y `confidence=0`. El contrato futuro permite `REGION_MAPPED` o `POPULATION_MAPPED`, pero no los afirma hoy.
-
-## Decisión científica
-
-La unidad actual es un compartimento funcional de imagen. H4 puede continuar con claims ROI-label descriptivos. El guard regional queda probado y bloquea inferencias anatómicas no respaldadas. H4 anatómica celular, null regional/poblacional real, causalidad y SparseLTC→DBC3 sobre señal biológica permanecen bloqueados.
-
-No se asignó ningún `root_id`, región o peso. Las imágenes confocales R65D11 siguen siendo referencia morfológica separada, no mapping funcional.
-
-## Próximo paso, sin saltar el orden
-
-1. Paso 1 queda cerrado a nivel de provenance y guard: no hay mapping regional público.
-2. Mantener la etiqueta `UNMAPPED` hasta que aparezca evidencia regional o poblacional.
-3. Ejecutar solo análisis descriptivo ROI-label mientras no exista esa evidencia.
-4. Si aparece una copia privada del raw 2P, se puede reabrir el camino celular sin invalidar este contrato.
-
-## Fuentes
-
-- `docs/agents/respuestas/2026-10-03-001-paso-1-identidad-experimental-roi.md`
-- `docs/agents/respuestas/2026-10-03-002-paso-1-no-mapped-rois.md`
-- `docs/agents/respuestas/2026-10-03-003-busqueda-publica-2p-agotada.md`
-- `docs/agents/respuestas/2026-10-03-004-unidad-roi-compartimento-materializada.md`
-- `docs/agents/respuestas/2026-10-03-005-null-regional-fail-closed.md`
-- `docs/agents/evidencia/2026-10-03-002-r65d11-roi-manifest.json`
-- `docs/agents/evidencia/2026-10-03-004-r65d11-compartment-manifest.json`
-- `docs/agents/evidencia/2026-10-03-005-regional-null-stress.json`
+1. Mantener `UNMAPPED`; no fabricar mapping anatómico con confocal.
+2. Ejecutar SparseLTC→DBC3 sobre señal real con comparadores.
+3. Cerrar benchmarks DBC3-live: pesos reales, receptores heterogéneos, pérdida, delay, replay y deriva.
+4. Medir latencia, memoria, bytes y energía en Actions x64/arm64 y hardware real.
+5. Reabrir mapping solo con raw 2P privado o provenance experimental explícita.
 
 ## NO MEDIDO
 
-- Región real de `ROI_0` y `ROI_1`.
-- Root IDs y pesos poblacionales reales.
-- Null anatómico regional/poblacional.
-- Correspondencia funcional ROI→confocal.
-- Causalidad.
-- Corrida biológica end-to-end post-merge.
-- Equivalencia SparseLTC→DBC3 sobre señal real.
-- Review externo del pipeline; silencio no es aprobación.
+Mapping ROI→root_id/cell_type/neuropilo; null anatómico real; causalidad; SparseLTC→DBC3 biológico end-to-end; backend DBC3 histórico completo; hardware edge, energía y adopción; revisión externa. `ComplexVectorLTC` y `CanonicalComplexLTCBatch` siguen experimentales.
 
 --- METODO PROMETEO ---
 Accion delicada: NO
-Modo aplicado: PROMETEO FULL
-Rubrica: N/A (actualización de contexto y cierre del instrumento, sin merge)
-N/A declarados: deployment, producto, causalidad y merge no aplican; contrato y stress test sí
-Review externo: no solicitado; silencio no es aprobación
-Instrumento: GitHub API y MUDH Gateway `build` en brain-env; stress 10/10, exit 0; evidencia en `docs/agents/evidencia/2026-10-03-005-regional-null-stress.json`
-Maquina: brain-env + GitHub API
-Artefactos: `docs/agents/CONTEXTO-drosophila-fep.md` + [Doc público](https://app.clickup.com/90171457413/docs/2kza6fw5-18777)
-NO MEDIDO: región real, root IDs/pesos reales, null anatómico regional/poblacional, causalidad y SparseLTC→DBC3 biológico
+Modo: actualización de contexto y cierre de medición anatómica, sin merge
+Instrumento: GitHub API, navegador público, tifffile en brain-env y tests 3/3
+Maquina: brain-env + GitHub API + navegador público
+Artefactos: este contexto + `docs/agents/evidencia/2026-10-03-006-r65d11-confocal-anatomy-geometry.json` + `docs/agents/respuestas/2026-10-03-006-anatomia-confocal-medida.md` + [Doc público](https://app.clickup.com/90171457413/docs/2kza6fw5-18837)
+NO MEDIDO: mapping funcional, causalidad, null anatómico y hardware edge
