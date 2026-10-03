@@ -68,7 +68,10 @@ def task_batch(name,seed,batch=BATCH,device=DEVICE):
      if t==15: rule=int(rng.integers(0,4))
      x[i,t,:4]=0; x[i,t,rule]=1
     x[i,t,4]=v
-    y[i,t]=1 if v>.5 else 0 if rule==0 else 2 if v>.3 else 3 if rule==1 else min(int(prev*4),O-1) if rule==2 else ((v>.5)^(prev>.5))%O
+    if rule==0: y[i,t]=1 if v>.5 else 0
+    elif rule==1: y[i,t]=2 if v>.3 else 3
+    elif rule==2: y[i,t]=min(int(prev*4),O-1)
+    else: y[i,t]=((v>.5)^(prev>.5))%O
     prev=v
   w=np.ones(T,'float32')*.3; w[1:5]=.8; w[15:20]=1.5; w[-5:]=1; return torch.from_numpy(x).to(device),torch.from_numpy(y).to(device),torch.from_numpy(w).to(device)
  raise ValueError(name)
@@ -126,4 +129,3 @@ def main():
  config={'device':str(DEVICE),'torch':torch.__version__,'cuda':str(torch.version.cuda),'python':platform.python_version(),'seeds':SEEDS,'batch':BATCH,'eval_batches':EVAL_N,'epochs':TASK_EPOCHS,'params':{'DBC3':pc_dbc3(),'LSTM':pc_lstm(LH),'GRU':pc_gru(GH)}}
  (OUT/'config.json').write_text(json.dumps(config,indent=2)); (OUT/'raw_results.json').write_text(json.dumps(raw,indent=2)); (OUT/'summary.json').write_text(json.dumps(out,indent=2)); (OUT/'exports.json').write_text(json.dumps([export(saved['DelayedClass'],'DelayedClass')],indent=2)); print('RESULTS_DIR='+str(OUT)); print('STATUS=PASS_WITH_SCOPE_SERIOUS_MULTI_SEED')
 if __name__=='__main__': main()
-PY
