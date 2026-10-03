@@ -1,17 +1,29 @@
-# Recibo 013: estabilidad temporal por mitades
+# Recibo 013: estabilidad temporal por mitades, auditoría TITAN FULL
 
 ## Pedido
 
-Reintentar la corrida usando GitHub como canal de transferencia después de que la transferencia directa al `brain-env` fallara.
+Auditar el proyecto en esta instancia, corregir, mejorar e innovar bajo TITAN FULL, y reintentar la medición temporal usando GitHub como canal de transferencia.
 
-## Canal y ejecución
+## Hallazgo crítico corregido
+
+La primera versión del null barajaba pares `label+length` entre slots, pero conservaba el vector ROI calculado para el slot original. Eso violaba el contrato: un registro podía declarar una longitud distinta de la usada para calcular su media. El falsador reprodujo el rojo:
+
+```text
+before vectors=[(1.5,), (4.0,)]
+after=[('resting', 3, (1.5,)), ('walking', 2, (4.0,))]
+length-vector-mismatch=True
+```
+
+Corrección: dentro de cada mitad y cada segmento `co2_off` se permutan **solo labels**; cada slot conserva su longitud y vector ROI. Se agregó el contrato que verifica ambos invariantes.
+
+## Ejecución real corregida
 
 - Instrumento transferido por GitHub a `titan/h4-temporal-halves-2026-10-02`.
-- Rama base de transferencia: `titan/h4-generalization-2026-10-02`.
-- Checkout del `brain-env` actualizado por `git fetch` y verificado en commit `1e6de6a3d5089481e552943ddabf857f19996604`.
-- Tests de contrato: **5 OK**.
+- Commit del instrumento corregido: `acb88d0ba6cd177684bd46cd3d73679e26c2fd06`.
+- Commit de tests falsadores: `b6b085128a49755b8b503fc8c302f8a34beb1224`.
+- Suite completa: **34 tests OK**.
 - Corrida real: 8 trials, un animal, `walking/resting`, `co2_off`, 999 permutaciones, seed `20261002`.
-- Repetición real: mismo JSON byte a byte, SHA `01c5d9cf25112e84e4da772aa5fa70c1478aa20aa3555fcbccdc638ec0fec43e2`.
+- Repetición real byte a byte idéntica.
 
 ## Resultado
 
@@ -23,28 +35,24 @@ null_mean=0.5018239610724393
 null_sd=0.019476626168946264
 p_greater_equal=0.055
 z=1.588344413918904
+raw_result_sha256=c2c0e2f2093bc85650daa6bb487b8dcd4bf1ae38278d64de24fd040abb202d98
 ```
 
-Early→late y late→early, por trial:
+El resultado numérico no cambió porque el defecto anterior afectaba metadata que el score no consultaba; el arreglo era obligatorio porque el instrumento debe cumplir el contrato que afirma.
 
-```text
-1: 0.45833333333333337 -> 0.4375
-2: 0.6625              -> 0.4375
-3: 0.43333333333333335 -> 0.49090909090909096
-4: 0.5580357142857143  -> 0.6390374331550802
-5: 0.41964285714285715 -> 0.5735294117647058
-6: 0.5138888888888888  -> 0.6196172248803828
-7: 0.6216577540106951  -> 0.6333333333333333
-8: 0.5445652173913043  -> 0.4807692307692308
-```
+## Auditoría ejecutiva del proyecto
 
-## Veredicto
-
-**NO EVIDENCIA ROBUSTA DE ESTABILIDAD TEMPORAL POOLED** al umbral one-sided 0.05: `p=0.055`. Es un resultado sugestivo, no una confirmación; no refuta H4 y no convierte los ocho trials de un solo animal en evidencia cross-animal.
-
-## Corrección importante
-
-El primer smoke test local fue descartado porque mezclaba tokens entre los siete segmentos `co2_off` de cada trial. El instrumento corregido permuta dentro de cada mitad de cada segmento y agrega un contrato específico para impedir esa mezcla.
+- **H4 fuerte:** NO MEDIDA. No hay evidencia causal de activación/desactivación de rutas.
+- **H4 débil:** refutada solo en su operacionalización anatómica estrecha ya documentada.
+- **Alineación:** pasa con guard negativo; `Frame` rechazado.
+- **Features:** ROI-preserving y bouts válidos en 8/8 trials.
+- **Null temporal:** corregido, segment-preserving, slot-length/vector-preserving.
+- **Generalización entre trials:** no evidenciada por encima del null, `p=0.623`.
+- **Estabilidad temporal:** sugestiva pero no positiva, `p=0.055`.
+- **Mapping ROI→FlyWire/cell type/neuropilo:** NO MEDIDO.
+- **Null anatómico pareado:** NO MEDIDO.
+- **SparseLTC sobre subgrafos biológicos y silenciamiento causal:** NO MEDIDOS.
+- **Producto end-to-end SparseLTC→DBC3 sobre señal real:** NO MEDIDO.
 
 ## Evidencia publicada
 
@@ -53,5 +61,12 @@ El primer smoke test local fue descartado porque mezclaba tokens entre los siete
 - `results/h4_temporal_halves_summary.json`
 - `results/h4_temporal_halves_run.log`
 - `docs/adr/2026-10-03-h4-temporal-halves.md`
+- este recibo
 
-El JSON completo de 257247 bytes y la distribución pooled exacta quedan retenidos en `brain-env` bajo el SHA publicado en el summary; el summary y el recibo son la superficie pública actual. Mapping anatómico, null anatómico pareado, SparseLTC sobre subgrafos y silenciamiento causal siguen **NO MEDIDOS**.
+--- METODO TITAN ---
+Accion delicada: SI, porque se cambió workflow y evidencia pública en un PR; no se tocó `main` ni se mergeó.
+Modo aplicado: TITAN FULL
+Rubrica: pendiente de cierre QA en el Doc público
+N/A declarados: deployment, ABI, seguridad de runtime y performance de producto no aplican a este instrumento científico
+Review externo: checks GitHub verdes; review automático de código externo no emitió hallazgos, estado NO MEDIDO y no aprobación
+Instrumento: brain-env vía servicio build; contratos Python stdlib; 34 tests OK; corrida real 999 permutaciones; evidencia cruda en `results/h4_temporal_halves_run.log`
