@@ -101,17 +101,25 @@ def balanced_accuracy(observations: Sequence[Mapping[str, Any]], centroids: Mapp
 
 
 def _shuffle_labels(observations: Sequence[Mapping[str, Any]], seed: int) -> list[dict[str, Any]]:
-    """Permute complete bout label/length tokens over fixed half slots."""
+    """Permute complete bout tokens within each half-segment.
+
+    The aligned inputs contain seven disjoint ``co2_off`` segments per trial.
+    Shuffling across those boundaries would make the null too permissive and
+    would silently change the experimental context. Keep every segment's
+    label/length multiset fixed and only destroy its label-to-ROI assignment.
+    """
     rng = random.Random(seed)
-    tokens = [(item["label"], item["length"]) for item in observations]
-    rng.shuffle(tokens)
-    output: list[dict[str, Any]] = []
-    for slot, (label, length) in enumerate(tokens):
-        item = dict(observations[slot])
-        item["label"] = label
-        item["length"] = length
-        item["half_order"] = slot
-        output.append(item)
+    output = [dict(item) for item in observations]
+    slots_by_segment: dict[Any, list[int]] = {}
+    for slot, item in enumerate(observations):
+        slots_by_segment.setdefault(item["segment"], []).append(slot)
+    for slots in slots_by_segment.values():
+        tokens = [(observations[slot]["label"], observations[slot]["length"]) for slot in slots]
+        rng.shuffle(tokens)
+        for slot, (label, length) in zip(slots, tokens):
+            output[slot]["label"] = label
+            output[slot]["length"] = length
+            output[slot]["half_order"] = slot
     return output
 
 
@@ -134,7 +142,7 @@ def _summary(observed: float, null_scores: Sequence[float]) -> dict[str, float |
     return {"observed": observed, "null_n": len(null_scores), "null_mean": mean, "null_sd": sd, "p_greater_equal": (1 + extreme) / (1 + len(null_scores)), "z": 0.0 if sd == 0.0 else (observed - mean) / sd}
 
 
-def analyze_trial(trial: Any, labels: Sequence[str], permutations: int, seed: int) -> tuple[dict[str, Any], list[float]]:
+def analyze_trial(trial: Any, labels: Sequence[str], permutations: int, seed: int, context: str) -> tuple[dict[str, Any], list[float]]:
     """Measure bidirectional cross-half transfer for one trial."""
     normalized = _normalized(trial)
     all_observations = _observations(normalized)
@@ -154,7 +162,7 @@ def analyze_trial(trial: Any, labels: Sequence[str], permutations: int, seed: in
     return {
         "trial": trial.trial,
         "animal": trial.animal,
-        "context": "co2_off",
+        "context": context,
         "early_bouts": len(early),
         "late_bouts": len(late),
         "early_frames": sum(item["length"] for item in early),
@@ -186,7 +194,7 @@ def analyze_trials(paths: Sequence[Path], *, labels: Sequence[str] = DEFAULT_LAB
     results: list[dict[str, Any]] = []
     nulls: list[list[float]] = []
     for index, trial in enumerate(sorted(trials, key=lambda item: item.trial)):
-        result, scores = analyze_trial(trial, label_tuple, permutations, seed + index * 1009)
+        result, scores = analyze_trial(trial, label_tuple, permutations, seed + index * 1009, context)
         results.append(result)
         nulls.append(scores)
     observed = sum(item["distribution"]["observed"] for item in results) / len(results)
@@ -197,7 +205,7 @@ def analyze_trials(paths: Sequence[Path], *, labels: Sequence[str] = DEFAULT_LAB
         "analysis": {"scope": "within_animal_temporal_halves", "animal": animals[0], "context": context, "n_trials": len(results), "cross_animal": False, "causal": False, "unit": "bout", "feature_level": "ROI"},
         "parameters": {"labels": list(label_tuple), "permutations": permutations, "seed": seed, "split": "nearest complete-bout midpoint by target-context frames"},
         "inputs": [{"path": str(path), "bytes": path.stat().st_size, "sha256": _sha256(path)} for path in sorted(paths)],
-        "null_contract": {"permuted_within": "each half of each trial", "preserved": ["animal/trial identity", "complete bout lengths", "label counts per half", "ROI temporal order within slots"], "destroyed": ["label-to-neural alignment within each half"], "not_tested": ["anatomical route identity", "causal silencing", "cross-animal generalization"]},
+        "null_contract": {"permuted_within": "each half of each target-context segment", "preserved": ["animal/trial identity", "target-context segment boundaries", "complete bout lengths", "label and length counts per half-segment", "ROI temporal order within slots"], "destroyed": ["label-to-neural alignment within each half-segment"], "not_tested": ["anatomical route identity", "causal silencing", "cross-animal generalization"]},
         "trials": results,
         "pooled": {**_summary(observed, pooled), "null_scores": pooled},
         "limitations": ["All trials belong to one animal; this is not cross-animal evidence.", "Cross-half decoding is descriptive and not causal.", "The temporal split is constrained to complete bouts, so halves are not exactly equal in frames.", "ROI channels are not mapped to cell type or neuropil.", "Labels are DAART predictions, not manual independent annotations."],
