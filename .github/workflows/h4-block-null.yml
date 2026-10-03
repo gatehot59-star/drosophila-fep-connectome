@@ -1,0 +1,49 @@
+name: h4-block-null
+
+on:
+  push:
+    branches:
+      - 'titan/**'
+    paths:
+      - 'tools/h4_block_null.py'
+      - 'tests/test_h4_block_null.py'
+      - 'tools/h4_alignment_guard.py'
+      - 'tests/test_h4_alignment_guard.py'
+      - 'tools/h4_official_loader.py'
+      - 'tests/test_h4_official_loader.py'
+      - 'tools/h4_aligned_features.py'
+      - 'tests/test_h4_aligned_features.py'
+      - '.github/workflows/h4-block-null.yml'
+  pull_request:
+    paths:
+      - 'tools/h4_block_null.py'
+      - 'tests/test_h4_block_null.py'
+      - 'tools/h4_alignment_guard.py'
+      - 'tests/test_h4_alignment_guard.py'
+      - 'tools/h4_official_loader.py'
+      - 'tests/test_h4_official_loader.py'
+      - 'tools/h4_aligned_features.py'
+      - 'tests/test_h4_aligned_features.py'
+      - '.github/workflows/h4-block-null.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: alignment guard contracts
+        run: python3 -S tests/test_h4_alignment_guard.py
+      - name: official loader contracts
+        run: python3 -S tests/test_h4_official_loader.py
+      - name: aligned feature contracts
+        run: python3 -S tests/test_h4_aligned_features.py
+      - name: block null contracts
+        run: python3 -S tests/test_h4_block_null.py
