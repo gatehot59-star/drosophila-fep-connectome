@@ -7,7 +7,7 @@
 
 La corrida Aymanns actual conserva dos canales llamados `ROI_0` y `ROI_1`, cada uno con 1.067 muestras neurales. El objeto `DFF_dic.p` contiene únicamente esas dos claves y series numéricas; no contiene `root_id`, `cell_type`, neuropilo, máscara espacial ni coordenadas. El H5 del trial conserva solo señales ThorSync (`AI`, `CI`, `DI`, `Global`) y tampoco contiene una identidad FlyWire por ROI.
 
-El atlas FlyWire v783 sí existe como fuente independiente en el pipeline de `mojo-absoluto`: conectividad MD5 `3d802fd542b5d18570ba1ba00abed9` y annotations MD5 `719904abad876c68ace1b5690c9b9b63`, con 138.639 neuronas y 15.091.983 aristas; el loader reportó 138.625 neuronas con annotation y 14 sin annotation. Eso valida el atlas, no asigna esas 138.639 neuronas a `ROI_0`/`ROI_1`.
+El atlas FlyWire v783 sí existe como fuente independiente en el pipeline de `mojo-absoluto`: conectividad MD5 `3d802fd542b5d18570ba1ba0bb0abed9` y annotations MD5 `719904abad876c68ace1b5690c9b9b63`, con 138.639 neuronas y 15.091.983 aristas; el loader reportó 138.625 neuronas con annotation y 14 sin annotation. Eso valida el atlas, no asigna esas 138.639 neuronas a `ROI_0`/`ROI_1`.
 
 ## Decisión
 
