@@ -1,0 +1,176 @@
+name: DBC3 public staging motor latency
+
+on:
+  push:
+    branches:
+      - titan/dbc3-serious-kaggle-staging
+    paths:
+      - 'tools/dbc3_motor_reconstructed.h'
+      - '.github/workflows/dbc3-latency-public.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  motor-latency:
+    name: motor-${{ matrix.arch }}
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - arch: x64
+            runner: ubuntu-24.04
+          - arch: arm64
+            runner: ubuntu-24.04-arm
+    steps:
+      - name: Checkout exact staging source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          ref: ${{ github.ref_name }}
+      - name: Compile, measure, and persist raw output
+        shell: bash
+        run: |
+          set -uo pipefail
+          output="results/dbc3_latency_motor_${{ matrix.arch }}_${GITHUB_RUN_ID}.txt"
+          mkdir -p results
+          result_rc=0
+          {
+            echo "COMMAND uname -a"
+            uname -a
+            echo "COMMAND uname -m"
+            uname -m
+            echo "COMMAND getconf LONG_BIT"
+            getconf LONG_BIT
+            echo "COMMAND nproc"
+            nproc
+            echo "COMMAND gcc --version"
+            gcc --version
+            cat > /tmp/dbc3_latency_motor.c <<'EOF'
+#define _POSIX_C_SOURCE 200809L
+#include "tools/dbc3_motor_reconstructed.h"
+#include <inttypes.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/resource.h>
+#include <time.h>
+
+enum { WARMUP = 1000, SAMPLES = 100000 };
+static volatile float sink;
+static int compare_u64(const void *left, const void *right) {
+    const uint64_t a = *(const uint64_t *)left;
+    const uint64_t b = *(const uint64_t *)right;
+    return a < b ? -1 : (a > b ? 1 : 0);
+}
+static uint64_t now_ns(void) {
+    struct timespec ts;
+    if (clock_gettime(CLOCK_MONOTONIC_RAW, &ts) != 0) return 0;
+    return (uint64_t)ts.tv_sec * UINT64_C(1000000000) + (uint64_t)ts.tv_nsec;
+}
+static uint64_t nearest_rank(const uint64_t *values, size_t count, unsigned percentile) {
+    size_t rank = (count * (size_t)percentile + 99U) / 100U;
+    if (rank == 0U) rank = 1U;
+    return values[rank - 1U];
+}
+static uint64_t max_rss_kb(void) {
+    struct rusage usage;
+    if (getrusage(RUSAGE_SELF, &usage) != 0) return 0U;
+    return (uint64_t)usage.ru_maxrss;
+}
+int main(void) {
+    DBC3_Weights weights;
+    DBC3_State state;
+    DBC3_Result result;
+    float input[DBC3_DIN];
+    uint64_t *samples = calloc(SAMPLES, sizeof(*samples));
+    if (samples == NULL) return 2;
+    memset(&weights, 0, sizeof(weights));
+    for (int i = 0; i < DBC3_HM; ++i) {
+        weights.b_tau[i] = -2.0f;
+        weights.ln_gamma[i] = 1.0f;
+    }
+    memset(&state, 0, sizeof(state));
+    for (int i = 0; i < DBC3_DIN; ++i) {
+        input[i] = (float)(i % 9 - 4) * 0.125f + (float)i * 0.001f;
+    }
+    for (size_t i = 0; i < WARMUP; ++i) {
+        if (dbc3_step(&weights, &state, input, &result) != DBC3_OK) return 3;
+        sink += result.logits[0] + state.hm[0];
+    }
+    uint64_t total = 0U;
+    for (size_t i = 0; i < SAMPLES; ++i) {
+        const uint64_t before = now_ns();
+        if (dbc3_step(&weights, &state, input, &result) != DBC3_OK) return 4;
+        const uint64_t after = now_ns();
+        if (after < before) return 5;
+        samples[i] = after - before;
+        total += samples[i];
+        sink += result.logits[0] + state.hm[0];
+    }
+    qsort(samples, SAMPLES, sizeof(*samples), compare_u64);
+    const double mean = (double)total / (double)SAMPLES;
+    printf("BENCHMARK=dbc3_public_staging_motor_v1\n");
+    printf("WEIGHTS=deterministic_placeholder_b_tau_minus2_ln_gamma1\n");
+    printf("WARMUP=%d\nSAMPLES=%d\n", WARMUP, SAMPLES);
+    printf("MIN_NS=%" PRIu64 "\nP50_NS=%" PRIu64 "\nP95_NS=%" PRIu64 "\nP99_NS=%" PRIu64 "\nMAX_NS=%" PRIu64 "\n", samples[0], nearest_rank(samples, SAMPLES, 50U), nearest_rank(samples, SAMPLES, 95U), nearest_rank(samples, SAMPLES, 99U), samples[SAMPLES - 1U]);
+    printf("MEAN_NS=%.3f\nTHROUGHPUT_HZ=%.3f\nMAX_RSS_KB=%" PRIu64 "\nSTEP_COUNT=%" PRIu64 "\nSINK=%.9g\nSTATUS=PASS\n", mean, 1.0e9 / mean, max_rss_kb(), state.step_count, (double)sink);
+    free(samples);
+    return state.step_count == (uint64_t)(WARMUP + SAMPLES) ? 0 : 6;
+}
+EOF
+            echo "COMMAND gcc -std=c99 -O2 -DNDEBUG -Wall -Wextra -Werror -I. /tmp/dbc3_latency_motor.c -lm -o /tmp/dbc3_latency_motor"
+            gcc -std=c99 -O2 -DNDEBUG -Wall -Wextra -Werror -I. /tmp/dbc3_latency_motor.c -lm -o /tmp/dbc3_latency_motor
+            compile_rc=$?
+            echo "COMPILE_EXIT=$compile_rc"
+            if [ "$compile_rc" -eq 0 ]; then
+              echo "COMMAND sha256sum header and benchmark"
+              sha256sum tools/dbc3_motor_reconstructed.h /tmp/dbc3_latency_motor
+              echo "COMMAND /tmp/dbc3_latency_motor"
+              /tmp/dbc3_latency_motor
+              bench_rc=$?
+              echo "BENCHMARK_EXIT=$bench_rc"
+              if [ "$bench_rc" -ne 0 ]; then result_rc=1; fi
+            else
+              result_rc=1
+              echo "BENCHMARK_SKIPPED=compile_failed"
+            fi
+            echo "SOURCE_HEAD=${GITHUB_SHA}"
+            echo "RUN_ID=${GITHUB_RUN_ID}"
+            echo "ARCH=${{ matrix.arch }}"
+            echo "RUNNER=${{ matrix.runner }}"
+            echo "RESULT_RC=$result_rc"
+            echo "--- METODO PROMETEO ---"
+            echo "Instrumento: public Actions ${{ matrix.arch }}; staging arithmetic-core header and raw compiler/runtime output"
+          } >"$output" 2>&1
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$output"
+          evidence_branch="titan/dbc3-public-latency-evidence-${{ matrix.arch }}-${GITHUB_RUN_ID}"
+          if git diff --cached --quiet; then
+            echo "EVIDENCE_COMMIT_SKIPPED=1"
+            result_rc=1
+          elif git commit -m "ci(dbc3): persist public staging latency evidence" -m "--- METODO PROMETEO ---
+Accion delicada: NO
+Modo aplicado: FULL
+Maquina: Actions ${{ matrix.arch }}
+Rubrica: N/A (raw evidence commit)
+N/A declarados: canonical private entrypoint and full block/swarm remain unmeasured
+Review externo: pending
+Instrumento: public Actions, GCC, staging motor header; exit=$result_rc
+Artefactos: $output + public ClickUp Doc to be created after measurement"; then
+            if git push origin "HEAD:refs/heads/${evidence_branch}"; then
+              echo "EVIDENCE_BRANCH=${evidence_branch}"
+            else
+              echo "EVIDENCE_PUSH=FAIL"
+              result_rc=1
+            fi
+          else
+            echo "EVIDENCE_COMMIT=FAIL"
+            result_rc=1
+          fi
+          cat "$output"
+          exit "$result_rc"
