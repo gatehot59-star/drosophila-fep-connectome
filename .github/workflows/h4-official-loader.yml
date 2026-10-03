@@ -7,15 +7,19 @@ on:
     paths:
       - 'tools/h4_official_loader.py'
       - 'tools/h4_alignment_guard.py'
+      - 'tools/h4_aligned_features.py'
       - 'tests/test_h4_official_loader.py'
       - 'tests/test_h4_alignment_guard.py'
+      - 'tests/test_h4_aligned_features.py'
       - '.github/workflows/h4-official-loader.yml'
   pull_request:
     paths:
       - 'tools/h4_official_loader.py'
       - 'tools/h4_alignment_guard.py'
+      - 'tools/h4_aligned_features.py'
       - 'tests/test_h4_official_loader.py'
       - 'tests/test_h4_alignment_guard.py'
+      - 'tests/test_h4_aligned_features.py'
       - '.github/workflows/h4-official-loader.yml'
   workflow_dispatch:
 
@@ -30,8 +34,10 @@ jobs:
       PYTHONDONTWRITEBYTECODE: '1'
     steps:
       - name: checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: alignment guard tests
         run: python3 -S tests/test_h4_alignment_guard.py
       - name: official loader contract tests
         run: python3 -S tests/test_h4_official_loader.py
+      - name: aligned feature contract tests
+        run: python3 -S tests/test_h4_aligned_features.py
