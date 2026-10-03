@@ -1,0 +1,41 @@
+name: H4 integrated regression
+
+on:
+  push:
+    branches:
+      - 'titan/**'
+    paths:
+      - 'tools/**'
+      - 'tests/test_h4_*.py'
+      - '.github/workflows/h4-integrated-regression.yml'
+  pull_request:
+    paths:
+      - 'tools/**'
+      - 'tests/test_h4_*.py'
+      - '.github/workflows/h4-integrated-regression.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  integrated-contracts:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: alignment contracts
+        run: python3 -S tests/test_h4_alignment_guard.py
+      - name: loader contracts
+        run: python3 -S tests/test_h4_official_loader.py
+      - name: aligned feature contracts
+        run: python3 -S tests/test_h4_aligned_features.py
+      - name: block-null contracts
+        run: python3 -S tests/test_h4_block_null.py
+      - name: trial-generalization contracts
+        run: python3 -S tests/test_h4_trial_generalization.py
+      - name: temporal-half contracts
+        run: python3 -S tests/test_h4_temporal_halves.py
