@@ -7,6 +7,12 @@ on:
     paths:
       - 'tools/dbc3_motor_reconstructed.h'
       - '.github/workflows/dbc3-latency-public.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'tools/dbc3_motor_reconstructed.h'
+      - '.github/workflows/dbc3-latency-public.yml'
   workflow_dispatch:
 
 permissions:
