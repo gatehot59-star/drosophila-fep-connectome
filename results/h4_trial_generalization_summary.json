@@ -1,0 +1,16 @@
+{
+  "analysis": {
+    "animal": "R65D11-tdTomGC6fopt-fly1",
+    "causal": false,
+    "context": "co2_off",
+    "cross_animal": false,
+    "feature_level": "ROI",
+    "n_trials": 8,
+    "scope": "within_animal_leave_one_trial_out",
+    "unit": "bout"
+  },
+  "parameters": {"labels": ["resting", "walking"], "permutations": 999, "seed": 20261002},
+  "pooled": {"null_mean": 0.5081554609448383, "null_n": 999, "null_sd": 0.02091634629331271, "observed": 0.5018855395873556, "p_greater_equal": 0.623, "z": -0.2997617877213725},
+  "verdict": "BIEN",
+  "full_result_sha256": "54f4a1aa2df7c41fff8fa5cc69d5b1c8ca5d030a0a31d48a87096e32dfed6810"
+}
