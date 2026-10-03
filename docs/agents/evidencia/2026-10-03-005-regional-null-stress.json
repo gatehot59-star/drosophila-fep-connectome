@@ -1,0 +1,118 @@
+{
+  "schema": "h4-regional-null-stress/v1",
+  "execution": {
+    "machine": "brain-env",
+    "branch": "titan/paso-1-identidad-roi-2026-10-03",
+    "instrument_command": "cd /workspace/regional-null-branch && python3 tools/h4_regional_null_stress.py --public-manifest docs/agents/evidencia/2026-10-03-004-r65d11-compartment-manifest.json --out /tmp/h4-regional-null-stress.json",
+    "exit_code": 0,
+    "stdout": "{\"biological_regional_null\": \"NO_MEDIDO\", \"case_count\": 10, \"failed_cases\": 0, \"out\": \"/tmp/h4-regional-null-stress.json\", \"passed_cases\": 10, \"stress_verdict\": \"PASS_FAIL_CLOSED\"}\n",
+    "stderr": ""
+  },
+  "stress_verdict": "PASS_FAIL_CLOSED",
+  "biological_regional_null": "NO_MEDIDO",
+  "biological_reason": "the public R65D11 manifest has 0 REGION_MAPPED rows and cannot support an anatomical regional null",
+  "case_count": 10,
+  "passed_cases": 10,
+  "failed_cases": 0,
+  "cases": [
+    {
+      "detail": {
+        "counts": {
+          "annotation_rows": 139248,
+          "population_rows": 0,
+          "region_rows": 0,
+          "row_count": 16,
+          "unmapped_rows": 16
+        },
+        "mapping_verdict": "UNMAPPED",
+        "reason": "no explicit REGION_MAPPED rows are present; biological regional null not run"
+      },
+      "expected": "REJECTED",
+      "name": "current_public_r65d11_manifest",
+      "observed": "REJECTED",
+      "pass": true
+    },
+    {
+      "detail": {
+        "mapping_verdict": "REGIONAL",
+        "row_count": 2
+      },
+      "expected": "ACCEPTED",
+      "name": "valid_explicit_region",
+      "observed": "ACCEPTED",
+      "pass": true
+    },
+    {
+      "detail": {
+        "error": "mapping line 2: invalid REGION_MAPPED contract"
+      },
+      "expected": "REJECTED",
+      "name": "missing_region_label",
+      "observed": "REJECTED",
+      "pass": true
+    },
+    {
+      "detail": {
+        "error": "region_label cannot be inferred from ROI name"
+      },
+      "expected": "REJECTED",
+      "name": "roi_name_used_as_region",
+      "observed": "REJECTED",
+      "pass": true
+    },
+    {
+      "detail": {
+        "error": "mapping line 2: invalid REGION_MAPPED contract"
+      },
+      "expected": "REJECTED",
+      "name": "dff_only_region_evidence",
+      "observed": "REJECTED",
+      "pass": true
+    },
+    {
+      "detail": {
+        "error": "mapping line 2: UNMAPPED row contains mapping evidence"
+      },
+      "expected": "REJECTED",
+      "name": "unmapped_row_with_region",
+      "observed": "REJECTED",
+      "pass": true
+    },
+    {
+      "detail": {
+        "error": "mapping line 2: root_ids and root_weights must align and sum to 1"
+      },
+      "expected": "REJECTED",
+      "name": "population_weights_not_normalized",
+      "observed": "REJECTED",
+      "pass": true
+    },
+    {
+      "detail": {
+        "error": "mapping line 2: root IDs absent from annotation snapshot [999]"
+      },
+      "expected": "REJECTED",
+      "name": "population_root_absent_from_annotations",
+      "observed": "REJECTED",
+      "pass": true
+    },
+    {
+      "detail": {
+        "error": "mapping trial/ROI set differs: expected [('1', 'ROI_0'), ('1', 'ROI_1')], got [('1', 'ROI_0')]"
+      },
+      "expected": "REJECTED",
+      "name": "missing_trial_roi_pair",
+      "observed": "REJECTED",
+      "pass": true
+    },
+    {
+      "detail": {
+        "error": "mapping line 3: duplicate trial/ROI pair ('1', 'ROI_0')"
+      },
+      "expected": "REJECTED",
+      "name": "duplicate_trial_roi_pair",
+      "observed": "REJECTED",
+      "pass": true
+    }
+  ]
+}
