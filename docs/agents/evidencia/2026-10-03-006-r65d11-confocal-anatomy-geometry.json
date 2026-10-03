@@ -1,0 +1,52 @@
+{
+  "schema": "h4-confocal-anatomy-geometry/v1",
+  "verdict": "BIEN",
+  "machine": "brain-env",
+  "dataset": "doi:10.7910/DVN/KTQT27",
+  "license": "CC0 1.0",
+  "instrument": "tifffile LSM header parser",
+  "header_sample_bytes": 1048576,
+  "raw_measurement": {
+    "brain40": {
+      "file": "R65D11_FlpPEST_MCFO_brain_40x.lsm",
+      "file_bytes": 755716276,
+      "published_md5": "fbc4635cbddfe512057ca1bfe8044348",
+      "pages": 704,
+      "series": [[[352, 2, 1024, 1024], "ZCYX"], [[352, 3, 128, 128], "ZSYX"]],
+      "lsm_name": "20201130-1-R65D11-FlpPEST-MCFO-40x-brain",
+      "objective": "Plan-Apochromat 40x/1.3 Oil DIC M27",
+      "voxel_m": [1.4208402876414194e-07, 1.4208402876414194e-07, 3.3e-07],
+      "voxel_um": [0.14208402876414194, 0.14208402876414194, 0.32999999999999996],
+      "field_of_view_um": [145.49404545448135, 145.49404545448135, 116.16]
+    },
+    "vnc40": {
+      "file": "R65D11_FlpPEST_MCFO_vnc_40x.lsm",
+      "file_bytes": 757912760,
+      "published_md5": "88d30a04b95768918cbabf510a77d8be",
+      "pages": 706,
+      "series": [[[353, 2, 1024, 1024], "ZCYX"], [[353, 3, 128, 128], "ZSYX"]],
+      "lsm_name": "20201130-1-R65D11-FlpPEST-MCFO-40x-VNC",
+      "objective": "Plan-Apochromat 40x/1.3 Oil DIC M27",
+      "voxel_m": [3.1258486328111226e-07, 3.125848632811123e-07, 3.3e-07],
+      "voxel_um": [0.31258486328111226, 0.3125848632811123, 0.32999999999999996],
+      "field_of_view_um": [320.08689999985893, 320.086899999859, 116.49000000000001]
+    }
+  },
+  "raw_commands": [
+    "python3 -c \"import tifffile; tf=tifffile.TiffFile('/workspace/h4_data/aymanns/confocal/headers/brain40.head'); print('pages',len(tf.pages)); print('series',[(s.shape,s.axes) for s in tf.series]); print(tf.pages[0].tags[34412].value); tf.close()\"",
+    "python3 -c \"import tifffile; tf=tifffile.TiffFile('/workspace/h4_data/aymanns/confocal/headers/vnc40.head'); print('pages',len(tf.pages)); print('series',[(s.shape,s.axes) for s in tf.series]); print(tf.pages[0].tags[34412].value); tf.close()\"",
+    "python3 -m py_compile tools/h4_anatomy_measure.py",
+    "python3 -m unittest discover -s tests -p 'test_h4_anatomy_measure.py' -q"
+  ],
+  "raw_outputs": [
+    "brain40 pages 704; series [((352, 2, 1024, 1024), 'ZCYX'), ((352, 3, 128, 128), 'ZSYX')]",
+    "vnc40 pages 706; series [((353, 2, 1024, 1024), 'ZCYX'), ((353, 3, 128, 128), 'ZSYX')]",
+    "Ran 3 tests in 0.001s; OK"
+  ],
+  "interpretation": [
+    "The R65D11 confocal driver-line anatomy has calibrated brain and VNC volumes.",
+    "This measures population-level anatomical acquisition geometry, not a functional ROI identity.",
+    "ROI_0 and ROI_1 remain unmapped to a region or FlyWire root_id.",
+    "Foreground-volume segmentation, confocal-to-2P registration, and ROI-to-anatomy mapping remain NO_MEDIDO."
+  ]
+}
