@@ -1,0 +1,3 @@
+roi_name	root_id	mapping_status	evidence_kind	confidence	notes
+ROI_0		UNMAPPED	unmapped	0	No se encontro mascara, coordenada o root_id experimental en el dataset publico R65D11
+ROI_1		UNMAPPED	unmapped	0	No se encontro mascara, coordenada o root_id experimental en el dataset publico R65D11
