@@ -1,9 +1,11 @@
-START=2026-10-03T00:02:33Z
-COMMAND=python3 -S tools/h4_temporal_halves.py --input trial_1 --input trial_2 --input trial_3 --input trial_4 --input trial_5 --input trial_6 --input trial_7_regenerated --input trial_8 --labels walking,resting --context co2_off --permutations 999 --seed 20261002 --out /workspace/h4_temporal_halves_run/h4_temporal_halves_8_trials.json
-{"n_trials": 8, "out": "/workspace/h4_temporal_halves_run/h4_temporal_halves_8_trials.json", "pooled": {"null_mean": 0.5018239610724393, "null_n": 999, "null_sd": 0.019476626168946264, "observed": 0.5327595514498719, "p_greater_equal": 0.055, "z": 1.588344413918904}, "scope": "within_animal_temporal_halves", "verdict": "BIEN"}
-END=2026-10-03T00:02:43Z
-REPEAT_SHA256=01c5d9cf25112e84e4da772aa5fa70c1478aa20aa3555fcbccdc638ec0fec43e2
+START=2026-10-03T00:21:05Z
+COMMAND=python3 -S tools/h4_temporal_halves.py --input trial_1 --input trial_2 --input trial_3 --input trial_4 --input trial_5 --input trial_6 --input trial_7_regenerated --input trial_8 --labels walking,resting --context co2_off --permutations 999 --seed 20261002 --out /workspace/h4_temporal_halves_run_fixed/h4_temporal_halves_8_trials.json
+{"n_trials": 8, "out": "/workspace/h4_temporal_halves_run_fixed/h4_temporal_halves_8_trials.json", "pooled": {"null_mean": 0.5018239610724393, "null_n": 999, "null_sd": 0.019476626168946264, "observed": 0.5327595514498719, "p_greater_equal": 0.055, "z": 1.588344413918904}, "scope": "within_animal_temporal_halves", "verdict": "BIEN"}
+END=2026-10-03T00:21:12Z
+REPEAT_JSON_SHA256=c2c0e2f2093bc85650daa6bb487b8dcd4bf1ae38278d64de24fd040abb202d98
 REPEAT_BYTE_IDENTICAL=true
 CONTEXT_SEGMENTS=7,7,7,7,7,7,7,7
 COMPLETE_BOUTS_NOT_SPLIT=true
 LEGACY_FRAME_JOIN_REJECTED=true
+NULL_PRESERVES_SLOT_LENGTHS=true
+NULL_PRESERVES_SLOT_VECTORS=true
