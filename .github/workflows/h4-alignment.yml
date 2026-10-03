@@ -1,0 +1,32 @@
+name: h4-alignment
+
+on:
+  push:
+    branches:
+      - main
+      - 'titan/**'
+    paths:
+      - 'tools/h4_alignment_guard.py'
+      - 'tests/test_h4_alignment_guard.py'
+      - '.github/workflows/h4-alignment.yml'
+  pull_request:
+    paths:
+      - 'tools/h4_alignment_guard.py'
+      - 'tests/test_h4_alignment_guard.py'
+      - '.github/workflows/h4-alignment.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  alignment-guard:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: run positive and negative guard tests
+        run: python3 -S tests/test_h4_alignment_guard.py
