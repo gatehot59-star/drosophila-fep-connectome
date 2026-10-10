@@ -1,0 +1,249 @@
+== output_control_permutation_null.py :: nulo por permutacion de etiquetas para la 005 ==
+ENTORNO python=3.12.14 numpy=2.5.3 scipy=1.18.1 maquina=brain-env
+PARAMETROS seed=20261011 r=10000 n_falsos=20 n_estratos=100 p_flag=0.001 z_max=6 factor_control=3
+INPUT parquet /workspace/connectivity.parquet md5=3d802fd542b5d18570ba1ba0bb0abed9 pin_ok=True
+INPUT annotations /workspace/annotations.tsv md5=719904abad876c68ace1b5690c9b9b63 pin_ok=True
+INPUT json_005 results/output_control_2026-10-10/output_control_by_class.json md5=6f76578ab8f8e1ed5f1da005f559118e
+GRAFO n_nodos=138639 n_aristas=15091983 mapeo_biyectivo=True sinapsis_total=54492922
+CLASES ascending=1736 central=32379 descending=1299 endocrine=76 motor=110 optic=77530 sensory=16352 sensory_ascending=581 visual_centrifugal=524 visual_projection=8038 sin_anotacion=14
+CONJUNTOS 22 (nivel1 3 + finos 19) neuronas_de_salida=1485
+== VARIANTE >=1 | conjuntos_con_entrada=22/22 | estratos=86 tam_min=1 tam_max=7710 fuerza_max=99864 ancho_log=0.1151 factor=1.122 ==
+NULO [>=1] perm R=10000 segundos=184.4 conteos_ok=True estratos_ok=True media_max_z=3.64 var_ratio_mediana=0.9990
+NULO [>=1] estr R=10000 segundos=183.0 conteos_ok=True estratos_ok=True media_max_z=2.81 var_ratio_mediana=1.0000
+-- NIVEL1 descending [>=1] | con_entrada=1299
+clase                   D1% 005     perm%   enrP perm    estr%   enrE estr      D2% 005_2  enrE2 estr2
+ascending             12.98 SOBRE    1.25  10.35 SOBRE    2.31   5.61 SOBRE   12.71 SOBRE   5.21 SOBRE
+central               60.23 SOBRE   23.34   2.58 SOBRE   37.04   1.63 SOBRE   59.77 SOBRE   1.51 SOBRE
+descending            15.17 SOBRE    0.94  16.19 SOBRE    1.01  15.09 SOBRE   10.47 SOBRE  10.72 SOBRE
+endocrine              0.01 azar     0.06   0.22 azar     0.01   1.12 azar     0.02 SOBRE   3.00 azar 
+motor                  0.06 azar     0.08   0.72 azar     0.04   1.50 azar     0.09 SOBRE   2.67 azar 
+optic                  0.45 BAJO    55.92   0.01 BAJO    46.96   0.01 BAJO     3.64 BAJO    0.08 BAJO 
+sensory                4.28 azar    11.80   0.36 BAJO     4.46   0.96 azar     4.91 azar    1.41 SOBRE
+sensory_ascending      1.62 SOBRE    0.42   3.87 SOBRE    0.15  10.87 SOBRE    1.54 SOBRE  13.66 SOBRE
+visual_centrifugal     0.58 BAJO     0.38   1.54 azar     1.25   0.47 BAJO     0.95 BAJO    0.57 BAJO 
+visual_projection      4.61 azar     5.80   0.79 BAJO     6.77   0.68 BAJO     5.75 SOBRE   0.83 BAJO 
+sin_anotacion          0.00 azar     0.01   0.00 azar     0.00   0.01 azar     0.00 azar    0.70 azar 
+-- NIVEL1 motor [>=1] | con_entrada=110
+clase                   D1% 005     perm%   enrP perm    estr%   enrE estr      D2% 005_2  enrE2 estr2
+ascending              6.92 SOBRE    1.26   5.50 SOBRE    2.01   3.45 SOBRE   10.55 SOBRE   4.31 SOBRE
+central               64.34 SOBRE   23.40   2.75 SOBRE   34.64   1.86 SOBRE   62.56 SOBRE   1.55 SOBRE
+descending            21.48 SOBRE    0.93  23.03 SOBRE    1.08  19.96 SOBRE   15.01 SOBRE  14.29 SOBRE
+endocrine              0.15 azar     0.06   2.68 azar     0.01  10.85 SOBRE    0.10 SOBRE  12.58 SOBRE
+motor                  1.03 SOBRE    0.08  12.78 SOBRE    0.05  22.86 SOBRE    0.86 SOBRE  21.66 SOBRE
+optic                  0.00 BAJO    55.86   0.00 BAJO    48.50   0.00 BAJO     0.37 BAJO    0.01 BAJO 
+sensory                3.57 azar    11.80   0.30 BAJO     5.95   0.60 BAJO     7.41 azar    2.02 SOBRE
+sensory_ascending      1.48 azar     0.42   3.52 azar     0.19   7.85 SOBRE    1.31 azar   11.33 SOBRE
+visual_centrifugal     0.03 BAJO     0.38   0.07 azar     0.79   0.03 BAJO     0.32 BAJO    0.24 BAJO 
+visual_projection      1.01 BAJO     5.81   0.17 BAJO     6.79   0.15 BAJO     1.35 BAJO    0.20 BAJO 
+sin_anotacion          0.00 azar     0.01   0.00 azar     0.00   0.00 azar     0.00 BAJO    0.02 azar 
+-- NIVEL1 endocrine [>=1] | con_entrada=73
+clase                   D1% 005     perm%   enrP perm    estr%   enrE estr      D2% 005_2  enrE2 estr2
+ascending             15.93 SOBRE    1.25  12.74 SOBRE    1.56  10.24 SOBRE   11.40 SOBRE   5.88 SOBRE
+central               73.03 SOBRE   23.32   3.13 SOBRE   31.82   2.29 SOBRE   73.30 SOBRE   2.02 SOBRE
+descending             4.37 SOBRE    0.93   4.71 azar     0.89   4.92 azar     6.69 SOBRE   6.75 SOBRE
+endocrine              0.69 SOBRE    0.05  12.74 azar     0.01 116.11 SOBRE    1.02 SOBRE 126.82 SOBRE
+motor                  0.02 azar     0.08   0.26 azar     0.03   0.79 azar     0.03 azar    0.93 azar 
+optic                  0.00 BAJO    55.92   0.00 BAJO    53.59   0.00 BAJO     0.16 BAJO    0.00 BAJO 
+sensory                4.27 azar    11.82   0.36 BAJO     3.90   1.10 azar     5.41 azar    1.69 azar 
+sensory_ascending      1.31 azar     0.43   3.05 azar     0.14   9.52 azar     1.16 azar   10.33 SOBRE
+visual_centrifugal     0.00 BAJO     0.38   0.00 azar     0.65   0.00 BAJO     0.13 BAJO    0.13 BAJO 
+visual_projection      0.37 BAJO     5.80   0.06 BAJO     7.41   0.05 BAJO     0.72 BAJO    0.10 BAJO 
+sin_anotacion          0.00 azar     0.01   0.00 azar     0.00   0.00 azar     0.00 BAJO    0.00 azar 
+-- FINAS [>=1] (D1, top 3; flags 005 / perm / estr; x = D1 / media estr) --
+FINA [>=1] motor:ingestion_motor_neuron             con_entrada=  28 : central 83.66% 005=SOBRE perm=SOBRE estr=SOBRE x1.91 | descending 6.38% 005=SOBRE perm=SOBRE estr=SOBRE x5.71 | sensory 6.03% 005=azar perm=azar estr=SOBRE x4.65
+FINA [>=1] motor:neck_motor_neuron                  con_entrada=  26 : central 40.15% 005=azar perm=SOBRE estr=SOBRE x1.69 | descending 39.96% 005=SOBRE perm=SOBRE estr=SOBRE x37.31 | ascending 9.98% 005=SOBRE perm=SOBRE estr=SOBRE x6.32
+FINA [>=1] motor:proboscis_motor_neuron             con_entrada=  24 : central 68.85% 005=SOBRE perm=SOBRE estr=SOBRE x1.78 | descending 24.72% 005=SOBRE perm=SOBRE estr=SOBRE x22.31 | ascending 4.04% 005=azar perm=azar estr=azar x1.96
+FINA [>=1] motor:antennal_motor_neuron              con_entrada=  10 : central 50.52% 005=azar perm=SOBRE estr=SOBRE x1.67 | descending 32.06% 005=SOBRE perm=SOBRE estr=SOBRE x34.31 | ascending 13.41% 005=azar perm=SOBRE estr=SOBRE x6.48
+FINA [>=1] motor:crop_motor_neuron                  con_entrada=   8 : central 86.42% 005=SOBRE perm=SOBRE estr=SOBRE x2.42 | sensory 12.42% 005=azar perm=azar estr=azar x7.12 | motor 0.77% 005=azar perm=azar estr=azar x42.73
+FINA [>=1] motor:eye_motor_neuron                   con_entrada=   4 : central 78.09% 005=azar perm=SOBRE estr=SOBRE x2.12 | descending 13.63% 005=azar perm=SOBRE estr=SOBRE x13.78 | ascending 3.82% 005=azar perm=azar estr=azar x1.69
+FINA [>=1] motor:haustellum_motor_neuron            con_entrada=   4 : central 74.46% 005=azar perm=SOBRE estr=SOBRE x2.32 | descending 12.10% 005=azar perm=SOBRE estr=SOBRE x11.78 | ascending 8.53% 005=azar perm=azar estr=azar x5.98
+FINA [>=1] motor:sin_subclase                       con_entrada=   4 : ascending 42.45% 005=SOBRE perm=SOBRE estr=SOBRE x20.96 | descending 28.08% 005=SOBRE perm=SOBRE estr=SOBRE x18.31 | central 20.11% 005=azar perm=azar estr=azar x0.85
+FINA [>=1] motor:salivary_motor_neuron              con_entrada=   2 : central 75.45% 005=azar perm=SOBRE estr=SOBRE x1.97 | descending 7.58% 005=azar perm=azar estr=azar x7.02 | sensory 6.92% 005=azar perm=azar estr=azar x3.30
+FINA [>=1] endocrine:IPC                            con_entrada=  18 : central 87.94% 005=SOBRE perm=SOBRE estr=SOBRE x2.65 | ascending 11.05% 005=SOBRE perm=SOBRE estr=azar x7.72 | descending 0.50% 005=azar perm=azar estr=azar x0.57
+FINA [>=1] endocrine:lNSC_unknown                   con_entrada=  14 : central 68.10% 005=SOBRE perm=SOBRE estr=azar x2.11 | ascending 30.48% 005=SOBRE perm=SOBRE estr=SOBRE x20.23 | visual_projection 0.92% 005=azar perm=azar estr=azar x0.10
+FINA [>=1] endocrine:mNSC_unknown                   con_entrada=  10 : central 88.56% 005=SOBRE perm=SOBRE estr=SOBRE x2.97 | ascending 4.97% 005=azar perm=azar estr=azar x3.61 | endocrine 2.80% 005=SOBRE perm=SOBRE estr=SOBRE x173.32
+FINA [>=1] endocrine:CRZ                            con_entrada=   6 : sensory 29.68% 005=azar perm=azar estr=SOBRE x8.42 | ascending 23.84% 005=SOBRE perm=SOBRE estr=SOBRE x15.13 | central 23.79% 005=azar perm=azar estr=azar x0.76
+FINA [>=1] endocrine:DH31                           con_entrada=   6 : central 94.73% 005=SOBRE perm=SOBRE estr=SOBRE x2.85 | visual_projection 2.12% 005=azar perm=azar estr=azar x0.25 | descending 1.61% 005=azar perm=azar estr=azar x2.23
+FINA [>=1] endocrine:DH44                           con_entrada=   6 : central 90.92% 005=SOBRE perm=SOBRE estr=SOBRE x3.09 | descending 4.97% 005=azar perm=azar estr=azar x5.96 | ascending 3.13% 005=azar perm=azar estr=azar x2.36
+FINA [>=1] endocrine:DMS                            con_entrada=   6 : central 63.76% 005=azar perm=SOBRE estr=SOBRE x1.84 | sensory 15.18% 005=azar perm=azar estr=SOBRE x5.95 | ascending 8.54% 005=azar perm=SOBRE estr=azar x5.12
+FINA [>=1] endocrine:Hugin-RG                       con_entrada=   4 : ascending 61.08% 005=SOBRE perm=SOBRE estr=SOBRE x32.99 | central 19.32% 005=azar perm=azar estr=azar x0.89 | descending 18.72% 005=azar perm=azar estr=azar x11.77
+FINA [>=1] endocrine:ITP                            con_entrada=   1 : central 100.00% 005=azar perm=azar estr=azar x1.71 | ascending 0.00% 005=azar perm=azar estr=azar x0.00 | descending 0.00% 005=azar perm=azar estr=azar x0.00
+FINA [>=1] endocrine:CAPA                           con_entrada=   2 : central 46.31% 005=azar perm=azar estr=azar x1.58 | sensory 18.19% 005=azar perm=azar estr=azar x3.14 | descending 14.93% 005=azar perm=azar estr=azar x14.07
+CAE   [>=1] endocrine                                descending          005=SOBRE -> estr=azar  D1 4.37% x4.92
+CAE   [>=1] motor:neck_motor_neuron                  visual_centrifugal  005=BAJO  -> estr=azar  D1 0.05% x0.11
+CAE   [>=1] motor:antennal_motor_neuron              visual_centrifugal  005=BAJO  -> estr=azar  D1 0.05% x0.08
+CAE   [>=1] motor:sin_subclase                       motor               005=SOBRE -> estr=azar  D1 2.21% x19.72
+CAE   [>=1] endocrine:IPC                            ascending           005=SOBRE -> estr=azar  D1 11.05% x7.72
+CAE   [>=1] endocrine:IPC                            visual_centrifugal  005=BAJO  -> estr=azar  D1 0.00% x0.00
+CAE   [>=1] endocrine:lNSC_unknown                   central             005=SOBRE -> estr=azar  D1 68.10% x2.11
+CAE   [>=1] endocrine:lNSC_unknown                   visual_centrifugal  005=BAJO  -> estr=azar  D1 0.00% x0.00
+CAE   [>=1] endocrine:mNSC_unknown                   visual_centrifugal  005=BAJO  -> estr=azar  D1 0.00% x0.00
+CAE   [>=1] endocrine:Hugin-RG                       endocrine           005=SOBRE -> estr=azar  D1 0.42% x32.76
+NUEVO [>=1] descending                               visual_projection   005=azar  -> estr=BAJO  D1 4.61% x0.68
+NUEVO [>=1] motor                                    endocrine           005=azar  -> estr=SOBRE D1 0.15% x10.85
+NUEVO [>=1] motor                                    sensory             005=azar  -> estr=BAJO  D1 3.57% x0.60
+NUEVO [>=1] motor                                    sensory_ascending   005=azar  -> estr=SOBRE D1 1.48% x7.85
+NUEVO [>=1] motor:ingestion_motor_neuron             sensory             005=azar  -> estr=SOBRE D1 6.03% x4.65
+NUEVO [>=1] motor:neck_motor_neuron                  central             005=azar  -> estr=SOBRE D1 40.15% x1.69
+NUEVO [>=1] motor:neck_motor_neuron                  sensory             005=azar  -> estr=BAJO  D1 0.16% x0.01
+NUEVO [>=1] motor:antennal_motor_neuron              ascending           005=azar  -> estr=SOBRE D1 13.41% x6.48
+NUEVO [>=1] motor:antennal_motor_neuron              central             005=azar  -> estr=SOBRE D1 50.52% x1.67
+NUEVO [>=1] motor:antennal_motor_neuron              sensory             005=azar  -> estr=BAJO  D1 2.99% x0.56
+NUEVO [>=1] motor:antennal_motor_neuron              visual_projection   005=azar  -> estr=BAJO  D1 0.09% x0.01
+NUEVO [>=1] motor:crop_motor_neuron                  visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] motor:eye_motor_neuron                   central             005=azar  -> estr=SOBRE D1 78.09% x2.12
+NUEVO [>=1] motor:eye_motor_neuron                   descending          005=azar  -> estr=SOBRE D1 13.63% x13.78
+NUEVO [>=1] motor:eye_motor_neuron                   optic               005=azar  -> estr=BAJO  D1 0.03% x0.00
+NUEVO [>=1] motor:eye_motor_neuron                   sensory             005=azar  -> estr=BAJO  D1 0.01% x0.00
+NUEVO [>=1] motor:haustellum_motor_neuron            central             005=azar  -> estr=SOBRE D1 74.46% x2.32
+NUEVO [>=1] motor:haustellum_motor_neuron            descending          005=azar  -> estr=SOBRE D1 12.10% x11.78
+NUEVO [>=1] motor:haustellum_motor_neuron            optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] motor:haustellum_motor_neuron            visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] motor:sin_subclase                       optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] motor:salivary_motor_neuron              central             005=azar  -> estr=SOBRE D1 75.45% x1.97
+NUEVO [>=1] motor:salivary_motor_neuron              optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] motor:salivary_motor_neuron              visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] endocrine:IPC                            endocrine           005=azar  -> estr=SOBRE D1 0.48% x75.45
+NUEVO [>=1] endocrine:IPC                            sensory             005=azar  -> estr=BAJO  D1 0.02% x0.01
+NUEVO [>=1] endocrine:mNSC_unknown                   sensory             005=azar  -> estr=BAJO  D1 0.13% x0.03
+NUEVO [>=1] endocrine:mNSC_unknown                   visual_projection   005=azar  -> estr=BAJO  D1 0.15% x0.02
+NUEVO [>=1] endocrine:CRZ                            sensory             005=azar  -> estr=SOBRE D1 29.68% x8.42
+NUEVO [>=1] endocrine:CRZ                            sensory_ascending   005=azar  -> estr=SOBRE D1 4.59% x44.26
+NUEVO [>=1] endocrine:CRZ                            visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] endocrine:DH31                           endocrine           005=azar  -> estr=SOBRE D1 0.19% x127.46
+NUEVO [>=1] endocrine:DH31                           sensory             005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] endocrine:DH44                           endocrine           005=azar  -> estr=SOBRE D1 0.12% x51.76
+NUEVO [>=1] endocrine:DH44                           visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] endocrine:DMS                            central             005=azar  -> estr=SOBRE D1 63.76% x1.84
+NUEVO [>=1] endocrine:DMS                            sensory             005=azar  -> estr=SOBRE D1 15.18% x5.95
+NUEVO [>=1] endocrine:DMS                            sensory_ascending   005=azar  -> estr=SOBRE D1 4.34% x42.00
+NUEVO [>=1] endocrine:DMS                            visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] endocrine:Hugin-RG                       optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] endocrine:Hugin-RG                       sensory             005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] endocrine:CAPA                           optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=1] endocrine:CAPA                           sensory_ascending   005=azar  -> estr=SOBRE D1 9.17% x57.88
+NUEVO [>=1] endocrine:CAPA                           visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+RESUMEN [>=1] D1 tests=242 | 005 SOBRE=40 BAJO=30 | perm SOBRE=44 BAJO=49 | estr SOBRE=55 BAJO=49 | 005->estr se_mantienen=60 cambian=10 nuevos=44
+RESUMEN [>=1] D2 tests=242 | 005 SOBRE=49 BAJO=48 | perm SOBRE=65 BAJO=66 | estr SOBRE=85 BAJO=62
+CRUCE_005 [>=1] PASS max_dif=6.5503158452884236e-15 faltan=0 n_con_entrada_distinto=0
+CONTROL_NEGATIVO [>=1] perm flags=7/4840 esperado=9.68 tope=29.04 OK=True
+CONTROL_NEGATIVO [>=1] estr flags=7/4840 esperado=9.68 tope=29.04 OK=True
+== VARIANTE >=5 | conjuntos_con_entrada=21/22 | estratos=80 tam_min=1 tam_max=9777 fuerza_max=92952 ancho_log=0.1144 factor=1.121 ==
+NULO [>=5] perm R=10000 segundos=184.2 conteos_ok=True estratos_ok=True media_max_z=2.77 var_ratio_mediana=0.9985
+NULO [>=5] estr R=10000 segundos=182.4 conteos_ok=True estratos_ok=True media_max_z=3.24 var_ratio_mediana=1.0024
+-- NIVEL1 descending [>=5] | con_entrada=1262
+clase                   D1% 005     perm%   enrP perm    estr%   enrE estr      D2% 005_2  enrE2 estr2
+ascending             13.62 SOBRE    1.26  10.83 SOBRE    2.64   5.15 SOBRE   12.67 SOBRE   4.63 SOBRE
+central               62.42 SOBRE   23.34   2.67 SOBRE   40.79   1.53 SOBRE   58.40 SOBRE   1.40 SOBRE
+descending            14.43 SOBRE    0.94  15.39 SOBRE    1.03  13.97 SOBRE    9.82 SOBRE  10.61 SOBRE
+endocrine              0.01 azar     0.05   0.12 azar     0.01   1.03 azar     0.01 azar   18.73 azar 
+motor                  0.00 azar     0.08   0.06 azar     0.03   0.15 azar     0.02 SOBRE   0.86 azar 
+optic                  0.33 BAJO    55.92   0.01 BAJO    43.69   0.01 BAJO     2.71 BAJO    0.07 BAJO 
+sensory                3.43 SOBRE   11.80   0.29 BAJO     3.28   1.04 azar     3.82 BAJO    1.71 SOBRE
+sensory_ascending      0.88 SOBRE    0.42   2.11 azar     0.12   7.21 SOBRE    0.70 SOBRE   8.80 SOBRE
+visual_centrifugal     0.51 BAJO     0.38   1.36 azar     1.52   0.34 BAJO     0.89 BAJO    0.44 BAJO 
+visual_projection      4.37 SOBRE    5.80   0.75 BAJO     6.87   0.64 BAJO     5.68 SOBRE   0.87 azar 
+sin_anotacion          0.00 azar     0.01   0.00 azar     0.00   0.00 azar     0.00 azar    1.74 azar 
+-- NIVEL1 motor [>=5] | con_entrada=109
+clase                   D1% 005     perm%   enrP perm    estr%   enrE estr      D2% 005_2  enrE2 estr2
+ascending              6.62 SOBRE    1.25   5.30 SOBRE    2.37   2.80 SOBRE    9.19 SOBRE   3.16 SOBRE
+central               65.54 SOBRE   23.35   2.81 SOBRE   38.09   1.72 SOBRE   62.93 SOBRE   1.44 SOBRE
+descending            21.89 SOBRE    0.95  23.10 SOBRE    1.09  20.01 SOBRE   14.10 SOBRE  14.00 SOBRE
+endocrine              0.00 azar     0.06   0.00 azar     0.01   0.00 azar     0.00 azar    1.05 azar 
+motor                  0.68 SOBRE    0.08   8.69 azar     0.04  18.24 azar     0.57 SOBRE  17.95 SOBRE
+optic                  0.00 BAJO    55.92   0.00 BAJO    45.70   0.00 BAJO     0.27 BAJO    0.01 BAJO 
+sensory                3.15 azar    11.80   0.27 BAJO     4.62   0.68 azar     6.15 azar    2.81 SOBRE
+sensory_ascending      1.03 azar     0.42   2.49 azar     0.18   5.90 azar     0.66 azar    8.26 SOBRE
+visual_centrifugal     0.01 BAJO     0.38   0.03 azar     0.96   0.01 BAJO     0.29 BAJO    0.19 BAJO 
+visual_projection      1.08 azar     5.79   0.19 BAJO     6.94   0.16 BAJO     1.35 BAJO    0.21 BAJO 
+sin_anotacion          0.00 azar     0.01   0.00 azar     0.00   0.00 azar     0.00 azar    0.03 azar 
+-- NIVEL1 endocrine [>=5] | con_entrada=69
+clase                   D1% 005     perm%   enrP perm    estr%   enrE estr      D2% 005_2  enrE2 estr2
+ascending             20.31 SOBRE    1.23  16.51 SOBRE    1.94  10.48 SOBRE   11.83 SOBRE   4.88 SOBRE
+central               67.88 SOBRE   23.47   2.89 SOBRE   33.36   2.03 SOBRE   66.46 SOBRE   1.72 SOBRE
+descending             4.31 SOBRE    0.94   4.60 azar     0.86   5.00 azar     7.33 SOBRE   7.29 azar 
+endocrine              0.00 azar     0.06   0.00 azar     0.00   0.00 azar     2.33 SOBRE 1317.63 SOBRE
+motor                  0.00 azar     0.08   0.00 azar     0.02   0.00 azar     0.00 azar    0.00 azar 
+optic                  0.00 BAJO    55.84   0.00 BAJO    51.55   0.00 BAJO     0.01 BAJO    0.00 BAJO 
+sensory                6.16 azar    11.79   0.52 azar     3.94   1.56 azar     3.95 azar    1.31 azar 
+sensory_ascending      1.24 azar     0.41   2.99 azar     0.15   8.50 azar     0.79 azar    7.73 azar 
+visual_centrifugal     0.00 BAJO     0.39   0.00 azar     0.75   0.00 azar     0.01 BAJO    0.01 BAJO 
+visual_projection      0.11 BAJO     5.79   0.02 BAJO     7.44   0.02 BAJO     0.44 BAJO    0.07 BAJO 
+sin_anotacion          0.00 azar     0.01   0.00 azar     0.00   0.00 azar     0.00 azar    0.00 azar 
+-- FINAS [>=5] (D1, top 3; flags 005 / perm / estr; x = D1 / media estr) --
+FINA [>=5] motor:ingestion_motor_neuron             con_entrada=  28 : central 84.99% 005=SOBRE perm=SOBRE estr=SOBRE x1.74 | descending 5.89% 005=azar perm=SOBRE estr=SOBRE x5.14 | sensory 5.73% 005=azar perm=azar estr=SOBRE x4.20
+FINA [>=5] motor:neck_motor_neuron                  con_entrada=  26 : descending 43.07% 005=SOBRE perm=SOBRE estr=SOBRE x41.01 | central 40.76% 005=azar perm=SOBRE estr=azar x1.51 | ascending 8.00% 005=azar perm=SOBRE estr=azar x5.18
+FINA [>=5] motor:proboscis_motor_neuron             con_entrada=  24 : central 69.58% 005=SOBRE perm=SOBRE estr=SOBRE x1.64 | descending 25.12% 005=SOBRE perm=SOBRE estr=SOBRE x20.46 | ascending 3.44% 005=azar perm=azar estr=azar x1.31
+FINA [>=5] motor:antennal_motor_neuron              con_entrada=  10 : central 51.93% 005=azar perm=SOBRE estr=SOBRE x1.63 | descending 32.26% 005=SOBRE perm=SOBRE estr=SOBRE x34.12 | ascending 12.90% 005=azar perm=SOBRE estr=SOBRE x6.98
+FINA [>=5] motor:crop_motor_neuron                  con_entrada=   8 : central 88.87% 005=SOBRE perm=SOBRE estr=SOBRE x2.37 | sensory 10.71% 005=azar perm=azar estr=azar x6.31 | motor 0.41% 005=azar perm=azar estr=azar x8.84
+FINA [>=5] motor:eye_motor_neuron                   con_entrada=   4 : central 79.32% 005=azar perm=SOBRE estr=SOBRE x1.99 | descending 13.70% 005=azar perm=SOBRE estr=SOBRE x14.04 | ascending 3.42% 005=azar perm=azar estr=azar x1.24
+FINA [>=5] motor:haustellum_motor_neuron            con_entrada=   4 : central 78.05% 005=azar perm=SOBRE estr=SOBRE x2.20 | descending 11.17% 005=azar perm=SOBRE estr=SOBRE x9.63 | ascending 7.82% 005=azar perm=azar estr=azar x4.26
+FINA [>=5] motor:sin_subclase                       con_entrada=   3 : ascending 71.32% 005=SOBRE perm=SOBRE estr=SOBRE x33.16 | descending 22.37% 005=azar perm=azar estr=azar x20.98 | central 6.30% 005=azar perm=azar estr=azar x0.28
+FINA [>=5] motor:salivary_motor_neuron              con_entrada=   2 : central 77.98% 005=azar perm=SOBRE estr=azar x2.08 | ascending 6.69% 005=azar perm=azar estr=azar x3.37 | sensory 6.62% 005=azar perm=azar estr=azar x2.62
+FINA [>=5] endocrine:IPC                            con_entrada=  18 : central 82.13% 005=SOBRE perm=SOBRE estr=SOBRE x2.24 | ascending 17.61% 005=SOBRE perm=azar estr=azar x8.08 | descending 0.26% 005=azar perm=azar estr=azar x0.29
+FINA [>=5] endocrine:lNSC_unknown                   con_entrada=  14 : central 58.86% 005=azar perm=azar estr=azar x1.93 | ascending 41.14% 005=SOBRE perm=SOBRE estr=SOBRE x29.72 | descending 0.00% 005=azar perm=azar estr=azar x0.00
+FINA [>=5] endocrine:mNSC_unknown                   con_entrada=   7 : central 96.83% 005=SOBRE perm=SOBRE estr=SOBRE x2.59 | ascending 3.17% 005=azar perm=azar estr=azar x1.24 | descending 0.00% 005=azar perm=azar estr=azar x0.00
+FINA [>=5] endocrine:CRZ                            con_entrada=   6 : sensory 46.33% 005=SOBRE perm=azar estr=SOBRE x17.92 | ascending 21.64% 005=azar perm=azar estr=azar x12.91 | descending 17.49% 005=azar perm=azar estr=azar x18.37
+FINA [>=5] endocrine:DH31                           con_entrada=   6 : central 97.03% 005=SOBRE perm=SOBRE estr=SOBRE x2.95 | visual_projection 1.31% 005=azar perm=azar estr=azar x0.17 | ascending 0.88% 005=azar perm=azar estr=azar x0.42
+FINA [>=5] endocrine:DH44                           con_entrada=   6 : central 93.94% 005=SOBRE perm=SOBRE estr=SOBRE x3.16 | descending 3.96% 005=azar perm=azar estr=azar x4.03 | ascending 1.41% 005=azar perm=azar estr=azar x0.91
+FINA [>=5] endocrine:DMS                            con_entrada=   6 : central 61.48% 005=azar perm=SOBRE estr=azar x1.56 | sensory 16.95% 005=azar perm=azar estr=azar x6.86 | descending 8.64% 005=azar perm=azar estr=azar x8.44
+FINA [>=5] endocrine:Hugin-RG                       con_entrada=   4 : ascending 72.30% 005=SOBRE perm=SOBRE estr=SOBRE x38.25 | descending 19.91% 005=azar perm=azar estr=azar x18.38 | central 7.79% 005=azar perm=azar estr=azar x0.33
+FINA [>=5] endocrine:ITP                            con_entrada=   0 : ascending 0.00% 005=NA perm=NA estr=NA xnan | central 0.00% 005=NA perm=NA estr=NA xnan | descending 0.00% 005=NA perm=NA estr=NA xnan
+FINA [>=5] endocrine:CAPA                           con_entrada=   2 : central 47.08% 005=azar perm=azar estr=azar x1.55 | sensory 20.51% 005=azar perm=azar estr=azar x2.42 | descending 13.83% 005=azar perm=azar estr=azar x12.06
+CAE   [>=5] descending                               sensory             005=SOBRE -> estr=azar  D1 3.43% x1.04
+CAE   [>=5] descending                               visual_projection   005=SOBRE -> estr=BAJO  D1 4.37% x0.64
+CAE   [>=5] motor                                    motor               005=SOBRE -> estr=azar  D1 0.68% x18.24
+CAE   [>=5] endocrine                                descending          005=SOBRE -> estr=azar  D1 4.31% x5.00
+CAE   [>=5] endocrine                                visual_centrifugal  005=BAJO  -> estr=azar  D1 0.00% x0.00
+CAE   [>=5] motor:ingestion_motor_neuron             visual_centrifugal  005=BAJO  -> estr=azar  D1 0.00% x0.00
+CAE   [>=5] motor:neck_motor_neuron                  visual_centrifugal  005=BAJO  -> estr=azar  D1 0.03% x0.05
+CAE   [>=5] motor:proboscis_motor_neuron             visual_centrifugal  005=BAJO  -> estr=azar  D1 0.00% x0.00
+CAE   [>=5] endocrine:IPC                            ascending           005=SOBRE -> estr=azar  D1 17.61% x8.08
+NUEVO [>=5] motor                                    visual_projection   005=azar  -> estr=BAJO  D1 1.08% x0.16
+NUEVO [>=5] motor:ingestion_motor_neuron             descending          005=azar  -> estr=SOBRE D1 5.89% x5.14
+NUEVO [>=5] motor:ingestion_motor_neuron             sensory             005=azar  -> estr=SOBRE D1 5.73% x4.20
+NUEVO [>=5] motor:ingestion_motor_neuron             visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] motor:neck_motor_neuron                  sensory             005=azar  -> estr=BAJO  D1 0.10% x0.01
+NUEVO [>=5] motor:proboscis_motor_neuron             visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] motor:antennal_motor_neuron              ascending           005=azar  -> estr=SOBRE D1 12.90% x6.98
+NUEVO [>=5] motor:antennal_motor_neuron              central             005=azar  -> estr=SOBRE D1 51.93% x1.63
+NUEVO [>=5] motor:antennal_motor_neuron              visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] motor:eye_motor_neuron                   central             005=azar  -> estr=SOBRE D1 79.32% x1.99
+NUEVO [>=5] motor:eye_motor_neuron                   descending          005=azar  -> estr=SOBRE D1 13.70% x14.04
+NUEVO [>=5] motor:eye_motor_neuron                   optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] motor:eye_motor_neuron                   sensory             005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] motor:haustellum_motor_neuron            central             005=azar  -> estr=SOBRE D1 78.05% x2.20
+NUEVO [>=5] motor:haustellum_motor_neuron            descending          005=azar  -> estr=SOBRE D1 11.17% x9.63
+NUEVO [>=5] motor:haustellum_motor_neuron            optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] motor:haustellum_motor_neuron            visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] motor:salivary_motor_neuron              optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] endocrine:IPC                            visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] endocrine:CRZ                            optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] endocrine:DH31                           optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] endocrine:DH44                           optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] endocrine:DH44                           visual_projection   005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] endocrine:DMS                            optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+NUEVO [>=5] endocrine:DMS                            sensory_ascending   005=azar  -> estr=SOBRE D1 7.03% x92.78
+NUEVO [>=5] endocrine:CAPA                           optic               005=azar  -> estr=BAJO  D1 0.00% x0.00
+RESUMEN [>=5] D1 tests=231 | 005 SOBRE=29 BAJO=18 | perm SOBRE=33 BAJO=36 | estr SOBRE=33 BAJO=32 | 005->estr se_mantienen=38 cambian=9 nuevos=26
+RESUMEN [>=5] D2 tests=231 | 005 SOBRE=34 BAJO=40 | perm SOBRE=50 BAJO=56 | estr SOBRE=58 BAJO=56
+CRUCE_005 [>=5] PASS max_dif=2.6645352591003757e-15 faltan=0 n_con_entrada_distinto=0
+CONTROL_NEGATIVO [>=5] perm flags=4/4620 esperado=9.24 tope=27.72 OK=True
+CONTROL_NEGATIVO [>=5] estr flags=4/4620 esperado=9.24 tope=27.72 OK=True
+-- QUE CONTROLA CADA CLASE CON EL NULO FUERTE (estr, D1, SOBRE en >=1 y en >=5) --
+QUE_CONTROLA_FIRME ascending: SOBRE: descending x5.61/x5.15 (D1 12.98/13.62%), motor x3.45/x2.80 (D1 6.92/6.62%), endocrine x10.24/x10.48 (D1 15.93/20.31%), motor:antennal_motor_neuron x6.48/x6.98 (D1 13.41/12.90%), motor:sin_subclase x20.96/x33.16 (D1 42.45/71.32%), endocrine:lNSC_unknown x20.23/x29.72 (D1 30.48/41.14%), endocrine:Hugin-RG x32.99/x38.25 (D1 61.08/72.30%) | BAJO nivel1: ninguna
+QUE_CONTROLA_FIRME central: SOBRE: descending x1.63/x1.53 (D1 60.23/62.42%), motor x1.86/x1.72 (D1 64.34/65.54%), endocrine x2.29/x2.03 (D1 73.03/67.88%), motor:ingestion_motor_neuron x1.91/x1.74 (D1 83.66/84.99%), motor:proboscis_motor_neuron x1.78/x1.64 (D1 68.85/69.58%), motor:antennal_motor_neuron x1.67/x1.63 (D1 50.52/51.93%), motor:crop_motor_neuron x2.42/x2.37 (D1 86.42/88.87%), motor:eye_motor_neuron x2.12/x1.99 (D1 78.09/79.32%), motor:haustellum_motor_neuron x2.32/x2.20 (D1 74.46/78.05%), endocrine:IPC x2.65/x2.24 (D1 87.94/82.13%), endocrine:mNSC_unknown x2.97/x2.59 (D1 88.56/96.83%), endocrine:DH31 x2.85/x2.95 (D1 94.73/97.03%), endocrine:DH44 x3.09/x3.16 (D1 90.92/93.94%) | BAJO nivel1: ninguna
+QUE_CONTROLA_FIRME descending: SOBRE: descending x15.09/x13.97 (D1 15.17/14.43%), motor x19.96/x20.01 (D1 21.48/21.89%), motor:ingestion_motor_neuron x5.71/x5.14 (D1 6.38/5.89%), motor:neck_motor_neuron x37.31/x41.01 (D1 39.96/43.07%), motor:proboscis_motor_neuron x22.31/x20.46 (D1 24.72/25.12%), motor:antennal_motor_neuron x34.31/x34.12 (D1 32.06/32.26%), motor:eye_motor_neuron x13.78/x14.04 (D1 13.63/13.70%), motor:haustellum_motor_neuron x11.78/x9.63 (D1 12.10/11.17%) | BAJO nivel1: ninguna
+QUE_CONTROLA_FIRME endocrine: SOBRE: ninguna | BAJO nivel1: ninguna
+QUE_CONTROLA_FIRME motor: SOBRE: motor:ingestion_motor_neuron x91.81/x67.05 (D1 2.60/2.32%) | BAJO nivel1: ninguna
+QUE_CONTROLA_FIRME optic: SOBRE: ninguna | BAJO nivel1: descending, motor, endocrine
+QUE_CONTROLA_FIRME sensory: SOBRE: motor:ingestion_motor_neuron x4.65/x4.20 (D1 6.03/5.73%), endocrine:CRZ x8.42/x17.92 (D1 29.68/46.33%) | BAJO nivel1: ninguna
+QUE_CONTROLA_FIRME sensory_ascending: SOBRE: descending x10.87/x7.21 (D1 1.62/0.88%), endocrine:DMS x42.00/x92.78 (D1 4.34/7.03%) | BAJO nivel1: ninguna
+QUE_CONTROLA_FIRME visual_centrifugal: SOBRE: ninguna | BAJO nivel1: descending, motor
+QUE_CONTROLA_FIRME visual_projection: SOBRE: ninguna | BAJO nivel1: descending, motor, endocrine
+QUE_CONTROLA_FIRME sin_anotacion: SOBRE: ninguna | BAJO nivel1: ninguna
+R_PEDIDO_500 r=10000 ok=True
+CHEQUEOS mapeo=True conteos_perm_>=1=True estratos_perm_>=1=True media_perm_>=1=True varianza_perm_>=1=True control_perm_>=1=True conteos_estr_>=1=True estratos_estr_>=1=True media_estr_>=1=True varianza_estr_>=1=True control_estr_>=1=True conteos_perm_>=5=True estratos_perm_>=5=True media_perm_>=5=True varianza_perm_>=5=True control_perm_>=5=True conteos_estr_>=5=True estratos_estr_>=5=True media_estr_>=5=True varianza_estr_>=5=True control_estr_>=5=True
+JSON results/output_control_permnull_2026-10-10/output_control_permutation_null.json md5=ec64172711d7d18040f6f09335d7521b
+VEREDICTO_NULO PASS
+FIN_NULO segundos=778.0
