@@ -1,0 +1,7 @@
+TEST test_bh_y_by_contra_la_definicion -> BH = definicion q_i = min_{j>=i} m p_(j) / j en 50 casos con empates; BY = BH x c(m)
+TEST test_maxt_contra_fuerza_bruta -> step-down y single-step = fuerza bruta en 20 casos con empates; step-down <= single-step
+TEST test_maxt_controla_fwer_con_dependencia_y_tiene_poder -> FWER empirico 0.048 (tope 0,085) con 12 tests correlacionados que suman cero; un efecto de 8 sd se detecta en el 100%
+TEST test_resolucion_de_holm -> con R = 5.000 y 242 tests Holm no puede rechazar nada (0,0004 > 0,05/242); con 100 tests o R = 100.000 si
+TEST test_familia_excluye_degenerados_y_detecta_lo_plantado -> la clase sin mezcla queda afuera de la familia (m = 4 de 6); el efecto plantado sale SOBRE y su vecina BAJO con maxT, BH y BY
+TEST test_extremo_a_extremo_007_a_008 -> extremo a extremo: 005 -> 006 -> 007 -> 008, el nulo regenerado da los mismos p, R=300 da INCOMPLETO y un p movido 1e-6 en el JSON de la 007 da FAIL
+TESTS_OK 6
