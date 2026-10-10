@@ -1,19 +1,20 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-10 10:15 (America/Buenos_Aires)  
-**Estado canónico:** `main` con las respuestas 002 y 003 del 10-oct. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
+**Última actualización:** 2026-10-10 10:40 (America/Buenos_Aires)  
+**Estado canónico:** `main` con las respuestas 002, 003 y 004 del 10-oct. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 
 ## Veredicto operativo
 
-- **Paper, reciprocidad:** la Tabla 7 ya es reproducible (script reconstruido, PR #26 sin merge). El gradiente hacia el motor sobrevive al umbral ≥5. Falta el nulo por circuito y el test de tendencia para que el pivote deje de ser descriptivo.
+- **Paper, reciprocidad:** la Tabla 7 ya es reproducible (script reconstruido, PR #26 sin merge). El gradiente hacia el motor sobrevive al umbral ≥5, y el embudo de salida entero tiene poca vuelta. Falta el nulo por circuito y el test de tendencia para que el pivote deje de ser descriptivo.
 - **H4 fuerte: NO MEDIDA.** La cadena de instrumentos H4 está materializada y auditada, pero no demuestra mapping anatómico ni causalidad. H4 débil queda refutada sólo en su alcance estrecho de poblaciones anotadas.
 
-## Paper y Tabla 7 (respuesta 002)
+## Paper y Tabla 7 (respuestas 002 y 004)
 
 - Script: `tools/table7_reciprocity_by_class.py` en `titan/tabla7-reconstruida-2026-10-10` (commit `1f66456`), PR #26.
 - Con las anotaciones vivas en marzo (`c03ad46`): L3 16/16 exactas y Tabla 7 publicada 8/8. Con el pin `17fc577`: 10/16, por recambio de `root_id` (14 y 18), con 0 cambios de `super_class`.
 - El 8,7% sensory→descending publicado es doble redondeo: 2.104/24.327 = 8,6488%, o sea 8,6.
 - Umbral ≥5: 2.700.513 aristas y 13,98% (igual al ítem 5 del erratum). Tabla 7 con ≥5: intra-sensory 37,5; intra-motor 35,0 (80 aristas); intra-visual centrifugal 23,4; intra-optic 17,1; sensory→central 13,8; sensory→descending 2,8; sensory→motor 1,3; optic→motor sin aristas.
+- Embudo de salida (respuesta 004): 1.485 neuronas (1,07%; descending, motor y endocrine) reciben el 2,37% de los cables, el 61% de lo que llega a las descendentes viene del central, y lo que les llega tiene 13,19 / 9,83 / 3,58% de vuelta contra 26,60% global. Con ≥5, descending→motor: 2 de 1.569 (0,13%). Descriptivo, sin nulo.
 - Espera decisión de Abraham: pasar el ítem 9 y el 8,6 a `docs/ERRATUM.md` y a `docs/PIVOTE-RECIPROCIDAD.md`.
 - Las `results/` de la Tabla 7 están sólo en el commit local `7117e45` de brain-env, que no tiene credencial de push para este repo.
 
@@ -34,7 +35,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham. Medido en `mojo-absol
 
 ## Próximos pasos
 
-1. Nulo por circuito (CP/MS) y test de tendencia sobre la Tabla 7, en brain-env con `src/cp40.py` y el script de la Tabla 7.
+1. Nulo por circuito (CP/MS) y test de tendencia sobre la Tabla 7 y el embudo de salida, en brain-env con `src/cp40.py` y el script de la Tabla 7.
 2. Con eso, la v2 del erratum: ítem 9, el 8,6 y el gradiente bajo umbral. Decide Abraham.
 3. Subir las `results/` de la Tabla 7 por la integración de GitHub o con una credencial propia de este repo.
 4. H4 estacionada: mapping ROI→anatomía y null anatómico pareado recién después de cerrar el paper.
@@ -44,6 +45,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham. Medido en `mojo-absol
 
 - `docs/agents/respuestas/2026-10-10-002-tabla7-reconstruida.md`
 - `docs/agents/respuestas/2026-10-10-003-hacia-donde-vamos-conectoma-y-celulas-liquidas.md`
+- `docs/agents/respuestas/2026-10-10-004-que-hay-al-final-de-cada-cable.md`
 - `docs/auditorias/2026-10-02-004-auditoria-main-final-34-contratos.md`
 - `docs/agents/respuestas/2026-10-02-011-h4-exact-distribution-published.md`
 - `docs/agents/respuestas/2026-10-02-012-h4-trial-generalization.md`
@@ -51,7 +53,8 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham. Medido en `mojo-absol
 
 ## NO MEDIDO
 
-- Nulo por circuito y test de tendencia de la Tabla 7.
+- Nulo por circuito y test de tendencia de la Tabla 7 y del embudo de salida.
+- Signo (excitación o freno) por par de clases.
 - Cruce con la reciprocidad por neuropilo de Lin 2024.
 - Corrida biológica end-to-end post-merge.
 - Mapping anatómico, null anatómico y causalidad.
@@ -59,5 +62,5 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham. Medido en `mojo-absol
 - Review externo del pipeline; silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: ninguna en esta actualización (lectura); la Tabla 7 corrió en brain-env.
-Artefactos: `docs/agents/respuestas/2026-10-10-003-hacia-donde-vamos-conectoma-y-celulas-liquidas.md` + Doc https://app.clickup.com/90171457413/docs/2kza6fw5-20837
+Máquina: brain-env para la Tabla 7 y el embudo; esta actualización es lectura.
+Artefactos: `docs/agents/respuestas/2026-10-10-004-que-hay-al-final-de-cada-cable.md` + Doc https://app.clickup.com/90171457413/docs/2kza6fw5-20857
