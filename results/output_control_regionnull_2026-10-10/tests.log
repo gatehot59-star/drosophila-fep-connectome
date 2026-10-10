@@ -1,0 +1,7 @@
+TEST test_permutador_rapido_conserva_estratos_y_es_uniforme -> conserva clase x estrato en 200 permutaciones; las 6 permutaciones de 3 salen ~1/6 cada una
+TEST test_rapido_coincide_con_formulas_exactas -> media y varianza del permutador rapido == formulas exactas de la 006 (z max 1.15, cociente 0.995)
+TEST test_kmedias_recupera_tres_grupos -> k-medias recupera 3 grupos separados, converge en 2 iteraciones y es determinista
+TEST test_mezcla_y_flag_efectivo -> mezcla = 1 - n_C/N con un estrato y 0 con clases separadas; azar con mezcla < 0,10 pasa a NM
+TEST test_geografia_engana_a_estr_y_no_a_region -> clase que solo esta cerca de O: estr=SOBRE, region=azar; clase que le habla mas que sus vecinas: estr=SOBRE, region=SOBRE
+TEST test_extremo_a_extremo_contra_la_006 -> extremo a extremo: 005 -> 006 -> 007, cruce PASS, R=300 da INCOMPLETO, un D1 movido 1e-6 da FAIL
+TESTS_OK 6
