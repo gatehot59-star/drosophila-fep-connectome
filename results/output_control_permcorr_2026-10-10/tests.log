@@ -1,0 +1,6 @@
+TEST test_holm_contra_la_definicion -> Holm = definicion max_{j<=i} (m - j + 1) p_(j) en 50 casos con empates; BH <= Holm <= Bonferroni
+TEST test_holm_controla_fwer_y_resolucion -> FWER de Holm 0.0488 independientes y 0.0473 correlacionados en 20.000 repeticiones (tope 0,056); con R = 10.000 rechaza en el piso con 250 tests y no con 251
+TEST test_corregir_agrega_holm_y_detecta_lo_plantado -> con perm y con estr el efecto plantado sale SOBRE con max-T, Holm, BH y BY; la clase sin mezcla sale de la familia solo en estr (m = 4 contra 6)
+TEST test_regla_de_firmes_de_la_006 -> SOBRE en los dos umbrales en cualquier conjunto, BAJO en los dos solo en nivel 1, nada sin entrada en los dos
+TEST test_extremo_a_extremo_006_a_009 -> extremo a extremo: 005 -> 006 -> 009, el nulo regenerado da los mismos p y las mismas firmes, R=300 da INCOMPLETO, y un p movido 1e-6 o una linea de firmes tocada en el JSON de la 006 dan FAIL
+TESTS_OK 5
