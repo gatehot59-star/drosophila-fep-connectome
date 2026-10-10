@@ -1,0 +1,6 @@
+TEST test_vectorizado_igual_fuerza_bruta -> vectorizado == fuerza bruta (3 grafos x 2 umbrales, D1 D2 cobertura fila exc domina empates)
+TEST test_matriz_aristas_contra_conteo_directo -> matriz clase x clase == conteo directo, y una arista de mas la pone en rojo
+TEST test_banderas_plantado_y_plano -> nulo plano -> azar x3; plantado -> SOBRE/BAJO/BAJO; NaN -> NA
+TEST test_control_negativo_sin_senal_y_real_con_senal -> plantado clase0->O da SOBRE; con etiquetas permutadas flags=0/3
+TEST test_extremo_a_extremo -> extremo a extremo con parquet y TSV chicos, 2 nodos sin anotar, D1 == fuerza bruta
+TESTS_OK 5
