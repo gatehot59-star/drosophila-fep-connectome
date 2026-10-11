@@ -1,6 +1,6 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-11, madrugada (America/Buenos_Aires), con la respuesta 2026-10-11-007 (robótica: `swarm/` y la idea mejorada).
+**Última actualización:** 2026-10-11, mañana (America/Buenos_Aires), con la respuesta 2026-10-11-008 (el brazo S corrido en el reservorio recurrente, la hipótesis de agosto y la corrección de la 007).
 **Estado canónico:** `main`, con las respuestas del 10 y 11 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** `docs/ERRATUM.md` (9 ítems) con anotaciones pinneadas a `17fc577`. **Zenodo tiene sólo la v1.0** (20-mar): la v2 con el erratum no está depositada.
 
@@ -83,14 +83,21 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
   - sel_post sobrevive a los nulos de topología y de signo (z = +181 y +6,31; 0/40);
   - el efecto temporal global no sobrevive (39 nulos, p = 0,25);
   - la ventaja de tau compleja no se sostiene (p = 0,60).
+- **Brazo S y la hipótesis de agosto (respuesta 008):**
+  - **El brazo S ya había corrido** en sustrato feedforward (23-ago en Kaggle y 2-oct en brain-env, mismos números): W y S indistinguibles en 4/4. El «difieren» de LinScale era una p normal de 0,046; la t de Welch da 0,0646 y la permutación exacta 0,0570. La 007 decía que nunca se corrió: era falso, corregido en la 008 y en el Doc de la 007.
+  - **Hoy corrió en el reservorio recurrente de SparseLTC** (motivo de escape de 26 neuronas, 88 aristas, 0 inhibitorias; ρ = 0,9; τ fija heterogénea en [0,06; 0,18]): RW contra RS empate 4/4, LW contra LS empate 4/4, RW contra RB 0/4. **En tareas genéricas paga la sparsity, no la mosca.** El reservorio fijo es peor que el react denso de agosto en 3/4 (Gated 15,7×).
+  - **Neurona líquida:** A contra F (memoria de DualBrain con τ constante) gana sólo en MultiCue (0,263×, Holm 0,0044) y empata 3; la τ líquida sobre el cableado de la mosca, empate 4/4.
+  - **Tendencia sin firmar:** en MultiCue la mosca tiene 0,42× el error de su shuffle con τ fija y 0,65× con τ líquida (p 0,38 con 10 semillas).
+  - **Hipótesis «conocimiento de existencia»** (Doc del 23-ago; `CONTEXTO-motor.md` §5): aprendizaje mínimo sostenido como anatomía; apagar y prender sostenido como ingeniería (compuerta, 21,85× a 108,11×) y NO MEDIDO en la mosca; «el conocimiento está en el cableado», sin señal funcional en tareas genéricas.
+  - Corrida: run de Actions `38143998992`, 37/37; resultado crudo en `results/brazo_s_recurrente_2026-10-11/` de la rama `titan/brazo-s-recurrente-2026-10-11` (`9473852`), sin PR.
 - **Siguen NO MEDIDOS:** SparseLTC→DBC3 sobre señal biológica, mapping ROI→FlyWire, null anatómico pareado y silenciamiento causal.
 - **Robótica (respuesta 007):**
   - `swarm/` es el único robot de los repos y **no sale del conectoma**: 34 neuronas y 83 sinapsis escritas a mano con nombres de regiones de la mosca.
   - Con física de cuadricóptero X estándar, **el escape visual va hacia la amenaza en las 4 direcciones** (108/108 en la sensibilidad). Leer los motores con reflexión FL↔BR, FR↔BL lo da vuelta: 4/4 y 108/108 hacia afuera. Instrumento válido: reflejo físico 4/4 ALEJA y red nula 4/4 NEUTRO.
   - El test de `swarm/` no puede dar rojo (con los pesos en cero sale con 0) y la auditoría de `gen_swarm.py` devuelve `PASS` fijo con topologías mutadas.
   - Instrumento: `tools/swarm_lazo_cerrado.py` en la rama `titan/swarm-lazo-cerrado-2026-10-11`, sin PR.
-  - **Idea mejorada (BEEC v2):** compilador de motivos certificados contra el nulo, interfaz por descendentes, cordón sintético con lazo de actitud, y entrenables sólo la compuerta, la memoria DBC3 y el readout. El falsador es el brazo S.
-  - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo.
+  - **Idea mejorada (BEEC v2):** compilador de motivos certificados contra el nulo, interfaz por descendentes, cordón sintético con lazo de actitud, y entrenables sólo la compuerta, la memoria DBC3 y el readout. El falsador es el brazo S: en tareas genéricas ya empató (008); falta en la función propia del motivo.
+  - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo. Sus §1, §4 y §6.2 (el brazo W «nunca testeó» la hipótesis y el diseño W/S) quedan superados por la 008.
   - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica.
 
 ## Próximos pasos
@@ -110,10 +117,12 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 4. **Abiertos para la v2:** NPC por sinapsis o null combinado de grado y neuropilo; ventana y tau de sel_post; Lin región por región; Betzel arista por arista; fila AN y décima clase de la Tabla 5.
 5. **La 007:** con R = 10.000 para Holm; D2 con el nulo de región.
 6. H4 estacionada.
-7. **Robótica (respuesta 007 del 11-oct), en este orden:** arreglar el dron (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere); primer motivo real, GF-01 → descendentes → dron; el brazo S, que no comparte archivos con lo anterior y puede correr en paralelo; edge en ESP32.
+7. **Robótica (respuesta 007 del 11-oct), en este orden:** arreglar el dron (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere); primer motivo real, GF-01 → descendentes → dron; el brazo S en la función propia del motivo (looming → escape en lazo cerrado), porque en tareas genéricas ya empató (008); edge en ESP32.
+8. **Brazo S (respuesta 008):** MultiCue con 50 semillas para decidir la tendencia 0,42×; un S que conserve Dale por neurona en motivos con inhibición; reescribir `CONTEXTO-motor.md`; PR de la rama y review.
 
 ## Fuentes
 
+- `docs/agents/respuestas/2026-10-11-008-el-brazo-s-ya-habia-corrido-y-en-el-reservorio-recurrente-paga-la-sparsity-no-la-mosca.md`
 - `docs/agents/respuestas/2026-10-11-007-mosca-a-robot-idea-mejorada-y-el-dron-que-escapa-hacia-la-amenaza.md`
 - `docs/agents/respuestas/2026-10-11-006-traspaso-tecnico-del-conectoma.md`
 - `docs/agents/respuestas/2026-10-11-004-el-repo-del-conectoma-de-punta-a-punta.md`
@@ -140,9 +149,10 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - El cruce con Lin 2024.
 - 57 archivos de main y 73 rutas de ramas sin leer en la 004.
 - Mapping anatómico, null anatómico pareado, causalidad y equivalencia SparseLTC→DBC3 sobre señal real.
-- Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, el brazo S y cualquier medición fuera de distribución.
+- Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, el brazo S en la función propia del motivo y cualquier medición fuera de distribución.
+- Brazo S (008): MultiCue con más semillas; un S que conserve Dale por neurona (este motivo no tiene aristas inhibitorias); SparseLTC completo como reservorio; la τ propia de DBC3 (el brazo F mide la `LiquidCell` de DualBrain); F con los mismos parámetros que A.
 - Review externo del pipeline. Silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: sandbox de ClickUp para el instrumento de `swarm/` (007); brain-env para la Tabla 7, las salidas, los nulos, la 003 y el inventario de ramas.
-Artefactos: `docs/agents/respuestas/2026-10-11-007-mosca-a-robot-idea-mejorada-y-el-dron-que-escapa-hacia-la-amenaza.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21097
+Máquina: Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007); brain-env para la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas y el motivo de la 008.
+Artefactos: `docs/agents/respuestas/2026-10-11-008-el-brazo-s-ya-habia-corrido-y-en-el-reservorio-recurrente-paga-la-sparsity-no-la-mosca.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21117
