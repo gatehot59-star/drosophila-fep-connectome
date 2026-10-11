@@ -1,0 +1,34 @@
+# {"cpu": "Intel(R) Celeron(R) N4020 CPU @ 1.10GHz", "fecha_utc": "2026-10-11T20:17:59Z", "iters": 40, "lr": 0.05, "maquina": "Linux-4.19.0-27-amd64-x86_64-with-glibc2.41", "md5_brazo_s": "f8b10037e70dfe897ff2d841077419b4", "md5_dificil": "2c95e63b6ad3ff590057df80368134d7", "md5_escape": "9720998291e3f08c6082e6c67d142759", "md5_lados": "e5c19419d586850690ade3e8bbc5b315", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_script": "0bb3f8f4a9b0fd0f7d74d102d8922d1b", "numpy": "2.5.3", "pares": 8, "python": "3.12.14", "semilla_ruido_entrenamiento": 20261013, "semilla_ruido_prueba": 20261014, "semillas": 4, "sigma": 0.1}
+ENSAYOS entrenamiento looming=240 no_looming=40 | prueba looming=480 no_looming=80
+CONTROL_PRUEBA C+L supervivencia=0.8125 rechazo=1.0000 comb=0.9062
+CONTROL_PRUEBA C+6 supervivencia=0.7854 rechazo=0.0000 comb=0.3927
+CONTROL_PRUEBA C0 supervivencia=0.0000 rechazo=1.0000 comb=0.5000
+CHEQUEO INSTRUMENTO VALIDO
+GUARDA punto_de_partida_igual=True seg_por_evaluacion=0.076
+REFERENCIA_PRUEBA FIJA_HET supervivencia=0.6604 rechazo=0.9875 comb=0.8240
+REFERENCIA_PRUEBA LIQUIDA_CONGELADA supervivencia=0.5708 rechazo=1.0000 comb=0.7854
+CORRIDA brazo=FIJA_ENT semilla=0 comb_entrenamiento=0.8750 (inicio 0.6750, iter 40) comb_prueba=0.8396 supervivencia=0.6792 rechazo=1.0000 norma_v=0.000 evaluaciones=681 seg=53
+CORRIDA brazo=LIQ_DIAG semilla=0 comb_entrenamiento=0.9854 (inicio 0.6750, iter 40) comb_prueba=0.9521 supervivencia=0.9167 rechazo=0.9875 norma_v=3.383 evaluaciones=681 seg=115
+CORRIDA brazo=LIQ_PLENA semilla=0 comb_entrenamiento=0.9938 (inicio 0.6750, iter 40) comb_prueba=0.9802 supervivencia=0.9604 rechazo=1.0000 norma_v=13.010 evaluaciones=681 seg=185
+CORRIDA brazo=FIJA_ENT semilla=1 comb_entrenamiento=0.8792 (inicio 0.6750, iter 36) comb_prueba=0.8135 supervivencia=0.6271 rechazo=1.0000 norma_v=0.000 evaluaciones=681 seg=238
+CORRIDA brazo=LIQ_DIAG semilla=1 comb_entrenamiento=0.9771 (inicio 0.6750, iter 36) comb_prueba=0.9146 supervivencia=0.8417 rechazo=0.9875 norma_v=3.188 evaluaciones=681 seg=302
+CORRIDA brazo=LIQ_PLENA semilla=1 comb_entrenamiento=0.9979 (inicio 0.6750, iter 37) comb_prueba=0.9844 supervivencia=0.9688 rechazo=1.0000 norma_v=12.662 evaluaciones=681 seg=372
+CORRIDA brazo=FIJA_ENT semilla=2 comb_entrenamiento=0.8750 (inicio 0.6750, iter 40) comb_prueba=0.8365 supervivencia=0.6729 rechazo=1.0000 norma_v=0.000 evaluaciones=681 seg=426
+CORRIDA brazo=LIQ_DIAG semilla=2 comb_entrenamiento=0.9563 (inicio 0.6750, iter 38) comb_prueba=0.9125 supervivencia=0.8250 rechazo=1.0000 norma_v=2.865 evaluaciones=681 seg=489
+CORRIDA brazo=LIQ_PLENA semilla=2 comb_entrenamiento=0.9979 (inicio 0.6750, iter 39) comb_prueba=0.9812 supervivencia=0.9750 rechazo=0.9875 norma_v=12.890 evaluaciones=681 seg=561
+CORRIDA brazo=FIJA_ENT semilla=3 comb_entrenamiento=0.8708 (inicio 0.6750, iter 38) comb_prueba=0.8156 supervivencia=0.6312 rechazo=1.0000 norma_v=0.000 evaluaciones=681 seg=614
+CORRIDA brazo=LIQ_DIAG semilla=3 comb_entrenamiento=0.9688 (inicio 0.6750, iter 40) comb_prueba=0.9073 supervivencia=0.8396 rechazo=0.9750 norma_v=3.400 evaluaciones=681 seg=678
+CORRIDA brazo=LIQ_PLENA semilla=3 comb_entrenamiento=0.9979 (inicio 0.6750, iter 39) comb_prueba=0.9844 supervivencia=0.9688 rechazo=1.0000 norma_v=12.766 evaluaciones=681 seg=750
+RESUMEN brazo=FIJA_ENT comb_prueba_media=0.8263 min=0.8135 max=0.8396
+RESUMEN brazo=LIQ_DIAG comb_prueba_media=0.9216 min=0.9073 max=0.9521
+RESUMEN brazo=LIQ_PLENA comb_prueba_media=0.9826 min=0.9802 max=0.9844
+CONTRASTE E1_LIQ_DIAG_vs_FIJA_ENT acierto_A=0.8746 acierto_B=0.7022 solo_A=393 solo_B=7 p_mcnemar=2.431e-106 -> MEJOR
+CONTRASTE E2_LIQ_PLENA_vs_FIJA_ENT acierto_A=0.9723 acierto_B=0.7022 solo_A=608 solo_B=3 p_mcnemar=8.947e-177 -> MEJOR
+CONTRASTE E3_FIJA_ENT_vs_FIJA_HET acierto_A=0.7022 acierto_B=0.7071 solo_A=271 solo_B=282 p_mcnemar=0.6707 -> IGUAL
+SEMILLAS LIQ_DIAG gana_a_FIJA_ENT_en=4/4
+SEMILLAS LIQ_PLENA gana_a_FIJA_ENT_en=4/4
+VEREDICTO_LIQUIDA_ENTRENADA=LA LIQUIDA ENTRENADA PAGA
+VEREDICTO_ENTRENAR_TAU=ENTRENAR LA TAU FIJA NO SE DISTINGUE DE NO ENTRENARLA
+escrito resultados.json md5=bb49ec3b6c073b707f68e8d715a75b93
+minutos=12.50
+EXIT_RUN=0
