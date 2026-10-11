@@ -1,6 +1,6 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-11, mediodía (America/Buenos_Aires), con la respuesta 2026-10-11-010 (el brazo S en la función propia del motivo: escape a lazo cerrado). La 009 (qué reemplaza a la neurona líquida) no cambió el estado.
+**Última actualización:** 2026-10-11, tarde (America/Buenos_Aires), con la respuesta 2026-10-11-011 (el escape fuera del techo). La 009 (qué reemplaza a la neurona líquida) no cambió el estado.
 **Estado canónico:** `main`, con las respuestas del 10 y 11 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** `docs/ERRATUM.md` (9 ítems) con anotaciones pinneadas a `17fc577`. **Zenodo tiene sólo la v1.0** (20-mar): la v2 con el erratum no está depositada.
 
@@ -88,24 +88,29 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
   - **Hoy corrió en el reservorio recurrente de SparseLTC** (motivo de escape de 26 neuronas, 88 aristas, 0 inhibitorias; ρ = 0,9; τ fija heterogénea en [0,06; 0,18]): RW contra RS empate 4/4, LW contra LS empate 4/4, RW contra RB 0/4. **En tareas genéricas paga la sparsity, no la mosca.** El reservorio fijo es peor que el react denso de agosto en 3/4 (Gated 15,7×).
   - **Neurona líquida:** A contra F (memoria de DualBrain con τ constante) gana sólo en MultiCue (0,263×, Holm 0,0044) y empata 3; la τ líquida sobre el cableado de la mosca, empate 4/4.
   - **Tendencia sin firmar:** en MultiCue la mosca tiene 0,42× el error de su shuffle con τ fija y 0,65× con τ líquida (p 0,38 con 10 semillas).
-  - **Hipótesis «conocimiento de existencia»** (Doc del 23-ago; `CONTEXTO-motor.md` §5): aprendizaje mínimo sostenido como anatomía; apagar y prender sostenido como ingeniería (compuerta, 21,85× a 108,11×) y NO MEDIDO en la mosca; «el conocimiento está en el cableado», sin señal funcional en tareas genéricas y **sostenido en su función como lateralidad (010)**.
+  - **Hipótesis «conocimiento de existencia»** (Doc del 23-ago; `CONTEXTO-motor.md` §5): aprendizaje mínimo sostenido como anatomía; apagar y prender sostenido como ingeniería (compuerta, 21,85× a 108,11×) y NO MEDIDO en la mosca; «el conocimiento está en el cableado», sin señal funcional en tareas genéricas y **sostenido en su función: como lateralidad en la 010 y, fuera del techo, también como cableado fino (011)**.
   - Corrida: run de Actions `38143998992`, 37/37; resultado crudo en `results/brazo_s_recurrente_2026-10-11/` de la rama `titan/brazo-s-recurrente-2026-10-11` (`9473852`), sin PR.
 - **Escape a lazo cerrado, el brazo S en la función propia del motivo (respuesta 010):**
   - El mismo motivo, sin entrenar, con looming por sus visuales (cada una por el ojo de su lado) y lectura sólo por los dos GF. **Las 88 aristas del motivo son ipsilaterales.**
   - **W contra S:** acierto 180/180 contra 0,5102 (7/200, p = 0,0398); supervivencia 180/180 contra 0,6605 (6/200, p = 0,0348). La mosca gana, por poco.
-  - **W contra SL** (shuffle de grado exacto que conserva el lado): 0,9806 y 0,9983 (149 y 161 de 200 en el 100%): **empate. Paga la lateralidad, no el cableado fino.** El reflejo escrito a mano también saca 1,0/1,0.
-  - **τ:** W saca 180/180 con τ fija heterogénea, uniforme, líquida y con el brazo lineal. La líquida no hace falta para escapar; si ayuda en algo más difícil, NO MEDIDO (techo).
-  - Contra ruido congelado denso: supervivencia gana (p = 0,0448), acierto no (p = 0,0647).
-  - Instrumento: `tools/escape_motivo/` en `titan/escape-motivo-2026-10-11` (pre-registro `445646a`, resultados `4afb8f9`), brain-env, 5,18 min, sin PR.
+  - **W contra SL** (shuffle de grado exacto que conserva el lado): 0,9806 y 0,9983 (149 y 161 de 200 en el 100%): **empate. Paga la lateralidad.** El reflejo escrito a mano también saca 1,0/1,0.
+  - **τ:** W saca 180/180 con τ fija heterogénea, uniforme, líquida y con el brazo lineal: todo en el techo.
+  - Instrumento: `tools/escape_motivo/escape_motivo.py` en `titan/escape-motivo-2026-10-11` (pre-registro `445646a`, resultados `4afb8f9`), brain-env, 5,18 min, sin PR.
+- **Escape fuera del techo (respuesta 011):**
+  - Disparo por umbral calibrado con sólo ruido, escape balístico, amenazas a ±10° a ±90° con ruido 0,1 y 0,3 (480 ensayos) y un objeto que gira sin acercarse (80 ensayos, lo correcto es no disparar).
+  - **Puntaje (supervivencia + rechazo) / 2:** W 0,8177 contra SL 0,6819 (6/200, p = 0,0348), S 0,5973 (p = 0,0100) y B 0,4023 (p = 0,0050). **Paga el cableado fino**: la mosca hace las dos cosas a la vez (80/80 de rechazo y 0,6354 de supervivencia); por separado no le gana a SL (p 0,21 y 0,22).
+  - **τ líquida congelada: peor.** En W, 0,5604 contra 0,6354 (1 contra 37, McNemar p < 0,0001); en 187 de 199 redes S y 186 de 199 SL. La τ uniforme 0,119 también pierde (0,5437; 6 contra 50). **Paga la τ fija heterogénea.** El lineal gana por poco (0,6500; 7 contra 0).
+  - **Letra chica:** el reflejo escrito a mano sin LC6 le gana a la mosca (0,9167; latencia 10 contra 14). El modelo de entrada se eligió para que LC6→GF importe (declarado).
+  - Instrumento: `tools/escape_motivo/escape_dificil.py` (md5 sellado en `e030e19`, resultados en `7163c15`), brain-env, 7,16 min, sin PR.
 - **Siguen NO MEDIDOS:** SparseLTC→DBC3 sobre señal biológica, mapping ROI→FlyWire, null anatómico pareado y silenciamiento causal.
 - **Robótica (respuesta 007):**
   - `swarm/` es el único robot de los repos y **no sale del conectoma**: 34 neuronas y 83 sinapsis escritas a mano con nombres de regiones de la mosca.
   - Con física de cuadricóptero X estándar, **el escape visual va hacia la amenaza en las 4 direcciones** (108/108 en la sensibilidad). Leer los motores con reflexión FL↔BR, FR↔BL lo da vuelta: 4/4 y 108/108 hacia afuera. Instrumento válido: reflejo físico 4/4 ALEJA y red nula 4/4 NEUTRO.
   - El test de `swarm/` no puede dar rojo (con los pesos en cero sale con 0) y la auditoría de `gen_swarm.py` devuelve `PASS` fijo con topologías mutadas.
   - Instrumento: `tools/swarm_lazo_cerrado.py` en la rama `titan/swarm-lazo-cerrado-2026-10-11`, sin PR.
-  - **Idea mejorada (BEEC v2):** compilador de motivos certificados contra el nulo, interfaz por descendentes, cordón sintético con lazo de actitud, y entrenables sólo la compuerta, la memoria DBC3 y el readout. El falsador es el brazo S: en tareas genéricas empató (008); en la función propia del motivo gana por lateralidad y empata con el shuffle por lado (010).
-  - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo. Sus §1, §4 y §6.2 (el brazo W «nunca testeó» la hipótesis y el diseño W/S) quedan superados por la 008 y la 010.
-  - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica.
+  - **Idea mejorada (BEEC v2):** compilador de motivos certificados contra el nulo, interfaz por descendentes, cordón sintético con lazo de actitud, y entrenables sólo la compuerta, la memoria DBC3 y el readout. El falsador es el brazo S: en tareas genéricas empató (008); en la función propia gana por lateralidad (010) y, fuera del techo, también por cableado fino (011).
+  - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo. Sus §1, §4 y §6.2 (el brazo W «nunca testeó» la hipótesis y el diseño W/S) quedan superados por la 008, la 010 y la 011.
+  - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica; **en L2, τ fija heterogénea en vez de uniforme (011)**.
 
 ## Próximos pasos
 
@@ -124,11 +129,12 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 4. **Abiertos para la v2:** NPC por sinapsis o null combinado de grado y neuropilo; ventana y tau de sel_post; Lin región por región; Betzel arista por arista; fila AN y décima clase de la Tabla 5.
 5. **La 007:** con R = 10.000 para Holm; D2 con el nulo de región.
 6. H4 estacionada.
-7. **Robótica (respuesta 007 del 11-oct), en este orden:** arreglar el dron (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere); primer motivo real, GF-01 → descendentes → dron; una versión del escape fuera del techo (010: amenazas más rápidas y frontales, más ruido y un estímulo que no sea looming), para separar W de SL y τ fija de líquida; edge en ESP32.
-8. **Brazo S (respuestas 008 y 010):** MultiCue con 50 semillas para decidir la tendencia 0,42×; un S que conserve Dale por neurona en motivos con inhibición; reescribir `CONTEXTO-motor.md`; PR de `titan/brazo-s-recurrente-2026-10-11`, `titan/swarm-lazo-cerrado-2026-10-11` y `titan/escape-motivo-2026-10-11`, y review.
+7. **Robótica (respuesta 007 del 11-oct), en este orden:** arreglar el dron (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere); primer motivo real, GF-01 → descendentes → dron; en el escape difícil (011), τ líquida **entrenada** contra τ fija heterogénea, y el mismo escape con LC6 que también exija expansión, para ver si la ventaja sobre SL depende del modelo de entrada; edge en ESP32.
+8. **Brazo S (respuestas 008, 010 y 011):** MultiCue con 50 semillas para decidir la tendencia 0,42×; un S que conserve Dale por neurona en motivos con inhibición; reescribir `CONTEXTO-motor.md`; PR de `titan/brazo-s-recurrente-2026-10-11`, `titan/swarm-lazo-cerrado-2026-10-11` y `titan/escape-motivo-2026-10-11`, y review.
 
 ## Fuentes
 
+- `docs/agents/respuestas/2026-10-11-011-escape-dificil-paga-el-cableado-fino-y-la-liquida-empeora.md`
 - `docs/agents/respuestas/2026-10-11-010-escape-en-lazo-cerrado-la-mosca-gana-a-su-shuffle-por-lateralidad.md`
 - `docs/agents/respuestas/2026-10-11-009-en-lugar-de-la-neurona-liquida-tasa-con-fuga-y-tau-fija.md`
 - `docs/agents/respuestas/2026-10-11-008-el-brazo-s-ya-habia-corrido-y-en-el-reservorio-recurrente-paga-la-sparsity-no-la-mosca.md`
@@ -158,11 +164,11 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - El cruce con Lin 2024.
 - 57 archivos de main y 73 rutas de ramas sin leer en la 004.
 - Mapping anatómico, null anatómico pareado, causalidad y equivalencia SparseLTC→DBC3 sobre señal real.
-- Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, el escape fuera del techo, la lectura por DNp09 y cualquier medición fuera de distribución.
+- Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, la lectura por DNp09 y cualquier medición fuera de distribución.
 - Brazo S (008): MultiCue con más semillas; un S que conserve Dale por neurona (este motivo no tiene aristas inhibitorias); SparseLTC completo como reservorio; la τ propia de DBC3 (el brazo F mide la `LiquidCell` de DualBrain); F con los mismos parámetros que A.
-- Escape (010): si la τ líquida ayuda en una versión más difícil; reproducción en una segunda máquina; el modelo de entrada es de literatura, no medido.
+- Escape (010 y 011): τ líquida entrenada; la ventaja sobre SL con otro modelo de entrada; reproducción en una segunda máquina; el modelo de entrada es de literatura, no medido.
 - Review externo del pipeline. Silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: brain-env para el escape (010), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas y el motivo de la 008; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007) y para escribir los scripts del 010.
-Artefactos: `docs/agents/respuestas/2026-10-11-010-escape-en-lazo-cerrado-la-mosca-gana-a-su-shuffle-por-lateralidad.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21157
+Máquina: brain-env para el escape (010 y 011), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas y el motivo de la 008; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007) y para escribir los scripts del 010 y el 011.
+Artefactos: `docs/agents/respuestas/2026-10-11-011-escape-dificil-paga-el-cableado-fino-y-la-liquida-empeora.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21177
