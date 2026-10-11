@@ -1,0 +1,284 @@
+{
+ "fuente": {
+  "md5_annot": "719904abad876c68ace1b5690c9b9b63",
+  "annot_sha": "17fc57722002e1a7d38cdd0c89ac382bf92718da",
+  "md5_motivo": "eb6e53e047c864a46c56bf38b397d289",
+  "columna": "side"
+ },
+ "neuronas": [
+  {
+   "indice": 0,
+   "root_id": 720575940611134833,
+   "tipo_motivo": "LC4",
+   "cell_type": "LC4",
+   "hemibrain_type": "LC4",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 1,
+   "root_id": 720575940625932421,
+   "tipo_motivo": "LC4",
+   "cell_type": "LC4",
+   "hemibrain_type": "LC4",
+   "side": "right",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 2,
+   "root_id": 720575940610522009,
+   "tipo_motivo": "LC4",
+   "cell_type": "LC4",
+   "hemibrain_type": "LC4",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 3,
+   "root_id": 720575940615575007,
+   "tipo_motivo": "LC4",
+   "cell_type": "LC4",
+   "hemibrain_type": "LC4",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 4,
+   "root_id": 720575940631338271,
+   "tipo_motivo": "LC4",
+   "cell_type": "LC4",
+   "hemibrain_type": "LC4",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 5,
+   "root_id": 720575940612518055,
+   "tipo_motivo": "LC4",
+   "cell_type": "LC4",
+   "hemibrain_type": "LC4",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 6,
+   "root_id": 720575940616713355,
+   "tipo_motivo": "LC4",
+   "cell_type": "LC4",
+   "hemibrain_type": "LC4",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 7,
+   "root_id": 720575940617026260,
+   "tipo_motivo": "LC4",
+   "cell_type": "LC4",
+   "hemibrain_type": "LC4",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 8,
+   "root_id": 720575940624903064,
+   "tipo_motivo": "LPLC2",
+   "cell_type": "LPLC2",
+   "hemibrain_type": "LPLC2",
+   "side": "right",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 9,
+   "root_id": 720575940622009284,
+   "tipo_motivo": "LPLC2",
+   "cell_type": "LPLC2",
+   "hemibrain_type": "LPLC2",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 10,
+   "root_id": 720575940627902979,
+   "tipo_motivo": "LPLC2",
+   "cell_type": "LPLC2",
+   "hemibrain_type": "LPLC2",
+   "side": "right",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 11,
+   "root_id": 720575940635234478,
+   "tipo_motivo": "LPLC2",
+   "cell_type": "LPLC2",
+   "hemibrain_type": "LPLC2",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 12,
+   "root_id": 720575940639177449,
+   "tipo_motivo": "LPLC2",
+   "cell_type": "LPLC2",
+   "hemibrain_type": "LPLC2",
+   "side": "right",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 13,
+   "root_id": 720575940613804906,
+   "tipo_motivo": "LPLC2",
+   "cell_type": "LPLC2",
+   "hemibrain_type": "LPLC2",
+   "side": "right",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 14,
+   "root_id": 720575940615920453,
+   "tipo_motivo": "LPLC2",
+   "cell_type": "LPLC2",
+   "hemibrain_type": "LPLC2",
+   "side": "right",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 15,
+   "root_id": 720575940628603842,
+   "tipo_motivo": "LPLC2",
+   "cell_type": "LPLC2",
+   "hemibrain_type": "LPLC2",
+   "side": "right",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 16,
+   "root_id": 720575940631115368,
+   "tipo_motivo": "LC6",
+   "cell_type": "LC6",
+   "hemibrain_type": "LC6",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 17,
+   "root_id": 720575940615123250,
+   "tipo_motivo": "LC6",
+   "cell_type": "LC6",
+   "hemibrain_type": "LC6",
+   "side": "left",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 18,
+   "root_id": 720575940614636661,
+   "tipo_motivo": "LC6",
+   "cell_type": "LC6",
+   "hemibrain_type": "LC6",
+   "side": "right",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 19,
+   "root_id": 720575940623683018,
+   "tipo_motivo": "LC6",
+   "cell_type": "LC6",
+   "hemibrain_type": "LC6",
+   "side": "right",
+   "super_class": "visual_projection",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 20,
+   "root_id": 720575940622838154,
+   "tipo_motivo": "GF",
+   "cell_type": "DNp01",
+   "hemibrain_type": "Giant Fiber",
+   "side": "left",
+   "super_class": "descending",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 21,
+   "root_id": 720575940632499757,
+   "tipo_motivo": "GF",
+   "cell_type": "DNp01",
+   "hemibrain_type": "Giant Fiber",
+   "side": "right",
+   "super_class": "descending",
+   "top_nt": "glutamate"
+  },
+  {
+   "indice": 22,
+   "root_id": 720575940625673196,
+   "tipo_motivo": "DNp09",
+   "cell_type": "DNp71",
+   "hemibrain_type": "DNp09",
+   "side": "left",
+   "super_class": "descending",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 23,
+   "root_id": 720575940633095137,
+   "tipo_motivo": "DNp09",
+   "cell_type": "DNp71",
+   "hemibrain_type": "DNp09",
+   "side": "right",
+   "super_class": "descending",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 24,
+   "root_id": 720575940635872101,
+   "tipo_motivo": "DNp09",
+   "cell_type": "DNp09",
+   "hemibrain_type": "DNp09",
+   "side": "left",
+   "super_class": "descending",
+   "top_nt": "acetylcholine"
+  },
+  {
+   "indice": 25,
+   "root_id": 720575940627652358,
+   "tipo_motivo": "DNp09",
+   "cell_type": "DNp09",
+   "hemibrain_type": "DNp09",
+   "side": "right",
+   "super_class": "descending",
+   "top_nt": "acetylcholine"
+  }
+ ],
+ "conteo": {
+  "LC4_left": 7,
+  "LC4_right": 1,
+  "LPLC2_right": 6,
+  "LPLC2_left": 2,
+  "LC6_left": 2,
+  "LC6_right": 2,
+  "GF_left": 1,
+  "GF_right": 1,
+  "DNp09_left": 2,
+  "DNp09_right": 2
+ },
+ "aristas_cruzadas": [],
+ "fallas": []
+}
