@@ -1,0 +1,12 @@
+$ python3 tools/escape_motivo/escape_motivo.py --motivo tools/brazo_s/motivo26.json --lados tools/escape_motivo/lados26.json --brazo-s tools/brazo_s/brazo_s_recurrente.py --k 3 --out-dir /workspace/escape/humo --solo-controles
+# {"cpu": "Intel(R) Celeron(R) N4020 CPU @ 1.10GHz", "fecha_utc": "2026-10-11T15:17:18Z", "fisica": {"R_obj": 1.0, "T": 60, "az_grados": [-90, -60, -30, 30, 60, 90], "d0": 10.0, "eps": 0.001, "k_lc4": 0.02, "r_robot": 0.5, "reps": 10, "ruido": 0.05, "semilla_ruido": 20261011, "v_robot": 0.1, "velocidades": [0.2, 0.25, 0.3333333333333333]}, "k": 3, "maquina": "Linux-4.19.0-27-amd64-x86_64-with-glibc2.41", "md5_brazo_s": "f8b10037e70dfe897ff2d841077419b4", "md5_lados": "e5c19419d586850690ade3e8bbc5b315", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_script": "9720998291e3f08c6082e6c67d142759", "numpy": "2.5.3", "python": "3.12.14"}
+LATERALIDAD aristas=88 ipsilaterales=88 cruzadas=0 GF_izq=20 GF_der=21 visuales_izq=11 visuales_der=9
+ENSAYOS n=180 (az0 x v x reps) T=60
+CONTROL C+ acierto=1.0000 supervivencia=1.0000 lado_ok_cerrado=1.0000 latencia_mediana=2.0
+CONTROL C0 acierto=0.0000 supervivencia=0.0000 lado_ok_cerrado=0.0000 latencia_mediana=-1.0
+REFERENCIA politica=SIEMPRE_IZQ (ciega al lado, desde t=0) supervivencia=0.7222
+REFERENCIA politica=SIEMPRE_DER (ciega al lado, desde t=0) supervivencia=0.7222
+CHEQUEO INSTRUMENTO VALIDO
+SOLO_CONTROLES: el sujeto no se corrio
+EXIT_RUN=0
+EXIT=0

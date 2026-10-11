@@ -1,0 +1,33 @@
+$ python3 tools/escape_motivo/lados26.py --annot /workspace/annotations.tsv --motivo tools/brazo_s/motivo26.json --out tools/escape_motivo/lados26.json
+annot md5=719904abad876c68ace1b5690c9b9b63  pin=719904abad876c68ace1b5690c9b9b63  OK
+neurona  0 LC4    LC4    lado=left  nt=acetylcholine root_id=720575940611134833
+neurona  1 LC4    LC4    lado=right nt=acetylcholine root_id=720575940625932421
+neurona  2 LC4    LC4    lado=left  nt=acetylcholine root_id=720575940610522009
+neurona  3 LC4    LC4    lado=left  nt=acetylcholine root_id=720575940615575007
+neurona  4 LC4    LC4    lado=left  nt=acetylcholine root_id=720575940631338271
+neurona  5 LC4    LC4    lado=left  nt=acetylcholine root_id=720575940612518055
+neurona  6 LC4    LC4    lado=left  nt=acetylcholine root_id=720575940616713355
+neurona  7 LC4    LC4    lado=left  nt=acetylcholine root_id=720575940617026260
+neurona  8 LPLC2  LPLC2  lado=right nt=acetylcholine root_id=720575940624903064
+neurona  9 LPLC2  LPLC2  lado=left  nt=acetylcholine root_id=720575940622009284
+neurona 10 LPLC2  LPLC2  lado=right nt=acetylcholine root_id=720575940627902979
+neurona 11 LPLC2  LPLC2  lado=left  nt=acetylcholine root_id=720575940635234478
+neurona 12 LPLC2  LPLC2  lado=right nt=acetylcholine root_id=720575940639177449
+neurona 13 LPLC2  LPLC2  lado=right nt=acetylcholine root_id=720575940613804906
+neurona 14 LPLC2  LPLC2  lado=right nt=acetylcholine root_id=720575940615920453
+neurona 15 LPLC2  LPLC2  lado=right nt=acetylcholine root_id=720575940628603842
+neurona 16 LC6    LC6    lado=left  nt=acetylcholine root_id=720575940631115368
+neurona 17 LC6    LC6    lado=left  nt=acetylcholine root_id=720575940615123250
+neurona 18 LC6    LC6    lado=right nt=acetylcholine root_id=720575940614636661
+neurona 19 LC6    LC6    lado=right nt=acetylcholine root_id=720575940623683018
+neurona 20 GF     DNp01  lado=left  nt=acetylcholine root_id=720575940622838154
+neurona 21 GF     DNp01  lado=right nt=glutamate root_id=720575940632499757
+neurona 22 DNp09  DNp71  lado=left  nt=acetylcholine root_id=720575940625673196
+neurona 23 DNp09  DNp71  lado=right nt=acetylcholine root_id=720575940633095137
+neurona 24 DNp09  DNp09  lado=left  nt=acetylcholine root_id=720575940635872101
+neurona 25 DNp09  DNp09  lado=right nt=acetylcholine root_id=720575940627652358
+conteo por tipo y lado={"DNp09_left": 2, "DNp09_right": 2, "GF_left": 1, "GF_right": 1, "LC4_left": 7, "LC4_right": 1, "LC6_left": 2, "LC6_right": 2, "LPLC2_left": 2, "LPLC2_right": 6}
+aristas del motivo=88 ipsilaterales=88 cruzadas=0
+escrito /workspace/escape/repo/tools/escape_motivo/lados26.json md5=e5c19419d586850690ade3e8bbc5b315
+VEREDICTO_LADOS=OK
+EXIT=0
