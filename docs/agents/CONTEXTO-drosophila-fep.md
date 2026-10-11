@@ -1,87 +1,136 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-10, tarde (America/Buenos_Aires), con la respuesta 009  
-**Estado canónico:** `main` con las respuestas 002 a 009 del 10-oct. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
+**Última actualización:** 2026-10-11, madrugada (America/Buenos_Aires), con la respuesta 2026-10-11-004.
+**Estado canónico:** `main`, con las respuestas del 10 y 11 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
+**Base vigente del paper:** `docs/ERRATUM.md` (9 ítems) con anotaciones pinneadas a `17fc577`. **Zenodo tiene sólo la v1.0** (20-mar): la v2 con el erratum no está depositada.
+
+## Mapa del repo (respuesta 2026-10-11-004)
+
+- main tiene 180 archivos. Fuera de main hay 273 rutas en 28 ramas.
+- **El expediente de agosto vive en ramas sin mergear:** las respuestas 063 a 124, 47 evidencias y unos 44 scripts. Lo esencial está en `titan/twohop-nulls`, contenida en `titan/auditoria-hipotesis-2026-10-01`, contenida en `titan/materializacion-h4-guard-2026-10-02`. Incluye:
+  - el null anatómico;
+  - LC6→GF;
+  - sel_post;
+  - los 39 nulos en GPU y el test global;
+  - la auditoría de Tao;
+  - Betzel.
+- **Otras ramas con contenido propio:**
+  - `titan/auditoria-integra-2026-08-25`: disputa del DOI y scripts de nulos;
+  - `titan/initial-release`: manifest y logs de nulos;
+  - `titan/paso-1-identidad-roi-2026-10-03`: H4 ROI.
+- **Abiertos en GitHub:**
+  - PR #1, #2, #3, #12, #25 y #26;
+  - issues #4, #5 y #13 a #15.
+- **`docs/SECCION-V2-DOS-SALTOS.md` de main es la versión anterior al null anatómico** (323× contra el null de grado). La de la rama dice que el 323× era co-localización: el spread cae a 2,4× y queda la depleción gustativa (10 contra 101,6, z = −78,9).
+- En el PDF, la Tabla 7 es la de reciprocidad por circuito y la de RDI es la Tabla 8. El `reproduce_table7` del release inicial es de la trayectoria de RDI y no la reproduce.
 
 ## Veredicto operativo
 
-- **Paper, reciprocidad:** la Tabla 7 ya es reproducible (script reconstruido, PR #26 sin merge). El gradiente hacia el motor sobrevive al umbral ≥5, y el embudo de salida entero tiene poca vuelta. Falta el nulo por circuito y el test de tendencia para que el pivote deje de ser descriptivo.
-- **Quién controla las salidas (005 a 009):** el central pone el 60–73% de la entrada de las tres salidas; las descendentes, el 21–22% de la de las motoras; las ascendentes, el 16–20% de la de las neurosecretoras; el óptico, menos del 0,5%. Con el nulo fuerte de la 006 (etiquetas barajadas entre neuronas del mismo tamaño) se sostiene con el central en ×1,5–2,3. Con el nulo de región de la 007 (además, de la misma zona del cerebro) sólo las descendentes siguen mandando fuerte: → motoras ×3,69 / ×3,21 y → descendentes ×3,29 / ×2,61. El dominio del central sobre descendentes y neurosecretoras era ubicación (×1,07 / ×1,01 y ×1,09 / ×1,03); su plus propio va a las motoras (×1,31 / ×1,16), sobre todo a las de la boca. Las ascendentes caen a azar en las tres salidas, lo sensorial queda por debajo de sus vecinas (×0,33 a ×0,62) y la proyección visual hacia las descendentes pasa a azar. Con corrección por comparaciones múltiples (008), BY deja 31 de las 33 afirmaciones firmes de la 007 y max-T deja 5: descendentes → descendentes, → motoras, → cuello y → antena, y óptico ▼ descendentes. El plus del central hacia las motoras aguanta FDR pero no FWER. Con la misma corrección sobre el nulo fuerte (009), las 41 afirmaciones firmes de la 006 aguantan BY, 34 aguantan Holm y 11 max-T: a la 006 le fallaba la ubicación, no la cantidad de tests (central → descendentes y ascendentes → descendentes aguantan max-T con la 006 y eran ubicación en la 007). FWER con los dos nulos: descendentes → descendentes, → motoras, → cuello y → antena, y óptico ▼ descendentes.
-- **H4 fuerte: NO MEDIDA.** La cadena de instrumentos H4 está materializada y auditada, pero no demuestra mapping anatómico ni causalidad. H4 débil queda refutada sólo en su alcance estrecho de poblaciones anotadas.
+- **Paper, reciprocidad:**
+  - La Tabla 7 es reproducible: 8/8 con el pin `17fc577` (respuesta 003). El script está reconstruido en el PR #26, sin merge.
+  - El nulo CP propio reproduce el del erratum: media de 194.890,4 contra 194.974,2, o sea 20,60× con 0/100.
+  - **Con ese nulo, la caída de la reciprocidad hacia la salida motora queda explicada por el nulo:** el exceso es 4,30× / 3,67× / 5,55× con ≥1 y 5,11× / 9,57× / 3,94× con ≥5, sin orden. Pero el instrumento dio FAIL (control negativo de la prueba secundaria, 8/20 con CP y ≥1) y **no se firma**.
+- **Quién controla las salidas (005 a 009):** el central pone el 60–73% de la entrada de las tres salidas; las descendentes, el 21–22% de la de las motoras; las ascendentes, el 16–20% de la de las neurosecretoras; el óptico, menos del 0,5%.
+  - **Nulo fuerte (006**, etiquetas barajadas entre neuronas del mismo tamaño): se sostiene, con el central en ×1,5–2,3.
+  - **Nulo de región (007**, además de la misma zona del cerebro): sólo las descendentes siguen mandando fuerte, → motoras ×3,69 / ×3,21 y → descendentes ×3,29 / ×2,61.
+    - El dominio del central sobre descendentes y neurosecretoras era ubicación (×1,07 / ×1,01 y ×1,09 / ×1,03). Su plus propio va a las motoras (×1,31 / ×1,16), sobre todo a las de la boca.
+    - Las ascendentes caen a azar en las tres salidas, lo sensorial queda por debajo de sus vecinas (×0,33 a ×0,62) y la proyección visual hacia las descendentes pasa a azar.
+  - **Corrección múltiple de la 007 (008):** BY deja 31 de las 33 afirmaciones firmes y max-T deja 5: descendentes → descendentes, → motoras, → cuello y → antena, y óptico ▼ descendentes. El plus del central hacia las motoras aguanta FDR pero no FWER.
+  - **Corrección múltiple de la 006 (009):** las 41 afirmaciones firmes aguantan BY, 34 aguantan Holm y 11 max-T. A la 006 le fallaba la ubicación, no la cantidad de tests.
+  - **FWER con los dos nulos:** descendentes → descendentes, → motoras, → cuello y → antena, y óptico ▼ descendentes.
+- **H4 fuerte: NO MEDIDA.** La búsqueda pública de ROI 2P está agotada (16/16 sin mapear, rama ROI). H4 débil queda refutada sólo en su alcance estrecho.
 
-## Paper y Tabla 7 (respuestas 002, 004, 005, 006, 007, 008 y 009)
+## Paper y Tabla 7 (respuestas 002 a 009 del 10-oct y 003 y 004 del 11-oct)
 
-- Script: `tools/table7_reciprocity_by_class.py` en `titan/tabla7-reconstruida-2026-10-10` (commit `1f66456`), PR #26.
-- Con las anotaciones vivas en marzo (`c03ad46`): L3 16/16 exactas y Tabla 7 publicada 8/8. Con el pin `17fc577`: 10/16, por recambio de `root_id` (14 y 18), con 0 cambios de `super_class`.
-- El 8,7% sensory→descending publicado es doble redondeo: 2.104/24.327 = 8,6488%, o sea 8,6.
-- Umbral ≥5: 2.700.513 aristas y 13,98% (igual al ítem 5 del erratum). Tabla 7 con ≥5: intra-sensory 37,5; intra-motor 35,0 (80 aristas); intra-visual centrifugal 23,4; intra-optic 17,1; sensory→central 13,8; sensory→descending 2,8; sensory→motor 1,3; optic→motor sin aristas.
-- Embudo de salida (respuesta 004): 1.485 neuronas (1,07%; descending, motor y endocrine) reciben el 2,37% de los cables, el 61% de lo que llega a las descendentes viene del central, y lo que les llega tiene 13,19 / 9,83 / 3,58% de vuelta contra 26,60% global. Con ≥5, descending→motor: 2 de 1.569 (0,13%). Descriptivo, sin nulo.
-- Qué salida controla cada clase (respuesta 005, `tools/output_control_by_class.py`, commit `7e75cde`). D1 es la fracción de la entrada en sinapsis, sin umbral / ≥5:
-  - central → descendentes 60,23 / 62,42%, → motoras 64,34 / 65,54%, → neurosecretoras 73,03 / 67,88%;
-  - descendentes → motoras 21,48 / 21,89% (cuello 40–43%, antena 32%, proboscis 25%);
-  - ascendentes → neurosecretoras 15,93 / 20,31%;
-  - óptico → descendentes 0,45 / 0,33%.
-  - Cruce exacto con la Tabla 7. El nulo de destinos al azar da ~3% de falsos con etiquetas permutadas: se firma sólo lo que lo supera.
-- Nulo fuerte por permutación (respuesta 006, `tools/output_control_permutation_null.py`, commit `c99494f`): dos nulos de R = 10.000, plano y estratificado por fuerza de salida, PASS en los dos umbrales. Calibrado: el control negativo da 7/4.840 y 4/4.620 flags contra 9,7 y 9,2 esperados (el nulo de destinos de la 005 daba ~3%). La primera corrida dio FAIL por un chequeo mío (z infinito con desvío 0); con la varianza exacta, mismos resultados y PASS.
-- Nulo que conserva región (respuesta 007, `tools/output_control_region_null.py`, commit `f436f21`): k-medias sobre `pos` (k = 40 y 120) × 30 estratos de tamaño, R = 5.000 por modo y umbral, sólo D1, PASS. Calibrado: control negativo 11, 1, 5 y 2 flags contra 9,7 y 9,2 esperados. Firme en las cuatro condiciones: descendentes → motoras, → descendentes y → cuello, proboscis y antena (×3,7 a ×5,3); central → motoras (ingestión, proboscis, haustelo) y DH44; motoras → ingestión ×20 / ×8. Pasan a azar: central → descendentes y → neurosecretoras, ascendentes → las tres salidas, proyección visual → descendentes. Abajo de sus vecinas: sensorial y visual centrífuga → descendentes y motoras.
-- Corrección múltiple del nulo regional (respuesta 008, `tools/output_control_region_correction.py`, commit `2093d57`): el nulo de la 007 regenerado (idéntico), cuatro familias de 186 a 214 tests, max-T de Westfall y Young (FWER), BH y BY (FDR), PASS. De las 33 firmes de la 007, BY deja 31 (caen motoras → ingestión y visual centrífuga ▼ ingestión) y max-T deja 5 (descendentes → descendentes, → motoras, → cuello y → antena; óptico ▼ descendentes). El central → motoras aguanta BY (0,014 a 0,040) y no max-T (0,58 a 0,91). BH agrega 11 que no aguantan BY. Holm no puede rechazar con R = 5.000. Calibrado: control negativo max-T 5/80 contra 4 esperados.
-- Corrección múltiple del nulo fuerte (respuesta 009, `tools/output_control_permutation_correction.py`, commit `95e8d6c`): el nulo de la 006 regenerado (idéntico), ocho familias de 228 a 242 tests (umbral × nulo × D1/D2), max-T, Holm (posible con R = 10.000), BH y BY, PASS. De las 41 firmes de la 006, BY y BH dejan las 41, Holm 34 (caen 7 conjuntos finos: descendentes → ingestión, ojo y haustelo; ascendentes → motoras sin subclase y lNSC; sensorial → ingestión y CRZ) y max-T 11 (descendentes → descendentes, motoras, cuello, proboscis y antena; óptico ▼ descendentes y motoras; ascendentes y central → descendentes; motoras → ingestión; sensorial ascendente → DMS). Con R = 10.000, Holm sólo separa los tests en el piso. BY agrega 2 al borde que no se firman. Calibrado: control negativo max-T 10, Holm 8 y BH 9 de 160 contra 8 esperados.
-- Espera decisión de Abraham: pasar el ítem 9 y el 8,6 a `docs/ERRATUM.md` y a `docs/PIVOTE-RECIPROCIDAD.md`.
-- Las `results/` de la Tabla 7 y los JSON de la 005 a la 009 están sólo en brain-env (commit local `7117e45` y worktree `/workspace/dfc-t7`), que no tiene credencial de push para este repo. Los logs de la 004 a la 009 sí están en la rama.
+- **Script:** `tools/table7_reciprocity_by_class.py` en `titan/tabla7-reconstruida-2026-10-10`, PR #26.
+- **Anotaciones:**
+  - con las de marzo (`c03ad46`): L3 16/16 y Tabla 7 8/8;
+  - con el pin `17fc577`: L3 10/16 por recambio de `root_id`, y Tabla 7 8/8 a un decimal, lo que confirma el «What has not changed» del erratum.
+- **El 8,7% sensory→descending es doble redondeo:** 2.104/24.327 = 8,6488%, o sea 8,6.
+- **Umbral ≥5:** 2.700.513 aristas y 13,98%, igual al ítem 5 del erratum.
+  - intra-sensory 37,5; intra-motor 35,0 (80 aristas); intra-visual centrifugal 23,4; intra-optic 17,1;
+  - sensory→central 13,8; sensory→descending 2,8; sensory→motor 1,3; optic→motor sin aristas.
+- **Nulo por circuito y tendencia (003), `tools/table7_circuit_null.py`, en brain-env sin push:**
+  - cruces con la 002 PASS en los dos umbrales; Tabla 7 8/8; nulo CP del erratum reproducido a 0,04%; conservación PASS;
+  - con CP, la tendencia es EXPLICADO_POR_EL_NULO en los dos umbrales;
+  - con CM no vale, porque el seudoconteo domina;
+  - **veredicto de instrumento FAIL** por el control negativo.
+- **Embudo de salida (004):** 1.485 neuronas (1,07%; descending, motor y endocrine) reciben el 2,37% de los cables. Lo que les llega tiene 13,19 / 9,83 / 3,58% de vuelta, contra 26,60% global. Descriptivo, sin nulo.
+- **Control de las salidas:** 005 (`7e75cde`), 006 (`c99494f`), 007 (`f436f21`), 008 (`2093d57`) y 009 (`95e8d6c`), en la rama de la Tabla 7. Los números están en el veredicto operativo.
+- **Espera decisión de Abraham:**
+  - pasar el ítem 9 y el 8,6 a `docs/ERRATUM.md` y a `docs/PIVOTE-RECIPROCIDAD.md`;
+  - consolidar en main el expediente de ramas (PR #1, #2, #3) y la SECCION-V2 corregida.
+- Los `results/` y JSON de la Tabla 7 y de la 003 a la 009 están sólo en brain-env, sin credencial de push. Los logs de la 004 a la 009 sí están en la rama.
 
 ## Estado confirmado en main (H4)
 
 - Alignment guard: 7 contratos.
-- Loader oficial: 6 contratos; 8/8 trials Aymanns reales con manifests `BIEN` en la corrida original.
-- Features ROI/contexto/bouts: 7 contratos; 8/8 trials materializados en la corrida original.
+- Loader oficial: 6 contratos; 8/8 trials Aymanns reales con manifests `BIEN`.
+- Features ROI, contexto y bouts: 7 contratos.
 - Null por bouts: 5 contratos; distribución pooled exacta de 999 scores publicada.
-- Generalización intra-animal: 4 contratos; resultado descriptivo `balanced accuracy=0.5018855395873556`, `p=0.623`, no evidencia de generalización entre trials.
-- Estabilidad temporal: 5 contratos; `observed=0.5327595514498719`, `p=0.055`, sugestivo pero no positivo.
-- Regresión integrada: 34 contratos pasaron en el head pre-merge `646c0343c7b8aa28d7ee6d2395e2e34465a07b92`; la auditoría independiente señaló que el SHA final anterior no tenía check propio.
-- Auditoría main final: `docs/auditorias/2026-10-02-004-auditoria-main-final-34-contratos.md`, score 36/40.
+- **Generalización intra-animal:** 4 contratos; `balanced accuracy=0.5018855395873556`, `p=0.623`. No hay evidencia de generalización.
+- **Estabilidad temporal:** 5 contratos; `p=0.055`. Es sugestiva, no positiva.
+- Regresión integrada: 34 contratos. Auditoría: `docs/auditorias/2026-10-02-004-auditoria-main-final-34-contratos.md`, 36/40.
 
 ## Estado de producto y ciencia
 
-SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham. Medido en `mojo-absoluto`: en HC-2, SparseLTC empata 48/48 con el control lineal sobre FlyWire real (la no linealidad no ganó); en HC-3b, DBC3 aprende más rápido (AULC 0,823 contra 0,635) en una tarea, con el LR del borde de LSTM/GRU NO MEDIDO. SparseLTC→DBC3 sobre señal biológica real, mapping ROI→FlyWire/cell type/neuropilo, null anatómico pareado y silenciamiento causal siguen **NO MEDIDOS**. ComplexVectorLTC queda experimental y congelada: no ganó ninguna métrica IQ/radar.
+SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
+
+- **Medido en `mojo-absoluto`:**
+  - HC-2: SparseLTC empata 48/48 con el control lineal sobre FlyWire real;
+  - HC-3b: DBC3 aprende más rápido en una tarea (AULC 0,823 contra 0,635).
+- **Medido en el expediente de ramas:**
+  - sel_post sobrevive a los nulos de topología y de signo (z = +181 y +6,31; 0/40);
+  - el efecto temporal global no sobrevive (39 nulos, p = 0,25);
+  - la ventaja de tau compleja no se sostiene (p = 0,60).
+- **Siguen NO MEDIDOS:** SparseLTC→DBC3 sobre señal biológica, mapping ROI→FlyWire, null anatómico pareado y silenciamiento causal.
 
 ## Próximos pasos
 
-1. Nulo por circuito (CP/MS) y test de tendencia sobre la Tabla 7 y el embudo de salida, en brain-env con `src/cp40.py` y el script de la Tabla 7.
-2. La 007 con R = 10.000 para que Holm también pueda corregirla; D2 con el nulo de región y, si se consigue la tabla por sinapsis, un nulo por neuropilo de cada sinapsis.
-3. Con eso, la v2 del erratum: ítem 9, el 8,6 y el gradiente bajo umbral. Si el control de las salidas entra al paper, va como lo dejan la 006 a la 009: la 006 como "más que neuronas del mismo tamaño" y la 007 como "más que vecinas de la misma zona y el mismo tamaño", las dos con BY como criterio y marcado lo que aguanta FWER. Decide Abraham.
-4. Subir las `results/` de la Tabla 7 por la integración de GitHub o con una credencial propia de este repo.
-5. H4 estacionada: mapping ROI→anatomía y null anatómico pareado recién después de cerrar el paper.
-6. Mantener separados los contratos de instrumentos y los claims biológicos.
+1. **Consolidar git:** el linaje de ramas a main (PR #1, #2, #3) o un PR sólo de documentos, y la SECCION-V2 posterior al null anatómico. Decide Abraham.
+2. **Cerrar el 003:**
+   - sacar el seudoconteo de la media del nulo o subir K;
+   - explicar el 8/20 del control CP con ≥1;
+   - volver a correr y firmar;
+   - subir el script, los tests y los logs a la rama.
+3. **v2 depositable:**
+   - erratum, Tabla 7 con ≥5 y 8,6, reciprocidad como rango;
+   - dos saltos post-null anatómico, LC6→GF y sel_post;
+   - control de las salidas, con BY y lo que aguanta FWER marcado.
+
+   Depositar en Zenodo lo hace Abraham.
+4. **Abiertos para la v2:** NPC por sinapsis o null combinado de grado y neuropilo; ventana y tau de sel_post; Lin región por región; Betzel arista por arista; fila AN y décima clase de la Tabla 5.
+5. **La 007:** con R = 10.000 para Holm; D2 con el nulo de región.
+6. H4 estacionada.
 
 ## Fuentes
 
+- `docs/agents/respuestas/2026-10-11-004-el-repo-del-conectoma-de-punta-a-punta.md`
+- `docs/agents/respuestas/2026-10-11-003-nulo-por-circuito-base-erratum-EN-CURSO.md`
 - `docs/agents/respuestas/2026-10-10-009-correccion-multiple-del-nulo-fuerte.md`
 - `docs/agents/respuestas/2026-10-10-008-correccion-multiple-del-nulo-regional.md`
 - `docs/agents/respuestas/2026-10-10-007-nulo-que-conserva-la-region.md`
 - `docs/agents/respuestas/2026-10-10-006-nulo-fuerte-por-permutacion.md`
 - `docs/agents/respuestas/2026-10-10-005-que-salida-controla-cada-clase.md`
 - `docs/agents/respuestas/2026-10-10-002-tabla7-reconstruida.md`
-- `docs/agents/respuestas/2026-10-10-003-hacia-donde-vamos-conectoma-y-celulas-liquidas.md`
 - `docs/agents/respuestas/2026-10-10-004-que-hay-al-final-de-cada-cable.md`
-- `docs/auditorias/2026-10-02-004-auditoria-main-final-34-contratos.md`
-- `docs/agents/respuestas/2026-10-02-011-h4-exact-distribution-published.md`
-- `docs/agents/respuestas/2026-10-02-012-h4-trial-generalization.md`
-- `docs/agents/respuestas/2026-10-02-013-h4-temporal-halves.md`
+- `docs/ERRATUM.md` y `docs/PIVOTE-RECIPROCIDAD.md`
+- En ramas: respuestas 063 a 124 de `titan/materializacion-h4-guard-2026-10-02` y respuestas 2026-09-22/23 de `titan/auditoria-integra-2026-08-25`.
 
 ## NO MEDIDO
 
-- Nulo por circuito y test de tendencia de la Tabla 7 y del embudo de salida.
-- Nulo por neuropilo de cada sinapsis: la 007 usa un punto por neurona, que en ascendentes y sensoriales cae en su arborización y en el central cerca del soma.
-- D2 con el nulo de región de la 007, y su sensibilidad a otras k y a regiones anatómicas.
-- La 007 con R = 10.000, para que Holm también pueda corregirla (la corrección de la 006 está en la 009; la de la 007, con FDR y max-T, en la 008).
-- FWER por rangos (min-P), y qué tests de cola pesada fijan el z crítico de max-T (7,9 a 11,7 en la 008; 11,4 a 15,3 en la 009).
-- Signo real (fisiológico) por par de clases. La 005 midió sólo el signo predicho por neurotransmisor hacia las salidas.
-- Cruce con la reciprocidad por neuropilo de Lin 2024.
-- Corrida biológica end-to-end post-merge.
-- Mapping anatómico, null anatómico y causalidad.
-- Equivalencia SparseLTC→DBC3 sobre señal real.
-- Review externo del pipeline; silencio no es aprobación.
+- El nulo por circuito está corrido, pero no firmado (FAIL de instrumento).
+- El embudo de salida, sin nulo.
+- Un nulo por neuropilo de cada sinapsis.
+- D2 con el nulo de región.
+- La 007 con R = 10.000.
+- FWER por rangos (min-P).
+- Signo fisiológico por par de clases.
+- El cruce con Lin 2024.
+- 57 archivos de main y 73 rutas de ramas sin leer en la 004.
+- Mapping anatómico, null anatómico pareado, causalidad y equivalencia SparseLTC→DBC3 sobre señal real.
+- Review externo del pipeline. Silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: brain-env para la Tabla 7, el embudo, las salidas, el nulo fuerte, el nulo de región y la corrección múltiple de los dos; esta actualización es lectura.
-Artefactos: `docs/agents/respuestas/2026-10-10-009-correccion-multiple-del-nulo-fuerte.md` + Doc https://app.clickup.com/90171457413/docs/2kza6fw5-20957
+Máquina: brain-env (Tabla 7, salidas, nulos, 003, inventario de ramas); GitHub de sólo lectura para la 004.
+Artefactos: `docs/agents/respuestas/2026-10-11-004-el-repo-del-conectoma-de-punta-a-punta.md` + Doc de ClickUp.
