@@ -1,0 +1,76 @@
+$ python3 tools/swarm_lazo_cerrado.py --swarm-dir swarm --out results/swarm_lazo_cerrado_2026-10-11
+# maquina: sandbox de ClickUp | Linux 6.1.158+ x86_64 | gcc (Debian 12.2.0-14+deb12u1) 12.2.0 | Python 3.12.13 | numpy 2.4.6
+# md5 tools/swarm_lazo_cerrado.py = 65661dc3a4a65d462588ad5f614b3dbb
+# fecha: 2026-10-11 04:05:22 -03
+G0 gen_swarm.py blob=3c335ad54f5c1adb937a4b7e498dbf48e85ff03c pin=3c335ad54f5c1adb937a4b7e498dbf48e85ff03c -> IGUAL
+G0 test_swarm.c blob=a84b9f7682f00d9505194d328ac1a988bfb84eea pin=a84b9f7682f00d9505194d328ac1a988bfb84eea -> IGUAL
+G0 swarm_drone.h blob=f18b87611ecaa795be4b2c3f7a3697210c8700c0 pin=f18b87611ecaa795be4b2c3f7a3697210c8700c0 -> IGUAL
+G0 swarm_drone.substrate.json blob=f6230fcd7f5d684cc5d1450d4e8eed6299227af4 pin=f6230fcd7f5d684cc5d1450d4e8eed6299227af4 -> IGUAL
+CHEQUEO G0_PROCEDENCIA PASS
+G1 swarm_drone.h regenerado_igual_al_commiteado=True
+G1 swarm_drone.substrate.json regenerado_igual_al_commiteado=True
+G1 gen_swarm_exit=0 salida=N = 34 | E = 83 | rho_bound = 6.1729 | scale = 1.164706 | tau_q15 = 3899 | firewalls: [] | max colsum (Gershgorin): 5.3 | archivos generados: swarm_drone.substrate.json, swarm_drone.h
+CHEQUEO G1_REPRODUCIBILIDAD PASS
+G2 mutacion=original sinapsis_cambiadas=0 gcc_exit=0 test_exit=0 salida=motores (FL FR BL BR): -11037 -9499 15973 17462
+G2 mutacion=pesos_cero sinapsis_cambiadas=83 gcc_exit=0 test_exit=0 salida=motores (FL FR BL BR): 505 505 505 505
+G2 mutacion=gf_motor_invertido sinapsis_cambiadas=8 gcc_exit=0 test_exit=0 salida=motores (FL FR BL BR): -5937 -4248 566 3096
+CHEQUEO G2_TEST_PUEDE_DAR_ROJO FAIL
+G3 {"E": 83, "firewalls": [], "gaba_gate": "PASS", "gen_exit": 0, "motor_starvation": "NO", "ms_gate": "PASS", "mutacion": "sin_mutar", "rdi_diseno": 0.0}
+G3 {"E": 87, "firewalls": [], "gaba_gate": "PASS", "gen_exit": 0, "motor_starvation": "NO", "ms_gate": "PASS", "mutacion": "mezcla_modalidades", "rdi_diseno": 0.0}
+G3 {"E": 83, "firewalls": ["gf_f", "gf_b", "gf_l", "gf_r", "wta_f", "wta_b", "wta_l", "wta_r", "lh_f", "lh_b", "lh_l", "lh_r", "fb_l", "fb_r", "pb_alt", "pb_pitch", "pb_roll", "pb_head", "mot_fl", "mot_fr", "mot_bl", "mot_br"], "gaba_gate": "PASS", "gen_exit": 0, "motor_starvation": "REVISAR", "ms_gate": "PASS", "mutacion": "signos_invertidos", "rdi_diseno": 0.0}
+G3 {"E": 131, "firewalls": [], "gaba_gate": "PASS", "gen_exit": 0, "motor_starvation": "NO", "ms_gate": "PASS", "mutacion": "sensores_directo_a_motores", "rdi_diseno": 0.0}
+CHEQUEO G3_AUDITORIA_PUEDE_DAR_ROJO FAIL
+G4 harness_gcc_exit=0 
+ESTATICO canal=lamina amenaza=frente motores_FL_FR_BL_BR=-10088 -10564 16919 16764 torque_roll=+631 torque_pitch=-54335 -> ACERCA
+ESTATICO canal=lamina amenaza=atras motores_FL_FR_BL_BR=17403 16919 -10564 -10873 torque_roll=+793 torque_pitch=+55759 -> ACERCA
+ESTATICO canal=lamina amenaza=izquierda motores_FL_FR_BL_BR=-10088 16919 -10564 16764 torque_roll=-54335 torque_pitch=+631 -> ACERCA
+ESTATICO canal=lamina amenaza=derecha motores_FL_FR_BL_BR=17403 -10564 16919 -10873 torque_roll=+55759 torque_pitch=+793 -> ACERCA
+ESTATICO canal=antena amenaza=frente motores_FL_FR_BL_BR=-2482 -3380 6408 6340 torque_roll=+966 torque_pitch=-18610 -> ACERCA
+ESTATICO canal=antena amenaza=atras motores_FL_FR_BL_BR=7281 6408 -3380 -3469 torque_roll=+962 torque_pitch=+20538 -> ACERCA
+ESTATICO canal=antena amenaza=izquierda motores_FL_FR_BL_BR=870 2433 364 2183 torque_roll=-3382 torque_pitch=+756 -> ACERCA
+ESTATICO canal=antena amenaza=derecha motores_FL_FR_BL_BR=5537 -1419 4751 -1739 torque_roll=+13446 torque_pitch=+1106 -> ACERCA
+LAZO canal=lamina lectura=ORIGINAL amenaza=frente H=0.15s delta_hacia_amenaza_m=+0.000537 inclinacion_max_grados=4.48 -> ACERCA
+LAZO canal=lamina lectura=ORIGINAL amenaza=atras H=0.15s delta_hacia_amenaza_m=+0.000568 inclinacion_max_grados=4.89 -> ACERCA
+LAZO canal=lamina lectura=ORIGINAL amenaza=izquierda H=0.15s delta_hacia_amenaza_m=+0.000537 inclinacion_max_grados=4.48 -> ACERCA
+LAZO canal=lamina lectura=ORIGINAL amenaza=derecha H=0.15s delta_hacia_amenaza_m=+0.000568 inclinacion_max_grados=4.89 -> ACERCA
+LAZO canal=lamina lectura=REFLEJADO amenaza=frente H=0.15s delta_hacia_amenaza_m=-0.000537 inclinacion_max_grados=4.48 -> ALEJA
+LAZO canal=lamina lectura=REFLEJADO amenaza=atras H=0.15s delta_hacia_amenaza_m=-0.000568 inclinacion_max_grados=4.89 -> ALEJA
+LAZO canal=lamina lectura=REFLEJADO amenaza=izquierda H=0.15s delta_hacia_amenaza_m=-0.000537 inclinacion_max_grados=4.48 -> ALEJA
+LAZO canal=lamina lectura=REFLEJADO amenaza=derecha H=0.15s delta_hacia_amenaza_m=-0.000568 inclinacion_max_grados=4.89 -> ALEJA
+LAZO canal=lamina lectura=CERO amenaza=frente H=0.15s delta_hacia_amenaza_m=+0.000000 inclinacion_max_grados=0.00 -> NEUTRO
+LAZO canal=lamina lectura=CERO amenaza=atras H=0.15s delta_hacia_amenaza_m=+0.000000 inclinacion_max_grados=0.00 -> NEUTRO
+LAZO canal=lamina lectura=CERO amenaza=izquierda H=0.15s delta_hacia_amenaza_m=+0.000000 inclinacion_max_grados=0.00 -> NEUTRO
+LAZO canal=lamina lectura=CERO amenaza=derecha H=0.15s delta_hacia_amenaza_m=+0.000000 inclinacion_max_grados=0.00 -> NEUTRO
+LAZO canal=lamina lectura=REFLEJO_FISICO amenaza=frente H=0.15s delta_hacia_amenaza_m=-0.006601 inclinacion_max_grados=20.22 -> ALEJA
+LAZO canal=lamina lectura=REFLEJO_FISICO amenaza=atras H=0.15s delta_hacia_amenaza_m=-0.006601 inclinacion_max_grados=20.22 -> ALEJA
+LAZO canal=lamina lectura=REFLEJO_FISICO amenaza=izquierda H=0.15s delta_hacia_amenaza_m=-0.006601 inclinacion_max_grados=20.22 -> ALEJA
+LAZO canal=lamina lectura=REFLEJO_FISICO amenaza=derecha H=0.15s delta_hacia_amenaza_m=-0.006601 inclinacion_max_grados=20.22 -> ALEJA
+LAZO canal=antena lectura=ORIGINAL amenaza=frente H=0.15s delta_hacia_amenaza_m=+0.000178 inclinacion_max_grados=1.53 -> ACERCA
+LAZO canal=antena lectura=ORIGINAL amenaza=atras H=0.15s delta_hacia_amenaza_m=+0.000197 inclinacion_max_grados=1.89 -> ACERCA
+LAZO canal=antena lectura=ORIGINAL amenaza=izquierda H=0.15s delta_hacia_amenaza_m=+0.000153 inclinacion_max_grados=1.20 -> ACERCA
+LAZO canal=antena lectura=ORIGINAL amenaza=derecha H=0.15s delta_hacia_amenaza_m=+0.000196 inclinacion_max_grados=1.85 -> ACERCA
+LAZO canal=antena lectura=REFLEJADO amenaza=frente H=0.15s delta_hacia_amenaza_m=-0.000178 inclinacion_max_grados=1.53 -> ALEJA
+LAZO canal=antena lectura=REFLEJADO amenaza=atras H=0.15s delta_hacia_amenaza_m=-0.000197 inclinacion_max_grados=1.89 -> ALEJA
+LAZO canal=antena lectura=REFLEJADO amenaza=izquierda H=0.15s delta_hacia_amenaza_m=-0.000153 inclinacion_max_grados=1.20 -> ALEJA
+LAZO canal=antena lectura=REFLEJADO amenaza=derecha H=0.15s delta_hacia_amenaza_m=-0.000196 inclinacion_max_grados=1.85 -> ALEJA
+LAZO canal=antena lectura=CERO amenaza=frente H=0.15s delta_hacia_amenaza_m=+0.000000 inclinacion_max_grados=0.00 -> NEUTRO
+LAZO canal=antena lectura=CERO amenaza=atras H=0.15s delta_hacia_amenaza_m=+0.000000 inclinacion_max_grados=0.00 -> NEUTRO
+LAZO canal=antena lectura=CERO amenaza=izquierda H=0.15s delta_hacia_amenaza_m=+0.000000 inclinacion_max_grados=0.00 -> NEUTRO
+LAZO canal=antena lectura=CERO amenaza=derecha H=0.15s delta_hacia_amenaza_m=+0.000000 inclinacion_max_grados=0.00 -> NEUTRO
+LAZO canal=antena lectura=REFLEJO_FISICO amenaza=frente H=0.15s delta_hacia_amenaza_m=-0.003961 inclinacion_max_grados=12.13 -> ALEJA
+LAZO canal=antena lectura=REFLEJO_FISICO amenaza=atras H=0.15s delta_hacia_amenaza_m=-0.003961 inclinacion_max_grados=12.13 -> ALEJA
+LAZO canal=antena lectura=REFLEJO_FISICO amenaza=izquierda H=0.15s delta_hacia_amenaza_m=-0.003961 inclinacion_max_grados=12.13 -> ALEJA
+LAZO canal=antena lectura=REFLEJO_FISICO amenaza=derecha H=0.15s delta_hacia_amenaza_m=-0.003961 inclinacion_max_grados=12.13 -> ALEJA
+SENSIBILIDAD lectura=ORIGINAL combinaciones=108 (k x H x frecuencia x direccion) signo_hacia_amenaza: positivo=108 negativo=0 cero=0 |delta|_min_m=5.889e-07 |delta|_max_m=3.379e-02
+SENSIBILIDAD lectura=REFLEJADO combinaciones=108 (k x H x frecuencia x direccion) signo_hacia_amenaza: positivo=0 negativo=108 cero=0 |delta|_min_m=5.889e-07 |delta|_max_m=3.379e-02
+REPOSO lectura=ORIGINAL sin_amenaza rumbo=0 deriva_a_0.15s_x_m=-0.000408 y_m=+0.000029 inclinacion_a_0.15s_grados=3.64 t_hasta_30grados_s=0.267
+REPOSO lectura=ORIGINAL sin_amenaza rumbo=90 deriva_a_0.15s_x_m=-0.000036 y_m=+0.000415 inclinacion_a_0.15s_grados=3.64 t_hasta_30grados_s=0.268
+REPOSO lectura=REFLEJADO sin_amenaza rumbo=0 deriva_a_0.15s_x_m=+0.000408 y_m=-0.000029 inclinacion_a_0.15s_grados=3.64 t_hasta_30grados_s=0.267
+REPOSO lectura=REFLEJADO sin_amenaza rumbo=90 deriva_a_0.15s_x_m=+0.000036 y_m=-0.000415 inclinacion_a_0.15s_grados=3.64 t_hasta_30grados_s=0.268
+FIN_HARNESS
+CHEQUEO INSTRUMENTO control_positivo=ALEJA/ALEJA/ALEJA/ALEJA control_negativo=NEUTRO/NEUTRO/NEUTRO/NEUTRO -> VALIDO
+CHEQUEO G4_ESCAPE_LAMINA original=ACERCA/ACERCA/ACERCA/ACERCA reflejado=ALEJA/ALEJA/ALEJA/ALEJA -> FAIL
+VEREDICTO_SUJETO=FAIL gates_en_rojo=G2,G3,G4
+FIN_SWARM_LAZO_CERRADO
+EXIT_RUN=1
+ELAPSED_S=1.08
