@@ -1,0 +1,64 @@
+# {"cpu": "Intel(R) Celeron(R) N4020 CPU @ 1.10GHz", "fecha_utc": "2026-10-11T16:16:26Z", "fisica": {"R_obj": 1.0, "T": 50, "az_circ": [-60, -20, 20, 60], "az_loom": [-90, -45, -20, -10, 10, 20, 45, 90], "d0": 10.0, "factor_umbral": 1.1, "k_lc4": 0.02, "r_circ": 4.0, "r_robot": 0.5, "reps": 10, "reps_blanco": 20, "reps_nl": 10, "semilla_ruido": 20261012, "sigmas": [0.1, 0.3], "v_loom": [0.25, 0.3333333333333333, 0.4], "v_robot": 0.1, "w_circ": 0.05}, "k": 200, "maquina": "Linux-4.19.0-27-amd64-x86_64-with-glibc2.41", "md5_brazo_s": "f8b10037e70dfe897ff2d841077419b4", "md5_escape": "9720998291e3f08c6082e6c67d142759", "md5_lados": "e5c19419d586850690ade3e8bbc5b315", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_script": "2c95e63b6ad3ff590057df80368134d7", "numpy": "2.5.3", "python": "3.12.14"}
+MOTIVO aristas=88 LC6->GF=0 cruzadas=0
+ENSAYOS looming=480 no_looming=80 blanco=40 T=50
+CONTROL C+L umbral=0.0484 supervivencia=0.8333 lado_ok=0.8313 disparo_looming=1.0000 latencia_mediana=10.0 rechazo=1.0000 comb=0.9167
+CONTROL C+6 umbral=0.0977 supervivencia=0.7896 lado_ok=0.9229 disparo_looming=1.0000 latencia_mediana=11.0 rechazo=0.0000 comb=0.3948
+CONTROL C0 umbral=0.0000 supervivencia=0.0000 lado_ok=0.0000 disparo_looming=0.0000 latencia_mediana=-1.0 rechazo=1.0000 comb=0.5000
+REFERENCIA escape inmediato ciego al lado (siempre a la izquierda desde t=0) supervivencia=0.8333
+CHEQUEO INSTRUMENTO VALIDO
+SUJETO W variante=TANH+FIJA_HET umbral=0.2662 supervivencia=0.6354 lado_ok=0.8708 disparo_looming=1.0000 latencia_mediana=14.0 rechazo=1.0000 comb=0.8177
+SUJETO W variante=TANH+FIJA_UNI umbral=0.3516 supervivencia=0.5437 lado_ok=0.9688 disparo_looming=1.0000 latencia_mediana=14.0 rechazo=1.0000 comb=0.7719
+SUJETO W variante=TANH+LIQUIDA umbral=0.2722 supervivencia=0.5604 lado_ok=0.8354 disparo_looming=1.0000 latencia_mediana=14.0 rechazo=1.0000 comb=0.7802
+SUJETO W variante=LINEAL+FIJA_HET umbral=0.3099 supervivencia=0.6500 lado_ok=0.8917 disparo_looming=1.0000 latencia_mediana=14.0 rechazo=1.0000 comb=0.8250
+SUJETO W variante=LINEAL+FIJA_UNI umbral=0.4241 supervivencia=0.5521 lado_ok=0.9708 disparo_looming=1.0000 latencia_mediana=14.0 rechazo=1.0000 comb=0.7760
+SUJETO W variante=LINEAL+LIQUIDA umbral=0.3253 supervivencia=0.5687 lado_ok=0.8583 disparo_looming=1.0000 latencia_mediana=14.0 rechazo=1.0000 comb=0.7844
+progreso k=0 S_comb=0.6240 SL_comb=0.7958 B_comb=0.2750 seg=5
+progreso k=20 S_comb=0.6281 SL_comb=0.6604 B_comb=0.2313 seg=46
+progreso k=40 S_comb=0.3885 SL_comb=0.7875 B_comb=0.2875 seg=88
+progreso k=60 S_comb=0.7927 SL_comb=0.7917 B_comb=0.4938 seg=131
+progreso k=80 S_comb=0.5094 SL_comb=0.4740 B_comb=0.4437 seg=174
+progreso k=100 S_comb=0.6812 SL_comb=0.6719 B_comb=0.3438 seg=218
+progreso k=120 S_comb=0.5719 SL_comb=0.6115 B_comb=0.5000 seg=261
+progreso k=140 S_comb=0.4365 SL_comb=0.6813 B_comb=0.3948 seg=304
+progreso k=160 S_comb=0.3562 SL_comb=0.7365 B_comb=0.3250 seg=347
+progreso k=180 S_comb=0.5979 SL_comb=0.5615 B_comb=0.4698 seg=389
+progreso k=199 S_comb=0.5396 SL_comb=0.7406 B_comb=0.1010 seg=429
+NULO S variante=TANH+FIJA_HET supervivencia_media=0.3930 rechazo_media=0.8016 comb_media=0.5973 comb_p95=0.7523
+NULO S variante=TANH+FIJA_UNI supervivencia_media=0.3877 rechazo_media=0.7903 comb_media=0.5890 comb_p95=0.7344
+NULO S variante=TANH+LIQUIDA supervivencia_media=0.3251 rechazo_media=0.8123 comb_media=0.5687 comb_p95=0.7231
+NULO S variante=LINEAL+FIJA_HET supervivencia_media=0.3789 rechazo_media=0.8042 comb_media=0.5916 comb_p95=0.7409
+NULO S variante=LINEAL+FIJA_UNI supervivencia_media=0.3734 rechazo_media=0.7937 comb_media=0.5835 comb_p95=0.7267
+NULO S variante=LINEAL+LIQUIDA supervivencia_media=0.3127 rechazo_media=0.8156 comb_media=0.5642 comb_p95=0.7116
+NULO SL variante=TANH+FIJA_HET supervivencia_media=0.5148 rechazo_media=0.8490 comb_media=0.6819 comb_p95=0.8073
+NULO SL variante=TANH+FIJA_UNI supervivencia_media=0.5005 rechazo_media=0.8568 comb_media=0.6786 comb_p95=0.8136
+NULO SL variante=TANH+LIQUIDA supervivencia_media=0.4308 rechazo_media=0.8724 comb_media=0.6516 comb_p95=0.7813
+NULO SL variante=LINEAL+FIJA_HET supervivencia_media=0.5007 rechazo_media=0.8533 comb_media=0.6770 comb_p95=0.8043
+NULO SL variante=LINEAL+FIJA_UNI supervivencia_media=0.4768 rechazo_media=0.8658 comb_media=0.6713 comb_p95=0.8074
+NULO SL variante=LINEAL+LIQUIDA supervivencia_media=0.4090 rechazo_media=0.8797 comb_media=0.6444 comb_p95=0.7708
+NULO B variante=TANH+FIJA_HET supervivencia_media=0.0616 rechazo_media=0.7430 comb_media=0.4023 comb_p95=0.5698
+NULO B variante=TANH+FIJA_UNI supervivencia_media=0.0568 rechazo_media=0.7316 comb_media=0.3942 comb_p95=0.5626
+NULO B variante=TANH+LIQUIDA supervivencia_media=0.0425 rechazo_media=0.7641 comb_media=0.4033 comb_p95=0.5543
+NULO B variante=LINEAL+FIJA_HET supervivencia_media=0.0580 rechazo_media=0.7416 comb_media=0.3998 comb_p95=0.5670
+NULO B variante=LINEAL+FIJA_UNI supervivencia_media=0.0528 rechazo_media=0.7283 comb_media=0.3906 comb_p95=0.5605
+NULO B variante=LINEAL+LIQUIDA supervivencia_media=0.0394 rechazo_media=0.7608 comb_media=0.4001 comb_p95=0.5510
+CONTRASTE Q1 comb W=0.8177 SL_media=0.6819 n_SL>=W=6/200 p_emp=0.0348 -> W GANA
+CONTRASTE Q2 comb W=0.8177 S_media=0.5973 n_S>=W=1/200 p_emp=0.0100 -> W GANA
+CONTRASTE Q3 comb W=0.8177 B_media=0.4023 n_B>=W=0/200 p_emp=0.0050 -> W GANA
+CONTRASTE Q4 rechazo W=1.0000 SL_media=0.8490 n_SL>=W=42/200 p_emp=0.2139 -> W NO GANA
+CONTRASTE Q5 supervivencia W=0.6354 SL_media=0.5148 n_SL>=W=44/200 p_emp=0.2239 -> W NO GANA
+CONTRASTE Q6_liquida_supervivencia TANH+LIQUIDA=0.5604 TANH+FIJA_HET=0.6354 solo_A=1 solo_B=37 p_mcnemar=0.0000 -> TANH+LIQUIDA PEOR
+CONTRASTE Q6_liquida_rechazo TANH+LIQUIDA=1.0000 TANH+FIJA_HET=1.0000 solo_A=0 solo_B=0 p_mcnemar=1.0000 -> TANH+LIQUIDA IGUAL
+CONTRASTE Q6_uniforme_supervivencia TANH+FIJA_UNI=0.5437 TANH+FIJA_HET=0.6354 solo_A=6 solo_B=50 p_mcnemar=0.0000 -> TANH+FIJA_UNI PEOR
+CONTRASTE Q6_uniforme_rechazo TANH+FIJA_UNI=1.0000 TANH+FIJA_HET=1.0000 solo_A=0 solo_B=0 p_mcnemar=1.0000 -> TANH+FIJA_UNI IGUAL
+CONTRASTE Q6_lineal_supervivencia LINEAL+FIJA_HET=0.6500 TANH+FIJA_HET=0.6354 solo_A=7 solo_B=0 p_mcnemar=0.0156 -> LINEAL+FIJA_HET MEJOR
+CONTRASTE Q6_lineal_rechazo LINEAL+FIJA_HET=1.0000 TANH+FIJA_HET=1.0000 solo_A=0 solo_B=0 p_mcnemar=1.0000 -> LINEAL+FIJA_HET IGUAL
+CONTRASTE Q7_S comb(LIQUIDA)-comb(FIJA_HET) dif_media=-0.0286 liquida_mejor=12 liquida_peor=187 p_signo=1.526e-41 -> LIQUIDA PEOR
+CONTRASTE Q7_SL comb(LIQUIDA)-comb(FIJA_HET) dif_media=-0.0303 liquida_mejor=13 liquida_peor=186 p_signo=2.208e-40 -> LIQUIDA PEOR
+VEREDICTO_FUNCION=W GANA A S
+VEREDICTO_DETALLE=PAGA EL CABLEADO FINO: W GANA A SL
+VEREDICTO_TAU_W=LA LIQUIDA EMPEORA EN LA MOSCA
+VEREDICTO_TAU_POBLACION=LA LIQUIDA EMPEORA EN LA POBLACION SL
+VEREDICTO_LINEAL=EL LINEAL GANA A TANH
+escrito resultados.json md5=d57693a44400233ccd4e143c56c18181
+minutos=7.16
+EXIT_RUN=0
