@@ -1,0 +1,96 @@
+name: brazo-s-recurrente
+
+# El brazo S en el sustrato que pide CONTEXTO-motor.md 6.2: el motivo de escape de 26 neuronas como
+# reservorio recurrente SparseLTC congelado, contra su shuffle de grado exacto. 4 tareas x 9 brazos,
+# 10 semillas por celda. Cada celda sube su JSON y su log; el job final agrega, aplica las reglas
+# declaradas en tools/brazo_s/agregar.py y COMMITEA el resultado crudo, porque el texto de un log de
+# Actions no se puede leer desde afuera.
+on:
+  push:
+    branches:
+      - 'titan/brazo-s-recurrente-2026-10-11'
+    paths:
+      - 'tools/brazo_s/**'
+      - '.github/workflows/brazo-s-recurrente.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: brazo-s-recurrente-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  celda:
+    name: celda ${{ matrix.tarea }} ${{ matrix.brazo }}
+    runs-on: ubuntu-24.04
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        tarea: [Gated, LinScale, MultiCue, CR]
+        brazo: [A, B, RB, RW, RS, LB, LW, LS, F]
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: entorno (torch 2.10.0+cpu, el mismo del kernel titan-brazo-w)
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/python -m pip install --quiet --index-url https://download.pytorch.org/whl/cpu torch==2.10.0+cpu
+          /tmp/venv/bin/python -m pip install --quiet numpy==2.5.3
+          /tmp/venv/bin/python -c "import torch, numpy, platform; print('torch', torch.__version__, 'numpy', numpy.__version__, 'python', platform.python_version(), 'hilos', torch.get_num_threads())"
+      - name: correr la celda
+        run: |
+          mkdir -p out
+          /tmp/venv/bin/python tools/brazo_s/brazo_s_recurrente.py --tarea "${{ matrix.tarea }}" --brazo "${{ matrix.brazo }}" --motivo tools/brazo_s/motivo26.json --out "out/celda_${{ matrix.tarea }}_${{ matrix.brazo }}.json" 2>&1 | tee "out/celda_${{ matrix.tarea }}_${{ matrix.brazo }}.log"
+      - name: subir la celda
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: celda-${{ matrix.tarea }}-${{ matrix.brazo }}
+          path: out/
+          if-no-files-found: warn
+          retention-days: 30
+
+  agregar:
+    needs: celda
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    env:
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - name: checkout de la rama
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.ref_name }}
+      - name: bajar las celdas
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          pattern: celda-*
+          merge-multiple: true
+          path: celdas
+      - name: entorno
+        run: |
+          python3 -m venv /tmp/venv
+          /tmp/venv/bin/python -m pip install --quiet numpy==2.5.3 scipy==1.18.1
+      - name: agregar y aplicar las reglas declaradas
+        run: |
+          mkdir -p results/brazo_s_recurrente_2026-10-11/celdas
+          cp celdas/* results/brazo_s_recurrente_2026-10-11/celdas/ || true
+          /tmp/venv/bin/python tools/brazo_s/agregar.py --celdas celdas --referencia tools/brazo_s/referencia_brazo_w.json --json results/brazo_s_recurrente_2026-10-11/resultados.json 2>&1 | tee results/brazo_s_recurrente_2026-10-11/run.log
+      - name: commitear el resultado crudo
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add results/brazo_s_recurrente_2026-10-11
+          git commit -m "medicion(brazo-s): resultado crudo del run ${{ github.run_id }}, escrito por el runner [skip ci]"
+          git pull --rebase origin "${{ github.ref_name }}"
+          git push origin "HEAD:${{ github.ref_name }}"
