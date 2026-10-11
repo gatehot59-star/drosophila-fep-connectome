@@ -1,0 +1,140 @@
+celdas encontradas=36 de 36
+NO MEDIDO (celdas que faltan): ninguna
+maquina: torch=2.10.0+cpu cpu=AMD EPYC 7763 64-Core Processor hilos=2
+maquina: torch=2.10.0+cpu cpu=AMD EPYC 9V45 96-Core Processor hilos=2
+maquina: torch=2.10.0+cpu cpu=AMD EPYC 9V74 80-Core Processor hilos=2
+maquina: torch=2.10.0+cpu cpu=INTEL(R) XEON(R) PLATINUM 8573C hilos=2
+maquina: torch=2.10.0+cpu cpu=Intel(R) Xeon(R) Platinum 8370C CPU @ 2.80GHz hilos=2
+md5 del script en las celdas: f8b10037e70dfe897ff2d841077419b4
+
+====================================================================================================
+TABLA: MSE medio (sd) por tarea y brazo, 10 semillas
+====================================================================================================
+tarea                        A                   B                  RB                  RW                  RS                  LB                  LW                  LS                   F
+Gated       0.000236(0.000137)  0.001393(0.001296)  0.021557(0.009618)  0.021818(0.008520)  0.021768(0.009035)  0.018392(0.004365)  0.019249(0.002478)  0.018618(0.003052)  0.000266(0.000145)
+LinScale    0.000055(0.000018)  0.000205(0.000048)  0.000494(0.000094)  0.000554(0.000115)  0.000564(0.000121)  0.000516(0.000094)  0.000569(0.000113)  0.000625(0.000138)  0.000061(0.000023)
+MultiCue    0.000098(0.000015)  0.000215(0.000039)  0.002664(0.005690)  0.001050(0.000353)  0.002502(0.004913)  0.003156(0.006858)  0.001551(0.001629)  0.002380(0.004358)  0.000374(0.000185)
+CR          0.000040(0.000012)  0.000574(0.000199)  0.000649(0.000237)  0.000664(0.000192)  0.000668(0.000220)  0.000623(0.000194)  0.000666(0.000246)  0.000653(0.000254)  0.000071(0.000078)
+
+====================================================================================================
+REPRODUCCION de A y B contra el brazo W del 2-oct (mismas semillas, mismo codigo copiado)
+====================================================================================================
+Gated     A  mean_nuevo=0.000236 mean_2oct=0.000236 max_rel_por_semilla=4.763e-06  NO REPRODUCE EXACTO
+Gated     B  mean_nuevo=0.001393 mean_2oct=0.001393 max_rel_por_semilla=4.614e-06  NO REPRODUCE EXACTO
+LinScale  A  mean_nuevo=0.000055 mean_2oct=0.000055 max_rel_por_semilla=3.200e-05  NO REPRODUCE EXACTO
+LinScale  B  mean_nuevo=0.000205 mean_2oct=0.000205 max_rel_por_semilla=6.197e-05  NO REPRODUCE EXACTO
+MultiCue  A  mean_nuevo=0.000098 mean_2oct=0.000098 max_rel_por_semilla=4.390e-06  NO REPRODUCE EXACTO
+MultiCue  B  mean_nuevo=0.000215 mean_2oct=0.000215 max_rel_por_semilla=4.886e-06  NO REPRODUCE EXACTO
+CR        A  mean_nuevo=0.000040 mean_2oct=0.000040 max_rel_por_semilla=4.629e-05  NO REPRODUCE EXACTO
+CR        B  mean_nuevo=0.000574 mean_2oct=0.000574 max_rel_por_semilla=2.913e-06  NO REPRODUCE EXACTO
+
+====================================================================================================
+AUDITORIA del brazo W (2-oct) con la t correcta: W contra S y W contra B
+====================================================================================================
+Gated     W-S  ratio=2.398x  p_normal=0.0995  p_welch=0.1225 (df 13.6)  p_perm=0.1158  indistinguibles
+Gated     W-B  ratio=4.522x  p_normal=0.0151  p_welch=0.0360 (df 9.8)  p_perm=0.0200  difieren
+LinScale  W-S  ratio=1.312x  p_normal=0.0462  p_welch=0.0646 (df 15.1)  p_perm=0.0570  indistinguibles
+LinScale  W-B  ratio=1.451x  p_normal=0.0060  p_welch=0.0164 (df 13.3)  p_perm=0.0090  difieren
+MultiCue  W-S  ratio=1.119x  p_normal=0.3825  p_welch=0.3958 (df 15.6)  p_perm=0.3914  indistinguibles
+MultiCue  W-B  ratio=1.038x  p_normal=0.7523  p_welch=0.7570 (df 13.8)  p_perm=0.7558  indistinguibles
+CR        W-S  ratio=0.998x  p_normal=0.9912  p_welch=0.9913 (df 18.0)  p_perm=0.9895  indistinguibles
+CR        W-B  ratio=0.753x  p_normal=0.1057  p_welch=0.1231 (df 18.0)  p_perm=0.1224  indistinguibles
+
+====================================================================================================
+C1  RW contra RB: conectoma congelado recurrente contra ruido congelado recurrente
+====================================================================================================
+Gated     RW=0.021818 RB=0.021557 ratio=1.012x  t=+0.06 df=17.7  p_welch=0.9494  p_holm=1.0000  p_perm=0.9374  p_normal=0.9486  -> indistinguibles
+LinScale  RW=0.000554 RB=0.000494 ratio=1.122x  t=+1.28 df=17.3  p_welch=0.2175  p_holm=0.8702  p_perm=0.2157  p_normal=0.2007  -> indistinguibles
+MultiCue  RW=0.001050 RB=0.002664 ratio=0.394x  t=-0.90 df=9.1  p_welch=0.3937  p_holm=1.0000  p_perm=0.8772  p_normal=0.3705  -> indistinguibles
+CR        RW=0.000664 RB=0.000649 ratio=1.023x  t=+0.15 df=17.3  p_welch=0.8798  p_holm=1.0000  p_perm=0.8816  p_normal=0.8780  -> indistinguibles
+conteo (p_welch): RW mejor en 0/4, indistinguibles en 4/4, peor en 0/4
+conteo (Holm):    RW mejor en 0, indistinguibles en 4, peor en 0
+VEREDICTO C1: ABORTO: el conectoma congelado le gana al ruido congelado solo en 0/4. La analogia del 96% fijo se retira tambien en el sustrato recurrente
+
+====================================================================================================
+C2  RW contra RS: EL BRAZO S: conectoma contra su shuffle de grado exacto, tau fija
+====================================================================================================
+Gated     RW=0.021818 RS=0.021768 ratio=1.002x  t=+0.01 df=17.9  p_welch=0.9899  p_holm=1.0000  p_perm=0.9839  p_normal=0.9898  -> indistinguibles
+LinScale  RW=0.000554 RS=0.000564 ratio=0.984x  t=-0.18 df=18.0  p_welch=0.8622  p_holm=1.0000  p_perm=0.8604  p_normal=0.8602  -> indistinguibles
+MultiCue  RW=0.001050 RS=0.002502 ratio=0.420x  t=-0.93 df=9.1  p_welch=0.3754  p_holm=1.0000  p_perm=0.7356  p_normal=0.3513  -> indistinguibles
+CR        RW=0.000664 RS=0.000668 ratio=0.993x  t=-0.05 df=17.7  p_welch=0.9625  p_holm=1.0000  p_perm=0.9630  p_normal=0.9619  -> indistinguibles
+conteo (p_welch): RW mejor en 0/4, indistinguibles en 4/4, peor en 0/4
+conteo (Holm):    RW mejor en 0, indistinguibles en 4, peor en 0
+VEREDICTO C2: PAGA LA SPARSITY, NO LA MOSCA: el cableado real y su shuffle son indistinguibles en 4/4
+
+====================================================================================================
+C3  LW contra LS: el brazo S con tau liquida
+====================================================================================================
+Gated     LW=0.019249 LS=0.018618 ratio=1.034x  t=+0.51 df=17.3  p_welch=0.6181  p_holm=1.0000  p_perm=0.6206  p_normal=0.6116  -> indistinguibles
+LinScale  LW=0.000569 LS=0.000625 ratio=0.911x  t=-0.99 df=17.3  p_welch=0.3365  p_holm=1.0000  p_perm=0.3334  p_normal=0.3229  -> indistinguibles
+MultiCue  LW=0.001551 LS=0.002380 ratio=0.652x  t=-0.56 df=11.5  p_welch=0.5840  p_holm=1.0000  p_perm=0.7825  p_normal=0.5732  -> indistinguibles
+CR        LW=0.000666 LS=0.000653 ratio=1.020x  t=+0.12 df=18.0  p_welch=0.9071  p_holm=1.0000  p_perm=0.9085  p_normal=0.9058  -> indistinguibles
+conteo (p_welch): LW mejor en 0/4, indistinguibles en 4/4, peor en 0/4
+conteo (Holm):    LW mejor en 0, indistinguibles en 4, peor en 0
+VEREDICTO C3: PAGA LA SPARSITY, NO LA MOSCA: el cableado real y su shuffle son indistinguibles en 4/4
+
+====================================================================================================
+C4  LW contra RW: tau liquida contra tau fija, sobre el cableado de la mosca
+====================================================================================================
+Gated     LW=0.019249 RW=0.021818 ratio=0.882x  t=-0.92 df=10.5  p_welch=0.3804  p_holm=1.0000  p_perm=0.3759  p_normal=0.3599  -> indistinguibles
+LinScale  LW=0.000569 RW=0.000554 ratio=1.026x  t=+0.28 df=18.0  p_welch=0.7791  p_holm=1.0000  p_perm=0.7751  p_normal=0.7759  -> indistinguibles
+MultiCue  LW=0.001551 RW=0.001050 ratio=1.478x  t=+0.95 df=9.8  p_welch=0.3643  p_holm=1.0000  p_perm=0.5109  p_normal=0.3415  -> indistinguibles
+CR        LW=0.000666 RW=0.000664 ratio=1.004x  t=+0.03 df=17.0  p_welch=0.9794  p_holm=1.0000  p_perm=0.9793  p_normal=0.9791  -> indistinguibles
+conteo (p_welch): LW mejor en 0/4, indistinguibles en 4/4, peor en 0/4
+conteo (Holm):    LW mejor en 0, indistinguibles en 4, peor en 0
+VEREDICTO C4: informativo: mejor 0, indistinguible 4, peor 0
+
+====================================================================================================
+C5  LS contra RS: tau liquida contra tau fija, sobre el shuffle
+====================================================================================================
+Gated     LS=0.018618 RS=0.021768 ratio=0.855x  t=-1.04 df=11.0  p_welch=0.3187  p_holm=1.0000  p_perm=0.3130  p_normal=0.2963  -> indistinguibles
+LinScale  LS=0.000625 RS=0.000564 ratio=1.108x  t=+1.05 df=17.7  p_welch=0.3078  p_holm=1.0000  p_perm=0.3054  p_normal=0.2937  -> indistinguibles
+MultiCue  LS=0.002380 RS=0.002502 ratio=0.951x  t=-0.06 df=17.7  p_welch=0.9539  p_holm=1.0000  p_perm=0.8140  p_normal=0.9532  -> indistinguibles
+CR        LS=0.000653 RS=0.000668 ratio=0.977x  t=-0.14 df=17.6  p_welch=0.8890  p_holm=1.0000  p_perm=0.8899  p_normal=0.8874  -> indistinguibles
+conteo (p_welch): LS mejor en 0/4, indistinguibles en 4/4, peor en 0/4
+conteo (Holm):    LS mejor en 0, indistinguibles en 4, peor en 0
+VEREDICTO C5: informativo: mejor 0, indistinguible 4, peor 0
+
+====================================================================================================
+C6  A contra F: memoria liquida contra la misma memoria con tau constante
+====================================================================================================
+Gated     A=0.000236 F=0.000266 ratio=0.887x  t=-0.48 df=18.0  p_welch=0.6392  p_holm=1.0000  p_perm=0.6402  p_normal=0.6334  -> indistinguibles
+LinScale  A=0.000055 F=0.000061 ratio=0.896x  t=-0.67 df=17.1  p_welch=0.5095  p_holm=1.0000  p_perm=0.5297  p_normal=0.5005  -> indistinguibles
+MultiCue  A=0.000098 F=0.000374 ratio=0.263x  t=-4.69 df=9.1  p_welch=0.0011  p_holm=0.0044  p_perm=0.0000  p_normal=0.0000  -> A MEJOR
+CR        A=0.000040 F=0.000071 ratio=0.567x  t=-1.22 df=9.4  p_welch=0.2515  p_holm=0.7545  p_perm=0.3176  p_normal=0.2218  -> indistinguibles
+conteo (p_welch): A mejor en 1/4, indistinguibles en 3/4, peor en 0/4
+conteo (Holm):    A mejor en 1, indistinguibles en 3, peor en 0
+VEREDICTO C6: LA NEURONA LIQUIDA NO ES NECESARIA en esta memoria y estas tareas: gana solo en 1/4 (empata 3, pierde 0)
+
+====================================================================================================
+C7  RW contra B: conectoma recurrente contra el B feedforward del brazo W
+====================================================================================================
+Gated     RW=0.021818 B=0.001393 ratio=15.667x  t=+7.49 df=9.4  p_welch=0.0000  p_holm=0.0001  p_perm=0.0000  p_normal=0.0000  -> RW PEOR
+LinScale  RW=0.000554 B=0.000205 ratio=2.704x  t=+8.86 df=12.0  p_welch=0.0000  p_holm=0.0000  p_perm=0.0000  p_normal=0.0000  -> RW PEOR
+MultiCue  RW=0.001050 B=0.000215 ratio=4.880x  t=+7.43 df=9.2  p_welch=0.0000  p_holm=0.0001  p_perm=0.0000  p_normal=0.0000  -> RW PEOR
+CR        RW=0.000664 B=0.000574 ratio=1.156x  t=+1.02 df=18.0  p_welch=0.3190  p_holm=0.3190  p_perm=0.3223  p_normal=0.3054  -> indistinguibles
+conteo (p_welch): RW mejor en 0/4, indistinguibles en 1/4, peor en 3/4
+conteo (Holm):    RW mejor en 0, indistinguibles en 1, peor en 3
+VEREDICTO C7: informativo: mejor 0, indistinguible 1, peor 3
+
+====================================================================================================
+C8  RB contra B: ruido recurrente contra ruido feedforward (efecto de la recurrencia sola)
+====================================================================================================
+Gated     RB=0.021557 B=0.001393 ratio=15.479x  t=+6.57 df=9.3  p_welch=0.0001  p_holm=0.0003  p_perm=0.0000  p_normal=0.0000  -> RB PEOR
+LinScale  RB=0.000494 B=0.000205 ratio=2.410x  t=+8.66 df=13.3  p_welch=0.0000  p_holm=0.0000  p_perm=0.0000  p_normal=0.0000  -> RB PEOR
+MultiCue  RB=0.002664 B=0.000215 ratio=12.387x  t=+1.36 df=9.0  p_welch=0.2066  p_holm=0.4132  p_perm=0.0000  p_normal=0.1735  -> indistinguibles
+CR        RB=0.000649 B=0.000574 ratio=1.131x  t=+0.77 df=17.5  p_welch=0.4543  p_holm=0.4543  p_perm=0.4692  p_normal=0.4441  -> indistinguibles
+conteo (p_welch): RB mejor en 0/4, indistinguibles en 2/4, peor en 2/4
+conteo (Holm):    RB mejor en 0, indistinguibles en 2, peor en 2
+VEREDICTO C8: informativo: mejor 0, indistinguible 2, peor 2
+
+====================================================================================================
+INTERACCION descriptiva: la ventaja del cableado real sobre su shuffle, con tau fija y con tau liquida
+====================================================================================================
+Gated     RW/RS=1.002x  LW/LS=1.034x  (menor que 1 = el cableado real rinde mejor)
+LinScale  RW/RS=0.984x  LW/LS=0.911x  (menor que 1 = el cableado real rinde mejor)
+MultiCue  RW/RS=0.420x  LW/LS=0.652x  (menor que 1 = el cableado real rinde mejor)
+CR        RW/RS=0.993x  LW/LS=1.020x  (menor que 1 = el cableado real rinde mejor)
+
+RESUMEN_VEREDICTOS {"C1": "ABORTO: el conectoma congelado le gana al ruido congelado solo en 0/4. La analogia del 96% fijo se retira tambien en el sustrato recurrente", "C2": "PAGA LA SPARSITY, NO LA MOSCA: el cableado real y su shuffle son indistinguibles en 4/4", "C3": "PAGA LA SPARSITY, NO LA MOSCA: el cableado real y su shuffle son indistinguibles en 4/4", "C4": "informativo: mejor 0, indistinguible 4, peor 0", "C5": "informativo: mejor 0, indistinguible 4, peor 0", "C6": "LA NEURONA LIQUIDA NO ES NECESARIA en esta memoria y estas tareas: gana solo en 1/4 (empata 3, pierde 0)", "C7": "informativo: mejor 0, indistinguible 1, peor 3", "C8": "informativo: mejor 0, indistinguible 2, peor 2"}
+FIN_AGREGADO

@@ -1,0 +1,14 @@
+# celda tarea=MultiCue brazo=B :: react MLP denso aleatorio, congelado (debe reproducir el brazo W)
+# {"batch": 64, "cpu": "AMD EPYC 9V74 80-Core Processor", "device": "cpu", "eval_n": 2000, "fecha_utc": "2026-10-11T13:39:17Z", "git_sha": "670fb586d4b8b2392d54e0dbdb7dd78749b9bb5e", "h_m": 8, "h_r": 26, "hilos_torch": 2, "lr": 0.001, "maquina": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_script": "f8b10037e70dfe897ff2d841077419b4", "motivo_fuente": {"annot_sha": "17fc57722002e1a7d38cdd0c89ac382bf92718da", "columna_peso": "Excitatory x Connectivity", "md5_annot": "719904abad876c68ace1b5690c9b9b63", "md5_brazo_w_json": "690052d9b356c0896ee99c39f46c237c", "md5_parquet": "3d802fd542b5d18570ba1ba0bb0abed9", "seleccion": "verbatim de brazo_w.py (titan-brazo-w, 23-ago; brain-env 2-oct)"}, "numpy": "2.5.3", "pasos": 2000, "python": "3.12.3", "rho": 0.9, "run_id": "38143998992", "semillas": 10, "tau_media": 0.11969740197836441, "tau_rango": [0.06, 0.18], "tau_seed": 119, "torch": "2.10.0+cpu", "vh_seed": 120, "vx_seed": 124}
+semilla=0 mse=0.000257941399468109 entrenables=627/1433 seg=14.0 guardas={}
+semilla=1 mse=0.00023526193399447948 entrenables=627/1433 seg=13.3 guardas={}
+semilla=2 mse=0.0001752007519826293 entrenables=627/1433 seg=13.3 guardas={}
+semilla=3 mse=0.00020458253857214004 entrenables=627/1433 seg=13.3 guardas={}
+semilla=4 mse=0.00024877797113731503 entrenables=627/1433 seg=13.3 guardas={}
+semilla=5 mse=0.00017387310799676925 entrenables=627/1433 seg=13.3 guardas={}
+semilla=6 mse=0.0002399020886514336 entrenables=627/1433 seg=13.3 guardas={}
+semilla=7 mse=0.0002158558345399797 entrenables=627/1433 seg=13.3 guardas={}
+semilla=8 mse=0.00025193692999891937 entrenables=627/1433 seg=13.2 guardas={}
+semilla=9 mse=0.00014735489094164222 entrenables=627/1433 seg=13.2 guardas={}
+RESUMEN tarea=MultiCue brazo=B mean=0.000215 sd=0.000039 n=10 minutos=2.2
+FIN_CELDA

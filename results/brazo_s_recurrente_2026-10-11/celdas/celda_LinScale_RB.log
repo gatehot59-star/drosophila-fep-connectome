@@ -1,0 +1,14 @@
+# celda tarea=LinScale brazo=RB :: react recurrente SparseLTC, W aleatorio denso rho 0.9, tau fija heterogenea, congelado
+# {"batch": 64, "cpu": "AMD EPYC 9V74 80-Core Processor", "device": "cpu", "eval_n": 2000, "fecha_utc": "2026-10-11T13:39:22Z", "git_sha": "670fb586d4b8b2392d54e0dbdb7dd78749b9bb5e", "h_m": 8, "h_r": 26, "hilos_torch": 2, "lr": 0.001, "maquina": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_script": "f8b10037e70dfe897ff2d841077419b4", "motivo_fuente": {"annot_sha": "17fc57722002e1a7d38cdd0c89ac382bf92718da", "columna_peso": "Excitatory x Connectivity", "md5_annot": "719904abad876c68ace1b5690c9b9b63", "md5_brazo_w_json": "690052d9b356c0896ee99c39f46c237c", "md5_parquet": "3d802fd542b5d18570ba1ba0bb0abed9", "seleccion": "verbatim de brazo_w.py (titan-brazo-w, 23-ago; brain-env 2-oct)"}, "numpy": "2.5.3", "pasos": 2000, "python": "3.12.3", "rho": 0.9, "run_id": "38143998992", "semillas": 10, "tau_media": 0.11969740197836441, "tau_rango": [0.06, 0.18], "tau_seed": 119, "torch": "2.10.0+cpu", "vh_seed": 120, "vx_seed": 123}
+semilla=0 mse=0.000540947716217488 entrenables=619/697 seg=19.2 guardas={"radio_crudo": 0.6399916234894079, "radio_post": 0.8999999941828164}
+semilla=1 mse=0.0004547243006527424 entrenables=619/697 seg=18.5 guardas={"radio_crudo": 0.6518394949487996, "radio_post": 0.8999999997681969}
+semilla=2 mse=0.0006751230102963746 entrenables=619/697 seg=18.4 guardas={"radio_crudo": 0.6269489823457676, "radio_post": 0.9000000012971897}
+semilla=3 mse=0.0003793995419982821 entrenables=619/697 seg=18.3 guardas={"radio_crudo": 0.5796458258113043, "radio_post": 0.9000000006006067}
+semilla=4 mse=0.0004395358555484563 entrenables=619/697 seg=18.4 guardas={"radio_crudo": 0.5671121301129759, "radio_post": 0.9000000073856748}
+semilla=5 mse=0.0005058603128418326 entrenables=619/697 seg=18.3 guardas={"radio_crudo": 0.5582947643907292, "radio_post": 0.9000000148270377}
+semilla=6 mse=0.0004367783258203417 entrenables=619/697 seg=18.4 guardas={"radio_crudo": 0.5814245003565721, "radio_post": 0.8999999889990282}
+semilla=7 mse=0.0005121906870044768 entrenables=619/697 seg=18.3 guardas={"radio_crudo": 0.6401933217605809, "radio_post": 0.9000000017808395}
+semilla=8 mse=0.0006070132367312908 entrenables=619/697 seg=18.3 guardas={"radio_crudo": 0.6328453260274528, "radio_post": 0.9000000084656308}
+semilla=9 mse=0.00039085157914087176 entrenables=619/697 seg=18.2 guardas={"radio_crudo": 0.5448388272728673, "radio_post": 0.9000000037909651}
+RESUMEN tarea=LinScale brazo=RB mean=0.000494 sd=0.000094 n=10 minutos=3.1
+FIN_CELDA

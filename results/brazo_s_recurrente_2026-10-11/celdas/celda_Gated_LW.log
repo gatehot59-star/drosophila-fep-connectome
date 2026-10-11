@@ -1,0 +1,14 @@
+# celda tarea=Gated brazo=LW :: como RW con tau liquida, congelado
+# {"batch": 64, "cpu": "AMD EPYC 7763 64-Core Processor", "device": "cpu", "eval_n": 2000, "fecha_utc": "2026-10-11T13:39:18Z", "git_sha": "670fb586d4b8b2392d54e0dbdb7dd78749b9bb5e", "h_m": 8, "h_r": 26, "hilos_torch": 2, "lr": 0.001, "maquina": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_script": "f8b10037e70dfe897ff2d841077419b4", "motivo_fuente": {"annot_sha": "17fc57722002e1a7d38cdd0c89ac382bf92718da", "columna_peso": "Excitatory x Connectivity", "md5_annot": "719904abad876c68ace1b5690c9b9b63", "md5_brazo_w_json": "690052d9b356c0896ee99c39f46c237c", "md5_parquet": "3d802fd542b5d18570ba1ba0bb0abed9", "seleccion": "verbatim de brazo_w.py (titan-brazo-w, 23-ago; brain-env 2-oct)"}, "numpy": "2.5.3", "pasos": 2000, "python": "3.12.3", "rho": 0.9, "run_id": "38143998992", "semillas": 10, "tau_media": 0.11969740197836441, "tau_rango": [0.06, 0.18], "tau_seed": 119, "torch": "2.10.0+cpu", "vh_seed": 120, "vx_seed": 123}
+semilla=0 mse=0.0168335922062397 entrenables=619/697 seg=29.5 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+semilla=1 mse=0.01942852884531021 entrenables=619/697 seg=28.4 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+semilla=2 mse=0.02079283818602562 entrenables=619/697 seg=28.2 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+semilla=3 mse=0.0198157150298357 entrenables=619/697 seg=28.1 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+semilla=4 mse=0.021041186526417732 entrenables=619/697 seg=28.1 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+semilla=5 mse=0.01981869526207447 entrenables=619/697 seg=27.9 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+semilla=6 mse=0.02216814085841179 entrenables=619/697 seg=28.1 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+semilla=7 mse=0.019433118402957916 entrenables=619/697 seg=28.0 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+semilla=8 mse=0.013391779735684395 entrenables=619/697 seg=28.0 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+semilla=9 mse=0.019771169871091843 entrenables=619/697 seg=28.2 guardas={"radio_crudo": 17.659700614843537, "radio_post": 0.8999999970564178}
+RESUMEN tarea=Gated brazo=LW mean=0.019249 sd=0.002478 n=10 minutos=4.7
+FIN_CELDA

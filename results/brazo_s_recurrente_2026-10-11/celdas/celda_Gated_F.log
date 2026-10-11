@@ -1,0 +1,14 @@
+# celda tarea=Gated brazo=F :: DualBrain original con la memoria sin liquidez: tau = sigmoid(b) por unidad
+# {"batch": 64, "cpu": "AMD EPYC 9V74 80-Core Processor", "device": "cpu", "eval_n": 2000, "fecha_utc": "2026-10-11T13:39:18Z", "git_sha": "670fb586d4b8b2392d54e0dbdb7dd78749b9bb5e", "h_m": 8, "h_r": 26, "hilos_torch": 2, "lr": 0.001, "maquina": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_script": "f8b10037e70dfe897ff2d841077419b4", "motivo_fuente": {"annot_sha": "17fc57722002e1a7d38cdd0c89ac382bf92718da", "columna_peso": "Excitatory x Connectivity", "md5_annot": "719904abad876c68ace1b5690c9b9b63", "md5_brazo_w_json": "690052d9b356c0896ee99c39f46c237c", "md5_parquet": "3d802fd542b5d18570ba1ba0bb0abed9", "seleccion": "verbatim de brazo_w.py (titan-brazo-w, 23-ago; brain-env 2-oct)"}, "numpy": "2.5.3", "pasos": 2000, "python": "3.12.3", "rho": 0.9, "run_id": "38143998992", "semillas": 10, "tau_media": 0.11969740197836441, "tau_rango": [0.06, 0.18], "tau_seed": 119, "torch": "2.10.0+cpu", "vh_seed": 120, "vx_seed": 123}
+semilla=0 mse=0.00022695411462336779 entrenables=1271/1399 seg=26.3 guardas={"tau_peso_max_abs": 0.0}
+semilla=1 mse=0.00033936245017684996 entrenables=1271/1399 seg=25.5 guardas={"tau_peso_max_abs": 0.0}
+semilla=2 mse=0.0005564935272559524 entrenables=1271/1399 seg=25.4 guardas={"tau_peso_max_abs": 0.0}
+semilla=3 mse=0.000244736613240093 entrenables=1271/1399 seg=25.3 guardas={"tau_peso_max_abs": 0.0}
+semilla=4 mse=0.0004213927313685417 entrenables=1271/1399 seg=25.1 guardas={"tau_peso_max_abs": 0.0}
+semilla=5 mse=0.00013537662744056433 entrenables=1271/1399 seg=24.8 guardas={"tau_peso_max_abs": 0.0}
+semilla=6 mse=0.0002896942023653537 entrenables=1271/1399 seg=24.7 guardas={"tau_peso_max_abs": 0.0}
+semilla=7 mse=0.0001075614636647515 entrenables=1271/1399 seg=24.9 guardas={"tau_peso_max_abs": 0.0}
+semilla=8 mse=0.00024648013641126454 entrenables=1271/1399 seg=25.0 guardas={"tau_peso_max_abs": 0.0}
+semilla=9 mse=9.496256825514138e-05 entrenables=1271/1399 seg=24.9 guardas={"tau_peso_max_abs": 0.0}
+RESUMEN tarea=Gated brazo=F mean=0.000266 sd=0.000145 n=10 minutos=4.2
+FIN_CELDA
