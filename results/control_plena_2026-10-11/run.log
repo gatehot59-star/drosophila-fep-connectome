@@ -1,0 +1,59 @@
+# {"configs": {"C1": [0.1, 0.05], "C2": [0.03, 0.02]}, "fecha_utc": "2026-10-11T22:20:45Z", "k_sl": 24, "maquina": "Linux-4.19.0-27-amd64-x86_64-with-glibc2.41", "md5_brazo_s": "f8b10037e70dfe897ff2d841077419b4", "md5_control": "342069aa075256e55e6638127f55a05e", "md5_dificil": "2c95e63b6ad3ff590057df80368134d7", "md5_escape": "9720998291e3f08c6082e6c67d142759", "md5_lados": "e5c19419d586850690ade3e8bbc5b315", "md5_liquida": "0bb3f8f4a9b0fd0f7d74d102d8922d1b", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_script": "45bad2a84d625f8826b84876bef87133", "numpy": "2.5.3", "procesos": 2, "python": "3.12.14", "semillas": 4}
+CONTROL_PRUEBA C+L supervivencia=0.8125 rechazo=1.0000 comb=0.9062
+CONTROL_PRUEBA C+6 supervivencia=0.7854 rechazo=0.0000 comb=0.3927
+CONTROL_PRUEBA C0 supervivencia=0.0000 rechazo=1.0000 comb=0.5000
+CHEQUEO INSTRUMENTO VALIDO
+GUARDA redes_nulas_ok=True SL=24
+GUARDA punto_de_partida_igual=True seg_por_evaluacion=0.080
+CORRIDA parte=A brazo=LIQ_PLENA red=W k=0 semilla=0 config=C1 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.9802 supervivencia=0.9604 rechazo=1.0000 hechas=1/41 seg=207
+CORRIDA parte=A brazo=LIQ_PLENA red=W k=0 semilla=0 config=C2 iters=60 comb_entrenamiento=0.9646 comb_prueba=0.9208 supervivencia=0.8417 rechazo=1.0000 hechas=2/41 seg=208
+CORRIDA parte=A brazo=NOLIQ_PLENA red=W k=0 semilla=0 config=C2 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.8719 supervivencia=0.7438 rechazo=1.0000 hechas=3/41 seg=402
+CORRIDA parte=A brazo=NOLIQ_PLENA red=W k=0 semilla=0 config=C1 iters=60 comb_entrenamiento=0.9896 comb_prueba=0.9510 supervivencia=0.9021 rechazo=1.0000 hechas=4/41 seg=409
+CORRIDA parte=A brazo=LIQ_PLENA red=W k=0 semilla=1 config=C1 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.9875 supervivencia=0.9750 rechazo=1.0000 hechas=5/41 seg=614
+CORRIDA parte=A brazo=LIQ_PLENA red=W k=0 semilla=1 config=C2 iters=60 comb_entrenamiento=0.9750 comb_prueba=0.8948 supervivencia=0.7896 rechazo=1.0000 hechas=6/41 seg=618
+CORRIDA parte=A brazo=NOLIQ_PLENA red=W k=0 semilla=1 config=C2 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.9167 supervivencia=0.8333 rechazo=1.0000 hechas=7/41 seg=773
+CORRIDA parte=A brazo=NOLIQ_PLENA red=W k=0 semilla=1 config=C1 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.9844 supervivencia=0.9688 rechazo=1.0000 hechas=8/41 seg=777
+CORRIDA parte=A brazo=LIQ_PLENA red=W k=0 semilla=2 config=C1 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.9896 supervivencia=0.9792 rechazo=1.0000 hechas=9/41 seg=899
+CORRIDA parte=A brazo=LIQ_PLENA red=W k=0 semilla=2 config=C2 iters=60 comb_entrenamiento=0.9875 comb_prueba=0.9271 supervivencia=0.8542 rechazo=1.0000 hechas=10/41 seg=903
+CORRIDA parte=A brazo=NOLIQ_PLENA red=W k=0 semilla=2 config=C2 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.9677 supervivencia=0.9354 rechazo=1.0000 hechas=11/41 seg=1020
+CORRIDA parte=A brazo=NOLIQ_PLENA red=W k=0 semilla=2 config=C1 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.9719 supervivencia=0.9437 rechazo=1.0000 hechas=12/41 seg=1021
+CORRIDA parte=A brazo=LIQ_PLENA red=W k=0 semilla=3 config=C1 iters=60 comb_entrenamiento=0.9979 comb_prueba=0.9844 supervivencia=0.9688 rechazo=1.0000 hechas=13/41 seg=1145
+CORRIDA parte=A brazo=LIQ_PLENA red=W k=0 semilla=3 config=C2 iters=60 comb_entrenamiento=0.9812 comb_prueba=0.9406 supervivencia=0.8938 rechazo=0.9875 hechas=14/41 seg=1149
+CORRIDA parte=A brazo=NOLIQ_PLENA red=W k=0 semilla=3 config=C2 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.9844 supervivencia=0.9688 rechazo=1.0000 hechas=15/41 seg=1321
+CORRIDA parte=A brazo=NOLIQ_PLENA red=W k=0 semilla=3 config=C1 iters=60 comb_entrenamiento=1.0000 comb_prueba=0.9531 supervivencia=0.9062 rechazo=1.0000 hechas=16/41 seg=1329
+CORRIDA parte=B brazo=LIQ_PLENA red=W k=0 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9938 comb_prueba=0.9802 supervivencia=0.9604 rechazo=1.0000 hechas=17/41 seg=1447
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=0 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9583 comb_prueba=0.9229 supervivencia=0.8458 rechazo=1.0000 hechas=18/41 seg=1459
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=1 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9917 comb_prueba=0.9760 supervivencia=0.9521 rechazo=1.0000 hechas=19/41 seg=1574
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=2 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9792 comb_prueba=0.9542 supervivencia=0.9333 rechazo=0.9750 hechas=20/41 seg=1591
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=3 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9062 comb_prueba=0.8781 supervivencia=0.7562 rechazo=1.0000 hechas=21/41 seg=1697
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=4 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9500 comb_prueba=0.8865 supervivencia=0.7729 rechazo=1.0000 hechas=22/41 seg=1716
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=5 semilla=0 config=C1 iters=40 comb_entrenamiento=0.8938 comb_prueba=0.9042 supervivencia=0.8208 rechazo=0.9875 hechas=23/41 seg=1831
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=6 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9021 comb_prueba=0.8969 supervivencia=0.7937 rechazo=1.0000 hechas=24/41 seg=1848
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=7 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9833 comb_prueba=0.9740 supervivencia=0.9479 rechazo=1.0000 hechas=25/41 seg=1953
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=8 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9917 comb_prueba=0.9490 supervivencia=0.8979 rechazo=1.0000 hechas=26/41 seg=1972
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=9 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9750 comb_prueba=0.9062 supervivencia=0.8125 rechazo=1.0000 hechas=27/41 seg=2084
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=10 semilla=0 config=C1 iters=40 comb_entrenamiento=0.7646 comb_prueba=0.7406 supervivencia=0.6687 rechazo=0.8125 hechas=28/41 seg=2101
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=11 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9854 comb_prueba=0.9323 supervivencia=0.8646 rechazo=1.0000 hechas=29/41 seg=2206
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=12 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9750 comb_prueba=0.9604 supervivencia=0.9208 rechazo=1.0000 hechas=30/41 seg=2224
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=13 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9229 comb_prueba=0.8979 supervivencia=0.7958 rechazo=1.0000 hechas=31/41 seg=2335
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=14 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9812 comb_prueba=0.9688 supervivencia=0.9375 rechazo=1.0000 hechas=32/41 seg=2357
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=15 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9583 comb_prueba=0.9042 supervivencia=0.8083 rechazo=1.0000 hechas=33/41 seg=2468
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=16 semilla=0 config=C1 iters=40 comb_entrenamiento=0.8875 comb_prueba=0.8448 supervivencia=0.7021 rechazo=0.9875 hechas=34/41 seg=2486
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=17 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9917 comb_prueba=0.9500 supervivencia=0.9000 rechazo=1.0000 hechas=35/41 seg=2595
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=18 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9646 comb_prueba=0.9583 supervivencia=0.9292 rechazo=0.9875 hechas=36/41 seg=2607
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=19 semilla=0 config=C1 iters=40 comb_entrenamiento=0.8979 comb_prueba=0.8469 supervivencia=0.6937 rechazo=1.0000 hechas=37/41 seg=2721
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=20 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9333 comb_prueba=0.8594 supervivencia=0.7312 rechazo=0.9875 hechas=38/41 seg=2738
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=21 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9167 comb_prueba=0.9010 supervivencia=0.8021 rechazo=1.0000 hechas=39/41 seg=2848
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=22 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9000 comb_prueba=0.8438 supervivencia=0.6875 rechazo=1.0000 hechas=40/41 seg=2865
+CORRIDA parte=B brazo=LIQ_PLENA red=SL k=23 semilla=0 config=C1 iters=40 comb_entrenamiento=0.9938 comb_prueba=0.9594 supervivencia=0.9187 rechazo=1.0000 hechas=41/41 seg=2927
+RESUMEN_AJUSTADO brazo=LIQ_PLENA comb_prueba_media=0.9854 desvio=0.0041 min=0.9802 max=0.9896 por_semilla=0.9802,0.9875,0.9896,0.9844 configs=C1,C1,C1,C1
+RESUMEN_AJUSTADO brazo=NOLIQ_PLENA comb_prueba_media=0.9453 desvio=0.0506 min=0.8719 max=0.9844 por_semilla=0.8719,0.9844,0.9719,0.9531 configs=C2,C1,C1,C1
+CONTRASTE P3_LIQ_PLENA_vs_NOLIQ_PLENA_ajustadas acierto_A=0.9750 acierto_B=0.9062 solo_A=169 solo_B=15 p_mcnemar=3.569e-34 -> MEJOR
+SEMILLAS LIQ_PLENA gana_a_NOLIQ_PLENA_ajustada_en=4/4
+VEREDICTO_PLENA=LA PLENA GANA POR SER LIQUIDA CON OPTIMIZACION AJUSTADA
+REPRODUCE_012=True
+CONTRASTE Q_SL_PLENA comb W=0.9802 SL_media=0.9090 SL_max=0.9760 n>=W=0/24 p=0.0400 -> W GANA
+VEREDICTO_CABLEADO_CON_PLENA=CON LA LIQUIDA PLENA SIGUE PAGANDO EL CABLEADO FINO
+escrito resultados.json md5=f2792e6ae8d7a93cd972230b9f726242
+minutos=48.79
+EXIT_RUN=0
