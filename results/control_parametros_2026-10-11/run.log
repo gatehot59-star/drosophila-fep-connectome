@@ -1,0 +1,71 @@
+# {"fecha_utc": "2026-10-11T20:45:45Z", "iters": 40, "k_s": 8, "k_sl": 24, "maquina": "Linux-4.19.0-27-amd64-x86_64-with-glibc2.41", "md5_brazo_s": "f8b10037e70dfe897ff2d841077419b4", "md5_dificil": "2c95e63b6ad3ff590057df80368134d7", "md5_escape": "9720998291e3f08c6082e6c67d142759", "md5_lados": "e5c19419d586850690ade3e8bbc5b315", "md5_liquida": "0bb3f8f4a9b0fd0f7d74d102d8922d1b", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_script": "342069aa075256e55e6638127f55a05e", "numpy": "2.5.3", "procesos": 2, "python": "3.12.14", "semillas": 4}
+CONTROL_PRUEBA C+L supervivencia=0.8125 rechazo=1.0000 comb=0.9062
+CONTROL_PRUEBA C+6 supervivencia=0.7854 rechazo=0.0000 comb=0.3927
+CONTROL_PRUEBA C0 supervivencia=0.0000 rechazo=1.0000 comb=0.5000
+CHEQUEO INSTRUMENTO VALIDO
+GUARDA redes_nulas_ok=True SL=24 S=8
+GUARDA punto_de_partida_igual=True seg_por_evaluacion=0.077
+CORRIDA brazo=NOLIQ_DIAG red=W k=0 semilla=0 comb_entrenamiento=0.9917 comb_prueba=0.9313 supervivencia=0.8625 rechazo=1.0000 norma_extra=2.712 hechas=1/48 seg=110
+CORRIDA brazo=LIQ_DIAG red=W k=0 semilla=0 comb_entrenamiento=0.9854 comb_prueba=0.9521 supervivencia=0.9167 rechazo=0.9875 norma_extra=3.383 hechas=2/48 seg=122
+CORRIDA brazo=LIQ_PLENA red=W k=0 semilla=0 comb_entrenamiento=0.9938 comb_prueba=0.9802 supervivencia=0.9604 rechazo=1.0000 norma_extra=13.010 hechas=3/48 seg=240
+CORRIDA brazo=NOLIQ_PLENA red=W k=0 semilla=0 comb_entrenamiento=0.9208 comb_prueba=0.8510 supervivencia=0.7021 rechazo=1.0000 norma_extra=12.625 hechas=4/48 seg=249
+CORRIDA brazo=NOLIQ_DIAG red=W k=0 semilla=1 comb_entrenamiento=0.9875 comb_prueba=0.9740 supervivencia=0.9604 rechazo=0.9875 norma_extra=2.974 hechas=5/48 seg=355
+CORRIDA brazo=LIQ_DIAG red=W k=0 semilla=1 comb_entrenamiento=0.9771 comb_prueba=0.9146 supervivencia=0.8417 rechazo=0.9875 norma_extra=3.188 hechas=6/48 seg=356
+CORRIDA brazo=NOLIQ_PLENA red=W k=0 semilla=1 comb_entrenamiento=0.9896 comb_prueba=0.9594 supervivencia=0.9187 rechazo=1.0000 norma_extra=12.622 hechas=7/48 seg=482
+CORRIDA brazo=LIQ_PLENA red=W k=0 semilla=1 comb_entrenamiento=0.9979 comb_prueba=0.9844 supervivencia=0.9688 rechazo=1.0000 norma_extra=12.662 hechas=8/48 seg=483
+CORRIDA brazo=NOLIQ_DIAG red=W k=0 semilla=2 comb_entrenamiento=0.9583 comb_prueba=0.8917 supervivencia=0.7833 rechazo=1.0000 norma_extra=2.974 hechas=9/48 seg=604
+CORRIDA brazo=LIQ_DIAG red=W k=0 semilla=2 comb_entrenamiento=0.9563 comb_prueba=0.9125 supervivencia=0.8250 rechazo=1.0000 norma_extra=2.865 hechas=10/48 seg=613
+CORRIDA brazo=LIQ_PLENA red=W k=0 semilla=2 comb_entrenamiento=0.9979 comb_prueba=0.9812 supervivencia=0.9750 rechazo=0.9875 norma_extra=12.890 hechas=11/48 seg=738
+CORRIDA brazo=NOLIQ_PLENA red=W k=0 semilla=2 comb_entrenamiento=1.0000 comb_prueba=0.9719 supervivencia=0.9437 rechazo=1.0000 norma_extra=12.662 hechas=12/48 seg=742
+CORRIDA brazo=NOLIQ_DIAG red=W k=0 semilla=3 comb_entrenamiento=0.9958 comb_prueba=0.9802 supervivencia=0.9604 rechazo=1.0000 norma_extra=2.947 hechas=13/48 seg=848
+CORRIDA brazo=LIQ_DIAG red=W k=0 semilla=3 comb_entrenamiento=0.9688 comb_prueba=0.9073 supervivencia=0.8396 rechazo=0.9750 norma_extra=3.400 hechas=14/48 seg=854
+CORRIDA brazo=LIQ_PLENA red=W k=0 semilla=3 comb_entrenamiento=0.9979 comb_prueba=0.9844 supervivencia=0.9688 rechazo=1.0000 norma_extra=12.766 hechas=15/48 seg=974
+CORRIDA brazo=NOLIQ_PLENA red=W k=0 semilla=3 comb_entrenamiento=0.9667 comb_prueba=0.9031 supervivencia=0.8063 rechazo=1.0000 norma_extra=13.004 hechas=16/48 seg=978
+CORRIDA brazo=LIQ_DIAG red=SL k=0 semilla=0 comb_entrenamiento=0.9271 comb_prueba=0.9021 supervivencia=0.8292 rechazo=0.9750 norma_extra=3.701 hechas=17/48 seg=1089
+CORRIDA brazo=LIQ_DIAG red=SL k=1 semilla=0 comb_entrenamiento=0.9854 comb_prueba=0.9469 supervivencia=0.8938 rechazo=1.0000 norma_extra=2.904 hechas=18/48 seg=1093
+CORRIDA brazo=LIQ_DIAG red=SL k=2 semilla=0 comb_entrenamiento=0.9333 comb_prueba=0.8521 supervivencia=0.7042 rechazo=1.0000 norma_extra=3.276 hechas=19/48 seg=1203
+CORRIDA brazo=LIQ_DIAG red=SL k=3 semilla=0 comb_entrenamiento=0.8792 comb_prueba=0.8521 supervivencia=0.7292 rechazo=0.9750 norma_extra=3.081 hechas=20/48 seg=1208
+CORRIDA brazo=LIQ_DIAG red=SL k=4 semilla=0 comb_entrenamiento=0.8875 comb_prueba=0.8594 supervivencia=0.7312 rechazo=0.9875 norma_extra=2.572 hechas=21/48 seg=1316
+CORRIDA brazo=LIQ_DIAG red=SL k=5 semilla=0 comb_entrenamiento=0.8479 comb_prueba=0.7969 supervivencia=0.6062 rechazo=0.9875 norma_extra=2.549 hechas=22/48 seg=1324
+CORRIDA brazo=LIQ_DIAG red=SL k=6 semilla=0 comb_entrenamiento=0.8438 comb_prueba=0.8594 supervivencia=0.7688 rechazo=0.9500 norma_extra=2.884 hechas=23/48 seg=1435
+CORRIDA brazo=LIQ_DIAG red=SL k=7 semilla=0 comb_entrenamiento=0.8833 comb_prueba=0.8812 supervivencia=0.7625 rechazo=1.0000 norma_extra=3.704 hechas=24/48 seg=1443
+CORRIDA brazo=LIQ_DIAG red=SL k=8 semilla=0 comb_entrenamiento=0.9479 comb_prueba=0.9135 supervivencia=0.8271 rechazo=1.0000 norma_extra=3.399 hechas=25/48 seg=1569
+CORRIDA brazo=LIQ_DIAG red=SL k=9 semilla=0 comb_entrenamiento=0.8667 comb_prueba=0.7990 supervivencia=0.8604 rechazo=0.7375 norma_extra=2.962 hechas=26/48 seg=1577
+CORRIDA brazo=LIQ_DIAG red=SL k=10 semilla=0 comb_entrenamiento=0.6250 comb_prueba=0.5896 supervivencia=0.6917 rechazo=0.4875 norma_extra=2.943 hechas=27/48 seg=1702
+CORRIDA brazo=LIQ_DIAG red=SL k=11 semilla=0 comb_entrenamiento=0.9187 comb_prueba=0.8344 supervivencia=0.6687 rechazo=1.0000 norma_extra=3.495 hechas=28/48 seg=1710
+CORRIDA brazo=LIQ_DIAG red=SL k=12 semilla=0 comb_entrenamiento=0.8729 comb_prueba=0.7979 supervivencia=0.5958 rechazo=1.0000 norma_extra=3.364 hechas=29/48 seg=1805
+CORRIDA brazo=LIQ_DIAG red=SL k=13 semilla=0 comb_entrenamiento=0.8896 comb_prueba=0.8427 supervivencia=0.6854 rechazo=1.0000 norma_extra=2.440 hechas=30/48 seg=1810
+CORRIDA brazo=LIQ_DIAG red=SL k=14 semilla=0 comb_entrenamiento=0.9604 comb_prueba=0.9573 supervivencia=0.9146 rechazo=1.0000 norma_extra=3.421 hechas=31/48 seg=1877
+CORRIDA brazo=LIQ_DIAG red=SL k=15 semilla=0 comb_entrenamiento=0.9292 comb_prueba=0.9229 supervivencia=0.9208 rechazo=0.9250 norma_extra=2.948 hechas=32/48 seg=1882
+CORRIDA brazo=LIQ_DIAG red=SL k=16 semilla=0 comb_entrenamiento=0.8229 comb_prueba=0.8188 supervivencia=0.6750 rechazo=0.9625 norma_extra=3.314 hechas=33/48 seg=1949
+CORRIDA brazo=LIQ_DIAG red=SL k=17 semilla=0 comb_entrenamiento=0.9521 comb_prueba=0.9177 supervivencia=0.8354 rechazo=1.0000 norma_extra=3.047 hechas=34/48 seg=1954
+CORRIDA brazo=LIQ_DIAG red=SL k=18 semilla=0 comb_entrenamiento=0.8896 comb_prueba=0.8208 supervivencia=0.6417 rechazo=1.0000 norma_extra=3.405 hechas=35/48 seg=2020
+CORRIDA brazo=LIQ_DIAG red=SL k=19 semilla=0 comb_entrenamiento=0.8521 comb_prueba=0.8396 supervivencia=0.6917 rechazo=0.9875 norma_extra=2.784 hechas=36/48 seg=2028
+CORRIDA brazo=LIQ_DIAG red=SL k=20 semilla=0 comb_entrenamiento=0.8375 comb_prueba=0.8313 supervivencia=0.6625 rechazo=1.0000 norma_extra=2.573 hechas=37/48 seg=2095
+CORRIDA brazo=LIQ_DIAG red=SL k=21 semilla=0 comb_entrenamiento=0.8062 comb_prueba=0.7875 supervivencia=0.6375 rechazo=0.9375 norma_extra=2.056 hechas=38/48 seg=2102
+CORRIDA brazo=LIQ_DIAG red=SL k=22 semilla=0 comb_entrenamiento=0.8417 comb_prueba=0.8240 supervivencia=0.7104 rechazo=0.9375 norma_extra=3.014 hechas=39/48 seg=2168
+CORRIDA brazo=LIQ_DIAG red=SL k=23 semilla=0 comb_entrenamiento=0.9437 comb_prueba=0.9240 supervivencia=0.8729 rechazo=0.9750 norma_extra=3.166 hechas=40/48 seg=2175
+CORRIDA brazo=LIQ_DIAG red=S k=0 semilla=0 comb_entrenamiento=0.9271 comb_prueba=0.9083 supervivencia=0.8292 rechazo=0.9875 norma_extra=3.018 hechas=41/48 seg=2253
+CORRIDA brazo=LIQ_DIAG red=S k=1 semilla=0 comb_entrenamiento=0.8875 comb_prueba=0.8500 supervivencia=0.7000 rechazo=1.0000 norma_extra=3.344 hechas=42/48 seg=2268
+CORRIDA brazo=LIQ_DIAG red=S k=2 semilla=0 comb_entrenamiento=0.8708 comb_prueba=0.7667 supervivencia=0.5333 rechazo=1.0000 norma_extra=1.836 hechas=43/48 seg=2358
+CORRIDA brazo=LIQ_DIAG red=S k=3 semilla=0 comb_entrenamiento=0.6417 comb_prueba=0.6323 supervivencia=0.3896 rechazo=0.8750 norma_extra=2.335 hechas=44/48 seg=2377
+CORRIDA brazo=LIQ_DIAG red=S k=4 semilla=0 comb_entrenamiento=0.7812 comb_prueba=0.7365 supervivencia=0.4729 rechazo=1.0000 norma_extra=2.472 hechas=45/48 seg=2468
+CORRIDA brazo=LIQ_DIAG red=S k=5 semilla=0 comb_entrenamiento=0.8396 comb_prueba=0.8260 supervivencia=0.6771 rechazo=0.9750 norma_extra=3.398 hechas=46/48 seg=2487
+CORRIDA brazo=LIQ_DIAG red=S k=6 semilla=0 comb_entrenamiento=0.7792 comb_prueba=0.7656 supervivencia=0.5563 rechazo=0.9750 norma_extra=3.329 hechas=47/48 seg=2576
+CORRIDA brazo=LIQ_DIAG red=S k=7 semilla=0 comb_entrenamiento=0.8375 comb_prueba=0.7312 supervivencia=0.4625 rechazo=1.0000 norma_extra=3.089 hechas=48/48 seg=2587
+RESUMEN_W brazo=LIQ_DIAG comb_prueba_media=0.9216 min=0.9073 max=0.9521 por_semilla=0.9521,0.9146,0.9125,0.9073
+RESUMEN_W brazo=NOLIQ_DIAG comb_prueba_media=0.9443 min=0.8917 max=0.9802 por_semilla=0.9313,0.9740,0.8917,0.9802
+RESUMEN_W brazo=LIQ_PLENA comb_prueba_media=0.9826 min=0.9802 max=0.9844 por_semilla=0.9802,0.9844,0.9812,0.9844
+RESUMEN_W brazo=NOLIQ_PLENA comb_prueba_media=0.9214 min=0.8510 max=0.9719 por_semilla=0.8510,0.9594,0.9719,0.9031
+REPRODUCE_012=True
+CONTRASTE P1_LIQ_DIAG_vs_NOLIQ_DIAG acierto_A=0.8746 acierto_B=0.9067 solo_A=77 solo_B=149 p_mcnemar=1.923e-06 -> PEOR
+CONTRASTE P2_LIQ_PLENA_vs_NOLIQ_PLENA acierto_A=0.9723 acierto_B=0.8652 solo_A=252 solo_B=12 p_mcnemar=1.315e-59 -> MEJOR
+SEMILLAS LIQ_DIAG gana_a_NOLIQ_DIAG_en=2/4
+SEMILLAS LIQ_PLENA gana_a_NOLIQ_PLENA_en=4/4
+VEREDICTO_LIQUIDEZ=MIXTO (P1=PEOR, P2=MEJOR)
+CONTRASTE Q_SL comb W_semilla0=0.9521 W_min=0.9073 SL_media=0.8488 SL_max=0.9573 n>=W0=1/24 p=0.0800 n>=Wmin=6/24 p_min=0.2800 -> W NO GANA
+CONTRASTE Q_S comb W_semilla0=0.9521 W_min=0.9073 S_media=0.7771 S_max=0.9083 n>=W0=0/8 p=0.1111 n>=Wmin=1/8 p_min=0.2222 (descriptivo)
+VEREDICTO_CABLEADO_CON_LIQUIDA=CON LA LIQUIDA ENTRENADA EL CABLEADO FINO NO SE DISTINGUE DE SL
+escrito resultados.json md5=a3da6f2e9af6e9046224443d9a267983
+minutos=43.12
+EXIT_RUN=0
