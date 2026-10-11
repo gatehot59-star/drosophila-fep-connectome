@@ -1,0 +1,22 @@
+## humo 1 (script md5 d8d76d96fb34042211971fb431f678ff, v_loom = [1/3, 0.4, 0.5], T = 40)
+$ python3 tools/escape_motivo/escape_dificil.py --motivo tools/brazo_s/motivo26.json --lados tools/escape_motivo/lados26.json --brazo-s tools/brazo_s/brazo_s_recurrente.py --escape tools/escape_motivo/escape_motivo.py --k 3 --out-dir /workspace/escape/humo2 --solo-controles
+MOTIVO aristas=88 LC6->GF=0 cruzadas=0
+ENSAYOS looming=480 no_looming=80 blanco=40 T=40
+CONTROL C+L umbral=0.0436 supervivencia=0.5333 lado_ok=0.8187 disparo_looming=1.0000 latencia_mediana=9.0 rechazo=0.9750 comb=0.7542
+CONTROL C+6 umbral=0.1022 supervivencia=0.4458 lado_ok=0.8896 disparo_looming=1.0000 latencia_mediana=11.0 rechazo=0.0000 comb=0.2229
+CONTROL C0 umbral=0.0000 supervivencia=0.0000 lado_ok=0.0000 disparo_looming=0.0000 latencia_mediana=-1.0 rechazo=1.0000 comb=0.5000
+REFERENCIA escape inmediato ciego al lado (siempre a la izquierda desde t=0) supervivencia=0.7917
+CHEQUEO INSTRUMENTO INVALIDO
+EXIT_RUN=3
+
+## humo 2 (script md5 2c95e63b6ad3ff590057df80368134d7, v_loom = [0.25, 1/3, 0.4], T = 50)
+$ (mismo comando)
+MOTIVO aristas=88 LC6->GF=0 cruzadas=0
+ENSAYOS looming=480 no_looming=80 blanco=40 T=50
+CONTROL C+L umbral=0.0484 supervivencia=0.8333 lado_ok=0.8313 disparo_looming=1.0000 latencia_mediana=10.0 rechazo=1.0000 comb=0.9167
+CONTROL C+6 umbral=0.0977 supervivencia=0.7896 lado_ok=0.9229 disparo_looming=1.0000 latencia_mediana=11.0 rechazo=0.0000 comb=0.3948
+CONTROL C0 umbral=0.0000 supervivencia=0.0000 lado_ok=0.0000 disparo_looming=0.0000 latencia_mediana=-1.0 rechazo=1.0000 comb=0.5000
+REFERENCIA escape inmediato ciego al lado (siempre a la izquierda desde t=0) supervivencia=0.8333
+CHEQUEO INSTRUMENTO VALIDO
+SOLO_CONTROLES: el sujeto no se corrio
+EXIT_RUN=0
