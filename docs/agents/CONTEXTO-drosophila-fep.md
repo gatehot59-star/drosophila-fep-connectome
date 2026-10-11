@@ -1,12 +1,12 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-11, madrugada (America/Buenos_Aires), con la respuesta 2026-10-11-004.
+**Última actualización:** 2026-10-11, madrugada (America/Buenos_Aires), con la respuesta 2026-10-11-007 (robótica: `swarm/` y la idea mejorada).
 **Estado canónico:** `main`, con las respuestas del 10 y 11 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** `docs/ERRATUM.md` (9 ítems) con anotaciones pinneadas a `17fc577`. **Zenodo tiene sólo la v1.0** (20-mar): la v2 con el erratum no está depositada.
 
 ## Mapa del repo (respuesta 2026-10-11-004)
 
-- main tiene 180 archivos. Fuera de main hay 273 rutas en 28 ramas.
+- main tiene 182 archivos en `02da943` y hay 27 ramas además de main (la 006 corrigió los 180 archivos y las 28 ramas de la 004). La unión de todas las refs da 464 pares ruta-blob.
 - **El expediente de agosto vive en ramas sin mergear:** las respuestas 063 a 124, 47 evidencias y unos 44 scripts. Lo esencial está en `titan/twohop-nulls`, contenida en `titan/auditoria-hipotesis-2026-10-01`, contenida en `titan/materializacion-h4-guard-2026-10-02`. Incluye:
   - el null anatómico;
   - LC6→GF;
@@ -84,6 +84,14 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
   - el efecto temporal global no sobrevive (39 nulos, p = 0,25);
   - la ventaja de tau compleja no se sostiene (p = 0,60).
 - **Siguen NO MEDIDOS:** SparseLTC→DBC3 sobre señal biológica, mapping ROI→FlyWire, null anatómico pareado y silenciamiento causal.
+- **Robótica (respuesta 007):**
+  - `swarm/` es el único robot de los repos y **no sale del conectoma**: 34 neuronas y 83 sinapsis escritas a mano con nombres de regiones de la mosca.
+  - Con física de cuadricóptero X estándar, **el escape visual va hacia la amenaza en las 4 direcciones** (108/108 en la sensibilidad). Leer los motores con reflexión FL↔BR, FR↔BL lo da vuelta: 4/4 y 108/108 hacia afuera. Instrumento válido: reflejo físico 4/4 ALEJA y red nula 4/4 NEUTRO.
+  - El test de `swarm/` no puede dar rojo (con los pesos en cero sale con 0) y la auditoría de `gen_swarm.py` devuelve `PASS` fijo con topologías mutadas.
+  - Instrumento: `tools/swarm_lazo_cerrado.py` en la rama `titan/swarm-lazo-cerrado-2026-10-11`, sin PR.
+  - **Idea mejorada (BEEC v2):** compilador de motivos certificados contra el nulo, interfaz por descendentes, cordón sintético con lazo de actitud, y entrenables sólo la compuerta, la memoria DBC3 y el readout. El falsador es el brazo S.
+  - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo.
+  - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica.
 
 ## Próximos pasos
 
@@ -102,9 +110,12 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 4. **Abiertos para la v2:** NPC por sinapsis o null combinado de grado y neuropilo; ventana y tau de sel_post; Lin región por región; Betzel arista por arista; fila AN y décima clase de la Tabla 5.
 5. **La 007:** con R = 10.000 para Holm; D2 con el nulo de región.
 6. H4 estacionada.
+7. **Robótica (respuesta 007 del 11-oct), en este orden:** arreglar el dron (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere); primer motivo real, GF-01 → descendentes → dron; el brazo S, que no comparte archivos con lo anterior y puede correr en paralelo; edge en ESP32.
 
 ## Fuentes
 
+- `docs/agents/respuestas/2026-10-11-007-mosca-a-robot-idea-mejorada-y-el-dron-que-escapa-hacia-la-amenaza.md`
+- `docs/agents/respuestas/2026-10-11-006-traspaso-tecnico-del-conectoma.md`
 - `docs/agents/respuestas/2026-10-11-004-el-repo-del-conectoma-de-punta-a-punta.md`
 - `docs/agents/respuestas/2026-10-11-003-nulo-por-circuito-base-erratum-EN-CURSO.md`
 - `docs/agents/respuestas/2026-10-10-009-correccion-multiple-del-nulo-fuerte.md`
@@ -129,8 +140,9 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - El cruce con Lin 2024.
 - 57 archivos de main y 73 rutas de ramas sin leer en la 004.
 - Mapping anatómico, null anatómico pareado, causalidad y equivalencia SparseLTC→DBC3 sobre señal real.
+- Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, el brazo S y cualquier medición fuera de distribución.
 - Review externo del pipeline. Silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: brain-env (Tabla 7, salidas, nulos, 003, inventario de ramas); GitHub de sólo lectura para la 004.
-Artefactos: `docs/agents/respuestas/2026-10-11-004-el-repo-del-conectoma-de-punta-a-punta.md` + Doc de ClickUp.
+Máquina: sandbox de ClickUp para el instrumento de `swarm/` (007); brain-env para la Tabla 7, las salidas, los nulos, la 003 y el inventario de ramas.
+Artefactos: `docs/agents/respuestas/2026-10-11-007-mosca-a-robot-idea-mejorada-y-el-dron-que-escapa-hacia-la-amenaza.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21097
