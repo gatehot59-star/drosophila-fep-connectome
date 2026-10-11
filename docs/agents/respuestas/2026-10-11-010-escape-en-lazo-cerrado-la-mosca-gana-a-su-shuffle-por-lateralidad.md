@@ -66,7 +66,7 @@ minutos=5.18
 EXIT_RUN=0
 ```
 
-El log completo tiene 61 líneas en la rama. `resultados.json` (533.509 B) queda en brain-env y se regenera con el comando del README.
+El log completo tiene 63 líneas en la rama. `resultados.json` (533.509 B) queda en brain-env y se regenera con el comando del README.
 
 ## 6. Qué cambia en la hipótesis de agosto
 
