@@ -1,0 +1,45 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | torch 2.14.1+cu130
+# md5 script = e060c4bffb685aa550dadc19eda3dd02
+# md5 modulo 003 = 4d40477d87406c31672acfb6e6e8f5a2
+# fecha: 2026-10-12 11:05:54 +0000
+# parte = C
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+MOTIVO neuronas=28 visuales=24 aristas=73 sinapsis=665 inhibitorias=0 ipsilaterales=73 rho_crudo=19.7206
+TIPOS pre=DNp01 post=LC4 aristas=3 sinapsis=6
+TIPOS pre=DNp01 post=LPLC2 aristas=8 sinapsis=31
+TIPOS pre=DNp07 post=LPLC4 aristas=1 sinapsis=1
+TIPOS pre=LC4 post=DNp01 aristas=8 sinapsis=115
+TIPOS pre=LC4 post=DNp07 aristas=1 sinapsis=1
+TIPOS pre=LC4 post=LC4 aristas=1 sinapsis=3
+TIPOS pre=LC4 post=LPLC2 aristas=1 sinapsis=1
+TIPOS pre=LPLC2 post=DNp01 aristas=8 sinapsis=116
+TIPOS pre=LPLC2 post=LC4 aristas=2 sinapsis=4
+TIPOS pre=LPLC2 post=LPLC2 aristas=20 sinapsis=53
+TIPOS pre=LPLC4 post=DNp07 aristas=8 sinapsis=307
+TIPOS pre=LPLC4 post=LPLC4 aristas=12 sinapsis=27
+NULOS SL=300 guarda=True T=300 guarda=True
+COMPOSICION dn=DNp01 fraccion_de_sinapsis(LC4,LPLC2,LPLC4) W=(0.498,0.502,0.000) SL_media=(0.209,0.306,0.485)
+COMPOSICION dn=DNp07 fraccion_de_sinapsis(LC4,LPLC2,LPLC4) W=(0.003,0.000,0.997) SL_media=(0.228,0.326,0.445)
+DATOS entrenamiento=2400 prueba=1800 clases_prueba(nada,esc_izq,esc_der,aterr)=900,300,300,300 azar_mayoria_por_estado=0.5000
+ENTRADA variante=COMO_LPLC2 estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,0.963,0.963) pasos_activos=(11.4,16.0,16.0)
+ENTRADA variante=COMO_LPLC2 estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.393,0.983,0.983) pasos_activos=(16.9,15.9,15.9)
+ENTRADA variante=COMO_LPLC2 estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.070,0.325,0.325) pasos_activos=(14.0,16.9,16.9)
+ENTRADA variante=SILENCIOSA estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,0.963,0.000) pasos_activos=(11.4,16.0,0.0)
+ENTRADA variante=SILENCIOSA estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.393,0.983,0.000) pasos_activos=(16.9,15.9,0.0)
+ENTRADA variante=SILENCIOSA estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.070,0.325,0.000) pasos_activos=(14.0,16.9,0.0)
+ENTRADA variante=MOVIMIENTO estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,0.963,1.000) pasos_activos=(11.4,16.0,11.4)
+ENTRADA variante=MOVIMIENTO estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.393,0.983,0.393) pasos_activos=(16.9,15.9,16.9)
+ENTRADA variante=MOVIMIENTO estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.070,0.325,0.701) pasos_activos=(14.0,16.9,16.9)
+ENTRADA variante=AGNOSTICA estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,1.000,1.000) pasos_activos=(17.0,17.0,17.0)
+ENTRADA variante=AGNOSTICA estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.983,0.983,0.983) pasos_activos=(16.9,16.9,16.9)
+ENTRADA variante=AGNOSTICA estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.325,0.325,0.325) pasos_activos=(16.9,16.9,16.9)
+CALIBRACION ruido=0.15 rival_ridge_crudo(COMO_LPLC2,SILENCIOSA,MOVIMIENTO)=(0.9867,0.9783,0.9906) media=0.9852
+CALIBRACION ruido=0.30 rival_ridge_crudo(COMO_LPLC2,SILENCIOSA,MOVIMIENTO)=(0.9511,0.9417,0.9750) media=0.9559
+CALIBRACION ruido=0.45 rival_ridge_crudo(COMO_LPLC2,SILENCIOSA,MOVIMIENTO)=(0.8978,0.8750,0.9472) media=0.9067
+CALIBRACION ruido=0.60 rival_ridge_crudo(COMO_LPLC2,SILENCIOSA,MOVIMIENTO)=(0.8439,0.7956,0.8950) media=0.8448
+CALIBRACION ruido=0.90 rival_ridge_crudo(COMO_LPLC2,SILENCIOSA,MOVIMIENTO)=(0.7411,0.6867,0.7983) media=0.7420
+CALIBRACION ruido=1.20 rival_ridge_crudo(COMO_LPLC2,SILENCIOSA,MOVIMIENTO)=(0.6578,0.6072,0.6989) media=0.6546
+CALIBRACION ruido_dificil=0.45 (el mas alto de la grilla con rival ridge crudo medio >= 0.90)
+escrito resultados.json md5=7cc5fd1ac1d4dcc01868828702f3cf1c
+# duracion_s=175.1
+EXIT_RUN=0

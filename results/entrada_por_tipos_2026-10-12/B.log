@@ -1,0 +1,54 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | torch 2.14.1+cu130
+# md5 script = e060c4bffb685aa550dadc19eda3dd02
+# md5 modulo 003 = 4d40477d87406c31672acfb6e6e8f5a2
+# fecha: 2026-10-12 11:19:26 +0000
+# parte = B
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+MOTIVO neuronas=28 visuales=24 aristas=73 sinapsis=665 inhibitorias=0 ipsilaterales=73 rho_crudo=19.7206
+TIPOS pre=DNp01 post=LC4 aristas=3 sinapsis=6
+TIPOS pre=DNp01 post=LPLC2 aristas=8 sinapsis=31
+TIPOS pre=DNp07 post=LPLC4 aristas=1 sinapsis=1
+TIPOS pre=LC4 post=DNp01 aristas=8 sinapsis=115
+TIPOS pre=LC4 post=DNp07 aristas=1 sinapsis=1
+TIPOS pre=LC4 post=LC4 aristas=1 sinapsis=3
+TIPOS pre=LC4 post=LPLC2 aristas=1 sinapsis=1
+TIPOS pre=LPLC2 post=DNp01 aristas=8 sinapsis=116
+TIPOS pre=LPLC2 post=LC4 aristas=2 sinapsis=4
+TIPOS pre=LPLC2 post=LPLC2 aristas=20 sinapsis=53
+TIPOS pre=LPLC4 post=DNp07 aristas=8 sinapsis=307
+TIPOS pre=LPLC4 post=LPLC4 aristas=12 sinapsis=27
+NULOS SL=300 guarda=True T=300 guarda=True
+COMPOSICION dn=DNp01 fraccion_de_sinapsis(LC4,LPLC2,LPLC4) W=(0.498,0.502,0.000) SL_media=(0.209,0.306,0.485)
+COMPOSICION dn=DNp07 fraccion_de_sinapsis(LC4,LPLC2,LPLC4) W=(0.003,0.000,0.997) SL_media=(0.228,0.326,0.445)
+DATOS entrenamiento=2400 prueba=1800 clases_prueba(nada,esc_izq,esc_der,aterr)=900,300,300,300 azar_mayoria_por_estado=0.5000
+ENTRADA variante=COMO_LPLC2 estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,0.963,0.963) pasos_activos=(11.4,16.0,16.0)
+ENTRADA variante=COMO_LPLC2 estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.393,0.983,0.983) pasos_activos=(16.9,15.9,15.9)
+ENTRADA variante=COMO_LPLC2 estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.070,0.325,0.325) pasos_activos=(14.0,16.9,16.9)
+ENTRADA variante=SILENCIOSA estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,0.963,0.000) pasos_activos=(11.4,16.0,0.0)
+ENTRADA variante=SILENCIOSA estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.393,0.983,0.000) pasos_activos=(16.9,15.9,0.0)
+ENTRADA variante=SILENCIOSA estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.070,0.325,0.000) pasos_activos=(14.0,16.9,0.0)
+ENTRADA variante=MOVIMIENTO estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,0.963,1.000) pasos_activos=(11.4,16.0,11.4)
+ENTRADA variante=MOVIMIENTO estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.393,0.983,0.393) pasos_activos=(16.9,15.9,16.9)
+ENTRADA variante=MOVIMIENTO estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.070,0.325,0.701) pasos_activos=(14.0,16.9,16.9)
+ENTRADA variante=AGNOSTICA estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,1.000,1.000) pasos_activos=(17.0,17.0,17.0)
+ENTRADA variante=AGNOSTICA estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.983,0.983,0.983) pasos_activos=(16.9,16.9,16.9)
+ENTRADA variante=AGNOSTICA estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.325,0.325,0.325) pasos_activos=(16.9,16.9,16.9)
+CELDA ROBUSTEZ tau_semilla=1 variante=COMO_LPLC2 ruido=0.15 W=0.8167 por_clase(nada,esc_izq,esc_der,aterr)=0.831,0.803,0.777,0.827 | SL media=0.8521 max=0.9428 igualan=81/100 p_sup=0.8119 p_inf=0.1980 | T media=0.7988 max=0.8361 igualan=8/100 p_sup=0.0891 p_inf=0.9208 | 190.3 s
+CELDA ROBUSTEZ tau_semilla=1 variante=COMO_LPLC2 ruido=0.45 W=0.7133 por_clase(nada,esc_izq,esc_der,aterr)=0.756,0.627,0.613,0.773 | SL media=0.7335 max=0.8061 igualan=75/100 p_sup=0.7525 p_inf=0.2673 | T media=0.7156 max=0.7328 igualan=68/100 p_sup=0.6832 p_inf=0.3762 | 209.5 s
+CELDA ROBUSTEZ tau_semilla=1 variante=SILENCIOSA ruido=0.15 W=0.7833 por_clase(nada,esc_izq,esc_der,aterr)=0.781,0.773,0.750,0.833 | SL media=0.8396 max=0.9494 igualan=91/100 p_sup=0.9109 p_inf=0.0990 | T media=0.8533 max=0.8894 igualan=100/100 p_sup=1.0000 p_inf=0.0099 | 185.6 s
+CELDA ROBUSTEZ tau_semilla=1 variante=SILENCIOSA ruido=0.45 W=0.6944 por_clase(nada,esc_izq,esc_der,aterr)=0.743,0.597,0.600,0.740 | SL media=0.6822 max=0.7728 igualan=45/100 p_sup=0.4554 p_inf=0.5743 | T media=0.7174 max=0.7411 igualan=100/100 p_sup=1.0000 p_inf=0.0099 | 202.3 s
+CELDA ROBUSTEZ tau_semilla=1 variante=MOVIMIENTO ruido=0.15 W=0.8806 por_clase(nada,esc_izq,esc_der,aterr)=0.937,0.803,0.800,0.870 | SL media=0.8953 max=0.9600 igualan=64/100 p_sup=0.6436 p_inf=0.3663 | T media=0.8074 max=0.8672 igualan=0/100 p_sup=0.0099 p_inf=1.0000 | 193.5 s
+CELDA ROBUSTEZ tau_semilla=1 variante=MOVIMIENTO ruido=0.45 W=0.7506 por_clase(nada,esc_izq,esc_der,aterr)=0.861,0.633,0.627,0.660 | SL media=0.7578 max=0.8339 igualan=58/100 p_sup=0.5842 p_inf=0.4455 | T media=0.7192 max=0.7550 igualan=2/100 p_sup=0.0297 p_inf=0.9802 | 215.0 s
+CELDA ROBUSTEZ tau_semilla=2 variante=COMO_LPLC2 ruido=0.15 W=0.7978 por_clase(nada,esc_izq,esc_der,aterr)=0.819,0.750,0.773,0.807 | SL media=0.8544 max=0.9522 igualan=91/100 p_sup=0.9109 p_inf=0.0990 | T media=0.7894 max=0.8200 igualan=25/100 p_sup=0.2574 p_inf=0.7822 | 180.2 s
+CELDA ROBUSTEZ tau_semilla=2 variante=COMO_LPLC2 ruido=0.45 W=0.6772 por_clase(nada,esc_izq,esc_der,aterr)=0.713,0.570,0.577,0.777 | SL media=0.7358 max=0.8117 igualan=99/100 p_sup=0.9901 p_inf=0.0198 | T media=0.6992 max=0.7206 igualan=100/100 p_sup=1.0000 p_inf=0.0099 | 196.0 s
+CELDA ROBUSTEZ tau_semilla=2 variante=SILENCIOSA ruido=0.15 W=0.7733 por_clase(nada,esc_izq,esc_der,aterr)=0.804,0.717,0.757,0.753 | SL media=0.8448 max=0.9483 igualan=96/100 p_sup=0.9604 p_inf=0.0495 | T media=0.8475 max=0.8894 igualan=100/100 p_sup=1.0000 p_inf=0.0099 | 184.4 s
+CELDA ROBUSTEZ tau_semilla=2 variante=SILENCIOSA ruido=0.45 W=0.6706 por_clase(nada,esc_izq,esc_der,aterr)=0.728,0.567,0.557,0.717 | SL media=0.6854 max=0.7839 igualan=61/100 p_sup=0.6139 p_inf=0.3960 | T media=0.7144 max=0.7428 igualan=100/100 p_sup=1.0000 p_inf=0.0099 | 199.5 s
+CELDA ROBUSTEZ tau_semilla=2 variante=MOVIMIENTO ruido=0.15 W=0.8722 por_clase(nada,esc_izq,esc_der,aterr)=0.948,0.777,0.787,0.827 | SL media=0.8969 max=0.9567 igualan=74/100 p_sup=0.7426 p_inf=0.2772 | T media=0.8042 max=0.8578 igualan=0/100 p_sup=0.0099 p_inf=1.0000 | 194.7 s
+CELDA ROBUSTEZ tau_semilla=2 variante=MOVIMIENTO ruido=0.45 W=0.7472 por_clase(nada,esc_izq,esc_der,aterr)=0.858,0.650,0.633,0.627 | SL media=0.7586 max=0.8244 igualan=62/100 p_sup=0.6238 p_inf=0.3861 | T media=0.7175 max=0.7533 igualan=3/100 p_sup=0.0396 p_inf=0.9802 | 207.1 s
+I2_MLP variante=COMO_LPLC2 ruido=0.15 W(semillas 0,1,2)=0.8650,0.8694,0.8717 | SL media=0.8754 max=0.9633 igualan_W0=19/30 p_sup=0.6452 p_inf=0.3871 | T media=0.8302 max=0.8844 igualan_W0=3/30 p_sup=0.1290 p_inf=0.9032 | 282.8 s
+I2_MLP variante=SILENCIOSA ruido=0.15 W(semillas 0,1,2)=0.7728,0.7556,0.7672 | SL media=0.8360 max=0.9550 igualan_W0=25/30 p_sup=0.8387 p_inf=0.1935 | T media=0.8851 max=0.9283 igualan_W0=30/30 p_sup=1.0000 p_inf=0.0323 | 270.3 s
+I2_MLP variante=MOVIMIENTO ruido=0.15 W(semillas 0,1,2)=0.9322,0.9333,0.9206 | SL media=0.9037 max=0.9583 igualan_W0=7/30 p_sup=0.2581 p_inf=0.7742 | T media=0.8393 max=0.9106 igualan_W0=0/30 p_sup=0.0323 p_inf=1.0000 | 270.3 s
+CHEQUEO INSTRUMENTO (parte B, descriptiva) guarda_SL=True guarda_T=True reproduce_mlp=True -> VALIDO
+escrito resultados.json md5=0fe63b301b8810e29a01567a79d45c19
+# duracion_s=3209.9
+EXIT_RUN=0

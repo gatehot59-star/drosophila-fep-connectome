@@ -1,0 +1,63 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | torch 2.14.1+cu130
+# md5 script = e060c4bffb685aa550dadc19eda3dd02
+# md5 modulo 003 = 4d40477d87406c31672acfb6e6e8f5a2
+# fecha: 2026-10-12 11:13:39 +0000
+# parte = A
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+MOTIVO neuronas=28 visuales=24 aristas=73 sinapsis=665 inhibitorias=0 ipsilaterales=73 rho_crudo=19.7206
+TIPOS pre=DNp01 post=LC4 aristas=3 sinapsis=6
+TIPOS pre=DNp01 post=LPLC2 aristas=8 sinapsis=31
+TIPOS pre=DNp07 post=LPLC4 aristas=1 sinapsis=1
+TIPOS pre=LC4 post=DNp01 aristas=8 sinapsis=115
+TIPOS pre=LC4 post=DNp07 aristas=1 sinapsis=1
+TIPOS pre=LC4 post=LC4 aristas=1 sinapsis=3
+TIPOS pre=LC4 post=LPLC2 aristas=1 sinapsis=1
+TIPOS pre=LPLC2 post=DNp01 aristas=8 sinapsis=116
+TIPOS pre=LPLC2 post=LC4 aristas=2 sinapsis=4
+TIPOS pre=LPLC2 post=LPLC2 aristas=20 sinapsis=53
+TIPOS pre=LPLC4 post=DNp07 aristas=8 sinapsis=307
+TIPOS pre=LPLC4 post=LPLC4 aristas=12 sinapsis=27
+NULOS SL=300 guarda=True T=300 guarda=True
+COMPOSICION dn=DNp01 fraccion_de_sinapsis(LC4,LPLC2,LPLC4) W=(0.498,0.502,0.000) SL_media=(0.209,0.306,0.485)
+COMPOSICION dn=DNp07 fraccion_de_sinapsis(LC4,LPLC2,LPLC4) W=(0.003,0.000,0.997) SL_media=(0.228,0.326,0.445)
+DATOS entrenamiento=2400 prueba=1800 clases_prueba(nada,esc_izq,esc_der,aterr)=900,300,300,300 azar_mayoria_por_estado=0.5000
+ENTRADA variante=COMO_LPLC2 estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,0.963,0.963) pasos_activos=(11.4,16.0,16.0)
+ENTRADA variante=COMO_LPLC2 estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.393,0.983,0.983) pasos_activos=(16.9,15.9,15.9)
+ENTRADA variante=COMO_LPLC2 estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.070,0.325,0.325) pasos_activos=(14.0,16.9,16.9)
+ENTRADA variante=SILENCIOSA estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,0.963,0.000) pasos_activos=(11.4,16.0,0.0)
+ENTRADA variante=SILENCIOSA estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.393,0.983,0.000) pasos_activos=(16.9,15.9,0.0)
+ENTRADA variante=SILENCIOSA estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.070,0.325,0.000) pasos_activos=(14.0,16.9,0.0)
+ENTRADA variante=MOVIMIENTO estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,0.963,1.000) pasos_activos=(11.4,16.0,11.4)
+ENTRADA variante=MOVIMIENTO estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.393,0.983,0.393) pasos_activos=(16.9,15.9,16.9)
+ENTRADA variante=MOVIMIENTO estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.070,0.325,0.701) pasos_activos=(14.0,16.9,16.9)
+ENTRADA variante=AGNOSTICA estimulo=AMENAZA pico_medio(LC4,LPLC2,LPLC4)=(1.000,1.000,1.000) pasos_activos=(17.0,17.0,17.0)
+ENTRADA variante=AGNOSTICA estimulo=ACERCAMIENTO pico_medio(LC4,LPLC2,LPLC4)=(0.983,0.983,0.983) pasos_activos=(16.9,16.9,16.9)
+ENTRADA variante=AGNOSTICA estimulo=PASA pico_medio(LC4,LPLC2,LPLC4)=(0.325,0.325,0.325) pasos_activos=(16.9,16.9,16.9)
+CELDA PRIMARIA tau_semilla=0 variante=COMO_LPLC2 ruido=0.15 W=0.7861 por_clase(nada,esc_izq,esc_der,aterr)=0.800,0.737,0.770,0.810 | SL media=0.8509 max=0.9567 igualan=278/300 p_sup=0.9269 p_inf=0.0797 | T media=0.7910 max=0.8289 igualan=214/300 p_sup=0.7143 p_inf=0.3123 | 329.0 s
+CELDA PRIMARIA tau_semilla=0 variante=COMO_LPLC2 ruido=0.45 W=0.6956 por_clase(nada,esc_izq,esc_der,aterr)=0.740,0.560,0.607,0.787 | SL media=0.7330 max=0.8250 igualan=266/300 p_sup=0.8870 p_inf=0.1262 | T media=0.7057 max=0.7244 igualan=264/300 p_sup=0.8804 p_inf=0.1395 | 622.3 s
+CELDA PRIMARIA tau_semilla=0 variante=SILENCIOSA ruido=0.15 W=0.7722 por_clase(nada,esc_izq,esc_der,aterr)=0.779,0.730,0.757,0.810 | SL media=0.8399 max=0.9572 igualan=278/300 p_sup=0.9269 p_inf=0.0764 | T media=0.8468 max=0.8894 igualan=300/300 p_sup=1.0000 p_inf=0.0033 | 547.4 s
+CELDA PRIMARIA tau_semilla=0 variante=SILENCIOSA ruido=0.45 W=0.6878 por_clase(nada,esc_izq,esc_der,aterr)=0.756,0.557,0.577,0.727 | SL media=0.6794 max=0.8078 igualan=138/300 p_sup=0.4618 p_inf=0.5482 | T media=0.7156 max=0.7444 igualan=299/300 p_sup=0.9967 p_inf=0.0066 | 607.5 s
+CELDA PRIMARIA tau_semilla=0 variante=MOVIMIENTO ruido=0.15 W=0.8628 por_clase(nada,esc_izq,esc_der,aterr)=0.933,0.787,0.770,0.820 | SL media=0.8901 max=0.9606 igualan=221/300 p_sup=0.7375 p_inf=0.2658 | T media=0.8028 max=0.8644 igualan=2/300 p_sup=0.0100 p_inf=0.9967 | 568.9 s
+CELDA PRIMARIA tau_semilla=0 variante=MOVIMIENTO ruido=0.45 W=0.7517 por_clase(nada,esc_izq,esc_der,aterr)=0.859,0.643,0.640,0.650 | SL media=0.7543 max=0.8406 igualan=157/300 p_sup=0.5249 p_inf=0.4817 | T media=0.7131 max=0.7578 igualan=3/300 p_sup=0.0133 p_inf=0.9934 | 601.4 s
+CONTROL_NEGATIVO entrada=AGNOSTICA W=0.7656 T_identicos=30/30 -> True | SL descriptivo (como la 003) media=0.8437 max=0.8917 igualan=99/100 p_sup=0.9901 p_inf=0.0198
+RIVAL variante=COMO_LPLC2 ruido=0.15 W_ridge_4DN=0.7861 control_positivo_ridge_28=0.9844 rival_ridge_crudo_24=0.9867 rival_mlp_crudo_24=0.9789 | H3 W contra ridge crudo 2 contra 363 p=1.78e-105 -> PEOR
+RIVAL variante=COMO_LPLC2 ruido=0.45 W_ridge_4DN=0.6956 control_positivo_ridge_28=0.9028 rival_ridge_crudo_24=0.8978 rival_mlp_crudo_24=0.8617 | H3 W contra ridge crudo 41 contra 405 p=2.3e-76 -> PEOR
+RIVAL variante=SILENCIOSA ruido=0.15 W_ridge_4DN=0.7722 control_positivo_ridge_28=0.9750 rival_ridge_crudo_24=0.9783 rival_mlp_crudo_24=0.9700 | H3 W contra ridge crudo 5 contra 376 p=2.68e-104 -> PEOR
+RIVAL variante=SILENCIOSA ruido=0.45 W_ridge_4DN=0.6878 control_positivo_ridge_28=0.8717 rival_ridge_crudo_24=0.8750 rival_mlp_crudo_24=0.8256 | H3 W contra ridge crudo 48 contra 385 p=1.97e-66 -> PEOR
+RIVAL variante=MOVIMIENTO ruido=0.15 W_ridge_4DN=0.8628 control_positivo_ridge_28=0.9867 rival_ridge_crudo_24=0.9906 rival_mlp_crudo_24=0.9878 | H3 W contra ridge crudo 1 contra 231 p=6.75e-68 -> PEOR
+RIVAL variante=MOVIMIENTO ruido=0.45 W_ridge_4DN=0.7517 control_positivo_ridge_28=0.9300 rival_ridge_crudo_24=0.9472 rival_mlp_crudo_24=0.9094 | H3 W contra ridge crudo 13 contra 365 p=1.41e-90 -> PEOR
+CHEQUEO INSTRUMENTO guarda_SL=True guarda_T=True paridad_simulacion=True reproduce_ridge=True control_negativo(T identico con entrada AGNOSTICA)=True control_positivo(ridge 28 estados >= 0.75 con ruido 0.15)=True -> VALIDO
+VEREDICTO_CELDA variante=COMO_LPLC2 ruido=0.15 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(0.7641,1.0000) -> EMPATE
+VEREDICTO_CELDA variante=COMO_LPLC2 ruido=0.45 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(1.0000,1.0000) -> EMPATE
+VEREDICTO_VARIANTE COMO_LPLC2 -> EMPATE
+VEREDICTO_CELDA variante=SILENCIOSA ruido=0.15 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(0.7641,0.0399) -> PIERDE
+VEREDICTO_CELDA variante=SILENCIOSA ruido=0.45 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(1.0000,0.0731) -> EMPATE
+VEREDICTO_VARIANTE SILENCIOSA -> PIERDE
+VEREDICTO_CELDA variante=MOVIMIENTO ruido=0.15 holm_sup(SL,T)=(1.0000,0.1196) holm_inf(SL,T)=(1.0000,1.0000) -> EMPATE
+VEREDICTO_CELDA variante=MOVIMIENTO ruido=0.45 holm_sup(SL,T)=(1.0000,0.1462) holm_inf(SL,T)=(1.0000,1.0000) -> EMPATE
+VEREDICTO_VARIANTE MOVIMIENTO -> EMPATE
+VEREDICTO_GLOBAL -> NO PAGA (PIERDE en SILENCIOSA)
+BYTES lector_ridge_4DN=1127 floats lector_ridge_crudo_24=6727 floats motivo=28 tau y 73 aristas
+escrito resultados.json md5=513876aae46f36975ea7433a22731e0c
+# duracion_s=3597.9
+EXIT_RUN=0
