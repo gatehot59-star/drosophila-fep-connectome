@@ -1,12 +1,12 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-12, mañana (America/Buenos_Aires), con la respuesta 2026-10-12-006 (en criollo: qué tenemos, si tiene potencial y hacia dónde vamos; síntesis sin corrida nueva: la mosca sirve de mapa y de reflejo chico, no de cerebro entrenable). La 005 (entrada visual por tipo de neurona) dio NO PAGA: con lector entrenado sobre las 4 descendentes el cableado de la mosca nunca le gana a SL, pierde contra las sintonías barajadas si LPLC4 es muda y el rival clásico crudo le gana en 6 de 6; incluye el resumen de la 004 y la 005. La 004 mostró que ni DBC3 ni LSTM sostienen el estado de vuelo 90 pasos y que la máquina de estados les gana. La 003 corrió el primer acople SparseLTC → DBC3 (en el techo, empate con LSTM y con el barajado). La 002 armó el catálogo de circuitos (corregida por la 003 en LC9 y DNp10). La 001 fijó la arquitectura por etapas (diseño). La 016 respondió cómo operan las 26. La 015 firmó la 014 sólo para la semilla 0.
+**Última actualización:** 2026-10-12, mediodía (America/Buenos_Aires), con la respuesta 2026-10-12-007 (la v2 del Paper 1 quedó lista para depositar en el PR #27: manuscrito, erratum revisado contra el texto del PDF v1.0, render determinista y depósito en borrador; faltan el token de Zenodo y el merge, que son de Abraham. Abraham pidió además que TITÁN Tao audite el laboratorio entero: el pedido está escrito y espera su OK). La 006 fue la síntesis en criollo: la mosca sirve de mapa y de reflejo chico, no de cerebro entrenable. La 005 (entrada visual por tipo de neurona) dio NO PAGA: con lector entrenado sobre las 4 descendentes el cableado de la mosca nunca le gana a SL, pierde contra las sintonías barajadas si LPLC4 es muda y el rival clásico crudo le gana en 6 de 6; incluye el resumen de la 004 y la 005. La 004 mostró que ni DBC3 ni LSTM sostienen el estado de vuelo 90 pasos y que la máquina de estados les gana. La 003 corrió el primer acople SparseLTC → DBC3 (en el techo, empate con LSTM y con el barajado). La 002 armó el catálogo de circuitos (corregida por la 003 en LC9 y DNp10). La 001 fijó la arquitectura por etapas (diseño). La 016 respondió cómo operan las 26. La 015 firmó la 014 sólo para la semilla 0.
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
-**Base vigente del paper:** `docs/ERRATUM.md` (9 ítems) con anotaciones pinneadas a `17fc577`. **Zenodo tiene sólo la v1.0** (20-mar): la v2 con el erratum no está depositada.
+**Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
 ## Mapa del repo (respuesta 2026-10-11-004)
 
-- main tiene 182 archivos en `02da943` y hay 27 ramas además de main (la 006 corrigió los 180 archivos y las 28 ramas de la 004). La unión de todas las refs da 464 pares ruta-blob.
+- main tenía 182 archivos en `02da943` y hay 27 ramas además de main (la 006 corrigió los 180 archivos y las 28 ramas de la 004). La unión de todas las refs da 464 pares ruta-blob. La 007 sumó `titan/v2-cierre-2026-10-12`.
 - **El expediente de agosto vive en ramas sin mergear:** las respuestas 063 a 124, 47 evidencias y unos 44 scripts. Lo esencial está en `titan/twohop-nulls`, contenida en `titan/auditoria-hipotesis-2026-10-01`, contenida en `titan/materializacion-h4-guard-2026-10-02`. Incluye:
   - el null anatómico;
   - LC6→GF;
@@ -16,20 +16,28 @@
   - Betzel.
 - **Otras ramas con contenido propio:**
   - `titan/auditoria-integra-2026-08-25`: disputa del DOI y scripts de nulos;
-  - `titan/initial-release`: manifest y logs de nulos;
+  - `titan/initial-release`: manifest, logs de nulos y `src/routing_hierarchy.mjs` (las 8 clases del null de grado);
   - `titan/paso-1-identidad-roi-2026-10-03`: H4 ROI.
 - **Abiertos en GitHub:**
-  - PR #1, #2, #3, #12, #25 y #26;
+  - PR #1, #2, #3, #12, #25, #26 y **#27 (v2.0 del Paper 1)**;
   - issues #4, #5 y #13 a #15.
-- **`docs/SECCION-V2-DOS-SALTOS.md` de main es la versión anterior al null anatómico** (323× contra el null de grado). La de la rama dice que el 323× era co-localización: el spread cae a 2,4× y queda la depleción gustativa (10 contra 101,6, z = −78,9).
+- **`docs/SECCION-V2-DOS-SALTOS.md` de main es la versión anterior al null anatómico** (323× contra el null de grado). La de la rama dice que el 323× era co-localización: el spread cae a 2,4× y queda la depleción gustativa (10 contra 101,6, z = −78,9). **El PR #27 la trae a main.**
 - En el PDF, la Tabla 7 es la de reciprocidad por circuito y la de RDI es la Tabla 8. El `reproduce_table7` del release inicial es de la trayectoria de RDI y no la reproduce.
 
 ## Veredicto operativo
 
+- **Paper 1, v2.0 (2026-10-12-007): lista para depositar en el PR #27.**
+  - Render determinista PASS: manuscrito de 17 páginas, md5 `50df4ab9…`, y erratum de 14 páginas, md5 `28f7a21f…`.
+  - El erratum cotejado contra el texto de la v1.0 tenía tres errores propios, ya corregidos:
+    - el swap al revés (la v1.0 dice 100%);
+    - la fila AN contada como cuarta enriquecida;
+    - el 991× mezclado con un extremo de otras clases.
+  - La v1.0 tiene cinco referencias con datos mal.
+  - Falta el token de Zenodo y el merge.
 - **Paper, reciprocidad:**
   - La Tabla 7 es reproducible: 8/8 con el pin `17fc577` (respuesta 003). El script está reconstruido en el PR #26, sin merge.
   - El nulo CP propio reproduce el del erratum: media de 194.890,4 contra 194.974,2, o sea 20,60× con 0/100.
-  - **Con ese nulo, la caída de la reciprocidad hacia la salida motora queda explicada por el nulo:** el exceso es 4,30× / 3,67× / 5,55× con ≥1 y 5,11× / 9,57× / 3,94× con ≥5, sin orden. Pero el instrumento dio FAIL (control negativo de la prueba secundaria, 8/20 con CP y ≥1) y **no se firma**.
+  - **Con ese nulo, la caída de la reciprocidad hacia la salida motora queda explicada por el nulo:** el exceso es 4,30× / 3,67× / 5,55× con ≥1 y 5,11× / 9,57× / 3,94× con ≥5, sin orden. Pero el instrumento dio FAIL (control negativo de la prueba secundaria, 8/20 con CP y ≥1) y **no se firma**. La v2.0 reporta el orden como descriptivo.
 - **Quién controla las salidas (005 a 009):** el central pone el 60–73% de la entrada de las tres salidas; las descendentes, el 21–22% de la de las motoras; las ascendentes, el 16–20% de la de las neurosecretoras; el óptico, menos del 0,5%.
   - **Nulo fuerte (006**, etiquetas barajadas entre neuronas del mismo tamaño): se sostiene, con el central en ×1,5–2,3.
   - **Nulo de región (007**, además de la misma zona del cerebro): sólo las descendentes siguen mandando fuerte, → motoras ×3,69 / ×3,21 y → descendentes ×3,29 / ×2,61.
@@ -38,7 +46,53 @@
   - **Corrección múltiple de la 007 (008):** BY deja 31 de las 33 afirmaciones firmes y max-T deja 5: descendentes → descendentes, → motoras, → cuello y → antena, y óptico ▼ descendentes. El plus del central hacia las motoras aguanta FDR pero no FWER.
   - **Corrección múltiple de la 006 (009):** las 41 afirmaciones firmes aguantan BY, 34 aguantan Holm y 11 max-T. A la 006 le fallaba la ubicación, no la cantidad de tests.
   - **FWER con los dos nulos:** descendentes → descendentes, → motoras, → cuello y → antena, y óptico ▼ descendentes.
+  - **Fuera de la v2.0** (recomendación de la 007, decide Abraham): va al Paper 2.
 - **H4 fuerte: NO MEDIDA.** La búsqueda pública de ROI 2P está agotada (16/16 sin mapear, rama ROI). H4 débil queda refutada sólo en su alcance estrecho.
+
+## v2.0 del Paper 1 (respuesta 2026-10-12-007)
+
+- **Manuscrito:** `docs/v2/paper1-v2.0.md` en el PR #27.
+  - Reconstruido en Markdown desde el texto del PDF v1.0 (185.471 B, md5 `c7cb36a2…`), porque no había fuente en Zenodo ni en el repo.
+  - **Alcance:** v1.0 con el erratum aplicado, reciprocidad como rango (20,59× CP, 47,27× MS; 13,98% con ≥5, como Lin) y los dos saltos tras el null anatómico (§3.4, Tablas 5b y 5c), con prior art (Gordon & Scott 2009; Shiu et al. 2022).
+  - Tabla 5 con p binomiales y la columna del null de grado; Tabla 7 con las dos columnas y 8,6; Tabla 10 con la constante efectiva.
+  - «Motor» pasa a «motor output»: 1.299 descendentes, 110 motoras y 76 endocrinas.
+- **Erratum revisado antes de depositar** (cotejado contra el PDF v1.0):
+  - ítem 8: la v1.0 dice «rate 100%» y lo medido es 98,5% (`docs/METHODS.md`); el erratum lo tenía al revés;
+  - ítem 2: 3 enriquecidas, 4 empobrecidas, 1 dentro y la AN aparte (antes contaba 4 con la AN);
+  - el null de grado usó 8 clases: 7 reproducibles sin visual optic, más la AN completa de 2.231;
+  - el 991× es sobre esas 8 y el rango sobre las 8 reproducibles es 713×;
+  - calificación del null anatómico al ítem 2;
+  - 8,6 como quinto problema de conteo;
+  - Betzel verificado;
+  - cinco referencias con datos mal: Gouwens & Wilson, Nagel & Wilson (que además no trata lo que se le atribuye), Tuthill & Wilson, Hasani y Schlegel;
+  - pendiente 9 resuelto; pendientes 10 a 12 nuevos.
+- **Render y verificación:**
+  - `tools/v2/render_v2.py` (pandoc 3.10.2 + typst 0.15.0, fecha anulada): PASS, 19/19 cadenas y dos compilaciones iguales;
+  - `tools/zenodo/depositar_v2.py --verificar`: PASS en clon fresco;
+  - control negativo: 12 de 13 errores de la v1.0 ausentes en la v2.0 (el que aparece es una cita de la lista de cambios);
+  - los PDF viven en `/workspace/v2cierre_2026-10-12/deposito/` de brain-env.
+- **Depósito:**
+  - `--borrador` crea la nueva versión sin publicar y `--publicar ID` es irreversible.
+  - El token necesita `deposit:write` y `deposit:actions`; el inventario sólo nombraba el primero.
+  - No hay token en brain-env (medido).
+- **Espera decisión de Abraham:**
+  - el merge del PR #27;
+  - el token;
+  - el alcance (sin el control de las salidas);
+  - la frase de licencia comercial en Conflict of interest;
+  - el título igual al de la v1.0.
+
+## Auditoría del laboratorio por TITÁN Tao (pedido 2026-10-12)
+
+- **Tao es un Super Agent** (TITÁN Tao).
+  - Disparadores: DM, mención y asignación.
+  - Repo por defecto: `mudh-mobile`.
+  - Tiene GitHub de lectura y escritura (rama y PR, nunca merge) y sandbox; no tiene el gateway de brain-env.
+- **Pedido:** `docs/auditorias/2026-10-12-pedido-auditoria-tao-laboratorio.md`.
+  - Abarca el laboratorio entero: v2.0, Tabla 7 y salidas, nulo por circuito, brazo S y escape, circuitos y DBC3, expediente de agosto y H4.
+  - Se audita contra los logs crudos, preguntando en cada afirmación si su instrumento podía dar rojo.
+  - Pide propuestas para sacarle más provecho, con falsador y costo.
+- **Estado:** escrito, sin enviar. Va como tarea asignada a Tao en la lista Pipeline TITAN cuando Abraham dé el OK, porque gasta sus créditos y escribe ramas y un PR.
 
 ## Paper y Tabla 7 (respuestas 002 a 009 del 10-oct y 003 y 004 del 11-oct)
 
@@ -46,10 +100,10 @@
 - **Anotaciones:**
   - con las de marzo (`c03ad46`): L3 16/16 y Tabla 7 8/8;
   - con el pin `17fc577`: L3 10/16 por recambio de `root_id`, y Tabla 7 8/8 a un decimal, lo que confirma el «What has not changed» del erratum.
-- **El 8,7% sensory→descending es doble redondeo:** 2.104/24.327 = 8,6488%, o sea 8,6.
+- **El 8,7% sensory→descending es doble redondeo:** 2.104/24.327 = 8,6488% con las de marzo y 2.104/24.326 = 8,6492% con el pin, o sea 8,6.
 - **Umbral ≥5:** 2.700.513 aristas y 13,98%, igual al ítem 5 del erratum.
-  - intra-sensory 37,5; intra-motor 35,0 (80 aristas); intra-visual centrifugal 23,4; intra-optic 17,1;
-  - sensory→central 13,8; sensory→descending 2,8; sensory→motor 1,3; optic→motor sin aristas.
+  - intra-sensory 37,5 (482 de 1.287); intra-motor 35,0 (28 de 80); intra-visual centrifugal 23,4; intra-optic 17,1;
+  - sensory→central 13,8; sensory→descending 2,8; sensory→motor 1,3 (5 de 373); optic→motor sin aristas.
 - **Nulo por circuito y tendencia (003), `tools/table7_circuit_null.py`, en brain-env sin push:**
   - cruces con la 002 PASS en los dos umbrales; Tabla 7 8/8; nulo CP del erratum reproducido a 0,04%; conservación PASS;
   - con CP, la tendencia es EXPLICADO_POR_EL_NULO en los dos umbrales;
@@ -57,9 +111,8 @@
   - **veredicto de instrumento FAIL** por el control negativo.
 - **Embudo de salida (004):** 1.485 neuronas (1,07%; descending, motor y endocrine) reciben el 2,37% de los cables. Lo que les llega tiene 13,19 / 9,83 / 3,58% de vuelta, contra 26,60% global. Descriptivo, sin nulo.
 - **Control de las salidas:** 005 (`7e75cde`), 006 (`c99494f`), 007 (`f436f21`), 008 (`2093d57`) y 009 (`95e8d6c`), en la rama de la Tabla 7. Los números están en el veredicto operativo.
-- **Espera decisión de Abraham:**
-  - pasar el ítem 9 y el 8,6 a `docs/ERRATUM.md` y a `docs/PIVOTE-RECIPROCIDAD.md`;
-  - consolidar en main el expediente de ramas (PR #1, #2, #3) y la SECCION-V2 corregida.
+- **Hecho en el PR #27 (2026-10-12-007):** el ítem 9 y el 8,6 pasados a `docs/ERRATUM.md` y a `docs/PIVOTE-RECIPROCIDAD.md`, y la SECCION-V2 corregida traída a main.
+- **Espera decisión de Abraham:** el merge del PR #27, y consolidar en main el expediente de ramas (PR #1, #2, #3).
 - Los `results/` y JSON de la Tabla 7 y de la 003 a la 009 están sólo en brain-env, sin credencial de push. Los logs de la 004 a la 009 sí están en la rama.
 
 ## Estado confirmado en main (H4)
@@ -169,30 +222,58 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
     - **Lectura:** con lector entrenado, en esta tarea, E2 va con lo clásico (regla de la 001). El cableado por tipos podría pagar como líneas etiquetadas (cada descendente con su umbral dispara una acción): NO MEDIDO. Si el reparto de la mosca fuera bueno para un lector así, LPLC4 tendría que responder al movimiento: hipótesis, no medida.
     - Instrumento: `tools/escape_aterrizaje/entrada_por_tipos.py` en `titan/entrada-por-tipos-2026-10-12` (md5 `e060c4bf…`, pre-registro `75ca27c`, logs `f7844be`, md5 4/4 en clon fresco), brain-env, 60,0 y 53,5 min en paralelo, sin PR.
   - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo. Sus §1, §4 y §6.2 (el brazo W «nunca testeó» la hipótesis y el diseño W/S) quedan superados por la 008 y la 010 a la 015.
-  - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica; **en L2, τ líquida plena entrenada sobre el cableado fijo (1.378 parámetros, unos 5,5 KB en float32; costo en ESP32 NO MEDIDO), que reemplaza a la diagonal de la 012**, o probar antes la líquida nativa de SparseLTC (016); **adoptar la arquitectura por etapas con su regla de reparto, y sacar antimisiles del roadmap (2026-10-12-001)**; **tras la 004 el estado de vuelo quedó en lo clásico; tras la 005: probar líneas etiquetadas contra SL y T con la misma entrada por tipos, o dar por cerrado que en esa tarea E2 va con lo clásico**; **el orden de la 006: la v2 del paper (token de Zenodo), líneas etiquetadas en Actions y, si pagan, el reflejo en C99/Q15**.
+  - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica; **en L2, τ líquida plena entrenada sobre el cableado fijo (1.378 parámetros, unos 5,5 KB en float32; costo en ESP32 NO MEDIDO), que reemplaza a la diagonal de la 012**, o probar antes la líquida nativa de SparseLTC (016); **adoptar la arquitectura por etapas con su regla de reparto, y sacar antimisiles del roadmap (2026-10-12-001)**; **tras la 004 el estado de vuelo quedó en lo clásico; tras la 005: probar líneas etiquetadas contra SL y T con la misma entrada por tipos, o dar por cerrado que en esa tarea E2 va con lo clásico**; **el orden de la 006: la v2 del paper (lista en el PR #27, faltan el token y el merge: 007), líneas etiquetadas en Actions y, si pagan, el reflejo en C99/Q15**.
 
 ## Próximos pasos
 
-1. **Consolidar git:** el linaje de ramas a main (PR #1, #2, #3) o un PR sólo de documentos, y la SECCION-V2 posterior al null anatómico. Decide Abraham.
+1. **Consolidar git:** primero el PR #27 (v2.0); después el linaje de ramas a main (PR #1, #2, #3) o un PR sólo de documentos. Decide Abraham.
 2. **Cerrar el 003:**
    - sacar el seudoconteo de la media del nulo o subir K;
    - explicar el 8/20 del control CP con ≥1;
    - volver a correr y firmar;
    - subir el script, los tests y los logs a la rama.
-3. **v2 depositable:**
-   - erratum, Tabla 7 con ≥5 y 8,6, reciprocidad como rango;
-   - dos saltos post-null anatómico, LC6→GF y sel_post;
-   - control de las salidas, con BY y lo que aguanta FWER marcado.
+3. **v2.0: lista (007).** Falta:
+   - el merge del PR #27;
+   - el token con `deposit:write` y `deposit:actions`;
+   - correr `tools/zenodo/depositar_v2.py --borrador` en brain-env;
+   - que Abraham revise el borrador en Zenodo;
+   - publicar con su sí;
+   - revocar el token.
 
-   Depositar en Zenodo lo hace Abraham: es una llamada de API con un token `deposit:write` (inventario §7 y §8).
-4. **Abiertos para la v2:** NPC por sinapsis o null combinado de grado y neuropilo; ventana y tau de sel_post; Lin región por región; Betzel arista por arista; fila AN y décima clase de la Tabla 5.
+   El control de las salidas (con BY y lo que aguanta FWER marcado), LC6→GF y sel_post pasan al **Paper 2** (recomendación, decide Abraham).
+4. **Abiertos para una v2.1 o el Paper 2:** NPC por sinapsis o null combinado de grado y neuropilo; ventana y tau de sel_post; Lin región por región; Betzel arista por arista; fila AN y décima clase de la Tabla 5; Tabla 8 no reproducible; el rango de Gouwens & Wilson; barrido sistemático de literatura para la §3.4; el null anatómico sobre la población de salida de la Tabla 5.
 5. **La 007:** con R = 10.000 para Holm; D2 con el nulo de región.
 6. H4 estacionada.
-7. **Robótica (015, 016 y 2026-10-12-001 a 006; orden propuesto en la 006, decide Abraham):** ~~el catálogo de circuitos~~ **hecho (002)**; ~~escape o aterrizaje según vuelo~~ **hecho (003), en el techo**; ~~memoria dura~~ **hecha (004), nadie aprende**; ~~entrada por tipos visuales~~ **hecha (005), NO PAGA**; **1) líneas etiquetadas** (cada descendente con su umbral dispara una acción) contra SL y T con la misma entrada, **en Actions** (repo público: gratis, 11,6× más rápido y VM limpia; instalar numpy con `setup-python`); **2) si pagan, el reflejo en C99/Q15** con paridad contra numpy, `.text` y latencia en Actions x64 y arm64, y tamaño para ESP32 con `xtensa-esp32-elf-gcc` del taller (ninguna placa figura en el inventario; un emulador de Espressif NO MEDIDO); **3) arreglar el dron** (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere) y montarle el reflejo; **estacionado:** DBC3 contra LSTM con entrenamiento largo o por etapas (la máquina de estados ya gana); siguen abiertos: la líquida nativa de SparseLTC (tau_gain, 26 parámetros) en el escape contra su control; revisar LC9 → DNp09; el lector del rumbo (camino de EPG a descendentes); nulos para las fracciones del catálogo; DBC3 en C con el `dbc3_motor.h` reconstruido de brain-env y paridad contra el `DBC3Motor` de torch; el cordón nervioso en MANC o BANC para la etapa E5; en el escape, SL con varias semillas cada una y la plena sobre S, condiciones fuera de las entrenadas y el otro modelo de entrada.
-8. **Brazo S (respuestas 008, 010 a 015):** MultiCue con 50 semillas para decidir la tendencia 0,42×; un S que conserve Dale por neurona en motivos con inhibición; reescribir `CONTEXTO-motor.md`; PR de `titan/brazo-s-recurrente-2026-10-11`, `titan/swarm-lazo-cerrado-2026-10-11`, `titan/escape-motivo-2026-10-11`, `titan/catalogo-circuitos-2026-10-12`, `titan/escape-aterrizaje-2026-10-12`, `titan/memoria-dura-2026-10-12` y `titan/entrada-por-tipos-2026-10-12`, y review.
+7. **Robótica (015, 016 y 2026-10-12-001 a 006; orden propuesto en la 006, decide Abraham):**
+   - **Hechos:** ~~el catálogo de circuitos~~ (002); ~~escape o aterrizaje según vuelo~~ (003, en el techo); ~~memoria dura~~ (004, nadie aprende); ~~entrada por tipos visuales~~ (005, NO PAGA).
+   - **1) Líneas etiquetadas** (cada descendente con su umbral dispara una acción) contra SL y T con la misma entrada, **en Actions**: repo público, gratis, 11,6× más rápido y VM limpia; instalar numpy con `setup-python`.
+   - **2) Si pagan, el reflejo en C99/Q15:**
+     - paridad contra numpy;
+     - `.text` y latencia en Actions x64 y arm64;
+     - tamaño para ESP32 con `xtensa-esp32-elf-gcc` del taller;
+     - ninguna placa figura en el inventario y un emulador de Espressif está NO MEDIDO.
+   - **3) Arreglar el dron** (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere) y montarle el reflejo.
+   - **Estacionado:** DBC3 contra LSTM con entrenamiento largo o por etapas (la máquina de estados ya gana).
+   - **Siguen abiertos:**
+     - la líquida nativa de SparseLTC (tau_gain, 26 parámetros) en el escape contra su control;
+     - revisar LC9 → DNp09;
+     - el lector del rumbo (camino de EPG a descendentes);
+     - nulos para las fracciones del catálogo;
+     - DBC3 en C con el `dbc3_motor.h` reconstruido de brain-env, con paridad contra el `DBC3Motor` de torch;
+     - el cordón nervioso en MANC o BANC para la etapa E5;
+     - en el escape: SL con varias semillas cada una, la plena sobre S, condiciones fuera de las entrenadas y el otro modelo de entrada.
+8. **Brazo S (respuestas 008, 010 a 015):**
+   - MultiCue con 50 semillas para decidir la tendencia 0,42×;
+   - un S que conserve Dale por neurona en motivos con inhibición;
+   - reescribir `CONTEXTO-motor.md`;
+   - PR y review de `titan/brazo-s-recurrente-2026-10-11`, `titan/swarm-lazo-cerrado-2026-10-11`, `titan/escape-motivo-2026-10-11`, `titan/catalogo-circuitos-2026-10-12`, `titan/escape-aterrizaje-2026-10-12`, `titan/memoria-dura-2026-10-12` y `titan/entrada-por-tipos-2026-10-12`.
+9. **Auditoría de Tao:** mandarle el pedido como tarea en Pipeline TITAN (espera el OK de Abraham); cuando vuelva, cruzar su auditoría con este contexto y corregir lo que caiga.
 
 ## Fuentes
 
+- `docs/agents/respuestas/2026-10-12-007-la-v2-del-paper-esta-lista-y-el-erratum-tenia-errores-sobre-la-v1.md`
+- `docs/auditorias/2026-10-12-pedido-auditoria-tao-laboratorio.md`
+- En el PR #27: `docs/V2-CIERRE.md`, `docs/v2/paper1-v2.0.md`, `docs/ERRATUM.md` revisado, `docs/v2/render-v2.0.log` y `docs/v2/verificar-v2.0.log`
 - `docs/agents/respuestas/2026-10-12-006-en-criollo-la-mosca-sirve-de-mapa-y-de-reflejo-chico-no-de-cerebro-entrenable.md`
 - `docs/agents/respuestas/2026-10-12-005-entrada-por-tipos.md`
 - `docs/agents/respuestas/2026-10-12-004-memoria-dura-dbc3-contra-lstm.md`
@@ -219,13 +300,14 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - `docs/agents/respuestas/2026-10-10-005-que-salida-controla-cada-clase.md`
 - `docs/agents/respuestas/2026-10-10-002-tabla7-reconstruida.md`
 - `docs/agents/respuestas/2026-10-10-004-que-hay-al-final-de-cada-cable.md`
-- `docs/ERRATUM.md` y `docs/PIVOTE-RECIPROCIDAD.md`
+- `docs/ERRATUM.md` y `docs/PIVOTE-RECIPROCIDAD.md` (las versiones revisadas están en el PR #27)
 - `00-ENTORNOS-Y-CAPACIDADES.md` (raíz; foto medida el 26 y 27-ago; leído en `5405f03` para la 006).
 - En `mojo-absoluto` `main` (`613bf49`): `include/mojo_abs/connectome_ltc.hpp` y `docs/adr/2026-10-01-sparseltc-dbc3-adapter.md`.
 - `README.md` de `dualbrain` (`main`) y el Doc de ClickUp del 3-oct «Mojo Absoluto Compiler: DualBrain/DBC3, SparseLTC e hipótesis de desarrollo» (https://app.clickup.com/90171457413/docs/2kza6fw5-19197/2kza6fw5-21757).
-- En brain-env: `/workspace/dbc3_lib.py` (md5 `39566d9a…`, `DBC3Motor` del notebook DBC3-v3) y `/workspace/dbc3_motor.h` (md5 `6199c452…`, reconstrucción en C sin pesos).
+- En brain-env: `/workspace/dbc3_lib.py` (md5 `39566d9a…`, `DBC3Motor` del notebook DBC3-v3), `/workspace/dbc3_motor.h` (md5 `6199c452…`, reconstrucción en C sin pesos) y `/workspace/v2cierre_2026-10-12/` (PDF v1.0, su texto, los dos PDF del depósito y los clones).
 - Literatura verificada en la 002: Ache 2019 (Nat Neurosci, aterrizaje), Braun 2024 (Nature, redes de descendentes), Sapkal 2024 (Nature, oDN1 y BDN2), Simpson 2023 (Curr Opin Neurobiol, revisión de descendentes).
 - Literatura verificada en la 005: von Reyn 2017 (Neuron, LC4 velocidad), Ache 2019 (Curr Biol, LPLC2 tamaño y suma en el GF), Klapoetke 2017 (Nature, LPLC2 ultraselectiva), Kim 2023 (Curr Biol, LPLC2 y el punto que se traslada), Dombrovski 2025 (Nature, entradas visuales del GF); LPLC4 sin fisiología encontrada.
+- Literatura verificada en la 007: Betzel 2026 (PLOS Complex Syst), Bates 2026 (Nature 656:957–970), Gouwens & Wilson 2009 (J Neurosci 29(19)), Nagel & Wilson 2011 (Nat Neurosci 14), Tuthill & Wilson 2016 (Curr Biol 26(20)), Hasani 2022 (Nat Mach Intell 4), Costi 2025 (Biomimetics), Yu 2026 (AGI 2025), Jin 2026 (arXiv), Gordon & Scott 2009 (Neuron 61), Shiu 2022 (eLife 11), FlyWire 2024 (Zenodo 10676866) y los alcances de token de developers.zenodo.org.
 - En ramas: respuestas 063 a 124 de `titan/materializacion-h4-guard-2026-10-02` y respuestas 2026-09-22/23 de `titan/auditoria-integra-2026-08-25`.
 
 ## NO MEDIDO
@@ -240,6 +322,15 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - El cruce con Lin 2024.
 - 57 archivos de main y 73 rutas de ramas sin leer en la 004.
 - Mapping anatómico, null anatómico pareado, causalidad y equivalencia SparseLTC→DBC3 sobre señal real.
+- **v2.0 (2026-10-12-007):**
+  - nadie miró los PDF a ojo (sólo extracción de texto);
+  - metadatos sin probar contra la API real;
+  - borrador, depósito y publicación;
+  - lectura humana completa del manuscrito reconstruido contra la v1.0;
+  - barrido sistemático de literatura para la §3.4;
+  - el rango 5–20 ms de Gouwens & Wilson.
+  - El alcance sin el control de las salidas es una recomendación, no una decisión.
+- **Auditoría de Tao:** no enviada ni empezada.
 - Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, la lectura por DNp09 y cualquier medición fuera de distribución.
 - Arquitectura por etapas (2026-10-12-001): todo salvo E2 y el tramo E2 → E3 en simulación (003 a 005); DBC3 en C sobre un microcontrolador; el cordón (MANC, BANC); la cámara de eventos; la transferencia a marítimo y terrestre; cualquier medición de antidrones; la hipótesis «todas las capacidades son reutilizables».
 - Catálogo (2026-10-12-002): fuerza y función de las conexiones (sólo existencia ≥ 5); nulo para las fracciones a descendentes; oDN1, BDN2 y LPLC3 por otra vía que el nombre; las entradas de más arriba en los bytes; el lector del rumbo; citas de lo «de memoria» (anillo de rumbo, HS y VS, LC10 y LC11, vía olfativa).
@@ -251,5 +342,5 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - Review externo del pipeline. Silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: brain-env para el escape (010 a 015), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas, el motivo de la 008, el catálogo (2026-10-12-002), escape o aterrizaje con DBC3 (2026-10-12-003), memoria dura (2026-10-12-004) y entrada por tipos (2026-10-12-005), con torch CPU; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007) y para escribir los scripts del 010 al 015 y del 2026-10-12-002 al 005; lectura de código en brain-env y GitHub para la 016; ninguna corrida para la 2026-10-12-001 (diseño) ni para la 2026-10-12-006 (síntesis; lecturas en GitHub).
-Artefactos: `docs/agents/respuestas/2026-10-12-006-en-criollo-la-mosca-sirve-de-mapa-y-de-reflejo-chico-no-de-cerebro-entrenable.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21417
+Máquina: brain-env para el escape (010 a 015), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas, el motivo de la 008, el catálogo (2026-10-12-002), escape o aterrizaje con DBC3 (2026-10-12-003), memoria dura (2026-10-12-004), entrada por tipos (2026-10-12-005) y la v2.0 (2026-10-12-007: PDF v1.0, json de la Tabla 7, grep de ramas, render y verificación en clon fresco), con torch CPU donde hizo falta; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007), para escribir los scripts del 010 al 015 y del 2026-10-12-002 al 005, y para la Tabla 5 de la 2026-10-12-007; lectura de código en brain-env y GitHub para la 016; ninguna corrida para la 2026-10-12-001 (diseño) ni para la 2026-10-12-006 (síntesis; lecturas en GitHub).
+Artefactos: `docs/agents/respuestas/2026-10-12-007-la-v2-del-paper-esta-lista-y-el-erratum-tenia-errores-sobre-la-v1.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21437
