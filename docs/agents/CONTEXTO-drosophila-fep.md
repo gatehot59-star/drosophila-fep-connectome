@@ -1,7 +1,7 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-11, noche (America/Buenos_Aires), con la respuesta 2026-10-11-016 (cómo operan las 26: ecuación de SparseLTC sin DualBrain en el escape; la líquida que ganó tiene la forma de la LiquidCell). La 015 firmó la 014 sólo para la semilla 0. La 009 no cambió el estado.
-**Estado canónico:** `main`, con las respuestas del 10 y 11 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
+**Última actualización:** 2026-10-12, madrugada (America/Buenos_Aires), con la respuesta 2026-10-12-001 (arquitectura por etapas: SparseLTC donde hay cableado de la mosca que certificar, DBC3 para memoria y contexto, el patrón DualBrain como esqueleto y lo clásico para carga, motores y actitud; catálogo de circuitos candidatos; antimisiles fuera del roadmap; diseño, sin corrida). La 016 respondió cómo operan las 26 (ecuación de SparseLTC sin DualBrain en el escape; la líquida que ganó tiene la forma de la LiquidCell). La 015 firmó la 014 sólo para la semilla 0. La 009 no cambió el estado.
+**Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** `docs/ERRATUM.md` (9 ítems) con anotaciones pinneadas a `17fc577`. **Zenodo tiene sólo la v1.0** (20-mar): la v2 con el erratum no está depositada.
 
 ## Mapa del repo (respuesta 2026-10-11-004)
@@ -137,8 +137,15 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
   - El test de `swarm/` no puede dar rojo (con los pesos en cero sale con 0) y la auditoría de `gen_swarm.py` devuelve `PASS` fijo con topologías mutadas.
   - Instrumento: `tools/swarm_lazo_cerrado.py` en la rama `titan/swarm-lazo-cerrado-2026-10-11`, sin PR.
   - **Idea mejorada (BEEC v2):** compilador de motivos certificados contra el nulo, interfaz por descendentes, cordón sintético con lazo de actitud, y entrenables la compuerta, la memoria DBC3, el readout y, en L2, la τ líquida plena (013 y 014). El falsador es el brazo S: en tareas genéricas empató (008); en la función propia gana por lateralidad (010), por cableado fino fuera del techo (011) y, con la líquida plena entrenada, en promedio contra SL (014 y 015). Cadena prevista (016): ojo → 26 en SparseLTC (reflejo) → DBC3 (memoria y compuerta) → descendentes → dron; sólo la primera parte está medida.
+  - **Arquitectura por etapas (2026-10-12-001, diseño, sin corrida):**
+    - **Reparto:** E0 transducción con sensores comerciales («ser el transductor», con cámara de eventos y modelo de retina, queda para después); E1 rasgos sensoriales y E2 reflejos en **SparseLTC** sobre el cableado de FlyWire; E3 contexto y memoria en **DBC3**, una por flujo y nunca una por neurona (ADR, D1); E4 tabla descendente → orden; E5 lazo de actitud clásico o CPG (el cordón sintético); E6 carga, ESC y motores **clásicos y deterministas**, con el cerebro decidiendo sólo cuándo volver a cargar (una señal tipo hambre a la compuerta de DBC3). **El patrón DualBrain** (vía rápida, memoria y compuerta) une E2 y E3.
+    - **Regla:** el cableado de la mosca entra donde gana en su función contra su barajado (S y SL) y contra un rival clásico entrenado; donde no, va lo clásico.
+    - **«Todas las capacidades son reutilizables» queda como hipótesis:** contraejemplo medido en la 008 y un solo circuito que paga en su función (010 a 015), con el reflejo a mano en 0,9167 (011).
+    - **Catálogo candidato, sin verificar en FlyWire:** giro DNa01 y DNa02, avanzar oDN1 y retroceder MDN (fuentes de la 007); rumbo con el anillo E-PG, estabilizar con flujo HS y VS, objetos chicos LC11 y LC10, olfato del lóbulo antenal al cuerno lateral y al cuerpo fungiforme, y aterrizaje a identificar (estas cinco, sin cita verificada). El cordón (vuelo, patas, haltere) está en MANC y BANC, no en FlyWire.
+    - **Dominios:** lo visual de movimiento relativo se traslada a cualquier plataforma; lo motor depende del cuerpo; el agua es mala para el flujo óptico.
+    - **Antidrones** como detección y evasión, sí; interceptar es perseguir y las cazadoras no están en FlyWire. **Antimisiles:** recomendación de sacarlo del roadmap (velocidades, radar e infrarrojo, leyes de guiado, uso dual y control de exportaciones).
   - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo. Sus §1, §4 y §6.2 (el brazo W «nunca testeó» la hipótesis y el diseño W/S) quedan superados por la 008 y la 010 a la 015.
-  - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica; **en L2, τ líquida plena entrenada sobre el cableado fijo (1.378 parámetros, unos 5,5 KB en float32; costo en ESP32 NO MEDIDO), que reemplaza a la diagonal de la 012**, o probar antes la líquida nativa de SparseLTC (016).
+  - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica; **en L2, τ líquida plena entrenada sobre el cableado fijo (1.378 parámetros, unos 5,5 KB en float32; costo en ESP32 NO MEDIDO), que reemplaza a la diagonal de la 012**, o probar antes la líquida nativa de SparseLTC (016); **adoptar la arquitectura por etapas con su regla de reparto y el catálogo como plan de la línea, y sacar antimisiles del roadmap (2026-10-12-001)**.
 
 ## Próximos pasos
 
@@ -157,11 +164,12 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 4. **Abiertos para la v2:** NPC por sinapsis o null combinado de grado y neuropilo; ventana y tau de sel_post; Lin región por región; Betzel arista por arista; fila AN y décima clase de la Tabla 5.
 5. **La 007:** con R = 10.000 para Holm; D2 con el nulo de región.
 6. H4 estacionada.
-7. **Robótica, en este orden (015 y 016):** arreglar el dron (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere) y montarle el reflejo de escape en su simulación; **la líquida nativa de SparseLTC (tau_gain, 26 parámetros) en el escape contra su control**; la plena en Q15 sobre un ESP32; las 26 con DBC3 como controlador cuando haya backend; un segundo motivo (GF-01 completo o uno de giro); en el escape, SL con varias semillas cada una y la plena sobre S, condiciones fuera de las entrenadas y el otro modelo de entrada; comparar contra un controlador clásico entrenado.
+7. **Robótica (015, 016 y 2026-10-12-001; orden propuesto por la 001, decide Abraham):** **el catálogo de circuitos en FlyWire** con las anotaciones pinneadas (tamaño, cables y lateralidad de cada candidato, cada uno con su S y SL en su función y un rival clásico entrenado); **la líquida nativa de SparseLTC (tau_gain, 26 parámetros) en el escape contra su control**; **el primer acople SparseLTC → DBC3 sobre el escape** (las 26 como reflejo y DBC3 decidiendo cuándo hacerle caso; para C falta `dbc3_motor.h` en `dualbrain`); un controlador clásico entrenado como rival en el escape; arreglar el dron (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere) y montarle el reflejo de escape en su simulación; la plena en Q15 sobre un ESP32; el cordón nervioso en MANC o BANC para la etapa E5; un segundo motivo (GF-01 completo o uno de giro, que sale del catálogo); en el escape, SL con varias semillas cada una y la plena sobre S, condiciones fuera de las entrenadas y el otro modelo de entrada.
 8. **Brazo S (respuestas 008, 010 a 015):** MultiCue con 50 semillas para decidir la tendencia 0,42×; un S que conserve Dale por neurona en motivos con inhibición; reescribir `CONTEXTO-motor.md`; PR de `titan/brazo-s-recurrente-2026-10-11`, `titan/swarm-lazo-cerrado-2026-10-11` y `titan/escape-motivo-2026-10-11`, y review.
 
 ## Fuentes
 
+- `docs/agents/respuestas/2026-10-12-001-arquitectura-por-etapas.md`
 - `docs/agents/respuestas/2026-10-11-016-como-operan-las-26-neuronas.md`
 - `docs/agents/respuestas/2026-10-11-015-firma-de-la-014-y-en-criollo.md`
 - `docs/agents/respuestas/2026-10-11-014-la-liquida-plena-aguanta-el-control.md`
@@ -184,6 +192,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - `docs/agents/respuestas/2026-10-10-004-que-hay-al-final-de-cada-cable.md`
 - `docs/ERRATUM.md` y `docs/PIVOTE-RECIPROCIDAD.md`
 - En `mojo-absoluto` `main` (`613bf49`): `include/mojo_abs/connectome_ltc.hpp` y `docs/adr/2026-10-01-sparseltc-dbc3-adapter.md`.
+- `README.md` de `dualbrain` (`main`) y el Doc de ClickUp del 3-oct «Mojo Absoluto Compiler: DualBrain/DBC3, SparseLTC e hipótesis de desarrollo» (https://app.clickup.com/90171457413/docs/2kza6fw5-19197/2kza6fw5-21757).
 - En ramas: respuestas 063 a 124 de `titan/materializacion-h4-guard-2026-10-02` y respuestas 2026-09-22/23 de `titan/auditoria-integra-2026-08-25`.
 
 ## NO MEDIDO
@@ -199,10 +208,11 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - 57 archivos de main y 73 rutas de ramas sin leer en la 004.
 - Mapping anatómico, null anatómico pareado, causalidad y equivalencia SparseLTC→DBC3 sobre señal real.
 - Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, la lectura por DNp09 y cualquier medición fuera de distribución.
+- Arquitectura por etapas (2026-10-12-001): todo salvo E2, y E2 sólo con el escape en simulación; DBC3 acoplado a un motivo y DBC3 en C sobre un microcontrolador (sin `dbc3_motor.h` no compila); los circuitos del catálogo (ninguno buscado en FlyWire; cinco candidatas sin cita verificada); el cordón (MANC, BANC); la cámara de eventos; la transferencia a marítimo y terrestre; cualquier medición de antidrones; la hipótesis «todas las capacidades son reutilizables».
 - Brazo S (008): MultiCue con más semillas; un S que conserve Dale por neurona (este motivo no tiene aristas inhibitorias); SparseLTC completo como reservorio; la τ propia de DBC3 (el brazo F mide la `LiquidCell` de DualBrain); F con los mismos parámetros que A.
 - Escape (010 a 016): la líquida nativa de SparseLTC (tau_gain); las 26 con estado complejo; las 26 con DBC3 como controlador; paridad numérica del numpy del escape contra el `step()` de C++; SL con varias semillas de entrenamiento cada una; la líquida plena sobre S; condiciones fuera de las entrenadas; la ventaja sobre SL con otro modelo de entrada; un controlador clásico entrenado como rival; la plena en Q15 sobre ESP32; reproducción en una segunda máquina; el modelo de entrada es de literatura, no medido.
 - Review externo del pipeline. Silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: brain-env para el escape (010 a 015), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas y el motivo de la 008; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007) y para escribir los scripts del 010 al 015; lectura de código en brain-env y GitHub para la 016.
-Artefactos: `docs/agents/respuestas/2026-10-11-016-como-operan-las-26-neuronas.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21277
+Máquina: brain-env para el escape (010 a 015), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas y el motivo de la 008; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007) y para escribir los scripts del 010 al 015; lectura de código en brain-env y GitHub para la 016; ninguna corrida para la 2026-10-12-001 (diseño; lecturas en GitHub y ClickUp).
+Artefactos: `docs/agents/respuestas/2026-10-12-001-arquitectura-por-etapas.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21297
