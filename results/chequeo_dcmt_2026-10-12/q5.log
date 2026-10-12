@@ -1,0 +1,35 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | pandas 3.0.5 | pyarrow 25.0.1
+# md5 script = c2e5719c0bea041b825c6a4335a24222
+# fecha: 2026-10-12 18:41:26 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+DN=4 VISUALES_LC4_LPLC2_LPLC4=424
+INHIBITORIAS_PRESINAPTICAS_A_LAS_4_DN=551 sinapsis=7889
+Q5 umbral_vis>=1 DN DNp01 left inhibitoria=2227 de_inhibitorias_con_entrada_visual=1287 (57.8%) neuronas=72
+Q5 umbral_vis>=1 DN DNp01 right inhibitoria=2495 de_inhibitorias_con_entrada_visual=1550 (62.1%) neuronas=72
+Q5 umbral_vis>=1 DN DNp07 left inhibitoria=1672 de_inhibitorias_con_entrada_visual=968 (57.9%) neuronas=86
+Q5 umbral_vis>=1 DN DNp07 right inhibitoria=1495 de_inhibitorias_con_entrada_visual=762 (51.0%) neuronas=82
+Q5 umbral_vis>=1 TAMANO_MOTIVO_AMPLIADO 28 + 237 inhibitorias = 265 neuronas
+Q5 umbral_vis>=5 DN DNp01 left inhibitoria=2227 de_inhibitorias_con_entrada_visual=923 (41.4%) neuronas=47
+Q5 umbral_vis>=5 DN DNp01 right inhibitoria=2495 de_inhibitorias_con_entrada_visual=1223 (49.0%) neuronas=51
+Q5 umbral_vis>=5 DN DNp07 left inhibitoria=1672 de_inhibitorias_con_entrada_visual=723 (43.2%) neuronas=65
+Q5 umbral_vis>=5 DN DNp07 right inhibitoria=1495 de_inhibitorias_con_entrada_visual=633 (42.3%) neuronas=55
+Q5 umbral_vis>=5 TAMANO_MOTIVO_AMPLIADO 28 + 167 inhibitorias = 195 neuronas
+Q5 umbral_vis>=20 DN DNp01 left inhibitoria=2227 de_inhibitorias_con_entrada_visual=676 (30.4%) neuronas=32
+Q5 umbral_vis>=20 DN DNp01 right inhibitoria=2495 de_inhibitorias_con_entrada_visual=685 (27.5%) neuronas=32
+Q5 umbral_vis>=20 DN DNp07 left inhibitoria=1672 de_inhibitorias_con_entrada_visual=610 (36.5%) neuronas=47
+Q5 umbral_vis>=20 DN DNp07 right inhibitoria=1495 de_inhibitorias_con_entrada_visual=557 (37.3%) neuronas=39
+Q5 umbral_vis>=20 TAMANO_MOTIVO_AMPLIADO 28 + 112 inhibitorias = 140 neuronas
+Q5 TOP_INHIBITORIA CB0442 (gaba, right) a_las_DN=271 entrada_desde_LC4_LPLC2_LPLC4=0 de 1952 (0.0%)
+Q5 TOP_INHIBITORIA PLP214 (glutamate, left) a_las_DN=227 entrada_desde_LC4_LPLC2_LPLC4=109 de 2463 (4.4%)
+Q5 TOP_INHIBITORIA PLP214 (glutamate, right) a_las_DN=201 entrada_desde_LC4_LPLC2_LPLC4=70 de 2352 (3.0%)
+Q5 TOP_INHIBITORIA CB3707 (gaba, left) a_las_DN=173 entrada_desde_LC4_LPLC2_LPLC4=0 de 870 (0.0%)
+Q5 TOP_INHIBITORIA CB3707 (gaba, right) a_las_DN=162 entrada_desde_LC4_LPLC2_LPLC4=9 de 1032 (0.9%)
+Q5 TOP_INHIBITORIA CB3707 (gaba, left) a_las_DN=154 entrada_desde_LC4_LPLC2_LPLC4=36 de 1048 (3.4%)
+Q5 TOP_INHIBITORIA CB3707 (gaba, right) a_las_DN=144 entrada_desde_LC4_LPLC2_LPLC4=10 de 1117 (0.9%)
+Q5 TOP_INHIBITORIA PVLP010 (glutamate, right) a_las_DN=137 entrada_desde_LC4_LPLC2_LPLC4=216 de 8923 (2.4%)
+Q5 TOP_INHIBITORIA CB0442 (gaba, left) a_las_DN=130 entrada_desde_LC4_LPLC2_LPLC4=0 de 1948 (0.0%)
+Q5 TOP_INHIBITORIA LHAD1g1 (gaba, left) a_las_DN=130 entrada_desde_LC4_LPLC2_LPLC4=885 de 17164 (5.2%)
+Q5 TOP_INHIBITORIA LHAD1g1 (gaba, right) a_las_DN=124 entrada_desde_LC4_LPLC2_LPLC4=695 de 17574 (4.0%)
+Q5 TOP_INHIBITORIA CB0563 (gaba, left) a_las_DN=115 entrada_desde_LC4_LPLC2_LPLC4=0 de 2148 (0.0%)
+# duracion_s=3.8
+EXIT_RUN=0

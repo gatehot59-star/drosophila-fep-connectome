@@ -1,0 +1,46 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | pandas 3.0.5 | pyarrow 25.0.1
+# md5 script = d965ee12cd7bd0bece24eb0790274bb5
+# fecha: 2026-10-12 18:38:58 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+Q3 PARQUET_COLUMNAS Presynaptic_ID,Postsynaptic_ID,Presynaptic_Index,Postsynaptic_Index,Connectivity,Excitatory,Excitatory x Connectivity,__index_level_0__
+Q3 ANNOT_COLUMNAS supervoxel_id,root_id,pos_x,pos_y,pos_z,soma_x,soma_y,soma_z,nucleus_id,flow,super_class,cell_class,cell_sub_class,supertype,cell_type,hemibrain_type,ito_lee_hemilineage,hartenstein_hemilineage,top_nt,top_nt_conf,known_nt,known_nt_source,side,nerve,vfb_id,fbbt_id,status,dimorphism,matching_notes,fru_dsx,synonyms
+Q3 COLUMNAS_ESPACIALES_EN_PARQUET Postsynaptic_ID,Postsynaptic_Index
+Q1 COLUMNA_NT top_nt
+ANNOT filas=139248
+CONN filas=15091983
+Q1 PRESINAPTICAS=138005 con_signo_mixto=0
+Q1 NT=5HT signo_pipeline=-1 neuronas=9 aristas=217 sinapsis=928
+Q1 NT=5HT signo_pipeline=+1 neuronas=2127 aristas=113712 sinapsis=435278
+Q1 NT=ACh signo_pipeline=-1 neuronas=1719 aristas=73031 sinapsis=269984
+Q1 NT=ACh signo_pipeline=+1 neuronas=84162 aristas=8114668 sinapsis=30190689
+Q1 NT=DA signo_pipeline=-1 neuronas=3 aristas=269 sinapsis=621
+Q1 NT=DA signo_pipeline=+1 neuronas=5897 aristas=656120 sinapsis=1383910
+Q1 NT=GABA signo_pipeline=-1 neuronas=17731 aristas=3129840 sinapsis=12459807
+Q1 NT=GABA signo_pipeline=+1 neuronas=1348 aristas=41853 sinapsis=141038
+Q1 NT=Glu signo_pipeline=-1 neuronas=21863 aristas=2829009 sinapsis=9266016
+Q1 NT=Glu signo_pipeline=+1 neuronas=2941 aristas=70756 sinapsis=205860
+Q1 NT=OA signo_pipeline=-1 neuronas=1 aristas=11 sinapsis=18
+Q1 NT=OA signo_pipeline=+1 neuronas=192 aristas=62103 sinapsis=137821
+Q1 NT=SIN_ANOTACION signo_pipeline=-1 neuronas=7 aristas=304 sinapsis=831
+Q1 NT=SIN_ANOTACION signo_pipeline=+1 neuronas=5 aristas=90 sinapsis=121
+Q2 DCMT_CAMBIA_SIGNO neuronas=24942/138005 (18.07%) aristas=2944379/15091983 (19.51%) sinapsis=9678587/54492922 (17.76%)
+Q2 CAMBIA nt=5HT neuronas=9 aristas=217 sinapsis=928
+Q2 CAMBIA nt=ACh neuronas=1719 aristas=73031 sinapsis=269984
+Q2 CAMBIA nt=DA neuronas=3 aristas=269 sinapsis=621
+Q2 CAMBIA nt=GABA neuronas=1348 aristas=41853 sinapsis=141038
+Q2 CAMBIA nt=Glu neuronas=21863 aristas=2829009 sinapsis=9266016
+Q2 SIN_CLASE_EN_DCMT nt=OA neuronas=193 aristas=62114 sinapsis=137839
+Q2 SIN_CLASE_EN_DCMT nt=SIN_ANOTACION neuronas=12 aristas=394 sinapsis=952
+Q4 MOTIVO neuronas=28 aristas=73 inhibitorias=0 sinapsis=665
+Q4 MOTIVO_NT ACh=27,Glu=1
+Q4 REPRODUCE_003 (28 neuronas, 73 aristas, 0 inhibitorias) -> True
+Q4 DN DNp01 left entrada_total=4327 inhibitoria=2227 (51.5%) de_las_neuronas_del_motivo=110 (2.5%) de_tipos_LC4_LPLC2_LPLC4=832 (19.2%) presinapticas=479
+Q4 DN DNp01 left top_inhibitorias CB3707(GABA)=293; SAD014(GABA)=136; LHAD1g1(GABA)=130; PVLP010(Glu)=113; CB0010(GABA)=111
+Q4 DN DNp01 right entrada_total=5147 inhibitoria=2495 (48.5%) de_las_neuronas_del_motivo=121 (2.4%) de_tipos_LC4_LPLC2_LPLC4=1053 (20.5%) presinapticas=483
+Q4 DN DNp01 right top_inhibitorias CB3707(GABA)=340; SAD014(GABA)=156; CL038(Glu)=143; PVLP010(Glu)=137; LHAD1g1(GABA)=124
+Q4 DN DNp07 left entrada_total=4656 inhibitoria=1672 (35.9%) de_las_neuronas_del_motivo=170 (3.7%) de_tipos_LC4_LPLC2_LPLC4=811 (17.4%) presinapticas=556
+Q4 DN DNp07 left top_inhibitorias CB0442(GABA)=241; PLP214(Glu)=227; CL128a(GABA)=95; PLP173(GABA)=80; AOTU063b(Glu)=68
+Q4 DN DNp07 right entrada_total=4061 inhibitoria=1495 (36.8%) de_las_neuronas_del_motivo=138 (3.4%) de_tipos_LC4_LPLC2_LPLC4=638 (15.7%) presinapticas=492
+Q4 DN DNp07 right top_inhibitorias PLP214(Glu)=201; CB0442(GABA)=160; SAD072(GABA)=99; AOTU049(GABA)=90; CL128a(GABA)=81
+# duracion_s=7.2
+EXIT_RUN=0
