@@ -1,12 +1,12 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-12, mediodía (America/Buenos_Aires), con la respuesta 2026-10-12-007 (la v2 del Paper 1 quedó lista para depositar en el PR #27: manuscrito, erratum revisado contra el texto del PDF v1.0, render determinista y depósito en borrador; faltan el token de Zenodo y el merge, que son de Abraham. Abraham pidió además que TITÁN Tao audite el laboratorio entero: el pedido se envió a las 11:36 como tarea en Pipeline TITAN con mención, porque asignar agentes a tareas está apagado en el workspace). La 006 fue la síntesis en criollo: la mosca sirve de mapa y de reflejo chico, no de cerebro entrenable. La 005 (entrada visual por tipo de neurona) dio NO PAGA: con lector entrenado sobre las 4 descendentes el cableado de la mosca nunca le gana a SL, pierde contra las sintonías barajadas si LPLC4 es muda y el rival clásico crudo le gana en 6 de 6; incluye el resumen de la 004 y la 005. La 004 mostró que ni DBC3 ni LSTM sostienen el estado de vuelo 90 pasos y que la máquina de estados les gana. La 003 corrió el primer acople SparseLTC → DBC3 (en el techo, empate con LSTM y con el barajado). La 002 armó el catálogo de circuitos (corregida por la 003 en LC9 y DNp10). La 001 fijó la arquitectura por etapas (diseño). La 016 respondió cómo operan las 26. La 015 firmó la 014 sólo para la semilla 0.
+**Última actualización:** 2026-10-12, 11:58 (America/Buenos_Aires), con la respuesta 2026-10-12-009 (**Tao no auditó**: a las 11:39 contestó que leyó el alcance y que todavía no auditó nada, y pidió «confirmo» para un lote de 7 escrituras por su regla de cinco o más; está parado desde entonces. Abraham pidió revisar todo con esa auditoría antes del token, así que el borrador de Zenodo la espera. Lo que gastó Tao en créditos es NO MEDIDO para BRAIN). La 008 dejó las líneas etiquetadas diseñadas y sin correr. La 007 dejó la v2 del Paper 1 lista para depositar en el PR #27 (manuscrito, erratum revisado contra el texto del PDF v1.0, render determinista y depósito en borrador; faltan el token de Zenodo y el merge, que son de Abraham) y mandó el pedido de auditoría a TITÁN Tao a las 11:36 (tarea en Pipeline TITAN con mención, porque asignar agentes a tareas está apagado en el workspace). La 006 fue la síntesis en criollo: la mosca sirve de mapa y de reflejo chico, no de cerebro entrenable. La 005 (entrada visual por tipo de neurona) dio NO PAGA: con lector entrenado sobre las 4 descendentes el cableado de la mosca nunca le gana a SL, pierde contra las sintonías barajadas si LPLC4 es muda y el rival clásico crudo le gana en 6 de 6; incluye el resumen de la 004 y la 005. La 004 mostró que ni DBC3 ni LSTM sostienen el estado de vuelo 90 pasos y que la máquina de estados les gana. La 003 corrió el primer acople SparseLTC → DBC3 (en el techo, empate con LSTM y con el barajado). La 002 armó el catálogo de circuitos (corregida por la 003 en LC9 y DNp10). La 001 fijó la arquitectura por etapas (diseño). La 016 respondió cómo operan las 26. La 015 firmó la 014 sólo para la semilla 0.
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
 ## Mapa del repo (respuesta 2026-10-11-004)
 
-- main tenía 182 archivos en `02da943` y hay 27 ramas además de main (la 006 corrigió los 180 archivos y las 28 ramas de la 004). La unión de todas las refs da 464 pares ruta-blob. La 007 sumó `titan/v2-cierre-2026-10-12`.
+- main tenía 182 archivos en `02da943` y hay 27 ramas además de main (la 006 corrigió los 180 archivos y las 28 ramas de la 004). La unión de todas las refs da 464 pares ruta-blob. La 007 sumó `titan/v2-cierre-2026-10-12`. Al 12-oct a las 11:56 hay 35 ramas además de main (medido en la 009).
 - **El expediente de agosto vive en ramas sin mergear:** las respuestas 063 a 124, 47 evidencias y unos 44 scripts. Lo esencial está en `titan/twohop-nulls`, contenida en `titan/auditoria-hipotesis-2026-10-01`, contenida en `titan/materializacion-h4-guard-2026-10-02`. Incluye:
   - el null anatómico;
   - LC6→GF;
@@ -33,7 +33,7 @@
     - la fila AN contada como cuarta enriquecida;
     - el 991× mezclado con un extremo de otras clases.
   - La v1.0 tiene cinco referencias con datos mal.
-  - Falta el token de Zenodo y el merge.
+  - Falta el token de Zenodo y el merge. **Por pedido de Abraham (11:48), el depósito espera además la auditoría de Tao** (2026-10-12-009).
 - **Paper, reciprocidad:**
   - La Tabla 7 es reproducible: 8/8 con el pin `17fc577` (respuesta 003). El script está reconstruido en el PR #26, sin merge.
   - El nulo CP propio reproduce el del erratum: media de 194.890,4 contra 194.974,2, o sea 20,60× con 0/100.
@@ -74,8 +74,12 @@
 - **Depósito:**
   - `--borrador` crea la nueva versión sin publicar y `--publicar ID` es irreversible.
   - El token necesita `deposit:write` y `deposit:actions`; el inventario sólo nombraba el primero.
-  - No hay token en brain-env (medido).
+  - No hay token en brain-env (medido en la 007 y de nuevo en la 009: ni variable ni archivo).
+  - **Token paso a paso (2026-10-12-009):** login en Zenodo con la cuenta dueña del registro; `https://zenodo.org/account/settings/applications/tokens/new/` (la ruta existe: 302 al login; una inventada da 404); nombre, los dos alcances y copiarlo (se muestra una sola vez); Abraham lo pasa y BRAIN lo guarda en `/workspace/.zenodo_token` con permisos 600 sin imprimirlo; `--borrador`; Abraham revisa y publica, o da el sí para `--publicar`; revocar el token.
+  - **Orden pedido por Abraham (11:48):** auditoría de Tao → cotejo contra el repo → correcciones al PR #27 si caen → merge → token → borrador → publicación → revocar el token.
+  - Los dos PDF del depósito siguen en brain-env con su md5 (2/2 contra `archivos-deposito-v2.0.json`, medido en la 009).
 - **Espera decisión de Abraham:**
+  - el «confirmo» a Tao, o auditar el bloque 1 con una instancia nueva de Brain;
   - el merge del PR #27;
   - el token;
   - el alcance (sin el control de las salidas);
@@ -88,14 +92,20 @@
   - Disparadores: DM, mención y asignación.
   - Repo por defecto: `mudh-mobile`.
   - Tiene GitHub de lectura y escritura (rama y PR, nunca merge) y sandbox; no tiene el gateway de brain-env.
+  - **Pregunta antes todo lote de 5 o más escrituras**, aunque el pedido lo detalle («un pedido detallado es el plan y no la confirmación»). Una auditoría con entrega en git y Doc siempre le pide una vuelta más.
 - **Pedido:** `docs/auditorias/2026-10-12-pedido-auditoria-tao-laboratorio.md`.
   - Abarca el laboratorio entero: v2.0, Tabla 7 y salidas, nulo por circuito, brazo S y escape, circuitos y DBC3, expediente de agosto y H4.
   - Se audita contra los logs crudos, preguntando en cada afirmación si su instrumento podía dar rojo.
   - Pide propuestas para sacarle más provecho, con falsador y costo.
-- **Estado: enviado** el 2026-10-12 a las 11:36, a pedido de Abraham (lo pidió dos veces).
+- **Enviado** el 2026-10-12 a las 11:36, a pedido de Abraham (lo pidió dos veces).
   - Tarea https://app.clickup.com/t/86e3p74xa en Pipeline TITAN; mención a Tao en el comentario https://app.clickup.com/t/86e3p74xa?comment=90170261435881.
   - **La asignación falló**: asignar agentes a tareas está apagado en el workspace. El disparador es la mención.
-  - Respuesta de Tao: sin leer todavía. **No reenviar.**
+- **Estado (medido en la 2026-10-12-009, 11:56): parado, esperando el «confirmo» de Abraham.**
+  - Tao contestó a las 11:39:43 (https://app.clickup.com/t/86e3p74xa?comment=90170261436691): «Leí el alcance y confirmé el conectoma en 47d940e. Todavía no audité los logs ni emití conclusiones.» Pide «confirmo» para 7 escrituras: rama, archivo y PR en el conectoma; Doc en el Space; rama, `AGENT-TAO.md` y PR en `mudh-mobile`.
+  - No hay rama `titan/auditoria-tao-laboratorio-2026-10-12`, ni PR nuevo en el conectoma ni en `mudh-mobile`, ni Doc suyo.
+  - Actividad de Tao del 1 al 12-oct: 2 comentarios (3-oct, auditoría de DBC3-live, https://app.clickup.com/t/86e3jk397; 12-oct, 11:39).
+  - **Créditos: NO MEDIDO para BRAIN.** Se ven en el perfil de Tao → Credits y en Settings → AI Usage → Activity. Según el Help Center, toda corrida de un Super Agent consume créditos aunque sólo conteste (100 a 300 estimados por uso, más con más acciones); Brain no consume créditos de IA.
+  - **No reenviar el pedido.** Si Abraham confirma, BRAIN publica en el hilo la confirmación con la mención y le pide empezar por el bloque 1 (v2.0, PR #27).
 
 ## Paper y Tabla 7 (respuestas 002 a 009 del 10-oct y 003 y 004 del 11-oct)
 
@@ -222,7 +232,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
     - **Cableado por tipo:** DNp01 recibe LC4 0,498 y LPLC2 0,502; DNp07, LPLC4 0,997. SL reparte (DNp01 0,21 / 0,31 / 0,49; DNp07 0,23 / 0,33 / 0,45).
     - **VEREDICTO_GLOBAL: NO PAGA (PIERDE en SILENCIOSA).** Contra SL la mosca nunca queda arriba (6/6 primarias, 12/12 de robustez, 3/3 con MLP). Contra T: muda pierde (300/300 y 299/300 la igualan o superan; Holm 0,0399 con ruido 0,15), MOVIMIENTO le gana sin pasar Holm (2/300 y 3/300; Holm 0,1196 y 0,1462; robustez 0 a 3 de 100; MLP 0/30) y COMO_LPLC2 empata.
     - **El rival clásico crudo (ridge sobre las 24 entradas) le gana en 6 de 6** (0,8750 a 0,9906 contra 0,6878 a 0,8628; p ≤ 1e-66). Los 28 estados conservan la información (0,8717 a 0,9867): lo que pierde es el embudo de 4 descendentes. Control negativo (AGNOSTICA) 30/30 idénticos; con esa entrada la mosca también queda debajo de SL (99/100, descriptivo).
-    - **Lectura:** con lector entrenado, en esta tarea, E2 va con lo clásico (regla de la 001). El cableado por tipos podría pagar como líneas etiquetadas (cada descendente con su umbral dispara una acción): NO MEDIDO. Si el reparto de la mosca fuera bueno para un lector así, LPLC4 tendría que responder al movimiento: hipótesis, no medida.
+    - **Lectura:** con lector entrenado, en esta tarea, E2 va con lo clásico (regla de la 001). El cableado por tipos podría pagar como líneas etiquetadas (cada descendente con su umbral dispara una acción): NO MEDIDO. Si el reparto de la mosca fuera bueno para un lector así, LPLC4 tendría que responder al movimiento: hipótesis, no medida. **Las líneas etiquetadas quedaron diseñadas en la 2026-10-12-008, sin sellar ni correr.**
     - Instrumento: `tools/escape_aterrizaje/entrada_por_tipos.py` en `titan/entrada-por-tipos-2026-10-12` (md5 `e060c4bf…`, pre-registro `75ca27c`, logs `f7844be`, md5 4/4 en clon fresco), brain-env, 60,0 y 53,5 min en paralelo, sin PR.
   - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo. Sus §1, §4 y §6.2 (el brazo W «nunca testeó» la hipótesis y el diseño W/S) quedan superados por la 008 y la 010 a la 015.
   - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica; **en L2, τ líquida plena entrenada sobre el cableado fijo (1.378 parámetros, unos 5,5 KB en float32; costo en ESP32 NO MEDIDO), que reemplaza a la diagonal de la 012**, o probar antes la líquida nativa de SparseLTC (016); **adoptar la arquitectura por etapas con su regla de reparto, y sacar antimisiles del roadmap (2026-10-12-001)**; **tras la 004 el estado de vuelo quedó en lo clásico; tras la 005: probar líneas etiquetadas contra SL y T con la misma entrada por tipos, o dar por cerrado que en esa tarea E2 va con lo clásico**; **el orden de la 006: la v2 del paper (lista en el PR #27, faltan el token y el merge: 007), líneas etiquetadas en Actions y, si pagan, el reflejo en C99/Q15**.
@@ -235,9 +245,10 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
    - explicar el 8/20 del control CP con ≥1;
    - volver a correr y firmar;
    - subir el script, los tests y los logs a la rama.
-3. **v2.0: lista (007).** Falta:
+3. **v2.0: lista (007).** En el orden que pidió Abraham (009):
+   - la auditoría de Tao del bloque 1 y su cotejo contra el repo, con las correcciones al PR #27 que caigan;
    - el merge del PR #27;
-   - el token con `deposit:write` y `deposit:actions`;
+   - el token con `deposit:write` y `deposit:actions` (pasos en la 009);
    - correr `tools/zenodo/depositar_v2.py --borrador` en brain-env;
    - que Abraham revise el borrador en Zenodo;
    - publicar con su sí;
@@ -249,7 +260,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 6. H4 estacionada.
 7. **Robótica (015, 016 y 2026-10-12-001 a 006; orden propuesto en la 006, decide Abraham):**
    - **Hechos:** ~~el catálogo de circuitos~~ (002); ~~escape o aterrizaje según vuelo~~ (003, en el techo); ~~memoria dura~~ (004, nadie aprende); ~~entrada por tipos visuales~~ (005, NO PAGA).
-   - **1) Líneas etiquetadas** (cada descendente con su umbral dispara una acción) contra SL y T con la misma entrada, **en Actions**: repo público, gratis, 11,6× más rápido y VM limpia; instalar numpy con `setup-python`.
+   - **1) Líneas etiquetadas** (cada descendente con su umbral dispara una acción) contra SL y T con la misma entrada, **en Actions**: repo público, gratis, 11,6× más rápido y VM limpia; instalar numpy con `setup-python`. **Diseñadas en la 2026-10-12-008, sin sellar ni correr.**
    - **2) Si pagan, el reflejo en C99/Q15:**
      - paridad contra numpy;
      - `.text` y latencia en Actions x64 y arm64;
@@ -270,10 +281,12 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
    - un S que conserve Dale por neurona en motivos con inhibición;
    - reescribir `CONTEXTO-motor.md`;
    - PR y review de `titan/brazo-s-recurrente-2026-10-11`, `titan/swarm-lazo-cerrado-2026-10-11`, `titan/escape-motivo-2026-10-11`, `titan/catalogo-circuitos-2026-10-12`, `titan/escape-aterrizaje-2026-10-12`, `titan/memoria-dura-2026-10-12` y `titan/entrada-por-tipos-2026-10-12`.
-9. **Auditoría de Tao:** pedida (tarea https://app.clickup.com/t/86e3p74xa, 11:36). **No reenviar.** Cuando entregue su PR y su Doc, cruzar su auditoría con este contexto y corregir lo que caiga. Si no arrancó, revisar si la mención lo disparó antes de volver a llamarlo.
+9. **Auditoría de Tao:** arrancó y frenó (009): contestó a las 11:39 y espera el «confirmo» de Abraham. **No reenviar el pedido.** Con el sí, BRAIN publica la confirmación en el hilo; cuando Tao entregue su PR y su Doc, cotejar su auditoría contra el repo (no contra su Doc) y corregir lo que caiga, primero en el PR #27. Sin el sí, la alternativa es una instancia nueva de Brain sobre el bloque 1.
 
 ## Fuentes
 
+- `docs/agents/respuestas/2026-10-12-009-tao-no-audito-pidio-confirmo-y-el-deposito-lo-espera.md`
+- `docs/agents/respuestas/2026-10-12-008-lineas-etiquetadas-disenadas-sin-correr.md`
 - `docs/agents/respuestas/2026-10-12-007-la-v2-del-paper-esta-lista-y-el-erratum-tenia-errores-sobre-la-v1.md`
 - `docs/auditorias/2026-10-12-pedido-auditoria-tao-laboratorio.md`
 - En el PR #27: `docs/V2-CIERRE.md`, `docs/v2/paper1-v2.0.md`, `docs/ERRATUM.md` revisado, `docs/v2/render-v2.0.log` y `docs/v2/verificar-v2.0.log`
@@ -311,6 +324,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - Literatura verificada en la 002: Ache 2019 (Nat Neurosci, aterrizaje), Braun 2024 (Nature, redes de descendentes), Sapkal 2024 (Nature, oDN1 y BDN2), Simpson 2023 (Curr Opin Neurobiol, revisión de descendentes).
 - Literatura verificada en la 005: von Reyn 2017 (Neuron, LC4 velocidad), Ache 2019 (Curr Biol, LPLC2 tamaño y suma en el GF), Klapoetke 2017 (Nature, LPLC2 ultraselectiva), Kim 2023 (Curr Biol, LPLC2 y el punto que se traslada), Dombrovski 2025 (Nature, entradas visuales del GF); LPLC4 sin fisiología encontrada.
 - Literatura verificada en la 007: Betzel 2026 (PLOS Complex Syst), Bates 2026 (Nature 656:957–970), Gouwens & Wilson 2009 (J Neurosci 29(19)), Nagel & Wilson 2011 (Nat Neurosci 14), Tuthill & Wilson 2016 (Curr Biol 26(20)), Hasani 2022 (Nat Mach Intell 4), Costi 2025 (Biomimetics), Yu 2026 (AGI 2025), Jin 2026 (arXiv), Gordon & Scott 2009 (Neuron 61), Shiu 2022 (eLife 11), FlyWire 2024 (Zenodo 10676866) y los alcances de token de developers.zenodo.org.
+- Leído en la 009: el Help Center de ClickUp («How are AI Credits consumed?», «Track your Workspace's Brain AI usage», «ClickUp Brain AI feature availability and limits» y «Manage Super Agents and create templates») y la creación del token en developers.zenodo.org.
 - En ramas: respuestas 063 a 124 de `titan/materializacion-h4-guard-2026-10-02` y respuestas 2026-09-22/23 de `titan/auditoria-integra-2026-08-25`.
 
 ## NO MEDIDO
@@ -331,9 +345,11 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
   - borrador, depósito y publicación;
   - lectura humana completa del manuscrito reconstruido contra la v1.0;
   - barrido sistemático de literatura para la §3.4;
-  - el rango 5–20 ms de Gouwens & Wilson.
+  - el rango 5–20 ms de Gouwens & Wilson;
+  - la página del token por dentro (009: sólo que la ruta existe y pide login).
   - El alcance sin el control de las salidas es una recomendación, no una decisión.
-- **Auditoría de Tao:** enviada (tarea https://app.clickup.com/t/86e3p74xa); que la mención lo haya disparado, y su resultado, sin verificar.
+- **Auditoría de Tao (009):** la mención lo disparó y frenó en su pedido de confirmación; la auditoría no existe, así que nada se cotejó contra ella. Los créditos que gastó (por corrida y en el mes), si quedan créditos para la corrida completa y las corridas suyas que no dejan rastro en tareas (DMs), NO MEDIDOS para BRAIN.
+- Líneas etiquetadas (2026-10-12-008): todo; sólo hay diseño.
 - Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, la lectura por DNp09 y cualquier medición fuera de distribución.
 - Arquitectura por etapas (2026-10-12-001): todo salvo E2 y el tramo E2 → E3 en simulación (003 a 005); DBC3 en C sobre un microcontrolador; el cordón (MANC, BANC); la cámara de eventos; la transferencia a marítimo y terrestre; cualquier medición de antidrones; la hipótesis «todas las capacidades son reutilizables».
 - Catálogo (2026-10-12-002): fuerza y función de las conexiones (sólo existencia ≥ 5); nulo para las fracciones a descendentes; oDN1, BDN2 y LPLC3 por otra vía que el nombre; las entradas de más arriba en los bytes; el lector del rumbo; citas de lo «de memoria» (anillo de rumbo, HS y VS, LC10 y LC11, vía olfativa).
@@ -345,5 +361,5 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - Review externo del pipeline. Silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: brain-env para el escape (010 a 015), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas, el motivo de la 008, el catálogo (2026-10-12-002), escape o aterrizaje con DBC3 (2026-10-12-003), memoria dura (2026-10-12-004), entrada por tipos (2026-10-12-005) y la v2.0 (2026-10-12-007: PDF v1.0, json de la Tabla 7, grep de ramas, render y verificación en clon fresco), con torch CPU donde hizo falta; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007), para escribir los scripts del 010 al 015 y del 2026-10-12-002 al 005, y para la Tabla 5 de la 2026-10-12-007; lectura de código en brain-env y GitHub para la 016; ninguna corrida para la 2026-10-12-001 (diseño) ni para la 2026-10-12-006 (síntesis; lecturas en GitHub); ClickUp para la tarea y la mención a Tao (2026-10-12-007).
-Artefactos: `docs/agents/respuestas/2026-10-12-007-la-v2-del-paper-esta-lista-y-el-erratum-tenia-errores-sobre-la-v1.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21437
+Máquina: brain-env para el escape (010 a 015), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas, el motivo de la 008, el catálogo (2026-10-12-002), escape o aterrizaje con DBC3 (2026-10-12-003), memoria dura (2026-10-12-004), entrada por tipos (2026-10-12-005) y la v2.0 (2026-10-12-007: PDF v1.0, json de la Tabla 7, grep de ramas, render y verificación en clon fresco), con torch CPU donde hizo falta; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007), para escribir los scripts del 010 al 015 y del 2026-10-12-002 al 005, y para la Tabla 5 de la 2026-10-12-007; lectura de código en brain-env y GitHub para la 016; ninguna corrida para la 2026-10-12-001 (diseño) ni para la 2026-10-12-006 (síntesis; lecturas en GitHub); ClickUp para la tarea y la mención a Tao (2026-10-12-007); ninguna corrida para la 2026-10-12-008 (diseño; clon de lectura en brain-env); brain-env (rutas de Zenodo, token y md5 de los PDF), ClickUp y GitHub (lecturas) para la 2026-10-12-009.
+Artefactos: `docs/agents/respuestas/2026-10-12-009-tao-no-audito-pidio-confirmo-y-el-deposito-lo-espera.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21477
