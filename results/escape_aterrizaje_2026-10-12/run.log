@@ -1,0 +1,72 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | torch 2.14.1+cu130
+# md5 script = 4d40477d87406c31672acfb6e6e8f5a2
+# fecha: 2026-10-12 03:57:23 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+MOTIVO root_id=720575940614572742 tipo=LC4 lado=left sinapsis_al_blanco=14
+MOTIVO root_id=720575940633580384 tipo=LC4 lado=left sinapsis_al_blanco=14
+MOTIVO root_id=720575940626626895 tipo=LC4 lado=left sinapsis_al_blanco=13
+MOTIVO root_id=720575940628699560 tipo=LC4 lado=left sinapsis_al_blanco=13
+MOTIVO root_id=720575940614582946 tipo=LC4 lado=right sinapsis_al_blanco=16
+MOTIVO root_id=720575940639817947 tipo=LC4 lado=right sinapsis_al_blanco=16
+MOTIVO root_id=720575940625906702 tipo=LC4 lado=right sinapsis_al_blanco=15
+MOTIVO root_id=720575940631032657 tipo=LC4 lado=right sinapsis_al_blanco=14
+MOTIVO root_id=720575940618608177 tipo=LPLC2 lado=left sinapsis_al_blanco=15
+MOTIVO root_id=720575940629292785 tipo=LPLC2 lado=left sinapsis_al_blanco=15
+MOTIVO root_id=720575940632080146 tipo=LPLC2 lado=left sinapsis_al_blanco=14
+MOTIVO root_id=720575940613470947 tipo=LPLC2 lado=left sinapsis_al_blanco=12
+MOTIVO root_id=720575940647358243 tipo=LPLC2 lado=right sinapsis_al_blanco=16
+MOTIVO root_id=720575940612462307 tipo=LPLC2 lado=right sinapsis_al_blanco=15
+MOTIVO root_id=720575940614526974 tipo=LPLC2 lado=right sinapsis_al_blanco=15
+MOTIVO root_id=720575940631095158 tipo=LPLC2 lado=right sinapsis_al_blanco=14
+MOTIVO root_id=720575940609063236 tipo=LPLC4 lado=left sinapsis_al_blanco=48
+MOTIVO root_id=720575940623383432 tipo=LPLC4 lado=left sinapsis_al_blanco=47
+MOTIVO root_id=720575940613238418 tipo=LPLC4 lado=left sinapsis_al_blanco=37
+MOTIVO root_id=720575940619655685 tipo=LPLC4 lado=left sinapsis_al_blanco=37
+MOTIVO root_id=720575940611506966 tipo=LPLC4 lado=right sinapsis_al_blanco=44
+MOTIVO root_id=720575940628039676 tipo=LPLC4 lado=right sinapsis_al_blanco=39
+MOTIVO root_id=720575940630745148 tipo=LPLC4 lado=right sinapsis_al_blanco=28
+MOTIVO root_id=720575940641511888 tipo=LPLC4 lado=right sinapsis_al_blanco=27
+MOTIVO root_id=720575940622838154 tipo=DNp01 lado=left sinapsis_al_blanco=0
+MOTIVO root_id=720575940632499757 tipo=DNp01 lado=right sinapsis_al_blanco=0
+MOTIVO root_id=720575940617034565 tipo=DNp07 lado=left sinapsis_al_blanco=0
+MOTIVO root_id=720575940622550089 tipo=DNp07 lado=right sinapsis_al_blanco=0
+MOTIVO neuronas=28 aristas=73 sinapsis=665 inhibitorias=0 ipsilaterales=73 rho_crudo=19.7206
+PARAMS DBC3=4696 LSTM(h=30)=4564 SIN_MEMORIA=644
+W lector=DBC3 semilla=0 acierto=1.0000 por_clase(nada,esc_izq,esc_der,aterr)=1.000,1.000,1.000,1.000
+W lector=DBC3 semilla=1 acierto=1.0000 por_clase(nada,esc_izq,esc_der,aterr)=1.000,1.000,1.000,1.000
+W lector=DBC3 semilla=2 acierto=1.0000 por_clase(nada,esc_izq,esc_der,aterr)=1.000,1.000,1.000,1.000
+W lector=DBC3 semilla=3 acierto=1.0000 por_clase(nada,esc_izq,esc_der,aterr)=1.000,1.000,1.000,1.000
+W lector=LSTM semilla=0 acierto=1.0000 por_clase(nada,esc_izq,esc_der,aterr)=1.000,1.000,1.000,1.000
+W lector=LSTM semilla=1 acierto=0.9997 por_clase(nada,esc_izq,esc_der,aterr)=1.000,1.000,0.998,1.000
+W lector=LSTM semilla=2 acierto=0.9993 por_clase(nada,esc_izq,esc_der,aterr)=1.000,0.996,1.000,1.000
+W lector=LSTM semilla=3 acierto=0.9990 por_clase(nada,esc_izq,esc_der,aterr)=1.000,1.000,0.998,0.998
+W lector=SIN_MEMORIA semilla=0 acierto=0.6730 por_clase(nada,esc_izq,esc_der,aterr)=0.998,0.834,0.798,0.205
+W lector=SIN_MEMORIA semilla=1 acierto=0.6717 por_clase(nada,esc_izq,esc_der,aterr)=1.000,0.768,0.892,0.185
+W lector=SIN_MEMORIA semilla=2 acierto=0.6710 por_clase(nada,esc_izq,esc_der,aterr)=0.998,0.850,0.846,0.167
+W lector=SIN_MEMORIA semilla=3 acierto=0.6720 por_clase(nada,esc_izq,esc_der,aterr)=1.000,0.766,0.860,0.203
+CHEQUEO REPRODUCE DBC3 semilla=0 -> True
+W lector=REGLA_A_MANO umbral=0.8564 acierto=0.8143 por_clase=0.618,0.848,0.996,0.903
+SL k=0 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.8517
+SL k=1 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.7863
+SL k=2 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.6593
+SL k=3 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.7000
+SL k=4 guarda=True lector=DBC3 acierto=0.9997 regla_a_mano=0.7750
+SL k=5 guarda=True lector=DBC3 acierto=0.9997 regla_a_mano=0.6870
+SL k=6 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.8437
+SL k=7 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.8277
+SL k=8 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.8417
+SL k=9 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.9180
+SL k=10 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.6553
+SL k=11 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.6697
+SL k=12 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.8310
+SL k=13 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.9330
+SL k=14 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.7413
+SL k=15 guarda=True lector=DBC3 acierto=1.0000 regla_a_mano=0.8333
+H1_DBC3_vs_LSTM discordantes 6 contra 0 p=0.0312 -> EMPATE
+H2_DBC3_vs_SIN_MEMORIA discordantes 3937 contra 0 p=0 -> MEJOR
+H4_DBC3_vs_REGLA_A_MANO discordantes 2228 contra 0 p=0 -> MEJOR
+H3_W_vs_SL DBC3 W media=1.0000 SL media=1.0000 max=1.0000 igualan=14/16 U=36.0 p=0.3752 -> W NO GANA
+CHEQUEO INSTRUMENTO control_negativo(sin_memoria<=0.75 y DBC3-sin_memoria>=0.10)=True control_positivo(regla_a_mano>=0.80)=True guarda_SL=True reproduce=True -> VALIDO
+escrito resultados.json md5=9f7a668facbb67e4e952e70665c20aac
+# duracion_s=3562.7
+EXIT_RUN=0
