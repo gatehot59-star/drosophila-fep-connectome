@@ -1,0 +1,106 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | numpy 2.5.3 | pandas 3.0.5
+# md5 script = d67ffd0b9db8e88da57bf7b458745dd8
+# fecha: 2026-10-12 21:26:00 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+ANNOT filas=139248 root_id_unicos=139248 cell_type_nulos=1528 top_nt_nulos=602
+CUENTA tipo=LPLC3 por_lado={}
+CUENTA tipo=LC13 por_lado={'left': 75, 'right': 70}
+CUENTA tipo=LPLC1 por_lado={'right': 72, 'left': 68}
+CUENTA tipo=LPLC2 por_lado={'left': 108, 'right': 102}
+CUENTA tipo=LC4 por_lado={'left': 54, 'right': 50}
+CUENTA tipo=LPLC4 por_lado={'left': 56, 'right': 54}
+EXCITATORY valores=[-1, 1]
+Q1 dn=DNp01 filtro=todas sinapsis=9474 aristas=962 difiere_003(+67)
+Q1 dn=DNp01 filtro=pre_en_anotaciones sinapsis=9474 aristas=962 difiere_003(+67)
+Q1 dn=DNp01 filtro=pre_con_cell_type sinapsis=9407 aristas=957 COINCIDE_003
+Q1 dn=DNp01 filtro=pre_con_top_nt sinapsis=9474 aristas=962 difiere_003(+67)
+Q1 dn=DNp01 filtro=pre_con_lado_left_right sinapsis=9249 aristas=934 difiere_003(-158)
+Q1 dn=DNp01 filtro=sin_autapsis sinapsis=9474 aristas=962 difiere_003(+67)
+Q1 dn=DNp01 filtro=sin_pre_del_mismo_tipo sinapsis=9474 aristas=962 difiere_003(+67)
+Q1 dn=DNp01 filtro=suma_de_groupby_por_tipo_con_dropna sinapsis=9407 COINCIDE_003
+Q1 dn=DNp01 pre_sin_cell_type sinapsis=67 neuronas=4
+Q2 dn=DNp01 entrada_total=9474 presinapticas=862 inhibitoria=49.8%
+Q2 dn=DNp01 top1 tipo=LPLC2 sinapsis=1080 (11.4%) neuronas=189 nt=acetylcholine
+Q2 dn=DNp01 top2 tipo=LC4 sinapsis=805 (8.5%) neuronas=104 nt=acetylcholine
+Q2 dn=DNp01 top3 tipo=CB3707 sinapsis=633 (6.7%) neuronas=4 nt=gaba
+Q2 dn=DNp01 top4 tipo=DNp70 sinapsis=587 (6.2%) neuronas=2 nt=acetylcholine
+Q2 dn=DNp01 top5 tipo=SAD014 sinapsis=292 (3.1%) neuronas=6 nt=gaba
+Q2 dn=DNp01 top6 tipo=PVLP122b sinapsis=281 (3.0%) neuronas=4 nt=acetylcholine
+Q2 dn=DNp01 top7 tipo=LHAD1g1 sinapsis=254 (2.7%) neuronas=2 nt=gaba
+Q2 dn=DNp01 top8 tipo=PVLP010 sinapsis=250 (2.6%) neuronas=2 nt=glutamate
+Q2 dn=DNp01 top9 tipo=CL038 sinapsis=249 (2.6%) neuronas=4 nt=glutamate
+Q2 dn=DNp01 top10 tipo=CB0010 sinapsis=223 (2.4%) neuronas=2 nt=gaba
+Q2 dn=DNp01 de=LPLC3 sinapsis=0 (0.0%) neuronas=0
+Q2 dn=DNp01 de=LC13 sinapsis=0 (0.0%) neuronas=0
+Q2 dn=DNp01 de=LPLC1 sinapsis=0 (0.0%) neuronas=0
+Q1 dn=DNp06 filtro=todas sinapsis=21954 aristas=2114
+Q1 dn=DNp06 filtro=pre_en_anotaciones sinapsis=21954 aristas=2114
+Q1 dn=DNp06 filtro=pre_con_cell_type sinapsis=21803 aristas=2101
+Q1 dn=DNp06 filtro=pre_con_top_nt sinapsis=21954 aristas=2114
+Q1 dn=DNp06 filtro=pre_con_lado_left_right sinapsis=21451 aristas=2069
+Q1 dn=DNp06 filtro=sin_autapsis sinapsis=21954 aristas=2114
+Q1 dn=DNp06 filtro=sin_pre_del_mismo_tipo sinapsis=21954 aristas=2114
+Q1 dn=DNp06 filtro=suma_de_groupby_por_tipo_con_dropna sinapsis=21803
+Q1 dn=DNp06 pre_sin_cell_type sinapsis=151 neuronas=12
+Q2 dn=DNp06 entrada_total=21954 presinapticas=1969 inhibitoria=30.5%
+Q2 dn=DNp06 top1 tipo=LPLC1 sinapsis=1023 (4.7%) neuronas=136 nt=acetylcholine
+Q2 dn=DNp06 top2 tipo=LPLC2 sinapsis=1003 (4.6%) neuronas=200 nt=acetylcholine
+Q2 dn=DNp06 top3 tipo=LHAD1g1 sinapsis=823 (3.7%) neuronas=2 nt=gaba
+Q2 dn=DNp06 top4 tipo=LC31a sinapsis=592 (2.7%) neuronas=33 nt=acetylcholine
+Q2 dn=DNp06 top5 tipo=PVLP010 sinapsis=472 (2.1%) neuronas=2 nt=glutamate
+Q2 dn=DNp06 top6 tipo=PVLP076 sinapsis=409 (1.9%) neuronas=2 nt=acetylcholine
+Q2 dn=DNp06 top7 tipo=PVLP151 sinapsis=404 (1.8%) neuronas=4 nt=acetylcholine
+Q2 dn=DNp06 top8 tipo=AN_AVLP_20 sinapsis=343 (1.6%) neuronas=2 nt=acetylcholine
+Q2 dn=DNp06 top9 tipo=WED072 sinapsis=321 (1.5%) neuronas=6 nt=acetylcholine
+Q2 dn=DNp06 top10 tipo=CL022 sinapsis=301 (1.4%) neuronas=6 nt=acetylcholine
+Q2 dn=DNp06 de=LPLC3 sinapsis=0 (0.0%) neuronas=0
+Q2 dn=DNp06 de=LC13 sinapsis=0 (0.0%) neuronas=0
+Q2 dn=DNp06 de=LPLC1 sinapsis=1023 (4.7%) neuronas=136
+Q1 dn=DNp07 filtro=todas sinapsis=8717 aristas=1048 difiere_003(+2)
+Q1 dn=DNp07 filtro=pre_en_anotaciones sinapsis=8717 aristas=1048 difiere_003(+2)
+Q1 dn=DNp07 filtro=pre_con_cell_type sinapsis=8715 aristas=1046 COINCIDE_003
+Q1 dn=DNp07 filtro=pre_con_top_nt sinapsis=8717 aristas=1048 difiere_003(+2)
+Q1 dn=DNp07 filtro=pre_con_lado_left_right sinapsis=8714 aristas=1045 difiere_003(-1)
+Q1 dn=DNp07 filtro=sin_autapsis sinapsis=8717 aristas=1048 difiere_003(+2)
+Q1 dn=DNp07 filtro=sin_pre_del_mismo_tipo sinapsis=8717 aristas=1048 difiere_003(+2)
+Q1 dn=DNp07 filtro=suma_de_groupby_por_tipo_con_dropna sinapsis=8715 COINCIDE_003
+Q1 dn=DNp07 pre_sin_cell_type sinapsis=2 neuronas=2
+Q2 dn=DNp07 entrada_total=8717 presinapticas=934 inhibitoria=36.3%
+Q2 dn=DNp07 top1 tipo=LPLC4 sinapsis=1448 (16.6%) neuronas=92 nt=acetylcholine
+Q2 dn=DNp07 top2 tipo=LTe64 sinapsis=727 (8.3%) neuronas=14 nt=acetylcholine
+Q2 dn=DNp07 top3 tipo=PLP214 sinapsis=428 (4.9%) neuronas=2 nt=glutamate
+Q2 dn=DNp07 top4 tipo=CB0442 sinapsis=401 (4.6%) neuronas=2 nt=gaba
+Q2 dn=DNp07 top5 tipo=LLPC3 sinapsis=289 (3.3%) neuronas=89 nt=acetylcholine
+Q2 dn=DNp07 top6 tipo=PLP092 sinapsis=288 (3.3%) neuronas=2 nt=acetylcholine
+Q2 dn=DNp07 top7 tipo=PLP245 sinapsis=236 (2.7%) neuronas=2 nt=acetylcholine
+Q2 dn=DNp07 top8 tipo=CL128a sinapsis=176 (2.0%) neuronas=5 nt=gaba
+Q2 dn=DNp07 top9 tipo=SAD072 sinapsis=166 (1.9%) neuronas=2 nt=gaba
+Q2 dn=DNp07 top10 tipo=PS230,PLP242 sinapsis=162 (1.9%) neuronas=4 nt=acetylcholine
+Q2 dn=DNp07 de=LPLC3 sinapsis=0 (0.0%) neuronas=0
+Q2 dn=DNp07 de=LC13 sinapsis=0 (0.0%) neuronas=0
+Q2 dn=DNp07 de=LPLC1 sinapsis=0 (0.0%) neuronas=0
+Q1 dn=DNp10 filtro=todas sinapsis=9504 aristas=1370 difiere_003(+24)
+Q1 dn=DNp10 filtro=pre_en_anotaciones sinapsis=9504 aristas=1370 difiere_003(+24)
+Q1 dn=DNp10 filtro=pre_con_cell_type sinapsis=9480 aristas=1362 COINCIDE_003
+Q1 dn=DNp10 filtro=pre_con_top_nt sinapsis=9504 aristas=1370 difiere_003(+24)
+Q1 dn=DNp10 filtro=pre_con_lado_left_right sinapsis=9350 aristas=1350 difiere_003(-130)
+Q1 dn=DNp10 filtro=sin_autapsis sinapsis=9504 aristas=1370 difiere_003(+24)
+Q1 dn=DNp10 filtro=sin_pre_del_mismo_tipo sinapsis=9504 aristas=1370 difiere_003(+24)
+Q1 dn=DNp10 filtro=suma_de_groupby_por_tipo_con_dropna sinapsis=9480 COINCIDE_003
+Q1 dn=DNp10 pre_sin_cell_type sinapsis=24 neuronas=6
+Q2 dn=DNp10 entrada_total=9504 presinapticas=1176 inhibitoria=38.3%
+Q2 dn=DNp10 top1 tipo=PS088 sinapsis=528 (5.6%) neuronas=2 nt=gaba
+Q2 dn=DNp10 top2 tipo=PS058 sinapsis=329 (3.5%) neuronas=2 nt=acetylcholine
+Q2 dn=DNp10 top3 tipo=CB0344 sinapsis=255 (2.7%) neuronas=2 nt=gaba
+Q2 dn=DNp10 top4 tipo=CB2885 sinapsis=253 (2.7%) neuronas=4 nt=glutamate
+Q2 dn=DNp10 top5 tipo=AN_GNG_178 sinapsis=250 (2.6%) neuronas=6 nt=gaba
+Q2 dn=DNp10 top6 tipo=CB3111 sinapsis=206 (2.2%) neuronas=6 nt=acetylcholine
+Q2 dn=DNp10 top7 tipo=VES013 sinapsis=201 (2.1%) neuronas=2 nt=acetylcholine
+Q2 dn=DNp10 top8 tipo=CB1350 sinapsis=184 (1.9%) neuronas=4 nt=acetylcholine
+Q2 dn=DNp10 top9 tipo=CB2308 sinapsis=163 (1.7%) neuronas=4 nt=acetylcholine
+Q2 dn=DNp10 top10 tipo=SLP222 sinapsis=163 (1.7%) neuronas=4 nt=acetylcholine
+Q2 dn=DNp10 de=LPLC3 sinapsis=0 (0.0%) neuronas=0
+Q2 dn=DNp10 de=LC13 sinapsis=0 (0.0%) neuronas=0
+Q2 dn=DNp10 de=LPLC1 sinapsis=0 (0.0%) neuronas=0
+# duracion_s=4.3
+EXIT_RUN=0
