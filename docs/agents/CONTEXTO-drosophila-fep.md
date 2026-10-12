@@ -1,6 +1,6 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-11, noche (America/Buenos_Aires), con la respuesta 2026-10-11-014 (la τ líquida plena aguanta el control de optimización y, con ella, la mosca le gana a SL). La 009 (qué reemplaza a la neurona líquida) no cambió el estado.
+**Última actualización:** 2026-10-11, noche (America/Buenos_Aires), con la respuesta 2026-10-11-015 (firma de la 014: la mosca entrenada le gana a SL en promedio, no siempre; y en criollo qué tenemos y su potencial). La 009 (qué reemplaza a la neurona líquida) no cambió el estado.
 **Estado canónico:** `main`, con las respuestas del 10 y 11 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** `docs/ERRATUM.md` (9 ítems) con anotaciones pinneadas a `17fc577`. **Zenodo tiene sólo la v1.0** (20-mar): la v2 con el erratum no está depositada.
 
@@ -88,7 +88,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
   - **Hoy corrió en el reservorio recurrente de SparseLTC** (motivo de escape de 26 neuronas, 88 aristas, 0 inhibitorias; ρ = 0,9; τ fija heterogénea en [0,06; 0,18]): RW contra RS empate 4/4, LW contra LS empate 4/4, RW contra RB 0/4. **En tareas genéricas paga la sparsity, no la mosca.** El reservorio fijo es peor que el react denso de agosto en 3/4 (Gated 15,7×).
   - **Neurona líquida:** A contra F (memoria de DualBrain con τ constante) gana sólo en MultiCue (0,263×, Holm 0,0044) y empata 3; la τ líquida sobre el cableado de la mosca, empate 4/4. **En el escape, entrenada, gana a la τ fija (012); contra un control con los mismos parámetros sólo aguanta la forma plena (013), también con optimización ajustada (014).**
   - **Tendencia sin firmar:** en MultiCue la mosca tiene 0,42× el error de su shuffle con τ fija y 0,65× con τ líquida (p 0,38 con 10 semillas).
-  - **Hipótesis «conocimiento de existencia»** (Doc del 23-ago; `CONTEXTO-motor.md` §5): aprendizaje mínimo sostenido como anatomía; apagar y prender sostenido como ingeniería (compuerta, 21,85× a 108,11×) y NO MEDIDO en la mosca; «el conocimiento está en el cableado», sin señal funcional en tareas genéricas y **sostenido en su función: sin entrenar, como lateralidad (010) y como cableado fino fuera del techo (011); con la τ líquida diagonal entrenada se compensa (013), y con la plena vuelve a pagar (014, 0/24, p 0,04)**; «la neurona líquida es necesaria», **sostenida en la forma plena contra su control de parámetros y con optimización ajustada (013 y 014)**; la diagonal ganaba por parámetros.
+  - **Hipótesis «conocimiento de existencia»** (Doc del 23-ago; `CONTEXTO-motor.md` §5): aprendizaje mínimo sostenido como anatomía; apagar y prender sostenido como ingeniería (compuerta, 21,85× a 108,11×) y NO MEDIDO en la mosca; «el conocimiento está en el cableado», sin señal funcional en tareas genéricas y **sostenido en su función: sin entrenar, como lateralidad (010) y como cableado fino fuera del techo (011); con la τ líquida diagonal entrenada se compensa (013); con la plena entrenada gana en promedio (88%, Mann-Whitney p 0,0002) pero no en cada entrenamiento (015)**; «la neurona líquida es necesaria», **sostenida en la forma plena contra su control de parámetros y con optimización ajustada (013 y 014)**; la diagonal ganaba por parámetros.
   - Corrida: run de Actions `38143998992`, 37/37; resultado crudo en `results/brazo_s_recurrente_2026-10-11/` de la rama `titan/brazo-s-recurrente-2026-10-11` (`9473852`), sin PR.
 - **Escape a lazo cerrado, el brazo S en la función propia del motivo (respuesta 010):**
   - El mismo motivo, sin entrenar, con looming por sus visuales (cada una por el ojo de su lado) y lectura sólo por los dos GF. **Las 88 aristas del motivo son ipsilaterales.**
@@ -117,16 +117,22 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - **La plena con optimización ajustada y sobre SL (respuesta 014):**
   - Cada semilla de LIQ_PLENA y NOLIQ_PLENA con dos optimizadores (C1 σ 0,10 lr 0,05; C2 σ 0,03 lr 0,02), 60 iteraciones, elegido por entrenamiento.
   - **P3:** líquida 0,9854 (desvío 0,0041) contra no líquida 0,9453 (desvío 0,0506); 169 contra 15 (p 3,6e-34), 4/4: **LA PLENA GANA POR SER LIQUIDA.** Desempate no pre-registrado: con el mejor de los dos mirando la prueba, la no líquida saca 0,9729 y la líquida sigue arriba en 3 y empata en 1.
-  - **Q_SL_PLENA:** W 0,9802 contra 24 SL (media 0,9090, máx. 0,9760), 0/24, p 0,04: **W GANA.** Con la plena, el cableado fino vuelve a pagar (en el borde).
+  - **Q_SL_PLENA:** W 0,9802 contra 24 SL (media 0,9090, máx. 0,9760), 0/24, p 0,04: W GANA. **Matizado por la 015:** vale para la semilla 0 y como tendencia de grupo, no para cada entrenamiento.
   - Instrumento: `tools/escape_motivo/control_plena.py` (md5 `45bad2a8…` sellado en `be292b0`, resultados en `f0d0c1c`, md5 2/2 en clon fresco), brain-env, 2 procesos, 48,79 min, sin PR.
+- **Firma de la 014 con 69 SL y 8 semillas (respuesta 015):**
+  - Protocolo exacto de la 012 y la 014; 45 SL nuevas más las 24 de la 014 (leídas de su json con md5); semillas 1 a 7 nuevas de W. REPRODUCE=True.
+  - **Q1:** W semilla 0 (0,9802) contra 69 SL: 0/69, p 0,014, W GANA. **Q2:** la peor de 8 (0,9469): 25/69, p 0,37, W NO GANA. **VEREDICTO_FIRMA = SOLO LA SEMILLA 0.**
+  - **Grupo:** semillas 0 a 3 por encima de las 69 SL; 4 a 7 no (14, 25, 20 y 5 de 69 las igualan). Mann-Whitney 8 W contra 69 SL: U 488 de 552 (88%), p 0,0002. SL media 0,9165, máx. 0,9781.
+  - Instrumento: `tools/escape_motivo/firmar_plena_sl.py` (md5 `df15f3da…` sellado en `967fbb2`, resultados en `cc531e7`, md5 2/2 en clon fresco), brain-env, 2 procesos, 54,79 min, sin PR.
+- **En criollo (015):** tenemos un reflejo de escape de 26 neuronas sacado de FlyWire que funciona en simulación desde el día cero y llega a 0,98 entrenando sólo la τ líquida plena. **Potencial:** reflejos de mosca compilados a microcontroladores (pocos KB), un resultado científico honesto y una receta repetible con otros circuitos. **Techo:** sólo simulación, un motivo, una tarea; el reflejo escrito a mano rinde 0,91 sin entrenar; cero hardware.
 - **Siguen NO MEDIDOS:** SparseLTC→DBC3 sobre señal biológica, mapping ROI→FlyWire, null anatómico pareado y silenciamiento causal.
 - **Robótica (respuesta 007):**
   - `swarm/` es el único robot de los repos y **no sale del conectoma**: 34 neuronas y 83 sinapsis escritas a mano con nombres de regiones de la mosca.
   - Con física de cuadricóptero X estándar, **el escape visual va hacia la amenaza en las 4 direcciones** (108/108 en la sensibilidad). Leer los motores con reflexión FL↔BR, FR↔BL lo da vuelta: 4/4 y 108/108 hacia afuera. Instrumento válido: reflejo físico 4/4 ALEJA y red nula 4/4 NEUTRO.
   - El test de `swarm/` no puede dar rojo (con los pesos en cero sale con 0) y la auditoría de `gen_swarm.py` devuelve `PASS` fijo con topologías mutadas.
   - Instrumento: `tools/swarm_lazo_cerrado.py` en la rama `titan/swarm-lazo-cerrado-2026-10-11`, sin PR.
-  - **Idea mejorada (BEEC v2):** compilador de motivos certificados contra el nulo, interfaz por descendentes, cordón sintético con lazo de actitud, y entrenables la compuerta, la memoria DBC3, el readout y, en L2, la τ líquida plena (013 y 014). El falsador es el brazo S: en tareas genéricas empató (008); en la función propia gana por lateralidad (010), por cableado fino fuera del techo (011) y, con la líquida plena entrenada, también contra SL (014).
-  - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo. Sus §1, §4 y §6.2 (el brazo W «nunca testeó» la hipótesis y el diseño W/S) quedan superados por la 008 y la 010 a la 014.
+  - **Idea mejorada (BEEC v2):** compilador de motivos certificados contra el nulo, interfaz por descendentes, cordón sintético con lazo de actitud, y entrenables la compuerta, la memoria DBC3, el readout y, en L2, la τ líquida plena (013 y 014). El falsador es el brazo S: en tareas genéricas empató (008); en la función propia gana por lateralidad (010), por cableado fino fuera del techo (011) y, con la líquida plena entrenada, en promedio contra SL (014 y 015).
+  - `docs/agents/CONTEXTO-motor.md` está vencido desde el 24-ago: dice que nadie linkeó DualBrain, y en la rama de materialización hay un ELF linkeado de 44.292 B (no flasheable) y un arnés de 512 pasos contra el oráculo numpy. El estado de robótica vive acá hasta reescribirlo. Sus §1, §4 y §6.2 (el brazo W «nunca testeó» la hipótesis y el diseño W/S) quedan superados por la 008 y la 010 a la 015.
   - **Espera decisión de Abraham:** aplicar el parche de lectura en `swarm/` y corregir el «Correcto» de su README; adoptar BEEC v2 como norte de la línea de robótica; **en L2, τ líquida plena entrenada sobre el cableado fijo (1.378 parámetros, unos 5,5 KB en float32; costo en ESP32 NO MEDIDO), que reemplaza a la diagonal de la 012**.
 
 ## Próximos pasos
@@ -146,11 +152,12 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 4. **Abiertos para la v2:** NPC por sinapsis o null combinado de grado y neuropilo; ventana y tau de sel_post; Lin región por región; Betzel arista por arista; fila AN y décima clase de la Tabla 5.
 5. **La 007:** con R = 10.000 para Holm; D2 con el nulo de región.
 6. H4 estacionada.
-7. **Robótica (respuesta 007 del 11-oct), en este orden:** arreglar el dron (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere); primer motivo real, GF-01 → descendentes → dron; en el escape difícil, **firmar mejor la 014**: más semillas de W y más redes SL para salir del borde de p 0,04, y la plena sobre S; el mismo escape con LC6 que también exija expansión y con condiciones fuera de las entrenadas; edge en ESP32 con la líquida plena en Q15.
-8. **Brazo S (respuestas 008, 010 a 014):** MultiCue con 50 semillas para decidir la tendencia 0,42×; un S que conserve Dale por neurona en motivos con inhibición; reescribir `CONTEXTO-motor.md`; PR de `titan/brazo-s-recurrente-2026-10-11`, `titan/swarm-lazo-cerrado-2026-10-11` y `titan/escape-motivo-2026-10-11`, y review.
+7. **Robótica, en este orden (015):** arreglar el dron (parche de lectura, un test que afirme y giróscopo en vez de «altitud» en el haltere) y montarle el reflejo de escape con la líquida plena en su simulación; la plena en Q15 sobre un ESP32; un segundo motivo (GF-01 completo o uno de giro); en el escape, SL con varias semillas cada una y la plena sobre S, condiciones fuera de las entrenadas y el otro modelo de entrada; comparar contra un controlador clásico entrenado, no sólo contra el reflejo escrito a mano.
+8. **Brazo S (respuestas 008, 010 a 015):** MultiCue con 50 semillas para decidir la tendencia 0,42×; un S que conserve Dale por neurona en motivos con inhibición; reescribir `CONTEXTO-motor.md`; PR de `titan/brazo-s-recurrente-2026-10-11`, `titan/swarm-lazo-cerrado-2026-10-11` y `titan/escape-motivo-2026-10-11`, y review.
 
 ## Fuentes
 
+- `docs/agents/respuestas/2026-10-11-015-firma-de-la-014-y-en-criollo.md`
 - `docs/agents/respuestas/2026-10-11-014-la-liquida-plena-aguanta-el-control.md`
 - `docs/agents/respuestas/2026-10-11-013-control-de-la-liquida-mitad-parametros-y-sin-ventaja-del-cableado.md`
 - `docs/agents/respuestas/2026-10-11-012-la-liquida-entrenada-paga-en-el-escape.md`
@@ -186,9 +193,9 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - Mapping anatómico, null anatómico pareado, causalidad y equivalencia SparseLTC→DBC3 sobre señal real.
 - Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, la lectura por DNp09 y cualquier medición fuera de distribución.
 - Brazo S (008): MultiCue con más semillas; un S que conserve Dale por neurona (este motivo no tiene aristas inhibitorias); SparseLTC completo como reservorio; la τ propia de DBC3 (el brazo F mide la `LiquidCell` de DualBrain); F con los mismos parámetros que A.
-- Escape (010 a 014): más semillas de W y más redes SL (con 24, p no baja de 0,04); la líquida plena sobre S; condiciones fuera de las entrenadas; la ventaja sobre SL con otro modelo de entrada; la plena en Q15 sobre ESP32; reproducción en una segunda máquina; el modelo de entrada es de literatura, no medido.
+- Escape (010 a 015): SL con varias semillas de entrenamiento cada una; la líquida plena sobre S; condiciones fuera de las entrenadas; la ventaja sobre SL con otro modelo de entrada; un controlador clásico entrenado como rival; la plena en Q15 sobre ESP32; reproducción en una segunda máquina; el modelo de entrada es de literatura, no medido.
 - Review externo del pipeline. Silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: brain-env para el escape (010 a 014), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas y el motivo de la 008; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007) y para escribir los scripts del 010 al 014.
-Artefactos: `docs/agents/respuestas/2026-10-11-014-la-liquida-plena-aguanta-el-control.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21237
+Máquina: brain-env para el escape (010 a 015), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas y el motivo de la 008; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007) y para escribir los scripts del 010 al 015.
+Artefactos: `docs/agents/respuestas/2026-10-11-015-firma-de-la-014-y-en-criollo.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21257
