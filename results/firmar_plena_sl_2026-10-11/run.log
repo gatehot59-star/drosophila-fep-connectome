@@ -1,0 +1,77 @@
+# {"fecha_utc": "2026-10-11T23:33:01Z", "k_nuevas": 45, "k_viejas": 24, "maquina": "Linux-4.19.0-27-amd64-x86_64-with-glibc2.41", "md5_brazo_s": "f8b10037e70dfe897ff2d841077419b4", "md5_control": "342069aa075256e55e6638127f55a05e", "md5_dificil": "2c95e63b6ad3ff590057df80368134d7", "md5_escape": "9720998291e3f08c6082e6c67d142759", "md5_json_014": "f2792e6ae8d7a93cd972230b9f726242", "md5_lados": "e5c19419d586850690ade3e8bbc5b315", "md5_liquida": "0bb3f8f4a9b0fd0f7d74d102d8922d1b", "md5_motivo": "eb6e53e047c864a46c56bf38b397d289", "md5_plena": "45bad2a84d625f8826b84876bef87133", "md5_script": "df15f3da3ed27fba262c5733dc92fc6a", "numpy": "2.5.3", "procesos": 2, "python": "3.12.14", "semillas_w": 8}
+CONTROL_PRUEBA C+L supervivencia=0.8125 rechazo=1.0000 comb=0.9062
+CONTROL_PRUEBA C+6 supervivencia=0.7854 rechazo=0.0000 comb=0.3927
+CONTROL_PRUEBA C0 supervivencia=0.0000 rechazo=1.0000 comb=0.5000
+CHEQUEO INSTRUMENTO VALIDO
+LEIDO_014 W_semilla0=0.9802 SL=24
+GUARDA redes_nulas_ok=True SL_total=69 distintas=True
+GUARDA seg_por_evaluacion=0.091
+CORRIDA red=W k=0 semilla=2 comb_entrenamiento=0.9979 comb_prueba=0.9812 supervivencia=0.9750 rechazo=0.9875 hechas=1/52 seg=138
+CORRIDA red=W k=0 semilla=1 comb_entrenamiento=0.9979 comb_prueba=0.9844 supervivencia=0.9688 rechazo=1.0000 hechas=2/52 seg=140
+CORRIDA red=W k=0 semilla=3 comb_entrenamiento=0.9979 comb_prueba=0.9844 supervivencia=0.9688 rechazo=1.0000 hechas=3/52 seg=275
+CORRIDA red=W k=0 semilla=4 comb_entrenamiento=0.9938 comb_prueba=0.9615 supervivencia=0.9229 rechazo=1.0000 hechas=4/52 seg=277
+CORRIDA red=W k=0 semilla=5 comb_entrenamiento=0.9979 comb_prueba=0.9469 supervivencia=0.9187 rechazo=0.9750 hechas=5/52 seg=411
+CORRIDA red=W k=0 semilla=6 comb_entrenamiento=0.9958 comb_prueba=0.9531 supervivencia=0.9062 rechazo=1.0000 hechas=6/52 seg=413
+CORRIDA red=W k=0 semilla=7 comb_entrenamiento=1.0000 comb_prueba=0.9729 supervivencia=0.9458 rechazo=1.0000 hechas=7/52 seg=547
+CORRIDA red=SL k=24 semilla=0 comb_entrenamiento=0.9646 comb_prueba=0.9698 supervivencia=0.9521 rechazo=0.9875 hechas=8/52 seg=550
+CORRIDA red=SL k=25 semilla=0 comb_entrenamiento=0.9667 comb_prueba=0.9406 supervivencia=0.8812 rechazo=1.0000 hechas=9/52 seg=683
+CORRIDA red=SL k=26 semilla=0 comb_entrenamiento=0.9437 comb_prueba=0.8740 supervivencia=0.9729 rechazo=0.7750 hechas=10/52 seg=685
+CORRIDA red=SL k=27 semilla=0 comb_entrenamiento=0.9812 comb_prueba=0.9740 supervivencia=0.9479 rechazo=1.0000 hechas=11/52 seg=821
+CORRIDA red=SL k=28 semilla=0 comb_entrenamiento=0.9771 comb_prueba=0.8656 supervivencia=0.7312 rechazo=1.0000 hechas=12/52 seg=823
+CORRIDA red=SL k=29 semilla=0 comb_entrenamiento=0.9771 comb_prueba=0.9500 supervivencia=0.9500 rechazo=0.9500 hechas=13/52 seg=958
+CORRIDA red=SL k=30 semilla=0 comb_entrenamiento=0.9917 comb_prueba=0.9667 supervivencia=0.9333 rechazo=1.0000 hechas=14/52 seg=958
+CORRIDA red=SL k=32 semilla=0 comb_entrenamiento=0.9896 comb_prueba=0.9573 supervivencia=0.9396 rechazo=0.9750 hechas=15/52 seg=1098
+CORRIDA red=SL k=31 semilla=0 comb_entrenamiento=0.9208 comb_prueba=0.8906 supervivencia=0.7937 rechazo=0.9875 hechas=16/52 seg=1098
+CORRIDA red=SL k=33 semilla=0 comb_entrenamiento=0.9542 comb_prueba=0.9437 supervivencia=0.9125 rechazo=0.9750 hechas=17/52 seg=1237
+CORRIDA red=SL k=34 semilla=0 comb_entrenamiento=0.9437 comb_prueba=0.8719 supervivencia=0.9437 rechazo=0.8000 hechas=18/52 seg=1239
+CORRIDA red=SL k=35 semilla=0 comb_entrenamiento=0.9688 comb_prueba=0.9750 supervivencia=0.9500 rechazo=1.0000 hechas=19/52 seg=1377
+CORRIDA red=SL k=36 semilla=0 comb_entrenamiento=0.9771 comb_prueba=0.9542 supervivencia=0.9333 rechazo=0.9750 hechas=20/52 seg=1378
+CORRIDA red=SL k=37 semilla=0 comb_entrenamiento=0.9917 comb_prueba=0.9719 supervivencia=0.9437 rechazo=1.0000 hechas=21/52 seg=1513
+CORRIDA red=SL k=38 semilla=0 comb_entrenamiento=0.9708 comb_prueba=0.9167 supervivencia=0.8333 rechazo=1.0000 hechas=22/52 seg=1515
+CORRIDA red=SL k=39 semilla=0 comb_entrenamiento=0.9479 comb_prueba=0.9240 supervivencia=0.8479 rechazo=1.0000 hechas=23/52 seg=1648
+CORRIDA red=SL k=40 semilla=0 comb_entrenamiento=0.9688 comb_prueba=0.9344 supervivencia=0.8812 rechazo=0.9875 hechas=24/52 seg=1656
+CORRIDA red=SL k=41 semilla=0 comb_entrenamiento=0.9896 comb_prueba=0.8865 supervivencia=0.7729 rechazo=1.0000 hechas=25/52 seg=1789
+CORRIDA red=SL k=42 semilla=0 comb_entrenamiento=0.9250 comb_prueba=0.8885 supervivencia=0.7771 rechazo=1.0000 hechas=26/52 seg=1796
+CORRIDA red=SL k=43 semilla=0 comb_entrenamiento=0.9896 comb_prueba=0.9698 supervivencia=0.9521 rechazo=0.9875 hechas=27/52 seg=1922
+CORRIDA red=SL k=44 semilla=0 comb_entrenamiento=0.9771 comb_prueba=0.9469 supervivencia=0.8938 rechazo=1.0000 hechas=28/52 seg=1931
+CORRIDA red=SL k=45 semilla=0 comb_entrenamiento=0.9354 comb_prueba=0.9104 supervivencia=0.8208 rechazo=1.0000 hechas=29/52 seg=2052
+CORRIDA red=SL k=46 semilla=0 comb_entrenamiento=0.8938 comb_prueba=0.8531 supervivencia=0.7063 rechazo=1.0000 hechas=30/52 seg=2062
+CORRIDA red=SL k=47 semilla=0 comb_entrenamiento=0.9958 comb_prueba=0.9677 supervivencia=0.9604 rechazo=0.9750 hechas=31/52 seg=2183
+CORRIDA red=SL k=48 semilla=0 comb_entrenamiento=0.9729 comb_prueba=0.9198 supervivencia=0.8396 rechazo=1.0000 hechas=32/52 seg=2193
+CORRIDA red=SL k=49 semilla=0 comb_entrenamiento=0.9729 comb_prueba=0.9104 supervivencia=0.8208 rechazo=1.0000 hechas=33/52 seg=2313
+CORRIDA red=SL k=50 semilla=0 comb_entrenamiento=0.9875 comb_prueba=0.9667 supervivencia=0.9333 rechazo=1.0000 hechas=34/52 seg=2326
+CORRIDA red=SL k=51 semilla=0 comb_entrenamiento=0.9896 comb_prueba=0.9719 supervivencia=0.9437 rechazo=1.0000 hechas=35/52 seg=2450
+CORRIDA red=SL k=52 semilla=0 comb_entrenamiento=0.9792 comb_prueba=0.8854 supervivencia=0.7708 rechazo=1.0000 hechas=36/52 seg=2463
+CORRIDA red=SL k=53 semilla=0 comb_entrenamiento=0.9229 comb_prueba=0.8865 supervivencia=0.8229 rechazo=0.9500 hechas=37/52 seg=2586
+CORRIDA red=SL k=54 semilla=0 comb_entrenamiento=0.9646 comb_prueba=0.9281 supervivencia=0.8562 rechazo=1.0000 hechas=38/52 seg=2596
+CORRIDA red=SL k=55 semilla=0 comb_entrenamiento=0.8229 comb_prueba=0.6948 supervivencia=0.6771 rechazo=0.7125 hechas=39/52 seg=2720
+CORRIDA red=SL k=56 semilla=0 comb_entrenamiento=0.8375 comb_prueba=0.8708 supervivencia=0.7542 rechazo=0.9875 hechas=40/52 seg=2730
+CORRIDA red=SL k=57 semilla=0 comb_entrenamiento=0.9458 comb_prueba=0.9167 supervivencia=0.8583 rechazo=0.9750 hechas=41/52 seg=2858
+CORRIDA red=SL k=58 semilla=0 comb_entrenamiento=0.9917 comb_prueba=0.9198 supervivencia=0.8396 rechazo=1.0000 hechas=42/52 seg=2868
+CORRIDA red=SL k=59 semilla=0 comb_entrenamiento=0.9354 comb_prueba=0.9094 supervivencia=0.8812 rechazo=0.9375 hechas=43/52 seg=2958
+CORRIDA red=SL k=60 semilla=0 comb_entrenamiento=0.9521 comb_prueba=0.8812 supervivencia=0.7625 rechazo=1.0000 hechas=44/52 seg=2966
+CORRIDA red=SL k=61 semilla=0 comb_entrenamiento=0.9771 comb_prueba=0.9469 supervivencia=0.8938 rechazo=1.0000 hechas=45/52 seg=3037
+CORRIDA red=SL k=62 semilla=0 comb_entrenamiento=0.9604 comb_prueba=0.9260 supervivencia=0.9271 rechazo=0.9250 hechas=46/52 seg=3046
+CORRIDA red=SL k=63 semilla=0 comb_entrenamiento=0.9500 comb_prueba=0.9135 supervivencia=0.8646 rechazo=0.9625 hechas=47/52 seg=3118
+CORRIDA red=SL k=64 semilla=0 comb_entrenamiento=0.9917 comb_prueba=0.9781 supervivencia=0.9563 rechazo=1.0000 hechas=48/52 seg=3126
+CORRIDA red=SL k=65 semilla=0 comb_entrenamiento=0.9917 comb_prueba=0.9250 supervivencia=0.8500 rechazo=1.0000 hechas=49/52 seg=3199
+CORRIDA red=SL k=66 semilla=0 comb_entrenamiento=0.8729 comb_prueba=0.8656 supervivencia=0.7562 rechazo=0.9750 hechas=50/52 seg=3207
+CORRIDA red=SL k=67 semilla=0 comb_entrenamiento=0.9875 comb_prueba=0.9344 supervivencia=0.9563 rechazo=0.9125 hechas=51/52 seg=3281
+CORRIDA red=SL k=68 semilla=0 comb_entrenamiento=0.9917 comb_prueba=0.9677 supervivencia=0.9604 rechazo=0.9750 hechas=52/52 seg=3287
+REPRODUCE=True W_por_semilla=0.9802,0.9844,0.9812,0.9844,0.9615,0.9469,0.9531,0.9729
+RESUMEN SL_n=69 SL_media=0.9165 SL_max=0.9781 SL_viejas_media=0.9090 SL_nuevas_media=0.9205
+CONTRASTE Q1_semilla0 W=0.9802 n_SL>=W=0/69 p=0.0143 -> W GANA
+CONTRASTE Q2_peor_semilla W=0.9469 n_SL>=W=25/69 p=0.3714 -> W NO GANA
+Q3 semilla=0 W=0.9802 n_SL>=W=0/69
+Q3 semilla=1 W=0.9844 n_SL>=W=0/69
+Q3 semilla=2 W=0.9812 n_SL>=W=0/69
+Q3 semilla=3 W=0.9844 n_SL>=W=0/69
+Q3 semilla=4 W=0.9615 n_SL>=W=14/69
+Q3 semilla=5 W=0.9469 n_SL>=W=25/69
+Q3 semilla=6 W=0.9531 n_SL>=W=20/69
+Q3 semilla=7 W=0.9729 n_SL>=W=5/69
+Q3 mann_whitney_U=488.0 p_unilateral=0.0002068
+VEREDICTO_FIRMA=SOLO LA SEMILLA 0: LA PEOR SEMILLA DE W NO LE GANA A SL
+escrito resultados.json md5=9cecc23384e776aca519a60b342a2650
+minutos=54.79
+EXIT_RUN=0
