@@ -1,0 +1,193 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | pandas 3.0.5
+# md5 script = 4137ba5c4a35fc023df1346202f40339
+# fecha: 2026-10-12 03:29:42 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 (pin 3d802fd542b5d18570ba1ba0bb0abed9) | md5 annot = 719904abad876c68ace1b5690c9b9b63 (pin 719904abad876c68ace1b5690c9b9b63)
+DATOS aristas=15091983 neuronas_anotadas=139248 extremos_sin_anotacion=1100 umbral=5
+CIRCUITO escape | fuente: medido en este repo (010 a 015) y ficha GF-01
+TIPO circuito=escape parte=entrada tipo=LC4 n=104 izq=54 der=50 centro=0
+TIPO circuito=escape parte=entrada tipo=LPLC2 n=210 izq=108 der=102 centro=0
+TIPO circuito=escape parte=entrada tipo=LC6 n=125 izq=65 der=60 centro=0
+TIPO circuito=escape parte=salida tipo=DNp01 n=2 izq=1 der=1 centro=0
+TIPO circuito=escape parte=salida tipo=DNp09 n=2 izq=1 der=1 centro=0
+INTERNO circuito=escape neuronas=443 aristas5=439 sinapsis5=3066 frac_exc=1.0000 frac_ipsi=1.0000 bytes_formato_swarm=3520
+ENTRADA_A_SALIDA circuito=escape sinapsis5=17186 frac_exc=0.5461 frac_ipsi=0.8170
+  top1 entrada=LC9 sinapsis=1167 frac=0.0679
+  top2 entrada=LPLC2 sinapsis=860 frac=0.0500
+  top3 entrada=LC31a sinapsis=763 frac=0.0444
+  top4 entrada=LC4 sinapsis=757 frac=0.0440
+  top5 entrada=CB3707 sinapsis=633 frac=0.0368
+SALIDA_DE_ENTRADA circuito=escape sinapsis5=78253 a_descendentes=12199 frac=0.1559
+  top1 descendente=DNp04 sinapsis=2857 frac_de_lo_que_va_a_DN=0.2342
+  top2 descendente=DNp103 sinapsis=2769 frac_de_lo_que_va_a_DN=0.2270
+  top3 descendente=DNp01 sinapsis=1601 frac_de_lo_que_va_a_DN=0.1312
+  top4 descendente=DNp02 sinapsis=962 frac_de_lo_que_va_a_DN=0.0789
+  top5 descendente=DNp11 sinapsis=860 frac_de_lo_que_va_a_DN=0.0705
+  top1 destino=PVLP011 sinapsis=9140 frac=0.1168
+  top2 destino=PVLP008 sinapsis=7780 frac=0.0994
+  top3 destino=PVLP069 sinapsis=5546 frac=0.0709
+  top4 destino=PVLP111 sinapsis=4351 frac=0.0556
+  top5 destino=PVLP151 sinapsis=3129 frac=0.0400
+CIRCUITO aterrizaje | fuente: Ache 2019 Nat Neurosci: DNp07 y DNp10; dendritas sobre glomerulos de LPLC3 y LPLC4
+TIPO circuito=aterrizaje parte=entrada tipo=LPLC4 n=110 izq=56 der=54 centro=0
+TIPO circuito=aterrizaje parte=entrada tipo=LC4 n=104 izq=54 der=50 centro=0
+TIPO circuito=aterrizaje parte=entrada tipo=LPLC2 n=210 izq=108 der=102 centro=0
+TIPO circuito=aterrizaje parte=salida tipo=DNp07 n=2 izq=1 der=1 centro=0
+TIPO circuito=aterrizaje parte=salida tipo=DNp10 n=2 izq=1 der=1 centro=0
+INTERNO circuito=aterrizaje neuronas=428 aristas5=524 sinapsis5=4436 frac_exc=1.0000 frac_ipsi=1.0000 bytes_formato_swarm=4000
+ENTRADA_A_SALIDA circuito=aterrizaje sinapsis5=15369 frac_exc=0.6157 frac_ipsi=0.7550
+  top1 entrada=LPLC4 sinapsis=1414 frac=0.0920
+  top2 entrada=LTe64 sinapsis=712 frac=0.0463
+  top3 entrada=PS088 sinapsis=528 frac=0.0344
+  top4 entrada=PS058 sinapsis=472 frac=0.0307
+  top5 entrada=CB0442 sinapsis=468 frac=0.0305
+SALIDA_DE_ENTRADA circuito=aterrizaje sinapsis5=114498 a_descendentes=26061 frac=0.2276
+  top1 descendente=DNb05 sinapsis=3851 frac_de_lo_que_va_a_DN=0.1478
+  top2 descendente=DNp04 sinapsis=2857 frac_de_lo_que_va_a_DN=0.1096
+  top3 descendente=DNp103 sinapsis=2622 frac_de_lo_que_va_a_DN=0.1006
+  top4 descendente=DNp01 sinapsis=1601 frac_de_lo_que_va_a_DN=0.0614
+  top5 descendente=DNp07 sinapsis=1408 frac_de_lo_que_va_a_DN=0.0540
+  top1 destino=PVLP011 sinapsis=9145 frac=0.0799
+  top2 destino=PVLP069 sinapsis=5546 frac=0.0484
+  top3 destino=PLP172 sinapsis=4787 frac=0.0418
+  top4 destino=PVLP111 sinapsis=4351 frac=0.0380
+  top5 destino=DNb05 sinapsis=3851 frac=0.0336
+CIRCUITO giro | fuente: Yang 2024 via Eon (DNa01, DNa02); Simpson 2023 (DNa02, DNg13); Braun 2024 (DNb02)
+TIPO circuito=giro parte=salida tipo=DNa01 n=2 izq=1 der=1 centro=0
+TIPO circuito=giro parte=salida tipo=DNa02 n=2 izq=1 der=1 centro=0
+TIPO circuito=giro parte=salida tipo=DNg13 n=2 izq=1 der=1 centro=0
+TIPO circuito=giro parte=salida tipo=DNb02 n=4 izq=2 der=2 centro=0
+INTERNO circuito=giro neuronas=10 aristas5=7 sinapsis5=45 frac_exc=0.6222 frac_ipsi=0.6222 bytes_formato_swarm=62
+ENTRADA_A_SALIDA circuito=giro sinapsis5=48272 frac_exc=0.5886 frac_ipsi=0.6449
+  top1 entrada=VES051,VES052 sinapsis=1136 frac=0.0235
+  top2 entrada=LT51 sinapsis=915 frac=0.0190
+  top3 entrada=PS049 sinapsis=887 frac=0.0184
+  top4 entrada=CB0757 sinapsis=792 frac=0.0164
+  top5 entrada=DNae005 sinapsis=633 frac=0.0131
+CIRCUITO marcha | fuente: Simpson 2023 (DNp09, MDN, oDN1); Sapkal 2024 (oDN1, BDN2)
+TIPO circuito=marcha parte=salida tipo=DNp09 n=2 izq=1 der=1 centro=0
+TIPO circuito=marcha parte=salida tipo=MDN n=4 izq=2 der=2 centro=0
+TIPO circuito=marcha parte=salida tipo=oDN1 n=0 izq=0 der=0 centro=0 -> NO_ENCONTRADO
+TIPO circuito=marcha parte=salida tipo=BDN2 n=0 izq=0 der=0 centro=0 -> NO_ENCONTRADO
+INTERNO circuito=marcha neuronas=6 aristas5=0 sinapsis5=0 frac_exc=NA frac_ipsi=NA bytes_formato_swarm=12
+ENTRADA_A_SALIDA circuito=marcha sinapsis5=17144 frac_exc=0.5919 frac_ipsi=0.6803
+  top1 entrada=LC9 sinapsis=1167 frac=0.0681
+  top2 entrada=LC31a sinapsis=763 frac=0.0445
+  top3 entrada=PVLP020 sinapsis=608 frac=0.0355
+  top4 entrada=CB0095 sinapsis=581 frac=0.0339
+  top5 entrada=PVLP004,PVLP005 sinapsis=491 frac=0.0286
+CIRCUITO vuelo_flujo | fuente: Simpson 2023 (DNp15 = DNHS1, DNp06 vuelo recto, DNg02 direccion en vuelo); HS/VS de memoria
+TIPO circuito=vuelo_flujo parte=entrada tipo=HSE n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=HSN n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=HSS n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=H1 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=H2 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=VS1 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=VS2 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=VS3 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=VS4 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=VS5 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=VS6 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=VS7 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=entrada tipo=VS8 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=salida tipo=DNp15 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=salida tipo=DNp06 n=2 izq=1 der=1 centro=0
+TIPO circuito=vuelo_flujo parte=salida tipo=DNg02* n=25 izq=13 der=12 centro=0
+INTERNO circuito=vuelo_flujo neuronas=55 aristas5=23 sinapsis5=491 frac_exc=0.9593 frac_ipsi=0.6517 bytes_formato_swarm=248
+ENTRADA_A_SALIDA circuito=vuelo_flujo sinapsis5=31958 frac_exc=0.6083 frac_ipsi=0.8142
+  top1 entrada=LPLC1 sinapsis=919 frac=0.0288
+  top2 entrada=IB008 sinapsis=844 frac=0.0264
+  top3 entrada=LHAD1g1 sinapsis=823 frac=0.0258
+  top4 entrada=LPLC2 sinapsis=725 frac=0.0227
+  top5 entrada=LC31a sinapsis=592 frac=0.0185
+SALIDA_DE_ENTRADA circuito=vuelo_flujo sinapsis5=17686 a_descendentes=1989 frac=0.1125
+  top1 descendente=DNp15 sinapsis=344 frac_de_lo_que_va_a_DN=0.1730
+  top2 descendente=DNb03 sinapsis=288 frac_de_lo_que_va_a_DN=0.1448
+  top3 descendente=DNp20 sinapsis=258 frac_de_lo_que_va_a_DN=0.1297
+  top4 descendente=DNb06 sinapsis=200 frac_de_lo_que_va_a_DN=0.1006
+  top5 descendente=DNg41 sinapsis=108 frac_de_lo_que_va_a_DN=0.0543
+  top1 destino=TmY20 sinapsis=2264 frac=0.1280
+  top2 destino=LLPC1 sinapsis=1420 frac=0.0803
+  top3 destino=Am1 sinapsis=1381 frac=0.0781
+  top4 destino=LPi14 sinapsis=1007 frac=0.0569
+  top5 destino=DCH sinapsis=752 frac=0.0425
+CIRCUITO rumbo | fuente: anillo E-PG / P-EN del complejo central, de memoria
+TIPO circuito=rumbo parte=entrada tipo=EPG n=47 izq=24 der=23 centro=0
+TIPO circuito=rumbo parte=entrada tipo=EPGt n=4 izq=2 der=2 centro=0
+TIPO circuito=rumbo parte=salida tipo=PEN_a(PEN1) n=20 izq=10 der=10 centro=0
+TIPO circuito=rumbo parte=salida tipo=PEN_b(PEN2) n=22 izq=11 der=11 centro=0
+INTERNO circuito=rumbo neuronas=93 aristas5=1605 sinapsis5=24133 frac_exc=1.0000 frac_ipsi=0.6302 bytes_formato_swarm=9816
+ENTRADA_A_SALIDA circuito=rumbo sinapsis5=33642 frac_exc=0.5396 frac_ipsi=0.4940
+  top1 entrada=GLNO sinapsis=7511 frac=0.2233
+  top2 entrada=EPG sinapsis=6315 frac=0.1877
+  top3 entrada=PEN_b(PEN2) sinapsis=3984 frac=0.1184
+  top4 entrada=ExR6 sinapsis=3315 frac=0.0985
+  top5 entrada=Delta7 sinapsis=2412 frac=0.0717
+SALIDA_DE_ENTRADA circuito=rumbo sinapsis5=37337 a_descendentes=0 frac=0.0000
+  top1 destino=EL sinapsis=6452 frac=0.1728
+  top2 destino=ExR6 sinapsis=5987 frac=0.1604
+  top3 destino=PEN_b(PEN2) sinapsis=3748 frac=0.1004
+  top4 destino=PEG sinapsis=3148 frac=0.0843
+  top5 destino=PEN_a(PEN1) sinapsis=2661 frac=0.0713
+CIRCUITO objetos_chicos | fuente: LC11 y LC10 de memoria
+TIPO circuito=objetos_chicos parte=entrada tipo=LC11 n=127 izq=66 der=61 centro=0
+TIPO circuito=objetos_chicos parte=entrada tipo=LC10a n=234 izq=115 der=119 centro=0
+TIPO circuito=objetos_chicos parte=entrada tipo=LC10b n=84 izq=40 der=44 centro=0
+TIPO circuito=objetos_chicos parte=entrada tipo=LC10c-1 n=102 izq=46 der=56 centro=0
+TIPO circuito=objetos_chicos parte=entrada tipo=LC10c-2 n=101 izq=55 der=46 centro=0
+TIPO circuito=objetos_chicos parte=entrada tipo=LC10d n=188 izq=93 der=95 centro=0
+TIPO circuito=objetos_chicos parte=entrada tipo=LC10e n=103 izq=52 der=51 centro=0
+TIPO circuito=objetos_chicos parte=entrada tipo=LC10f n=4 izq=2 der=2 centro=0
+INTERNO circuito=objetos_chicos neuronas=943 aristas5=1127 sinapsis5=7209 frac_exc=0.8889 frac_ipsi=1.0000 bytes_formato_swarm=8648
+SALIDA_DE_ENTRADA circuito=objetos_chicos sinapsis5=212588 a_descendentes=2382 frac=0.0112
+  top1 descendente=DNp35 sinapsis=1398 frac_de_lo_que_va_a_DN=0.5869
+  top2 descendente=DNa10 sinapsis=886 frac_de_lo_que_va_a_DN=0.3720
+  top3 descendente=DNp10 sinapsis=35 frac_de_lo_que_va_a_DN=0.0147
+  top4 descendente=DNa16 sinapsis=16 frac_de_lo_que_va_a_DN=0.0067
+  top5 descendente=DNa08 sinapsis=15 frac_de_lo_que_va_a_DN=0.0063
+  top1 destino=AOTU041 sinapsis=20079 frac=0.0945
+  top2 destino=CB0732 sinapsis=12151 frac=0.0572
+  top3 destino=TuTuAa sinapsis=8996 frac=0.0423
+  top4 destino=AOTU025 sinapsis=8085 frac=0.0380
+  top5 destino=LT52 sinapsis=7487 frac=0.0352
+CIRCUITO olfato | fuente: via olfativa clasica, de memoria
+TIPO circuito=olfato parte=entrada tipo=class:olfactory n=2282 izq=1118 der=1134 centro=0
+TIPO circuito=olfato parte=entrada tipo=class:ALPN n=685 izq=341 der=344 centro=0
+TIPO circuito=olfato parte=salida tipo=class:Kenyon_Cell n=5177 izq=2580 der=2597 centro=0
+TIPO circuito=olfato parte=salida tipo=class:LHLN n=514 izq=255 der=259 centro=0
+TIPO circuito=olfato parte=salida tipo=class:LHCENT n=42 izq=21 der=21 centro=0
+TIPO circuito=olfato parte=salida tipo=class:MBON n=96 izq=48 der=48 centro=0
+INTERNO circuito=olfato neuronas=8796 aristas5=68419 sinapsis5=887053 frac_exc=0.9034 frac_ipsi=0.8344 bytes_formato_swarm=428106
+ENTRADA_A_SALIDA circuito=olfato sinapsis5=977282 frac_exc=0.7636 frac_ipsi=0.8793
+  top1 entrada=APL sinapsis=102388 frac=0.1048
+  top2 entrada=KCab sinapsis=71133 frac=0.0728
+  top3 entrada=KCg-m sinapsis=49202 frac=0.0503
+  top4 entrada=DP1m_adPN sinapsis=20814 frac=0.0213
+  top5 entrada=DM1_lPN sinapsis=18483 frac=0.0189
+SALIDA_DE_ENTRADA circuito=olfato sinapsis5=1284026 a_descendentes=6392 frac=0.0050
+  top1 descendente=DNb05 sinapsis=2392 frac_de_lo_que_va_a_DN=0.3742
+  top2 descendente=DNp44 sinapsis=864 frac_de_lo_que_va_a_DN=0.1352
+  top3 descendente=DNp32 sinapsis=432 frac_de_lo_que_va_a_DN=0.0676
+  top4 descendente=DNp12 sinapsis=428 frac_de_lo_que_va_a_DN=0.0670
+  top5 descendente=DNp05 sinapsis=211 frac_de_lo_que_va_a_DN=0.0330
+  top1 destino=KCg-m sinapsis=177226 frac=0.1380
+  top2 destino=KCab sinapsis=118142 frac=0.0920
+  top3 destino=lLN1_bc sinapsis=36199 frac=0.0282
+  top4 destino=lLN2F_b sinapsis=19160 frac=0.0149
+  top5 destino=il3LN6 sinapsis=18581 frac=0.0145
+PRED C+ pre=LC4 post=DNp01 cond=>0 aristas5=89 sinapsis5=757 frac_exc5=1.0000 aristas1=104 sinapsis1=805 -> PASS | control positivo (ficha GF-01)
+PRED C- pre=LC6 post=DNp01 cond===0 aristas5=0 sinapsis5=0 frac_exc5=NA aristas1=0 sinapsis1=0 -> PASS | control negativo (ficha GF-01)
+PRED E2 pre=LPLC2 post=DNp01 cond=>0 aristas5=99 sinapsis5=844 frac_exc5=1.0000 aristas1=189 sinapsis1=1080 -> CONFIRMA | LPLC2 -> GF (literatura y GF-01)
+PRED A1 pre=LPLC4 post=DNp07|DNp10 cond=>0 aristas5=74 sinapsis5=1414 frac_exc5=1.0000 aristas1=104 sinapsis1=1470 -> CONFIRMA | Ache 2019 (solapamiento de dendritas)
+PRED M1 pre=DNp09 post=DNa02 cond=>0exc aristas5=2 sinapsis5=55 frac_exc5=1.0000 aristas1=2 sinapsis1=55 -> CONFIRMA | Braun 2024 (excitatoria directa)
+PRED M2 pre=MDN post=DNa01 cond=>0 aristas5=3 sinapsis5=24 frac_exc5=1.0000 aristas1=4 sinapsis1=26 -> CONFIRMA | Braun 2024
+PRED R1 pre=EPG|EPGt post=PEN_a(PEN1)|PEN_b(PEN2) cond=>0 aristas5=382 sinapsis5=6409 frac_exc5=1.0000 aristas1=582 sinapsis1=6852 -> CONFIRMA | anillo de rumbo, de memoria
+PRED R2 pre=PEN_a(PEN1)|PEN_b(PEN2) post=EPG|EPGt cond=>0 aristas5=437 sinapsis5=9361 frac_exc5=1.0000 aristas1=608 sinapsis1=9753 -> CONFIRMA | anillo de rumbo, de memoria
+PRED F1 pre=HSE|HSN|HSS post=DNp15 cond=>0 aristas5=5 sinapsis5=185 frac_exc5=1.0000 aristas1=6 sinapsis1=187 -> CONFIRMA | nombre DNHS1 (Simpson 2023)
+PRED O1 pre=class:olfactory post=class:ALPN cond=>0 aristas5=7687 sinapsis5=144919 frac_exc5=0.9998 aristas1=19438 sinapsis1=166172 -> CONFIRMA | via olfativa
+PRED O2 pre=class:ALPN post=class:Kenyon_Cell cond=>0 aristas5=21509 sinapsis5=316862 frac_exc5=0.9986 aristas1=27848 sinapsis1=329394 -> CONFIRMA | via olfativa
+PRED O3 pre=class:ALPN post=class:LHLN|class:LHCENT cond=>0 aristas5=6583 sinapsis5=111143 frac_exc5=0.9072 aristas1=20666 sinapsis1=136493 -> CONFIRMA | via olfativa
+CHEQUEO INSTRUMENTO C+=PASS C-=PASS -> VALIDO
+RESUMEN predicciones_de_literatura confirmadas=10 de 10
+escrito resultados.json md5=38b54557aacd9f8c32ac5dbab17335d1
+# duracion_s=48.5
+EXIT_RUN=0
