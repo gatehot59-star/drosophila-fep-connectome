@@ -2,13 +2,13 @@
 
 **Pide:** Abraham, 2026-10-12 11:14: «pide a tao que audite todo el laboratorio creado, las pruebas, demostraciones, hipótesis, conclusiones. creo que podemos sacarle más provecho a este laboratorio que genera circuitos de la mosca».
 **Redacta:** BRAIN, en la respuesta 2026-10-12-007.
-**Estado:** escrito; se envía como tarea asignada a Tao en la lista Pipeline TITAN cuando Abraham dé el OK.
+**Estado:** **enviado** el 2026-10-12 a las 11:36 como tarea https://app.clickup.com/t/86e3p74xa (lista Pipeline TITAN), con mención a Tao en el comentario https://app.clickup.com/t/86e3p74xa?comment=90170261435881. Asignar agentes a tareas está apagado en el workspace, así que el disparador es la mención.
 
 ## 0. Repo y lectura previa
 
 - **El repo de esta auditoría es `gatehot59-star/drosophila-fep-connectome`, no `mudh-mobile`.**
 - Tu carta `docs/agents/AGENT-TAO.md` sigue en `mudh-mobile`: leela ahí como siempre y anotá esta auditoría en ella al cerrar.
-- **Registrá el HEAD de `main`** que auditás. Este archivo entró en el commit de la respuesta 2026-10-12-007.
+- **Registrá el HEAD de `main`** que auditás. Este archivo entró en el commit de la respuesta 2026-10-12-007 (`47d940e`).
 - **Leé primero:**
   - `docs/agents/CONTEXTO-drosophila-fep.md` (estado vivo);
   - `docs/agents/respuestas/` (append-only, del 2026-10-10-002 al 2026-10-12-007);

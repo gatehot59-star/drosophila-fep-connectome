@@ -1,6 +1,6 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-12, mediodía (America/Buenos_Aires), con la respuesta 2026-10-12-007 (la v2 del Paper 1 quedó lista para depositar en el PR #27: manuscrito, erratum revisado contra el texto del PDF v1.0, render determinista y depósito en borrador; faltan el token de Zenodo y el merge, que son de Abraham. Abraham pidió además que TITÁN Tao audite el laboratorio entero: el pedido está escrito y espera su OK). La 006 fue la síntesis en criollo: la mosca sirve de mapa y de reflejo chico, no de cerebro entrenable. La 005 (entrada visual por tipo de neurona) dio NO PAGA: con lector entrenado sobre las 4 descendentes el cableado de la mosca nunca le gana a SL, pierde contra las sintonías barajadas si LPLC4 es muda y el rival clásico crudo le gana en 6 de 6; incluye el resumen de la 004 y la 005. La 004 mostró que ni DBC3 ni LSTM sostienen el estado de vuelo 90 pasos y que la máquina de estados les gana. La 003 corrió el primer acople SparseLTC → DBC3 (en el techo, empate con LSTM y con el barajado). La 002 armó el catálogo de circuitos (corregida por la 003 en LC9 y DNp10). La 001 fijó la arquitectura por etapas (diseño). La 016 respondió cómo operan las 26. La 015 firmó la 014 sólo para la semilla 0.
+**Última actualización:** 2026-10-12, mediodía (America/Buenos_Aires), con la respuesta 2026-10-12-007 (la v2 del Paper 1 quedó lista para depositar en el PR #27: manuscrito, erratum revisado contra el texto del PDF v1.0, render determinista y depósito en borrador; faltan el token de Zenodo y el merge, que son de Abraham. Abraham pidió además que TITÁN Tao audite el laboratorio entero: el pedido se envió a las 11:36 como tarea en Pipeline TITAN con mención, porque asignar agentes a tareas está apagado en el workspace). La 006 fue la síntesis en criollo: la mosca sirve de mapa y de reflejo chico, no de cerebro entrenable. La 005 (entrada visual por tipo de neurona) dio NO PAGA: con lector entrenado sobre las 4 descendentes el cableado de la mosca nunca le gana a SL, pierde contra las sintonías barajadas si LPLC4 es muda y el rival clásico crudo le gana en 6 de 6; incluye el resumen de la 004 y la 005. La 004 mostró que ni DBC3 ni LSTM sostienen el estado de vuelo 90 pasos y que la máquina de estados les gana. La 003 corrió el primer acople SparseLTC → DBC3 (en el techo, empate con LSTM y con el barajado). La 002 armó el catálogo de circuitos (corregida por la 003 en LC9 y DNp10). La 001 fijó la arquitectura por etapas (diseño). La 016 respondió cómo operan las 26. La 015 firmó la 014 sólo para la semilla 0.
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
@@ -92,7 +92,10 @@
   - Abarca el laboratorio entero: v2.0, Tabla 7 y salidas, nulo por circuito, brazo S y escape, circuitos y DBC3, expediente de agosto y H4.
   - Se audita contra los logs crudos, preguntando en cada afirmación si su instrumento podía dar rojo.
   - Pide propuestas para sacarle más provecho, con falsador y costo.
-- **Estado:** escrito, sin enviar. Va como tarea asignada a Tao en la lista Pipeline TITAN cuando Abraham dé el OK, porque gasta sus créditos y escribe ramas y un PR.
+- **Estado: enviado** el 2026-10-12 a las 11:36, a pedido de Abraham (lo pidió dos veces).
+  - Tarea https://app.clickup.com/t/86e3p74xa en Pipeline TITAN; mención a Tao en el comentario https://app.clickup.com/t/86e3p74xa?comment=90170261435881.
+  - **La asignación falló**: asignar agentes a tareas está apagado en el workspace. El disparador es la mención.
+  - Respuesta de Tao: sin leer todavía. **No reenviar.**
 
 ## Paper y Tabla 7 (respuestas 002 a 009 del 10-oct y 003 y 004 del 11-oct)
 
@@ -267,7 +270,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
    - un S que conserve Dale por neurona en motivos con inhibición;
    - reescribir `CONTEXTO-motor.md`;
    - PR y review de `titan/brazo-s-recurrente-2026-10-11`, `titan/swarm-lazo-cerrado-2026-10-11`, `titan/escape-motivo-2026-10-11`, `titan/catalogo-circuitos-2026-10-12`, `titan/escape-aterrizaje-2026-10-12`, `titan/memoria-dura-2026-10-12` y `titan/entrada-por-tipos-2026-10-12`.
-9. **Auditoría de Tao:** mandarle el pedido como tarea en Pipeline TITAN (espera el OK de Abraham); cuando vuelva, cruzar su auditoría con este contexto y corregir lo que caiga.
+9. **Auditoría de Tao:** pedida (tarea https://app.clickup.com/t/86e3p74xa, 11:36). **No reenviar.** Cuando entregue su PR y su Doc, cruzar su auditoría con este contexto y corregir lo que caiga. Si no arrancó, revisar si la mención lo disparó antes de volver a llamarlo.
 
 ## Fuentes
 
@@ -330,7 +333,7 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
   - barrido sistemático de literatura para la §3.4;
   - el rango 5–20 ms de Gouwens & Wilson.
   - El alcance sin el control de las salidas es una recomendación, no una decisión.
-- **Auditoría de Tao:** no enviada ni empezada.
+- **Auditoría de Tao:** enviada (tarea https://app.clickup.com/t/86e3p74xa); que la mención lo haya disparado, y su resultado, sin verificar.
 - Robótica: hardware, la tabla descendente → orden, GF-01 compilado en Q15 y montado en el dron, la lectura por DNp09 y cualquier medición fuera de distribución.
 - Arquitectura por etapas (2026-10-12-001): todo salvo E2 y el tramo E2 → E3 en simulación (003 a 005); DBC3 en C sobre un microcontrolador; el cordón (MANC, BANC); la cámara de eventos; la transferencia a marítimo y terrestre; cualquier medición de antidrones; la hipótesis «todas las capacidades son reutilizables».
 - Catálogo (2026-10-12-002): fuerza y función de las conexiones (sólo existencia ≥ 5); nulo para las fracciones a descendentes; oDN1, BDN2 y LPLC3 por otra vía que el nombre; las entradas de más arriba en los bytes; el lector del rumbo; citas de lo «de memoria» (anillo de rumbo, HS y VS, LC10 y LC11, vía olfativa).
@@ -342,5 +345,5 @@ SparseLTC, DualBrain y DBC3 son trabajo propio de Abraham.
 - Review externo del pipeline. Silencio no es aprobación.
 
 --- METODO PROMETEO ---
-Máquina: brain-env para el escape (010 a 015), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas, el motivo de la 008, el catálogo (2026-10-12-002), escape o aterrizaje con DBC3 (2026-10-12-003), memoria dura (2026-10-12-004), entrada por tipos (2026-10-12-005) y la v2.0 (2026-10-12-007: PDF v1.0, json de la Tabla 7, grep de ramas, render y verificación en clon fresco), con torch CPU donde hizo falta; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007), para escribir los scripts del 010 al 015 y del 2026-10-12-002 al 005, y para la Tabla 5 de la 2026-10-12-007; lectura de código en brain-env y GitHub para la 016; ninguna corrida para la 2026-10-12-001 (diseño) ni para la 2026-10-12-006 (síntesis; lecturas en GitHub).
+Máquina: brain-env para el escape (010 a 015), la Tabla 7, las salidas, los nulos, la 003, el inventario de ramas, el motivo de la 008, el catálogo (2026-10-12-002), escape o aterrizaje con DBC3 (2026-10-12-003), memoria dura (2026-10-12-004), entrada por tipos (2026-10-12-005) y la v2.0 (2026-10-12-007: PDF v1.0, json de la Tabla 7, grep de ramas, render y verificación en clon fresco), con torch CPU donde hizo falta; Actions x64 para el brazo S (008); sandbox de ClickUp para el instrumento de `swarm/` (007), para escribir los scripts del 010 al 015 y del 2026-10-12-002 al 005, y para la Tabla 5 de la 2026-10-12-007; lectura de código en brain-env y GitHub para la 016; ninguna corrida para la 2026-10-12-001 (diseño) ni para la 2026-10-12-006 (síntesis; lecturas en GitHub); ClickUp para la tarea y la mención a Tao (2026-10-12-007).
 Artefactos: `docs/agents/respuestas/2026-10-12-007-la-v2-del-paper-esta-lista-y-el-erratum-tenia-errores-sobre-la-v1.md` + https://app.clickup.com/90171457413/docs/2kza6fw5-21437

@@ -264,3 +264,17 @@ Aplica la rúbrica de reporte más script de diagnóstico: completitud, ejecutab
 3. **Líneas etiquetadas en Actions.** Es la prueba que la 005 dejó abierta y la única forma en que el cableado por tipos podría pagar.
 
 El pedido completo a Tao está en `docs/auditorias/2026-10-12-pedido-auditoria-tao-laboratorio.md`.
+
+## Adenda (11:36): el pedido a Tao se envió
+
+- **11:34, Abraham:** «hiciste el pedido a tao, n veo tus ultimas dos respuestas». Es el segundo pedido explícito; se toma como el OK.
+- **Tarea creada:** https://app.clickup.com/t/86e3p74xa, en la lista Pipeline TITAN, con el pedido completo en la descripción (estado «bandeja», tipo Job).
+- **La asignación a Tao falló.** Advertencia verbatim de la herramienta:
+
+  ```
+  "-41236583" cannot be assigned because assigning agents to tasks is turned off.
+  ```
+
+- **Disparador usado:** mención a Tao en el comentario https://app.clickup.com/t/86e3p74xa?comment=90170261435881, que figura en la tarea a las 11:36. Tao tiene `mention` entre sus disparadores.
+- **NO MEDIDO:** que la mención lo haya disparado, y su resultado.
+- **Esta adenda reemplaza** la línea «La auditoría de Tao: no se envió ni empezó» de la sección 6 y el «No le escribió a Tao» de la sección 2.
