@@ -1,0 +1,29 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | torch 2.14.1+cu130
+# md5 script = c486e79f3fd78ee8034254a1499fbcbf
+# md5 base escape_aterrizaje_dbc3.py = 4d40477d87406c31672acfb6e6e8f5a2 (pin 4d40477d87406c31672acfb6e6e8f5a2)
+# fecha: 2026-10-12 08:32:51 +0000 | presupuesto=canonico
+MOTIVO neuronas=28 aristas=73 rho_crudo=19.7206 (igual que la 003)
+TAREA T=120 cambia_contexto_train=0.506 test=0.494
+PARAMS DBC3(h_m=20,h_r=36)=4696 LSTM(h=30)=4564 SIN_MEMORIA=644
+W lector=DBC3 semilla=0 acierto=0.6607 con_cambio=0.6678 por_clase=1.000,0.773,0.798,0.209 seg=326
+W lector=DBC3 semilla=1 acierto=0.6580 con_cambio=0.6766 por_clase=1.000,0.420,0.956,0.299 seg=313
+W lector=DBC3 semilla=2 acierto=0.7430 con_cambio=0.7664 por_clase=1.000,0.783,0.358,0.653 seg=309
+W lector=DBC3 semilla=3 acierto=0.6593 con_cambio=0.6597 por_clase=1.000,0.594,0.912,0.239 seg=328
+W lector=LSTM semilla=0 acierto=0.6650 con_cambio=0.6698 por_clase=1.000,0.851,0.790,0.188 seg=72
+W lector=LSTM semilla=1 acierto=0.6683 con_cambio=0.6766 por_clase=1.000,0.474,0.990,0.288 seg=71
+W lector=LSTM semilla=2 acierto=0.6627 con_cambio=0.6678 por_clase=1.000,1.000,0.798,0.105 seg=70
+W lector=LSTM semilla=3 acierto=0.6610 con_cambio=0.6698 por_clase=1.000,0.926,0.983,0.049 seg=47
+W lector=SIN_MEMORIA semilla=0 acierto=0.6563 con_cambio=0.6725 por_clase=0.999,0.757,0.787,0.210 seg=13
+W lector=SIN_MEMORIA semilla=1 acierto=0.6570 con_cambio=0.6752 por_clase=0.999,0.731,0.804,0.217 seg=13
+W lector=SIN_MEMORIA semilla=2 acierto=0.6567 con_cambio=0.6698 por_clase=0.999,0.793,0.800,0.188 seg=13
+W lector=SIN_MEMORIA semilla=3 acierto=0.6547 con_cambio=0.6691 por_clase=0.999,0.741,0.810,0.203 seg=14
+CHEQUEO REPRODUCE DBC3 semilla=0 -> True
+W lector=MAQUINA_DE_ESTADOS umbral=0.8907 acierto=0.7663 con_cambio=0.7684
+H1_DBC3_vs_LSTM presupuesto=canonico discordantes 1153 contra 961 p=3.23e-05 -> EMPATE
+H2_DBC3_vs_SIN_MEMORIA presupuesto=canonico discordantes 1143 contra 854 p=1.08e-10 -> MEJOR
+H3_DBC3_vs_MAQUINA_DE_ESTADOS presupuesto=canonico discordantes 2215 contra 3248 p=1.47e-44 -> PEOR
+TECHO presupuesto=canonico DBC3_media=0.6803 LSTM_media=0.6643 -> FUERA DEL TECHO
+CHEQUEO INSTRUMENTO control_negativo(sin_memoria<=0.75)=True control_positivo(maquina_de_estados>=0.75)=True reproduce=True -> VALIDO
+escrito resultados.json md5=580e1a0de25eec64eb3cfa7695131cce
+# duracion_s=1814.7
+EXIT_RUN=0
