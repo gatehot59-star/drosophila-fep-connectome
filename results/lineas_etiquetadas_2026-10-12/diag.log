@@ -1,0 +1,13 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | numpy 2.5.3
+# md5 script = 16c234bc6b880389f594d2ff15f4512a
+# md5 lineas_etiquetadas = b9c139c8c17894efaa5bfd9bb86c93ed | 003 = 4d40477d87406c31672acfb6e6e8f5a2 | 005 = e060c4bffb685aa550dadc19eda3dd02
+D1 red=W estimulo=AMENAZA max_DNp01_ipsi media=0.8092 p05=0.6899 p95=0.8984 saturados(>0.9)=0.047
+D1 red=SL(primeros 50) estimulo=AMENAZA max_DNp01_ipsi media=0.5557 saturados(>0.9)=0.012
+D1 red=W estimulo=ACERCAMIENTO max_DNp01_ipsi media=0.9123 p05=0.8386 p95=0.9642 saturados(>0.9)=0.673
+D1 red=SL(primeros 50) estimulo=ACERCAMIENTO max_DNp01_ipsi media=0.6964 saturados(>0.9)=0.176
+D1 red=W estimulo=PASA max_DNp01_ipsi media=0.7625 p05=0.5423 p95=0.9114 saturados(>0.9)=0.093
+D1 red=SL(primeros 50) estimulo=PASA max_DNp01_ipsi media=0.5464 saturados(>0.9)=0.056
+D2 F_PUNTO=0 variante=COMO_LPLC2 ruido=0.15 W=0.6206 por_clase=0.582,0.520,0.540,0.917 | SL media=0.6154 max=0.6783 igualan=19/50 p_sup=0.3922 p_inf=0.6275 | T media=0.5969 max=0.6244 igualan=2/50 p_sup=0.0588 p_inf=0.9608 | regla=0.6794
+D2 F_PUNTO=0 variante=COMO_LPLC2 ruido=0.45 W=0.5989 por_clase=0.590,0.743,0.747,0.333 | SL media=0.6051 max=0.6583 igualan=31/50 p_sup=0.6275 p_inf=0.3922 | T media=0.5978 max=0.6039 igualan=23/50 p_sup=0.4706 p_inf=0.6078 | regla=0.7011
+# duracion_s=148.1
+EXIT_RUN=0

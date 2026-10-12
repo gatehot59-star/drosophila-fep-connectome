@@ -1,0 +1,44 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3
+# md5 script = b9c139c8c17894efaa5bfd9bb86c93ed
+# md5 modulo 003 = 4d40477d87406c31672acfb6e6e8f5a2 | md5 modulo 005 = e060c4bffb685aa550dadc19eda3dd02
+# fecha: 2026-10-12 20:16:10 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+MOTIVO neuronas=28 visuales=24 aristas=73 inhibitorias=0 rho_crudo=19.7206
+NULOS SL=300 guarda=True T=300 guarda=True
+DATOS prueba=1800 calibracion_solo_ruido_descriptiva=2000 clases_prueba(nada,esc_izq,esc_der,aterr)=900,300,300,300 azar_mayoria_por_estado=0.5000 FA_por_linea=0.05
+CALIBRACION ensayos_pasa_entrenamiento=800
+CELDA variante=COMO_LPLC2 ruido=0.15 W=0.3433 por_clase(nada,esc_izq,esc_der,aterr)=0.676,0.007,0.027,0.000 falsa_alarma_pasa=0.110 umbrales=0.8628,0.9108,0.9192,0.9024 | SL media=0.4261 max=0.5844 igualan=294/300 p_sup=0.9801 p_inf=0.0299 | T media=0.3965 max=0.5444 igualan=295/300 p_sup=0.9834 p_inf=0.0199 | 336.7 s
+RIVAL variante=COMO_LPLC2 ruido=0.15 regla_a_mano_cruda=0.7894 por_clase=0.582,0.997,0.997,0.997 falsa_alarma_pasa=0.127 | H3 W contra regla 118 contra 921 p=7.58e-155 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.9867
+DESCRIPTIVO_008_LITERAL variante=COMO_LPLC2 ruido=0.15 umbral_solo_ruido W=0.2883 falsa_alarma_pasa=1.000 regla=0.4100 falsa_alarma_pasa=0.995
+CELDA variante=COMO_LPLC2 ruido=0.45 W=0.3672 por_clase(nada,esc_izq,esc_der,aterr)=0.684,0.070,0.073,0.007 falsa_alarma_pasa=0.110 umbrales=0.8382,0.8961,0.9169,0.8904 | SL media=0.4211 max=0.5606 igualan=283/300 p_sup=0.9435 p_inf=0.0598 | T media=0.4029 max=0.4700 igualan=298/300 p_sup=0.9934 p_inf=0.0133 | 370.1 s
+RIVAL variante=COMO_LPLC2 ruido=0.45 regla_a_mano_cruda=0.7300 por_clase=0.610,0.903,0.917,0.730 falsa_alarma_pasa=0.135 | H3 W contra regla 122 contra 775 p=7.09e-117 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.8978
+DESCRIPTIVO_008_LITERAL variante=COMO_LPLC2 ruido=0.45 umbral_solo_ruido W=0.3172 falsa_alarma_pasa=0.948 regla=0.5272 falsa_alarma_pasa=0.653
+CELDA variante=SILENCIOSA ruido=0.15 W=0.3472 por_clase(nada,esc_izq,esc_der,aterr)=0.663,0.007,0.027,0.060 falsa_alarma_pasa=0.128 umbrales=0.8628,0.9108,0.2511,0.2535 | SL media=0.4532 max=0.6228 igualan=297/300 p_sup=0.9900 p_inf=0.0133 | T media=0.4337 max=0.5628 igualan=300/300 p_sup=1.0000 p_inf=0.0033 | 316.4 s
+RIVAL variante=SILENCIOSA ruido=0.15 regla_a_mano_cruda=0.6094 por_clase=0.570,0.947,0.957,0.043 falsa_alarma_pasa=0.145 | H3 W contra regla 151 contra 623 p=7.52e-69 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.9783
+DESCRIPTIVO_008_LITERAL variante=SILENCIOSA ruido=0.15 umbral_solo_ruido W=0.3233 falsa_alarma_pasa=1.000 regla=0.3222 falsa_alarma_pasa=0.988
+CELDA variante=SILENCIOSA ruido=0.45 W=0.3778 por_clase(nada,esc_izq,esc_der,aterr)=0.687,0.067,0.073,0.067 falsa_alarma_pasa=0.107 umbrales=0.8382,0.8961,0.5330,0.5388 | SL media=0.4721 max=0.6089 igualan=297/300 p_sup=0.9900 p_inf=0.0133 | T media=0.4379 max=0.5089 igualan=300/300 p_sup=1.0000 p_inf=0.0033 | 374.5 s
+RIVAL variante=SILENCIOSA ruido=0.45 regla_a_mano_cruda=0.6228 por_clase=0.599,0.943,0.953,0.043 falsa_alarma_pasa=0.152 | H3 W contra regla 154 contra 595 p=6.12e-62 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.8750
+DESCRIPTIVO_008_LITERAL variante=SILENCIOSA ruido=0.45 umbral_solo_ruido W=0.3378 falsa_alarma_pasa=0.935 regla=0.4606 falsa_alarma_pasa=0.562
+CELDA variante=MOVIMIENTO ruido=0.15 W=0.3383 por_clase(nada,esc_izq,esc_der,aterr)=0.666,0.007,0.027,0.000 falsa_alarma_pasa=0.125 umbrales=0.8628,0.9108,0.9449,0.9376 | SL media=0.4799 max=0.5922 igualan=300/300 p_sup=1.0000 p_inf=0.0033 | T media=0.4804 max=0.6250 igualan=300/300 p_sup=1.0000 p_inf=0.0033 | 330.6 s
+RIVAL variante=MOVIMIENTO ruido=0.15 regla_a_mano_cruda=0.6239 por_clase=0.581,1.000,1.000,0.000 falsa_alarma_pasa=0.128 | H3 W contra regla 122 contra 636 p=1.15e-84 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.9906
+DESCRIPTIVO_008_LITERAL variante=MOVIMIENTO ruido=0.15 umbral_solo_ruido W=0.3183 falsa_alarma_pasa=1.000 regla=0.3078 falsa_alarma_pasa=0.997
+CELDA variante=MOVIMIENTO ruido=0.45 W=0.3583 por_clase(nada,esc_izq,esc_der,aterr)=0.669,0.070,0.073,0.000 falsa_alarma_pasa=0.133 umbrales=0.8382,0.8961,0.9450,0.9364 | SL media=0.4710 max=0.5450 igualan=300/300 p_sup=1.0000 p_inf=0.0033 | T media=0.4701 max=0.5889 igualan=300/300 p_sup=1.0000 p_inf=0.0033 | 372.9 s
+RIVAL variante=MOVIMIENTO ruido=0.45 regla_a_mano_cruda=0.6322 por_clase=0.600,0.997,0.997,0.000 falsa_alarma_pasa=0.150 | H3 W contra regla 124 contra 617 p=1.88e-79 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.9472
+DESCRIPTIVO_008_LITERAL variante=MOVIMIENTO ruido=0.45 umbral_solo_ruido W=0.3156 falsa_alarma_pasa=0.957 regla=0.3694 falsa_alarma_pasa=0.767
+CONTROL_NEGATIVO entrada=AGNOSTICA W=0.3817 T_identicos=30/30 -> True
+CONTROL_POSITIVO regla_a_mano COMO_LPLC2 ruido=0.15 = 0.7894 contra azar 0.5000 + 0.10 -> True
+CHEQUEO INSTRUMENTO guarda_SL=True guarda_T=True reproduce=True control_negativo=True control_positivo=True -> VALIDO
+VEREDICTO_CELDA variante=COMO_LPLC2 ruido=0.15 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(0.0797,0.0797) -> EMPATE
+VEREDICTO_CELDA variante=COMO_LPLC2 ruido=0.45 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(0.0797,0.0797) -> EMPATE
+VEREDICTO_VARIANTE COMO_LPLC2 -> EMPATE
+VEREDICTO_CELDA variante=SILENCIOSA ruido=0.15 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(0.0797,0.0399) -> PIERDE
+VEREDICTO_CELDA variante=SILENCIOSA ruido=0.45 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(0.0797,0.0399) -> PIERDE
+VEREDICTO_VARIANTE SILENCIOSA -> PIERDE
+VEREDICTO_CELDA variante=MOVIMIENTO ruido=0.15 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(0.0399,0.0399) -> PIERDE
+VEREDICTO_CELDA variante=MOVIMIENTO ruido=0.45 holm_sup(SL,T)=(1.0000,1.0000) holm_inf(SL,T)=(0.0399,0.0399) -> PIERDE
+VEREDICTO_VARIANTE MOVIMIENTO -> PIERDE
+VEREDICTO_GLOBAL -> NO PAGAN (PIERDE en SILENCIOSA,MOVIMIENTO)
+BYTES lector_lineas=4 umbrales (16 B en float32)
+escrito resultados.json md5=0ca277cd02dd9f07652500a0e977d791
+# duracion_s=2139.3
+EXIT_RUN=0
