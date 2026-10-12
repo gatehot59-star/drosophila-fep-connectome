@@ -1,0 +1,58 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | numpy 2.5.3 | pandas 3.0.5
+# md5 script = 4012cbac716f6e812ac6158a57b15b5f
+# fecha: 2026-10-12 21:02:37 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+CUENTA tipo=LPLC2 por_lado={'left': 108, 'right': 102}
+CUENTA tipo=LC4 por_lado={'left': 54, 'right': 50}
+CUENTA tipo=LPLC4 por_lado={'left': 56, 'right': 54}
+CUENTA tipo=DNp01 por_lado={'right': 1, 'left': 1}
+CUENTA tipo=DNp06 por_lado={'right': 1, 'left': 1}
+CUENTA tipo=DNp07 por_lado={'right': 1, 'left': 1}
+CUENTA tipo=DNp10 por_lado={'left': 1, 'right': 1}
+CUENTA tipo=DNp11 por_lado={'right': 1, 'left': 1}
+CUENTA tipo=DNp02 por_lado={'left': 1, 'right': 1}
+CUENTA tipo=DNp04 por_lado={'left': 1, 'right': 1}
+SALIDA pre=LPLC2 umbral>=1 dn=DNp01 sinapsis=1080 (11.4% de la entrada de DNp01) pares=189 presinapticas=189 ipsilaterales=1.000
+SALIDA pre=LPLC2 umbral>=1 dn=DNp06 sinapsis=1003 (4.6% de la entrada de DNp06) pares=200 presinapticas=200 ipsilaterales=1.000
+SALIDA pre=LPLC2 umbral>=1 dn=DNp07 sinapsis=0 pares=0
+SALIDA pre=LPLC2 umbral>=1 dn=DNp10 sinapsis=0 pares=0
+SALIDA pre=LPLC2 umbral>=1 dn=DNp11 sinapsis=19 (0.2% de la entrada de DNp11) pares=13 presinapticas=13 ipsilaterales=1.000
+SALIDA pre=LPLC2 umbral>=1 dn=DNp02 sinapsis=5 (0.1% de la entrada de DNp02) pares=3 presinapticas=3 ipsilaterales=1.000
+SALIDA pre=LPLC2 umbral>=1 dn=DNp04 sinapsis=1212 (21.9% de la entrada de DNp04) pares=197 presinapticas=197 ipsilaterales=1.000
+SALIDA pre=LPLC2 umbral>=5 dn=DNp01 sinapsis=844 (8.9% de la entrada de DNp01) pares=99 presinapticas=99 ipsilaterales=1.000
+SALIDA pre=LPLC2 umbral>=5 dn=DNp06 sinapsis=725 (3.3% de la entrada de DNp06) pares=88 presinapticas=88 ipsilaterales=1.000
+SALIDA pre=LPLC2 umbral>=5 dn=DNp07 sinapsis=0 pares=0
+SALIDA pre=LPLC2 umbral>=5 dn=DNp10 sinapsis=0 pares=0
+SALIDA pre=LPLC2 umbral>=5 dn=DNp11 sinapsis=0 pares=0
+SALIDA pre=LPLC2 umbral>=5 dn=DNp02 sinapsis=0 pares=0
+SALIDA pre=LPLC2 umbral>=5 dn=DNp04 sinapsis=1007 (18.2% de la entrada de DNp04) pares=119 presinapticas=119 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=1 dn=DNp01 sinapsis=805 (8.5% de la entrada de DNp01) pares=104 presinapticas=104 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=1 dn=DNp06 sinapsis=163 (0.7% de la entrada de DNp06) pares=70 presinapticas=70 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=1 dn=DNp07 sinapsis=1 (0.0% de la entrada de DNp07) pares=1 presinapticas=1 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=1 dn=DNp10 sinapsis=0 pares=0
+SALIDA pre=LC4 umbral>=1 dn=DNp11 sinapsis=923 (11.1% de la entrada de DNp11) pares=92 presinapticas=92 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=1 dn=DNp02 sinapsis=1001 (18.6% de la entrada de DNp02) pares=102 presinapticas=102 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=1 dn=DNp04 sinapsis=1854 (33.5% de la entrada de DNp04) pares=104 presinapticas=104 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=5 dn=DNp01 sinapsis=757 (8.0% de la entrada de DNp01) pares=89 presinapticas=89 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=5 dn=DNp06 sinapsis=50 (0.2% de la entrada de DNp06) pares=9 presinapticas=9 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=5 dn=DNp07 sinapsis=0 pares=0
+SALIDA pre=LC4 umbral>=5 dn=DNp10 sinapsis=0 pares=0
+SALIDA pre=LC4 umbral>=5 dn=DNp11 sinapsis=860 (10.3% de la entrada de DNp11) pares=63 presinapticas=63 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=5 dn=DNp02 sinapsis=962 (17.9% de la entrada de DNp02) pares=90 presinapticas=90 ipsilaterales=1.000
+SALIDA pre=LC4 umbral>=5 dn=DNp04 sinapsis=1850 (33.4% de la entrada de DNp04) pares=103 presinapticas=103 ipsilaterales=1.000
+SALIDA pre=LPLC4 umbral>=1 dn=DNp01 sinapsis=0 pares=0
+SALIDA pre=LPLC4 umbral>=1 dn=DNp06 sinapsis=1 (0.0% de la entrada de DNp06) pares=1 presinapticas=1 ipsilaterales=1.000
+SALIDA pre=LPLC4 umbral>=1 dn=DNp07 sinapsis=1448 (16.6% de la entrada de DNp07) pares=92 presinapticas=92 ipsilaterales=1.000
+SALIDA pre=LPLC4 umbral>=1 dn=DNp10 sinapsis=22 (0.2% de la entrada de DNp10) pares=12 presinapticas=12 ipsilaterales=1.000
+SALIDA pre=LPLC4 umbral>=1 dn=DNp11 sinapsis=136 (1.6% de la entrada de DNp11) pares=22 presinapticas=22 ipsilaterales=1.000
+SALIDA pre=LPLC4 umbral>=1 dn=DNp02 sinapsis=0 pares=0
+SALIDA pre=LPLC4 umbral>=1 dn=DNp04 sinapsis=0 pares=0
+SALIDA pre=LPLC4 umbral>=5 dn=DNp01 sinapsis=0 pares=0
+SALIDA pre=LPLC4 umbral>=5 dn=DNp06 sinapsis=0 pares=0
+SALIDA pre=LPLC4 umbral>=5 dn=DNp07 sinapsis=1408 (16.2% de la entrada de DNp07) pares=73 presinapticas=73 ipsilaterales=1.000
+SALIDA pre=LPLC4 umbral>=5 dn=DNp10 sinapsis=6 (0.1% de la entrada de DNp10) pares=1 presinapticas=1 ipsilaterales=1.000
+SALIDA pre=LPLC4 umbral>=5 dn=DNp11 sinapsis=108 (1.3% de la entrada de DNp11) pares=12 presinapticas=12 ipsilaterales=1.000
+SALIDA pre=LPLC4 umbral>=5 dn=DNp02 sinapsis=0 pares=0
+SALIDA pre=LPLC4 umbral>=5 dn=DNp04 sinapsis=0 pares=0
+# duracion_s=3.3
+EXIT_RUN=0
