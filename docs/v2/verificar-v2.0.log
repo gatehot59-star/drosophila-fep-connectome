@@ -1,0 +1,13 @@
+$ python3 tools/zenodo/depositar_v2.py --verificar
+META title OK
+META upload_type OK
+META publication_type OK
+META description OK
+META creators OK
+META access_right OK
+META license OK
+META version OK
+ARCHIVO Mendieta2026_Paper1_v2.0.pdf 326535 50df4ab9c88add11282e70ef3668c7d0 OK
+ARCHIVO Mendieta2026_Paper1_Erratum_v1.0.pdf 189046 28f7a21f97648c12faf90f2190f3ccbc OK
+VEREDICTO_VERIFICAR PASS
+exit=0

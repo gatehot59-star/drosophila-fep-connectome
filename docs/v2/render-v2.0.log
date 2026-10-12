@@ -1,0 +1,28 @@
+$ cd clon_render && python3 tools/v2/render_v2.py /workspace/v2cierre_2026-10-12/deposito
+ENTORNO pandoc 3.10.2 | typst 0.15.0
+FUENTE docs/v2/paper1-v2.0.md 54273 ec6dc5d3d599f6c1b6fddc8425fe25d2
+PDF Mendieta2026_Paper1_v2.0.pdf 326535 50df4ab9c88add11282e70ef3668c7d0 paginas 17 determinista True
+  CHEQUEO OK  Version 2.0
+  CHEQUEO OK  10.5281/zenodo.19136947
+  CHEQUEO OK  7.85197
+  CHEQUEO OK  12.38
+  CHEQUEO OK  Table 5b
+  CHEQUEO OK  Table 5c
+  CHEQUEO OK  101.6
+  CHEQUEO OK  20.59
+  CHEQUEO OK  13.98%
+  CHEQUEO OK  8.6%
+  CHEQUEO OK  7.9 ms
+  CHEQUEO OK  gatehot59-star/drosophila-fep-connectome
+  CHEQUEO OK  Changes from version 1.0
+  CHEQUEO OK  Gordon, M.D. & Scott, K. (2009)
+FUENTE docs/ERRATUM.md 40440 f8fbb170e20abaacc5730a102aad5491
+PDF Mendieta2026_Paper1_Erratum_v1.0.pdf 189046 28f7a21f97648c12faf90f2190f3ccbc paginas 14 determinista True
+  CHEQUEO OK  Erratum to Mendieta (2026a)
+  CHEQUEO OK  0.000785197
+  CHEQUEO OK  8.6
+  CHEQUEO OK  98.5 per cent
+  CHEQUEO OK  Outstanding verification
+VEREDICTO_RENDER PASS
+
+exit=0
