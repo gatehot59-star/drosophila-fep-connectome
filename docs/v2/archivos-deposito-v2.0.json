@@ -1,24 +1,24 @@
 {
-  "nota": "PDF renderizados en brain-env con tools/v2/render_v2.py desde el commit 5035c39 de titan/v2-cierre-2026-10-12; deterministas (dos compilaciones, mismo md5). Son binarios derivados: no se commitean, viven en brain-env en la ruta indicada.",
-  "commit_fuente": "5035c39ff2746e427df8f7d675902b40f236b35e",
+  "nota": "PDF renderizados en brain-env con tools/v2/render_v2.py desde el commit ed7c3ac de titan/v2-cierre-2026-10-12, que corrige las tres inconsistencias de la 2026-10-12-010 (respuesta 2026-10-12-018); deterministas (dos compilaciones, mismo md5). Son binarios derivados: no se commitean, viven en brain-env en la ruta indicada. Los PDF anteriores (commit 5035c39) siguen en /workspace/v2cierre_2026-10-12/deposito/ y ya no son los del deposito.",
+  "commit_fuente": "ed7c3acfb78c2de6e57dcc50c845e5dfea03e34b",
   "archivos": [
     {
       "nombre": "Mendieta2026_Paper1_v2.0.pdf",
-      "ruta": "/workspace/v2cierre_2026-10-12/deposito/Mendieta2026_Paper1_v2.0.pdf",
-      "md5": "50df4ab9c88add11282e70ef3668c7d0",
-      "bytes": 326535,
+      "ruta": "/workspace/v2cierre_2026-10-12/deposito_018/Mendieta2026_Paper1_v2.0.pdf",
+      "md5": "d353cf0fd05e9e5637be2bccca7bc98e",
+      "bytes": 327479,
       "paginas": 17,
       "fuente": "docs/v2/paper1-v2.0.md",
-      "md5_fuente": "ec6dc5d3d599f6c1b6fddc8425fe25d2"
+      "md5_fuente": "e5fb86dcf79867e77434df33269ad745"
     },
     {
       "nombre": "Mendieta2026_Paper1_Erratum_v1.0.pdf",
-      "ruta": "/workspace/v2cierre_2026-10-12/deposito/Mendieta2026_Paper1_Erratum_v1.0.pdf",
-      "md5": "28f7a21f97648c12faf90f2190f3ccbc",
-      "bytes": 189046,
-      "paginas": 14,
+      "ruta": "/workspace/v2cierre_2026-10-12/deposito_018/Mendieta2026_Paper1_Erratum_v1.0.pdf",
+      "md5": "05052e6e7e0dd79cee584c9d285b1b93",
+      "bytes": 191172,
+      "paginas": 15,
       "fuente": "docs/ERRATUM.md",
-      "md5_fuente": "f8fbb170e20abaacc5730a102aad5491"
+      "md5_fuente": "f2ad05072086258a8ce76b9d650ed26d"
     }
   ]
 }
