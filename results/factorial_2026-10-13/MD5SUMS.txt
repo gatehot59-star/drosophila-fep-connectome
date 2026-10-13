@@ -1,0 +1,10 @@
+627f7ed2a9da686c683d8ed4cb5ae0aa  factorial_M46_LIF.log
+627f7ed2a9da686c683d8ed4cb5ae0aa  factorial_M46_LIQ.log
+627f7ed2a9da686c683d8ed4cb5ae0aa  factorial_M46_TASA.log
+627f7ed2a9da686c683d8ed4cb5ae0aa  factorial_R1_CON_LIF.log
+627f7ed2a9da686c683d8ed4cb5ae0aa  factorial_R1_CON_LIQ.log
+627f7ed2a9da686c683d8ed4cb5ae0aa  factorial_R1_CON_TASA.log
+627f7ed2a9da686c683d8ed4cb5ae0aa  factorial_R1_SIN_LIF.log
+627f7ed2a9da686c683d8ed4cb5ae0aa  factorial_R1_SIN_LIQ.log
+627f7ed2a9da686c683d8ed4cb5ae0aa  factorial_R1_SIN_TASA.log
+3febf1e36c6ed1233245311f6233c493  agregado.log

@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/factorial/agregar_factorial.py", line 22, in <module>
+    import tarea_mosca as tm  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/factorial/../escape_aterrizaje/tarea_mosca.py", line 78, in <module>
+    import escape_aterrizaje_dbc3 as base  # noqa: E402  modulo de la 003, sin cambios
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/escape_aterrizaje/escape_aterrizaje_dbc3.py", line 21, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+agregador_exit=1
