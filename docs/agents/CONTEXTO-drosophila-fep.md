@@ -1,10 +1,10 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-13, 12:20 (America/Buenos_Aires), con la respuesta 2026-10-13-009. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-13, 16:05 (America/Buenos_Aires), con la respuesta 2026-10-13-010. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Madrugada y mañana del 13-oct (019 a 2026-10-13-009) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-13-010) · manda sobre el resto
 
 - **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
   - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
@@ -52,7 +52,12 @@
   - Controles nuevos: REPRODUCE_F2 (las 90 corridas comunes con el factorial 2), REAL_IGUAL (el script de nulos reproduce la grilla) y SL_IGUAL_MODULO (el barajado numpy da lo mismo que `base.barajar_sl`).
   - Humo en brain-env: 3/3 VÁLIDO; REAL_IGUAL y SL_IGUAL_MODULO True. 81 trabajos; se estima unas 4 h en Actions.
 - **Factorial 3 disparado (2026-10-13-009).** CORRER `cff2fce` en la rama titan, run 38420175126 de Actions, 81 trabajos (ancla success en 1 min); se estima unas 4 h. El bot commitea logs, json y `agregado.log` en `results/factorial3_2026-10-13/`.
-- **Espera:** que termine el factorial 3 y leerlo (REPRODUCE_F2 y REAL_IGUAL primero, despues la primaria); cerrar el render y la verificación de la v2 (F01, F06 y F07 ya aplicados en `1f4a2e0`); decidir F05 (Tabla 8); merge del PR #27 y token de Zenodo; responderle a Tao en su PR.
+- **Factorial 3 leído (2026-10-13-010): VÁLIDO, 81 de 81 trabajos.** Resultados del bot en `09ffbc1` (rama titan), MD5SUMS 163/163 OK.
+  - Controles: ancla exacta, plan 600/600 y 50 + 50, TAU_DN_IGUAL, REPRODUCE_F2 exacto en las 90 corridas comunes con el factorial 2, REAL_IGUAL (0,9465).
+  - Primaria: R2 0,9353 contra la regla con sus mismos sensores 0,9268; dif +0,85 puntos, IC90 [+0,08; +1,51]: NO_INFERIOR. H_SUPERA_R2 SIN_DECIDIR. Gana en 482 de 600 corridas. El +1,28 del factorial 2 (3 × 5) bajó a +0,85.
+  - Nulos (A 0,3, ruido 0,15, τ 0, prueba 2): real 0,9465; SL media 0,666 (máx 0,796); T media 0,760 (máx 0,839); ninguno de los 100 iguala al real; p 0,0196 cada uno (el mínimo posible con 50), Holm 0,039: H_CABLEADO_R2 SOSTENIDA.
+  - Lectura: el cableado real de R2 pesa mucho (15 a 28 puntos sobre sus barajados) y alcanza a la regla con sus mismos sensores, con una ventaja chica (menos de un punto) que no pasa el margen.
+- **Espera decisión de Abraham:** qué sigue tras el factorial 3; cerrar el render y la verificación de la v2 (F01, F06 y F07 ya aplicados en `1f4a2e0`); decidir F05 (Tabla 8); merge del PR #27 y token de Zenodo; responderle a Tao en su PR.
 
 ## Tarde y noche del 12-oct (010 a 018)
 
