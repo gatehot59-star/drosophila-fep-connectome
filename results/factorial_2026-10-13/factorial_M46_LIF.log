@@ -1,10 +1,24 @@
-Traceback (most recent call last):
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/factorial/factorial_mosca.py", line 54, in <module>
-    import tarea_mosca as tm  # noqa: E402  sello de la 015 (57d094a), sin cambios
-    ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/factorial/../escape_aterrizaje/tarea_mosca.py", line 78, in <module>
-    import escape_aterrizaje_dbc3 as base  # noqa: E402  modulo de la 003, sin cambios
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/escape_aterrizaje/escape_aterrizaje_dbc3.py", line 21, in <module>
-    import torch
-ModuleNotFoundError: No module named 'torch'
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3 | pandas 3.0.5
+# config: M46_LIF (recorte M46, inhibicion CON, neurona LIF)
+# md5 script = 8224fdddc8bf675b0b8b0375bf27f6cb
+# md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+SUJETO neuronas=46 con_entrada=40 aristas=187 inhibitorias=0 sinapsis=1149
+SUJETO tipo=LC4 con_entrada_por_lado=(4,4)
+SUJETO tipo=LPLC2 con_entrada_por_lado=(8,8)
+SUJETO tipo=LPLC4 con_entrada_por_lado=(4,4)
+SUJETO tipo=LPLC1 con_entrada_por_lado=(4,4)
+DATOS entrenamiento=2400 prueba=2000 nulos_por_tipo=20 celda_nulos=(0.3, 0.15)
+ORDEN por_condicion = posada(LOOM_LATERAL,LOOM_FRONTAL,PUNTO,BARRA,NADA) | vuelo(LOOM_LATERAL,LOOM_FRONTAL,PUNTO,BARRA,NADA)
+CELDA A=0.0 ruido=0.15 W=0.6235 regla=0.9195 H3 W contra regla 119 contra 711 p=1.94e-103 actividad_DN_std=0.0845 por_condicion_W=0.175,0.440,1.000,1.000,1.000,0.000,1.000,0.000,0.620,1.000 | 1.9 s
+CELDA A=0.0 ruido=0.45 W=0.6730 regla=0.8705 H3 W contra regla 116 contra 511 p=4.85e-60 actividad_DN_std=0.0890 por_condicion_W=0.285,0.605,1.000,1.000,1.000,0.045,0.905,0.050,0.840,1.000 | 2.2 s
+CELDA A=0.3 ruido=0.15 W=0.6235 regla=0.9325 H3 W contra regla 109 contra 727 p=7.45e-113 actividad_DN_std=0.0845 por_condicion_W=0.175,0.440,1.000,1.000,1.000,0.000,1.000,0.000,0.620,1.000 | 1.9 s
+CHEQUEO LIF_RESPONDE DNp01 disparos_por_paso looming_posada=0.0042 nada_posada=0.0000 -> True
+CELDA A=0.3 ruido=0.45 W=0.6810 regla=0.8935 H3 W contra regla 122 contra 547 p=4.14e-65 actividad_DN_std=0.0896 por_condicion_W=0.285,0.605,1.000,1.000,1.000,0.045,0.905,0.130,0.840,1.000 | 2.2 s
+CELDA A=0.6 ruido=0.15 W=0.6325 regla=0.9315 H3 W contra regla 113 contra 711 p=9.55e-107 actividad_DN_std=0.0860 por_condicion_W=0.175,0.440,1.000,1.000,1.000,0.000,1.000,0.090,0.620,1.000 | 1.8 s
+CELDA A=0.6 ruido=0.45 W=0.6975 regla=0.9120 H3 W contra regla 117 contra 546 p=4.07e-67 actividad_DN_std=0.0920 por_condicion_W=0.285,0.605,1.000,1.000,1.000,0.045,0.905,0.295,0.840,1.000 | 2.2 s
+NULOS_DESCRIPTIVO A=0.3 ruido=0.15 W=0.6235 | SL n=20 media=0.4044 max=0.4685 p_sup=0.0476 | T n=20 media=0.4708 max=0.5130 p_sup=0.0476
+CHEQUEO INSTRUMENTO sin_negativas=True LIF_responde=True SL=True T=True -> VALIDO
+escrito factorial_M46_LIF.json md5=97a9c7dbcb2f2bf6e3c05892accb66b6
+# duracion_s=85.1
+EXIT_RUN=0

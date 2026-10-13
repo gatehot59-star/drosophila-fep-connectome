@@ -1,10 +1,24 @@
-Traceback (most recent call last):
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/factorial/factorial_mosca.py", line 54, in <module>
-    import tarea_mosca as tm  # noqa: E402  sello de la 015 (57d094a), sin cambios
-    ^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/factorial/../escape_aterrizaje/tarea_mosca.py", line 78, in <module>
-    import escape_aterrizaje_dbc3 as base  # noqa: E402  modulo de la 003, sin cambios
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/escape_aterrizaje/escape_aterrizaje_dbc3.py", line 21, in <module>
-    import torch
-ModuleNotFoundError: No module named 'torch'
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3 | pandas 3.0.5
+# config: R1_CON_TASA (recorte R1, inhibicion CON, neurona TASA)
+# md5 script = 8224fdddc8bf675b0b8b0375bf27f6cb
+# md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+SUJETO R1 neuronas=1504 aristas_crudas=91484 inhibitorias_crudas=30862 contiene_M46=True esperado=(1504, 91484) -> True
+SUJETO neuronas=1504 con_entrada=418 aristas=91484 inhibitorias=30862 sinapsis=553976
+SUJETO tipo=LC4 con_entrada_por_lado=(40,49)
+SUJETO tipo=LPLC2 con_entrada_por_lado=(71,87)
+SUJETO tipo=LPLC4 con_entrada_por_lado=(38,35)
+SUJETO tipo=LPLC1 con_entrada_por_lado=(47,51)
+DATOS entrenamiento=2400 prueba=2000 nulos_por_tipo=50 celda_nulos=(0.3, 0.15)
+ORDEN por_condicion = posada(LOOM_LATERAL,LOOM_FRONTAL,PUNTO,BARRA,NADA) | vuelo(LOOM_LATERAL,LOOM_FRONTAL,PUNTO,BARRA,NADA)
+CELDA A=0.0 ruido=0.15 W=0.9415 regla=0.9195 H3 W contra regla 137 contra 93 p=0.00447 actividad_DN_std=0.0995 por_condicion_W=1.000,1.000,0.990,0.745,1.000,0.955,0.995,0.950,0.975,0.805 | 9.9 s
+CELDA A=0.0 ruido=0.45 W=0.9310 regla=0.8705 H3 W contra regla 228 contra 107 p=3.4e-11 actividad_DN_std=0.0918 por_condicion_W=1.000,1.000,0.925,0.795,0.990,0.895,0.985,0.935,0.980,0.805 | 9.6 s
+CELDA A=0.3 ruido=0.15 W=0.9370 regla=0.9325 H3 W contra regla 74 contra 65 p=0.498 actividad_DN_std=0.1015 por_condicion_W=1.000,1.000,0.690,1.000,1.000,0.955,0.995,0.950,0.975,0.805 | 9.7 s
+CELDA A=0.3 ruido=0.45 W=0.9310 regla=0.8935 H3 W contra regla 165 contra 90 p=3.07e-06 actividad_DN_std=0.0936 por_condicion_W=1.000,1.000,0.710,1.000,1.000,0.895,0.985,0.935,0.980,0.805 | 10.1 s
+CELDA A=0.6 ruido=0.15 W=0.9330 regla=0.9315 H3 W contra regla 70 contra 67 p=0.864 actividad_DN_std=0.1045 por_condicion_W=0.970,0.985,0.690,1.000,1.000,0.955,0.995,0.955,0.975,0.805 | 10.6 s
+CELDA A=0.6 ruido=0.45 W=0.9270 regla=0.9120 H3 W contra regla 119 contra 89 p=0.0441 actividad_DN_std=0.0963 por_condicion_W=0.975,0.990,0.695,1.000,1.000,0.895,0.985,0.945,0.980,0.805 | 10.2 s
+NULOS_DESCRIPTIVO A=0.3 ruido=0.15 W=0.9370 | SL n=50 media=0.7740 max=0.8560 p_sup=0.0196 | T n=50 media=0.7418 max=0.8205 p_sup=0.0196
+CHEQUEO INSTRUMENTO R1_tamano=True SL=True T=True -> VALIDO
+escrito factorial_R1_CON_TASA.json md5=f1747e41a70d99a57b05d6401a85ef68
+# duracion_s=1074.9
+EXIT_RUN=0
