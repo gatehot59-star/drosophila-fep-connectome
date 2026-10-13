@@ -1,0 +1,97 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | pandas 3.0.5
+# md5 script = 40d64e074d9163753439307c5be4ac5e
+# md5 modulo 003 = 4d40477d87406c31672acfb6e6e8f5a2 | md5 modulo 005 = e060c4bffb685aa550dadc19eda3dd02
+# fecha: 2026-10-13 00:59:09 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+MOTIVO root_id=720575940614572742 tipo=LC4 lado=left elegida_por=DNp01 sinapsis_al_blanco=14
+MOTIVO root_id=720575940633580384 tipo=LC4 lado=left elegida_por=DNp01 sinapsis_al_blanco=14
+MOTIVO root_id=720575940626626895 tipo=LC4 lado=left elegida_por=DNp01 sinapsis_al_blanco=13
+MOTIVO root_id=720575940628699560 tipo=LC4 lado=left elegida_por=DNp01 sinapsis_al_blanco=13
+MOTIVO root_id=720575940614582946 tipo=LC4 lado=right elegida_por=DNp01 sinapsis_al_blanco=16
+MOTIVO root_id=720575940639817947 tipo=LC4 lado=right elegida_por=DNp01 sinapsis_al_blanco=16
+MOTIVO root_id=720575940625906702 tipo=LC4 lado=right elegida_por=DNp01 sinapsis_al_blanco=15
+MOTIVO root_id=720575940631032657 tipo=LC4 lado=right elegida_por=DNp01 sinapsis_al_blanco=14
+MOTIVO root_id=720575940618608177 tipo=LPLC2 lado=left elegida_por=DNp01 sinapsis_al_blanco=15
+MOTIVO root_id=720575940629292785 tipo=LPLC2 lado=left elegida_por=DNp01 sinapsis_al_blanco=15
+MOTIVO root_id=720575940632080146 tipo=LPLC2 lado=left elegida_por=DNp01 sinapsis_al_blanco=14
+MOTIVO root_id=720575940613470947 tipo=LPLC2 lado=left elegida_por=DNp01 sinapsis_al_blanco=12
+MOTIVO root_id=720575940647358243 tipo=LPLC2 lado=right elegida_por=DNp01 sinapsis_al_blanco=16
+MOTIVO root_id=720575940612462307 tipo=LPLC2 lado=right elegida_por=DNp01 sinapsis_al_blanco=15
+MOTIVO root_id=720575940614526974 tipo=LPLC2 lado=right elegida_por=DNp01 sinapsis_al_blanco=15
+MOTIVO root_id=720575940631095158 tipo=LPLC2 lado=right elegida_por=DNp01 sinapsis_al_blanco=14
+MOTIVO root_id=720575940609063236 tipo=LPLC4 lado=left elegida_por=DNp07 sinapsis_al_blanco=48
+MOTIVO root_id=720575940623383432 tipo=LPLC4 lado=left elegida_por=DNp07 sinapsis_al_blanco=47
+MOTIVO root_id=720575940613238418 tipo=LPLC4 lado=left elegida_por=DNp07 sinapsis_al_blanco=37
+MOTIVO root_id=720575940619655685 tipo=LPLC4 lado=left elegida_por=DNp07 sinapsis_al_blanco=37
+MOTIVO root_id=720575940611506966 tipo=LPLC4 lado=right elegida_por=DNp07 sinapsis_al_blanco=44
+MOTIVO root_id=720575940628039676 tipo=LPLC4 lado=right elegida_por=DNp07 sinapsis_al_blanco=39
+MOTIVO root_id=720575940630745148 tipo=LPLC4 lado=right elegida_por=DNp07 sinapsis_al_blanco=28
+MOTIVO root_id=720575940641511888 tipo=LPLC4 lado=right elegida_por=DNp07 sinapsis_al_blanco=27
+MOTIVO root_id=720575940628716294 tipo=LPLC1 lado=left elegida_por=DNp06 sinapsis_al_blanco=22
+MOTIVO root_id=720575940637905478 tipo=LPLC1 lado=left elegida_por=DNp06 sinapsis_al_blanco=20
+MOTIVO root_id=720575940632086573 tipo=LPLC1 lado=left elegida_por=DNp06 sinapsis_al_blanco=19
+MOTIVO root_id=720575940646708788 tipo=LPLC1 lado=left elegida_por=DNp06 sinapsis_al_blanco=18
+MOTIVO root_id=720575940626510869 tipo=LPLC1 lado=right elegida_por=DNp06 sinapsis_al_blanco=20
+MOTIVO root_id=720575940632005573 tipo=LPLC1 lado=right elegida_por=DNp06 sinapsis_al_blanco=16
+MOTIVO root_id=720575940626661704 tipo=LPLC1 lado=right elegida_por=DNp06 sinapsis_al_blanco=15
+MOTIVO root_id=720575940608496196 tipo=LPLC1 lado=right elegida_por=DNp06 sinapsis_al_blanco=14
+MOTIVO root_id=720575940628552247 tipo=LPLC2 lado=left elegida_por=DNp06 sinapsis_al_blanco=18
+MOTIVO root_id=720575940622009284 tipo=LPLC2 lado=left elegida_por=DNp06 sinapsis_al_blanco=16
+MOTIVO root_id=720575940625477721 tipo=LPLC2 lado=left elegida_por=DNp06 sinapsis_al_blanco=13
+MOTIVO root_id=720575940623925774 tipo=LPLC2 lado=left elegida_por=DNp06 sinapsis_al_blanco=12
+MOTIVO root_id=720575940637702222 tipo=LPLC2 lado=right elegida_por=DNp06 sinapsis_al_blanco=19
+MOTIVO root_id=720575940616491993 tipo=LPLC2 lado=right elegida_por=DNp06 sinapsis_al_blanco=18
+MOTIVO root_id=720575940628603842 tipo=LPLC2 lado=right elegida_por=DNp06 sinapsis_al_blanco=18
+MOTIVO root_id=720575940612994929 tipo=LPLC2 lado=right elegida_por=DNp06 sinapsis_al_blanco=16
+MOTIVO root_id=720575940622838154 tipo=DNp01 lado=left elegida_por= sinapsis_al_blanco=0
+MOTIVO root_id=720575940632499757 tipo=DNp01 lado=right elegida_por= sinapsis_al_blanco=0
+MOTIVO root_id=720575940617034565 tipo=DNp07 lado=left elegida_por= sinapsis_al_blanco=0
+MOTIVO root_id=720575940622550089 tipo=DNp07 lado=right elegida_por= sinapsis_al_blanco=0
+MOTIVO root_id=720575940622673860 tipo=DNp06 lado=left elegida_por= sinapsis_al_blanco=0
+MOTIVO root_id=720575940611644529 tipo=DNp06 lado=right elegida_por= sinapsis_al_blanco=0
+MOTIVO neuronas=46 visuales=40 aristas=187 sinapsis=1149 inhibitorias=0 ipsilaterales=187 rho_crudo=22.9733
+MOTIVO tipo=LC4 por_lado=(4,4)
+MOTIVO tipo=LPLC2 por_lado=(8,8)
+MOTIVO tipo=LPLC4 por_lado=(4,4)
+MOTIVO tipo=LPLC1 por_lado=(4,4)
+COMPOSICION dn=DNp01 lado=left sinapsis_desde={'LC4': 54, 'LPLC2': 63, 'LPLC4': 0, 'LPLC1': 0}
+COMPOSICION dn=DNp01 lado=right sinapsis_desde={'LC4': 61, 'LPLC2': 74, 'LPLC4': 0, 'LPLC1': 0}
+COMPOSICION dn=DNp07 lado=left sinapsis_desde={'LC4': 1, 'LPLC2': 0, 'LPLC4': 169, 'LPLC1': 0}
+COMPOSICION dn=DNp07 lado=right sinapsis_desde={'LC4': 0, 'LPLC2': 0, 'LPLC4': 138, 'LPLC1': 0}
+COMPOSICION dn=DNp06 lado=left sinapsis_desde={'LC4': 9, 'LPLC2': 72, 'LPLC4': 0, 'LPLC1': 79}
+COMPOSICION dn=DNp06 lado=right sinapsis_desde={'LC4': 10, 'LPLC2': 78, 'LPLC4': 0, 'LPLC1': 65}
+CHEQUEO REPRODUCE_003 neuronas=True aristas=73 contra 73 -> True
+NULOS SL=300 guarda=True T=300 guarda=True
+DATOS entrenamiento=2400 prueba=2000 clases_prueba(nada,despegar,aterrizar,girar_der,girar_izq)=800,400,400,200,200 azar_mayoria_por_estado=0.5000 FA_por_linea=0.05
+ORDEN por_condicion = posada(LOOM_LATERAL,LOOM_FRONTAL,PUNTO,BARRA,NADA) | vuelo(LOOM_LATERAL,LOOM_FRONTAL,PUNTO,BARRA,NADA)
+CELDA A=0.0 ruido=0.15 W=0.9005 por_condicion=1.000,1.000,0.725,0.930,0.995,0.895,0.940,0.745,0.985,0.790 umbrales=0.306,0.355,0.246,0.261,0.224,0.262 | SL media=0.6967 max=0.8915 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | T media=0.7192 max=0.8730 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | 871.3 s
+RIVAL A=0.0 ruido=0.15 regla_a_mano=0.9195 por_condicion=1.000,1.000,0.885,0.840,0.945,0.925,0.950,0.885,0.960,0.805 | H3 W contra regla 118 contra 156 p=0.0252 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.9935
+CELDA A=0.0 ruido=0.45 W=0.8805 por_condicion=1.000,1.000,0.820,0.875,0.905,0.785,0.965,0.705,0.965,0.785 umbrales=0.418,0.491,0.534,0.571,0.522,0.590 | SL media=0.6716 max=0.8305 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | T media=0.7033 max=0.8515 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | 943.4 s
+RIVAL A=0.0 ruido=0.45 regla_a_mano=0.8705 por_condicion=1.000,1.000,0.925,0.880,0.915,0.880,0.935,0.405,0.960,0.805 | H3 W contra regla 175 contra 155 p=0.296 -> EMPATE | ridge_crudo_entrenado(descriptivo)=0.9595
+CELDA A=0.3 ruido=0.15 W=0.9125 por_condicion=0.995,0.995,0.730,1.000,1.000,0.895,0.940,0.795,0.985,0.790 umbrales=0.676,0.766,0.246,0.261,0.224,0.262 | SL media=0.6655 max=0.8880 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | T media=0.6734 max=0.8625 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | 884.2 s
+RIVAL A=0.3 ruido=0.15 regla_a_mano=0.9325 por_condicion=1.000,1.000,0.720,1.000,1.000,0.925,0.950,0.965,0.960,0.805 | H3 W contra regla 75 contra 115 p=0.00454 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.9935
+CELDA A=0.3 ruido=0.45 W=0.8915 por_condicion=0.970,1.000,0.680,1.000,1.000,0.785,0.965,0.765,0.965,0.785 umbrales=0.618,0.718,0.534,0.571,0.522,0.590 | SL media=0.6530 max=0.8380 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | T media=0.6681 max=0.8390 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | 979.1 s
+RIVAL A=0.3 ruido=0.45 regla_a_mano=0.8935 por_condicion=1.000,1.000,0.780,0.935,0.970,0.880,0.935,0.670,0.960,0.805 | H3 W contra regla 135 contra 139 p=0.856 -> EMPATE | ridge_crudo_entrenado(descriptivo)=0.9575
+CELDA A=0.6 ruido=0.15 W=0.8680 por_condicion=0.765,0.775,0.720,1.000,1.000,0.895,0.940,0.810,0.985,0.790 umbrales=0.823,0.897,0.246,0.261,0.224,0.262 | SL media=0.6292 max=0.8360 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | T media=0.6246 max=0.8105 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | 885.9 s
+RIVAL A=0.6 ruido=0.15 regla_a_mano=0.9315 por_condicion=1.000,1.000,0.700,1.000,1.000,0.925,0.950,0.975,0.960,0.805 | H3 W contra regla 73 contra 200 p=7.82e-15 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.9940
+CELDA A=0.6 ruido=0.45 W=0.8580 por_condicion=0.755,0.825,0.730,1.000,1.000,0.785,0.965,0.770,0.965,0.785 umbrales=0.796,0.864,0.534,0.571,0.522,0.590 | SL media=0.6209 max=0.7955 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | T media=0.6252 max=0.7940 igualan=0/300 p_sup=0.0033 p_inf=1.0000 | 985.3 s
+RIVAL A=0.6 ruido=0.45 regla_a_mano=0.9120 por_condicion=1.000,1.000,0.730,1.000,0.990,0.880,0.935,0.820,0.960,0.805 | H3 W contra regla 103 contra 211 p=1.08e-09 -> PEOR | ridge_crudo_entrenado(descriptivo)=0.9590
+CONTROL_NEGATIVO entrada=AGNOSTICA W=0.5830 T_identicos=30/30 -> True
+CONTROL_POSITIVO regla_a_mano A=0.3 ruido=0.15 = 0.9325 contra azar 0.5000 + 0.10 -> True
+DESCRIPTIVO LPLC1_SILENCIOSA A=0.3 ruido=0.15 W=0.8805 por_condicion=1.000,1.000,0.710,1.000,1.000,0.895,0.940,0.485,0.985,0.790 | regla=0.8835 por_condicion=1.000,1.000,0.720,1.000,1.000,0.925,0.950,0.475,0.960,0.805
+DESCRIPTIVO LPLC4_SILENCIOSA A=0.3 ruido=0.15 W=0.8030 por_condicion=0.995,0.995,0.730,1.000,1.000,0.950,0.515,0.960,0.095,0.790 | regla=0.7680 por_condicion=1.000,1.000,0.720,1.000,1.000,0.935,0.120,0.975,0.125,0.805
+CHEQUEO INSTRUMENTO guarda_SL=True guarda_T=True reproduce_003=True reproduce=True control_negativo=True control_positivo=True -> VALIDO
+VEREDICTO_CELDA A=0.0 ruido=0.15 holm_sup(SL,T)=(0.0399,0.0399) holm_inf(SL,T)=(1.0000,1.0000) -> GANA
+VEREDICTO_CELDA A=0.0 ruido=0.45 holm_sup(SL,T)=(0.0399,0.0399) holm_inf(SL,T)=(1.0000,1.0000) -> GANA
+VEREDICTO_AMPLITUD A=0.0 -> GANA
+VEREDICTO_CELDA A=0.3 ruido=0.15 holm_sup(SL,T)=(0.0399,0.0399) holm_inf(SL,T)=(1.0000,1.0000) -> GANA
+VEREDICTO_CELDA A=0.3 ruido=0.45 holm_sup(SL,T)=(0.0399,0.0399) holm_inf(SL,T)=(1.0000,1.0000) -> GANA
+VEREDICTO_AMPLITUD A=0.3 -> GANA
+VEREDICTO_CELDA A=0.6 ruido=0.15 holm_sup(SL,T)=(0.0399,0.0399) holm_inf(SL,T)=(1.0000,1.0000) -> GANA
+VEREDICTO_CELDA A=0.6 ruido=0.45 holm_sup(SL,T)=(0.0399,0.0399) holm_inf(SL,T)=(1.0000,1.0000) -> GANA
+VEREDICTO_AMPLITUD A=0.6 -> GANA
+VEREDICTO_GLOBAL -> PAGA LA TAREA DE LA MOSCA
+escrito resultados.json md5=08037bd6a6565cbd5207163e39949766
+# duracion_s=5628.4
+EXIT_RUN=0
+EXIT_RUN=0
