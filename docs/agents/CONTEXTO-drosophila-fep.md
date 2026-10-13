@@ -1,10 +1,10 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-13, 11:55 (America/Buenos_Aires), con la respuesta 2026-10-13-007. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-13, 12:45 (America/Buenos_Aires), con la respuesta 2026-10-13-008. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Madrugada y mañana del 13-oct (019 a 2026-10-13-007) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-13-008) · manda sobre el resto
 
 - **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
   - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
@@ -44,7 +44,14 @@
   - **R2_CON_TASA (33.489 neuronas): +1,28 puntos, IC [+0,79; +1,77], NO_INFERIOR**, positiva en las 6 celdas (SUPERA en amplitud 0, ruido 0,15). Es la primera vez que el cableado le gana a su diseño con los mismos sensores, pero por menos del margen: H_SUPERA no sostenida según lo sellado. R2 tiene 3 × 5 semillas.
   - Más sensores pagan: la regla de 418 le gana a la de 40 por +2,79 (AYUDA). R2 menos R1: +1,65 (NO_INFERIOR). LIQ: peor en M46 (−1,21) y equivalente en R1. Inhibición: sin efecto claro.
 - **F01, F06 y F07 aplicados en el PR #27 (2026-10-13-006):** bot `1f4a2e0`, manuscrito `2fa575c4…`, sección de dos saltos `23db9cac…`; render de prueba PASS, 18 páginas, `a22515e9…`. Falta el render desde `1f4a2e0`, el json de depósito y `--verificar`.
-- **Espera decisión de Abraham:** replicar R2 con 10 × 10 semillas (factorial 3, para decidir si SUPERA); cerrar el render y la verificación de la v2 (F01, F06 y F07 ya aplicados en `1f4a2e0`); decidir F05 (Tabla 8); merge del PR #27 y token de Zenodo; responderle a Tao en su PR.
+- **Factorial 3 sellado (2026-10-13-008), sin disparar.** Rama `titan/factorial3-mosca-2026-10-13`, sello `6a7b4cb`.
+  - Grilla: R2_CON_TASA con τ 0..9 × prueba 2..11 × 6 celdas, con `factorial2_mosca.py` sin cambios (`798a824c…`).
+  - Nulos: 50 SL y 50 T de R2 (`tools/factorial3/nulos_r2.py`, `c4f1c4d3…`) en A 0,3, ruido 0,15, τ 0, prueba 2.
+  - Agregador `agregar_factorial3.py` (`2ec8cd03…`): margen 0,01, IC al 90 % (TOST); Holm sobre los dos nulos.
+  - Hipótesis: H_SUPERA_R2 (gana por más de un punto) y H_CABLEADO_R2 (le gana a sus barajados).
+  - Controles nuevos: REPRODUCE_F2 (las 90 corridas comunes con el factorial 2), REAL_IGUAL (el script de nulos reproduce la grilla) y SL_IGUAL_MODULO (el barajado numpy da lo mismo que `base.barajar_sl`).
+  - Humo en brain-env: 3/3 VÁLIDO; REAL_IGUAL y SL_IGUAL_MODULO True. 81 trabajos; se estima unas 4 h en Actions.
+- **Espera decisión de Abraham:** correr el factorial 3 (sellado en `6a7b4cb`: pushear `results/factorial3_2026-10-13/CORRER`); cerrar el render y la verificación de la v2 (F01, F06 y F07 ya aplicados en `1f4a2e0`); decidir F05 (Tabla 8); merge del PR #27 y token de Zenodo; responderle a Tao en su PR.
 
 ## Tarde y noche del 12-oct (010 a 018)
 
