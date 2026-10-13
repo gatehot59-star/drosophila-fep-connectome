@@ -1,38 +1,22 @@
 ENTORNO pandoc 3.10.2 | typst 0.15.0
-FUENTE docs/v2/paper1-v2.0.md 56298 2fa575c41926fdc790cecbb5965ba2a1
-PDF Mendieta2026_Paper1_v2.0.pdf 330511 a22515e9e2e7bb02e8d3fd824217dfc7 paginas 18 determinista True
-  CHEQUEO OK  Version 2.0
-  CHEQUEO OK  10.5281/zenodo.19136947
-  CHEQUEO OK  7.85197
-  CHEQUEO OK  12.38
-  CHEQUEO OK  Table 5b
-  CHEQUEO OK  Table 5c
-  CHEQUEO OK  101.6
-  CHEQUEO OK  20.59
-  CHEQUEO OK  13.98%
-  CHEQUEO OK  8.6%
-  CHEQUEO OK  7.9 ms
-  CHEQUEO OK  gatehot59-star/drosophila-fep-connectome
-  CHEQUEO OK  Changes from version 1.0
-  CHEQUEO OK  Gordon, M.D. & Scott, K. (2009)
+FUENTE docs/v2/paper1-v2.0.md a4d09d2c345dca03faca4d9bccf236d7
+PDF Mendieta2026_Paper1_v2.0.pdf 332607 6e849bf2caffa540165edd826df102ed paginas 18 determinista True
 FUENTE docs/ERRATUM.md 41121 f2ad05072086258a8ce76b9d650ed26d
 PDF Mendieta2026_Paper1_Erratum_v1.0.pdf 191172 05052e6e7e0dd79cee584c9d285b1b93 paginas 15 determinista True
-  CHEQUEO OK  Erratum to Mendieta (2026a)
-  CHEQUEO OK  0.000785197
-  CHEQUEO OK  8.6
-  CHEQUEO OK  98.5 per cent
-  CHEQUEO OK  Outstanding verification
 VEREDICTO_RENDER PASS
-RC=0
 
-# respuesta 2026-10-13-012: clon de titan/v2-cierre-2026-10-12 en 1f4a2e038916a1fcef989cec9582f496debc4dcb (F01, F06 y F07 aplicados)
-# brain-env, python3 tools/v2/render_v2.py /workspace/v2cierre_2026-10-13/deposito_013, corrida con nohup
-# control de texto con pypdf (chk.py, md5 ddbfb854cc9d150b929435e4d7339511), PDF viejo = deposito_018 (d353cf0f, desde ed7c3ac), nuevo = deposito_013:
-# Sufficient   viejo=1 nuevo=0 | md=0 erratum=0   (F06)
-# sufficient   viejo=1 nuevo=2 | md=2 erratum=0
-# 138,140      viejo=0 nuevo=1 | md=1 erratum=0   (F07)
-# 138,142      viejo=1 nuevo=1 | md=1 erratum=0
-# in-degree    viejo=8 nuevo=7 | md=7 erratum=2   (F01)
-# 1/6          viejo=0 nuevo=2 | md=2 erratum=0   (F06)
-# 14.8         viejo=9 nuevo=10 | md=10 erratum=0 (F05 sigue abierto: el resumen y las conclusiones lo usan como firme)
-# survives     viejo=6 nuevo=6 | md=6 erratum=2
+# respuesta 2026-10-13-014: clon de titan/v2-cierre-2026-10-12 en 608bd412c37d5262ae64d0383948f5d436c9d5e5 (F05 suavizado por el bot)
+# brain-env, python3 tools/v2/render_v2.py /workspace/v2cierre_2026-10-13/deposito_f05, corrida con nohup; los 19 chequeos de texto del script OK
+# el manuscrito aplicado en Actions (a4d09d2c) es identico al de la prueba en brain-env sobre una copia de e81a903 (a4d09d2c, PDF 6e849bf2)
+# control de texto con pypdf (chk2.py, md5 825e8b1332dc58db4ff47f7adf60c468), viejo = deposito_013 (a22515e9), nuevo = deposito_f05:
+# survives the community             viejo=2 nuevo=0
+# requires specific wiring           viejo=1 nuevo=0
+# It requires fine wiring            viejo=1 nuevo=0
+# shows that generic modularity      viejo=1 nuevo=0
+# not reproduced                     viejo=0 nuevo=4
+# well above the mean of five        viejo=0 nuevo=3
+# 16. Post-stimulus amplification    viejo=0 nuevo=1
+# 14.8                               viejo=10 nuevo=10   (el numero se conserva; la Tabla 8 queda igual)
+# Sufficient                         viejo=0 nuevo=0
+# 138,140                            viejo=1 nuevo=1
+# 1/6                                viejo=2 nuevo=2
