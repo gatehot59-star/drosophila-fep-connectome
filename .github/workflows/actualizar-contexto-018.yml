@@ -1,0 +1,32 @@
+name: actualizar-contexto-018
+# Aplica tools/contexto/actualizar_contexto_018.py sobre main, commitea el resultado con su log y se retira.
+# Respuesta 2026-10-12-018. Se dispara solo con el push que trae este archivo.
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/actualizar-contexto-018.yml]
+permissions:
+  contents: write
+jobs:
+  aplicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: actualizar el contexto
+        shell: bash
+        run: |
+          mkdir -p results/contexto_018
+          python3 --version | tee results/contexto_018/actualizar.log
+          md5sum tools/contexto/actualizar_contexto_018.py | tee -a results/contexto_018/actualizar.log
+          python3 tools/contexto/actualizar_contexto_018.py . | tee -a results/contexto_018/actualizar.log
+      - name: commitear y retirar el workflow
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -q .github/workflows/actualizar-contexto-018.yml
+          git add docs/agents/CONTEXTO-drosophila-fep.md docs/agents/respuestas/2026-10-12-017-objetivamente-mapa-y-reflejos-chicos-no-cerebro-y-la-regla-a-mano-sigue-adelante.md results/contexto_018/actualizar.log
+          git commit -q -m "contexto(2026-10-12-018): CONTEXTO al dia con la 010 a la 018 y puntero de correccion en la 017, aplicado en Actions"
+          git push -q origin HEAD:main
