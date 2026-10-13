@@ -4,3 +4,7 @@ workflow ae5d49bad8f1d47608da88f49cba2d4c, modulo 015 40d64e074d9163753439307c5b
 Pedido de Abraham (13-oct 01:11 ART): primero revisar la auditoria de Tao (respuesta 2026-10-13-001), luego correr el factorial.
 Humo 2 con el sello en brain-env: 9/9 configuraciones rc=0 y agregado rc=0 (04:12 UTC).
 Este archivo no cambia nada del instrumento: solo dispara el workflow.
+
+Reintento 2 (13-oct, 04:2x UTC): la corrida 1 (run 38345876729, commit 5d9d59d) murio en los 9 trabajos al importar torch:
+el modulo de la 003 lo importa arriba y el workflow sellado no lo instalaba (brain-env si lo tiene, por eso el humo no lo vio).
+El workflow agrega torch 2.14.1+cpu, misma version que brain-env. Instrumento sin cambios.

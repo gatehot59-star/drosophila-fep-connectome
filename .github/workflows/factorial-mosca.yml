@@ -1,6 +1,7 @@
 name: factorial-mosca
 # Respuesta 2026-10-12-019. Corre las 9 configuraciones sin cambios y commitea logs, json y el agregado.
 # Solo se dispara al pushear results/factorial_2026-10-13/CORRER en esta rama, o a mano.
+# Reintento (2026-10-13-001): instala torch 2.14.1+cpu, porque el modulo de la 003 lo importa arriba.
 on:
   push:
     branches: ["titan/factorial-mosca-2026-10-13"]
@@ -23,7 +24,9 @@ jobs:
           python-version: "3.12"
       - name: dependencias (mismas versiones que brain-env)
         shell: bash
-        run: python -m pip install numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+        run: |
+          python -m pip install numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
       - name: insumos publicos (md5 verificado por el script)
         shell: bash
         run: |
@@ -36,6 +39,8 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p out
+          python -c "import numpy, pandas, scipy, pyarrow, torch, platform; print(platform.platform(), 'numpy', numpy.__version__, 'pandas', pandas.__version__, 'scipy', scipy.__version__, 'pyarrow', pyarrow.__version__, 'torch', torch.__version__)" > out/versiones_${{ matrix.config }}.txt 2>&1 || true
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv >> out/versiones_${{ matrix.config }}.txt
           python tools/factorial/factorial_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --config ${{ matrix.config }} 2>&1 | tee out/factorial_${{ matrix.config }}.log
       - uses: actions/upload-artifact@v4
         if: always()
@@ -53,7 +58,9 @@ jobs:
           python-version: "3.12"
       - name: dependencias
         shell: bash
-        run: python -m pip install numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+        run: |
+          python -m pip install numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
       - uses: actions/download-artifact@v4
         with:
           pattern: fact-*
