@@ -1,0 +1,32 @@
+name: aplicar-fix-v2-2026-10-13
+# Aplica tools/v2/fix_v2_2026-10-13.py (F01, F06 y F07 de la auditoria de Tao) sobre esta rama, commitea el
+# resultado con su log y se retira. Respuesta 2026-10-13-006. Se dispara solo con el push que trae este archivo.
+on:
+  push:
+    branches: [titan/v2-cierre-2026-10-12]
+    paths: [.github/workflows/aplicar-fix-v2-2026-10-13.yml]
+permissions:
+  contents: write
+jobs:
+  aplicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: titan/v2-cierre-2026-10-12
+      - name: aplicar el parche de F01, F06 y F07
+        shell: bash
+        run: |
+          python3 --version | tee docs/v2/fix-v2-2026-10-13.log
+          md5sum tools/v2/fix_v2_2026-10-13.py | tee -a docs/v2/fix-v2-2026-10-13.log
+          python3 tools/v2/fix_v2_2026-10-13.py . | tee -a docs/v2/fix-v2-2026-10-13.log
+          md5sum docs/v2/paper1-v2.0.md docs/SECCION-V2-DOS-SALTOS.md docs/v2/zenodo-v2.0-metadata.json | tee -a docs/v2/fix-v2-2026-10-13.log
+      - name: commitear y retirar el workflow
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -q .github/workflows/aplicar-fix-v2-2026-10-13.yml
+          git add docs/v2/paper1-v2.0.md docs/SECCION-V2-DOS-SALTOS.md docs/v2/fix-v2-2026-10-13.log
+          git commit -q -m "docs(v2): corrige F01, F06 y F07 de la auditoria de Tao con tools/v2/fix_v2_2026-10-13.py, aplicado en Actions (respuesta 2026-10-13-006)"
+          git push -q origin HEAD:titan/v2-cierre-2026-10-12
