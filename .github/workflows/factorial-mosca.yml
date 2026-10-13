@@ -1,0 +1,75 @@
+name: factorial-mosca
+# Respuesta 2026-10-12-019. Corre las 9 configuraciones sin cambios y commitea logs, json y el agregado.
+# Solo se dispara al pushear results/factorial_2026-10-13/CORRER en esta rama, o a mano.
+on:
+  push:
+    branches: ["titan/factorial-mosca-2026-10-13"]
+    paths: ["results/factorial_2026-10-13/CORRER"]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  correr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        config: [M46_TASA, M46_LIQ, M46_LIF, R1_CON_TASA, R1_CON_LIQ, R1_CON_LIF, R1_SIN_TASA, R1_SIN_LIQ, R1_SIN_LIF]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: dependencias (mismas versiones que brain-env)
+        shell: bash
+        run: python -m pip install numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+      - name: insumos publicos (md5 verificado por el script)
+        shell: bash
+        run: |
+          mkdir -p /tmp/in
+          curl -fsSL -o /tmp/in/connectivity.parquet https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+          curl -fsSL -o /tmp/in/annotations.tsv https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv
+      - name: correr la configuracion
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p out
+          python tools/factorial/factorial_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --config ${{ matrix.config }} 2>&1 | tee out/factorial_${{ matrix.config }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fact-${{ matrix.config }}
+          path: out/
+  agregar:
+    needs: correr
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: dependencias
+        shell: bash
+        run: python -m pip install numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: fact-*
+          path: art
+          merge-multiple: true
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          D=results/factorial_2026-10-13
+          mkdir -p "$D"
+          cp art/* "$D"/ || true
+          python tools/factorial/agregar_factorial.py "$D" > "$D/agregado.log" 2>&1 || echo "agregador_exit=$?" >> "$D/agregado.log"
+          (cd "$D" && md5sum factorial_*.log factorial_*.json agregado.log > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(019): factorial de la mosca en Actions x64, 9 configuraciones y agregado" || echo nada_que_commitear
+          git pull --rebase origin titan/factorial-mosca-2026-10-13 || true
+          git push origin HEAD:titan/factorial-mosca-2026-10-13
