@@ -1,0 +1,27 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3 | pandas 3.0.5
+# md5 script = 798a824cd47808155fa12adb9e652dac
+# md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e | md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+# config: R2_CON_TASA (recorte R2, inhibicion CON, neurona TASA) taus=[5] pruebas=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11] celdas=['0.6|0.45'] etiqueta=t5c5
+SUJETO R2 neuronas=33489 aristas_crudas=4031897 inhibitorias_crudas=1506653 entradas=564 contiene_M46=True contiene_R1=True esperado=(33489, 4031897) -> True
+RADIO crudo=2032.307097 metodo=eigs | 0.2 s
+SUJETO neuronas=33489 con_entrada=564 aristas=4031897 inhibitorias=1506653
+SUJETO tipo=LC4 con_entrada_por_lado=(54,50)
+SUJETO tipo=LPLC2 con_entrada_por_lado=(108,102)
+SUJETO tipo=LPLC4 con_entrada_por_lado=(56,54)
+SUJETO tipo=LPLC1 con_entrada_por_lado=(68,72)
+DATOS entrenamiento=2400 prueba=2000 entradas_regla_propia=564 entradas_regla40=40
+CORRIDA celda=0.6|0.45 tau=5 prueba=2 W=0.9075 regla_propia=0.9330 regla40=0.8975 dif=-0.0255
+CORRIDA celda=0.6|0.45 tau=5 prueba=3 W=0.9065 regla_propia=0.9270 regla40=0.9055 dif=-0.0205
+CORRIDA celda=0.6|0.45 tau=5 prueba=4 W=0.9070 regla_propia=0.9315 regla40=0.9035 dif=-0.0245
+CORRIDA celda=0.6|0.45 tau=5 prueba=5 W=0.8980 regla_propia=0.9245 regla40=0.9030 dif=-0.0265
+CORRIDA celda=0.6|0.45 tau=5 prueba=6 W=0.8985 regla_propia=0.9260 regla40=0.9045 dif=-0.0275
+CORRIDA celda=0.6|0.45 tau=5 prueba=7 W=0.9060 regla_propia=0.9190 regla40=0.9010 dif=-0.0130
+CORRIDA celda=0.6|0.45 tau=5 prueba=8 W=0.8990 regla_propia=0.9235 regla40=0.8995 dif=-0.0245
+CORRIDA celda=0.6|0.45 tau=5 prueba=9 W=0.9015 regla_propia=0.9255 regla40=0.8955 dif=-0.0240
+CORRIDA celda=0.6|0.45 tau=5 prueba=10 W=0.9040 regla_propia=0.9230 regla40=0.9025 dif=-0.0190
+CORRIDA celda=0.6|0.45 tau=5 prueba=11 W=0.9100 regla_propia=0.9250 regla40=0.9035 dif=-0.0150
+CELDA 0.6|0.45 lista | 3059.9 s
+CHEQUEO INSTRUMENTO R2_tamano=True -> VALIDO
+escrito factorial2_R2_CON_TASA_t5c5.json md5=330c83661206f116d65b0b3f1a3fb2dd
+# duracion_s=3065.5
+EXIT_RUN=0

@@ -1,0 +1,15 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = c4f1c4d39c99f07cb9ad7977b6f3b01a
+# md5 factorial2_mosca = 798a824cd47808155fa12adb9e652dac | md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e | md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+# nulos tipo=SL k=[25, 26, 27, 28, 29] celda=(0.3, 0.15) tau=0 prueba=2 real=False
+CHEQUEO SL_IGUAL_MODULO (R1, 91484 aristas, semilla [7, 0]) -> True
+SUJETO R2 neuronas=33489 aristas=4031897 entradas=564 -> True
+NULO SL k=25 acierto=0.6355 radio=590.3979 destinos_cambiados=4030543 guarda=True | 588.6 s
+NULO SL k=26 acierto=0.7715 radio=442.7017 destinos_cambiados=4030616 guarda=True | 624.1 s
+NULO SL k=27 acierto=0.6070 radio=490.3954 destinos_cambiados=4030607 guarda=True | 625.9 s
+NULO SL k=28 acierto=0.7955 radio=502.6567 destinos_cambiados=4030614 guarda=True | 609.5 s
+NULO SL k=29 acierto=0.5075 radio=378.9421 destinos_cambiados=4030546 guarda=True | 618.2 s
+CHEQUEO INSTRUMENTO SL_IGUAL_MODULO=True R2_tamano=True nulos_SL=True -> VALIDO
+escrito nulos_R2_SL_k025.json md5=259921f527dedcd54825ddfb6d5ea19f
+# duracion_s=3077.5
+EXIT_RUN=0

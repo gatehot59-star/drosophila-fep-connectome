@@ -1,0 +1,17 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = c4f1c4d39c99f07cb9ad7977b6f3b01a
+# md5 factorial2_mosca = 798a824cd47808155fa12adb9e652dac | md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e | md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+# nulos tipo=T k=[0, 1, 2, 3, 4] celda=(0.3, 0.15) tau=0 prueba=2 real=True
+CHEQUEO SL_IGUAL_MODULO (R1, 91484 aristas, semilla [7, 0]) -> True
+SUJETO R2 neuronas=33489 aristas=4031897 entradas=564 -> True
+RADIO real crudo=2032.307097
+REAL W=0.9465 | 712.6 s
+NULO T k=0 acierto=0.7035 tipos_cambiados=423 guarda=True | 725.3 s
+NULO T k=1 acierto=0.8135 tipos_cambiados=403 guarda=True | 698.3 s
+NULO T k=2 acierto=0.7295 tipos_cambiados=421 guarda=True | 706.9 s
+NULO T k=3 acierto=0.7295 tipos_cambiados=422 guarda=True | 681.5 s
+NULO T k=4 acierto=0.7285 tipos_cambiados=413 guarda=True | 703.7 s
+CHEQUEO INSTRUMENTO SL_IGUAL_MODULO=True R2_tamano=True nulos_T=True -> VALIDO
+escrito nulos_R2_T_k000.json md5=ec16627fc8e685830e261111aae9d2a0
+# duracion_s=4240.4
+EXIT_RUN=0
