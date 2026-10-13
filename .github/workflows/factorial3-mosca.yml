@@ -1,0 +1,141 @@
+name: factorial3-mosca
+# Respuesta 2026-10-13-008. Factorial 3: R2 con 10 x 10 semillas (factorial2_mosca.py sellado en 9442fdf, sin
+# cambios) y 50 + 50 nulos SL y T de R2. 81 trabajos (1 ancla, 60 de grilla, 20 de nulos) y el agregado.
+# Solo se dispara al pushear results/factorial3_2026-10-13/CORRER en esta rama, o a mano.
+on:
+  push:
+    branches: ["titan/factorial3-mosca-2026-10-13"]
+    paths: ["results/factorial3_2026-10-13/CORRER"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  ancla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: correr el ancla
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          python -c "import numpy, pandas, scipy, pyarrow, torch, platform; print(platform.platform(), 'numpy', numpy.__version__, 'pandas', pandas.__version__, 'scipy', scipy.__version__, 'pyarrow', pyarrow.__version__, 'torch', torch.__version__)" > out/versiones_ancla.txt 2>&1 || true
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv >> out/versiones_ancla.txt
+          python tools/factorial2/factorial2_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --config ANCLA_015 2>&1 | tee out/factorial3_ancla.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fact3-ancla
+          path: out/
+  grilla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        tau: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        ci: [0, 1, 2, 3, 4, 5]
+        include:
+          - {ci: 0, celda: "0.0|0.15"}
+          - {ci: 1, celda: "0.0|0.45"}
+          - {ci: 2, celda: "0.3|0.15"}
+          - {ci: 3, celda: "0.3|0.45"}
+          - {ci: 4, celda: "0.6|0.15"}
+          - {ci: 5, celda: "0.6|0.45"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: correr una semilla de tau en una celda, 10 semillas de prueba
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          E=t${{ matrix.tau }}c${{ matrix.ci }}
+          python -c "import numpy, pandas, scipy, pyarrow, torch, platform; print(platform.platform(), 'numpy', numpy.__version__, 'pandas', pandas.__version__, 'scipy', scipy.__version__, 'pyarrow', pyarrow.__version__, 'torch', torch.__version__)" > out/versiones_grilla_$E.txt 2>&1 || true
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv >> out/versiones_grilla_$E.txt
+          python tools/factorial2/factorial2_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --config R2_CON_TASA --taus ${{ matrix.tau }} --pruebas 2,3,4,5,6,7,8,9,10,11 --celdas "${{ matrix.celda }}" --etiqueta $E 2>&1 | tee out/factorial3_grilla_$E.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fact3-grilla-t${{ matrix.tau }}c${{ matrix.ci }}
+          path: out/
+  nulos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        tipo: [SL, T]
+        k0: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: correr cinco nulos
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          E=${{ matrix.tipo }}_k${{ matrix.k0 }}
+          REAL=""
+          if [ "${{ matrix.k0 }}" = "0" ]; then REAL="--real"; fi
+          python -c "import numpy, pandas, scipy, pyarrow, torch, platform; print(platform.platform(), 'numpy', numpy.__version__, 'pandas', pandas.__version__, 'scipy', scipy.__version__, 'pyarrow', pyarrow.__version__, 'torch', torch.__version__)" > out/versiones_nulos_$E.txt 2>&1 || true
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv >> out/versiones_nulos_$E.txt
+          python tools/factorial3/nulos_r2.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --tipo ${{ matrix.tipo }} --k0 ${{ matrix.k0 }} --n 5 $REAL 2>&1 | tee out/factorial3_nulos_$E.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: fact3-nulos-${{ matrix.tipo }}-k${{ matrix.k0 }}
+          path: out/
+  agregar:
+    needs: [ancla, grilla, nulos]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: fact3-*
+          path: art
+          merge-multiple: true
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          python -m pip install numpy==2.5.3
+          D=results/factorial3_2026-10-13
+          mkdir -p "$D"
+          cp art/* "$D"/ || true
+          python tools/factorial3/agregar_factorial3.py "$D" results/factorial2_2026-10-13 > "$D/agregado.log" 2>&1 || echo "agregador_exit=$?" >> "$D/agregado.log"
+          (cd "$D" && md5sum factorial3_*.log *.json agregado.log > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-13-008): factorial 3 de la mosca en Actions x64, 81 trabajos y agregado" || echo nada_que_commitear
+          git pull --rebase origin titan/factorial3-mosca-2026-10-13 || true
+          git push origin HEAD:titan/factorial3-mosca-2026-10-13
