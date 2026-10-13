@@ -34,15 +34,22 @@ Sintonias por tipo (supuestos declarados):
          expansion (x 1 frontal, x 0.3 lateral). Supuesto: LPLC4 es la entrada visual principal de DNp07 (1.448
          sinapsis) y DNp07 responde mas a barras de adelante hacia atras (Ache 2019). SILENCIOSA: descriptiva.
 Lector E4 sin entrenar (lineas etiquetadas):
-  DNp01 izq y der -> despegar (1), compiten solo posada. DNp07 izq y der -> aterrizar (2); DNp06 izq -> girar a
-  la der (3); DNp06 der -> girar a la izq (4); compiten solo en vuelo (el estado es clasico, decision de la 004).
+  DNp01 izq y der -> despegar (1), compiten solo posada. DNp07 izq y der -> aterrizar (2); DNp06 izq menos DNp06
+  der -> girar a la der (3); DNp06 der menos izq -> girar a la izq (4); compiten solo en vuelo (el estado es
+  clasico, decision de la 004).
+  Cambio declarado tras el humo (humo1.log md5 5c27e41baba0542f43299d5d6efef598) y antes del sello: las lineas de
+  giro eran DNp06 izq y DNp06 der sueltas; con el looming frontal las dos cruzaban antes que DNp07, y en vuelo el
+  aterrizaje frontal dio 0,050 a 0,075 con W y 0,025 con la regla a mano. La mosca gira por la diferencia
+  izquierda menos derecha (Kim 2023 mide L-R WBA): una activacion simetrica no gira. El cambio es el mismo para
+  W, SL, T y la regla a mano.
   Umbral de cada linea: cuantil 0.95 del maximo de esa linea en los ensayos de ENTRENAMIENTO cuyo estado deja
   competir a la linea y cuya respuesta correcta es nada (posada: PUNTO, BARRA y NADA; en vuelo: NADA).
   Gana la primera linea que cruza; empate en el mismo paso: mayor exceso maximo. Sin cruce: nada.
 Nulos: SL (destinos barajados dentro de cada bloque de lados, conserva grados; funcion de la 003) y T (cableado
 intacto, sintonias barajadas entre las visuales del mismo lado), 300 cada uno.
 Rival: regla a mano con las mismas lineas sobre las entradas crudas (DNp01 del lado s: media de LC4 y LPLC2 de
-ese lado; DNp06: media de LPLC1 y LPLC2; DNp07: media de LPLC4), mismos umbrales y misma carrera.
+ese lado; DNp06: media de LPLC1 y LPLC2, y el giro por su diferencia entre lados; DNp07: media de LPLC4), mismos
+umbrales y misma carrera.
 Descriptivo: ridge entrenado por estado sobre las entradas crudas (techo entrenado).
 Celdas primarias: A en {0, 0.3, 0.6} x ruido en {0.15, 0.45}, con LPLC1 = PUNTO y LPLC4 = PROGRESIVA.
 Pruebas: W contra SL y T, p por rango, Holm sobre 12 por cola. Celda: GANA si Holm sup < 0.05 contra SL y contra
@@ -218,6 +225,14 @@ def simular(W, tau, idx, d, nv):
 
 
 # ---------------- lector ----------------
+def lineas(S):
+    """Giro por diferencia bilateral: la mosca gira por izquierda menos derecha."""
+    out = S.copy()
+    out[:, :, 4] = S[:, :, 4] - S[:, :, 5]
+    out[:, :, 5] = S[:, :, 5] - S[:, :, 4]
+    return out
+
+
 def umbrales(S, y, vuelo):
     th = np.zeros(6)
     for k in range(6):
@@ -362,15 +377,15 @@ def main():
         return dtr, dte
 
     def pred(Wm, idx, dtr, dte):
-        th = umbrales(simular(Wm, tau0, idx, dtr, nv), ytr, vtr)
-        return carrera(simular(Wm, tau0, idx, dte, nv), th, vte), th
+        th = umbrales(lineas(simular(Wm, tau0, idx, dtr, nv)), ytr, vtr)
+        return carrera(lineas(simular(Wm, tau0, idx, dte, nv)), th, vte), th
 
     def crudas(d):
         return d["drive"][:, :, idx_W] + d["ruido"]
 
     def regla(dtr, dte):
-        th = umbrales(lineas_crudas(crudas(dtr)), ytr, vtr)
-        return carrera(lineas_crudas(crudas(dte)), th, vte)
+        th = umbrales(lineas(lineas_crudas(crudas(dtr))), ytr, vtr)
+        return carrera(lineas(lineas_crudas(crudas(dte))), th, vte)
 
     def acc(p):
         return float((p == yte).mean())
