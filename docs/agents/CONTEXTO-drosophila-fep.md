@@ -1,8 +1,28 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-12, 11:58 (America/Buenos_Aires), con la respuesta 2026-10-12-009 (**Tao no auditó**: a las 11:39 contestó que leyó el alcance y que todavía no auditó nada, y pidió «confirmo» para un lote de 7 escrituras por su regla de cinco o más; está parado desde entonces. Abraham pidió revisar todo con esa auditoría antes del token, así que el borrador de Zenodo la espera. Lo que gastó Tao en créditos es NO MEDIDO para BRAIN). La 008 dejó las líneas etiquetadas diseñadas y sin correr. La 007 dejó la v2 del Paper 1 lista para depositar en el PR #27 (manuscrito, erratum revisado contra el texto del PDF v1.0, render determinista y depósito en borrador; faltan el token de Zenodo y el merge, que son de Abraham) y mandó el pedido de auditoría a TITÁN Tao a las 11:36 (tarea en Pipeline TITAN con mención, porque asignar agentes a tareas está apagado en el workspace). La 006 fue la síntesis en criollo: la mosca sirve de mapa y de reflejo chico, no de cerebro entrenable. La 005 (entrada visual por tipo de neurona) dio NO PAGA: con lector entrenado sobre las 4 descendentes el cableado de la mosca nunca le gana a SL, pierde contra las sintonías barajadas si LPLC4 es muda y el rival clásico crudo le gana en 6 de 6; incluye el resumen de la 004 y la 005. La 004 mostró que ni DBC3 ni LSTM sostienen el estado de vuelo 90 pasos y que la máquina de estados les gana. La 003 corrió el primer acople SparseLTC → DBC3 (en el techo, empate con LSTM y con el barajado). La 002 armó el catálogo de circuitos (corregida por la 003 en LC9 y DNp10). La 001 fijó la arquitectura por etapas (diseño). La 016 respondió cómo operan las 26. La 015 firmó la 014 sólo para la semilla 0.
+**Última actualización:** 2026-10-13, 00:50 (America/Buenos_Aires), con la respuesta 2026-10-12-018. **La sección «Tarde y noche del 12-oct (010 a 018)» manda sobre lo que choque en el resto del archivo**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
+
+## Tarde y noche del 12-oct (010 a 018) · manda sobre el resto
+
+- **Paper 1 v2.0 (010 y 018):** la 010 retiró «lista para depositar» por tres inconsistencias internas del manuscrito del PR #27. **La 018 las corrigió** con `tools/v2/fix_v2_018.py`, aplicado en brain-env y en Actions con md5 iguales:
+  - el «2.4-fold» era visual sobre gustatory; el cociente entre extremos es 4,2× sin umbral y baja de 3.862× a 40× con el umbral;
+  - la amplificación temporal aparece con SparseLTC y Linear y no con LIF-soft (0,253 a 0,002); corregido también en el erratum, ítem 7, porque la v1.0 tenía el mismo error;
+  - el cero de olfato y visión sin umbral es compatible con el nulo de neurópilo (1,0 ± 0,9 y 0,03 ± 0,16), no intesteable; sólo con el umbral el nulo es 0,0 exacto.
+  - PDF nuevos en `/workspace/v2cierre_2026-10-12/deposito_018/`: manuscrito `d353cf0f…` (17 páginas) y erratum `05052e6e…` (15 páginas); render PASS y verificación PASS en clon fresco de `f19a9c7`.
+  - **Falta:** la Tabla 8 (el resumen y el §4.1 usan +14,8σ como firme y no se reprodujo), el informe archivado de Tao (comunicó hallazgos a las 13:25 en su chat, 010), el merge y el token.
+- **No es la neurona (011):** el motivo de 28 llevaba el 2,96% de la entrada de sus descendentes y nada de su inhibición; la DCMT como vino invierte el glutamato (17% del cerebro).
+- **Líneas etiquetadas (012): NO PAGAN** con la tarea de la 005; lo que decidía era un supuesto de entrada (LPLC2 al punto).
+- **Fisiología (013 y 014):** LPLC2 responde a objetos que pasan (Kim 2023) y la mosca esquiva en vuelo por DNp06, cuya mayor entrada es LPLC1 (1.023 sinapsis) y después LPLC2 (1.003); las barras de adelante hacia atrás piden aterrizaje (Ache 2019).
+- **Tarea de la mosca (015 sellada, 016 corrida, 018 leída): PAGA LA TAREA DE LA MOSCA.** 46 neuronas, cinco acciones, líneas etiquetadas sin entrenar: W les gana a 300 SL y 300 T en 6/6 celdas (Holm 0,0399), instrumento VÁLIDO. Contra la regla a mano: PEOR en 4, EMPATE en 2, nunca MEJOR.
+  - **La regla a mano es el mismo diseño de la mosca idealizado** (las etiquetas tipo → descendente de FlyWire sobre las entradas crudas): el diseño paga y nuestra simulación de sus sinapsis le resta.
+  - Descriptivo: con LPLC4 muda W aguanta más que la regla (0,8030 contra 0,7680); con ruido 0,45 W gira mejor en 2 de 3 amplitudes.
+  - Rama `titan/tarea-mosca-2026-10-12`: sello `57d094a`, log `bdf03c2` (md5 `ad8c94b4…`).
+- **Qué le falta al modelo (018):** las 6 descendentes reciben 40.145 sinapsis; el motivo lleva 875 (2,18%) y 0 de las 14.576 inhibitorias (36,3%). R1 (con sus presinápticas de 5 sinapsis o más) tiene 1.504 neuronas; R2, 33.489. Rama `titan/que-falta-al-modelo-2026-10-12` (`3cf6332`).
+- **Corrección a la 017:** «la mosca no reemplaza a la ingeniería» estaba mal planteado; lo que le ganó a nuestro modelo fue la mosca idealizada.
+- **Máquinas (016 y 017):** para un script numpy sellado la máquina rápida es Actions (11,6×), no Kaggle con GPU; Kaggle sólo con un port a torch verificado contra numpy.
+- **Espera decisión de Abraham:** sellar el factorial de la 018 (recorte 46 / R1 / R2, neurona de tasa / LIF con signo / líquida plena, con y sin inhibición; misma tarea, mismos nulos, la regla idealizada como rival); la Tabla 8; el merge del PR #27 y el token de Zenodo.
 
 ## Mapa del repo (respuesta 2026-10-11-004)
 
@@ -21,7 +41,7 @@
 - **Abiertos en GitHub:**
   - PR #1, #2, #3, #12, #25, #26 y **#27 (v2.0 del Paper 1)**;
   - issues #4, #5 y #13 a #15.
-- **`docs/SECCION-V2-DOS-SALTOS.md` de main es la versión anterior al null anatómico** (323× contra el null de grado). La de la rama dice que el 323× era co-localización: el spread cae a 2,4× y queda la depleción gustativa (10 contra 101,6, z = −78,9). **El PR #27 la trae a main.**
+- **`docs/SECCION-V2-DOS-SALTOS.md` de main es la versión anterior al null anatómico** (323× contra el null de grado). La de la rama dice que el 323× era co-localización: el cociente entre extremos cae a 4,2× sin umbral (la v2.0 decía 2,4×, que era visual sobre gustatory: corregido en la 018) y queda la depleción gustativa (10 contra 101,6, z = −78,9). **El PR #27 la trae a main.**
 - En el PDF, la Tabla 7 es la de reciprocidad por circuito y la de RDI es la Tabla 8. El `reproduce_table7` del release inicial es de la trayectoria de RDI y no la reproduce.
 
 ## Veredicto operativo

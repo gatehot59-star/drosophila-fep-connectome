@@ -1,0 +1,10 @@
+Python 3.12.3
+884adef399144e92dd3c785e70de68b8  tools/contexto/actualizar_contexto_018.py
+ANTES docs/agents/CONTEXTO-drosophila-fep.md 9253aeb87be5447c4d380c1d7a452ae9
+ANCLA cabecera=1 base=1
+ANCLA spread=1
+DESPUES docs/agents/CONTEXTO-drosophila-fep.md 9429c509833ce877d02cb67155d9b38d
+ANTES docs/agents/respuestas/2026-10-12-017-objetivamente-mapa-y-reflejos-chicos-no-cerebro-y-la-regla-a-mano-sigue-adelante.md ba954b914974ebf2f16a13a50f66202b
+ANCLA doc_espejo_017=1
+DESPUES docs/agents/respuestas/2026-10-12-017-objetivamente-mapa-y-reflejos-chicos-no-cerebro-y-la-regla-a-mano-sigue-adelante.md 16448008fba2b8c5aef3d637375dc201
+CONTEXTO OK

@@ -2,6 +2,8 @@
 
 **Doc espejo:** https://app.clickup.com/90171457413/docs/2kza6fw5-21597
 
+**Corregido por la 018:** la regla a mano de la 015 es el mismo diseño de la mosca idealizado, no un control clásico, y la corrida completa dio PAGA LA TAREA DE LA MOSCA (6/6 contra SL y T). Ver `docs/agents/respuestas/2026-10-12-018-paga-la-tarea-de-la-mosca-la-regla-era-la-mosca-idealizada-y-la-v2-quedo-corregida.md`.
+
 ## Veredicto primero (F-01)
 
 - [MEDIDO] Lo que funciona: un **mapa** verificado (FlyWire v783, 10/10 predicciones de literatura como aristas, 002) y **reflejos chicos** que andan en simulación desde el día cero (escape de 26 neuronas; 0,98 con la τ líquida plena entrenada, firmado sólo para la semilla 0).
