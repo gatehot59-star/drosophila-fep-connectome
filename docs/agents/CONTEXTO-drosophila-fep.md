@@ -1,10 +1,10 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-13, 18:45 (America/Buenos_Aires), con la respuesta 2026-10-13-014. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-13, 21:05 (America/Buenos_Aires), con la respuesta 2026-10-13-015. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Madrugada y mañana del 13-oct (019 a 2026-10-13-014) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-13-015) · manda sobre el resto
 
 - **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
   - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
@@ -65,9 +65,14 @@
   - Lo más cerca de cerrar es la v2 del Paper 1; las tres escalas son material para el Paper 2.
 - **Informe detallado (2026-10-13-013):** logros, contraste con Shiu, Lappalainen, Costi, Suárez, Lechner, Vaxenburg y NeuroMechFly (doi en la respuesta), relevancia y escala.
   - Relevante en un nicho y por el método; para publicar: preprint de métodos (opinión, no medición).
-  - Escala: el cerebro entero (138.639 neuronas, 15.091.983 conexiones) costaría unas 3,7 veces R2 si el costo sigue a las conexiones (NO MEDIDO); BANC trae `fafb_783_match_id` y es el segundo conectoma natural (NO MEDIDO).
+  - Escala: el cerebro entero (138.639 neuronas, 15.091.983 conexiones) costaría unas 3,7 veces R2 si el costo sigue a las conexiones (estimación; el costo absoluto quedó medido en la 2026-10-13-015: 0,026 s por ensayo en una T4 de Kaggle y 3,2 s en brain-env); BANC trae `fafb_783_match_id` y es el segundo conectoma natural (NO MEDIDO).
   - La novedad («nadie comparó el cableado contra el plano del animal con los mismos sensores») es de búsqueda acotada: NO MEDIDO hasta una revisión sistemática.
-- **Espera decisión de Abraham:** qué sigue tras el factorial 3; merge del PR #27 (la v2 ya está lista, 2026-10-13-014) y token de Zenodo; responderle a Tao en su PR.
+- **Factorial 4 sellado en Kaggle (2026-10-13-015), sin correr:** el banco con el cerebro entero de FlyWire v783 (138.639 neuronas, 15.091.983 aristas, 6.032.681 inhibitorias, las mismas 564 entradas de R2). Rama `titan/factorial4-cerebro-entero-2026-10-13`: instrumento `ace8fe7` (`cerebro_mosca.py` `36a9f005…`, motor torch float64) y sello `431b7bd` (`tools/factorial4/SELLO-FACTORIAL4.md`).
+  - Humo medido, todo VÁLIDO, en brain-env (CPU) y en tres sesiones T4 de Kaggle: paridad torch contra numpy de 4e-16 o menos en R1 y en el cerebro entero, y **REPRO_R2: la T4 reproduce exacto el 0,9465 de R2 del factorial 3**, en cada una de las dos GPU. 0,026 s por ensayo por T4, igual con dos procesos a la vez; 3,1 GB de GPU.
+  - Plan: las 600 corridas del factorial 3 + 50 SL + 50 T; 2 kernels T4 x2 de `abrahammendieta`, 4 carriles, 22 trabajos; unas 3,6 h de reloj y 7 h de cuota de GPU (cuánta queda: NO MEDIDO).
+  - Hipótesis pre-registradas: H_SUPERA_CE (contra su regla, margen 1 punto), H_ESCALA (CE contra R2 en los mismos ensayos) y H_CABLEADO_CE (50 SL y 50 T, Holm). Agregador probado 5/5 en clon fresco del sello.
+  - La salida grande (unos 1,6 MB de json con la predicción de cada ensayo) no tiene vía directa a git desde brain-env: irá compacta (agregado, MD5SUMS, recibos, tablas) salvo que haya un token para este repo.
+- **Espera decisión de Abraham:** disparar el factorial 4 (unas 7 h de cuota de GPU de `abrahammendieta`); merge del PR #27 (la v2 ya está lista, 2026-10-13-014) y token de Zenodo; responderle a Tao en su PR.
 
 ## Tarde y noche del 12-oct (010 a 018)
 
