@@ -1,0 +1,162 @@
+{
+ "respuesta": "2026-10-13-015",
+ "nota": "humo en Kaggle antes de sellar: mide s/ensayo y memoria en T4 y P100, PARIDAD en CUDA, REPRO_R2 y los tres modos; numeros de grilla y nulos sin valor (--humo)",
+ "cuenta": "abrahammendieta",
+ "maquina": "NvidiaTeslaT4",
+ "repo": "https://github.com/gatehot59-star/drosophila-fep-connectome.git",
+ "tarball": "https://codeload.github.com/gatehot59-star/drosophila-fep-connectome/tar.gz/",
+ "sha_instrumento": "ace8fe78093a9109c20235746d867f2b168290d2",
+ "script": "tools/factorial4/cerebro_mosca.py",
+ "md5": {
+  "tools/factorial4/cerebro_mosca.py": "36a9f005cfc87470c74af8f303af56c3",
+  "tools/factorial2/factorial2_mosca.py": "798a824cd47808155fa12adb9e652dac",
+  "tools/factorial3/nulos_r2.py": "c4f1c4d39c99f07cb9ad7977b6f3b01a",
+  "tools/escape_aterrizaje/tarea_mosca.py": "40d64e074d9163753439307c5be4ac5e",
+  "tools/escape_aterrizaje/escape_aterrizaje_dbc3.py": "4d40477d87406c31672acfb6e6e8f5a2",
+  "tools/escape_aterrizaje/entrada_por_tipos.py": "e060c4bffb685aa550dadc19eda3dd02"
+ },
+ "insumos": {
+  "connectivity.parquet": [
+   "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet",
+   "3d802fd542b5d18570ba1ba0bb0abed9"
+  ],
+  "annotations.tsv": [
+   "https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv",
+   "719904abad876c68ace1b5690c9b9b63"
+  ]
+ },
+ "pip": [
+  "numpy==2.5.3",
+  "pandas==3.0.5",
+  "scipy==1.18.1",
+  "pyarrow==25.0.1"
+ ],
+ "kernels": [
+  {
+   "slug": "f4-ce-humo-t4-2026-10-13",
+   "maquina": "NvidiaTeslaT4",
+   "corridas": [
+    {
+     "etiqueta": "verificar_t4",
+     "args": [
+      "--modo",
+      "verificar",
+      "--medir_ensayos",
+      "1000",
+      "--repro_r2",
+      "--etiqueta",
+      "t4"
+     ]
+    },
+    {
+     "etiqueta": "grilla_humo_t4",
+     "args": [
+      "--modo",
+      "grilla",
+      "--humo",
+      "--taus",
+      "0",
+      "--pruebas",
+      "2",
+      "--celdas",
+      "0.3|0.15",
+      "--etiqueta",
+      "humo_t4"
+     ]
+    },
+    {
+     "etiqueta": "nulos_sl_humo_t4",
+     "args": [
+      "--modo",
+      "nulos",
+      "--humo",
+      "--tipo",
+      "SL",
+      "--k0",
+      "0",
+      "--n",
+      "1",
+      "--real"
+     ]
+    },
+    {
+     "etiqueta": "nulos_t_humo_t4",
+     "args": [
+      "--modo",
+      "nulos",
+      "--humo",
+      "--tipo",
+      "T",
+      "--k0",
+      "0",
+      "--n",
+      "1"
+     ]
+    }
+   ]
+  },
+  {
+   "slug": "f4-ce-humo-p100-2026-10-13",
+   "maquina": "NvidiaTeslaP100",
+   "corridas": [
+    {
+     "etiqueta": "verificar_p100",
+     "args": [
+      "--modo",
+      "verificar",
+      "--medir_ensayos",
+      "1000",
+      "--repro_r2",
+      "--etiqueta",
+      "p100"
+     ]
+    },
+    {
+     "etiqueta": "grilla_humo_p100",
+     "args": [
+      "--modo",
+      "grilla",
+      "--humo",
+      "--taus",
+      "0",
+      "--pruebas",
+      "2",
+      "--celdas",
+      "0.3|0.15",
+      "--etiqueta",
+      "humo_p100"
+     ]
+    },
+    {
+     "etiqueta": "nulos_sl_humo_p100",
+     "args": [
+      "--modo",
+      "nulos",
+      "--humo",
+      "--tipo",
+      "SL",
+      "--k0",
+      "0",
+      "--n",
+      "1",
+      "--real"
+     ]
+    },
+    {
+     "etiqueta": "nulos_t_humo_p100",
+     "args": [
+      "--modo",
+      "nulos",
+      "--humo",
+      "--tipo",
+      "T",
+      "--k0",
+      "0",
+      "--n",
+      "1"
+     ]
+    }
+   ]
+  }
+ ]
+}

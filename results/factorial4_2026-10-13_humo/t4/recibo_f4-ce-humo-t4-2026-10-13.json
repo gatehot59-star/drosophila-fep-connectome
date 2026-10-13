@@ -1,0 +1,190 @@
+{
+ "kernel": "f4-ce-humo-t4-2026-10-13",
+ "config": {
+  "corridas": [
+   {
+    "args": [
+     "--modo",
+     "verificar",
+     "--medir_ensayos",
+     "1000",
+     "--repro_r2",
+     "--etiqueta",
+     "t4"
+    ],
+    "etiqueta": "verificar_t4"
+   },
+   {
+    "args": [
+     "--modo",
+     "grilla",
+     "--humo",
+     "--taus",
+     "0",
+     "--pruebas",
+     "2",
+     "--celdas",
+     "0.3|0.15",
+     "--etiqueta",
+     "humo_t4"
+    ],
+    "etiqueta": "grilla_humo_t4"
+   },
+   {
+    "args": [
+     "--modo",
+     "nulos",
+     "--humo",
+     "--tipo",
+     "SL",
+     "--k0",
+     "0",
+     "--n",
+     "1",
+     "--real"
+    ],
+    "etiqueta": "nulos_sl_humo_t4"
+   },
+   {
+    "args": [
+     "--modo",
+     "nulos",
+     "--humo",
+     "--tipo",
+     "T",
+     "--k0",
+     "0",
+     "--n",
+     "1"
+    ],
+    "etiqueta": "nulos_t_humo_t4"
+   }
+  ],
+  "insumos": {
+   "annotations.tsv": [
+    "https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv",
+    "719904abad876c68ace1b5690c9b9b63"
+   ],
+   "connectivity.parquet": [
+    "https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet",
+    "3d802fd542b5d18570ba1ba0bb0abed9"
+   ]
+  },
+  "kernel": "f4-ce-humo-t4-2026-10-13",
+  "md5": {
+   "tools/escape_aterrizaje/entrada_por_tipos.py": "e060c4bffb685aa550dadc19eda3dd02",
+   "tools/escape_aterrizaje/escape_aterrizaje_dbc3.py": "4d40477d87406c31672acfb6e6e8f5a2",
+   "tools/escape_aterrizaje/tarea_mosca.py": "40d64e074d9163753439307c5be4ac5e",
+   "tools/factorial2/factorial2_mosca.py": "798a824cd47808155fa12adb9e652dac",
+   "tools/factorial3/nulos_r2.py": "c4f1c4d39c99f07cb9ad7977b6f3b01a",
+   "tools/factorial4/cerebro_mosca.py": "36a9f005cfc87470c74af8f303af56c3"
+  },
+  "pip": [
+   "numpy==2.5.3",
+   "pandas==3.0.5",
+   "scipy==1.18.1",
+   "pyarrow==25.0.1"
+  ],
+  "repo": "https://github.com/gatehot59-star/drosophila-fep-connectome.git",
+  "respuesta": "2026-10-13-015",
+  "script": "tools/factorial4/cerebro_mosca.py",
+  "sha": "ace8fe78093a9109c20235746d867f2b168290d2",
+  "tarball": "https://codeload.github.com/gatehot59-star/drosophila-fep-connectome/tar.gz/"
+ },
+ "etapas": {
+  "pip_rc": 0,
+  "via": "git",
+  "head": "ace8fe78093a9109c20235746d867f2b168290d2",
+  "md5_instrumento": "OK",
+  "md5_annotations.tsv": "719904abad876c68ace1b5690c9b9b63",
+  "md5_connectivity.parquet": "3d802fd542b5d18570ba1ba0bb0abed9"
+ },
+ "corridas": [
+  {
+   "etiqueta": "verificar_t4",
+   "args": [
+    "--modo",
+    "verificar",
+    "--medir_ensayos",
+    "1000",
+    "--repro_r2",
+    "--etiqueta",
+    "t4"
+   ],
+   "rc": 0,
+   "duracion_s": 95.0,
+   "log_md5": "f9efed9264e76aeb7a54f6bfd347e289",
+   "salidas_md5": {
+    "verificar_CE_t4.json": "ce2f50f5e9800a40cb4e5ee23d06da93"
+   }
+  },
+  {
+   "etiqueta": "grilla_humo_t4",
+   "args": [
+    "--modo",
+    "grilla",
+    "--humo",
+    "--taus",
+    "0",
+    "--pruebas",
+    "2",
+    "--celdas",
+    "0.3|0.15",
+    "--etiqueta",
+    "humo_t4"
+   ],
+   "rc": 0,
+   "duracion_s": 42.4,
+   "log_md5": "1122e02bb34bc55644239260e4f75bfa",
+   "salidas_md5": {
+    "factorial4_CE_CON_TASA_humo_t4.json": "dacab61ac5b8901c90326012aabd935d"
+   }
+  },
+  {
+   "etiqueta": "nulos_sl_humo_t4",
+   "args": [
+    "--modo",
+    "nulos",
+    "--humo",
+    "--tipo",
+    "SL",
+    "--k0",
+    "0",
+    "--n",
+    "1",
+    "--real"
+   ],
+   "rc": 0,
+   "duracion_s": 51.8,
+   "log_md5": "f2963620dbf2b0de4e1f1706bad3523b",
+   "salidas_md5": {
+    "nulos_CE_SL_k000.json": "acbea16b4286364299420514b3339ec7"
+   }
+  },
+  {
+   "etiqueta": "nulos_t_humo_t4",
+   "args": [
+    "--modo",
+    "nulos",
+    "--humo",
+    "--tipo",
+    "T",
+    "--k0",
+    "0",
+    "--n",
+    "1"
+   ],
+   "rc": 0,
+   "duracion_s": 42.9,
+   "log_md5": "8d9fa2326318029c9c117c71216616b5",
+   "salidas_md5": {
+    "nulos_CE_T_k000.json": "847ce19bb78712364f7068309f0fd6e0"
+   }
+  }
+ ],
+ "inicio_utc": "2026-10-13T23:19:26Z",
+ "rc": 0,
+ "motivo": "corridas",
+ "duracion_s": 277.0,
+ "fin_utc": "2026-10-13T23:24:03Z"
+}
