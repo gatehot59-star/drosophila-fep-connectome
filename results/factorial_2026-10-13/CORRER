@@ -1,0 +1,6 @@
+Disparo de la corrida completa del factorial sellado (respuesta 2026-10-12-019).
+Sello: 552942f. factorial_mosca.py 8224fdddc8bf675b0b8b0375bf27f6cb, agregar_factorial.py 7931c0884485abd1f74f35fbeb424d87,
+workflow ae5d49bad8f1d47608da88f49cba2d4c, modulo 015 40d64e074d9163753439307c5be4ac5e.
+Pedido de Abraham (13-oct 01:11 ART): primero revisar la auditoria de Tao (respuesta 2026-10-13-001), luego correr el factorial.
+Humo 2 con el sello en brain-env: 9/9 configuraciones rc=0 y agregado rc=0 (04:12 UTC).
+Este archivo no cambia nada del instrumento: solo dispara el workflow.
