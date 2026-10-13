@@ -1,0 +1,22 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3 | pandas 3.0.5
+# md5 script = 798a824cd47808155fa12adb9e652dac
+# md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e | md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+# config: R2_CON_TASA (recorte R2, inhibicion CON, neurona TASA) taus=[0] pruebas=[2, 3, 4, 5, 6] celdas=['0.3|0.45'] etiqueta=t0c3
+SUJETO R2 neuronas=33489 aristas_crudas=4031897 inhibitorias_crudas=1506653 entradas=564 contiene_M46=True contiene_R1=True esperado=(33489, 4031897) -> True
+RADIO crudo=2032.307097 metodo=eigs | 0.2 s
+SUJETO neuronas=33489 con_entrada=564 aristas=4031897 inhibitorias=1506653
+SUJETO tipo=LC4 con_entrada_por_lado=(54,50)
+SUJETO tipo=LPLC2 con_entrada_por_lado=(108,102)
+SUJETO tipo=LPLC4 con_entrada_por_lado=(56,54)
+SUJETO tipo=LPLC1 con_entrada_por_lado=(68,72)
+DATOS entrenamiento=2400 prueba=2000 entradas_regla_propia=564 entradas_regla40=40
+CORRIDA celda=0.3|0.45 tau=0 prueba=2 W=0.9440 regla_propia=0.9320 regla40=0.8795 dif=+0.0120
+CORRIDA celda=0.3|0.45 tau=0 prueba=3 W=0.9425 regla_propia=0.9255 regla40=0.8920 dif=+0.0170
+CORRIDA celda=0.3|0.45 tau=0 prueba=4 W=0.9455 regla_propia=0.9295 regla40=0.8890 dif=+0.0160
+CORRIDA celda=0.3|0.45 tau=0 prueba=5 W=0.9305 regla_propia=0.9200 regla40=0.8890 dif=+0.0105
+CORRIDA celda=0.3|0.45 tau=0 prueba=6 W=0.9345 regla_propia=0.9230 regla40=0.8925 dif=+0.0115
+CELDA 0.3|0.45 lista | 1770.2 s
+CHEQUEO INSTRUMENTO R2_tamano=True -> VALIDO
+escrito factorial2_R2_CON_TASA_t0c3.json md5=03791194fa4b1194da5ea86086ca5d6f
+# duracion_s=1777.2
+EXIT_RUN=0

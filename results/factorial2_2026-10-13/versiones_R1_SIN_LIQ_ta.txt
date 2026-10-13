@@ -1,0 +1,3 @@
+Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 numpy 2.5.3 pandas 3.0.5 scipy 1.18.1 pyarrow 25.0.1 torch 2.14.1+cpu
+3d802fd542b5d18570ba1ba0bb0abed9  /tmp/in/connectivity.parquet
+719904abad876c68ace1b5690c9b9b63  /tmp/in/annotations.tsv
