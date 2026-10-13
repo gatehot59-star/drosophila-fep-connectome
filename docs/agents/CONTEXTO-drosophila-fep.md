@@ -1,10 +1,10 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-13, 16:15 (America/Buenos_Aires), con la respuesta 2026-10-13-011. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-13, 17:30 (America/Buenos_Aires), con la respuesta 2026-10-13-012. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Madrugada y mañana del 13-oct (019 a 2026-10-13-011) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-13-012) · manda sobre el resto
 
 - **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
   - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
@@ -43,7 +43,7 @@
   - R1, las cuatro configuraciones, entre −1,02 y −1,48 puntos (NO_SUPERIOR); en R1_CON_LIQ y R1_SIN_TASA el intervalo excluye el cero. **Corrige la 002 y la 003:** con 100 corridas por configuración, R1 no alcanza a su diseño; queda alrededor de un punto abajo.
   - **R2_CON_TASA (33.489 neuronas): +1,28 puntos, IC [+0,79; +1,77], NO_INFERIOR**, positiva en las 6 celdas (SUPERA en amplitud 0, ruido 0,15). Es la primera vez que el cableado le gana a su diseño con los mismos sensores, pero por menos del margen: H_SUPERA no sostenida según lo sellado. R2 tiene 3 × 5 semillas.
   - Más sensores pagan: la regla de 418 le gana a la de 40 por +2,79 (AYUDA). R2 menos R1: +1,65 (NO_INFERIOR). LIQ: peor en M46 (−1,21) y equivalente en R1. Inhibición: sin efecto claro.
-- **F01, F06 y F07 aplicados en el PR #27 (2026-10-13-006):** bot `1f4a2e0`, manuscrito `2fa575c4…`, sección de dos saltos `23db9cac…`; render de prueba PASS, 18 páginas, `a22515e9…`. Falta el render desde `1f4a2e0`, el json de depósito y `--verificar`.
+- **F01, F06 y F07 aplicados en el PR #27 (2026-10-13-006):** bot `1f4a2e0`, manuscrito `2fa575c4…`, sección de dos saltos `23db9cac…`; render de prueba PASS, 18 páginas, `a22515e9…`. **Cerrado en la 2026-10-13-012:** render desde `1f4a2e0` PASS (manuscrito 18 páginas `a22515e9…`, erratum 15 páginas `05052e6e…`, en `/workspace/v2cierre_2026-10-13/deposito_013/` de brain-env), json de depósito `55f3ec63…` y `--verificar` PASS en clon fresco de `e81a903`; con el PDF viejo da FAIL. En el PDF: «Sufficient» 1 → 0, «138,140» 0 → 1, «1/6» 0 → 2. **F05 sigue abierto:** el resumen y las conclusiones usan +14,8σ como firme (10 apariciones).
 - **Factorial 3 sellado (2026-10-13-008), sin disparar.** Rama `titan/factorial3-mosca-2026-10-13`, sello `6a7b4cb`.
   - Grilla: R2_CON_TASA con τ 0..9 × prueba 2..11 × 6 celdas, con `factorial2_mosca.py` sin cambios (`798a824c…`).
   - Nulos: 50 SL y 50 T de R2 (`tools/factorial3/nulos_r2.py`, `c4f1c4d3…`) en A 0,3, ruido 0,15, τ 0, prueba 2.
@@ -63,7 +63,7 @@
   - Para un robot conviene el plano (la regla tipo de sensor → comando), no el cableado completo: rinde casi lo mismo y es mucho más barato.
   - Posición frente a la literatura: Shiu et al. (Nature 2024, el mismo archivo de conectividad) y Lappalainen et al. (Nature 2024) predicen actividad y la validan; acá la pregunta es otra (el cableado contra su propio diseño) y no hay nada medido fuera de simulación.
   - Lo más cerca de cerrar es la v2 del Paper 1; las tres escalas son material para el Paper 2.
-- **Espera decisión de Abraham:** qué sigue tras el factorial 3; cerrar el render y la verificación de la v2 (F01, F06 y F07 ya aplicados en `1f4a2e0`); decidir F05 (Tabla 8); merge del PR #27 y token de Zenodo; responderle a Tao en su PR.
+- **Espera decisión de Abraham:** qué sigue tras el factorial 3; decidir F05 (suavizar el +14,8σ en el resumen y las conclusiones, o intentar reproducir la Tabla 8); merge del PR #27 y token de Zenodo; responderle a Tao en su PR.
 
 ## Tarde y noche del 12-oct (010 a 018)
 
