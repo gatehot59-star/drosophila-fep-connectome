@@ -1,0 +1,21 @@
+# md5 conn=3d802fd542b5d18570ba1ba0bb0abed9 annot=719904abad876c68ace1b5690c9b9b63 log015=ad8c94b47350b5473b13848150047ab4
+DATOS aristas=15091983 sinapsis=54492922 neuronas_anotadas=139248
+SIGNO valores_Excitatory=[-1, 1]
+MOTIVO_015 neuronas=46 descendentes=6
+DN DNp01 left entrada_sinapsis=4327 en_motivo=118 (2.73%) inhibitorias=2227 (51.5%) inhibitorias_en_motivo=0 presinapticas=479 con_5_o_mas=222
+DN DNp01 left top_inhibitorias_por_tipo=CB3707 293; SAD014 136; LHAD1g1 130; PVLP010 113; CB0010 111
+DN DNp01 right entrada_sinapsis=5147 en_motivo=135 (2.62%) inhibitorias=2495 (48.5%) inhibitorias_en_motivo=0 presinapticas=483 con_5_o_mas=275
+DN DNp01 right top_inhibitorias_por_tipo=CB3707 340; SAD014 156; CL038 143; PVLP010 137; LHAD1g1 124
+DN DNp07 left entrada_sinapsis=4656 en_motivo=170 (3.65%) inhibitorias=1672 (35.9%) inhibitorias_en_motivo=0 presinapticas=556 con_5_o_mas=189
+DN DNp07 left top_inhibitorias_por_tipo=CB0442 241; PLP214 227; CL128a 95; PLP173 80; AOTU063b 68
+DN DNp07 right entrada_sinapsis=4061 en_motivo=138 (3.40%) inhibitorias=1495 (36.8%) inhibitorias_en_motivo=0 presinapticas=492 con_5_o_mas=161
+DN DNp07 right top_inhibitorias_por_tipo=PLP214 201; CB0442 160; SAD072 99; AOTU049 90; CL128a 81
+DN DNp06 left entrada_sinapsis=10488 en_motivo=160 (1.53%) inhibitorias=3152 (30.1%) inhibitorias_en_motivo=0 presinapticas=1069 con_5_o_mas=479
+DN DNp06 left top_inhibitorias_por_tipo=LHAD1g1 424; PVLP010 210; AVLP076 121; AVLP082 96; AVLP201 74
+DN DNp06 right entrada_sinapsis=11466 en_motivo=154 (1.34%) inhibitorias=3535 (30.8%) inhibitorias_en_motivo=0 presinapticas=1045 con_5_o_mas=484
+DN DNp06 right top_inhibitorias_por_tipo=LHAD1g1 399; PVLP010 262; AVLP076 142; AVLP082 102; PVLP080b 98
+TOTAL_6DN entrada=40145 en_motivo=875 (2.18%) inhibitorias=14576 (36.3%)
+RECORTE R1 neuronas=1504 aristas_internas=91484 sinapsis_internas=553976 neuronas_inhibitorias=421 (28.0%) contiene_motivo=True clases=central 883; visual_projection 526; ascending 48; descending 27; sensory 14; visual_centrifugal 6
+RECORTE R2 neuronas=33489 aristas_internas=4031897 sinapsis_internas=16971919 neuronas_inhibitorias=8460 (25.3%) contiene_motivo=True clases=optic 15969; central 10689; visual_projection 4656; ascending 881; sensory 489; descending 485
+CEREBRO neuronas_en_aristas=138639 aristas=15091983
+FIN
