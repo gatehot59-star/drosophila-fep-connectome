@@ -1,10 +1,10 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-13, 08:30 (America/Buenos_Aires), con la respuesta 2026-10-13-003. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-13, 09:40 (America/Buenos_Aires), con la respuesta 2026-10-13-005. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Madrugada y mañana del 13-oct (019 a 2026-10-13-003) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-13-005) · manda sobre el resto
 
 - **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
   - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
@@ -18,7 +18,27 @@
   - Robótica: `adc_to_q15` y `q15_to_pwm` desbordan int32 con `uint16_t` completos; `test_swarm.c` no puede dar rojo.
   - No se le comentó el PR ni se le escribió: espera el visto bueno de Abraham.
 - **Síntesis en criollo (2026-10-13-003):** la mosca da el plano (qué tipo de sensor va a qué comando) y, con cableado real suficiente, su simulación lo alcanza; no es un cerebro mejor que su plano ni que la ingeniería.
-- **Espera decisión de Abraham:** sellar el factorial 2 (la regla con los mismos sensores, varias semillas de τ y de prueba, margen de equivalencia, R2 en Kaggle); aplicar F01, F06 y F07 a la v2 y decidir F05 (Tabla 8); merge del PR #27 y token de Zenodo; responderle a Tao en su PR.
+- **Factorial 2 sellado (2026-10-13-004), sin disparar.** Rama `titan/factorial2-mosca-2026-10-13`, sello `9442fdf` (instrumento `798a824c…`, agregador `150b6f08…`, workflow `b497fe0d…`).
+  - La regla usa las mismas entradas que la red (40 en M46, 418 en R1, 564 en R2).
+  - τ y ruido por `root_id`: las DN tienen el mismo τ en los tres recortes.
+  - Semillas: τ 0..9 × prueba 2..11 (R2: 3 × 5).
+  - Margen 0,01, con bootstrap de dos vías y Bonferroni sobre 7.
+  - R2 (33.489 neuronas, 4.031.897 aristas) va a Actions y no a Kaggle: 0,79 s por ensayo en brain-env, techo de 2,7 h por trabajo.
+  - Humo 8/8 VÁLIDO y ancla exacta.
+  - Se dispara pusheando `results/factorial2_2026-10-13/CORRER`.
+- **Posicionamiento (2026-10-13-005): no hay neurona nueva.**
+  - La líquida nativa de SparseLTC (τ / (1 + g·|drive|)) es de la familia LTC (Hasani et al., AAAI 2021).
+  - La que ganó entrenada en el escape (t = sigmoid(b + Vx·x + Vh·z), z ← (1 − t)·z + t·tanh(·)) es la actualización de una GRU sin compuerta de reset (Cho et al., EMNLP 2014); en DualBrain lleva además LayerNorm.
+  - Antecedentes directos: LTC sobre cableado inspirado en C. elegans (Lechner et al., Nat Mach Intell 2020) y τ entrenadas por tipo sobre 45.669 neuronas del sistema visual de la mosca (Lappalainen et al., Nature 2024).
+  - Lo propio:
+    - dinámica líquida sobre el cableado exacto de FlyWire;
+    - el banco sellado (nulos SL y T, regla rival, ancla, réplica en Actions);
+    - el resultado de que la líquida plena entrenada le gana a su control con los mismos parámetros (013 y 014).
+  - Sin entrenar, la nativa empata con la de tasa en R1 (factorial 1).
+  - El banco sólo corrió con FlyWire v783; otros conectomas NO MEDIDO (lee columnas de FlyWire).
+  - Papers: el Paper 1 (v1.0 en Zenodo, v2.0 sin depositar) y el de DualBrain (feb 2026, `dualbrain/docs/01-paper-dualbrain.md`, depósito NO VERIFICADO; su README marca que faltan `dbc3_motor.h` y el script del benchmark DBC3-v3).
+  - Aplicaciones medidas fuera de simulación: ninguna.
+- **Espera decisión de Abraham:** correr el factorial 2 (sellado en `9442fdf`: pushear `results/factorial2_2026-10-13/CORRER`); aplicar F01, F06 y F07 a la v2 y decidir F05 (Tabla 8); merge del PR #27 y token de Zenodo; responderle a Tao en su PR.
 
 ## Tarde y noche del 12-oct (010 a 018)
 
