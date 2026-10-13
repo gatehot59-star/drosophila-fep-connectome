@@ -400,6 +400,14 @@ and Limitation 3 of v1.0 already state. The abstract is therefore inconsistent w
 body of the paper and is corrected to **three compatible models** (SparseLTC, Linear,
 LIF-soft), with the fourth reported as metric-incompatible rather than omitted.
 
+**Replication across models.** Section 2.5 of v1.0 states that *"temporal amplification
+results are validated across three compatible models (SparseLTC, Linear, LIF-soft)"*, and
+Limitation 3 that *"temporal amplification is thus validated across three of four models"*.
+Table 9 of v1.0 shows otherwise for LIF-soft: its cosine RDI decays from 0.253 at step 60
+to 0.002 at step 180. The amplification appears in two of the three compatible models
+(SparseLTC and Linear); LIF-soft, although graded, does not amplify. v2.0 states the
+property for the two models that show it.
+
 **The temporal parameter, two separate defects.** Section 2.5 states that tau = 0.119
 corresponds to tau_m ~= 8.4 ms, *"center of the Drosophila physiological range (5-20 ms)"*,
 and that tau = 0.3 corresponds to *"3.3 ms, lower limit of range"*.
@@ -660,7 +668,8 @@ the drafts in the repository history can be read against the filed text.
   p-values stated.
 - Items 3 and 6: sensory-to-descending reciprocity corrected from 8.7 to 8.6 as a fifth
   counting problem; the threshold limit of item 3 updated.
-- Item 7: the tau_m column of Table 10 follows the corrected derivation.
+- Item 7: the tau_m column of Table 10 follows the corrected derivation; the replication of
+  temporal amplification across models corrected to two of the three compatible models.
 - Item 8: the attribution of the swap rate reversed to match the text of v1.0; the Betzel
   reference verified; five references with wrong details listed; four references added.
 - Outstanding verification: item 9 resolved; items 10 to 12 added.
