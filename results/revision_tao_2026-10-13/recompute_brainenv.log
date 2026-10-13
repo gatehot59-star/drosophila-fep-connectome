@@ -1,0 +1,17 @@
+PASS F01 nulo neuropilo preserva in-degree global :: 100/100 grafos preservan in-degree; 100/100 cambian destinos
+PASS F01 control negativo uniforme rompe in-degree :: 100/100
+PASS F02 cociente extremos neuropilo sin umbral ~4.2 (no 2.4) :: 4.1645448578
+PASS F02 cociente extremos neuropilo umbral5 ~40 :: 40.279413
+PASS Tabla5 p cola inferior thermosensory :: exp=20.30 p=0.0937782455 publicado=0.094
+PASS Tabla5 p cola inferior hygrosensory :: exp=51.79 p=1.307080965e-10 publicado=1.3e-10
+PASS Tabla7 siete filas x dos umbrales :: porcentajes recomputados coinciden
+PASS Tabla7 conectoma entero :: 26.600335% / 13.97689994%
+PASS Tabla10 constante efectiva :: 0.05:19.4957, 0.119:7.8928, 0.2:4.4814, 0.3:2.8037
+PASS Salidas: piso bilateral 2/5001 supera alfa Holm 0.05/242 :: 0.0003999 > 0.0002066: la primera prueba Holm no puede pasar por resolucion
+PASS F04 LIF-soft no amplifica :: delta RDI t60->t180 = -0.251
+INFO McNemar exacto 1/37: p=2.83762e-10
+INFO McNemar exacto 252/12: p=1.31476e-59
+INFO McNemar exacto 169/15: p=3.56859e-34
+INFO piso p empirico con 5 nulos CP: 1/6 = 0.1666667
+INFO piso con 40 nulos: 1/41 = 0.0243902
+RESULTADO TODO PASS

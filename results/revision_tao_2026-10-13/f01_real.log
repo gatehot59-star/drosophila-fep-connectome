@@ -1,0 +1,6 @@
+SUJETO neuronas=138639 aristas=15091983 etiquetas=25
+F01 in_degree_global_preservado_exacto=True destinos_cambiados=15071287 de 15091983
+F01 conteo_por_par_de_bloques_preservado=True bloques_no_vacios=478
+CONTROL uniforme rompe in_degree en 138142 de 138639 -> el chequeo puede dar rojo=True
+# duracion_s=31.4
+FIN
