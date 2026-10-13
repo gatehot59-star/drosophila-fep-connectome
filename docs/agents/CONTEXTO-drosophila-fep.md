@@ -1,10 +1,26 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-13, 00:50 (America/Buenos_Aires), con la respuesta 2026-10-12-018. **La sección «Tarde y noche del 12-oct (010 a 018)» manda sobre lo que choque en el resto del archivo**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-13, 08:30 (America/Buenos_Aires), con la respuesta 2026-10-13-003. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Tarde y noche del 12-oct (010 a 018) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-13-003) · manda sobre el resto
+
+- **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
+  - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
+  - **Post-hoc, no sellado:** la regla con las mismas 418 entradas de R1 sube a 0,926-0,930, y R1_CON_TASA y R1_CON_LIQ la IGUALAN en 6/6. El «supera» sellado era tener más sensores.
+  - El cableado paga dentro de R1: 0,937 contra 50 SL (media 0,774) y 50 T (0,742), p por rango 0,0196.
+  - Factores: recorte AYUDA; inhibición AYUDA (en TASA y LIQ solo con amplitud 0,6); LIQ empata con TASA en R1; el LIF armado (corriente fija, paso de 1 ms) DAÑA.
+  - **Lectura:** la brecha de la 015 era nuestro recorte. Con 1.504 neuronas reales, la mosca simulada alcanza a su diseño idealizado; no lo supera.
+  - La primera corrida en Actions murió por falta de torch (el módulo de la 003 lo importa arriba); el workflow ahora lo instala (`7534dd2`).
+- **Auditoría de Tao entregada y revisada (2026-10-13-001).** PR #28 (`dd9da1c`, 13-oct 00:17) y Doc en el Space. Leyó main en `51e183c`: no vio la 015 completa, la 018 ni la 019.
+  - Siguen abiertos en el texto de la v2 (`f19a9c7`): F01 (el nulo de neurópilo sí preserva el in-degree global; medido en el conectoma entero, rama `titan/revision-auditoria-tao-2026-10-13`), F05 (Z_CP +14,8σ sin Tabla 8 reproducible), F06 (con N = 5 no hay p empírica bajo 1/6), F07 (138.142 y 138.140 son dos corridas del control uniforme; citar la de las tablas).
+  - Robótica: `adc_to_q15` y `q15_to_pwm` desbordan int32 con `uint16_t` completos; `test_swarm.c` no puede dar rojo.
+  - No se le comentó el PR ni se le escribió: espera el visto bueno de Abraham.
+- **Síntesis en criollo (2026-10-13-003):** la mosca da el plano (qué tipo de sensor va a qué comando) y, con cableado real suficiente, su simulación lo alcanza; no es un cerebro mejor que su plano ni que la ingeniería.
+- **Espera decisión de Abraham:** sellar el factorial 2 (la regla con los mismos sensores, varias semillas de τ y de prueba, margen de equivalencia, R2 en Kaggle); aplicar F01, F06 y F07 a la v2 y decidir F05 (Tabla 8); merge del PR #27 y token de Zenodo; responderle a Tao en su PR.
+
+## Tarde y noche del 12-oct (010 a 018)
 
 - **Paper 1 v2.0 (010 y 018):** la 010 retiró «lista para depositar» por tres inconsistencias internas del manuscrito del PR #27. **La 018 las corrigió** con `tools/v2/fix_v2_018.py`, aplicado en brain-env y en Actions con md5 iguales:
   - el «2.4-fold» era visual sobre gustatory; el cociente entre extremos es 4,2× sin umbral y baja de 3.862× a 40× con el umbral;
@@ -22,7 +38,7 @@
 - **Qué le falta al modelo (018):** las 6 descendentes reciben 40.145 sinapsis; el motivo lleva 875 (2,18%) y 0 de las 14.576 inhibitorias (36,3%). R1 (con sus presinápticas de 5 sinapsis o más) tiene 1.504 neuronas; R2, 33.489. Rama `titan/que-falta-al-modelo-2026-10-12` (`3cf6332`).
 - **Corrección a la 017:** «la mosca no reemplaza a la ingeniería» estaba mal planteado; lo que le ganó a nuestro modelo fue la mosca idealizada.
 - **Máquinas (016 y 017):** para un script numpy sellado la máquina rápida es Actions (11,6×), no Kaggle con GPU; Kaggle sólo con un port a torch verificado contra numpy.
-- **Espera decisión de Abraham:** sellar el factorial de la 018 (recorte 46 / R1 / R2, neurona de tasa / LIF con signo / líquida plena, con y sin inhibición; misma tarea, mismos nulos, la regla idealizada como rival); la Tabla 8; el merge del PR #27 y el token de Zenodo.
+- **Esperaba decisión de Abraham (resuelto en la 019 y la 2026-10-13-002):** sellar el factorial de la 018 (recorte 46 / R1 / R2, neurona de tasa / LIF con signo / líquida plena, con y sin inhibición; misma tarea, mismos nulos, la regla idealizada como rival); la Tabla 8; el merge del PR #27 y el token de Zenodo.
 
 ## Mapa del repo (respuesta 2026-10-11-004)
 
@@ -120,6 +136,7 @@
 - **Enviado** el 2026-10-12 a las 11:36, a pedido de Abraham (lo pidió dos veces).
   - Tarea https://app.clickup.com/t/86e3p74xa en Pipeline TITAN; mención a Tao en el comentario https://app.clickup.com/t/86e3p74xa?comment=90170261435881.
   - **La asignación falló**: asignar agentes a tareas está apagado en el workspace. El disparador es la mención.
+- **Entregada (2026-10-13-001):** PR #28 (`dd9da1c`, 13-oct 00:17) y Doc en el Space; la revisión contra el estado vivo está en la 2026-10-13-001. Lo que sigue en este bloque es el estado del 12 a las 11:56 y quedó superado.
 - **Estado (medido en la 2026-10-12-009, 11:56): parado, esperando el «confirmo» de Abraham.**
   - Tao contestó a las 11:39:43 (https://app.clickup.com/t/86e3p74xa?comment=90170261436691): «Leí el alcance y confirmé el conectoma en 47d940e. Todavía no audité los logs ni emití conclusiones.» Pide «confirmo» para 7 escrituras: rama, archivo y PR en el conectoma; Doc en el Space; rama, `AGENT-TAO.md` y PR en `mudh-mobile`.
   - No hay rama `titan/auditoria-tao-laboratorio-2026-10-12`, ni PR nuevo en el conectoma ni en `mudh-mobile`, ni Doc suyo.
