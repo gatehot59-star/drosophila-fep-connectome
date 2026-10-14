@@ -1,0 +1,19 @@
+# md5 topo.py = 9abefe9d620e9f94f4a68ed75108d6be (sellado 9abefe9d)
+GRAFO escape_fiel flechas_sensor_a_linea=10 lineas_a_accion=6
+FLECHA LC4@L -> DNp01@L coef=+0.50 sinapsis=374 neuronas=54 exc=1.000 dos_saltos=30/744/0.581 -> CABLEADA
+FLECHA LPLC2@L -> DNp01@L coef=+0.50 sinapsis=458 neuronas=94 exc=1.000 dos_saltos=55/1352/0.424 -> CABLEADA
+FLECHA LC4@R -> DNp01@R coef=+0.50 sinapsis=431 neuronas=50 exc=1.000 dos_saltos=39/1087/0.644 -> CABLEADA
+FLECHA LPLC2@R -> DNp01@R coef=+0.50 sinapsis=622 neuronas=95 exc=1.000 dos_saltos=67/1680/0.316 -> CABLEADA
+FLECHA LPLC4@L -> DNp07@L coef=+1.00 sinapsis=810 neuronas=49 exc=1.000 dos_saltos=43/1544/0.394 -> CABLEADA
+FLECHA LPLC4@R -> DNp07@R coef=+1.00 sinapsis=638 neuronas=43 exc=1.000 dos_saltos=41/1278/0.443 -> CABLEADA
+FLECHA LPLC1@L -> DNp06@L coef=+0.50 sinapsis=509 neuronas=65 exc=1.000 dos_saltos=39/1242/0.221 -> CABLEADA
+FLECHA LPLC2@L -> DNp06@L coef=+0.50 sinapsis=485 neuronas=103 exc=1.000 dos_saltos=59/2286/0.374 -> CABLEADA
+FLECHA LPLC1@R -> DNp06@R coef=+0.50 sinapsis=514 neuronas=71 exc=1.000 dos_saltos=51/1641/0.292 -> CABLEADA
+FLECHA LPLC2@R -> DNp06@R coef=+0.50 sinapsis=518 neuronas=97 exc=1.000 dos_saltos=62/2892/0.357 -> CABLEADA
+TOTAL LC4 -> DNp01 sinapsis=805 neuronas=104
+TOTAL LPLC1 -> DNp06 sinapsis=1023 neuronas=136
+TOTAL LPLC2 -> DNp01 sinapsis=1080 neuronas=189
+TOTAL LPLC2 -> DNp06 sinapsis=1003 neuronas=200
+TOTAL LPLC4 -> DNp07 sinapsis=1448 neuronas=92
+CHEQUEO escape_fiel CABLEADA=10
+ESCRITO docs/topo/grafos/escape_fiel.md md5=bd4683fcfb5da263c0fb1841531d2b48
