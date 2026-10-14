@@ -1,8 +1,40 @@
-Traceback (most recent call last):
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/topo_barra/banco_barra_dir.py", line 40, in <module>
-    import escape_aterrizaje_dbc3 as base  # noqa: E402
-    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/escape_aterrizaje/escape_aterrizaje_dbc3.py", line 21, in <module>
-    import torch
-ModuleNotFoundError: No module named 'torch'
-humo_exit=1
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 banco = c033f214869b5b7776a26afad3c744a5
+# fecha: 2026-10-14 16:31:14 +0000
+# md5 escape_aterrizaje/tarea_mosca.py = 40d64e074d9163753439307c5be4ac5e -> True
+# md5 escape_aterrizaje/escape_aterrizaje_dbc3.py = 4d40477d87406c31672acfb6e6e8f5a2 -> True
+# md5 escape_aterrizaje/entrada_por_tipos.py = e060c4bffb685aa550dadc19eda3dd02 -> True
+# md5 topo/topo.py = 9abefe9d620e9f94f4a68ed75108d6be -> True
+# md5 topo/escape.topo = dae4967da0085f4bedcb4365f87127b0 -> True
+# md5 topo_barra/tarea_barra_dir.py = d25153570edff8dfc249945c88cd7d4c -> True
+# md5 topo_barra/aterrizaje_dir.topo = 0122a4ce64884010e8bb741bb57f2e29 -> True
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+# HUMO: corrida corta, estos numeros no valen
+CHEQUEO SINTONIAS_015_IGUAL A=0.0 max_dif=0 -> True
+CHEQUEO SINTONIAS_015_IGUAL A=0.3 max_dif=0 -> True
+CHEQUEO SINTONIAS_015_IGUAL A=0.6 max_dif=0 -> True
+CHEQUEO CLASES nada=1000,despegar=400,aterrizar=400,girar_der=300,girar_izq=300 condiciones_por_celda=100..100 balanceado=True
+DIRECCION A=0.3 tipo=LC4 barra_AA=0.0704 barra_AD=0.0689
+DIRECCION A=0.3 tipo=LPLC2 barra_AA=0.1056 barra_AD=0.2068
+DIRECCION A=0.3 tipo=LPLC4 barra_AA=0.7041 barra_AD=0.2068
+DIRECCION A=0.3 tipo=LPLC1 barra_AA=0.3520 barra_AD=0.6895
+VEREDICTO_TAREA -> VALIDA
+CHEQUEO REPRODUCE_M46 neuronas=46 aristas=187 -> True
+NULOS SL=3 guarda=True T=3 guarda=True rho_crudo=22.9733
+DATOS entrenamiento=600 prueba=400 clases_prueba=162,68,68,51,51 barras_AA_vuelo=34 barras_AD_vuelo=34
+CELDA A=0.0 ruido=0.15 W=0.8900 regla_nueva=0.9150 regla_vieja=0.8900 | SL media=0.6767 max=0.6975 p=0.2500 | T media=0.7350 max=0.7450 p=0.2500 | barra_AA W=0.912 nueva=0.765 vieja=0.912 | barra_AD W=0.588 nueva=0.971 vieja=0.676 | 5.0 s
+CELDA A=0.0 ruido=0.45 W=0.8800 regla_nueva=0.8275 regla_vieja=0.8525 | SL media=0.6608 max=0.6800 p=0.2500 | T media=0.7125 max=0.7150 p=0.2500 | barra_AA W=0.912 nueva=0.382 vieja=0.912 | barra_AD W=0.529 nueva=0.588 vieja=0.471 | 5.1 s
+CELDA A=0.3 ruido=0.15 W=0.8600 regla_nueva=0.9000 regla_vieja=0.9075 | SL media=0.6217 max=0.6425 p=0.2500 | T media=0.6658 max=0.6875 p=0.2500 | barra_AA W=0.853 nueva=0.618 vieja=0.912 | barra_AD W=0.676 nueva=0.971 vieja=0.824 | 5.2 s
+CELDA A=0.3 ruido=0.45 W=0.8675 regla_nueva=0.8475 regla_vieja=0.8800 | SL media=0.6167 max=0.6375 p=0.2500 | T media=0.6650 max=0.6975 p=0.2500 | barra_AA W=0.794 nueva=0.294 vieja=0.912 | barra_AD W=0.706 nueva=0.882 vieja=0.706 | 5.3 s
+CELDA A=0.6 ruido=0.15 W=0.8150 regla_nueva=0.8875 regla_vieja=0.9025 | SL media=0.6108 max=0.6425 p=0.2500 | T media=0.6133 max=0.6275 p=0.2500 | barra_AA W=0.706 nueva=0.559 vieja=0.912 | barra_AD W=0.735 nueva=0.971 vieja=0.824 | 5.5 s
+CELDA A=0.6 ruido=0.45 W=0.8150 regla_nueva=0.8450 regla_vieja=0.8875 | SL media=0.5908 max=0.6125 p=0.2500 | T media=0.6075 max=0.6250 p=0.2500 | barra_AA W=0.706 nueva=0.176 vieja=0.912 | barra_AD W=0.735 nueva=0.912 vieja=0.706 | 5.6 s
+HOLM A=0.0 ruido=0.15 SL=1.0000 T=1.0000 -> NO_GANA
+HOLM A=0.0 ruido=0.45 SL=1.0000 T=1.0000 -> NO_GANA
+HOLM A=0.3 ruido=0.15 SL=1.0000 T=1.0000 -> NO_GANA
+HOLM A=0.3 ruido=0.45 SL=1.0000 T=1.0000 -> NO_GANA
+HOLM A=0.6 ruido=0.15 SL=1.0000 T=1.0000 -> NO_GANA
+HOLM A=0.6 ruido=0.45 SL=1.0000 T=1.0000 -> NO_GANA
+H_TN_REGLA d(regla_nueva - W)=+0.0158 IC90=[+0.0008; +0.0300] margen=-0.01 -> SOSTENIDA
+H_TN_CABLEADO 12 pruebas, Holm < 0.05 en todas -> REFUTADA
+H_TOPO_NUEVO -> REFUTADA (HUMO, sin valor)
+EXIT_RUN=0 | 5.6 s
