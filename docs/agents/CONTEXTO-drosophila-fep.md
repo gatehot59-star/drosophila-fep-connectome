@@ -1,10 +1,10 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-14, 11:30 (America/Buenos_Aires), con la respuesta 2026-10-14-002. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-14, 11:45 (America/Buenos_Aires), con la respuesta 2026-10-14-004. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Madrugada y mañana del 13-oct (019 a 2026-10-14-002) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-14-004) · manda sobre el resto
 
 - **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
   - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
@@ -84,7 +84,11 @@
   - Núcleo de Schlegel de R2 como pieza suelta: 603.219 aristas (14,96 %) con el 56,97 % de las sinapsis, 6/6 DN, 563/564 entradas; huella `69255109`.
   - H_TAU sellado (`tools/htau/SELLO-HTAU.md`): candidatas tau 10 a 19, elección por validación cruzada en el entrenamiento, pruebas nuevas 12 a 21, margen 0,01. 6 trabajos de Actions, unas 2,5 h. Se dispara con `results/htau_2026-10-14/CORRER`.
   - Núcleo sellado (`tools/nucleo/SELLO-NUCLEO.md`): H_CONSENSO (no perder más de 1 punto contra R2 y ganarle a 50 SL + 50 T). 80 trabajos de Actions, cerca de 1,5 h. Se dispara con `results/nucleo_2026-10-14/CORRER`.
-- **Espera decisión de Abraham:** correr H_TAU y el núcleo, sellados en la 2026-10-14-002 (cada uno con su `CORRER`); el nulo del emparejado BANC; merge del PR #27 (la v2 ya está lista, 2026-10-13-014) y token de Zenodo; responderle a Tao en su PR.
+- **v2 en main y los dos sellos corriendo (2026-10-14-004, ClickKit `merge_y_correr_004`, 11:28):**
+  - PR #27 mergeado en main (`6785316`); la prueba de mezcla contra `7eec778` dio limpia. `tools/zenodo/depositar_v2.py --verificar` sobre main da PASS (PDF v2.0 `6e849bf2`, erratum v1.0 `05052e6e`).
+  - `results/htau_2026-10-14/CORRER` y `results/nucleo_2026-10-14/CORRER` pusheados en `9545af4` (rama `titan/htau-nucleo-banc-2026-10-14`, nada sellado cambio). `htau-mosca` y `nucleo-mosca` arrancaron 14:30 UTC; estimado: nucleo hacia las 13:30 y H_TAU hacia las 14:30 de Buenos Aires (NO MEDIDO).
+  - El deposito en Zenodo sigue esperando el token (borrador primero; publicar solo con el si de Abraham).
+- **Espera decisión de Abraham:** el token de Zenodo para el borrador del depósito de la v2 (publicar, solo con su sí); leer H_TAU y el núcleo cuando terminen (2026-10-14-004); el esqueleto del Paper 2; el nulo del emparejado BANC; responderle a Tao en su PR.
 
 ## Tarde y noche del 12-oct (010 a 018)
 
