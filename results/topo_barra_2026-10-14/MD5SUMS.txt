@@ -1,0 +1,3 @@
+6df4ccfe337fa29ecf366b0cbc48bb2f  banco.log
+7cd024e564f6370a9ec974d52145d203  barra_dir.json
+723ded3094ee40ae903b005de6ea9f20  versiones.txt

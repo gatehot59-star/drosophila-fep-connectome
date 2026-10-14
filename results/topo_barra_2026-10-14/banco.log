@@ -1,0 +1,39 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 banco = c033f214869b5b7776a26afad3c744a5
+# fecha: 2026-10-14 16:32:43 +0000
+# md5 escape_aterrizaje/tarea_mosca.py = 40d64e074d9163753439307c5be4ac5e -> True
+# md5 escape_aterrizaje/escape_aterrizaje_dbc3.py = 4d40477d87406c31672acfb6e6e8f5a2 -> True
+# md5 escape_aterrizaje/entrada_por_tipos.py = e060c4bffb685aa550dadc19eda3dd02 -> True
+# md5 topo/topo.py = 9abefe9d620e9f94f4a68ed75108d6be -> True
+# md5 topo/escape.topo = dae4967da0085f4bedcb4365f87127b0 -> True
+# md5 topo_barra/tarea_barra_dir.py = d25153570edff8dfc249945c88cd7d4c -> True
+# md5 topo_barra/aterrizaje_dir.topo = 0122a4ce64884010e8bb741bb57f2e29 -> True
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+CHEQUEO SINTONIAS_015_IGUAL A=0.0 max_dif=0 -> True
+CHEQUEO SINTONIAS_015_IGUAL A=0.3 max_dif=0 -> True
+CHEQUEO SINTONIAS_015_IGUAL A=0.6 max_dif=0 -> True
+CHEQUEO CLASES nada=1000,despegar=400,aterrizar=400,girar_der=300,girar_izq=300 condiciones_por_celda=100..100 balanceado=True
+DIRECCION A=0.3 tipo=LC4 barra_AA=0.0704 barra_AD=0.0689
+DIRECCION A=0.3 tipo=LPLC2 barra_AA=0.1056 barra_AD=0.2068
+DIRECCION A=0.3 tipo=LPLC4 barra_AA=0.7041 barra_AD=0.2068
+DIRECCION A=0.3 tipo=LPLC1 barra_AA=0.3520 barra_AD=0.6895
+VEREDICTO_TAREA -> VALIDA
+CHEQUEO REPRODUCE_M46 neuronas=46 aristas=187 -> True
+NULOS SL=300 guarda=True T=300 guarda=True rho_crudo=22.9733
+DATOS entrenamiento=2400 prueba=2000 clases_prueba=830,332,336,251,251 barras_AA_vuelo=168 barras_AD_vuelo=166
+CELDA A=0.0 ruido=0.15 W=0.8820 regla_nueva=0.9220 regla_vieja=0.8960 | SL media=0.6916 max=0.8300 p=0.0033 | T media=0.7086 max=0.8595 p=0.0033 | barra_AA W=0.976 nueva=0.917 vieja=0.976 | barra_AD W=0.536 nueva=0.952 vieja=0.699 | 105.1 s
+CELDA A=0.0 ruido=0.45 W=0.8410 regla_nueva=0.8030 regla_vieja=0.8360 | SL media=0.6644 max=0.7950 p=0.0033 | T media=0.6873 max=0.8220 p=0.0033 | barra_AA W=0.929 nueva=0.435 vieja=0.964 | barra_AD W=0.530 nueva=0.512 vieja=0.428 | 205.4 s
+CELDA A=0.3 ruido=0.15 W=0.8930 regla_nueva=0.9000 regla_vieja=0.9130 | SL media=0.6479 max=0.8320 p=0.0033 | T media=0.6566 max=0.8030 p=0.0033 | barra_AA W=0.958 nueva=0.768 vieja=0.976 | barra_AD W=0.717 nueva=0.958 vieja=0.952 | 302.9 s
+CELDA A=0.3 ruido=0.45 W=0.8450 regla_nueva=0.8410 regla_vieja=0.8815 | SL media=0.6357 max=0.7990 p=0.0033 | T media=0.6496 max=0.7765 p=0.0033 | barra_AA W=0.905 nueva=0.375 vieja=0.958 | barra_AD W=0.645 nueva=0.813 vieja=0.759 | 402.1 s
+CELDA A=0.6 ruido=0.15 W=0.8375 regla_nueva=0.8890 regla_vieja=0.9140 | SL media=0.6137 max=0.7720 p=0.0033 | T media=0.6254 max=0.7350 p=0.0033 | barra_AA W=0.893 nueva=0.637 vieja=0.976 | barra_AD W=0.801 nueva=0.958 vieja=0.952 | 500.5 s
+CELDA A=0.6 ruido=0.45 W=0.8090 regla_nueva=0.8535 regla_vieja=0.9000 | SL media=0.6041 max=0.7450 p=0.0033 | T media=0.6189 max=0.7145 p=0.0033 | barra_AA W=0.875 nueva=0.315 vieja=0.946 | barra_AD W=0.711 nueva=0.922 vieja=0.873 | 600.3 s
+HOLM A=0.0 ruido=0.15 SL=0.0399 T=0.0399 -> GANA
+HOLM A=0.0 ruido=0.45 SL=0.0399 T=0.0399 -> GANA
+HOLM A=0.3 ruido=0.15 SL=0.0399 T=0.0399 -> GANA
+HOLM A=0.3 ruido=0.45 SL=0.0399 T=0.0399 -> GANA
+HOLM A=0.6 ruido=0.15 SL=0.0399 T=0.0399 -> GANA
+HOLM A=0.6 ruido=0.45 SL=0.0399 T=0.0399 -> GANA
+H_TN_REGLA d(regla_nueva - W)=+0.0168 IC90=[+0.0099; +0.0238] margen=-0.01 -> SOSTENIDA
+H_TN_CABLEADO 12 pruebas, Holm < 0.05 en todas -> SOSTENIDA
+H_TOPO_NUEVO -> SOSTENIDA
+EXIT_RUN=0 | 600.3 s
