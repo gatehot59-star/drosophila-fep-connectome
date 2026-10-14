@@ -1,0 +1,5 @@
+Humo de H_DEBILES (respuesta 2026-10-14-016), antes del sello.
+Pedido: ClickKit sellar_debiles_015 (Abraham, 14-oct 16:42), "Sella H_DEBILES".
+Instrumento tools/debiles/debiles_mosca.py md5 f28404c2ecb1ae84e0a58936964cb7e9; importa nucleo_mosca.py 4697c81d sin cambios.
+El humo en brain-env ya dio: grilla corta VALIDO, mezcla k 0 = grilla (0,8500 los dos, numeros sin valor), prueba del agregador 7/7.
+Este archivo dispara .github/workflows/debiles-humo.yml. No dispara la corrida completa.

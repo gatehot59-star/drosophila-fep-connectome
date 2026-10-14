@@ -1,0 +1,114 @@
+name: debiles-mosca
+# Respuesta 2026-10-14-016. H_DEBILES sellado (tools/debiles/SELLO-DEBILES.md): 60 trabajos de grilla con la mezcla
+# (nucleo intacto, debiles barajadas; 10 taus x 6 celdas, 10 pruebas cada uno, como el factorial 3 y el nucleo) y 4 de
+# mezclas (20 mezclas; el de k0 0 mide tambien R2 real y nucleo real), y el agregador sellado contra R2 y el nucleo.
+# Solo se dispara al pushear results/debiles_2026-10-14/CORRER en esta rama.
+on:
+  push:
+    branches: ["titan/debiles-2026-10-14"]
+    paths: ["results/debiles_2026-10-14/CORRER"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  grilla:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        tau: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        ci: [0, 1, 2, 3, 4, 5]
+        include:
+          - {ci: 0, celda: "0.0|0.15"}
+          - {ci: 1, celda: "0.0|0.45"}
+          - {ci: 2, celda: "0.3|0.15"}
+          - {ci: 3, celda: "0.3|0.45"}
+          - {ci: 4, celda: "0.6|0.15"}
+          - {ci: 5, celda: "0.6|0.45"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: la mezcla en una semilla de tau y una celda, 10 pruebas
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          E=t${{ matrix.tau }}c${{ matrix.ci }}
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv > out/versiones_debiles_grilla_$E.txt
+          python tools/debiles/debiles_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --modo grilla --taus ${{ matrix.tau }} --pruebas 2,3,4,5,6,7,8,9,10,11 --celdas "${{ matrix.celda }}" --etiqueta $E 2>&1 | tee out/debiles_grilla_$E.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: debiles-grilla-t${{ matrix.tau }}c${{ matrix.ci }}
+          path: out/
+  mezclas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        k0: [0, 5, 10, 15]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: cinco mezclas
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          E=k${{ matrix.k0 }}
+          REAL=""
+          if [ "${{ matrix.k0 }}" = "0" ]; then REAL="--real"; fi
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv > out/versiones_debiles_mezclas_$E.txt
+          python tools/debiles/debiles_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --modo mezclas --k0 ${{ matrix.k0 }} --n 5 $REAL 2>&1 | tee out/debiles_mezclas_$E.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: debiles-mezclas-k${{ matrix.k0 }}
+          path: out/
+  agregar:
+    needs: [grilla, mezclas]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: debiles-*
+          path: art
+          merge-multiple: true
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          python -m pip install numpy==2.5.3
+          D=results/debiles_2026-10-14
+          mkdir -p "$D"
+          cp art/*.json art/*.log art/*.txt "$D"/ || true
+          python tools/debiles/agregar_debiles.py "$D" results/factorial3_2026-10-13 results/nucleo_2026-10-14 > "$D/agregado.log" 2>&1 || echo "agregador_exit=$?" >> "$D/agregado.log"
+          (cd "$D" && md5sum debiles_*.log *.json versiones_*.txt agregado.log > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-14-016): H_DEBILES en Actions x64, 64 trabajos y agregado" || echo nada_que_commitear
+          git pull --rebase origin titan/debiles-2026-10-14 || true
+          git push origin HEAD:titan/debiles-2026-10-14

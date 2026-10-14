@@ -1,0 +1,84 @@
+name: debiles-humo
+# Respuesta 2026-10-14-016. Humo de H_DEBILES antes del sello: grilla y mezclas cortas con todo el camino, R2 real y
+# nucleo real a tamano completo por el camino de las mezclas (REAL_R2_IGUAL y REAL_NUCLEO_IGUAL tienen que dar True:
+# 0,9465 y 0,9135, sin mirar ninguna mezcla) y la prueba del agregador. Solo se dispara al pushear
+# results/debiles_2026-10-14_humo/HUMO en esta rama.
+on:
+  push:
+    branches: ["titan/debiles-2026-10-14"]
+    paths: ["results/debiles_2026-10-14_humo/HUMO"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  humo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [grilla, mezclas, real, agregador]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: humo
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          P="${{ matrix.parte }}"
+          if [ "$P" = "agregador" ]; then
+            python tools/debiles/prueba_agregar_debiles.py 2>&1 | tee out/debiles_humo_agregador.log
+            exit 0
+          fi
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv > out/versiones_debiles_$P.txt
+          C="--conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out"
+          if [ "$P" = "grilla" ]; then
+            python tools/debiles/debiles_mosca.py $C --modo grilla --taus 0 --pruebas 2 --celdas "0.3|0.15" --etiqueta humo --humo 2>&1 | tee out/debiles_humo_grilla.log
+          elif [ "$P" = "mezclas" ]; then
+            python tools/debiles/debiles_mosca.py $C --modo mezclas --k0 0 --n 1 --real --humo 2>&1 | tee out/debiles_humo_mezclas.log
+            mv out/debiles_mezclas_k000.json out/debiles_humo_mezclas_k000.json
+          else
+            mkdir -p out/real
+            python tools/debiles/debiles_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out/real --modo mezclas --k0 0 --n 0 --real 2>&1 | tee out/debiles_humo_real.log
+            mv out/real/debiles_mezclas_k000.json out/debiles_humo_real_k000.json
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: debiles-humo-${{ matrix.parte }}
+          path: out/
+  commitear:
+    needs: [humo]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: debiles-humo-*
+          path: art
+          merge-multiple: true
+      - name: commitear el humo
+        shell: bash
+        run: |
+          D=results/debiles_2026-10-14_humo
+          mkdir -p "$D"
+          find art -type f \( -name "*.log" -o -name "*.txt" -o -name "*.json" \) -exec cp {} "$D"/ \;
+          (cd "$D" && md5sum *.log *.txt *.json > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-016): H_DEBILES en Actions, grilla y mezclas cortas, reales a tamano completo, prueba del agregador" || echo nada_que_commitear
+          git pull --rebase origin titan/debiles-2026-10-14 || true
+          git push origin HEAD:titan/debiles-2026-10-14
