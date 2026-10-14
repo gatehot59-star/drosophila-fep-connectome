@@ -1,0 +1,42 @@
+name: freno-mosca
+# Respuesta 2026-10-14-023. H_FRENO sellado (tools/frena_giro/SELLO-FRENO.md) con objetivo DNp06. Solo se dispara al
+# pushear results/frena_giro_2026-10-14/CORRER.
+on:
+  push:
+    branches: ["titan/frena-giro-2026-10-14"]
+    paths: ["results/frena_giro_2026-10-14/CORRER"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  freno:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: prueba, freno y commit
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          mkdir -p /tmp/in
+          D=results/frena_giro_2026-10-14
+          mkdir -p "$D"
+          python tools/frena_giro/prueba_freno.py 2>&1 | tee "$D/prueba.log" || echo "prueba_exit=$?" >> "$D/prueba.log"
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv > "$D/versiones.txt"
+          python tools/frena_giro/freno_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out "$D" 2>&1 | tee "$D/freno.log" || echo "freno_exit=$?" >> "$D/freno.log"
+          (cd "$D" && md5sum freno.log prueba.log freno.json versiones.txt > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-14-023): H_FRENO en Actions x64, objetivo DNp06" || echo nada_que_commitear
+          git pull --rebase origin titan/frena-giro-2026-10-14 || true
+          git push origin HEAD:titan/frena-giro-2026-10-14
