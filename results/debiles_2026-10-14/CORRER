@@ -1,0 +1,5 @@
+Corrida completa de H_DEBILES (respuesta 2026-10-14-020).
+Pedido: ClickKit topo_y_debiles_019 (Abraham, 14-oct 17:53), "Topo v0.1 + H_DEBILES de fondo".
+Sello: tools/debiles/SELLO-DEBILES.md (987b73c). Instrumento f28404c2ecb1ae84e0a58936964cb7e9, agregador c60fbbc618999cd73b67e5998bcbc780.
+Condicion cumplida antes de correr: reales a tamano completo en Actions R2 0,9465 y nucleo 0,9135 (bot ca8221a, 2026-10-14-017).
+Este archivo dispara .github/workflows/debiles-mosca.yml: 60 trabajos de grilla y 4 de mezclas, y el agregado.
