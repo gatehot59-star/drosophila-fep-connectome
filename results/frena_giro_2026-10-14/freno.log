@@ -1,0 +1,37 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3 | pandas 3.0.5
+# md5 instrumento = 1318fefb8dbac3ce56bc56c9a439ea26
+# fecha: 2026-10-14 23:11:04 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+UNIDADES descendentes=927 tamanos_X={'M3_CONTRA_left': 1114, 'M3_CONTRA_right': 917, 'M4_LPLC4_left': 1366, 'M4_LPLC4_right': 1366, 'M5_DNP07_left': 9, 'M5_DNP07_right': 9, 'M6_BILATERAL_left': 12, 'M6_BILATERAL_right': 12}
+MECANISMO M3_CONTRA left sin=27 de 3152 cuota=0.0086 pct=0.862 (n=421) | right sin=14 de 3535 cuota=0.0040 pct=0.753 (n=433) -> DESCARTADO
+MECANISMO M4_LPLC4 left sin=127 de 3152 cuota=0.0403 pct=0.686 (n=421) | right sin=116 de 3535 cuota=0.0328 pct=0.665 (n=433) -> DESCARTADO
+MECANISMO M5_DNP07 left sin=0 de 3152 cuota=0.0000 pct=0.000 (n=421) | right sin=0 de 3535 cuota=0.0000 pct=0.000 (n=433) -> DESCARTADO
+MECANISMO M6_BILATERAL left sin=2 de 3152 cuota=0.0006 pct=0.960 (n=421) | right sin=1 de 3535 cuota=0.0003 pct=0.963 (n=433) -> DESCARTADO
+MECANISMO M1_DNP07 left sin=0 de 3152 cuota=0.0000 pct=0.000 (n=421) | right sin=0 de 3535 cuota=0.0000 pct=0.000 (n=433) -> AUSENTE
+MECANISMO M1_DNP01 left sin=0 de 3152 cuota=0.0000 pct=0.000 (n=421) | right sin=0 de 3535 cuota=0.0000 pct=0.000 (n=433) -> AUSENTE
+MECANISMO M2_OPUESTA left sin=0 de 3152 cuota=0.0000 pct=0.000 (n=421) | right sin=0 de 3535 cuota=0.0000 pct=0.000 (n=433) -> AUSENTE
+CONTROL_POSITIVO left sin=994 de 7336 cuota=0.1355 pct=0.981 | right sin=1032 de 7931 cuota=0.1301 pct=0.982 -> PASA
+NT_INHIBITORIO left {'gaba': 2472, 'glutamate': 680}
+TOP left LHAD1g1 sin=424 neuronas=1 nt=gaba entradas=[['LPLC2', 0.0464], ['AVLP501', 0.0232], ['LT87', 0.0226]]
+TOP left PVLP010 sin=210 neuronas=1 nt=glutamate entradas=[['SAD072', 0.0471], ['AVLP040', 0.0406], ['CB1932', 0.0376]]
+TOP left AVLP076 sin=121 neuronas=1 nt=gaba entradas=[['AVLP164', 0.0212], ['AVLP531', 0.0195], ['AVLP018', 0.0131]]
+TOP left AVLP082 sin=96 neuronas=1 nt=gaba entradas=[['CB0955', 0.0304], ['AVLP478', 0.0289], ['CB1955', 0.0266]]
+TOP left AVLP201 sin=74 neuronas=1 nt=gaba entradas=[['AN_AVLP_GNG_18', 0.0313], ['AN_multi_62', 0.0283], ['AVLP098', 0.0257]]
+TOP left AVLP488 sin=70 neuronas=2 nt=glutamate entradas=[['LC6', 0.03], ['LC15', 0.0254], ['AN_AVLP_20', 0.0227]]
+TOP left CB3922 sin=69 neuronas=3 nt=gaba entradas=[['AN_AVLP_20', 0.0679], ['LHAD1g1', 0.0397], ['AN_multi_69', 0.0328]]
+TOP left PVLP080b sin=64 neuronas=3 nt=gaba,glutamate entradas=[['MTe43', 0.0764], ['AVLP079', 0.0452], ['LT80', 0.0359]]
+TOP left sin_tipo sin=55 neuronas=3 nt=gaba entradas=[['LC18', 0.0438], ['VESa1_P02', 0.0367], ['AVLP098', 0.0353]]
+TOP left AVLP079 sin=53 neuronas=1 nt=gaba entradas=[['LC11', 0.0332], ['AVLP531', 0.0173], ['AVLP154', 0.0167]]
+NT_INHIBITORIO right {'gaba': 2822, 'glutamate': 713}
+TOP right LHAD1g1 sin=399 neuronas=1 nt=gaba entradas=[['LPLC2', 0.0366], ['AVLP370a', 0.0213], ['AVLP501', 0.0212]]
+TOP right PVLP010 sin=262 neuronas=1 nt=glutamate entradas=[['SAD072', 0.051], ['CB1932', 0.0374], ['AVLP040', 0.0362]]
+TOP right AVLP076 sin=142 neuronas=1 nt=gaba entradas=[['AVLP531', 0.0181], ['AVLP437', 0.0153], ['5-HTPLP01', 0.0107]]
+TOP right AVLP082 sin=102 neuronas=1 nt=gaba entradas=[['CB1459', 0.0343], ['CB0955', 0.0318], ['AVLP478', 0.0308]]
+TOP right PVLP080b sin=98 neuronas=3 nt=gaba entradas=[['MTe43', 0.0775], ['AVLP079', 0.0389], ['LT80', 0.0389]]
+TOP right AVLP201 sin=98 neuronas=2 nt=gaba entradas=[['AN_multi_62', 0.0311], ['AVLP098', 0.0269], ['AN_AVLP_GNG_18', 0.0268]]
+TOP right AVLP542 sin=90 neuronas=1 nt=gaba entradas=[['CB2202', 0.0468], ['AN_AVLP_14', 0.0314], ['sin_tipo', 0.0296]]
+TOP right CB3922 sin=89 neuronas=3 nt=gaba entradas=[['AN_AVLP_20', 0.0679], ['LHAD1g1', 0.0397], ['AN_multi_69', 0.0328]]
+TOP right AVLP079 sin=64 neuronas=1 nt=gaba entradas=[['LC11', 0.0307], ['AVLP154', 0.0193], ['AVLP432', 0.0165]]
+TOP right PLP018 sin=64 neuronas=2 nt=gaba entradas=[['LPC1', 0.4354], ['PVLP011', 0.0501], ['LT82b', 0.049]]
+H_FRENO objetivo=DNp06 -> REFUTADA
+EXIT_RUN=0 | 5.1 s
