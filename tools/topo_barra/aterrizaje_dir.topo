@@ -1,0 +1,28 @@
+# Reflejo nuevo en Topo v0: aterrizar solo ante la barra que va de adelante hacia atras (respuesta 2026-10-14-012).
+# Paso B del sello de H_TOPO_NUEVO. Escrito despues de la tarea (paso A, 42d2f60) y antes de cualquier corrida del
+# banco con ella. Unico cambio contra escape.topo: la linea de aterrizaje resta LPLC1 del mismo lado (oponencia).
+# Por que: la barra de adelante hacia atras pide aterrizaje (Ache 2019) y LPLC4 la prefiere; la de atras hacia
+# adelante la prefieren LPLC1 y LPLC2 (Kim 2023) y no pide aterrizaje. Las vias no cambian: en FlyWire v783 LPLC1
+# no tiene sinapsis directas sobre DNp07 (2026-10-12-014), asi que la oponencia, si existe, no es directa.
+
+reflejo aterrizaje_dir
+tipos LC4 LPLC2 LPLC4 LPLC1
+estados posada vuelo
+acciones nada despegar aterrizar girar_der girar_izq
+
+via LC4   -> DNp01 top 4 por lado
+via LPLC2 -> DNp01 top 4 por lado
+via LPLC4 -> DNp07 top 4 por lado
+via LPLC1 -> DNp06 top 4 por lado
+via LPLC2 -> DNp06 top 4 por lado
+salida DNp01 DNp07 DNp06
+
+linea DNp01@L = media(LC4@L, LPLC2@L) en posada -> despegar
+linea DNp01@R = media(LC4@R, LPLC2@R) en posada -> despegar
+linea DNp07@L = media(LPLC4@L) - media(LPLC1@L) en vuelo -> aterrizar
+linea DNp07@R = media(LPLC4@R) - media(LPLC1@R) en vuelo -> aterrizar
+linea DNp06@L = media(LPLC1@L, LPLC2@L) - media(LPLC1@R, LPLC2@R) en vuelo -> girar_der
+linea DNp06@R = media(LPLC1@R, LPLC2@R) - media(LPLC1@L, LPLC2@L) en vuelo -> girar_izq
+
+umbral falsas 0.05 sobre nada
+decide carrera
