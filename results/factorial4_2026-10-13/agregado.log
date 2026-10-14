@@ -1,0 +1,37 @@
+JSON grilla=12 nulos=10 verificar=0 recibos=2 validos=True sin_humo=True | factorial 3 grilla=60
+RECIBO f4-ce-a-2026-10-13 rc=0 head=ace8fe7 instrumento=OK insumos=True n_gpu=2 duracion_s=11755.4 -> True
+RECIBO f4-ce-b-2026-10-13 rc=0 head=ace8fe7 instrumento=OK insumos=True n_gpu=2 duracion_s=13518.8 -> True
+CHEQUEO RECIBOS -> True
+CHEQUEO INTEGRIDAD archivos_con_md5=22/22 huerfanos=0 -> True
+CHEQUEO TAU_DN_IGUAL semillas=10 -> True
+CHEQUEO PLAN_GRILLA corridas=600 faltan=0
+CHEQUEO REPRO_R2 trabajos=4 valores=[0.9465, 0.9465, 0.9465, 0.9465] -> True
+CHEQUEO REAL_IGUAL grilla=0.9465 script_de_nulos=[0.9465] -> True
+CHEQUEO PLAN_NULOS SL=50 T=50 repetidos=0 -> True
+CHEQUEO REPRODUCE_PRIMARIA_F3 dif=+0.0085 IC90=[+0.0008, +0.0151] -> True
+PRIMARIA CE_CON_TASA W=0.9355 regla_propia=0.9268 dif=+0.0086 IC90=[+0.0011, +0.0151] corridas=600 -> NO_INFERIOR
+  CELDA 0.0|0.15 dif=+0.0108 IC=[-0.0028, +0.0202] -> NO_INFERIOR
+  CELDA 0.0|0.45 dif=+0.0118 IC=[+0.0010, +0.0202] -> NO_INFERIOR
+  CELDA 0.3|0.15 dif=+0.0094 IC=[-0.0034, +0.0184] -> NO_INFERIOR
+  CELDA 0.3|0.45 dif=+0.0106 IC=[+0.0003, +0.0181] -> NO_INFERIOR
+  CELDA 0.6|0.15 dif=+0.0042 IC=[-0.0084, +0.0129] -> NO_INFERIOR
+  CELDA 0.6|0.45 dif=+0.0052 IC=[-0.0049, +0.0128] -> NO_INFERIOR
+CHEQUEO REGLA_IGUAL_F3 combinaciones=60 iguales=60 -> True
+CHEQUEO TAU_DN_IGUAL_F3 -> True
+CHEQUEO DN_IGUAL_F3 -> True
+ESCALA CE_menos_R2 W_CE=0.9355 W_R2=0.9353 dif=+0.0001 IC90=[-0.0001, +0.0004] corridas=600 -> EQUIVALENTE
+  CELDA 0.0|0.15 dif=+0.0000 IC=[-0.0006, +0.0007] -> EQUIVALENTE
+  CELDA 0.0|0.45 dif=-0.0001 IC=[-0.0006, +0.0004] -> EQUIVALENTE
+  CELDA 0.3|0.15 dif=+0.0001 IC=[-0.0001, +0.0005] -> EQUIVALENTE
+  CELDA 0.3|0.45 dif=+0.0004 IC=[+0.0000, +0.0008] -> EQUIVALENTE
+  CELDA 0.6|0.15 dif=-0.0000 IC=[-0.0002, +0.0003] -> EQUIVALENTE
+  CELDA 0.6|0.45 dif=+0.0002 IC=[-0.0001, +0.0006] -> EQUIVALENTE
+ESCALA corridas CE>R2=226 iguales=209 CE<R2=165
+NULOS SL n=50 media=0.6488 max=0.7935 W=0.9465 iguales_o_mejores=0 p_sup=0.0196
+NULOS T n=50 media=0.7596 max=0.8395 W=0.9465 iguales_o_mejores=0 p_sup=0.0196
+NULOS Holm SL=0.0392 T=0.0392
+HIPOTESIS H_SUPERA_CE -> SIN_DECIDIR
+HIPOTESIS H_ESCALA -> REFUTADA
+HIPOTESIS H_CABLEADO_CE -> SOSTENIDA
+VEREDICTO_GLOBAL -> VALIDO | primaria=NO_INFERIOR | escala=EQUIVALENTE
+EXIT_AGREGADO=0
