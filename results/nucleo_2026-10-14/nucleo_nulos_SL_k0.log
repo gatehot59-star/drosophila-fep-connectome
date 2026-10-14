@@ -1,0 +1,18 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3 | pandas 3.0.5
+# md5 script = 4697c81d994de841f167698562924caa
+# md5 factorial2_mosca = 798a824cd47808155fa12adb9e652dac | md5 nulos_r2 = c4f1c4d39c99f07cb9ad7977b6f3b01a | md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e | md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+SUJETO R2 neuronas=33489 aristas=4031897 entradas=564 -> True | 5.6 s
+NUCLEO aristas=603219 de 4031897 (14.96 %) inhibitorias=260173 de 1506653 | por_10_sinapsis=349737 por_1pc_entrada=422183 | sinapsis=9668248 de 16971919 (56.97 %) | DN_con_entrada=6/6 entradas_con_salida=563/564 | post_sin_total=0 | huella=69255109562f8a93270c435acdde2239
+CHEQUEO NUCLEO_tamano esperado=(603219, 260173, '69255109562f8a93270c435acdde2239') -> True
+RADIO nucleo crudo=2023.712113
+# nulos del nucleo tipo=SL k=[0, 1, 2, 3, 4] celda=0.3|0.15 tau=0 prueba=2 real=True
+REAL nucleo W=0.9135 | 176.8 s
+NULO SL k=0 acierto=0.5795 radio=664.8619 destinos_cambiados=603009 guarda=True | 176.1 s
+NULO SL k=1 acierto=0.6665 radio=461.1189 destinos_cambiados=603014 guarda=True | 176.1 s
+NULO SL k=2 acierto=0.5395 radio=408.3527 destinos_cambiados=603010 guarda=True | 175.3 s
+NULO SL k=3 acierto=0.5490 radio=374.6233 destinos_cambiados=603025 guarda=True | 175.3 s
+NULO SL k=4 acierto=0.6350 radio=475.2638 destinos_cambiados=603019 guarda=True | 174.4 s
+CHEQUEO INSTRUMENTO R2_tamano=True NUCLEO_tamano=True nulos_SL=True -> VALIDO
+escrito nulos_nucleo_SL_k000.json md5=efec829ef5d6179018ece6ae177c2774
+# duracion_s=1062.1
+EXIT_RUN=0

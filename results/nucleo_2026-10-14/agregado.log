@@ -1,0 +1,33 @@
+JSON grilla=60 nulos=20 | factorial 3 grilla=60
+CHEQUEO VALIDOS -> True | SIN_HUMO -> True | MD5 instrumento=4697c81d y pines -> True | NUCLEO_SELLADO -> True
+CHEQUEO PLAN_GRILLA json=60 corridas=600 faltan=0 repetidas=0 | factorial 3 faltan=0 repetidas=0 -> True
+CHEQUEO REGLA_IGUAL_F3 combinaciones=60 iguales=60 -> True
+CHEQUEO TAU_DN_IGUAL_F3 -> True | DN_IGUAL_F3 -> True
+CHEQUEO PLAN_NULOS SL=50 T=50 repetidos=0 -> True
+CHEQUEO REAL_IGUAL grilla=0.9135 script_de_nulos=[0.9135, 0.9135] -> True
+PRIMARIA NUCLEO_menos_R2 W_nucleo=0.8894 W_R2=0.9353 dif=-0.0459 IC90=[-0.0507, -0.0410] corridas=600 -> PIERDE
+  CELDA 0.0|0.15 dif=-0.0428 IC=[-0.0525, -0.0329] -> PIERDE
+  CELDA 0.0|0.45 dif=-0.0593 IC=[-0.0658, -0.0527] -> PIERDE
+  CELDA 0.3|0.15 dif=-0.0352 IC=[-0.0434, -0.0271] -> PIERDE
+  CELDA 0.3|0.45 dif=-0.0561 IC=[-0.0630, -0.0493] -> PIERDE
+  CELDA 0.6|0.15 dif=-0.0297 IC=[-0.0364, -0.0226] -> PIERDE
+  CELDA 0.6|0.45 dif=-0.0524 IC=[-0.0586, -0.0464] -> PIERDE
+PRIMARIA corridas nucleo>R2=0 iguales=0 nucleo<R2=600
+DESCRIPTIVO nucleo_menos_regla dif=-0.0374 IC90=[-0.0450, -0.0302] -> PIERDE (no decide)
+DESCRIPTIVO TAU 0 nucleo-R2=-0.0479 nucleo-regla=-0.0337
+DESCRIPTIVO TAU 1 nucleo-R2=-0.0581 nucleo-regla=-0.0449
+DESCRIPTIVO TAU 2 nucleo-R2=-0.0391 nucleo-regla=-0.0234
+DESCRIPTIVO TAU 3 nucleo-R2=-0.0426 nucleo-regla=-0.0288
+DESCRIPTIVO TAU 4 nucleo-R2=-0.0449 nucleo-regla=-0.0319
+DESCRIPTIVO TAU 5 nucleo-R2=-0.0306 nucleo-regla=-0.0546
+DESCRIPTIVO TAU 6 nucleo-R2=-0.0351 nucleo-regla=-0.0198
+DESCRIPTIVO TAU 7 nucleo-R2=-0.0556 nucleo-regla=-0.0643
+DESCRIPTIVO TAU 8 nucleo-R2=-0.0566 nucleo-regla=-0.0408
+DESCRIPTIVO TAU 9 nucleo-R2=-0.0487 nucleo-regla=-0.0318
+NULOS SL n=50 media=0.5913 max=0.7570 W=0.9135 iguales_o_mejores=0 p_sup=0.0196
+NULOS T n=50 media=0.6869 max=0.7680 W=0.9135 iguales_o_mejores=0 p_sup=0.0196
+NULOS Holm SL=0.0392 T=0.0392
+HIPOTESIS H_CABLEADO_NUCLEO -> SOSTENIDA
+HIPOTESIS H_CONSENSO -> REFUTADA
+VEREDICTO_GLOBAL -> VALIDO | primaria=PIERDE
+EXIT_AGREGADO=0
