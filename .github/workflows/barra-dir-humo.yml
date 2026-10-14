@@ -1,0 +1,40 @@
+name: barra-dir-humo
+# Respuesta 2026-10-14-012. Humo de H_TOPO_NUEVO en Actions x64 (3 nulos, 600/400): numeros sin valor; verifica que
+# el instrumento corre igual fuera de brain-env. Se dispara al pushear results/topo_barra_2026-10-14_humo/HUMO.
+on:
+  push:
+    branches: ["titan/topo-barra-dir-2026-10-14"]
+    paths: ["results/topo_barra_2026-10-14_humo/HUMO"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  humo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: humo y commit
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          mkdir -p /tmp/in
+          D=results/topo_barra_2026-10-14_humo
+          mkdir -p "$D"
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv > "$D/versiones.txt"
+          python tools/topo_barra/banco_barra_dir.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out "$D" --humo 2>&1 | tee "$D/humo_actions.log" || echo "humo_exit=$?" >> "$D/humo_actions.log"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-012): H_TOPO_NUEVO en Actions x64, numeros sin valor" || echo nada_que_commitear
+          git pull --rebase origin titan/topo-barra-dir-2026-10-14 || true
+          git push origin HEAD:titan/topo-barra-dir-2026-10-14
