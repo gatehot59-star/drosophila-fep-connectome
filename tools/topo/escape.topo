@@ -1,0 +1,27 @@
+# Reflejo de escape de la mosca en Topo v0 (respuesta 2026-10-14-011).
+# Es la tarea sellada de la 2026-10-12-015 y la regla con los mismos sensores de los factoriales 2 a 4.
+# Fuentes de las etiquetas: Ache 2019 (despegue posada, aterrizaje en vuelo) y Kim 2023 (giro por LPLC2 y DNp06).
+
+reflejo escape
+tipos LC4 LPLC2 LPLC4 LPLC1
+estados posada vuelo
+acciones nada despegar aterrizar girar_der girar_izq
+
+# backend cableado: que neuronas entran, en este orden (una LPLC2 ya elegida no se repite)
+via LC4   -> DNp01 top 4 por lado
+via LPLC2 -> DNp01 top 4 por lado
+via LPLC4 -> DNp07 top 4 por lado
+via LPLC1 -> DNp06 top 4 por lado
+via LPLC2 -> DNp06 top 4 por lado
+salida DNp01 DNp07 DNp06
+
+# backend regla: que lee cada comando
+linea DNp01@L = media(LC4@L, LPLC2@L) en posada -> despegar
+linea DNp01@R = media(LC4@R, LPLC2@R) en posada -> despegar
+linea DNp07@L = media(LPLC4@L) en vuelo -> aterrizar
+linea DNp07@R = media(LPLC4@R) en vuelo -> aterrizar
+linea DNp06@L = media(LPLC1@L, LPLC2@L) - media(LPLC1@R, LPLC2@R) en vuelo -> girar_der
+linea DNp06@R = media(LPLC1@R, LPLC2@R) - media(LPLC1@L, LPLC2@L) en vuelo -> girar_izq
+
+umbral falsas 0.05 sobre nada
+decide carrera
