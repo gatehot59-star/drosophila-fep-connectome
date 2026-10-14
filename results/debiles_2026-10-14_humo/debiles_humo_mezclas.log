@@ -1,0 +1,11 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = f28404c2ecb1ae84e0a58936964cb7e9 | nucleo_mosca = 4697c81d994de841f167698562924caa | factorial2 = 798a824cd47808155fa12adb9e652dac | nulos_r2 = c4f1c4d39c99f07cb9ad7977b6f3b01a | modulo015 = 40d64e074d9163753439307c5be4ac5e | conn = 3d802fd542b5d18570ba1ba0bb0abed9 | annot = 719904abad876c68ace1b5690c9b9b63
+# HUMO: corrida corta, estos numeros no valen
+SUJETO R2 neuronas=33489 aristas=4031897 entradas=564 nucleo=603219 debiles=3428678 -> True True | 5.4 s
+# mezclas k=[0] celda=0.3|0.15 tau=0 prueba=2 real=True
+REAL R2=0.9750 nucleo=0.8500 | 24.7 s
+MEZCLA k=0 acierto=0.8500 radio=2026.6122 destinos_cambiados=3427496 pares_repetidos=69542 guarda=True | 20.9 s
+CHEQUEO INSTRUMENTO R2_tamano=True NUCLEO_tamano=True mezclas=True -> VALIDO
+escrito debiles_mezclas_k000.json md5=b47e7ac8139b19cee2c7d96ac12e8307
+# duracion_s=51.8
+EXIT_RUN=0
