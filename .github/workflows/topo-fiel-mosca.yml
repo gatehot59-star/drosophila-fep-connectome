@@ -1,0 +1,43 @@
+name: topo-fiel-mosca
+# Respuesta 2026-10-14-021. H_TOPO_FIEL sellado (tools/topo_fiel/SELLO-TOPO-FIEL.md): el programa fiel contra el que
+# resta, 6 celdas, 2400/2000, semillas nuevas, B = 20.000. Solo se dispara al pushear results/topo_fiel_2026-10-14/CORRER.
+on:
+  push:
+    branches: ["titan/topo-fiel-2026-10-14"]
+    paths: ["results/topo_fiel_2026-10-14/CORRER"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  banco:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: prueba, banco completo y commit
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in
+          D=results/topo_fiel_2026-10-14
+          mkdir -p "$D"
+          python tools/topo_fiel/prueba_fiel.py 2>&1 | tee "$D/prueba.log" || echo "prueba_exit=$?" >> "$D/prueba.log"
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv > "$D/versiones.txt"
+          python tools/topo_fiel/banco_fiel.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out "$D" 2>&1 | tee "$D/banco.log" || echo "banco_exit=$?" >> "$D/banco.log"
+          (cd "$D" && md5sum banco.log prueba.log topo_fiel.json versiones.txt > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-14-021): H_TOPO_FIEL en Actions x64, banco completo" || echo nada_que_commitear
+          git pull --rebase origin titan/topo-fiel-2026-10-14 || true
+          git push origin HEAD:titan/topo-fiel-2026-10-14
