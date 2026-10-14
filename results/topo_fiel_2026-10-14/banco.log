@@ -1,0 +1,39 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 banco = ff0a7cbf333788634c405da7d09fcae7
+# fecha: 2026-10-14 21:41:14 +0000
+# md5 escape_aterrizaje/tarea_mosca.py = 40d64e074d9163753439307c5be4ac5e -> True
+# md5 escape_aterrizaje/escape_aterrizaje_dbc3.py = 4d40477d87406c31672acfb6e6e8f5a2 -> True
+# md5 escape_aterrizaje/entrada_por_tipos.py = e060c4bffb685aa550dadc19eda3dd02 -> True
+# md5 topo/topo.py = 9abefe9d620e9f94f4a68ed75108d6be -> True
+# md5 topo/topo_grafo.py = 0ea687824a45456e0a02b0b197f57a8a -> True
+# md5 topo/escape.topo = dae4967da0085f4bedcb4365f87127b0 -> True
+# md5 topo_barra/tarea_barra_dir.py = d25153570edff8dfc249945c88cd7d4c -> True
+# md5 topo_barra/aterrizaje_dir.topo = 0122a4ce64884010e8bb741bb57f2e29 -> True
+# md5 topo_fiel/escape_fiel.topo = 8e7f23be70392bde04643a2bf3c1fa65 -> True
+# md5 topo_fiel/escape_cruzado.topo = 9d0bb0f6f4cdc48f138b09f5b268429d -> True
+# md5 topo_fiel/decidir_fiel.py = 840aeabf15446852cd0122a6fc4e5b7a -> True
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+CHEQUEO SINTONIAS_015_IGUAL A=0.0 max_dif=0 -> True
+CHEQUEO SINTONIAS_015_IGUAL A=0.3 max_dif=0 -> True
+CHEQUEO SINTONIAS_015_IGUAL A=0.6 max_dif=0 -> True
+CHEQUEO CLASES nada=1000,despegar=400,aterrizar=400,girar_der=300,girar_izq=300 condiciones_por_celda=100..100 balanceado=True
+DIRECCION A=0.3 tipo=LC4 barra_AA=0.0704 barra_AD=0.0689
+DIRECCION A=0.3 tipo=LPLC2 barra_AA=0.1056 barra_AD=0.2068
+DIRECCION A=0.3 tipo=LPLC4 barra_AA=0.7041 barra_AD=0.2068
+DIRECCION A=0.3 tipo=LPLC1 barra_AA=0.3520 barra_AD=0.6895
+VEREDICTO_TAREA -> VALIDA
+CHEQUEO CABLEADO_FIEL CABLEADA=10 -> True
+CHEQUEO CONTROL_GRAFO escape.topo CABLEADA=10 SIN_VIA_DIRECTA=4 -> True
+CHEQUEO REPRODUCE_M46 neuronas=46 aristas=187 -> True
+DATOS entrenamiento=2400 prueba=2000 clases_prueba=830,332,336,251,251 giro_vuelo=502 loom_frontal_vuelo=168 barra_AA_vuelo=168 barra_AD_vuelo=166 posada=996
+CELDA A=0.0 ruido=0.15 fiel=0.8560 resta=0.9110 cruzado=0.6245 nueva=0.9135 W=0.8745 | giro_vuelo fiel=0.934 resta=0.861 | loom_frontal_vuelo fiel=0.065 resta=0.940 | 16.5 s
+CELDA A=0.0 ruido=0.45 fiel=0.8205 resta=0.8360 cruzado=0.6285 nueva=0.7915 W=0.8500 | giro_vuelo fiel=0.783 resta=0.558 | loom_frontal_vuelo fiel=0.071 resta=0.923 | 17.1 s
+CELDA A=0.3 ruido=0.15 fiel=0.8605 resta=0.9320 cruzado=0.6235 nueva=0.9045 W=0.8760 | giro_vuelo fiel=0.956 resta=0.948 | loom_frontal_vuelo fiel=0.065 resta=0.940 | 17.7 s
+CELDA A=0.3 ruido=0.45 fiel=0.8445 resta=0.8875 cruzado=0.6190 nueva=0.8395 W=0.8530 | giro_vuelo fiel=0.914 resta=0.783 | loom_frontal_vuelo fiel=0.071 resta=0.923 | 18.3 s
+CELDA A=0.6 ruido=0.15 fiel=0.8605 resta=0.9345 cruzado=0.6235 nueva=0.8890 W=0.8165 | giro_vuelo fiel=0.956 resta=0.958 | loom_frontal_vuelo fiel=0.065 resta=0.940 | 19.0 s
+CELDA A=0.6 ruido=0.45 fiel=0.8485 resta=0.9140 cruzado=0.6175 nueva=0.8550 W=0.7935 | giro_vuelo fiel=0.936 resta=0.886 | loom_frontal_vuelo fiel=0.071 resta=0.923 | 19.6 s
+DESCRIPTIVO fiel_vs_nueva d=-0.0171 IC90=[-0.0232; -0.0109] (sin veredicto)
+DESCRIPTIVO fiel_vs_W d=+0.0045 IC90=[-0.0028; +0.0119] (sin veredicto)
+CONTROL_ROJO d(cruzado - resta)=-0.2797 IC90=[-0.2868; -0.2727] -> REFUTADA (tiene que ser REFUTADA)
+H_TOPO_FIEL d(fiel - resta)=-0.0541 IC90=[-0.0592; -0.0490] margen=-0.01 -> REFUTADA
+EXIT_RUN=0 | 19.7 s
