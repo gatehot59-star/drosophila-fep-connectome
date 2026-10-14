@@ -1,0 +1,82 @@
+name: htau-mosca
+# Respuesta 2026-10-14-002. H_TAU sellado (tools/htau/SELLO-HTAU.md): 6 trabajos, uno por celda; cada uno valida las 10
+# candidatas (tau 10 a 19) en el entrenamiento, elige y mide la elegida y la peor en las pruebas 12 a 21. La celda
+# 0,3|0,15 mide ademas REPRO_R2. Despues, el agregador sellado. Solo se dispara al pushear results/htau_2026-10-14/CORRER.
+on:
+  push:
+    branches: ["titan/htau-nucleo-banc-2026-10-14"]
+    paths: ["results/htau_2026-10-14/CORRER"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  celda:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        ci: [0, 1, 2, 3, 4, 5]
+        include:
+          - {ci: 0, celda: "0.0|0.15"}
+          - {ci: 1, celda: "0.0|0.45"}
+          - {ci: 2, celda: "0.3|0.15"}
+          - {ci: 3, celda: "0.3|0.45"}
+          - {ci: 4, celda: "0.6|0.15"}
+          - {ci: 5, celda: "0.6|0.45"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: una celda, 10 candidatas y 10 pruebas
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv > out/versiones_htau_c${{ matrix.ci }}.txt
+          REPRO=""
+          if [ "${{ matrix.ci }}" = "2" ]; then REPRO="--repro"; fi
+          python tools/htau/htau_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --celda "${{ matrix.celda }}" $REPRO 2>&1 | tee out/htau_c${{ matrix.ci }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: htau-c${{ matrix.ci }}
+          path: out/
+  agregar:
+    needs: [celda]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: htau-c*
+          path: art
+          merge-multiple: true
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          python -m pip install numpy==2.5.3
+          D=results/htau_2026-10-14
+          mkdir -p "$D"
+          cp art/* "$D"/ || true
+          python tools/htau/agregar_htau.py "$D" > "$D/agregado.log" 2>&1 || echo "agregador_exit=$?" >> "$D/agregado.log"
+          (cd "$D" && md5sum htau_*.log htau_*.json versiones_*.txt agregado.log > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-14-002): H_TAU en Actions x64, 6 celdas y agregado" || echo nada_que_commitear
+          git pull --rebase origin titan/htau-nucleo-banc-2026-10-14 || true
+          git push origin HEAD:titan/htau-nucleo-banc-2026-10-14

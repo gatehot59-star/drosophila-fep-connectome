@@ -1,0 +1,79 @@
+name: htau-humo
+# Respuesta 2026-10-14-002. Humo de H_TAU antes del sello: REPRO_R2 a tamano real (tau 0, prueba 2, 0,3|0,15 tiene que
+# dar 0,9465 / 0,9375 / 0,9235 del factorial 3), una corrida corta con todo el camino (validacion cruzada, eleccion,
+# prueba) y la prueba del agregador. Solo se dispara al pushear results/htau_2026-10-14_humo/HUMO en esta rama.
+on:
+  push:
+    branches: ["titan/htau-nucleo-banc-2026-10-14"]
+    paths: ["results/htau_2026-10-14_humo/HUMO"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  humo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [repro, corto, agregador]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: humo
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          if [ "${{ matrix.parte }}" = "agregador" ]; then
+            python tools/htau/prueba_agregar_htau.py 2>&1 | tee out/htau_humo_agregador.log
+            exit 0
+          fi
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv > out/versiones_htau_${{ matrix.parte }}.txt
+          if [ "${{ matrix.parte }}" = "repro" ]; then
+            mkdir -p out/repro
+            python tools/htau/htau_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out/repro --celda "0.3|0.15" --solo_repro 2>&1 | tee out/htau_humo_repro.log
+          else
+            mkdir -p out/corto
+            python tools/htau/htau_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out/corto --celda "0.3|0.15" --candidatas 10,11 --pruebas 12,13 --repro --humo 2>&1 | tee out/htau_humo_corto.log
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: htau-humo-${{ matrix.parte }}
+          path: out/
+  commitear:
+    needs: [humo]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: htau-humo-*
+          path: art
+      - name: commitear el humo
+        shell: bash
+        run: |
+          D=results/htau_2026-10-14_humo
+          mkdir -p "$D"
+          find art -type f \( -name "*.log" -o -name "*.txt" \) -exec cp {} "$D"/ \;
+          find art -type f -name "*.json" -path "*repro*" -exec cp {} "$D"/htau_humo_repro.json \;
+          find art -type f -name "*.json" -path "*corto*" -exec cp {} "$D"/htau_humo_corto.json \;
+          (cd "$D" && md5sum *.log *.txt *.json > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-002): H_TAU en Actions, REPRO_R2 a tamano real, corrida corta y prueba del agregador" || echo nada_que_commitear
+          git pull --rebase origin titan/htau-nucleo-banc-2026-10-14 || true
+          git push origin HEAD:titan/htau-nucleo-banc-2026-10-14
