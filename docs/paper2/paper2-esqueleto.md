@@ -10,7 +10,7 @@ lang: en
 
 > **NOTA (para Abraham, se borra antes de publicar).** Esqueleto, no borrador. El texto del paper va en inglés, como la v2 del Paper 1; las notas van en castellano. Cada número lleva entre corchetes la respuesta de git de donde sale. Lo marcado **[PENDIENTE]** espera una corrida; lo marcado **[NO MEDIDO]** todavía no tiene instrumento. Nada de esto se escribe como resultado hasta que su agregado sellado esté en git.
 
-> **Alcance propuesto (decide Abraham).** Una sola pregunta: *¿el cableado exacto de la mosca carga la función del reflejo, más allá de su diseño y de sus barajados, y esa parte se conserva en otra mosca?* El control de las salidas (2026-10-10-005 a 009), LC6→GF y sel_post quedaron fuera de la v2 "para el Paper 2" (V2-CIERRE.md). Recomiendo **sacarlos también de éste** y dejarlos para un Paper 3 estructural: son otra pregunta con otros nulos, y mezclarlos le quita filo al resultado funcional.
+> **Alcance decidido (Abraham, ClickKit `alcance_p3_005`, 14-oct 12:19).** Una sola pregunta: *¿el cableado exacto de la mosca carga la función del reflejo, más allá de su diseño y de sus barajados, y esa parte se conserva en otra mosca?* El control de las salidas (2026-10-10-005 a 009), LC6→GF y sel_post quedan **fuera de este paper y van a un Paper 3 estructural**: son otra pregunta con otros nulos.
 
 ## Abstract [ESCRIBIR AL FINAL]
 
@@ -153,5 +153,5 @@ Sensors matter: the 418-entry rule beats the 40-entry rule by +2.79. Liquid (tra
 - [ ] Revisión de literatura para el hueco de §1 (¿alguien probó función de la parte conservada?).
 - [ ] Ecuación y modelo de entrada exactos (§2.2) desde el código sellado.
 - [ ] Figuras desde los CSV de git, con script commiteado.
-- [ ] Decidir el alcance: control de salidas fuera o dentro.
+- [x] Alcance: el control de salidas, LC6→GF y sel_post van al Paper 3 (Abraham, 14-oct 12:19).
 - [ ] Referencias verificadas una por una (la v1.0 tenía cinco mal).
