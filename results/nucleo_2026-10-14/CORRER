@@ -1,0 +1,6 @@
+CORRER NUCLEO (H_CONSENSO y H_CABLEADO_NUCLEO)
+Pedido: Abraham, ClickKit merge_y_correr_004 ("Mergear la v2 y correr los dos"), 2026-10-14 11:28 America/Buenos_Aires.
+Sello: tools/nucleo/SELLO-NUCLEO.md md5 3ddb3414, commit 4f4e672.
+Codigo sellado: tools/nucleo/nucleo_mosca.py 4697c81d, tools/nucleo/agregar_nucleo.py cb8a797b, .github/workflows/nucleo-mosca.yml 81a70a96.
+Plan: 60 trabajos de grilla (taus 0 a 9 x 6 celdas, pruebas 2 a 11, pareado con R2 del factorial 3) y 20 de nulos (50 SL + 50 T), agregador sellado.
+Nada del plan cambia al disparar.

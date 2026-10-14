@@ -1,0 +1,6 @@
+CORRER H_TAU
+Pedido: Abraham, ClickKit merge_y_correr_004 ("Mergear la v2 y correr los dos"), 2026-10-14 11:28 America/Buenos_Aires.
+Sello: tools/htau/SELLO-HTAU.md md5 8fbd0abd, commit 4f4e672.
+Codigo sellado: tools/htau/htau_mosca.py 2006cfef, tools/htau/agregar_htau.py 0baa11d8, .github/workflows/htau-mosca.yml f99f6679.
+Plan: 6 trabajos (una celda cada uno), candidatas tau 10 a 19 elegidas por CV de 5 pliegues en entrenamiento, pruebas 12 a 21, guardia REPRO_R2 en 0,3|0,15.
+Nada del plan cambia al disparar.
