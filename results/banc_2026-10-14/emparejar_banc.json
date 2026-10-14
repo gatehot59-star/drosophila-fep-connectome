@@ -1,0 +1,181 @@
+{
+ "aristas": {
+  "banc_entre_parejas": 647345,
+  "banc_total": 13620865,
+  "en_banc_1": 311664,
+  "en_banc_5": 104068,
+  "evaluables": 782453,
+  "nucleo": {
+   "en_banc_1": 96843,
+   "en_banc_5": 64336,
+   "evaluables": 125820
+  },
+  "resto": {
+   "en_banc_1": 214821,
+   "en_banc_5": 39732,
+   "evaluables": 656633
+  },
+  "total": 4031897,
+  "tramos": [
+   {
+    "desde": 1,
+    "en_banc_1": 169068,
+    "en_banc_5": 23535,
+    "evaluables": 586024,
+    "hasta": 4
+   },
+   {
+    "desde": 5,
+    "en_banc_1": 56966,
+    "en_banc_5": 19552,
+    "evaluables": 94959,
+    "hasta": 9
+   },
+   {
+    "desde": 10,
+    "en_banc_1": 41488,
+    "en_banc_5": 23271,
+    "evaluables": 53711,
+    "hasta": 19
+   },
+   {
+    "desde": 20,
+    "en_banc_1": 44142,
+    "en_banc_5": 37710,
+    "evaluables": 47759,
+    "hasta": 1000000000
+   }
+  ]
+ },
+ "dn": [
+  {
+   "banc_fafb_match": 720575941509145950,
+   "banc_nblast": null,
+   "lado": "L",
+   "root_id": 720575940622838154,
+   "tipo": "DNp01",
+   "tipo_banc": "DNp01"
+  },
+  {
+   "banc_fafb_match": 720575941451068597,
+   "banc_nblast": 720575941451068597,
+   "lado": "R",
+   "root_id": 720575940632499757,
+   "tipo": "DNp01",
+   "tipo_banc": "DNp01"
+  },
+  {
+   "banc_fafb_match": 720575941407841071,
+   "banc_nblast": 720575941407841071,
+   "lado": "L",
+   "root_id": 720575940617034565,
+   "tipo": "DNp07",
+   "tipo_banc": "DNp07"
+  },
+  {
+   "banc_fafb_match": 720575941545991429,
+   "banc_nblast": 720575941545991429,
+   "lado": "R",
+   "root_id": 720575940622550089,
+   "tipo": "DNp07",
+   "tipo_banc": "DNp07"
+  },
+  {
+   "banc_fafb_match": 720575941611791590,
+   "banc_nblast": null,
+   "lado": "L",
+   "root_id": 720575940622673860,
+   "tipo": "DNp06",
+   "tipo_banc": "DNp06"
+  },
+  {
+   "banc_fafb_match": 720575941657879576,
+   "banc_nblast": 720575941689668108,
+   "lado": "R",
+   "root_id": 720575940611644529,
+   "tipo": "DNp06",
+   "tipo_banc": "DNp06"
+  }
+ ],
+ "entradas": {
+  "LC4_L": {
+   "alguna": 37,
+   "fafb_match": 29,
+   "nblast": 29,
+   "total": 54
+  },
+  "LC4_R": {
+   "alguna": 37,
+   "fafb_match": 30,
+   "nblast": 31,
+   "total": 50
+  },
+  "LPLC1_L": {
+   "alguna": 39,
+   "fafb_match": 28,
+   "nblast": 31,
+   "total": 68
+  },
+  "LPLC1_R": {
+   "alguna": 50,
+   "fafb_match": 39,
+   "nblast": 30,
+   "total": 72
+  },
+  "LPLC2_L": {
+   "alguna": 58,
+   "fafb_match": 41,
+   "nblast": 42,
+   "total": 108
+  },
+  "LPLC2_R": {
+   "alguna": 70,
+   "fafb_match": 61,
+   "nblast": 43,
+   "total": 102
+  },
+  "LPLC4_L": {
+   "alguna": 35,
+   "fafb_match": 29,
+   "nblast": 24,
+   "total": 56
+  },
+  "LPLC4_R": {
+   "alguna": 37,
+   "fafb_match": 34,
+   "nblast": 23,
+   "total": 54
+  }
+ },
+ "entradas_alguna": 363,
+ "entradas_fafb_match": 291,
+ "entradas_total": 564,
+ "nucleo": {
+  "aristas": 603219,
+  "aristas_R2": 4031897,
+  "dn_con_entrada": 6,
+  "entradas": 564,
+  "entradas_con_salida": 563,
+  "huella": "69255109562f8a93270c435acdde2239",
+  "inhibitorias": 260173,
+  "inhibitorias_R2": 1506653,
+  "neuronas": 33489,
+  "por_10_sinapsis": 349737,
+  "por_1pc_entrada": 422183,
+  "post_sin_total": 0,
+  "sinapsis": 9668248,
+  "sinapsis_R2": 16971919
+ },
+ "parejas": {
+  "fafb_match": 25492,
+  "fafb_nblast_match": 29669
+ },
+ "pin": {
+  "annot": "719904abad876c68ace1b5690c9b9b63",
+  "banc_aristas": "08542b0771db7418ed474be60dc9886c",
+  "banc_meta": "8c2b93a608c7163ec9d94d68e0756ff4",
+  "conn": "3d802fd542b5d18570ba1ba0bb0abed9"
+ },
+ "r2_alguna": 14305,
+ "r2_fafb_match": 9510
+}
