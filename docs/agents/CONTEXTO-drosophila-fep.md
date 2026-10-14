@@ -1,10 +1,10 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-14, 16:30 (America/Buenos_Aires), con la respuesta 2026-10-14-015. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-14, 17:15 (America/Buenos_Aires), con la respuesta 2026-10-14-016. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Madrugada y mañana del 13-oct (019 a 2026-10-14-015) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-14-016) · manda sobre el resto
 
 - **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
   - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
@@ -104,7 +104,8 @@
   - Nucleo: pierde contra R2 en las 10 semillas de tau (-3,06 a -5,81 puntos) y mas con ruido 0,45 que con 0,15 en las 3 amplitudes (media -5,59 contra -3,59; post hoc). Con el 14,96 % de las aristas conserva cerca del 88 % de la ventaja de R2 sobre sus barajados SL (post hoc, cruza el factorial 3). Falta H_DEBILES: si las aristas debiles pesan por especificas o por cantidad.
   - H_TAU SOSTENIDA (bot `2d4dbfb`): con tau elegida por validacion cruzada (semilla 10 en las 6 celdas), R2 le gana a su regla por +1,78 puntos, IC90 [+1,45; +2,13], SUPERA en las 6 celdas y en 60 de 60 corridas. Primera vez que el cableado supera al diseno por el margen. Letra chica: el cableado tuvo 10 sorteos de tau para elegir y la regla ninguna perilla (H_TAU_JUSTO, sin sellar).
   - H_TOPO_NUEVO SOSTENIDA (bot `46929db`): el cableado le gana a 300 SL y 300 T en las 6 celdas (Holm 0,0399) y la regla nueva no pierde contra el cableado (+1,68 puntos, IC90 [+0,99; +2,38]). Letra chica (descriptivo): la regla vieja le gana a la nueva en 5 de 6 celdas; la nueva arregla la barra AD pero rompe el aterrizaje ante la barra AA.
-- **Espera decisión de Abraham:** el token de Zenodo para el borrador del depósito de la v2 (publicar, solo con su sí); sellar H_DEBILES y H_TAU_JUSTO, y una segunda versión del programa de la barra (2026-10-14-015); el nulo del emparejado BANC; responderle a Tao en su PR.
+- **H_DEBILES sellado, sin correr (2026-10-14-016):** rama `titan/debiles-2026-10-14`. La mezcla es R2 con el nucleo intacto y las 3.428.678 aristas debiles con destinos barajados por lado (mismos grados, pesos y signos). E1 = mezcla menos R2 decide H_DEBILES_ESPECIFICAS (importa cuales son) y E2 = mezcla menos nucleo decide H_DEBILES_SUMAN (importa cuantas son), pareadas corrida por corrida con el factorial 3 y con el nucleo, M 0,01. Instrumento `f28404c2`, agregador `c60fbbc6`, prueba del agregador 7 de 7. Antes del CORRER, los reales a tamano completo del humo tienen que dar 0,9465 y 0,9135. Corre solo con `results/debiles_2026-10-14/CORRER`.
+- **Espera decisión de Abraham:** el token de Zenodo para el borrador del depósito de la v2 (publicar, solo con su sí); correr H_DEBILES, sellado en la 2026-10-14-016 (su `CORRER`); sellar H_TAU_JUSTO y una segunda versión del programa de la barra (2026-10-14-015); el nulo del emparejado BANC; responderle a Tao en su PR.
 
 ## Tarde y noche del 12-oct (010 a 018)
 
