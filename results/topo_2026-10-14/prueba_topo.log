@@ -1,0 +1,27 @@
+SELLADO escape_aterrizaje/tarea_mosca.py 40d64e074d9163753439307c5be4ac5e -> True
+SELLADO factorial2/factorial2_mosca.py 798a824cd47808155fa12adb9e652dac -> True
+SELLADO escape_aterrizaje/escape_aterrizaje_dbc3.py 4d40477d87406c31672acfb6e6e8f5a2 -> True
+SELLADO escape_aterrizaje/entrada_por_tipos.py e060c4bffb685aa550dadc19eda3dd02 -> True
+TOPO topo.py 9abefe9d620e9f94f4a68ed75108d6be escape.topo dae4967da0085f4bedcb4365f87127b0
+PROGRAMA escape renglones_utiles=18 lineas=6 vias=5
+EQUIV entradas=40 A=0.0 ruido=0.15 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.9300 -> True
+EQUIV entradas=40 A=0.0 ruido=0.45 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.8625 -> True
+EQUIV entradas=40 A=0.3 ruido=0.15 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.9275 -> True
+EQUIV entradas=40 A=0.3 ruido=0.45 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.8600 -> True
+EQUIV entradas=40 A=0.6 ruido=0.15 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.9275 -> True
+EQUIV entradas=40 A=0.6 ruido=0.45 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.8775 -> True
+EQUIV entradas=564 A=0.0 ruido=0.15 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.8925 -> True
+EQUIV entradas=564 A=0.0 ruido=0.45 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.8975 -> True
+EQUIV entradas=564 A=0.3 ruido=0.15 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.9075 -> True
+EQUIV entradas=564 A=0.3 ruido=0.45 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.8975 -> True
+EQUIV entradas=564 A=0.6 ruido=0.15 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.9075 -> True
+EQUIV entradas=564 A=0.6 ruido=0.45 max_dif_senal=0 max_dif_umbral=0 decisiones_iguales=400/400 acierto_regla=0.9000 -> True
+PRUEBA EQUIV_REGLA casos=12 -> PASA
+NEGATIVO aterrizaje con LPLC1: decisiones_distintas=127/400 acierto 0.9075 -> 0.6550
+NEGATIVO programa mal escrito rechazado: renglon 19: tipo LC6 fuera del vocabulario
+NEGATIVO programa mal escrito rechazado: renglon 22: falta el lado en LPLC4 (usar TIPO@L o TIPO@R)
+NEGATIVO programa mal escrito rechazado: renglon 24: accion desconocida o por omision volar_hacia_atras
+PRUEBA CONTROL_NEGATIVO -> PASA
+CABLEADO topo: neuronas=46 aristas=187 inhibitorias=0 sinapsis=1149 | sellado: neuronas=46 aristas=187
+PRUEBA REPRODUCE_M46 -> PASA
+VEREDICTO_TOPO -> PASA
