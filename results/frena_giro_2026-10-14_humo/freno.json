@@ -1,0 +1,587 @@
+{
+ "objetivo": "DNp01",
+ "mecanismos": {
+  "M3_CONTRA": {
+   "por_lado": {
+    "left": {
+     "sinapsis": 120,
+     "inhibitorias_totales": 2227,
+     "cuota": 0.05388414907947912,
+     "percentil": 0.9809976247030879,
+     "n_ref": 421
+    },
+    "right": {
+     "sinapsis": 204,
+     "inhibitorias_totales": 2495,
+     "cuota": 0.08176352705410822,
+     "percentil": 0.9815242494226328,
+     "n_ref": 433
+    }
+   },
+   "veredicto": "CANDIDATO"
+  },
+  "M4_LPLC4": {
+   "por_lado": {
+    "left": {
+     "sinapsis": 279,
+     "inhibitorias_totales": 2227,
+     "cuota": 0.12528064660978896,
+     "percentil": 0.8527315914489311,
+     "n_ref": 421
+    },
+    "right": {
+     "sinapsis": 382,
+     "inhibitorias_totales": 2495,
+     "cuota": 0.1531062124248497,
+     "percentil": 0.8822170900692841,
+     "n_ref": 433
+    }
+   },
+   "veredicto": "DUDOSO"
+  },
+  "M5_DNP07": {
+   "por_lado": {
+    "left": {
+     "sinapsis": 0,
+     "inhibitorias_totales": 2227,
+     "cuota": 0.0,
+     "percentil": 0.0,
+     "n_ref": 421
+    },
+    "right": {
+     "sinapsis": 0,
+     "inhibitorias_totales": 2495,
+     "cuota": 0.0,
+     "percentil": 0.0,
+     "n_ref": 433
+    }
+   },
+   "veredicto": "DESCARTADO"
+  },
+  "M6_BILATERAL": {
+   "por_lado": {
+    "left": {
+     "sinapsis": 45,
+     "inhibitorias_totales": 2227,
+     "cuota": 0.02020655590480467,
+     "percentil": 0.9881235154394299,
+     "n_ref": 421
+    },
+    "right": {
+     "sinapsis": 60,
+     "inhibitorias_totales": 2495,
+     "cuota": 0.02404809619238477,
+     "percentil": 0.9907621247113164,
+     "n_ref": 433
+    }
+   },
+   "veredicto": "DESCARTADO"
+  },
+  "M1_DNP07": {
+   "por_lado": {
+    "left": {
+     "sinapsis": 0,
+     "inhibitorias_totales": 2227,
+     "cuota": 0.0,
+     "percentil": 0.0,
+     "n_ref": 421
+    },
+    "right": {
+     "sinapsis": 0,
+     "inhibitorias_totales": 2495,
+     "cuota": 0.0,
+     "percentil": 0.0,
+     "n_ref": 433
+    }
+   },
+   "veredicto": "AUSENTE"
+  },
+  "M1_DNP01": {
+   "por_lado": {
+    "left": {
+     "sinapsis": 0,
+     "inhibitorias_totales": 2227,
+     "cuota": 0.0,
+     "percentil": 0.0,
+     "n_ref": 421
+    },
+    "right": {
+     "sinapsis": 0,
+     "inhibitorias_totales": 2495,
+     "cuota": 0.0,
+     "percentil": 0.0,
+     "n_ref": 433
+    }
+   },
+   "veredicto": "AUSENTE"
+  },
+  "M2_OPUESTA": {
+   "por_lado": {
+    "left": {
+     "sinapsis": 0,
+     "inhibitorias_totales": 2227,
+     "cuota": 0.0,
+     "percentil": 0.0,
+     "n_ref": 421
+    },
+    "right": {
+     "sinapsis": 0,
+     "inhibitorias_totales": 2495,
+     "cuota": 0.0,
+     "percentil": 0.0,
+     "n_ref": 433
+    }
+   },
+   "veredicto": "AUSENTE"
+  }
+ },
+ "n_unidades": 927,
+ "tamanos": {
+  "M3_CONTRA_left": 1114,
+  "M3_CONTRA_right": 917,
+  "M4_LPLC4_left": 1366,
+  "M4_LPLC4_right": 1366,
+  "M5_DNP07_left": 9,
+  "M5_DNP07_right": 9,
+  "M6_BILATERAL_left": 12,
+  "M6_BILATERAL_right": 12
+ },
+ "control_positivo": {
+  "por_lado": {
+   "left": {
+    "sinapsis": 458,
+    "excitatorias_totales": 2100,
+    "cuota": 0.2180952380952381,
+    "percentil": 0.9929577464788732,
+    "n_ref": 426
+   },
+   "right": {
+    "sinapsis": 622,
+    "excitatorias_totales": 2652,
+    "cuota": 0.23453996983408748,
+    "percentil": 0.9954441913439636,
+    "n_ref": 439
+   }
+  },
+  "pasa": true
+ },
+ "H_FRENO": "SOSTENIDA",
+ "nt_inhibitorio": {
+  "left": {
+   "gaba": 1919,
+   "glutamate": 308
+  },
+  "right": {
+   "gaba": 2100,
+   "glutamate": 395
+  }
+ },
+ "top_inhibitorias": {
+  "left": [
+   {
+    "tipo": "CB3707",
+    "sinapsis": 293,
+    "neuronas": 4,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "CL065",
+      0.0644
+     ],
+     [
+      "LTe18",
+      0.0607
+     ],
+     [
+      "DNp66",
+      0.0448
+     ]
+    ]
+   },
+   {
+    "tipo": "SAD014",
+    "sinapsis": 136,
+    "neuronas": 6,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "AN_multi_2",
+      0.1446
+     ],
+     [
+      "AN_multi_22",
+      0.1085
+     ],
+     [
+      "AN_multi_62",
+      0.0466
+     ]
+    ]
+   },
+   {
+    "tipo": "LHAD1g1",
+    "sinapsis": 130,
+    "neuronas": 1,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "LPLC2",
+      0.0464
+     ],
+     [
+      "AVLP501",
+      0.0232
+     ],
+     [
+      "LT87",
+      0.0226
+     ]
+    ]
+   },
+   {
+    "tipo": "PVLP010",
+    "sinapsis": 113,
+    "neuronas": 1,
+    "nt": "glutamate",
+    "entradas_top3": [
+     [
+      "SAD072",
+      0.0471
+     ],
+     [
+      "AVLP040",
+      0.0406
+     ],
+     [
+      "CB1932",
+      0.0376
+     ]
+    ]
+   },
+   {
+    "tipo": "CB0010",
+    "sinapsis": 111,
+    "neuronas": 1,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "SAD040",
+      0.0792
+     ],
+     [
+      "AN_multi_106",
+      0.0669
+     ],
+     [
+      "BM_Vib",
+      0.0457
+     ]
+    ]
+   },
+   {
+    "tipo": "CB0563",
+    "sinapsis": 110,
+    "neuronas": 2,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "AVLP039",
+      0.0555
+     ],
+     [
+      "AVLP040",
+      0.0493
+     ],
+     [
+      "CB0258",
+      0.0484
+     ]
+    ]
+   },
+   {
+    "tipo": "CL038",
+    "sinapsis": 106,
+    "neuronas": 2,
+    "nt": "glutamate",
+    "entradas_top3": [
+     [
+      "AVLP442",
+      0.0388
+     ],
+     [
+      "PVLP122a",
+      0.0388
+     ],
+     [
+      "CB0580",
+      0.0337
+     ]
+    ]
+   },
+   {
+    "tipo": "SAD017",
+    "sinapsis": 83,
+    "neuronas": 2,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "AN_multi_2",
+      0.1068
+     ],
+     [
+      "AN19A018",
+      0.0943
+     ],
+     [
+      "CB3103",
+      0.0623
+     ]
+    ]
+   },
+   {
+    "tipo": "CB3486",
+    "sinapsis": 55,
+    "neuronas": 3,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "LHPV6q1",
+      0.1744
+     ],
+     [
+      "CB1542",
+      0.0647
+     ],
+     [
+      "CB1078",
+      0.0531
+     ]
+    ]
+   },
+   {
+    "tipo": "CB0414",
+    "sinapsis": 48,
+    "neuronas": 2,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "CB3655",
+      0.0683
+     ],
+     [
+      "CB4176",
+      0.0443
+     ],
+     [
+      "AN_multi_68",
+      0.0397
+     ]
+    ]
+   }
+  ],
+  "right": [
+   {
+    "tipo": "CB3707",
+    "sinapsis": 340,
+    "neuronas": 4,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "CL065",
+      0.0644
+     ],
+     [
+      "LTe18",
+      0.0607
+     ],
+     [
+      "DNp66",
+      0.0448
+     ]
+    ]
+   },
+   {
+    "tipo": "SAD014",
+    "sinapsis": 156,
+    "neuronas": 6,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "AN_multi_2",
+      0.1446
+     ],
+     [
+      "AN_multi_22",
+      0.1085
+     ],
+     [
+      "AN_multi_62",
+      0.0466
+     ]
+    ]
+   },
+   {
+    "tipo": "CL038",
+    "sinapsis": 143,
+    "neuronas": 2,
+    "nt": "glutamate",
+    "entradas_top3": [
+     [
+      "AVLP442",
+      0.0422
+     ],
+     [
+      "CB0580",
+      0.0419
+     ],
+     [
+      "PVLP122a",
+      0.0367
+     ]
+    ]
+   },
+   {
+    "tipo": "PVLP010",
+    "sinapsis": 137,
+    "neuronas": 1,
+    "nt": "glutamate",
+    "entradas_top3": [
+     [
+      "SAD072",
+      0.051
+     ],
+     [
+      "CB1932",
+      0.0374
+     ],
+     [
+      "AVLP040",
+      0.0362
+     ]
+    ]
+   },
+   {
+    "tipo": "LHAD1g1",
+    "sinapsis": 124,
+    "neuronas": 1,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "LPLC2",
+      0.0366
+     ],
+     [
+      "AVLP370a",
+      0.0213
+     ],
+     [
+      "AVLP501",
+      0.0212
+     ]
+    ]
+   },
+   {
+    "tipo": "CB0010",
+    "sinapsis": 112,
+    "neuronas": 1,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "AN_multi_106",
+      0.0686
+     ],
+     [
+      "SAD040",
+      0.0684
+     ],
+     [
+      "BM_Vib",
+      0.0592
+     ]
+    ]
+   },
+   {
+    "tipo": "CB0563",
+    "sinapsis": 99,
+    "neuronas": 2,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "AVLP039",
+      0.0555
+     ],
+     [
+      "AVLP040",
+      0.0493
+     ],
+     [
+      "CB0258",
+      0.0484
+     ]
+    ]
+   },
+   {
+    "tipo": "AN_GNG_SAD_3",
+    "sinapsis": 62,
+    "neuronas": 2,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "AN_GNG_67",
+      0.1311
+     ],
+     [
+      "AN_AVLP_GNG_23",
+      0.0656
+     ],
+     [
+      "DNg29",
+      0.0656
+     ]
+    ]
+   },
+   {
+    "tipo": "AVLP202",
+    "sinapsis": 61,
+    "neuronas": 2,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "WED104",
+      0.0332
+     ],
+     [
+      "PVLP028",
+      0.0329
+     ],
+     [
+      "CB1688",
+      0.0243
+     ]
+    ]
+   },
+   {
+    "tipo": "PVLP024",
+    "sinapsis": 60,
+    "neuronas": 4,
+    "nt": "gaba",
+    "entradas_top3": [
+     [
+      "LC4",
+      0.4068
+     ],
+     [
+      "CL140",
+      0.0678
+     ],
+     [
+      "LT66",
+      0.0478
+     ]
+    ]
+   }
+  ]
+ },
+ "humo": true,
+ "segundos": 5.586748838424683
+}
