@@ -1,0 +1,19 @@
+Python 3.12.3
+5299df9a477741c85e9287d7d0ae4060  tools/v2/fix_v2_2026-10-13.py
+ANTES docs/v2/paper1-v2.0.md e5fb86dcf79867e77434df33269ad745
+ANTES docs/SECCION-V2-DOS-SALTOS.md cbe0245750c4ae1810eda829e391ba7a
+ANTES docs/v2/zenodo-v2.0-metadata.json 375853474c9148e92aacdd0945b69e42
+REEMPLAZO F01 seccion 3.4 apariciones=1
+REEMPLAZO F07 seccion 3.4 apariciones=1
+REEMPLAZO F06 limitacion 2 apariciones=1
+REEMPLAZO F01 limitacion 7 apariciones=1
+REEMPLAZO F06 cambio 15 apariciones=1
+REEMPLAZO F01 seccion de dos saltos, ensemble apariciones=1
+REEMPLAZO F07 seccion de dos saltos apariciones=1
+REEMPLAZO F01 seccion de dos saltos, limitacion apariciones=1
+DESPUES docs/v2/paper1-v2.0.md 2fa575c41926fdc790cecbb5965ba2a1
+DESPUES docs/SECCION-V2-DOS-SALTOS.md 23db9cacbcae29fdb355ade871cea540
+PARCHE OK: 8 reemplazos (5 en el manuscrito, 3 en la seccion de dos saltos); metadatos sin cambios
+2fa575c41926fdc790cecbb5965ba2a1  docs/v2/paper1-v2.0.md
+23db9cacbcae29fdb355ade871cea540  docs/SECCION-V2-DOS-SALTOS.md
+375853474c9148e92aacdd0945b69e42  docs/v2/zenodo-v2.0-metadata.json

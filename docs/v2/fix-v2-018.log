@@ -1,0 +1,35 @@
+Python 3.12.3
+4c4039d295848e5c75f1a2d3f4f1d244  tools/v2/fix_v2_018.py
+COCIENTE_EXTREMOS grado max=mec 7.364619 min=olf 0.022797 -> 323.0521
+COCIENTE_EXTREMOS neuropilo max=vis 1.531126 min=olf 0.367658 -> 4.1645
+COCIENTE_EXTREMOS grado_umbral5 max=mec 5.811884 min=olf 0.001505 -> 3861.7169
+COCIENTE_EXTREMOS neuropilo_umbral5 max=vis 4.871795 min=olf 0.120950 -> 40.2794
+COCIENTE_DEL_2.4 visual/gustatory neuropilo = 2.4215
+ANTES docs/v2/paper1-v2.0.md ec6dc5d3d599f6c1b6fddc8425fe25d2
+ANTES docs/ERRATUM.md f8fbb170e20abaacc5730a102aad5491
+ANTES docs/SECCION-V2-DOS-SALTOS.md 9827df6e4a565b8227c170b9da586484
+ANTES docs/v2/zenodo-v2.0-metadata.json 894a2c3447b7ab1b83957c81fde93091
+REEMPLAZO P1 abstract (3) apariciones=1
+REEMPLAZO P2 seccion 1.3 apariciones=1
+REEMPLAZO P3 seccion 2.5 apariciones=1
+REEMPLAZO P4 seccion 3.4 cociente entre extremos apariciones=1
+REEMPLAZO P5 seccion 3.4 cero de olfato y vision apariciones=1
+REEMPLAZO P6 nota de la Tabla 9 apariciones=1
+REEMPLAZO P7 seccion 4.1 apariciones=1
+REEMPLAZO P8 limitacion 3 apariciones=1
+REEMPLAZO P9 cambios desde la v1.0, item 6 apariciones=1
+REEMPLAZO E1 item 7, replicacion entre modelos apariciones=1
+REEMPLAZO E2 revision antes de depositar apariciones=1
+REEMPLAZO S1 cociente entre extremos apariciones=1
+REEMPLAZO S2 cero de olfato y vision apariciones=1
+REEMPLAZO S3 nota de conservacion apariciones=1
+REEMPLAZO Z1 descripcion de Zenodo apariciones=1
+DESPUES docs/v2/paper1-v2.0.md e5fb86dcf79867e77434df33269ad745
+DESPUES docs/ERRATUM.md f2ad05072086258a8ce76b9d650ed26d
+DESPUES docs/SECCION-V2-DOS-SALTOS.md cbe0245750c4ae1810eda829e391ba7a
+DESPUES docs/v2/zenodo-v2.0-metadata.json 375853474c9148e92aacdd0945b69e42
+PARCHE OK: 15 reemplazos, sin '2.4-fold' en manuscrito ni seccion, metadatos JSON validos
+e5fb86dcf79867e77434df33269ad745  docs/v2/paper1-v2.0.md
+f2ad05072086258a8ce76b9d650ed26d  docs/ERRATUM.md
+cbe0245750c4ae1810eda829e391ba7a  docs/SECCION-V2-DOS-SALTOS.md
+375853474c9148e92aacdd0945b69e42  docs/v2/zenodo-v2.0-metadata.json

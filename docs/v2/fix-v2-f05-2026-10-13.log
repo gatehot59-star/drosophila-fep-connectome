@@ -1,0 +1,18 @@
+Python 3.12.3
+da4ace2dc070ff8c85d1f673a264d0b4  tools/v2/fix_v2_f05_2026-10-13.py
+ANTES docs/v2/paper1-v2.0.md 2fa575c41926fdc790cecbb5965ba2a1
+ANTES docs/v2/zenodo-v2.0-metadata.json 375853474c9148e92aacdd0945b69e42
+REEMPLAZO resumen, propiedad 1 apariciones=1
+REEMPLAZO resumen, propiedad 3 apariciones=1
+REEMPLAZO contribuciones, item 3 apariciones=1
+REEMPLAZO seccion 3.7 apariciones=1
+REEMPLAZO discusion, propiedad 1 apariciones=1
+REEMPLAZO discusion, propiedad 3 apariciones=1
+REEMPLAZO conclusiones, item 1 apariciones=1
+REEMPLAZO cambio 16 apariciones=1
+REEMPLAZO metadatos de Zenodo apariciones=1
+DESPUES docs/v2/paper1-v2.0.md a4d09d2c345dca03faca4d9bccf236d7
+DESPUES docs/v2/zenodo-v2.0-metadata.json 3c2b0b36f967b691b516a12111db5b70
+PARCHE OK: 9 reemplazos (8 en el manuscrito, 1 en los metadatos); la Tabla 8 queda igual
+a4d09d2c345dca03faca4d9bccf236d7  docs/v2/paper1-v2.0.md
+3c2b0b36f967b691b516a12111db5b70  docs/v2/zenodo-v2.0-metadata.json

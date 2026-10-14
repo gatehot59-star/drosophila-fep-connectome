@@ -11,9 +11,12 @@ version); v1.0 DOI `10.5281/zenodo.19136948`. The v1.0 record remains available 
 Nine items. Items 1 to 3 change reported values and one qualitative conclusion; items 4
 to 8 are factual corrections; item 9 concerns the verification script this work cites.
 
-None of these corrections weakens the central findings. Item 1 replaces a number that
-cannot survive scrutiny with one that can, **and establishes its cause**, which v1.0 could
-not. Item 2 makes the motor-access result stronger and more specific.
+None of these corrections weakens the central finding, the temporal dissociation between
+modular separation during stimulus and specific persistence after it. Item 1 replaces a
+number that cannot survive scrutiny with one that can, **and establishes its cause**, which
+v1.0 could not. Item 2 makes the density result stronger against a uniform expectation;
+version 2.0 then shows, against an anatomical null, that the modality ordering this result
+reveals is explained by neuropil co-location (see the qualification at the end of item 2).
 
 ---
 
@@ -35,7 +38,7 @@ journal are easy to conflate and this erratum corrects figures against both:
   reciprocal pairs **between** neuropils (its Fig. 5h), together with a population of
   neuropil-specific highly reciprocal neurons. This is relevant to item 3.
 - **Bates, A. S., Phelps, J. S., Kim, M., Yang, H. H., et al. (2026).** *Distributed
-  control circuits across a brain-and-cord connectome.* **Nature**,
+  control circuits across a brain-and-cord connectome.* **Nature 656, 957–970**,
   doi:10.1038/s41586-026-10735-w. The combined brain and nerve-cord connectome, cited in
   item 3 for its treatment of reciprocal connectivity between high-influence networks and
   for its adoption of the five-synapse criterion.
@@ -120,7 +123,9 @@ with  N_motor = 1,485,  P(excitatory | edge exists) = 0.600272
 
 The factor `P(excitatory)` is not mentioned in v1.0 and materially changes the
 expectation. Populations are defined by `cell_class` (`super_class` for the optic
-class), intersected with the connectivity graph.
+class), intersected with the connectivity graph. The motor population of 1,485 is mostly
+descending: 1,299 descending, 110 motor and 76 endocrine neurons with the pinned
+annotations. Version 2.0 calls it the motor output population.
 
 | Class | N | Observed exc. edges | Published ratio | Corrected ratio | Verdict changes |
 | --- | --- | --- | --- | --- | --- |
@@ -134,8 +139,14 @@ class), intersected with the connectivity graph.
 | visual | 10,855 | 137 | 0.002x | 0.018x | no, still depleted |
 | visual optic | 77,530 | 1,679 | 0.003x | 0.031x | no, still depleted |
 
-**Summary as published (Section 3.3): 0 enriched, 7 depleted. Corrected: 4 enriched,
-4 depleted, 1 within expectation.**
+**Summary as published (Section 3.3): 0 enriched, 7 depleted. Corrected, over the eight
+reproducible rows: 3 enriched, 4 depleted, 1 within expectation. The ninth row, AN, is not
+reproducible.**
+
+The binomial *p*-values, with a per-pair probability equal to `density x P(excitatory)`,
+the same quantity that enters the expected count, are below 1e-300 for every row except
+hygrosensory (1.3e-10) and thermosensory (0.094, consistent with its verdict). Version
+2.0 reports them in Table 5.
 
 ### Validation of the recomputation
 
@@ -151,31 +162,38 @@ Table 5 of v1.0 gives `N = 495` for the AN class. The annotation table contains 
 neurons with `cell_class = AN`, of which 2,231 appear in the connectivity graph. No
 filter consistent with the other eight rows yields 495. With `N = 2,231` the ratio under
 the overflowed density is 1.894x rather than the published 0.6x, so the discrepancy is
-not a rounding effect.
+not a rounding effect. Under the corrected density that population gives 17.84x.
 
 **The AN row is therefore declared not reproducible rather than corrected.** Substituting
 a different population and presenting the result as a correction would replace one
-unverifiable number with another.
+unverifiable number with another. **For the same reason it is not counted in the corrected
+summary above.** An earlier draft of this erratum counted it as a fourth enriched class.
 
 ### Consequence for the interpretation in Section 3.3 and 4.2
 
 The statement *"Zero classes enriched. Seven classes depleted. No sensory class has more
 direct motor access than expected from graph density"* **does not survive** and is
-withdrawn. Four classes exceed expectation, three of them by more than an order of
-magnitude.
+withdrawn. Three of the eight reproducible classes exceed expectation, two of them by more
+than an order of magnitude; the full AN population would be a fourth, at 17.84x, but it is
+not the population of the published row.
 
 The framing of Section 4.2, *"the topology concentrates rather than adds"*, rested on the
 count of zero enriched classes and is **withdrawn**. The observed pattern is not uniform
-depletion but a **spread of roughly three orders of magnitude between extremes**
-(12.9x for unknown sensory down to 0.018x for visual), ordered such that pathways which
-must reach muscle within milliseconds are enriched and pathways which must first construct
-a scene or an odour identity are depleted.
+depletion but a **spread of roughly three orders of magnitude between extremes**: 713-fold
+over the eight reproducible rows, from 12.9x for unknown sensory down to 0.018x for visual.
+It is ordered such that pathways which must reach muscle within milliseconds are enriched
+and pathways which must first construct a scene or an odour identity are depleted.
 
-That replacement claim has since been tested against a null model preserving in-degree
-and out-degree exactly (40 nulls, this repository). It survives with the sign preserved in
+That replacement claim has since been tested against a null model preserving in-degree and
+out-degree exactly (40 nulls, this repository). It survives with the sign preserved in
 8 of 8 classes and no null out of 40 reaching the real value. Under that null the spread
 between extremes is **283x** rather than 991x, and the ordering within the depleted group
-shifts: **olfactory rather than visual is the most depleted class**.
+shifts: **olfactory rather than visual is the most depleted class**. **The eight classes
+of that test are the reproducible rows other than visual optic, plus the full AN population
+of 2,231 neurons** (7.41x against the degree null), and the 991x is the uniform-density
+spread over the same eight (17.839x for AN over 0.018x for visual, from rounded ratios;
+989x unrounded). An earlier draft quoted the 991x next to the 12.9x extreme, which belongs
+to a different set of classes.
 
 **A limitation is stated here that v1.0 could not have stated.** Against a null that also
 preserves modular block structure, this quantity is **conserved by construction**: the
@@ -184,6 +202,19 @@ defined by super-class, so the count cannot change. Measured across 40 such null
 standard deviation is exactly zero and every null equals the real value. The routing
 hierarchy is therefore established against degree but **untestable against modularity**
 with this null family. A null with coarser blocks is required, and has not been run.
+
+**A further qualification, from version 2.0, Section 3.4.** For the 110 brain motor
+neurons, two-hop path counts and direct reach were tested against a **neuropil-preserving**
+null, which keeps the number of connections between every ordered pair of neuropils. The
+modality ordering found against degree-preserving nulls **inverts**: 104 of the 110 brain
+motor neurons sit in the gnathal ganglion or the prow, where mechanosensory and gustatory
+afferents also terminate, while olfactory and visual afferents do not. The ordering is
+therefore an expression of neuropil co-location, and the reading by behavioural urgency is
+not supported as a wiring principle beyond it. What survives the anatomical null is a
+restriction: gustatory afferents contact 10 brain motor neurons where co-location predicts
+101.6 (z = -78.9). **For the motor output population of Table 5 the neuropil-preserving
+null was not run**, so the ratios of Table 5 stand as comparisons against a uniform and a
+degree-preserving expectation, not against anatomy.
 
 ---
 
@@ -243,11 +274,12 @@ qualitatively rather than as a network statistic.
 existence.** The decomposition in Table 7 is defined over **directed pairs of functional
 cell classes** (intra-motor 41.3 per cent, intra-visual-centrifugal 36.9 per cent,
 intra-optic 32.0 per cent, intra-sensory 30.7 per cent, sensory-to-central 24.2 per cent,
-sensory-to-descending 8.7 per cent, sensory-to-motor 3.6 per cent, optic-to-motor 0.0 per
-cent), whereas the decomposition of Lin et al. is defined over **anatomical subnetworks**.
-The two axes answer different questions: theirs, how recurrence varies across brain
-regions; ours, how it varies along the sensory-to-motor axis. They are complementary, and
-no priority is claimed for decomposing reciprocity as such.
+sensory-to-descending 8.6 per cent, printed as 8.7 in v1.0 (item 6), sensory-to-motor 3.6
+per cent, optic-to-motor 0.0 per cent), whereas the decomposition of Lin et al. is defined
+over **anatomical subnetworks**. The two axes answer different questions: theirs, how
+recurrence varies across brain regions; ours, how it varies along the sensory-to-motor
+axis. They are complementary, and no priority is claimed for decomposing reciprocity as
+such.
 
 **This narrowing is stated rather than quietly dropped**, for the same reason as item 4: an
 erratum that attributes to another published work a deficiency it does not have is itself
@@ -256,9 +288,10 @@ an error, and one addressed to named authors in a citable document.
 **Two limits on the present statement are declared.** The values of Lin et al. Fig. 5c and
 Extended Data Fig. 6c have not been read region by region, only their definitions from the
 figure captions and body text; if any of their neuropils corresponds closely to a circuit
-class of Table 7, the overlap is greater than "complementary" conveys. And the eight values
-of Table 7 are computed **without** a synapse threshold, whereas the 13.98 per cent of item
-5 is computed **with** one, so the two are not directly comparable to each other.
+class of Table 7, the overlap is greater than "complementary" conveys. And Table 7 has now
+been recomputed under the five-synapse threshold (Outstanding verification 9, resolved):
+only values computed under the same inclusion criterion should be compared with each
+other, or with the 13.98 per cent of item 5.
 
 ---
 
@@ -334,7 +367,7 @@ the statistic that should be quoted is the ensemble rank of item 3.
 
 ## 6. Internal count inconsistencies
 
-Four counting problems are corrected.
+Five counting problems are corrected.
 
 - **Table 4 does not sum.** The total is given as 90,101 where the two components,
   85,821 and 4,281, sum to **90,102**.
@@ -345,12 +378,17 @@ Four counting problems are corrected.
 - **The count of depleted classes is inconsistent across three places.** Table 5 marks
   **six** rows Depleted and three "approximately expected". The text of Section 3.3 states
   **seven** classes depleted. The abstract states **7/10**. Under the corrected
-  expectation the counts are four enriched, four depleted and one within expectation, over
-  nine reported classes.
+  expectation the counts are three enriched, four depleted and one within expectation over
+  the eight reproducible rows, with the ninth, AN, not reproducible.
 - **The thresholds are now defined explicitly.** v1.0 applies the verdicts "enriched",
   "depleted" and "approximately expected" without stating the boundaries. They are:
   enriched if ratio > 2 and p < 0.001; depleted if ratio < 0.5 and p < 0.001;
   approximately expected if 0.5 <= ratio <= 2.
+- **Table 7 prints sensory-to-descending reciprocity as 8.7 per cent.** The value is
+  2,104 of 24,326 connections with the pinned annotations (2,104 of 24,327 with the March
+  annotations), that is 8.649 per cent, which rounds to **8.6**. The printed 8.7 comes from
+  rounding twice, to 8.65 and then to 8.7. It is the only one of the eight values of
+  Table 7 that does not reproduce at one decimal.
 
 ---
 
@@ -361,6 +399,14 @@ The LIF-hard model yields undefined Cosine RDI at the sampled time steps, as Sec
 and Limitation 3 of v1.0 already state. The abstract is therefore inconsistent with the
 body of the paper and is corrected to **three compatible models** (SparseLTC, Linear,
 LIF-soft), with the fourth reported as metric-incompatible rather than omitted.
+
+**Replication across models.** Section 2.5 of v1.0 states that *"temporal amplification
+results are validated across three compatible models (SparseLTC, Linear, LIF-soft)"*, and
+Limitation 3 that *"temporal amplification is thus validated across three of four models"*.
+Table 9 of v1.0 shows otherwise for LIF-soft: its cosine RDI decays from 0.253 at step 60
+to 0.002 at step 180. The amplification appears in two of the three compatible models
+(SparseLTC and Linear); LIF-soft, although graded, does not amplify. v2.0 states the
+property for the two models that show it.
 
 **The temporal parameter, two separate defects.** Section 2.5 states that tau = 0.119
 corresponds to tau_m ~= 8.4 ms, *"center of the Drosophila physiological range (5-20 ms)"*,
@@ -375,7 +421,9 @@ and that tau = 0.3 corresponds to *"3.3 ms, lower limit of range"*.
 
 Both values fall inside the physiological range and no conclusion depends on the
 difference, but both statements require correction and the corrected derivation is used
-in this repository for future work.
+in this repository for future work. **The same derivation applies to the tau_m column of
+Table 10**: 20, 8.4, 5 and 3.3 ms become 19.5, 7.9, 4.5 and 2.8 ms. The RDI values of
+Table 10 are unaffected, and version 2.0 prints both columns.
 
 ---
 
@@ -409,17 +457,45 @@ string "v783" pins the connectome only, not the annotations.
 does not cite **Lin et al. (2024), Nature 634:153–165**, the network-analysis paper for the
 same connectome, against whose figures items 3 and 5 of this erratum are stated. Nor does
 it cite **Bates et al. (2026)**, published after v1.0 and cited in items 3 and 5. Both are
-added to the bibliography of v2.0.
+added to the bibliography of v2.0, together with the FlyWire connectivity data release
+(doi:10.5281/zenodo.10676866) and two circuit-level studies that bear on Section 3.4 of
+v2.0: **Gordon & Scott (2009), Neuron 61(3), 373–384**, and **Shiu et al. (2022), eLife
+11, e79887**.
 
-**One further correction.** The swap acceptance rate is **98.5 per cent**, as stated in
-Section 2.4 of v1.0. A companion document states 100 per cent, which is not attainable
-under the stated constraints and is the value requiring correction. The swap target,
-45,275,949, is correct and has been reproduced.
+**One further correction, revised before filing.** Section 2.4 of v1.0 reads *"Factor 3x,
+rate 100%"*. The measured swap acceptance rate is **98.5 per cent** (see
+`docs/METHODS.md`); a rate of exactly 100 per cent is not attainable under the stated
+constraints, so the figure printed in v1.0 is the one requiring correction. An earlier
+draft of this erratum stated the reverse, that v1.0 gives 98.5 per cent and a companion
+document 100 per cent; the text extracted from the deposited PDF shows otherwise. The swap
+target, 45,275,949 = 3 x 15,091,983, is correct and has been reproduced.
 
-**One reference requires verification before this erratum is filed.** Section 1.2 and the
-bibliography of v1.0 cite Betzel, Puxeddu, Seguin and Misic (2026), *Cascades and
-convergence*, PLOS Complex Systems 3(3), e0000091. The author list has not been checked
-against the published article by the present analysis and must be before filing.
+**The Betzel reference is verified.** Section 1.2 and the bibliography of v1.0 cite
+Betzel, Puxeddu, Seguin and Misic (2026), *Cascades and convergence: Dynamic signal flow in
+a synapse-level brain network*, PLOS Complex Systems 3(3), e0000091,
+doi:10.1371/journal.pcsy.0000091. Author list, title, volume, issue and article number
+match the published article (published 5 March 2026), checked on 12 October 2026.
+
+**Five other references are wrong in v1.0**, found while preparing v2.0 and checked against
+the publishers' pages on 12 October 2026:
+
+- **Gouwens & Wilson (2009)** is *Journal of Neuroscience* **29(19), 6239–6249**,
+  doi:10.1523/JNEUROSCI.0764-09.2009, not 29(44), 13828–13838.
+- **Nagel & Wilson (2011)** is *Biophysical mechanisms underlying olfactory receptor neuron
+  dynamics*, **Nature Neuroscience 14, 208–216**, doi:10.1038/nn.2725; v1.0 gives a
+  different title in *Journal of Neuroscience* 31(29), 10772–10785. The work concerns
+  receptor-neuron dynamics, not the projection pathway toward the mushroom bodies for which
+  v1.0 cites it, so in v2.0 the citation is removed from that statement rather than
+  corrected.
+- **Tuthill & Wilson (2016)** in *Current Biology* is *Mechanosensation and adaptive motor
+  control in insects*, **26(20), R1022–R1038**, doi:10.1016/j.cub.2016.06.070; v1.0 gives a
+  different title, issue and pages.
+- **Hasani et al. (2022)** is titled *Closed-form continuous-time neural networks*
+  (Nature Machine Intelligence 4, 992–1003). v1.0 uses the title of the preprint, and
+  Section 1.2 says the paper introduced liquid time-constant networks; it derives
+  closed-form approximations of them.
+- **Schlegel et al. (2024)** is titled *Whole-brain annotation and multi-connectome cell
+  typing of Drosophila* (Nature 634, 139–152); v1.0 uses the title of the preprint.
 
 ---
 
@@ -450,10 +526,12 @@ shares with the pipeline it verifies.
 
 ## What has not changed
 
-The three propagation properties reported in v1.0 are retained.
+The three propagation properties reported in v1.0 are retained, with the interpretation of
+the second one qualified by item 2.
 
 Tables 2, 3, 6, 8, 9, 10 and S1 required no correction: their internal arithmetic was
-verified and is consistent. The temporal dissociation between during-stimulus and
+verified and is consistent. Table 10 keeps its RDI values; its tau_m column follows the
+derivation corrected in item 7. The temporal dissociation between during-stimulus and
 post-stimulus separation, the gustatory and mechanosensory decomposition, the synaptic
 depth profiles and the physiological plausibility of tau are unaffected by item 1, because
 none of them is normalised by graph density. This was verified by inspecting every
@@ -464,8 +542,10 @@ Section 2.4 of v1.0 already derives and declares the analytical invariance of ne
 is noted here because item 2 extends the same reasoning to the routing hierarchy, where
 v1.0 did not apply it.
 
-The eight circuit-resolved reciprocity values of Table 7 are unchanged. What changes in
-item 3 is the claim of priority attached to them, not the numbers.
+Seven of the eight circuit-resolved reciprocity values of Table 7 are unchanged and
+reproduce at one decimal with both the March and the pinned annotations; the eighth,
+sensory-to-descending, is 8.6 rather than 8.7 (item 6). What changes in item 3 is the
+claim of priority attached to them, not the numbers.
 
 ---
 
@@ -479,9 +559,10 @@ did not reach.
    established.
 2. **The AN population.** N = 495 in Table 5 does not correspond to any filter consistent
    with the other eight rows. See item 2.
-3. **Whether the p-values of Table 5 use the same expectation as the ratios.** The
+3. **Whether the p-values of Table 5 of v1.0 use the same expectation as the ratios.** The
    binomial test requires a per-pair probability, and whether it is the same quantity that
-   enters the expected count has not been confirmed from the archived code.
+   enters the expected count has not been confirmed from the archived code. Version 2.0
+   recomputes them with that quantity and states it.
 4. **Table 8 is not reproducible from the archived code.** Four candidate partitions of
    the activation vector were tested against the published definition and none reproduces
    the shape of the trajectory, which falls between t = 15 and t = 60 and then rises. The
@@ -513,10 +594,28 @@ did not reach.
    (anatomical subnetwork against directed functional class pair), not on a measured
    comparison of the two sets of values. If a neuropil corresponds closely to a circuit
    class of Table 7, the overlap is greater than stated.
-9. **Table 7 and item 5 use different inclusion criteria.** The circuit-resolved values are
-   computed without a synapse threshold; the 13.98 per cent of item 5 is computed with the
-   five-synapse threshold. Table 7 has not been recomputed under the threshold, so the two
-   sets of figures should not be divided by or compared with each other.
+9. **Resolved (October 2026): Table 7 under the five-synapse threshold.** Table 7 was
+   recomputed under the threshold with the pinned annotations
+   (`tools/table7_reciprocity_by_class.py`, pull request #26): intra-motor 35.0 per cent
+   (80 connections), intra-visual-centrifugal 23.4, intra-optic 17.1, intra-sensory 37.5,
+   sensory-to-central 13.8, sensory-to-descending 2.8 and sensory-to-motor 1.3 per cent,
+   with no optic-to-motor connection above the threshold. The whole-connectome value,
+   13.98 per cent over 2,700,513 connections, equals item 5. Version 2.0 prints both
+   columns.
+10. **The ordering of Table 7 toward the output is descriptive.** A per-circuit comparison
+    against the community-preserving null was run in October 2026. Its preliminary reading
+    is that the null reproduces the decline of reciprocity toward the output, with an
+    excess over the null that does not decrease toward the output under either criterion,
+    but the instrument failed its own negative control (8 of 20 with the community-
+    preserving null and no threshold) and the result is not signed. No statement that the
+    ordering is specific is made in v2.0.
+11. **The 5-20 ms range attributed to Gouwens & Wilson (2009) has not been re-read against
+    that paper**, which reports the passive properties of antennal-lobe projection neurons.
+    The plausibility statement for tau rests on that attribution.
+12. **Prior art for the restriction reported in Section 3.4 of v2.0.** A basic search found
+    circuit-level prior work consistent with it (Gordon & Scott 2009; Shiu et al. 2022),
+    and v2.0 cites both and claims only the quantification against an anatomical null. A
+    systematic sweep of the literature was not done.
 
 ---
 
@@ -542,8 +641,35 @@ rather than against its abstract and its headline numbers. A claim that another 
 reports only an aggregate is a claim about that paper's contents, and it has to be verified
 in that paper, not inferred from what it chose to emphasise.
 
+The pre-filing revision of October 2026 was found by a fourth means: by extracting the text
+of the deposited v1.0 PDF and checking every statement this erratum makes about v1.0
+against it, and every count this erratum reports against the rows it counts. That is how
+the reversed attribution of the swap rate in item 8, the AN row counted in item 2 after
+being declared not reproducible, and the 991x quoted next to an extreme from a different set
+of classes were found.
+
 This is recorded because it is reusable: a numerical discrepancy with an elegant
 explanation should be executed before the explanation is written down; a figure intended
 for an abstract should be compared against whoever measured the same quantity in another
-system before it is called distinctive; and an assertion that a result is novel should be
-checked against the prior work's own figures before it is filed.
+system before it is called distinctive; an assertion that a result is novel should be
+checked against the prior work's own figures before it is filed; and a correction should be
+checked against the text it corrects.
+
+---
+
+## Revision of this erratum before filing (12 October 2026)
+
+The erratum had not been deposited when these changes were made; they are listed so that
+the drafts in the repository history can be read against the filed text.
+
+- Item 2: corrected summary changed from 4 enriched to 3 enriched over the eight
+  reproducible rows; the classes of the degree-null test and of the 991x stated; the
+  qualification from the neuropil-preserving null of v2.0 Section 3.4 added; binomial
+  p-values stated.
+- Items 3 and 6: sensory-to-descending reciprocity corrected from 8.7 to 8.6 as a fifth
+  counting problem; the threshold limit of item 3 updated.
+- Item 7: the tau_m column of Table 10 follows the corrected derivation; the replication of
+  temporal amplification across models corrected to two of the three compatible models.
+- Item 8: the attribution of the swap rate reversed to match the text of v1.0; the Betzel
+  reference verified; five references with wrong details listed; four references added.
+- Outstanding verification: item 9 resolved; items 10 to 12 added.
