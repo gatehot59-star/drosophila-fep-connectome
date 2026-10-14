@@ -1,0 +1,32 @@
+# md5 script = 0c7a0dbf85e1312325cef017cb953d6f | md5 nucleo_mosca = 4697c81d994de841f167698562924caa
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | annot = 719904abad876c68ace1b5690c9b9b63 | banc_meta = 8c2b93a608c7163ec9d94d68e0756ff4 | banc_aristas = 08542b0771db7418ed474be60dc9886c
+FLYWIRE R2 neuronas=33489 entradas=564 aristas=4031897 | nucleo de Schlegel aristas=603219 (14.96 %)
+BANC meta filas=188508 root_888_validos=188508 (los IDs de la materializacion 888, los de la lista de aristas v3)
+PAREJAS via=fafb_match filas_con_ID=64789 otros_formatos=0 unicas=25492 ambiguas=39297
+PAREJAS via=fafb_nblast_match filas_con_ID=127298 otros_formatos=0 unicas=29669 ambiguas=97629
+DN root=720575940622838154 tipo=DNp01 lado=L pareja_fafb_match=720575941509145950 pareja_nblast=None tipo_en_BANC=DNp01
+DN root=720575940632499757 tipo=DNp01 lado=R pareja_fafb_match=720575941451068597 pareja_nblast=720575941451068597 tipo_en_BANC=DNp01
+DN root=720575940617034565 tipo=DNp07 lado=L pareja_fafb_match=720575941407841071 pareja_nblast=720575941407841071 tipo_en_BANC=DNp07
+DN root=720575940622550089 tipo=DNp07 lado=R pareja_fafb_match=720575941545991429 pareja_nblast=720575941545991429 tipo_en_BANC=DNp07
+DN root=720575940622673860 tipo=DNp06 lado=L pareja_fafb_match=720575941611791590 pareja_nblast=None tipo_en_BANC=DNp06
+DN root=720575940611644529 tipo=DNp06 lado=R pareja_fafb_match=720575941657879576 pareja_nblast=720575941689668108 tipo_en_BANC=DNp06
+ENTRADAS tipo=LC4 lado=L total=54 con_pareja_fafb_match=29 nblast=29 alguna=37
+ENTRADAS tipo=LC4 lado=R total=50 con_pareja_fafb_match=30 nblast=31 alguna=37
+ENTRADAS tipo=LPLC2 lado=L total=108 con_pareja_fafb_match=41 nblast=42 alguna=58
+ENTRADAS tipo=LPLC2 lado=R total=102 con_pareja_fafb_match=61 nblast=43 alguna=70
+ENTRADAS tipo=LPLC4 lado=L total=56 con_pareja_fafb_match=29 nblast=24 alguna=35
+ENTRADAS tipo=LPLC4 lado=R total=54 con_pareja_fafb_match=34 nblast=23 alguna=37
+ENTRADAS tipo=LPLC1 lado=L total=68 con_pareja_fafb_match=28 nblast=31 alguna=39
+ENTRADAS tipo=LPLC1 lado=R total=72 con_pareja_fafb_match=39 nblast=30 alguna=50
+RESUMEN entradas con pareja fafb_match=291/564 (51.6 %) alguna=363/564 (64.4 %) | DN con pareja=6/6 | neuronas de R2 con pareja fafb_match=9510/33489 (28.4 %) alguna=14305 (42.7 %)
+ARISTAS BANC total=13620865 entre neuronas de R2 con pareja=647345
+ARISTAS R2 total=4031897 evaluables=782453 (19.4 %) | en BANC con 1 sinapsis o mas=311664 (39.8 %) | con 5 o mas=104068 (13.3 %)
+TRAMO sinapsis_FlyWire=1..4 evaluables=586024 en_BANC_1=28.9 % en_BANC_5=4.0 %
+TRAMO sinapsis_FlyWire=5..9 evaluables=94959 en_BANC_1=60.0 % en_BANC_5=20.6 %
+TRAMO sinapsis_FlyWire=10..19 evaluables=53711 en_BANC_1=77.2 % en_BANC_5=43.3 %
+TRAMO sinapsis_FlyWire=20..inf evaluables=47759 en_BANC_1=92.4 % en_BANC_5=79.0 %
+SCHLEGEL nucleo evaluables=125820 en_BANC_1=96843 (77.0 %) en_BANC_5=64336 (51.1 %)
+SCHLEGEL resto evaluables=656633 en_BANC_1=214821 (32.7 %) en_BANC_5=39732 (6.1 %)
+escrito emparejar_banc.json md5=84c5e42c3a01143c47ae546fb7efdc57
+# duracion_s=57.3
+EXIT_BANC=0

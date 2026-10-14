@@ -1,0 +1,4 @@
+Humo del nucleo antes del sello (respuesta 2026-10-14-002).
+Pedido: ClickKit terminar_sellos_002, 2026-10-14 10:51 (America/Buenos_Aires).
+Instrumento tools/nucleo/nucleo_mosca.py 4697c81d, agregador agregar_nucleo.py cb8a797b, prueba 34f671ec.
+No es la corrida del experimento: esa espera results/nucleo_2026-10-14/CORRER.

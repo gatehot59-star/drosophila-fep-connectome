@@ -1,0 +1,11 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | pandas 3.0.5
+# md5 script = 4697c81d994de841f167698562924caa
+# md5 factorial2_mosca = 798a824cd47808155fa12adb9e652dac | md5 nulos_r2 = c4f1c4d39c99f07cb9ad7977b6f3b01a | md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e | md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+SUJETO R2 neuronas=33489 aristas=4031897 entradas=564 -> True | 26.8 s
+NUCLEO aristas=603219 de 4031897 (14.96 %) inhibitorias=260173 de 1506653 | por_10_sinapsis=349737 por_1pc_entrada=422183 | sinapsis=9668248 de 16971919 (56.97 %) | DN_con_entrada=6/6 entradas_con_salida=563/564 | post_sin_total=0 | huella=69255109562f8a93270c435acdde2239
+CHEQUEO NUCLEO_tamano esperado=(603219, 260173, '69255109562f8a93270c435acdde2239') -> True
+escrito nucleo_R2_schlegel.parquet md5=ef1a221fc338932b6adcd73451e2f648 (la identidad del nucleo es la huella, no el md5 del parquet)
+CHEQUEO INSTRUMENTO R2_tamano=True NUCLEO_tamano=True -> VALIDO
+escrito nucleo_R2_resumen.json md5=1e1580e8d10fed5120c528ec84e28a3b
+# duracion_s=27.6
+EXIT_RUN=0
