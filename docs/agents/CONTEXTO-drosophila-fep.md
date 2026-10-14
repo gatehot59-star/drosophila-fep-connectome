@@ -1,10 +1,10 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-14, 08:25 (America/Buenos_Aires), con la respuesta 2026-10-14-001. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-14, 11:30 (America/Buenos_Aires), con la respuesta 2026-10-14-002. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Madrugada y mañana del 13-oct (019 a 2026-10-14-001) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-14-002) · manda sobre el resto
 
 - **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
   - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
@@ -77,7 +77,14 @@
   - **H_CABLEADO_CE SOSTENIDA:** 0,9465 contra 50 SL (media 0,6488, máx 0,7935) y 50 T (media 0,7596, máx 0,8395); ninguno igual o mejor; p 0,0196 cada uno, Holm 0,0392.
   - **Post-hoc, no sellado: lo que decide si la red le gana a su regla es la semilla de tau, no el tamaño.** En 8 de 10 semillas CE le gana en 58 a 60 de las 60 corridas (+1,28 a +1,71 puntos); en la 5 no le gana en ninguna (−2,30) y en la 7 en 6 de 60 (−0,85); R2 hace lo mismo semilla por semilla. Candidata **H_TAU**, sin sellar: con las constantes de tiempo elegidas o aprendidas solo con el entrenamiento, ganarle a la regla por más de 1 punto en la prueba. R2 alcanza y corre en CPU: va a Actions sin gastar GPU.
   - En git quedó compacto, en la rama del factorial 4 (`87be763`): `results/factorial4_2026-10-13/` (`agregado.log` `539733b9`, `corridas.csv` `b58be308`, `nulos.csv` `94811363`, `MD5SUMS.txt` `7f396757` con las 50 salidas de Kaggle, `relectura_desde_csv.log` `a778e608`) y `tools/factorial4/releer_factorial4_desde_csv.py` (`045caf9e`), que rehace desde git la primaria, la escala y los nulos con el bootstrap sellado: 18 de 18 líneas iguales al agregado, y con una sola corrida tocada da 4 distintas y sale con 1. Los json por ensayo (unos 1,6 MB) y los dos recibos quedan por md5: sin un token para este repo no hay vía directa a git desde brain-env.
-- **Espera decisión de Abraham:** qué sigue tras el factorial 4 (sellar H_TAU, el núcleo conservado, la demo de aviso de choque o bajar BANC; 2026-10-14-001); merge del PR #27 (la v2 ya está lista, 2026-10-13-014) y token de Zenodo; responderle a Tao en su PR.
+- **BANC bajado y medido; núcleo aparte; H_TAU y núcleo sellados (2026-10-14-002), rama `titan/htau-nucleo-banc-2026-10-14`:**
+  - BANC v888 en brain-env (`/workspace/banc_888/`): meta md5 `8c2b93a6`, aristas v3 md5 `08542b07`, iguales al bucket público. Las aristas usan `root_888`, no `root_id`.
+  - Las 6 DN tienen pareja del mismo tipo en BANC; entradas con pareja 291/564 (51,6 %) por `fafb_match`, 363 (64,4 %) por alguna vía.
+  - De las aristas de R2 evaluables (782.453), el 39,8 % está en BANC: 28,9 % con 1 a 4 sinapsis, 60,0 % con 5 a 9, 77,2 % con 10 a 19 y 92,4 % con 20 o más. Núcleo de Schlegel 77,0 % contra 32,7 % del resto. Sin nulo de parejas al azar (NO MEDIDO).
+  - Núcleo de Schlegel de R2 como pieza suelta: 603.219 aristas (14,96 %) con el 56,97 % de las sinapsis, 6/6 DN, 563/564 entradas; huella `69255109`.
+  - H_TAU sellado (`tools/htau/SELLO-HTAU.md`): candidatas tau 10 a 19, elección por validación cruzada en el entrenamiento, pruebas nuevas 12 a 21, margen 0,01. 6 trabajos de Actions, unas 2,5 h. Se dispara con `results/htau_2026-10-14/CORRER`.
+  - Núcleo sellado (`tools/nucleo/SELLO-NUCLEO.md`): H_CONSENSO (no perder más de 1 punto contra R2 y ganarle a 50 SL + 50 T). 80 trabajos de Actions, cerca de 1,5 h. Se dispara con `results/nucleo_2026-10-14/CORRER`.
+- **Espera decisión de Abraham:** correr H_TAU y el núcleo, sellados en la 2026-10-14-002 (cada uno con su `CORRER`); el nulo del emparejado BANC; merge del PR #27 (la v2 ya está lista, 2026-10-13-014) y token de Zenodo; responderle a Tao en su PR.
 
 ## Tarde y noche del 12-oct (010 a 018)
 
