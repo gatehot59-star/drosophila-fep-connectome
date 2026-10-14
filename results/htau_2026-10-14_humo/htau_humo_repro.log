@@ -1,0 +1,11 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = 2006cfef6eaffc023086fd35fbe20f64
+# md5 factorial2_mosca = 798a824cd47808155fa12adb9e652dac | md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e | md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+# celda=0.3|0.15 candidatas=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19] pruebas=[12, 13, 14, 15, 16, 17, 18, 19, 20, 21] pliegues=5 repro=True solo_repro=True
+SUJETO R2 neuronas=33489 aristas=4031897 entradas=564 -> True | 4.6 s
+RADIO crudo=2032.307097
+CHEQUEO REPRO_R2 tau=0 prueba=2 W=0.9465 regla_propia=0.9375 regla40=0.9235 esperado=(0.9465, 0.9375, 0.9235) -> True | 641.9 s
+CHEQUEO INSTRUMENTO R2_tamano=True REPRO_R2=True -> VALIDO
+escrito htau_c2_repro.json md5=7d3a5a00f65e69504a1d8e8c9e71a70a
+# duracion_s=647.8
+EXIT_RUN=0
