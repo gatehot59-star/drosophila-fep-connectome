@@ -1,0 +1,4 @@
+POSTHOC LHAD1g1 root=720575940635119723 lado=left a_DNp06={'left': 424} entrada_visual={'LC4_left': 89, 'LPLC2_left': 796} entrada_total=17164
+POSTHOC LHAD1g1 root=720575940631842360 lado=right a_DNp06={'right': 399} entrada_visual={'LC4_right': 51, 'LPLC2_right': 644} entrada_total=17574
+POSTHOC PVLP010 root=720575940618932763 lado=right a_DNp06={'right': 262} entrada_visual={'LC4_right': 209, 'LPLC1_right': 5, 'LPLC2_right': 7} entrada_total=8923
+POSTHOC PVLP010 root=720575940623957173 lado=left a_DNp06={'left': 210} entrada_visual={'LC4_left': 188, 'LPLC2_left': 5} entrada_total=8513
