@@ -1,0 +1,10 @@
+PRUEBA PARSEA PASA ['DNp01@L', 'DNp01@R', 'DNp07@L', 'DNp07@R', 'GIRO_DER', 'GIRO_IZQ']
+PRUEBA PARIDAD_ESCAPE PASA iguales=800 de 800, umbrales iguales=True
+PRUEBA PARIDAD_V0 PASA 
+PRUEBA PUEDE_DAR_ROJO PASA distintas=20
+PRUEBA SIN_COMPARADOR_DIFIERE PASA distintas=36
+PRUEBA ERROR_LINEA_INEXISTENTE PASA renglon 26: DNp09@L no es una linea interna
+PRUEBA ERROR_NO_INTERNA PASA renglon 26: DNp07@L no es una linea interna
+PRUEBA ERROR_A_IGUAL_B PASA renglon 26: A y B tienen que ser distintas
+PRUEBA ERROR_INTERNA_SIN_USO PASA linea interna sin comparador: DNp07@L
+RESUMEN 9/9

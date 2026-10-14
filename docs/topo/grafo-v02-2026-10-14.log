@@ -1,0 +1,18 @@
+# md5 topo.py = 9abefe9d620e9f94f4a68ed75108d6be (sellado 9abefe9d)
+# md5 topo_grafo.py = 0ea687824a45456e0a02b0b197f57a8a (sellado 0ea68782)
+PROGRAMA escape_dif lineas=6 internas=2 comparadores=2 compiten=DNp01@L,DNp01@R,DNp07@L,DNp07@R,GIRO_DER,GIRO_IZQ
+FLECHA LC4@L -> DNp01@L coef=+0.50 sinapsis=374 -> CABLEADA
+FLECHA LPLC2@L -> DNp01@L coef=+0.50 sinapsis=458 -> CABLEADA
+FLECHA LC4@R -> DNp01@R coef=+0.50 sinapsis=431 -> CABLEADA
+FLECHA LPLC2@R -> DNp01@R coef=+0.50 sinapsis=622 -> CABLEADA
+FLECHA LPLC4@L -> DNp07@L coef=+1.00 sinapsis=810 -> CABLEADA
+FLECHA LPLC4@R -> DNp07@R coef=+1.00 sinapsis=638 -> CABLEADA
+FLECHA LPLC1@L -> DNp06@L coef=+0.50 sinapsis=509 -> CABLEADA
+FLECHA LPLC2@L -> DNp06@L coef=+0.50 sinapsis=485 -> CABLEADA
+FLECHA LPLC1@R -> DNp06@R coef=+0.50 sinapsis=514 -> CABLEADA
+FLECHA LPLC2@R -> DNp06@R coef=+0.50 sinapsis=518 -> CABLEADA
+FLECHA DNp06@L -> GIRO_DER coef=+1.00 -> AGUAS_ABAJO (se chequea en el cordon nervioso, no en FlyWire)
+FLECHA DNp06@R -> GIRO_DER coef=-1.00 -> AGUAS_ABAJO (se chequea en el cordon nervioso, no en FlyWire)
+FLECHA DNp06@R -> GIRO_IZQ coef=+1.00 -> AGUAS_ABAJO (se chequea en el cordon nervioso, no en FlyWire)
+FLECHA DNp06@L -> GIRO_IZQ coef=-1.00 -> AGUAS_ABAJO (se chequea en el cordon nervioso, no en FlyWire)
+CHEQUEO escape_dif AGUAS_ABAJO=4 CABLEADA=10

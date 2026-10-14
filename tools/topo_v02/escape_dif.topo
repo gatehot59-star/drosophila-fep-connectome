@@ -1,0 +1,30 @@
+# Reflejo de escape en Topo v0.2: las dos DNp06 leen solo su lado (cableado, 2026-10-14-020) y el lado del giro se
+# decide aguas abajo, comparando DNp06 izquierda contra derecha (respuesta 2026-10-14-026). Por que: DNp06 responde a
+# los dos ojos (Jang 2023, Kim 2023) y en el cerebro no hay resta del otro lado a dos saltos (2026-10-14-024).
+# Por linealidad rinde lo mismo que escape.topo; lo que cambia es donde dice que ocurre la resta.
+
+reflejo escape_dif
+tipos LC4 LPLC2 LPLC4 LPLC1
+estados posada vuelo
+acciones nada despegar aterrizar girar_der girar_izq
+
+via LC4   -> DNp01 top 4 por lado
+via LPLC2 -> DNp01 top 4 por lado
+via LPLC4 -> DNp07 top 4 por lado
+via LPLC1 -> DNp06 top 4 por lado
+via LPLC2 -> DNp06 top 4 por lado
+salida DNp01 DNp07 DNp06
+
+linea DNp01@L = media(LC4@L, LPLC2@L) en posada -> despegar
+linea DNp01@R = media(LC4@R, LPLC2@R) en posada -> despegar
+linea DNp07@L = media(LPLC4@L) en vuelo -> aterrizar
+linea DNp07@R = media(LPLC4@R) en vuelo -> aterrizar
+linea DNp06@L = media(LPLC1@L, LPLC2@L) en vuelo -> interna
+linea DNp06@R = media(LPLC1@R, LPLC2@R) en vuelo -> interna
+
+# aguas abajo, en el cordon nervioso: el lado del giro sale de comparar las dos DNp06
+compara GIRO_DER = DNp06@L - DNp06@R en vuelo -> girar_der
+compara GIRO_IZQ = DNp06@R - DNp06@L en vuelo -> girar_izq
+
+umbral falsas 0.05 sobre nada
+decide carrera
