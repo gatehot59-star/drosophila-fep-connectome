@@ -1,0 +1,38 @@
+# maquina: 6c09d8604b07 | Linux-4.19.0-27-amd64-x86_64-with-glibc2.41 | Python 3.12.14 | numpy 2.5.3 | pandas 3.0.5
+# md5 instrumento = 1318fefb8dbac3ce56bc56c9a439ea26
+# fecha: 2026-10-14 23:03:04 +0000
+# md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+# HUMO: objetivo DNp01, no DNp06; estos numeros no valen para H_FRENO
+UNIDADES descendentes=927 tamanos_X={'M3_CONTRA_left': 1114, 'M3_CONTRA_right': 917, 'M4_LPLC4_left': 1366, 'M4_LPLC4_right': 1366, 'M5_DNP07_left': 9, 'M5_DNP07_right': 9, 'M6_BILATERAL_left': 12, 'M6_BILATERAL_right': 12}
+MECANISMO M3_CONTRA left sin=120 de 2227 cuota=0.0539 pct=0.981 (n=421) | right sin=204 de 2495 cuota=0.0818 pct=0.982 (n=433) -> CANDIDATO
+MECANISMO M4_LPLC4 left sin=279 de 2227 cuota=0.1253 pct=0.853 (n=421) | right sin=382 de 2495 cuota=0.1531 pct=0.882 (n=433) -> DUDOSO
+MECANISMO M5_DNP07 left sin=0 de 2227 cuota=0.0000 pct=0.000 (n=421) | right sin=0 de 2495 cuota=0.0000 pct=0.000 (n=433) -> DESCARTADO
+MECANISMO M6_BILATERAL left sin=45 de 2227 cuota=0.0202 pct=0.988 (n=421) | right sin=60 de 2495 cuota=0.0240 pct=0.991 (n=433) -> DESCARTADO
+MECANISMO M1_DNP07 left sin=0 de 2227 cuota=0.0000 pct=0.000 (n=421) | right sin=0 de 2495 cuota=0.0000 pct=0.000 (n=433) -> AUSENTE
+MECANISMO M1_DNP01 left sin=0 de 2227 cuota=0.0000 pct=0.000 (n=421) | right sin=0 de 2495 cuota=0.0000 pct=0.000 (n=433) -> AUSENTE
+MECANISMO M2_OPUESTA left sin=0 de 2227 cuota=0.0000 pct=0.000 (n=421) | right sin=0 de 2495 cuota=0.0000 pct=0.000 (n=433) -> AUSENTE
+CONTROL_POSITIVO left sin=458 de 2100 cuota=0.2181 pct=0.993 | right sin=622 de 2652 cuota=0.2345 pct=0.995 -> PASA
+NT_INHIBITORIO left {'gaba': 1919, 'glutamate': 308}
+TOP left CB3707 sin=293 neuronas=4 nt=gaba entradas=[['CL065', 0.0644], ['LTe18', 0.0607], ['DNp66', 0.0448]]
+TOP left SAD014 sin=136 neuronas=6 nt=gaba entradas=[['AN_multi_2', 0.1446], ['AN_multi_22', 0.1085], ['AN_multi_62', 0.0466]]
+TOP left LHAD1g1 sin=130 neuronas=1 nt=gaba entradas=[['LPLC2', 0.0464], ['AVLP501', 0.0232], ['LT87', 0.0226]]
+TOP left PVLP010 sin=113 neuronas=1 nt=glutamate entradas=[['SAD072', 0.0471], ['AVLP040', 0.0406], ['CB1932', 0.0376]]
+TOP left CB0010 sin=111 neuronas=1 nt=gaba entradas=[['SAD040', 0.0792], ['AN_multi_106', 0.0669], ['BM_Vib', 0.0457]]
+TOP left CB0563 sin=110 neuronas=2 nt=gaba entradas=[['AVLP039', 0.0555], ['AVLP040', 0.0493], ['CB0258', 0.0484]]
+TOP left CL038 sin=106 neuronas=2 nt=glutamate entradas=[['PVLP122a', 0.0388], ['AVLP442', 0.0388], ['CB0580', 0.0337]]
+TOP left SAD017 sin=83 neuronas=2 nt=gaba entradas=[['AN_multi_2', 0.1068], ['AN19A018', 0.0943], ['DNge141', 0.0623]]
+TOP left CB3486 sin=55 neuronas=3 nt=gaba entradas=[['LHPV6q1', 0.1744], ['CB1542', 0.0647], ['CB1078', 0.0531]]
+TOP left CB0414 sin=48 neuronas=2 nt=gaba entradas=[['CB3655', 0.0683], ['CB4176', 0.0443], ['AN_multi_68', 0.0397]]
+NT_INHIBITORIO right {'gaba': 2100, 'glutamate': 395}
+TOP right CB3707 sin=340 neuronas=4 nt=gaba entradas=[['CL065', 0.0644], ['LTe18', 0.0607], ['DNp66', 0.0448]]
+TOP right SAD014 sin=156 neuronas=6 nt=gaba entradas=[['AN_multi_2', 0.1446], ['AN_multi_22', 0.1085], ['AN_multi_62', 0.0466]]
+TOP right CL038 sin=143 neuronas=2 nt=glutamate entradas=[['AVLP442', 0.0422], ['CB0580', 0.0419], ['PVLP122a', 0.0367]]
+TOP right PVLP010 sin=137 neuronas=1 nt=glutamate entradas=[['SAD072', 0.051], ['CB1932', 0.0374], ['AVLP040', 0.0362]]
+TOP right LHAD1g1 sin=124 neuronas=1 nt=gaba entradas=[['LPLC2', 0.0366], ['AVLP370a', 0.0213], ['AVLP501', 0.0212]]
+TOP right CB0010 sin=112 neuronas=1 nt=gaba entradas=[['AN_multi_106', 0.0686], ['SAD040', 0.0684], ['BM_Vib', 0.0592]]
+TOP right CB0563 sin=99 neuronas=2 nt=gaba entradas=[['AVLP039', 0.0555], ['AVLP040', 0.0493], ['CB0258', 0.0484]]
+TOP right AN_GNG_SAD_3 sin=62 neuronas=2 nt=gaba entradas=[['AN_GNG_67', 0.1311], ['AN_AVLP_GNG_23', 0.0656], ['DNg29', 0.0656]]
+TOP right AVLP202 sin=61 neuronas=2 nt=gaba entradas=[['WED104', 0.0332], ['PVLP028', 0.0329], ['CB1688', 0.0243]]
+TOP right PVLP024 sin=60 neuronas=4 nt=gaba entradas=[['LC4', 0.4068], ['CL140', 0.0678], ['LT66', 0.0478]]
+H_FRENO objetivo=DNp01 -> SOSTENIDA (HUMO, sin valor)
+EXIT_RUN=0 | 17.6 s
