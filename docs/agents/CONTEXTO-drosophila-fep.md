@@ -1,10 +1,10 @@
 # CONTEXTO VIVO · conectoma / paper / H4
 
-**Última actualización:** 2026-10-14, 12:25 (America/Buenos_Aires), con la respuesta 2026-10-14-006. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
+**Última actualización:** 2026-10-14, 13:05 (America/Buenos_Aires), con la respuesta 2026-10-14-011. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58).
 **Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.
 **Base vigente del paper:** en `main`, `docs/ERRATUM.md` anterior a la revisión; **la versión para depositar está en el PR #27** (erratum revisado, 9 ítems y 12 pendientes, anotaciones pinneadas a `17fc577`, y el manuscrito `docs/v2/paper1-v2.0.md`). **Zenodo tiene sólo la v1.0** (20-mar).
 
-## Madrugada y mañana del 13-oct (019 a 2026-10-14-006) · manda sobre el resto
+## Madrugada y mañana del 13-oct (019 a 2026-10-14-011) · manda sobre el resto
 
 - **Factorial sellado (019) y corrido (2026-10-13-002): VÁLIDO 9/9.** Rama `titan/factorial-mosca-2026-10-13`: sello `552942f`, resultados del bot `5c4fbac`, post-hoc `19a508c`. El ancla reproduce la 015 exacta en brain-env y en Actions.
   - Veredicto sellado: ALGÚN FACTOR CIERRA LA BRECHA (R1_CON_TASA, R1_CON_LIQ, R1_SIN_LIQ). M46 pierde con las tres neuronas, como en la 015.
@@ -92,7 +92,10 @@
   - Una sola pregunta: si el cableado exacto carga el reflejo mas alla de su diseno y sus barajados, y si esa parte se conserva en BANC. Resultados 3.1 a 3.5 con numeros medidos (cotejo 73 de 74 en su fuente, el restante en el log de BANC); 3.6 H_CONSENSO y 3.7 H_TAU como huecos; 3.8 el negativo de lineas etiquetadas.
   - Bloquean un borrador: nulo del emparejado BANC, revision de literatura del hueco funcional, ecuacion exacta y figuras. Recomendacion: el control de salidas, LC6 a GF y sel_post van a un Paper 3, no a este.
 - **Alcance del Paper 2 decidido (2026-10-14-006, Abraham, ClickKit `alcance_p3_005`, 12:19):** el control de las salidas (2026-10-10-005 a 009), LC6 a GF y sel_post van a un Paper 3 estructural. El Paper 2 queda con una sola pregunta. Anotado en el esqueleto (`4652c81`).
-- **Espera decisión de Abraham:** el token de Zenodo para el borrador del depósito de la v2 (publicar, solo con su sí); leer H_TAU y el núcleo cuando terminen (2026-10-14-004); el nulo del emparejado BANC; responderle a Tao en su PR.
+- **Topo v0, lenguaje topologico ejecutable (2026-10-14-011):** rama `titan/topo-lenguaje-2026-10-14` (`b34924d`), `tools/topo/` y `docs/topo/TOPO-v0.md`. Un reflejo se escribe como tipo x lado x signo -> comando, con dos backends: regla y cableado.
+  - El escape en 18 renglones (`escape.topo`). Desde un clon limpio: EQUIV_REGLA PASA (12 de 12 casos exactos contra la regla sellada de los factoriales), CONTROL_NEGATIVO PASA (127 de 400 decisiones distintas con el aterrizaje mal escrito; 3 programas invalidos rechazados), REPRODUCE_M46 PASA (46 neuronas, 187 aristas, 1.149 sinapsis, igual a la 015). Registro md5 `f1008c67`.
+  - Faltan, sin medir: H_TOPO_NUEVO (un reflejo nuevo escrito solo en Topo que pague en el banco), H_TOPO_C99 y H_TOPO_ESCALA. Antes, en la 2026-10-14-010, se evaluaron tres ideas: el lenguaje topologico es la mas fuerte, cerebelo de borde todavia no y protesis solo para avisar.
+- **Espera decisión de Abraham:** el token de Zenodo para el borrador del depósito de la v2 (publicar, solo con su sí); qué reflejo nuevo sella H_TOPO_NUEVO (2026-10-14-011); leer H_TAU y el núcleo cuando terminen (2026-10-14-004); el nulo del emparejado BANC; responderle a Tao en su PR.
 
 ## Tarde y noche del 12-oct (010 a 018)
 
