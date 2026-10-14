@@ -1,0 +1,7 @@
+CORRER H_TOPO_NUEVO (barra segun su direccion)
+Pedido: Abraham, ClickKit correr_barra_013 ("Correr la barra segun su direccion"), 2026-10-14 13:29 America/Buenos_Aires.
+Sello: tools/topo_barra/SELLO-BARRA-DIR.md (afc2585). Orden: A tarea 42d2f60, B programa 2deb335, C banco 8c7cf1b.
+Md5: tarea_barra_dir.py d2515357, aterrizaje_dir.topo 0122a4ce, banco_barra_dir.py c033f214.
+Arreglo declarado antes de correr: torch==2.14.1 cpu en los workflows (6e02d34); el instrumento no cambio.
+Humo 2 en Actions (8e89e16): EXIT_RUN=0, las 15 lineas de resultados iguales a las del humo de brain-env.
+Nada del plan cambia al disparar.
