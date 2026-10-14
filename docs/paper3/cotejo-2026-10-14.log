@@ -1,0 +1,8 @@
+COTEJO numeros=106 en_su_fuente=106 faltan=0 fuentes_sin_archivo=0
+COTEJO_PAPER3 -> PASA
+EXIT_COTEJO=0
+FALTA linea=57 numero=61.23 fuentes=2026-10-10-005
+FALTA linea=82 numero=265.3 fuentes=2026-08-24-060,2026-10-11-007,2026-10-10-005
+COTEJO numeros=106 en_su_fuente=104 faltan=2 fuentes_sin_archivo=0
+CONTROL_NEGATIVO cambios=2 marcados=2 -> PASA
+EXIT_CONTROL=0
