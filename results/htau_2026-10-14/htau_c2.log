@@ -1,0 +1,32 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = 2006cfef6eaffc023086fd35fbe20f64
+# md5 factorial2_mosca = 798a824cd47808155fa12adb9e652dac | md5 modulo 015 = 40d64e074d9163753439307c5be4ac5e | md5 conn = 3d802fd542b5d18570ba1ba0bb0abed9 | md5 annot = 719904abad876c68ace1b5690c9b9b63
+# celda=0.3|0.15 candidatas=[10, 11, 12, 13, 14, 15, 16, 17, 18, 19] pruebas=[12, 13, 14, 15, 16, 17, 18, 19, 20, 21] pliegues=5 repro=True solo_repro=False
+SUJETO R2 neuronas=33489 aristas=4031897 entradas=564 -> True | 4.7 s
+RADIO crudo=2032.307097
+CHEQUEO REPRO_R2 tau=0 prueba=2 W=0.9465 regla_propia=0.9375 regla40=0.9235 esperado=(0.9465, 0.9375, 0.9235) -> True | 616.0 s
+CANDIDATA tau=10 validacion=0.9412 pliegues=0.9417 0.9396 0.9479 0.9208 0.9563 entrenamiento=0.9429 | 334.7 s
+CANDIDATA tau=11 validacion=0.9363 pliegues=0.9458 0.9354 0.9396 0.9146 0.9458 entrenamiento=0.9379 | 335.3 s
+CANDIDATA tau=12 validacion=0.9217 pliegues=0.9313 0.9167 0.9208 0.9083 0.9313 entrenamiento=0.9242 | 324.5 s
+CANDIDATA tau=13 validacion=0.9375 pliegues=0.9417 0.9437 0.9375 0.9167 0.9479 entrenamiento=0.9371 | 324.2 s
+CANDIDATA tau=14 validacion=0.9008 pliegues=0.9187 0.8979 0.8896 0.8938 0.9042 entrenamiento=0.9046 | 327.0 s
+CANDIDATA tau=15 validacion=0.9408 pliegues=0.9437 0.9375 0.9500 0.9229 0.9500 entrenamiento=0.9417 | 340.2 s
+CANDIDATA tau=16 validacion=0.9367 pliegues=0.9375 0.9417 0.9396 0.9125 0.9521 entrenamiento=0.9375 | 327.2 s
+CANDIDATA tau=17 validacion=0.9358 pliegues=0.9354 0.9333 0.9437 0.9146 0.9521 entrenamiento=0.9408 | 326.2 s
+CANDIDATA tau=18 validacion=0.9363 pliegues=0.9458 0.9354 0.9437 0.9125 0.9437 entrenamiento=0.9379 | 324.2 s
+CANDIDATA tau=19 validacion=0.9371 pliegues=0.9500 0.9354 0.9354 0.9104 0.9542 entrenamiento=0.9375 | 328.2 s
+ELECCION elegida=10 (validacion 0.9412) peor=14 (validacion 0.9008)
+CORRIDA celda=0.3|0.15 prueba=12 W_elegida=0.9470 W_peor=0.9130 regla_propia=0.9335 regla40=0.9260 dif=+0.0135 | 548.8 s
+CORRIDA celda=0.3|0.15 prueba=13 W_elegida=0.9450 W_peor=0.9085 regla_propia=0.9315 regla40=0.9285 dif=+0.0135 | 576.4 s
+CORRIDA celda=0.3|0.15 prueba=14 W_elegida=0.9440 W_peor=0.9110 regla_propia=0.9145 regla40=0.9170 dif=+0.0295 | 574.5 s
+CORRIDA celda=0.3|0.15 prueba=15 W_elegida=0.9465 W_peor=0.9160 regla_propia=0.9295 regla40=0.9305 dif=+0.0170 | 586.5 s
+CORRIDA celda=0.3|0.15 prueba=16 W_elegida=0.9445 W_peor=0.9130 regla_propia=0.9360 regla40=0.9355 dif=+0.0085 | 547.1 s
+CORRIDA celda=0.3|0.15 prueba=17 W_elegida=0.9475 W_peor=0.9165 regla_propia=0.9300 regla40=0.9310 dif=+0.0175 | 561.4 s
+CORRIDA celda=0.3|0.15 prueba=18 W_elegida=0.9495 W_peor=0.9030 regla_propia=0.9375 regla40=0.9350 dif=+0.0120 | 568.1 s
+CORRIDA celda=0.3|0.15 prueba=19 W_elegida=0.9435 W_peor=0.9125 regla_propia=0.9205 regla40=0.9250 dif=+0.0230 | 609.7 s
+CORRIDA celda=0.3|0.15 prueba=20 W_elegida=0.9520 W_peor=0.9205 regla_propia=0.9285 regla40=0.9400 dif=+0.0235 | 552.2 s
+CORRIDA celda=0.3|0.15 prueba=21 W_elegida=0.9470 W_peor=0.8990 regla_propia=0.9260 regla40=0.9295 dif=+0.0210 | 584.5 s
+CHEQUEO INSTRUMENTO R2_tamano=True REPRO_R2=True -> VALIDO
+escrito htau_c2.json md5=2cbab449f48cb4cd0102d8ba2f4f812b
+# duracion_s=9623.0
+EXIT_RUN=0

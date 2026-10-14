@@ -1,0 +1,27 @@
+JSON htau=6 celdas=['0.0|0.15', '0.0|0.45', '0.3|0.15', '0.3|0.45', '0.6|0.15', '0.6|0.45']
+CHEQUEO CELDAS una_por_celda -> True
+CHEQUEO VALIDOS -> True | SIN_HUMO -> True
+CHEQUEO PLAN candidatas=10..19 pruebas=12..21 pliegues=5 -> True
+CHEQUEO MD5 instrumento=2006cfef y pines -> True
+CHEQUEO REPRO_R2 [('0.3|0.15', 0.9465, 0.9375, 0.9235, True)] -> True
+CHEQUEO DN_IGUAL -> True
+CHEQUEO CORRIDAS 10_por_celda -> True
+ELECCION celda=0.0|0.15 elegida=10 peor=14 validacion=[10:0.9412 11:0.9354 12:0.9204 13:0.9371 14:0.8992 15:0.9392 16:0.9342 17:0.9354 18:0.9338 19:0.9358]
+ELECCION celda=0.0|0.45 elegida=10 peor=14 validacion=[10:0.9363 11:0.9321 12:0.9225 13:0.9321 14:0.9133 15:0.9313 16:0.9258 17:0.9333 18:0.9275 19:0.9287]
+ELECCION celda=0.3|0.15 elegida=10 peor=14 validacion=[10:0.9412 11:0.9363 12:0.9217 13:0.9375 14:0.9008 15:0.9408 16:0.9367 17:0.9358 18:0.9363 19:0.9371]
+ELECCION celda=0.3|0.45 elegida=10 peor=14 validacion=[10:0.9375 11:0.9342 12:0.9250 13:0.9354 14:0.9142 15:0.9371 16:0.9287 17:0.9342 18:0.9300 19:0.9329]
+ELECCION celda=0.6|0.15 elegida=10 peor=14 validacion=[10:0.9417 11:0.9229 12:0.9137 13:0.9346 14:0.8929 15:0.9362 16:0.9258 17:0.9333 18:0.9325 19:0.9308]
+ELECCION celda=0.6|0.45 elegida=10 peor=14 validacion=[10:0.9388 11:0.9233 12:0.9196 13:0.9317 14:0.9083 15:0.9325 16:0.9246 17:0.9325 18:0.9267 19:0.9292]
+PRIMARIA H_TAU W_elegida=0.9443 regla_propia=0.9265 dif=+0.0178 IC90=[+0.0145, +0.0213] corridas=60 -> SUPERA
+  CELDA 0.0|0.15 elegida=10 dif=+0.0196 IC=[+0.0143, +0.0252] -> SUPERA
+  CELDA 0.0|0.45 elegida=10 dif=+0.0180 IC=[+0.0116, +0.0251] -> SUPERA
+  CELDA 0.3|0.15 elegida=10 dif=+0.0179 IC=[+0.0136, +0.0225] -> SUPERA
+  CELDA 0.3|0.45 elegida=10 dif=+0.0182 IC=[+0.0141, +0.0231] -> SUPERA
+  CELDA 0.6|0.15 elegida=10 dif=+0.0178 IC=[+0.0135, +0.0223] -> SUPERA
+  CELDA 0.6|0.45 elegida=10 dif=+0.0153 IC=[+0.0112, +0.0199] -> SUPERA
+PRIMARIA corridas elegida>regla=60 iguales=0 elegida<regla=0
+DIAGNOSTICO elegida_menos_peor W_peor=0.9135 dif=+0.0308 IC90=[+0.0282, +0.0338] (no decide)
+DIAGNOSTICO semilla_elegida_por_celda=[10, 10, 10, 10, 10, 10] distintas=1 (no decide)
+HIPOTESIS H_TAU -> SOSTENIDA
+VEREDICTO_GLOBAL -> VALIDO | primaria=SUPERA
+EXIT_AGREGADO=0
