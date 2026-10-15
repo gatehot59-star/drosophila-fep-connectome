@@ -6,3 +6,4 @@ Sello: tools/lector/SELLO-LECTOR.md (8e65e05, md5 6e587be69bbffcdc25b98b4899579e
 Humo: controles a tamano completo en las 6 celdas (REPRO_W, REPRO_RIDGE, CONTROL_NEGATIVO y, en c0, CONTROL_LECTOR_CRUDO), rutas de un nulo SL (c2) y uno T (c5) con 600 y 200 ensayos en la semilla 99, y la prueba del instrumento. Ningun acierto de L se imprime ni se guarda.
 En brain-env, antes de commitear: prueba 13/13; ruta SL c2 VALIDO (log md5 22ad209c); ruta T c2 VALIDO (03917b3d); c0 local VALIDO (08a448da).
 La corrida completa (results/lector_2026-10-15/CORRER) espera el si de Abraham.
+Segundo disparo: el commit 21063a6 subio este archivo sin el instrumento ni los workflows; este commit los trae.
