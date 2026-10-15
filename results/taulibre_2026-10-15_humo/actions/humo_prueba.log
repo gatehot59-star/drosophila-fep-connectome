@@ -1,0 +1,13 @@
+PRUEBA TAU_DE_K 4 nulos por tau -> OK
+PRUEBA CASO_SOSTENIDA -> OK
+PRUEBA CASO_MARGEN refuta (delta medio punto) -> OK
+PRUEBA CASO_UN_NULO_IGUAL p=2/41 supera -> OK
+PRUEBA CASO_DOS_NULOS p=3/41 sin decidir -> OK
+PRUEBA CASO_APAREO p=5/41 refuta (el apareo cuenta) -> OK
+PRUEBA CASO_FALTA invalido -> OK
+PRUEBA CASO_HUMO invalido -> OK
+PRUEBA CASO_REPRO_FALSO invalido -> OK
+PRUEBA CASO_TAU_MAL invalido -> OK
+PRUEBA ROJO_A_PROPOSITO (se espera FALLA) -> FALLA
+PRUEBA ROJO_A_PROPOSITO detectado -> OK
+PRUEBA_TAULIBRE 11/11 -> OK

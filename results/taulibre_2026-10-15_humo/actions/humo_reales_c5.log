@@ -1,0 +1,14 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = c65bebe270da1e0526a212cff29830fd
+# HUMO: ciego, sin aciertos nuevos
+PIN f3_60_json=True lector_json=True md5_SELLO_LECTOR=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_lector_MD5SUMS=True md5_lector_mosca.py=True md5_nulos_r2.py=True md5_rival_MD5SUMS=True md5_rival_mosca.py=True md5_tarea_mosca.py=True rival_6_json=True
+SUJETO R2 neuronas=33489 entradas=564 -> True | 3.9 s
+TAU_FRESCA usadas=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19] libres=[20, 21, 22, 23, 24, 25, 26, 27, 28, 29] -> True
+RED radio_crudo=2032.307097 | taus=[20]
+REPRO_LECTOR tau=10 WL=0.9930 (H_LECTOR 0.9930) lambda=0.01 -> True | 604.8 s
+CONTROL_NEGATIVO tau=20 acierto=0.5000 azar=0.5000 tope=0.5500 -> True
+REAL tau=20 (sin aciertos) en_clases=True | 103.6 s
+CHEQUEO INSTRUMENTO R2_TAMANO=True PLAN_REALES=True TAU_FRESCA=True GUARDA_FUGA=True REPRO_LECTOR=True CONTROL_NEGATIVO=True RUTAS_EN_CLASES=True PIN=True -> VALIDO
+escrito humo_reales_c5_t20.json md5=a9eeb44a4a7fc43b22a57b2d65965019
+# duracion_s=712.8
+EXIT_RUN=0
