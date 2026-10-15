@@ -1,0 +1,15 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3 | torch 2.14.1+cpu hilos=2
+# md5 script = 774232f5b4a53872a05f6a0f06015f34
+# HUMO: controles a tamano completo; rutas de los rivales con 600 y 200 ensayos (semilla 99), sin aciertos
+PIN f3_60_json=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_tarea_mosca.py=True
+MOTIVO_015 visuales=40 rasgos=1600 | 3.3 s
+CONTROL_RIDGE_015 celda=0.0|0.15 acierto=0.9935 esperado=0.9935 tolerancia=0.0010 dif_con_ept=0 -> True | 2.3 s
+CONTROL_RIDGE_015 celda=0.0|0.45 acierto=0.9595 esperado=0.9595 tolerancia=0.0010 dif_con_ept=0 -> True | 2.3 s
+CONTROL_RIDGE_015 celda=0.3|0.15 acierto=0.9935 esperado=0.9935 tolerancia=0.0010 dif_con_ept=0 -> True | 2.4 s
+CONTROL_RIDGE_015 celda=0.3|0.45 acierto=0.9575 esperado=0.9575 tolerancia=0.0010 dif_con_ept=0 -> True | 2.3 s
+CONTROL_RIDGE_015 celda=0.6|0.15 acierto=0.9940 esperado=0.9940 tolerancia=0.0010 dif_con_ept=0 -> True | 2.4 s
+CONTROL_RIDGE_015 celda=0.6|0.45 acierto=0.9590 esperado=0.9590 tolerancia=0.0010 dif_con_ept=0 -> True | 2.3 s
+CHEQUEO CONTROL_RIDGE_015 6/6 -> VALIDO
+escrito controles_015_humo.json md5=743eb858f8144727feeb4bdd8f0dd9e7
+# duracion_s=17.6
+EXIT_RUN=0

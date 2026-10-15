@@ -1,0 +1,38 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3 | torch 2.14.1+cpu hilos=2
+# md5 script = 774232f5b4a53872a05f6a0f06015f34
+# HUMO: controles a tamano completo; rutas de los rivales con 600 y 200 ensayos (semilla 99), sin aciertos
+PIN f3_60_json=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_tarea_mosca.py=True
+SUJETO R2 entradas=564 -> True | 4.6 s
+DATOS entrenamiento=2400 rasgos=22560 pliegues=5 | 1.4 s
+NEGATIVO etiquetas permutadas dentro de cada estado, lambda elegido=100000 | 7.4 s
+RIVALES elegidos | 27.6 s
+RUTA rival=RIDGE candidatas=10 ensayos=600/200 predicciones=200 en_clases=True (humo: sin aciertos)
+RUTA rival=MLP candidatas=10 ensayos=600/200 predicciones=200 en_clases=True (humo: sin aciertos)
+RUTA rival=REGLA_TAU candidatas=10 ensayos=600/200 predicciones=200 en_clases=True (humo: sin aciertos)
+PRUEBA celda=0.3|0.45 prueba=2 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=3 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=4 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=5 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=6 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=7 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=8 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=9 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=10 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=11 regla_igual=True | 1.1 s
+CHEQUEO REGLA_TAU_NULA prueba=12 iguales=2000/2000 -> True
+CONTROL_NEGATIVO prueba=12 acierto=0.5000 azar=0.5000 tope=0.5500 -> True
+PRUEBA celda=0.3|0.45 prueba=12 regla_igual=True | 2.4 s
+PRUEBA celda=0.3|0.45 prueba=13 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=14 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=15 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=16 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=17 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=18 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=19 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=20 regla_igual=True | 1.1 s
+PRUEBA celda=0.3|0.45 prueba=21 regla_igual=True | 1.1 s
+CHEQUEO REPRO_REGLA iguales=20/20 -> True | REPRO_W iguales=110/110 -> True
+CHEQUEO INSTRUMENTO PIN=True R2_TAMANO=True HTAU_CELDA=True F3_CELDA=True GUARDA_FUGA=True RUTA_RIDGE=True RUTA_MLP=True RUTA_REGLA_TAU=True REGLA_TAU_NULA=True CONTROL_NEGATIVO=True REPRO_REGLA=True REPRO_W=True -> VALIDO
+escrito rival_humo_c3.json md5=31598aa46a7e36fe66730011ab72e20f
+# duracion_s=65.0
+EXIT_RUN=0

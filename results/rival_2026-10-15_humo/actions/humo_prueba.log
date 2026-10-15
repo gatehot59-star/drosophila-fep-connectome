@@ -1,0 +1,21 @@
+DUAL_IGUAL_PRIMAL n=120 d=300 max_dif=1.48e-11 -> OK
+ROJO_A_PROPOSITO lambda al doble n=120 d=300 max_dif=1.64e-01 -> OK
+DUAL_IGUAL_PRIMAL n=300 d=40 max_dif=4.09e-12 -> OK
+ROJO_A_PROPOSITO lambda al doble n=300 d=40 max_dif=7.58e-02 -> OK
+RIDGE_015_IGUAL_A_EPT lambda=0.01/0.01 iguales=100/100 -> OK
+RIDGE_POR_ESTADO forma=(10, 100) en_clases=True -> OK
+PLIEGUES particion=True disjuntos=True modulo5=True -> OK
+INTEGRADOR_NULO -> OK
+INTEGRADOR_MEDIO -> OK
+TK determinista=True distinto=True rango=True -> OK
+PRED_STR ida y vuelta -> OK
+MLP_IGUAL_A_EPT iguales=60/60 -> OK
+ETIQUETAS -> OK
+VEREDICTOS -> OK
+BOOT_CONSTANTE -> OK
+BOOT_PRIMARIA_IGUAL_AL_LAZO -> OK
+BOOT_SECUNDARIA_IGUAL_AL_LAZO -> OK
+FALTAN rival_c0.json rival_c1.json rival_c2.json rival_c3.json rival_c4.json rival_c5.json controles_015.json
+VEREDICTO H_RIVAL=INVALIDO H_TAU_JUSTO=INVALIDO (faltan archivos)
+AGREGADOR_SIN_ARCHIVOS_ES_INVALIDO -> OK
+PRUEBA 18/18
