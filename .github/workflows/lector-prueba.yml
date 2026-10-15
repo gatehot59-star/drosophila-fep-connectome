@@ -1,0 +1,44 @@
+name: lector-prueba
+# Respuesta 2026-10-14-037. Reintento de la prueba del instrumento de H_LECTOR, sola: en el humo (run 38752555880,
+# commit a00681b) cayo con exit 2 porque tools/lector/prueba_lector.py todavia no estaba en la rama. Mismo paso que
+# lector-humo.yml. Solo se dispara al pushear results/lector_2026-10-15_humo/PRUEBA en esta rama.
+on:
+  push:
+    branches: ["titan/lector-2026-10-15"]
+    paths: ["results/lector_2026-10-15_humo/PRUEBA"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: prueba y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          D=results/lector_2026-10-15_humo/actions_prueba
+          mkdir -p "$D"
+          python -m pip freeze > "$D"/versiones_humo_prueba.txt
+          md5sum tools/lector/*.py >> "$D"/versiones_humo_prueba.txt
+          set +e
+          python tools/lector/prueba_lector.py 2>&1 | tee "$D"/humo_prueba.log
+          RC=$?
+          set -e
+          echo "EXIT_PRUEBA=$RC" >> "$D"/humo_prueba.log
+          (cd "$D" && md5sum *.log *.txt > MD5SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-037): prueba del instrumento de H_LECTOR en Actions x64, reintento" || echo nada_que_commitear
+          git pull --rebase origin titan/lector-2026-10-15 || true
+          git push origin HEAD:titan/lector-2026-10-15
+          exit $RC

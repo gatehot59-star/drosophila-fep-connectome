@@ -1,0 +1,4 @@
+Reintento de la prueba del instrumento de H_LECTOR (respuesta 2026-10-14-037).
+
+En el humo (run 38752555880, disparado por a00681b) las 8 partes de medicion dieron VALIDO y la prueba cayo con exit 2: prueba_lector.py llego recien en 0961e3f. Este archivo dispara lector-prueba.yml, que repite solo ese paso.
+Pedido de Abraham, 15-oct 11:36: ClickKit cerrar_037 (Cerra la 037 y lee el humo).
