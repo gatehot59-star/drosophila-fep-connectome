@@ -1,0 +1,96 @@
+name: lector-mosca
+# Respuesta 2026-10-14-037. H_LECTOR sellado (tools/lector/SELLO-LECTOR.md, 8e65e05): 6 trabajos de primaria (uno por
+# celda), 16 de nulos (SL y T por c2 y c5, 10 nulos cada uno; los de k0 = 0 miden tambien la red real) y el agregador.
+# Solo se dispara al pushear results/lector_2026-10-15/CORRER en esta rama.
+on:
+  push:
+    branches: ["titan/lector-2026-10-15"]
+    paths: ["results/lector_2026-10-15/CORRER"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {parte: c0, args: "--celda '0.0|0.15'"}
+          - {parte: c1, args: "--celda '0.0|0.45'"}
+          - {parte: c2, args: "--celda '0.3|0.15'"}
+          - {parte: c3, args: "--celda '0.3|0.45'"}
+          - {parte: c4, args: "--celda '0.6|0.15'"}
+          - {parte: c5, args: "--celda '0.6|0.45'"}
+          - {parte: SL_c2_k000, args: "--celda '0.3|0.15' --nulos SL --k0 0 --n 10 --real"}
+          - {parte: SL_c2_k010, args: "--celda '0.3|0.15' --nulos SL --k0 10 --n 10"}
+          - {parte: SL_c2_k020, args: "--celda '0.3|0.15' --nulos SL --k0 20 --n 10"}
+          - {parte: SL_c2_k030, args: "--celda '0.3|0.15' --nulos SL --k0 30 --n 10"}
+          - {parte: SL_c5_k000, args: "--celda '0.6|0.45' --nulos SL --k0 0 --n 10 --real"}
+          - {parte: SL_c5_k010, args: "--celda '0.6|0.45' --nulos SL --k0 10 --n 10"}
+          - {parte: SL_c5_k020, args: "--celda '0.6|0.45' --nulos SL --k0 20 --n 10"}
+          - {parte: SL_c5_k030, args: "--celda '0.6|0.45' --nulos SL --k0 30 --n 10"}
+          - {parte: T_c2_k000, args: "--celda '0.3|0.15' --nulos T --k0 0 --n 10 --real"}
+          - {parte: T_c2_k010, args: "--celda '0.3|0.15' --nulos T --k0 10 --n 10"}
+          - {parte: T_c2_k020, args: "--celda '0.3|0.15' --nulos T --k0 20 --n 10"}
+          - {parte: T_c2_k030, args: "--celda '0.3|0.15' --nulos T --k0 30 --n 10"}
+          - {parte: T_c5_k000, args: "--celda '0.6|0.45' --nulos T --k0 0 --n 10 --real"}
+          - {parte: T_c5_k010, args: "--celda '0.6|0.45' --nulos T --k0 10 --n 10"}
+          - {parte: T_c5_k020, args: "--celda '0.6|0.45' --nulos T --k0 20 --n 10"}
+          - {parte: T_c5_k030, args: "--celda '0.6|0.45' --nulos T --k0 30 --n 10"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: medir
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          python -m pip freeze > out/versiones_${{ matrix.parte }}.txt
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv >> out/versiones_${{ matrix.parte }}.txt
+          python tools/lector/lector_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out ${{ matrix.args }} 2>&1 | tee out/lector_${{ matrix.parte }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lector-${{ matrix.parte }}
+          path: out/
+  agregar:
+    needs: [medir]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lector-*
+          path: art
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install numpy==2.5.3
+          D=results/lector_2026-10-15
+          mkdir -p "$D"
+          cp art/*/*.log art/*/*.txt art/*/*.json "$D"/ 2>/dev/null || true
+          python tools/lector/agregar_lector.py --dir "$D" 2>&1 | tee "$D"/agregado.log
+          (cd "$D" && md5sum *.log *.txt *.json > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-14-037): H_LECTOR en Actions x64, 6 celdas, 160 nulos y agregado" || echo nada_que_commitear
+          git pull --rebase origin titan/lector-2026-10-15 || true
+          git push origin HEAD:titan/lector-2026-10-15
