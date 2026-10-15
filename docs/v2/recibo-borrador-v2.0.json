@@ -1,0 +1,18 @@
+{
+  "id_borrador": 23393412,
+  "doi_reservado": "10.5281/zenodo.23393412",
+  "html": "https://zenodo.org/deposit/23393412",
+  "archivos": [
+    {
+      "nombre": "Mendieta2026_Paper1_v2.0.pdf",
+      "md5": "6e849bf2caffa540165edd826df102ed",
+      "bytes": 332607
+    },
+    {
+      "nombre": "Mendieta2026_Paper1_Erratum_v1.0.pdf",
+      "md5": "05052e6e7e0dd79cee584c9d285b1b93",
+      "bytes": 191172
+    }
+  ],
+  "fecha": "2026-10-15T11:14:42.230793+00:00"
+}
