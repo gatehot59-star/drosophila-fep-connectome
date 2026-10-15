@@ -1,0 +1,25 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = 5b7fb79e55ab2b695c9751698c8205c4
+# HUMO: ciego, sin aciertos de L
+PIN f3_60_json=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_nulos_r2.py=True md5_rival_MD5SUMS=True md5_rival_mosca.py=True md5_tarea_mosca.py=True rival_6_json=True
+SUJETO R2 neuronas=33489 entradas=564 -> True | 5.2 s
+RED radio_crudo=2032.307097 tau_semilla=10 | 0.9 s
+TRAZAS entrenamiento=2400 rasgos=240 | 367.8 s
+ELECCION lector lambda=(humo: no se imprime) | 1.3 s
+CONTROL_NEGATIVO prueba=12 acierto=0.5000 azar=0.5000 tope=0.5500 -> True
+RUTA lector prueba=12 predicciones=2000 en_clases=True (sin aciertos)
+PRUEBA celda=0.6|0.45 prueba=12 W_igual=True | 307.5 s
+PRUEBA celda=0.6|0.45 prueba=13 W_igual=True | 320.7 s
+PRUEBA celda=0.6|0.45 prueba=14 W_igual=True | 318.5 s
+PRUEBA celda=0.6|0.45 prueba=15 W_igual=True | 309.4 s
+PRUEBA celda=0.6|0.45 prueba=16 W_igual=True | 305.2 s
+PRUEBA celda=0.6|0.45 prueba=17 W_igual=True | 309.4 s
+PRUEBA celda=0.6|0.45 prueba=18 W_igual=True | 315.7 s
+PRUEBA celda=0.6|0.45 prueba=19 W_igual=True | 308.9 s
+PRUEBA celda=0.6|0.45 prueba=20 W_igual=True | 310.4 s
+PRUEBA celda=0.6|0.45 prueba=21 W_igual=True | 309.2 s
+CHEQUEO REPRO_W iguales=10/10 -> True | REPRO_RIDGE iguales=10/10 -> True
+CHEQUEO INSTRUMENTO R2_TAMANO=True HTAU_CELDA=True RIVAL_CELDA=True GUARDA_FUGA=True CONTROL_NEGATIVO=True RUTA_LECTOR=True REPRO_W=True REPRO_RIDGE=True PIN=True -> VALIDO
+escrito humo_lector_c5.json md5=c868eb7e2046364e95f260624fcbbbc1
+# duracion_s=3491.6
+EXIT_RUN=0

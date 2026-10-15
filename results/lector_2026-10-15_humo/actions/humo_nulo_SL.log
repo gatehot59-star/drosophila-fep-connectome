@@ -1,0 +1,12 @@
+# maquina: runnervmmprz5 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = 5b7fb79e55ab2b695c9751698c8205c4
+# HUMO: ciego, sin aciertos de L
+PIN f3_60_json=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_nulos_r2.py=True md5_rival_MD5SUMS=True md5_rival_mosca.py=True md5_tarea_mosca.py=True rival_6_json=True
+SUJETO R2 neuronas=33489 entradas=564 -> True | 3.8 s
+RADIO real crudo=2032.307097
+REAL (humo: sin aciertos) | 107.0 s
+NULO SL k=0 (humo: sin aciertos) cambiados=4030551 guarda=True igual_f3=True | 106.5 s
+CHEQUEO INSTRUMENTO R2_TAMANO=True NULOS_VALIDOS=True NULOS_IGUAL_F3=True RUTAS_EN_CLASES=True PIN=True -> VALIDO
+escrito humo_nulos_SL_c2_k000.json md5=cf74dfae4055eabcf3271b7f9e06d334
+# duracion_s=218.4
+EXIT_RUN=0
