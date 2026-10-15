@@ -1,0 +1,33 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = 5b7fb79e55ab2b695c9751698c8205c4
+PIN f3_60_json=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_nulos_r2.py=True md5_rival_MD5SUMS=True md5_rival_mosca.py=True md5_tarea_mosca.py=True rival_6_json=True
+SUJETO R2 neuronas=33489 entradas=564 -> True | 4.6 s
+RED radio_crudo=2032.307097 tau_semilla=10 | 0.9 s
+TRAZAS entrenamiento=2400 rasgos=240 | 329.2 s
+CANDIDATA lector lambda=0.0001 validacion=0.9896
+CANDIDATA lector lambda=0.001 validacion=0.9892
+CANDIDATA lector lambda=0.01 validacion=0.9896
+CANDIDATA lector lambda=0.1 validacion=0.9888
+CANDIDATA lector lambda=1 validacion=0.9838
+CANDIDATA lector lambda=10 validacion=0.9571
+CANDIDATA lector lambda=100 validacion=0.6233
+CANDIDATA lector lambda=1000 validacion=0.5000
+CANDIDATA lector lambda=10000 validacion=0.5000
+CANDIDATA lector lambda=100000 validacion=0.5000
+ELECCION lector lambda=0.0001 | 1.1 s
+CONTROL_NEGATIVO prueba=12 acierto=0.5000 azar=0.5000 tope=0.5500 -> True
+PRUEBA celda=0.6|0.15 prueba=12 WL=0.9925 RIDGE=0.9995 W_elegida=0.9465 | 252.2 s
+PRUEBA celda=0.6|0.15 prueba=13 WL=0.9940 RIDGE=0.9990 W_elegida=0.9435 | 260.1 s
+PRUEBA celda=0.6|0.15 prueba=14 WL=0.9915 RIDGE=0.9975 W_elegida=0.9450 | 252.5 s
+PRUEBA celda=0.6|0.15 prueba=15 WL=0.9895 RIDGE=0.9985 W_elegida=0.9460 | 259.5 s
+PRUEBA celda=0.6|0.15 prueba=16 WL=0.9900 RIDGE=0.9975 W_elegida=0.9475 | 254.6 s
+PRUEBA celda=0.6|0.15 prueba=17 WL=0.9910 RIDGE=0.9990 W_elegida=0.9475 | 260.5 s
+PRUEBA celda=0.6|0.15 prueba=18 WL=0.9920 RIDGE=0.9995 W_elegida=0.9500 | 261.2 s
+PRUEBA celda=0.6|0.15 prueba=19 WL=0.9950 RIDGE=1.0000 W_elegida=0.9415 | 272.2 s
+PRUEBA celda=0.6|0.15 prueba=20 WL=0.9895 RIDGE=0.9985 W_elegida=0.9500 | 310.2 s
+PRUEBA celda=0.6|0.15 prueba=21 WL=0.9865 RIDGE=0.9980 W_elegida=0.9495 | 261.8 s
+CHEQUEO REPRO_W iguales=10/10 -> True | REPRO_RIDGE iguales=10/10 -> True
+CHEQUEO INSTRUMENTO R2_TAMANO=True HTAU_CELDA=True RIVAL_CELDA=True PLAN_PRUEBAS=True GUARDA_FUGA=True CONTROL_NEGATIVO=True REPRO_W=True REPRO_RIDGE=True PIN=True -> VALIDO
+escrito lector_c4.json md5=74e1ba4aae511b85e8c8df4c9884cf2b
+# duracion_s=2982.1
+EXIT_RUN=0

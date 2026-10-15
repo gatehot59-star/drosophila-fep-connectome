@@ -1,0 +1,18 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = 5b7fb79e55ab2b695c9751698c8205c4
+PIN f3_60_json=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_nulos_r2.py=True md5_rival_MD5SUMS=True md5_rival_mosca.py=True md5_tarea_mosca.py=True rival_6_json=True
+SUJETO R2 neuronas=33489 entradas=564 -> True | 4.5 s
+NULO SL k=20 WL=0.9520 cambiados=4030613 guarda=True igual_f3=True | 594.2 s
+NULO SL k=21 WL=0.9720 cambiados=4030586 guarda=True igual_f3=True | 590.0 s
+NULO SL k=22 WL=0.9695 cambiados=4030554 guarda=True igual_f3=True | 583.9 s
+NULO SL k=23 WL=0.9730 cambiados=4030594 guarda=True igual_f3=True | 595.2 s
+NULO SL k=24 WL=0.9550 cambiados=4030557 guarda=True igual_f3=True | 591.8 s
+NULO SL k=25 WL=0.9705 cambiados=4030543 guarda=True igual_f3=True | 587.2 s
+NULO SL k=26 WL=0.9835 cambiados=4030616 guarda=True igual_f3=True | 583.1 s
+NULO SL k=27 WL=0.9560 cambiados=4030607 guarda=True igual_f3=True | 589.5 s
+NULO SL k=28 WL=0.9605 cambiados=4030614 guarda=True igual_f3=True | 594.0 s
+NULO SL k=29 WL=0.9770 cambiados=4030546 guarda=True igual_f3=True | 589.3 s
+CHEQUEO INSTRUMENTO R2_TAMANO=True PLAN_NULOS=True NULOS_VALIDOS=True NULOS_IGUAL_F3=True RUTAS_EN_CLASES=True PIN=True -> VALIDO
+escrito nulos_SL_c2_k020.json md5=f25cc67e0bf3516899d8cb9ff59e6098
+# duracion_s=5905.0
+EXIT_RUN=0
