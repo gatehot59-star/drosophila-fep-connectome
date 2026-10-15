@@ -1,0 +1,8 @@
+PRUEBA EXACTO PASA {'n_cab': 3, 't1': 0.6666666666666666, 't2': 1, 'n_pares_ffi': 2, 'n_x': 1}
+PRUEBA OTRO_LADO PASA {'n_cab': 3, 't1': 0.6666666666666666, 't2': 1, 'n_pares_ffi': 2, 'n_x': 1}
+PRUEBA UMBRAL_X PASA {'n_cab': 3, 't1': 0.6666666666666666, 't2': 1, 'n_pares_ffi': 2, 'n_x': 1}
+PRUEBA GUARDA_NULO PASA 
+PRUEBA PUEDE_DAR_ROJO PASA plantado obs=11 max_nulo=0 p=0.032 | sin plantar obs=0 max_nulo=0 p=1.000
+PRUEBA VEREDICTOS PASA 
+PRUEBA HOLM PASA [0.03 0.06 0.06 0.02]
+RESUMEN 7/7
