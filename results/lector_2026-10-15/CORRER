@@ -1,0 +1,8 @@
+CORRER de H_LECTOR (respuesta 2026-10-14-038).
+
+Aprobado por Abraham el 15-oct a las 13:50 (America/Buenos_Aires), ClickKit correr_lector_038, despues de la 037 (humo verde: b1cb491, prueba 13/13 en c6b1a63).
+
+Sello: tools/lector/SELLO-LECTOR.md (8e65e05, md5 6e587be69bbffcdc25b98b4899579edd), sin editar.
+Instrumento: lector_mosca.py 5b7fb79e55ab2b695c9751698c8205c4, agregar_lector.py 8b003a443596f5c225c2ce419c1c14f7, prueba_lector.py d697ed3200cb89c073606639ea499e5d, lector-mosca.yml 612745d3166f1030705661fb3c3ac427.
+Trabajos: 6 primarias (c0 a c5, pruebas 12 a 21) y 16 de nulos (SL y T en c2 y c5, 10 nulos cada uno; los k000 miden tambien la red real), mas el agregador.
+Expectativa declarada en el sello: H_LECTOR_CABLEADO probablemente REFUTADA.
