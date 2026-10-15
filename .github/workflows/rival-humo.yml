@@ -1,0 +1,83 @@
+name: rival-humo
+# Respuesta 2026-10-14-033. Humo ciego de H_RIVAL (tools/rival/SELLO-RIVAL.md, 05a574c): controles a tamano completo
+# en las 6 celdas, CONTROL_RIDGE_015 y la prueba del instrumento. Las rutas de los rivales corren con 600 y 200 ensayos
+# en la semilla 99 y no imprimen aciertos. Solo se dispara al pushear results/rival_2026-10-15_humo/HUMO en esta rama.
+on:
+  push:
+    branches: ["titan/rival-2026-10-15"]
+    paths: ["results/rival_2026-10-15_humo/HUMO"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  humo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    strategy:
+      fail-fast: false
+      matrix:
+        parte: [c0, c1, c2, c3, c4, c5, r015, prueba]
+        include:
+          - {parte: c0, celda: "0.0|0.15"}
+          - {parte: c1, celda: "0.0|0.45"}
+          - {parte: c2, celda: "0.3|0.15"}
+          - {parte: c3, celda: "0.3|0.45"}
+          - {parte: c4, celda: "0.6|0.15"}
+          - {parte: c5, celda: "0.6|0.45"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: humo
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          python -m pip freeze > out/versiones_humo_${{ matrix.parte }}.txt
+          if [ "${{ matrix.parte }}" = "prueba" ]; then
+            python tools/rival/prueba_rival.py 2>&1 | tee out/humo_prueba.log
+            exit $?
+          fi
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv >> out/versiones_humo_${{ matrix.parte }}.txt
+          if [ "${{ matrix.parte }}" = "r015" ]; then
+            python tools/rival/rival_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --solo_015 --humo 2>&1 | tee out/humo_r015.log
+          else
+            python tools/rival/rival_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out --celda "${{ matrix.celda }}" --humo 2>&1 | tee out/humo_${{ matrix.parte }}.log
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rival-humo-${{ matrix.parte }}
+          path: out/
+  commitear:
+    needs: [humo]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: rival-humo-*
+          path: art
+      - name: commitear el humo
+        shell: bash
+        run: |
+          D=results/rival_2026-10-15_humo/actions
+          mkdir -p "$D"
+          cp art/*/*.log art/*/*.txt art/*/*.json "$D"/ 2>/dev/null || true
+          (cd "$D" && md5sum *.log *.txt *.json > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-033): H_RIVAL en Actions x64, controles a tamano completo y rutas ciegas" || echo nada_que_commitear
+          git pull --rebase origin titan/rival-2026-10-15 || true
+          git push origin HEAD:titan/rival-2026-10-15
