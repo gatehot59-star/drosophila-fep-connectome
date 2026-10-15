@@ -1,0 +1,10 @@
+CORRER de H_RIVAL completo (respuesta 2026-10-14-034).
+
+Aprobado por Abraham el 15-oct a las 07:36 (America/Buenos_Aires): «corre h rival completo en action o en kaggle. donde demore menos».
+
+Sello: tools/rival/SELLO-RIVAL.md (05a574c, md5 ff79011bcf52fc10a718a41f3e8a5d19), sin editar.
+Instrumento: 04d0635 (rival_mosca.py 774232f5b4a53872a05f6a0f06015f34, agregar_rival.py f66b22508dd44a9394ef0c8dc262e9a8, rival-mosca.yml cc1b2bd12f2e9bb67d0fffefa86e9f0a).
+Humo ciego: 6 de 6 celdas VALIDO en Actions (b964058) y c0 VALIDO en brain-env (1d4efcf); ningun acierto de rival impreso.
+
+Maquina que decide: Actions x64, una tarea por celda en paralelo. Es la mas rapida medida: el humo de c0 tardo 83 s en Actions contra 688 s en brain-env. Kaggle no se midio con este instrumento y no esta en el sello.
+Replica: brain-env, las 6 celdas con los mismos comandos, en serie (unas 9 horas). Si una etiqueta por rival difiere entre maquinas, pasa a SIN_DECIDIR (NO_SE_REPLICA), como dice el sello.
