@@ -1,0 +1,20 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = f28404c2ecb1ae84e0a58936964cb7e9 | nucleo_mosca = 4697c81d994de841f167698562924caa | factorial2 = 798a824cd47808155fa12adb9e652dac | nulos_r2 = c4f1c4d39c99f07cb9ad7977b6f3b01a | modulo015 = 40d64e074d9163753439307c5be4ac5e | conn = 3d802fd542b5d18570ba1ba0bb0abed9 | annot = 719904abad876c68ace1b5690c9b9b63
+SUJETO R2 neuronas=33489 aristas=4031897 entradas=564 nucleo=603219 debiles=3428678 -> True True | 5.1 s
+MEZCLA k=0 debiles=3428678 destinos_cambiados=3427496 pares_repetidos=69542 intacto=True grados=True lados=True radio=2026.6122 huella=32808d536984669b4fb5b025f34197d4 -> True
+# grilla taus=[6] pruebas=[2, 3, 4, 5, 6, 7, 8, 9, 10, 11] celdas=['0.0|0.45'] etiqueta=t6c1
+CORRIDA celda=0.0|0.45 tau=6 prueba=2 W=0.9060 regla_propia=0.9275 dif=-0.0215
+CORRIDA celda=0.0|0.45 tau=6 prueba=3 W=0.9085 regla_propia=0.9210 dif=-0.0125
+CORRIDA celda=0.0|0.45 tau=6 prueba=4 W=0.9005 regla_propia=0.9245 dif=-0.0240
+CORRIDA celda=0.0|0.45 tau=6 prueba=5 W=0.9030 regla_propia=0.9340 dif=-0.0310
+CORRIDA celda=0.0|0.45 tau=6 prueba=6 W=0.8945 regla_propia=0.9255 dif=-0.0310
+CORRIDA celda=0.0|0.45 tau=6 prueba=7 W=0.9170 regla_propia=0.9205 dif=-0.0035
+CORRIDA celda=0.0|0.45 tau=6 prueba=8 W=0.9025 regla_propia=0.9265 dif=-0.0240
+CORRIDA celda=0.0|0.45 tau=6 prueba=9 W=0.9045 regla_propia=0.9370 dif=-0.0325
+CORRIDA celda=0.0|0.45 tau=6 prueba=10 W=0.9105 regla_propia=0.9240 dif=-0.0135
+CORRIDA celda=0.0|0.45 tau=6 prueba=11 W=0.9085 regla_propia=0.9250 dif=-0.0165
+CELDA 0.0|0.45 lista | 2063.5 s
+CHEQUEO INSTRUMENTO R2_tamano=True NUCLEO_tamano=True mezcla_0=True -> VALIDO
+escrito debiles_grilla_t6c1.json md5=1fe05a177139cd033f713ecca3e3982a
+# duracion_s=2072.3
+EXIT_RUN=0

@@ -1,0 +1,15 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = f28404c2ecb1ae84e0a58936964cb7e9 | nucleo_mosca = 4697c81d994de841f167698562924caa | factorial2 = 798a824cd47808155fa12adb9e652dac | nulos_r2 = c4f1c4d39c99f07cb9ad7977b6f3b01a | modulo015 = 40d64e074d9163753439307c5be4ac5e | conn = 3d802fd542b5d18570ba1ba0bb0abed9 | annot = 719904abad876c68ace1b5690c9b9b63
+SUJETO R2 neuronas=33489 aristas=4031897 entradas=564 nucleo=603219 debiles=3428678 -> True True | 6.2 s
+# mezclas k=[0, 1, 2, 3, 4] celda=0.3|0.15 tau=0 prueba=2 real=True
+REAL R2=0.9465 nucleo=0.9135 | 924.9 s
+CHEQUEO REAL_R2_IGUAL esperado=0.9465 -> True | REAL_NUCLEO_IGUAL esperado=0.9135 -> True
+MEZCLA k=0 acierto=0.9190 radio=2026.6122 destinos_cambiados=3427496 pares_repetidos=69542 guarda=True | 753.3 s
+MEZCLA k=1 acierto=0.9105 radio=2030.0021 destinos_cambiados=3427494 pares_repetidos=69152 guarda=True | 739.1 s
+MEZCLA k=2 acierto=0.9160 radio=2027.3859 destinos_cambiados=3427466 pares_repetidos=69555 guarda=True | 738.2 s
+MEZCLA k=3 acierto=0.9150 radio=2026.3686 destinos_cambiados=3427434 pares_repetidos=69323 guarda=True | 747.0 s
+MEZCLA k=4 acierto=0.9165 radio=2031.5951 destinos_cambiados=3427489 pares_repetidos=69192 guarda=True | 737.4 s
+CHEQUEO INSTRUMENTO R2_tamano=True NUCLEO_tamano=True REAL_R2_IGUAL=True REAL_NUCLEO_IGUAL=True mezclas=True -> VALIDO
+escrito debiles_mezclas_k000.json md5=c889d6d0e9af05a94ddb1c62eba28770
+# duracion_s=4649.4
+EXIT_RUN=0

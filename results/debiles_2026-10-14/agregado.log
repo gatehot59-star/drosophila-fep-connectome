@@ -1,0 +1,16 @@
+JSON grilla=58 mezclas=4 | factorial 3 grilla=60 | nucleo grilla=60
+CHEQUEO VALIDOS -> True | SIN_HUMO -> True | MD5 instrumento=f28404c2 y pines -> True | NUCLEO_SELLADO -> True
+CHEQUEO MISMA_MEZCLA huellas=['32808d536984669b4fb5b025f34197d4'] -> True
+CHEQUEO PLAN_GRILLA json=58 corridas=580 faltan=20 repetidas=0 | factorial 3 faltan=0 | nucleo faltan=0 -> False
+CHEQUEO REGLA_IGUAL_F3_Y_NUCLEO combinaciones=60 iguales=60 -> True
+CHEQUEO TAU_DN_IGUAL -> True | DN_IGUAL -> True
+CHEQUEO PLAN_MEZCLAS mezclas=20 repetidas=0 json_con_reales=1 -> True
+CHEQUEO REALES R2 y nucleo=[(0.9465, 0.9135)] esperados=(0.9465, 0.9135) -> True
+CHEQUEO MEZCLA_IGUAL grilla=0.919 mezcla_k0=0.919 -> True
+MEZCLAS n=20 media=0.9171 min=0.9105 max=0.9280 R2_real=0.9465 nucleo_real=0.9135 llegan_a_R2=0 caen_al_nucleo=4 (descriptivo)
+HIPOTESIS H_DEBILES_ESPECIFICAS -> NO_EVALUABLE
+HIPOTESIS H_DEBILES_SUMAN -> NO_EVALUABLE
+LECTURA -> NO_SE_LEE
+VEREDICTO_GLOBAL -> INVALIDO
+EXIT_AGREGADO=1
+agregador_exit=1
