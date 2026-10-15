@@ -1,0 +1,36 @@
+{
+ "flywire": {
+  "n_cab": 996,
+  "control": {
+   "left": {
+    "cableado": true,
+    "x_lhad1g1": true
+   },
+   "right": {
+    "cableado": true,
+    "x_lhad1g1": true
+   }
+  },
+  "control_pasa": true,
+  "guarda": true,
+  "segundos": 2.3320932388305664
+ },
+ "banc": {
+  "n_cab": 753,
+  "control": {
+   "left": {
+    "cableado": true,
+    "x_lhad1g1": true
+   },
+   "right": {
+    "cableado": true,
+    "x_lhad1g1": true
+   }
+  },
+  "control_pasa": true,
+  "guarda": true,
+  "segundos": 1.926800012588501
+ },
+ "humo": true,
+ "segundos": 13.635932207107544
+}
