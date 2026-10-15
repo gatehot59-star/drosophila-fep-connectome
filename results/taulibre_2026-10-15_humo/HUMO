@@ -1,0 +1,9 @@
+HUMO ciego de H_TAU_LIBRE (respuesta 2026-10-14-040).
+
+Pedido por Abraham el 15-oct a las 18:47 (America/Buenos_Aires), ClickKit instrumento_taulibre_040.
+
+Sello: tools/taulibre/SELLO-TAU-LIBRE.md (fec8472, md5 3886aa58449dfff9a3f9dac88015b5a4), sin editar.
+Humo: REPRO_LECTOR a tamano completo en c2 y c5 (reproduce un resultado ya publicado), NULOS_IGUAL_LECTOR sobre los 40 grafos SL de c2 y los 40 T de c5, TAU_FRESCA, rutas nuevas con 600 y 200 ensayos en la semilla 99 y la prueba del agregador. Ningun acierto nuevo se imprime.
+En brain-env, antes de commitear: prueba_taulibre 11/11; reales c2 tau 20 local VALIDO; nulos T c5 humo VALIDO (40/40 grafos iguales a H_LECTOR); nulos SL c2 humo con 3 grafos VALIDO.
+Instrumento y disparo van en el mismo commit.
+La corrida completa (results/taulibre_2026-10-15/CORRER) espera el si de Abraham.

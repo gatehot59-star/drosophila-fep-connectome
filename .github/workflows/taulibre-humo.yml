@@ -1,0 +1,79 @@
+name: taulibre-humo
+# Respuesta 2026-10-14-040. Humo ciego de H_TAU_LIBRE (tools/taulibre/SELLO-TAU-LIBRE.md, fec8472): REPRO_LECTOR a
+# tamano completo en c2 y c5, NULOS_IGUAL_LECTOR sobre los 40 grafos SL de c2 y los 40 T de c5, TAU_FRESCA, rutas
+# nuevas con 600 y 200 ensayos en la semilla 99 y la prueba del agregador. No imprime aciertos nuevos.
+# Solo se dispara al pushear results/taulibre_2026-10-15_humo/HUMO en esta rama.
+on:
+  push:
+    branches: ["titan/taulibre-2026-10-15"]
+    paths: ["results/taulibre_2026-10-15_humo/HUMO"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  humo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {parte: reales_c2, args: "--celda '0.3|0.15' --reales --taus 20 --repro --humo"}
+          - {parte: reales_c5, args: "--celda '0.6|0.45' --reales --taus 20 --repro --humo"}
+          - {parte: nulos_SL_c2, args: "--celda '0.3|0.15' --nulos SL --k0 0 --n 40 --humo"}
+          - {parte: nulos_T_c5, args: "--celda '0.6|0.45' --nulos T --k0 0 --n 40 --humo"}
+          - {parte: prueba, args: ""}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: humo
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          python -m pip freeze > out/versiones_humo_${{ matrix.parte }}.txt
+          md5sum tools/taulibre/*.py tools/lector/lector_mosca.py >> out/versiones_humo_${{ matrix.parte }}.txt
+          if [ "${{ matrix.parte }}" = "prueba" ]; then
+            python tools/taulibre/prueba_taulibre.py 2>&1 | tee out/humo_prueba.log
+            exit $?
+          fi
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv >> out/versiones_humo_${{ matrix.parte }}.txt
+          python tools/taulibre/taulibre_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out ${{ matrix.args }} 2>&1 | tee out/humo_${{ matrix.parte }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: taulibre-humo-${{ matrix.parte }}
+          path: out/
+  commitear:
+    needs: [humo]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: taulibre-humo-*
+          path: art
+      - name: commitear el humo
+        shell: bash
+        run: |
+          D=results/taulibre_2026-10-15_humo/actions
+          mkdir -p "$D"
+          cp art/*/*.log art/*/*.txt art/*/*.json "$D"/ 2>/dev/null || true
+          (cd "$D" && md5sum *.log *.txt *.json > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-040): H_TAU_LIBRE en Actions x64, controles a tamano completo y rutas ciegas" || echo nada_que_commitear
+          git pull --rebase origin titan/taulibre-2026-10-15 || true
+          git push origin HEAD:titan/taulibre-2026-10-15
