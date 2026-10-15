@@ -1,0 +1,8 @@
+CORRER de H_TAU_LIBRE (respuesta 2026-10-14-041).
+
+Aprobado por Abraham el 15-oct a las 19:38 (America/Buenos_Aires): "Dispara CORRER de H_TAU_LIBRE", despues de la 040 (humo verde en c3e07cd).
+
+Sello: tools/taulibre/SELLO-TAU-LIBRE.md (fec8472, md5 3886aa58449dfff9a3f9dac88015b5a4), sin editar.
+Instrumento (930f0d7): taulibre_mosca.py c65bebe270da1e0526a212cff29830fd, agregar_taulibre.py 340dc41aa6fde80166121c5db6c9b095, prueba_taulibre.py 9f74f63d405ce5eaea322d2923a2cf6d, taulibre-mosca.yml c94e9eeb4baa7e438ed312b9eaf0ed23.
+Trabajos: 4 de reales (taus 20 a 29 en c2 y c5; los de tau 20 con REPRO_LECTOR) y 16 de nulos (SL y T en c2 y c5, 10 cada uno, el nulo k con tau 20 + k mod 10), mas el agregador.
+Expectativa declarada en el sello: c5 probablemente sobrevive; c2 abierta.
