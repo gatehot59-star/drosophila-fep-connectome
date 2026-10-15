@@ -1,0 +1,45 @@
+name: reuso-mosca
+# Respuesta 2026-10-14-029. H_REUSO sellado (tools/reuso/SELLO-REUSO.md): FlyWire y BANC, 200 nulos SL cada uno.
+# Solo se dispara al pushear results/reuso_2026-10-14/CORRER.
+on:
+  push:
+    branches: ["titan/reuso-2026-10-14"]
+    paths: ["results/reuso_2026-10-14/CORRER"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+  BANC_URL: https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888
+jobs:
+  reuso:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: prueba, reuso y commit
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          mkdir -p /tmp/in
+          D=results/reuso_2026-10-14
+          mkdir -p "$D"
+          python tools/reuso/prueba_reuso.py 2>&1 | tee "$D/prueba.log" || echo "prueba_exit=$?" >> "$D/prueba.log"
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          curl -fsSL -o /tmp/in/banc_888_meta.feather "$BANC_URL/banc_888_meta.feather"
+          curl -fsSL -o /tmp/in/banc_888_edgelist_simple_v3.feather "$BANC_URL/banc_888_edgelist_simple_v3.feather"
+          md5sum /tmp/in/* > "$D/versiones.txt"
+          python tools/reuso/reuso_mosca.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --banc-meta /tmp/in/banc_888_meta.feather --banc-aristas /tmp/in/banc_888_edgelist_simple_v3.feather --out "$D" 2>&1 | tee "$D/reuso.log" || echo "reuso_exit=$?" >> "$D/reuso.log"
+          (cd "$D" && md5sum reuso.log prueba.log reuso.json versiones.txt > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-14-029): H_REUSO en Actions x64, FlyWire y BANC" || echo nada_que_commitear
+          git pull --rebase origin titan/reuso-2026-10-14 || true
+          git push origin HEAD:titan/reuso-2026-10-14
