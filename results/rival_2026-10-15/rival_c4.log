@@ -1,0 +1,67 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3 | torch 2.14.1+cpu hilos=2
+# md5 script = 774232f5b4a53872a05f6a0f06015f34
+PIN f3_60_json=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_tarea_mosca.py=True
+SUJETO R2 entradas=564 -> True | 3.4 s
+DATOS entrenamiento=2400 rasgos=22560 pliegues=5 | 0.9 s
+NEGATIVO etiquetas permutadas dentro de cada estado, lambda elegido=100000 | 3.9 s
+CANDIDATA rival=RIDGE lambda=0.0001 validacion=0.9971 pliegues=0.9958 0.9958 0.9958 1.0000 0.9979
+CANDIDATA rival=RIDGE lambda=0.001 validacion=0.9971 pliegues=0.9958 0.9958 0.9958 1.0000 0.9979
+CANDIDATA rival=RIDGE lambda=0.01 validacion=0.9971 pliegues=0.9958 0.9958 0.9958 1.0000 0.9979
+CANDIDATA rival=RIDGE lambda=0.1 validacion=0.9971 pliegues=0.9958 0.9958 0.9958 1.0000 0.9979
+CANDIDATA rival=RIDGE lambda=1 validacion=0.9971 pliegues=0.9958 0.9958 0.9958 1.0000 0.9979
+CANDIDATA rival=RIDGE lambda=10 validacion=0.9954 pliegues=0.9938 0.9938 0.9917 1.0000 0.9979
+CANDIDATA rival=RIDGE lambda=100 validacion=0.9838 pliegues=0.9792 0.9792 0.9875 0.9917 0.9812
+CANDIDATA rival=RIDGE lambda=1000 validacion=0.9267 pliegues=0.9354 0.9229 0.9417 0.9000 0.9333
+CANDIDATA rival=RIDGE lambda=10000 validacion=0.5496 pliegues=0.5667 0.5354 0.5563 0.5333 0.5563
+CANDIDATA rival=RIDGE lambda=100000 validacion=0.5000 pliegues=0.5271 0.4771 0.5125 0.4750 0.5083
+ELECCION rival=RIDGE lambda=1 | 3.9 s
+CANDIDATA rival=MLP semilla=0 validacion=0.9912 pliegues=0.9958 0.9938 0.9896 0.9938 0.9833 | 25.7 s
+CANDIDATA rival=MLP semilla=1 validacion=0.9929 pliegues=0.9938 0.9875 0.9938 0.9938 0.9958 | 50.7 s
+CANDIDATA rival=MLP semilla=2 validacion=0.9900 pliegues=0.9979 0.9812 0.9917 0.9938 0.9854 | 75.3 s
+CANDIDATA rival=MLP semilla=3 validacion=0.9879 pliegues=0.9875 0.9812 0.9896 0.9938 0.9875 | 100.1 s
+CANDIDATA rival=MLP semilla=4 validacion=0.9888 pliegues=0.9917 0.9854 0.9875 0.9917 0.9875 | 124.7 s
+CANDIDATA rival=MLP semilla=5 validacion=0.9871 pliegues=0.9875 0.9812 0.9917 0.9896 0.9854 | 148.7 s
+CANDIDATA rival=MLP semilla=6 validacion=0.9900 pliegues=0.9875 0.9854 0.9938 0.9979 0.9854 | 174.3 s
+CANDIDATA rival=MLP semilla=7 validacion=0.9917 pliegues=0.9979 0.9875 0.9917 0.9938 0.9875 | 199.1 s
+CANDIDATA rival=MLP semilla=8 validacion=0.9858 pliegues=0.9854 0.9792 0.9896 0.9938 0.9812 | 223.3 s
+CANDIDATA rival=MLP semilla=9 validacion=0.9887 pliegues=0.9917 0.9792 0.9917 0.9958 0.9854 | 248.6 s
+ELECCION rival=MLP semilla=1 | 253.8 s
+CANDIDATA rival=REGLA_TAU semilla=10 validacion=0.8863 pliegues=0.8750 0.9021 0.8854 0.8771 0.8917 tau=0.1747 0.0783 0.0927 0.1304 0.0981 0.1720
+CANDIDATA rival=REGLA_TAU semilla=11 validacion=0.9317 pliegues=0.9250 0.9333 0.9375 0.9125 0.9500 tau=0.0754 0.0843 0.1677 0.1757 0.0778 0.0690
+CANDIDATA rival=REGLA_TAU semilla=12 validacion=0.9142 pliegues=0.8979 0.9187 0.9125 0.9083 0.9333 tau=0.0901 0.1355 0.1132 0.1787 0.1087 0.1476
+CANDIDATA rival=REGLA_TAU semilla=13 validacion=0.9292 pliegues=0.9146 0.9375 0.9271 0.9083 0.9583 tau=0.1638 0.0940 0.1640 0.1446 0.1597 0.1798
+CANDIDATA rival=REGLA_TAU semilla=14 validacion=0.8842 pliegues=0.8688 0.9000 0.8792 0.8792 0.8938 tau=0.1597 0.0914 0.1397 0.1097 0.0955 0.1727
+CANDIDATA rival=REGLA_TAU semilla=15 validacion=0.8787 pliegues=0.8562 0.8833 0.8688 0.8792 0.9062 tau=0.1431 0.1054 0.1357 0.1477 0.1317 0.0611
+CANDIDATA rival=REGLA_TAU semilla=16 validacion=0.9346 pliegues=0.9208 0.9396 0.9354 0.9125 0.9646 tau=0.1280 0.1697 0.0735 0.0740 0.1482 0.1498
+CANDIDATA rival=REGLA_TAU semilla=17 validacion=0.9279 pliegues=0.9146 0.9333 0.9292 0.9021 0.9604 tau=0.1614 0.1387 0.1336 0.1093 0.0789 0.0773
+CANDIDATA rival=REGLA_TAU semilla=18 validacion=0.9358 pliegues=0.9271 0.9417 0.9313 0.9187 0.9604 tau=0.1079 0.1325 0.1039 0.1494 0.1392 0.1181
+CANDIDATA rival=REGLA_TAU semilla=19 validacion=0.8950 pliegues=0.8812 0.9021 0.8896 0.8958 0.9062 tau=0.1104 0.1183 0.0898 0.1164 0.1657 0.0828
+ELECCION rival=REGLA_TAU semilla=18 | 0.2 s
+RIVALES elegidos | 257.9 s
+PRUEBA celda=0.6|0.15 prueba=2 RIDGE=0.9995 MLP=0.9895 REGLA_TAU=0.9330 regla_propia=0.9375 W=0.9370(media de 10 tau) | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=3 RIDGE=0.9980 MLP=0.9915 REGLA_TAU=0.9360 regla_propia=0.9260 W=0.9323(media de 10 tau) | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=4 RIDGE=0.9985 MLP=0.9875 REGLA_TAU=0.9340 regla_propia=0.9310 W=0.9414(media de 10 tau) | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=5 RIDGE=0.9980 MLP=0.9935 REGLA_TAU=0.9290 regla_propia=0.9270 W=0.9228(media de 10 tau) | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=6 RIDGE=0.9995 MLP=0.9905 REGLA_TAU=0.9270 regla_propia=0.9265 W=0.9264(media de 10 tau) | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=7 RIDGE=0.9990 MLP=0.9895 REGLA_TAU=0.9325 regla_propia=0.9210 W=0.9310(media de 10 tau) | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=8 RIDGE=0.9985 MLP=0.9895 REGLA_TAU=0.9265 regla_propia=0.9260 W=0.9270(media de 10 tau) | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=9 RIDGE=0.9985 MLP=0.9910 REGLA_TAU=0.9320 regla_propia=0.9270 W=0.9308(media de 10 tau) | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=10 RIDGE=0.9985 MLP=0.9950 REGLA_TAU=0.9380 regla_propia=0.9275 W=0.9375(media de 10 tau) | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=11 RIDGE=0.9980 MLP=0.9960 REGLA_TAU=0.9305 regla_propia=0.9275 W=0.9327(media de 10 tau) | 1.5 s
+CHEQUEO REGLA_TAU_NULA prueba=12 iguales=2000/2000 -> True
+CONTROL_NEGATIVO prueba=12 acierto=0.5000 azar=0.5000 tope=0.5500 -> True
+PRUEBA celda=0.6|0.15 prueba=12 RIDGE=0.9995 MLP=0.9920 REGLA_TAU=0.9305 regla_propia=0.9315 W=0.9465 | 2.1 s
+PRUEBA celda=0.6|0.15 prueba=13 RIDGE=0.9990 MLP=0.9905 REGLA_TAU=0.9325 regla_propia=0.9325 W=0.9435 | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=14 RIDGE=0.9975 MLP=0.9930 REGLA_TAU=0.9310 regla_propia=0.9160 W=0.9450 | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=15 RIDGE=0.9985 MLP=0.9915 REGLA_TAU=0.9320 regla_propia=0.9295 W=0.9460 | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=16 RIDGE=0.9975 MLP=0.9895 REGLA_TAU=0.9360 regla_propia=0.9365 W=0.9475 | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=17 RIDGE=0.9990 MLP=0.9920 REGLA_TAU=0.9300 regla_propia=0.9305 W=0.9475 | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=18 RIDGE=0.9995 MLP=0.9925 REGLA_TAU=0.9390 regla_propia=0.9395 W=0.9500 | 1.6 s
+PRUEBA celda=0.6|0.15 prueba=19 RIDGE=1.0000 MLP=0.9880 REGLA_TAU=0.9335 regla_propia=0.9200 W=0.9415 | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=20 RIDGE=0.9985 MLP=0.9905 REGLA_TAU=0.9295 regla_propia=0.9265 W=0.9500 | 1.5 s
+PRUEBA celda=0.6|0.15 prueba=21 RIDGE=0.9980 MLP=0.9910 REGLA_TAU=0.9350 regla_propia=0.9265 W=0.9495 | 1.6 s
+CHEQUEO REPRO_REGLA iguales=20/20 -> True | REPRO_W iguales=110/110 -> True
+CHEQUEO INSTRUMENTO PIN=True R2_TAMANO=True HTAU_CELDA=True F3_CELDA=True GUARDA_FUGA=True REGLA_TAU_NULA=True CONTROL_NEGATIVO=True REPRO_REGLA=True REPRO_W=True -> VALIDO
+escrito rival_c4.json md5=0112d4bff4ab7b3743ebbf9c0d6f5df9
+# duracion_s=297.0
+EXIT_RUN=0
