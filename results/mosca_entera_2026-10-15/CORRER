@@ -1,0 +1,4 @@
+CORRER de H_MOSCA_ENTERA con el sello 046 (500f66d) y la enmienda 048 (778dc10), respuesta 2026-10-14-049.
+Autorizado por Abraham con el boton enmienda_mosca_entera_048 (16-oct, 00:48): "Sella la enmienda y despues CORRER".
+Antes de disparar: prueba 049 TESTS_OK 13 de 13 en Actions (bot fbed6bb) y humo 049 completo, 7 partes y agregado (bot 506d836), con semillas fuera de CORRER (tau 99, nulos k 99).
+Instrumento en a9d2890. Este archivo solo dispara .github/workflows/mosca-entera-correr.yml.
