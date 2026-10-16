@@ -1,0 +1,4 @@
+CORRER de H_ENTERA_UMBRAL (sello 868ded6), respuesta 2026-10-14-051.
+Pedido de Abraham, 16-oct 10:37: "Implementá el instrumento UMB".
+Antes de este disparo: prueba 7 de 7 en Actions (bot 990f446) y humo completo (bot 4afa6a8), con CALIB_REAL, PIN y TASA_049 en PASA y ninguna falla del sello a la vista.
+Instrumento en 1f40beb. Nada del brazo real con el estimulo de azucar se vio antes de este disparo: el humo uso 20 no sensoriales al azar (semilla 99) y nulos k 99, fuera de los k 0 a 39 de esta corrida.
