@@ -1,0 +1,137 @@
+{
+ "version": "2026-10-14-051",
+ "humo": false,
+ "modo": "nulos",
+ "md5": {
+  "conn": "3d802fd542b5d18570ba1ba0bb0abed9",
+  "annot": "719904abad876c68ace1b5690c9b9b63",
+  "comp": "031a4b6eac490bda17c75b65ccaa7906",
+  "lif": "f6383d18a0e05efb65696175949df9fa"
+ },
+ "n": 138639,
+ "aristas": 15091983,
+ "mn9": 138332,
+ "K": 321,
+ "N_OBJ": 321,
+ "TOL": 32,
+ "tau": 30,
+ "tipo": "SHUF_G",
+ "k0": 10,
+ "nulos": {
+  "10": {
+   "mn9": 0.0,
+   "theta": 0.0018953680992126465,
+   "activas": 321,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 333.4151346573177,
+   "radio_g1": 0.13864742371522326,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 922
+  },
+  "11": {
+   "mn9": 0.0,
+   "theta": 0.0018935203552246094,
+   "activas": 321,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 289.1116461855569,
+   "radio_g1": 0.1202242512203093,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 944
+  },
+  "12": {
+   "mn9": 0.0,
+   "theta": 0.0018954277038574219,
+   "activas": 321,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 309.9789687778511,
+   "radio_g1": 0.12890172328596608,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 917
+  },
+  "13": {
+   "mn9": 0.0,
+   "theta": 0.0018970966339111328,
+   "activas": 321,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 265.63917359576897,
+   "radio_g1": 0.110463453000561,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 920
+  },
+  "14": {
+   "mn9": 0.0,
+   "theta": 0.0018977522850036621,
+   "activas": 321,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 277.5823664981621,
+   "radio_g1": 0.11542991299210477,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 916
+  },
+  "15": {
+   "mn9": 0.0,
+   "theta": 0.0018981099128723145,
+   "activas": 321,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 357.4794903652198,
+   "radio_g1": 0.14865435074238584,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 927
+  },
+  "16": {
+   "mn9": 0.0,
+   "theta": 0.0018982291221618652,
+   "activas": 307,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 258.7875670629043,
+   "radio_g1": 0.107614279416799,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 918
+  },
+  "17": {
+   "mn9": 0.0,
+   "theta": 0.0018949508666992188,
+   "activas": 321,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 283.8126160805417,
+   "radio_g1": 0.11802070136344729,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 941
+  },
+  "18": {
+   "mn9": 0.0,
+   "theta": 0.0018982291221618652,
+   "activas": 305,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 470.1101233954006,
+   "radio_g1": 0.19549069821983098,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 937
+  },
+  "19": {
+   "mn9": 0.0,
+   "theta": 0.001896679401397705,
+   "activas": 320,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 266.3269558494451,
+   "radio_g1": 0.11074946052582602,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 926
+  }
+ },
+ "radio_crudo_real": 2164.292802208328,
+ "factor": 0.0004158402223034187,
+ "theta_real": 0.00041681528091430664,
+ "real_humo": false,
+ "segundos": 511.9951181411743
+}

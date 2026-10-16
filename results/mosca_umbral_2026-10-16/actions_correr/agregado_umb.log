@@ -1,0 +1,14 @@
+== agregar_umb.py :: H_ENTERA_UMBRAL (2026-10-14-051) ==
+LIF results/mosca_entera_2026-10-15/actions_correr/lif_real.json md5=f6383d18a0e05efb65696175949df9fa K=321
+REAL theta=0.000416815281 activas=321 estado=OK mn9=0.000145086 rango_mn9=269 J_umb=0.331950 J_tasa=0.3659574468
+NULOS SHUF_W n=40 mn9_max=0 J_max=0.1823 theta_mediana=6.37174e-05 estados={'OK': 40}
+SECUNDARIA SHUF_W theta_real fijo: nulos con mn9 >= real=0 activas_mediana=134
+NULOS SHUF_G n=40 mn9_max=0.00158085 J_max=0.0064 theta_mediana=0.00189674 estados={'OK': 40}
+SECUNDARIA SHUF_G theta_real fijo: nulos con mn9 >= real=1 activas_mediana=924
+CONTROL PIN PASA
+CONTROL CALIB_REAL PASA
+CONTROL TASA_049 PASA
+VEREDICTO H_UMB_MN9 SIN_DECIDIR nulos_ge={'SHUF_W': 0, 'SHUF_G': 1}
+VEREDICTO H_UMB_CONJUNTO SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO H_UMB_GANA REFUTADA d=-0.0340
+LECTURA 80 nulos no lo resuelven; no se agregan nulos despues de ver

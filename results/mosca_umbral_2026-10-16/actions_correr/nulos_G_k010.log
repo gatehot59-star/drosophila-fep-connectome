@@ -1,0 +1,41 @@
+== umb_entera.py :: H_ENTERA_UMBRAL, brazo UMB (2026-10-14-051) ==
+ENTORNO python=3.12.15 numpy=2.5.3 scipy=1.18.1 pandas=3.0.5 maquina=runnervm8k3b6
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 annot=719904abad876c68ace1b5690c9b9b63 comp=031a4b6eac490bda17c75b65ccaa7906 lif=f6383d18a0e05efb65696175949df9fa -> True
+GRAFO neuronas=138639 aristas=15091983 mapeo_ok=True | 0.4 s
+ESTIMULO azucar=20 mn9_indice=138332 K=321 N_OBJ=321
+G1 radio_crudo_real=2164.292802 factor=0.00041584 theta_real=0.000416815281 | 0.6 s
+NULO SHUF_G k=10 theta=0.0018953681 activas=321 estado=OK mn9=0 | fijo: mn9=0 activas=922 | 50.7 s
+NULO SHUF_G k=11 theta=0.00189352036 activas=321 estado=OK mn9=0 | fijo: mn9=0 activas=944 | 51.3 s
+NULO SHUF_G k=12 theta=0.0018954277 activas=321 estado=OK mn9=0 | fijo: mn9=0 activas=917 | 51.6 s
+NULO SHUF_G k=13 theta=0.00189709663 activas=321 estado=OK mn9=0 | fijo: mn9=0 activas=920 | 51.8 s
+NULO SHUF_G k=14 theta=0.00189775229 activas=321 estado=OK mn9=0 | fijo: mn9=0 activas=916 | 51.1 s
+NULO SHUF_G k=15 theta=0.00189810991 activas=321 estado=OK mn9=0 | fijo: mn9=0 activas=927 | 51.0 s
+NULO SHUF_G k=16 theta=0.00189822912 activas=307 estado=OK mn9=0 | fijo: mn9=0 activas=918 | 51.4 s
+NULO SHUF_G k=17 theta=0.00189495087 activas=321 estado=OK mn9=0 | fijo: mn9=0 activas=941 | 50.3 s
+NULO SHUF_G k=18 theta=0.00189822912 activas=305 estado=OK mn9=0 | fijo: mn9=0 activas=937 | 50.0 s
+NULO SHUF_G k=19 theta=0.0018966794 activas=320 estado=OK mn9=0 | fijo: mn9=0 activas=926 | 50.7 s
+JSON umb_SHUF_G_k010.json md5=1be09df3dd1d33c56162b2019fca0bea
+FIN segundos=512.0
+	Command being timed: "python tools/mosca_entera/umb_entera.py --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --annot /tmp/in/annotations.tsv --lif results/mosca_entera_2026-10-15/actions_correr/lif_real.json --out out --modo nulos --tipo SHUF_G --k0 10 --n 10 --real-json real/umb_real.json"
+	User time (seconds): 541.17
+	System time (seconds): 0.66
+	Percent of CPU this job got: 105%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:32.52
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2577924
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 90588
+	Voluntary context switches: 229
+	Involuntary context switches: 8831
+	Swaps: 0
+	File system inputs: 4056
+	File system outputs: 1256
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
