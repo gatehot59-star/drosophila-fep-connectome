@@ -1,0 +1,87 @@
+{
+ "version": "2026-10-14-055",
+ "humo": true,
+ "ks": [
+  99
+ ],
+ "foco": 99,
+ "pin": [
+  {
+   "archivo": "lif_shufg_real.json",
+   "ok": true,
+   "motivo": "ok"
+  },
+  {
+   "archivo": "lif_shufg_G_k099.json",
+   "ok": true,
+   "motivo": "ok"
+  }
+ ],
+ "PIN": "PASA",
+ "CTRL_REAL": "PASA",
+ "CTRL_REAL_motivo": "2 de 2, minimo 2",
+ "real": {
+  "E_MN9": 2,
+  "n_run": 2,
+  "F_MN9": 65.5,
+  "activas": 373,
+  "espigas": 18065,
+  "K": 336,
+  "atajo": {
+   "n1": 0,
+   "D1+": 0.0,
+   "D1+_matriz": 0.0,
+   "D2+": 261.0
+  }
+ },
+ "nulos": {
+  "99": {
+   "k": 99,
+   "estado": "MEDIDO",
+   "nulo_mismo": "PASA",
+   "radio_crudo": 319.6185606510037,
+   "dif_rel": 1.8391406231071978e-11,
+   "atajo": {
+    "n1": 0,
+    "D1+": 0.0,
+    "D1+_matriz": 0.0,
+    "D2+": 25.0
+   },
+   "E_MN9": 0,
+   "F_MN9": 0.0,
+   "activas": 83,
+   "espigas": 23031,
+   "K": 32,
+   "J": 0.0027247956403269754,
+   "llega": false,
+   "ge_real": false,
+   "desbocado": false,
+   "segundos": 201.5781753063202
+  }
+ },
+ "medidos": 1,
+ "faltan": 0,
+ "llegan": [],
+ "ge_real": [],
+ "desbocados": [],
+ "H_LIF_G_SHIU": "SOSTENIDA",
+ "H_LIF_G_VARA": "SOSTENIDA",
+ "H_LIF_K32": "NO_LLEGA",
+ "LECTURA_K32": "NO_LLEGA",
+ "descriptivo": {
+  "nulos_con_n1": [],
+  "foco_atajo": {
+   "n1": 0,
+   "D1+": 0.0,
+   "D1+_matriz": 0.0,
+   "D2+": 25.0
+  },
+  "foco_n1_ge_1": false,
+  "foco_unico_con_n1": false,
+  "activas_mediana": 83,
+  "activas_max": 83,
+  "J_mediana": 0.0027247956403269754,
+  "J_max": 0.0027247956403269754,
+  "F_MN9_max": 0.0
+ }
+}

@@ -1,0 +1,15 @@
+== agregar_lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+HUMO: numeros sin valor
+CONTROL PIN PASA 
+CONTROL CTRL_REAL PASA (2 de 2, minimo 2)
+REAL E_MN9=2 de 2 F_MN9=65.5000 Hz activas=373 espigas=18065 K=336 atajo n1=0 D1+=0.0 D2+=261.0
+NULO k=99 E_MN9=0 F_MN9=0.0000 activas=83 K=32 J=0.0027 n1=0 D1+=0.0 D2+=25.0 radio=319.618561 desbocado=False | 202 s
+CONTROL NULO_MISMO PASA en 1 de 1 (otros estados 0, sin archivo 0)
+NULOS medidos=1 faltan=0 llegan=[] ge_real=[] desbocados=[]
+VEREDICTO H_LIF_G_SHIU SOSTENIDA (llegan=0, faltan=0)
+VEREDICTO H_LIF_G_VARA SOSTENIDA (con F_MN9 >= real=0, faltan=0, F_real=65.5000 Hz)
+VEREDICTO H_LIF_K32 NO_LLEGA (foco k=99)
+LECTURA K32 NO_LLEGA: el atajo de k32 es de nuestra celda de tasa; el LIF no lo toma. El freno de H_UMB_MN9 es de la neurona, no del barajado.
+DESCRIPTIVO nulos con n1>=1: [] | foco n1=0 D1+=0.0 D2+=25.0 | foco unico con n1>=1: False
+DESCRIPTIVO activas mediana=83 max=83 | J mediana=0.0027 max=0.0027 | F_MN9 max=0.0000 Hz
+EXIT_AGREGAR=0

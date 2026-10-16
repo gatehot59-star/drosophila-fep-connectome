@@ -1,0 +1,9 @@
+7e7b610fd48b764bb5777a10f743e8c8  G_k099.log
+b25ada8c70d699ef541c14ca602e42ae  agregado_lif_shufg.json
+109a83e3db23bbd2615277f687be32d8  agregado_lif_shufg.log
+8f0f54ffd5611eb4b6c3f04aa8f5b659  agregar_stdout.log
+c4adeb7dae16d6e00e6687f3d781e1fc  lif_shufg_G_k099.json
+4594aa8b3cf43e313fa00f8454b6aae7  lif_shufg_real.json
+a6b841ab3827cc9e6ae48409c5883602  real.log
+ad792f49efbf615f9b7ddf57afeb2a7a  versiones_G_k099.txt
+06effa6778b7b05d47f395bce514d2a2  versiones_real.txt

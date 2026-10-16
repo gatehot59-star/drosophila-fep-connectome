@@ -1,0 +1,38 @@
+== lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+REF umb_SHUF_G_k099.json md5=dddfaeb2957cd40a2b202a39d931cf51 esperado=dddfaeb2957cd40a2b202a39d931cf51 -> True
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 -> True comp=031a4b6eac490bda17c75b65ccaa7906 -> True
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5 scipy=1.18.1
+GRAFO n=138639 aristas=15091983 estimulo=20 lectura=720575940660219265 (indice 138332) n_run=10 t_run=1000 ms r_poi=100 Hz
+NULO_MISMO k=99 radio=319.618560651 ref=319.61856064512546 dif_rel=1.8391406231071978e-11 -> PASA
+ATAJO k=99 n1=0 D1+=0.0 D2+=25.0
+>>> Experiment:     SHUF_G_99
+    Output file:    out/SHUF_G_99.parquet
+    Excited neurons: 20
+    Elapsed time:   201 s
+CORRIDA SHUF_G_99 E_MN9=0 de 10 F_MN9=0.00 Hz espigas=23031 activas=83 K=32 | 201.6 s
+JSON lif_shufg_G_k099.json md5=c4adeb7dae16d6e00e6687f3d781e1fc
+FIN segundos=205.2
+	Command being timed: "python tools/mosca_entera/lif_shufg.py --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --out out --n-proc 3 --humo --modo nulos --k0 99 --n 1 --n-run 10 --ref results/mosca_umbral_2026-10-16_humo/actions_humo/umb_SHUF_G_k099.json"
+	User time (seconds): 279.68
+	System time (seconds): 10.94
+	Percent of CPU this job got: 136%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:32.39
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2149360
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 393
+	Minor (reclaiming a frame) page faults: 2117169
+	Voluntary context switches: 28377
+	Involuntary context switches: 4484
+	Swaps: 0
+	File system inputs: 82904
+	File system outputs: 824664
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
