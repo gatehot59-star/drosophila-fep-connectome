@@ -1,0 +1,99 @@
+name: lif-shufg-correr
+# Respuesta 2026-10-14-055. CORRER de H_LIF_SHUFG (sello SELLO-LIF-SHUFG-054.md, 307db84): el real con 30 ensayos
+# (CTRL_REAL) y los 40 SHUF_G de la 049 y la 051 con 10 ensayos cada uno (8 trabajos de 5), NULO_MISMO contra los
+# radios de la 049; agregado con las bandas del sello. Solo se dispara al pushear results/lif_shufg_2026-10-16/CORRER.
+on:
+  push:
+    branches: ["titan/mosca-entera-2026-10-15"]
+    paths: ["results/lif_shufg_2026-10-16/CORRER"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  LIFDEPS: brian2==2.10.1 cython==3.1.3 joblib==1.6.0
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Connectivity_783.parquet
+  COMP_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv
+  MODEL_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/model.py
+  REFS: --ref results/mosca_entera_2026-10-15/actions_correr/liq_SHUF_G_k000.json --ref results/mosca_entera_2026-10-15/actions_correr/liq_SHUF_G_k020.json
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {parte: real, cmd: "--modo real --n-run 30"}
+          - {parte: G_k000, cmd: "--modo nulos --k0 0 --n 5 --n-run 10"}
+          - {parte: G_k005, cmd: "--modo nulos --k0 5 --n 5 --n-run 10"}
+          - {parte: G_k010, cmd: "--modo nulos --k0 10 --n 5 --n-run 10"}
+          - {parte: G_k015, cmd: "--modo nulos --k0 15 --n 5 --n-run 10"}
+          - {parte: G_k020, cmd: "--modo nulos --k0 20 --n 5 --n-run 10"}
+          - {parte: G_k025, cmd: "--modo nulos --k0 25 --n 5 --n-run 10"}
+          - {parte: G_k030, cmd: "--modo nulos --k0 30 --n 5 --n-run 10"}
+          - {parte: G_k035, cmd: "--modo nulos --k0 35 --n 5 --n-run 10"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: medir
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS $LIFDEPS
+          mkdir -p /tmp/in /tmp/shiu out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/completeness.csv "$COMP_URL"
+          curl -fsSL -o /tmp/shiu/model.py "$MODEL_URL"
+          python -m pip freeze > out/versiones_${{ matrix.parte }}.txt
+          md5sum /tmp/in/* /tmp/shiu/model.py tools/mosca_entera/*.py >> out/versiones_${{ matrix.parte }}.txt
+          nproc >> out/versiones_${{ matrix.parte }}.txt
+          free -m >> out/versiones_${{ matrix.parte }}.txt
+          if [[ "${{ matrix.parte }}" == G_* ]]; then R="$REFS"; else R=""; fi
+          if [ -x /usr/bin/time ]; then TV="/usr/bin/time -v"; else TV=""; fi
+          $TV python tools/mosca_entera/lif_shufg.py --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --out out --n-proc 3 ${{ matrix.cmd }} $R 2>&1 | tee out/${{ matrix.parte }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lif-shufg-correr-${{ matrix.parte }}
+          path: out/
+  agregar:
+    needs: [medir]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lif-shufg-correr-*
+          path: art
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          W=/tmp/todo
+          mkdir -p "$W"
+          find art -name '*.json' -exec cp {} "$W"/ \;
+          D=results/lif_shufg_2026-10-16/actions_correr
+          mkdir -p "$D"
+          find art -name '*.log' -exec cp {} "$D"/ \;
+          find art -name 'versiones_*.txt' -exec cp {} "$D"/ \;
+          set +e
+          python tools/mosca_entera/agregar_lif_shufg.py --dir "$W" 2>&1 | tee "$D"/agregar_stdout.log
+          RC=$?
+          set -e
+          echo "EXIT_AGREGAR=$RC" >> "$D"/agregar_stdout.log
+          cp "$W"/*.json "$D"/ 2>/dev/null || true
+          cp "$W"/agregado_lif_shufg.log "$D"/ 2>/dev/null || true
+          (cd "$D" && rm -f MD5SUMS.txt && md5sum * > MD5SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-14-055): CORRER de H_LIF_SHUFG, aplicado en Actions" || echo nada_que_commitear
+          git pull --rebase origin titan/mosca-entera-2026-10-15 || true
+          git push origin HEAD:titan/mosca-entera-2026-10-15

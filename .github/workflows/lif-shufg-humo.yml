@@ -1,0 +1,93 @@
+name: lif-shufg-humo
+# Respuesta 2026-10-14-055. Humo de H_LIF_SHUFG (sello SELLO-LIF-SHUFG-054.md, 307db84, seccion 8): el real con 2
+# ensayos y un solo nulo SHUF_G k 99 (fuera de 0 a 39) con 10, con NULO_MISMO contra el radio que registro el humo de
+# la 051. Mide tiempo y memoria de un SHUF_G en el LIF; numeros sin valor. Ninguno de los 40 de CORRER corre aca.
+# Solo se dispara al pushear results/lif_shufg_2026-10-16_humo/HUMO en esta rama.
+on:
+  push:
+    branches: ["titan/mosca-entera-2026-10-15"]
+    paths: ["results/lif_shufg_2026-10-16_humo/HUMO"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  LIFDEPS: brian2==2.10.1 cython==3.1.3 joblib==1.6.0
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Connectivity_783.parquet
+  COMP_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv
+  MODEL_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/model.py
+  REFS: --ref results/mosca_umbral_2026-10-16_humo/actions_humo/umb_SHUF_G_k099.json
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {parte: real, cmd: "--modo real --n-run 2"}
+          - {parte: G_k099, cmd: "--modo nulos --k0 99 --n 1 --n-run 10"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: medir
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS $LIFDEPS
+          mkdir -p /tmp/in /tmp/shiu out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/completeness.csv "$COMP_URL"
+          curl -fsSL -o /tmp/shiu/model.py "$MODEL_URL"
+          python -m pip freeze > out/versiones_${{ matrix.parte }}.txt
+          md5sum /tmp/in/* /tmp/shiu/model.py tools/mosca_entera/*.py >> out/versiones_${{ matrix.parte }}.txt
+          nproc >> out/versiones_${{ matrix.parte }}.txt
+          free -m >> out/versiones_${{ matrix.parte }}.txt
+          if [[ "${{ matrix.parte }}" == G_* ]]; then R="$REFS"; else R=""; fi
+          if [ -x /usr/bin/time ]; then TV="/usr/bin/time -v"; else TV=""; fi
+          $TV python tools/mosca_entera/lif_shufg.py --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --out out --n-proc 3 --humo ${{ matrix.cmd }} $R 2>&1 | tee out/${{ matrix.parte }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lif-shufg-humo-${{ matrix.parte }}
+          path: out/
+  agregar:
+    needs: [medir]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: lif-shufg-humo-*
+          path: art
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          W=/tmp/todo
+          mkdir -p "$W"
+          find art -name '*.json' -exec cp {} "$W"/ \;
+          D=results/lif_shufg_2026-10-16_humo/actions_humo
+          mkdir -p "$D"
+          find art -name '*.log' -exec cp {} "$D"/ \;
+          find art -name 'versiones_*.txt' -exec cp {} "$D"/ \;
+          set +e
+          python tools/mosca_entera/agregar_lif_shufg.py --dir "$W" --humo --ks 99 --foco 99 2>&1 | tee "$D"/agregar_stdout.log
+          RC=$?
+          set -e
+          echo "EXIT_AGREGAR=$RC" >> "$D"/agregar_stdout.log
+          cp "$W"/*.json "$D"/ 2>/dev/null || true
+          cp "$W"/agregado_lif_shufg.log "$D"/ 2>/dev/null || true
+          (cd "$D" && rm -f MD5SUMS.txt && md5sum * > MD5SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-055): humo de H_LIF_SHUFG, numeros sin valor" || echo nada_que_commitear
+          git pull --rebase origin titan/mosca-entera-2026-10-15 || true
+          git push origin HEAD:titan/mosca-entera-2026-10-15

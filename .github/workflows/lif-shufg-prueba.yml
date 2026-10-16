@@ -1,0 +1,48 @@
+name: lif-shufg-prueba
+# Respuesta 2026-10-14-055. Prueba del instrumento de H_LIF_SHUFG (sello tools/mosca_entera/SELLO-LIF-SHUFG-054.md,
+# 307db84): 12 pruebas, con el model.py de Shiu en 12 neuronas y los JSON de referencia de la 049 y la 051.
+# Solo se dispara al pushear results/lif_shufg_2026-10-16_humo/PRUEBA en esta rama.
+on:
+  push:
+    branches: ["titan/mosca-entera-2026-10-15"]
+    paths: ["results/lif_shufg_2026-10-16_humo/PRUEBA"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  LIFDEPS: brian2==2.10.1 cython==3.1.3 joblib==1.6.0
+  MODEL_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/model.py
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: prueba y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS $LIFDEPS
+          mkdir -p /tmp/shiu
+          curl -fsSL -o /tmp/shiu/model.py "$MODEL_URL"
+          D=results/lif_shufg_2026-10-16_humo/actions_prueba
+          mkdir -p "$D"
+          python -m pip freeze > "$D"/versiones_prueba.txt
+          md5sum tools/mosca_entera/*.py /tmp/shiu/model.py >> "$D"/versiones_prueba.txt
+          git hash-object /tmp/shiu/model.py >> "$D"/versiones_prueba.txt
+          set +e
+          python tools/mosca_entera/prueba_lif_shufg.py --shiu /tmp/shiu --exigir 2>&1 | tee "$D"/prueba.log
+          RC=$?
+          set -e
+          echo "EXIT_PRUEBA=$RC" >> "$D"/prueba.log
+          (cd "$D" && rm -f MD5SUMS.txt && md5sum *.log *.txt > MD5SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-055): prueba del instrumento de H_LIF_SHUFG en Actions" || echo nada_que_commitear
+          git pull --rebase origin titan/mosca-entera-2026-10-15 || true
+          git push origin HEAD:titan/mosca-entera-2026-10-15
+          exit $RC
