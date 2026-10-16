@@ -1,6 +1,6 @@
 # SELLO · H_MOSCA_ENTERA (respuesta 2026-10-14-046)
 
-**Fecha:** 2026-10-15, 23:40 (America/Buenos_Aires). **Pedido:** Abraham, ClickKit `sellar_mosca_entera_046`, 23:15. Sellado antes de escribir una línea de instrumento. Nada corrido.
+**Fecha:** 2026-10-15, 23:20 (America/Buenos_Aires). **Pedido:** Abraham, ClickKit `sellar_mosca_entera_046`, 23:15. Sellado antes de escribir una línea de instrumento. Nada corrido. (El primer commit de este sello, `863d2a0`, decía 23:40 por error: estaba adelantado.)
 
 ## Pregunta
 
@@ -8,10 +8,10 @@
 
 ## Datos y pines
 
-- `connectivity.parquet`: md5 `3d802fd542b5d18570ba1ba0bb0abed9`, 100.804.642 bytes, git blob `d386555d1a5f40ebfa1380bcb05b1fab044855fd`. Es byte a byte el `Connectivity_783.parquet` del repo de Shiu (`philshiu/Drosophila_brain_model`, commit `91bdd1e7dcf193f3e7ca5a8933497fcef63b7960`, mismo blob). [MEDIDO 15-oct en brain-env con `git hash-object`.]
+- `connectivity.parquet`: md5 `3d802fd542b5d18570ba1ba0bb0abed9`, 100.804.642 bytes, git blob `d386555d1a5f40ebfa1380bcb05b1fab044855fd`. Es byte a byte el `Connectivity_783.parquet` del repo de Shiu (`philshiu/Drosophila_brain_model`, commit `91bdd1e7dcf193f3e7ca5a8933497fcef63b7960`, mismo blob). [MEDIDO 15-oct en brain-env con `git hash-object`; log en `results/mosca_entera_2026-10-15/pines.log`.]
 - `annotations.tsv`: md5 `719904abad876c68ace1b5690c9b9b63`.
 - `Completeness_783.csv` del mismo commit de Shiu (blob `b5a26b82b69a3c2e7fd99cd6810c36fc8f0e492b`); su md5 lo fija el instrumento.
-- Estímulo: los 21 sensores de azúcar del `example.ipynb` de Shiu (ids de v630). 20 existen en v783, en el parquet y en las anotaciones (sensory, gustatory, sugar/water, LB3). Falta `720575940620900446`: se estimulan los 20. [MEDIDO, `ids_shiu.py` md5 `c82a835586846568cb35e1f1a5e9b14b`.]
+- Estímulo: los 21 sensores de azúcar del `example.ipynb` de Shiu (ids de v630). 20 existen en v783, en el parquet y en las anotaciones (sensory, gustatory, sugar/water, LB3). Falta `720575940620900446`: se estimulan los 20. [MEDIDO, `tools/mosca_entera/ids_shiu.py` md5 `c82a835586846568cb35e1f1a5e9b14b`.]
 - Lectura: MN9 = `720575940660219265` (id del notebook de Shiu). Existe en v783: motor, brain_motor_neuron, ingestion_motor_neuron, cell_type CB0701, side right.
 - Declarado y no corregido: el notebook dice «right hemisphere» y las anotaciones v783 marcan side left en los 20.
 

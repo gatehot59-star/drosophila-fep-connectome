@@ -1,0 +1,29 @@
+3d802fd542b5d18570ba1ba0bb0abed9  connectivity.parquet
+719904abad876c68ace1b5690c9b9b63  annotations.tsv
+d386555d1a5f40ebfa1380bcb05b1fab044855fd
+neuronas_en_parquet 138639
+azucar_en_anotaciones 20 de 21
+azucar_en_parquet 20 de 21
+mn9_en_anotaciones 1 mn9_en_parquet True
+           root_id super_class         cell_class         cell_sub_class cell_type  side        top_nt
+720575940660219265       motor brain_motor_neuron ingestion_motor_neuron    CB0701 right acetylcholine
+720575940617937543     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940612670570     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940629176663     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940632425919     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940630233916     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940621502051     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940633143833     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940616885538     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940639198653     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940624963786     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940628853239     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940638202345     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940632889389     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940639332736     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940640649691     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940621754367     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940630797113     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940611875570     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940617000768     sensory          gustatory            sugar/water       LB3  left acetylcholine
+720575940637568838     sensory          gustatory            sugar/water       LB3  left acetylcholine
