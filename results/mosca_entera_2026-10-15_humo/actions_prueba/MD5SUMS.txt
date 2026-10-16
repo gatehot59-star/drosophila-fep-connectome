@@ -1,2 +1,3 @@
-4afc3640fe3944b64c57fb09ca68fc43  prueba.log
-524318e0edb3c176d5c21fa7ed485701  versiones_prueba.txt
+b0933d59aa3db32c9dc03bd15c2fc488  prueba.log
+16da3cb36b885b1da655959086e477b1  MD5SUMS.txt
+23a9b0e83d3612559e92a4ec4cd71c71  versiones_prueba.txt

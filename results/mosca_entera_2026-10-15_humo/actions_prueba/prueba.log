@@ -26,15 +26,29 @@ VEREDICTO RIVAL SOSTENIDA d=+0.4848
 VEREDICTO LIQ SOSTENIDA mediana=+0.1515
 MD5 agregado.json=18b570dbe6052099528247aec275b6b6 agregado.log=6b310137106f3ae8c23a2ad30f537bdd
 TEST agregado_extremo_a_extremo -> carpeta plantada -> agregar_mosca_entera main: lee todo y escribe los veredictos
-Traceback (most recent call last):
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/mosca_entera/prueba_mosca_entera.py", line 265, in <module>
-    main()
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/mosca_entera/prueba_mosca_entera.py", line 245, in main
-    t_celda(a.ref)
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/mosca_entera/prueba_mosca_entera.py", line 33, in g
-    f(*a, **k)
-  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/mosca_entera/prueba_mosca_entera.py", line 58, in t_celda
-    assert abs(r1 - r2) <= 1e-12 * max(1.0, abs(r2)) and abs(W1 - W2).max() <= 1e-15
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AssertionError
-EXIT_PRUEBA=1
+TEST celda_igual_factorial2 -> simular(), matriz() y tau_por_root() == factorial2_mosca.py sellado (liq y tasa)
+== lif_shiu.py :: H_MOSCA_ENTERA, brazo LIF_SHIU (2026-10-14-047) ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5
+ESTIMULO 2 neuronas a 100 Hz, lectura 1004, n_run=2, t_run=200 ms
+>>> Experiment:     real
+    Output file:    /tmp/tmpbjl_hqxz/out/real.parquet
+    Excited neurons: 2
+    Elapsed time:   28 s
+CORRIDA real ensayos_con_espiga_lectura=2 de 2 tasa_lectura=110.00 Hz espigas=166 activas=4 K=2 | 28.7 s
+JSON lif_real.json md5=d24334f52a47f8673c1b679405e80d10
+FIN segundos=28.8
+== lif_shiu.py :: H_MOSCA_ENTERA, brazo LIF_SHIU (2026-10-14-047) ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5
+ESTIMULO 2 neuronas a 100 Hz, lectura 1004, n_run=2, t_run=200 ms
+>>> Experiment:     SHUF_W_0
+    Output file:    /tmp/tmpbjl_hqxz/out/SHUF_W_0.parquet
+    Excited neurons: 2
+    Elapsed time:   7 s
+CORRIDA SHUF_W_0 ensayos_con_espiga_lectura=2 de 2 tasa_lectura=115.00 Hz espigas=168 activas=4 K=2 | 8.0 s
+JSON lif_shufW_k000.json md5=d2dac746bcf0a359e07024626bd390cf
+FIN segundos=8.0
+TEST lif_shiu_grafo_chico -> el model.py de Shiu corre en 10 neuronas: la cadena estimulada dispara, la aislada no
+TESTS_OK 8 de 8
+EXIT_PRUEBA=0
