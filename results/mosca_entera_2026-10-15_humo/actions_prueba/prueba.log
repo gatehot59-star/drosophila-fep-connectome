@@ -1,0 +1,40 @@
+TEST nulos_conservan_lo_que_dicen -> SHUF_W conserva topologia y pesos; SHUF_G conserva grados y pesos por arista; difieren
+TEST prox_a_mano -> PROX en una cadena 0->1->2->3->4 == cuenta a mano
+TEST top_y_jaccard -> top_positivos excluye estimuladas y no positivos, empates por indice; Jaccard a mano
+TEST bandas_del_sello -> REPRO_SHIU, K_SANO, MN9, CONJUNTO, RIVAL y LIQ con numeros plantados dan lo que dice el sello
+TEST lectura_y_mapeo -> leer_grafo lee el parquet y el Completeness de Shiu; un id cambiado pone el mapeo en rojo
+== agregar_mosca_entera.py :: H_MOSCA_ENTERA (2026-10-14-047) ==
+LIF real ensayos_mn9=30 de 30 tasa_mn9=12.00 Hz K=100 | SHUF_W corridas=20 con_mn9>=5=0 -> REPRO_SHIU PASA
+TAU 30 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 31 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 32 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 33 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 34 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 35 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 36 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 37 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 38 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 39 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+PROX J=0.3333 mn9=0.1
+NULOS SHUF_W n=40 mn9_max=0.01 J_max=0.0000
+NULOS SHUF_G n=40 mn9_max=0.01 J_max=0.0000
+VEREDICTO REPRO_SHIU PASA
+VEREDICTO K_SANO True
+VEREDICTO MN9 SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO CONJUNTO SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO RIVAL SOSTENIDA d=+0.4848
+VEREDICTO LIQ SOSTENIDA mediana=+0.1515
+MD5 agregado.json=18b570dbe6052099528247aec275b6b6 agregado.log=6b310137106f3ae8c23a2ad30f537bdd
+TEST agregado_extremo_a_extremo -> carpeta plantada -> agregar_mosca_entera main: lee todo y escribe los veredictos
+Traceback (most recent call last):
+  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/mosca_entera/prueba_mosca_entera.py", line 265, in <module>
+    main()
+  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/mosca_entera/prueba_mosca_entera.py", line 245, in main
+    t_celda(a.ref)
+  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/mosca_entera/prueba_mosca_entera.py", line 33, in g
+    f(*a, **k)
+  File "/home/runner/work/drosophila-fep-connectome/drosophila-fep-connectome/tools/mosca_entera/prueba_mosca_entera.py", line 58, in t_celda
+    assert abs(r1 - r2) <= 1e-12 * max(1.0, abs(r2)) and abs(W1 - W2).max() <= 1e-15
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+EXIT_PRUEBA=1
