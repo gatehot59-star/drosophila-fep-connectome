@@ -1,0 +1,106 @@
+TEST no_toca_lo_sellado -> lif_shiu.py y liq_entera.py con su md5, el sello con el suyo y las constantes del sello
+TEST nulo_es_el_de_la_049 -> SHUF_G = nulo() de liq_entera.py con default_rng([20261015, 2, k]); conserva grados y pesos
+TEST ida_y_vuelta_parquet -> el parquet que se le pasa a Shiu releido da los mismos arreglos y tipos
+TEST radio_y_nulo_mismo -> radio() da el de la 049 y el exacto; NULO_MISMO pasa a 5e-7 y da rojo a 2e-6 y sin referencia
+TEST atajo_a_mano -> n1, D1+ y D2+ en un grafo de 5 con multiarista y pesos negativos, contra la cuenta a mano
+MODEL blob=9e008ca6a5845f142d293e09ac3708b120a4c7d5 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> False
+ABORTA: model.py no es el de Shiu en 91bdd1e7
+REF liq_SHUF_G_k000.json md5=7c5defa713d24bc2ac028d8caa5aca04 esperado=05bedf6fc250ed8c053d99236f3052bf -> False
+ABORTA: referencia de NULO_MISMO que no es la del sello
+REF liq_SHUF_G_k000.json md5=7c5defa713d24bc2ac028d8caa5aca04 esperado=05bedf6fc250ed8c053d99236f3052bf -> False
+PIN conn=9dd4e461268c8034f5c8564e155c67a6 -> False comp=415290769594460e2e485922904f345d -> False
+ABORTA: pin de datos
+PIN conn=9dd4e461268c8034f5c8564e155c67a6 -> False comp=415290769594460e2e485922904f345d -> False
+TEST pin_rojo -> PIN aborta con 3: model.py ajeno, referencia ajena, parquet ajeno y Completeness ajeno
+TEST bandas_y_faltantes -> 0 SOSTENIDA, 1 a 4 SIN_DECIDIR, 5 REFUTADA; un faltante que cambiaria la banda da NO_MEDIDO
+TEST ctrl_real_rojo -> CTRL_REAL: 27 de 30 pasa, 26 de 30 o 29 ensayos dan rojo y todo queda NO_MEDIDO
+TEST lectura_k32_y_desbocado -> los cuatro casos de la seccion 6, NO_MEDIDO sin k32 y desbocado a mas de 10 veces
+GRAFO n=60 aristas=402 estimulo=5 lectura=3011 (indice 10) n_run=30 t_run=1000 ms r_poi=100 Hz
+ATAJO real n1=2 D1+=40.0 D2+=48.0
+CORRIDA real E_MN9=30 de 30 F_MN9=5.00 Hz espigas=17400 activas=21 K=16 | 0.0 s
+JSON lif_shufg_real.json md5=1f4cf27c7a0ff14cdc9278c30d308b8b
+FIN segundos=0.0
+REF liq_SHUF_G_k000.json md5=337688ba5835bb5a63b44f3d5d1fcda7 esperado=05bedf6fc250ed8c053d99236f3052bf -> False
+GRAFO n=60 aristas=402 estimulo=5 lectura=3011 (indice 10) n_run=10 t_run=1000 ms r_poi=100 Hz
+NULO_MISMO k=0 radio=29.168114310 ref=29.168114310227008 dif_rel=2.7164121623326197e-12 -> PASA
+ATAJO k=0 n1=1 D1+=12.0 D2+=72.0
+CORRIDA SHUF_G_0 E_MN9=10 de 10 F_MN9=5.00 Hz espigas=5650 activas=18 K=13 | 0.0 s
+NULO_MISMO k=1 radio=30.106392770 ref=30.106392769618353 dif_rel=5.583538410345911e-12 -> PASA
+ATAJO k=1 n1=2 D1+=18.0 D2+=386.0
+CORRIDA SHUF_G_1 E_MN9=10 de 10 F_MN9=5.00 Hz espigas=5700 activas=19 K=14 | 0.0 s
+NULO_MISMO k=2 radio=28.372001243 ref=28.655721254555544 dif_rel=0.00990099005875543 -> FALLA
+ATAJO k=2 n1=1 D1+=1.0 D2+=160.0
+NO_MEDIDO k=2: NULO_MISMO FALLA, no se simula
+JSON lif_shufg_G_k000.json md5=151b8dced65ed3f588ba1a2aedaac2e9
+FIN segundos=0.1
+== agregar_lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+CONTROL PIN PASA 
+CONTROL CTRL_REAL PASA (30 de 30, minimo 27)
+REAL E_MN9=30 de 30 F_MN9=5.0000 Hz activas=21 espigas=17400 K=16 atajo n1=2 D1+=40.0 D2+=48.0
+NULO k=0 E_MN9=10 F_MN9=5.0000 activas=18 K=13 J=0.1154 n1=1 D1+=12.0 D2+=72.0 radio=29.168114 desbocado=False | 0 s
+NULO k=1 E_MN9=10 F_MN9=5.0000 activas=19 K=14 J=0.2500 n1=2 D1+=18.0 D2+=386.0 radio=30.106393 desbocado=False | 0 s
+NULO k=2 NO_MEDIDO (NULO_MISMO FALLA)
+CONTROL NULO_MISMO PASA en 2 de 3 (otros estados 1, sin archivo 0)
+NULOS medidos=2 faltan=1 llegan=[0, 1] ge_real=[0, 1] desbocados=[]
+VEREDICTO H_LIF_G_SHIU SIN_DECIDIR (llegan=2, faltan=1)
+VEREDICTO H_LIF_G_VARA SIN_DECIDIR (con F_MN9 >= real=2, faltan=1, F_real=5.0000 Hz)
+VEREDICTO H_LIF_K32 LLEGA (foco k=1)
+LECTURA K32 LLEGA_IGUAL_O_MAS: el atajo es del barajado y con nuestra vara frena tambien a Shiu.
+DESCRIPTIVO nulos con n1>=1: [0, 1] | foco n1=2 D1+=18.0 D2+=386.0 | foco unico con n1>=1: False
+DESCRIPTIVO activas mediana=19 max=19 | J mediana=0.2500 max=0.2500 | F_MN9 max=5.0000 Hz
+== agregar_lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+CONTROL PIN FALLA lif_shufg_real.json: corrida con --sin-pin; lif_shufg_G_k000.json: corrida con --sin-pin
+CONTROL CTRL_REAL FALLA (sin real valido)
+NULO k=0 NO_MEDIDO (falta)
+NULO k=1 NO_MEDIDO (falta)
+NULO k=2 NO_MEDIDO (falta)
+CONTROL NULO_MISMO PASA en 0 de 3 (otros estados 0, sin archivo 3)
+NULOS medidos=0 faltan=3 llegan=[] ge_real=[] desbocados=[]
+VEREDICTO H_LIF_G_SHIU NO_MEDIDO (llegan=0, faltan=3)
+VEREDICTO H_LIF_G_VARA NO_MEDIDO (con F_MN9 >= real=0, faltan=3, F_real=nan Hz)
+VEREDICTO H_LIF_K32 NO_MEDIDO (foco k=1)
+LECTURA K32 NO_MEDIDO: k32 sin medir: no hay lectura.
+DESCRIPTIVO nulos con n1>=1: [] | foco n1=None D1+=None D2+=None | foco unico con n1>=1: False
+TEST extremo_a_extremo_falso -> real y 3 nulos con un modelo falso: el nulo con radio corrido no se simula, el agregado lee 2 de 3 y sin --sin-pin da PIN en rojo
+REF liq_SHUF_G_k000.json md5=05bedf6fc250ed8c053d99236f3052bf esperado=05bedf6fc250ed8c053d99236f3052bf -> True
+REF liq_SHUF_G_k020.json md5=62982026c51da6756caba9ba49f91eae esperado=62982026c51da6756caba9ba49f91eae -> True
+REF umb_SHUF_G_k099.json md5=dddfaeb2957cd40a2b202a39d931cf51 esperado=dddfaeb2957cd40a2b202a39d931cf51 -> True
+TEST referencias_del_sello -> los JSON de referencia del repo tienen el md5 del sello: k 0 a 39 (k32 = 372,813...) y k 99
+== lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+PIN conn=8945619a82ab555548c8afa8f3ae3e76 -> False comp=f6281e2085fa8265183aae02cbd9d337 -> False
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5 scipy=1.18.1
+GRAFO n=12 aristas=10 estimulo=2 lectura=2004 (indice 3) n_run=2 t_run=200 ms r_poi=100 Hz
+ATAJO real n1=0 D1+=0.0 D2+=320000.0
+>>> Experiment:     real
+    Output file:    /tmp/tmpwl4zpwoj/out/real.parquet
+    Excited neurons: 2
+    Elapsed time:   28 s
+CORRIDA real E_MN9=2 de 2 F_MN9=102.50 Hz espigas=151 activas=4 K=2 | 28.4 s
+JSON lif_shufg_real.json md5=1fb8be76993497f90767ec4a09987396
+FIN segundos=28.4
+== lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+REF liq_SHUF_G_k000.json md5=2dd5de718de33450ff747ee300697a6f esperado=05bedf6fc250ed8c053d99236f3052bf -> False
+PIN conn=8945619a82ab555548c8afa8f3ae3e76 -> False comp=f6281e2085fa8265183aae02cbd9d337 -> False
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5 scipy=1.18.1
+GRAFO n=12 aristas=10 estimulo=2 lectura=2004 (indice 3) n_run=2 t_run=200 ms r_poi=100 Hz
+NULO_MISMO k=0 radio=30.000000000 ref=30.000000000000018 dif_rel=2.368475785866999e-16 -> PASA
+ATAJO k=0 n1=0 D1+=0.0 D2+=0.0
+>>> Experiment:     SHUF_G_0
+    Output file:    /tmp/tmpwl4zpwoj/out/SHUF_G_0.parquet
+    Excited neurons: 2
+    Elapsed time:   7 s
+CORRIDA SHUF_G_0 E_MN9=2 de 2 F_MN9=7.50 Hz espigas=163 activas=6 K=4 | 8.0 s
+NULO_MISMO k=1 radio=73.680629973 ref=74.41743627253581 dif_rel=0.009900990099009462 -> FALLA
+ATAJO k=1 n1=1 D1+=400.0 D2+=0.0
+NO_MEDIDO k=1: NULO_MISMO FALLA, no se simula
+JSON lif_shufg_G_k000.json md5=f7aa8f1d072bad0744ced929cc198d07
+FIN segundos=8.0
+== lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+PIN conn=8945619a82ab555548c8afa8f3ae3e76 -> False comp=f6281e2085fa8265183aae02cbd9d337 -> False
+ABORTA: pin de datos
+TEST lif_shiu_grafo_chico -> el model.py de Shiu corre en 12 neuronas: real, un nulo medido, uno con radio corrido sin simular y el PIN integrado en rojo
+TESTS_OK 12 de 12
+EXIT_PRUEBA=0
