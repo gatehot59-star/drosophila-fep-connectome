@@ -1,7 +1,8 @@
 name: mosca-entera-prueba
-# Respuesta 2026-10-14-047. Prueba del instrumento de H_MOSCA_ENTERA (sello tools/mosca_entera/SELLO-MOSCA-ENTERA.md,
-# 500f66d): celda contra el factorial2_mosca.py sellado (8d305e9), nulos, PROX, bandas, agregado y el LIF de Shiu en un
-# grafo de 10 neuronas. Solo se dispara al pushear results/mosca_entera_2026-10-15_humo/PRUEBA en esta rama.
+# Respuestas 2026-10-14-047 y 049. Prueba del instrumento de H_MOSCA_ENTERA (sello 500f66d y enmienda 048, 778dc10):
+# celda contra el factorial2_mosca.py sellado (8d305e9), nulos, PROX, bandas, agregado, latencias, nulos G1 y el LIF
+# de Shiu en un grafo de 10 neuronas. Version 049: escribe en actions_prueba_049 y no lista su propio MD5SUMS.
+# Solo se dispara al pushear results/mosca_entera_2026-10-15_humo/PRUEBA en esta rama.
 on:
   push:
     branches: ["titan/mosca-entera-2026-10-15"]
@@ -34,7 +35,7 @@ jobs:
           git worktree add -q /tmp/ref "$REF_SHA"
           mkdir -p /tmp/shiu
           curl -fsSL -o /tmp/shiu/model.py "$MODEL_URL"
-          D=results/mosca_entera_2026-10-15_humo/actions_prueba
+          D=results/mosca_entera_2026-10-15_humo/actions_prueba_049
           mkdir -p "$D"
           python -m pip freeze > "$D"/versiones_prueba.txt
           md5sum tools/mosca_entera/*.py /tmp/shiu/model.py /tmp/ref/tools/factorial2/factorial2_mosca.py >> "$D"/versiones_prueba.txt
@@ -44,12 +45,12 @@ jobs:
           RC=$?
           set -e
           echo "EXIT_PRUEBA=$RC" >> "$D"/prueba.log
-          (cd "$D" && md5sum *.log *.txt > MD5SUMS.txt)
+          (cd "$D" && rm -f MD5SUMS.txt && md5sum *.log *.txt > MD5SUMS.txt)
           git worktree remove --force /tmp/ref
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
           git add "$D"
-          git commit -m "humo(2026-10-14-047): prueba del instrumento de H_MOSCA_ENTERA en Actions" || echo nada_que_commitear
+          git commit -m "humo(2026-10-14-049): prueba del instrumento de H_MOSCA_ENTERA con la enmienda 048 en Actions" || echo nada_que_commitear
           git pull --rebase origin titan/mosca-entera-2026-10-15 || true
           git push origin HEAD:titan/mosca-entera-2026-10-15
           exit $RC

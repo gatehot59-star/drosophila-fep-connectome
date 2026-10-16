@@ -1,7 +1,8 @@
 name: mosca-entera-humo
-# Respuesta 2026-10-14-047. Humo de H_MOSCA_ENTERA en el cerebro entero: numeros sin valor, mide tiempos y memoria de
-# cada brazo para partir la corrida de verdad. LIF de Shiu real y un SHUF_W con 2 ensayos; LIQ, TASA y PROX con tau 30;
-# un nulo SHUF_W y uno SHUF_G. Solo se dispara al pushear results/mosca_entera_2026-10-15_humo/HUMO en esta rama.
+# Respuestas 2026-10-14-047 y 049. Humo de H_MOSCA_ENTERA en el cerebro entero: numeros sin valor, mide tiempos y
+# memoria de cada brazo. Version 049 (enmienda 048): semillas FUERA de CORRER (tau 99, nulos k 99) para no ver nada
+# de la corrida de verdad; suma latencias y nulos G1; escribe en actions_humo_049. Solo se dispara al pushear
+# results/mosca_entera_2026-10-15_humo/HUMO en esta rama.
 on:
   push:
     branches: ["titan/mosca-entera-2026-10-15"]
@@ -22,11 +23,13 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {parte: lif_real, cmd: "lif_shiu.py --modo real --n-run 2 --n-proc 2 --humo"}
-          - {parte: lif_shuf, cmd: "lif_shiu.py --modo shuf --k0 0 --n 1 --n-run 2 --n-proc 2 --humo"}
-          - {parte: liq_real, cmd: "liq_entera.py --modo real --taus 30 --humo"}
-          - {parte: liq_W, cmd: "liq_entera.py --modo nulos --tipo SHUF_W --k0 0 --n 1 --humo"}
-          - {parte: liq_G, cmd: "liq_entera.py --modo nulos --tipo SHUF_G --k0 0 --n 1 --humo"}
+          - {parte: lif_real, cmd: "lif_shiu.py --modo real --n-run 3 --n-proc 3 --humo"}
+          - {parte: lif_shuf, cmd: "lif_shiu.py --modo shuf --k0 99 --n 1 --n-run 3 --n-proc 3 --humo"}
+          - {parte: liq_real, cmd: "liq_entera.py --modo real --taus 99 --humo"}
+          - {parte: liq_W, cmd: "liq_entera.py --modo nulos --tipo SHUF_W --k0 99 --n 1 --humo"}
+          - {parte: liq_G, cmd: "liq_entera.py --modo nulos --tipo SHUF_G --k0 99 --n 1 --humo"}
+          - {parte: g1_W, cmd: "liq_entera.py --modo nulos_g1 --tipo SHUF_W --k0 99 --n 1 --humo"}
+          - {parte: g1_G, cmd: "liq_entera.py --modo nulos_g1 --tipo SHUF_G --k0 99 --n 1 --humo"}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -78,8 +81,8 @@ jobs:
           W=/tmp/todo
           mkdir -p "$W"
           find art -name '*.json' -exec cp {} "$W"/ \;
-          find art -name '*_top.npz' -exec cp {} "$W"/ \;
-          D=results/mosca_entera_2026-10-15_humo/actions_humo
+          find art -name '*.npz' -exec cp {} "$W"/ \;
+          D=results/mosca_entera_2026-10-15_humo/actions_humo_049
           mkdir -p "$D"
           find art -name '*.log' -exec cp {} "$D"/ \;
           find art -name 'versiones_*.txt' -exec cp {} "$D"/ \;
@@ -90,10 +93,10 @@ jobs:
           echo "EXIT_AGREGAR=$RC" >> "$D"/agregar_stdout.log
           cp "$W"/*.json "$D"/ 2>/dev/null || true
           cp "$W"/agregado.log "$D"/ 2>/dev/null || true
-          (cd "$D" && md5sum * > MD5SUMS.txt)
+          (cd "$D" && rm -f MD5SUMS.txt && md5sum * > MD5SUMS.txt)
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
           git add "$D"
-          git commit -m "humo(2026-10-14-047): humo de H_MOSCA_ENTERA en el cerebro entero, numeros sin valor" || echo nada_que_commitear
+          git commit -m "humo(2026-10-14-049): humo de H_MOSCA_ENTERA con la enmienda 048, numeros sin valor" || echo nada_que_commitear
           git pull --rebase origin titan/mosca-entera-2026-10-15 || true
           git push origin HEAD:titan/mosca-entera-2026-10-15

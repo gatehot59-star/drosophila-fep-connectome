@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
-"""Prueba del instrumento de H_MOSCA_ENTERA (respuesta 2026-10-14-047). Grafos chicos, numeros plantados.
+"""Prueba del instrumento de H_MOSCA_ENTERA (respuestas 2026-10-14-047 y 049). Grafos chicos, numeros plantados.
+
+Las 8 de la 047 siguen; la 049 suma 5 por la enmienda 048 (latencia a mano, latencia del LIF desde espigas, nulos
+G1 con el factor del real, bandas nuevas plantadas y agregado de la enmienda) y, en la del LIF, el orden de latencia.
 
 Uso: python3 prueba_mosca_entera.py [--ref DIR_8d305e9] [--shiu DIR_SHIU] [--exigir]
   --ref    worktree de titan/lector-2026-10-15 en 8d305e9: compara simular(), matriz() y tau_por_root() contra el
@@ -230,6 +233,151 @@ def t_lif(shiu):
         assert 1005 not in r["S_LIF_ids"] and 1001 not in r["S_LIF_ids"], r
         s = json.load(open(os.path.join(out, "lif_shufW_k000.json")))["corridas"]["SHUF_W_0"]
         assert s["n_run"] == 2, s
+        lat = dict(zip(r["S_LIF_ids"], r["lat_S_LIF"]))
+        assert lat[1003] < lat[1004], lat
+
+
+@test("latencia_a_mano", "una neurona sola: r igual en LIQ y TASA, latencia 2 contra 4 como da la cuenta cerrada")
+def t_latencia():
+    import scipy.sparse as sp1
+    W1 = sp1.csr_matrix((1, 1))
+    tau1 = np.array([0.1])
+    lats, rs = {}, {}
+    for liq in (True, False):
+        r, _ = le.simular(W1, tau1, np.array([0]), liq)
+        lat, pend = le.latencias(W1, tau1, np.array([0]), liq, r)
+        th = min(1.0, (le.DT / 0.1) * (1 + le.G_LIQ * le.AMPLITUD)) if liq else le.DT / 0.1
+        esp = 1
+        while np.tanh(le.AMPLITUD) * (1 - (1 - th) ** esp) < 0.5 * r[0]:
+            esp += 1
+        assert int(lat[0]) == esp and pend == 0, (liq, lat[0], esp)
+        lats[liq], rs[liq] = int(lat[0]), float(r[0])
+    assert abs(rs[True] - rs[False]) < 1e-12 and lats[True] == 2 and lats[False] == 4, (rs, lats)
+    n = 60
+    pre, post, w = grafo_chico(n)
+    W, _ = le.matriz(n, pre, post, w)
+    tau = le.tau_por_root(np.arange(720575940600000000, 720575940600000000 + n), 30)
+    rl, _ = le.simular(W, tau, np.arange(5), True)
+    rt, _ = le.simular(W, tau, np.arange(5), False)
+    ll, pl = le.latencias(W, tau, np.arange(5), True, rl)
+    lt, pt = le.latencias(W, tau, np.arange(5), False, rt)
+    m = (ll > 0) & (lt > 0)
+    assert pl == 0 and pt == 0 and m.sum() >= 10, (pl, pt, m.sum())
+    assert np.array_equal(ll > 0, rl > 0) and (ll[m] != lt[m]).mean() > 0.5, "la latencia no separa LIQ de TASA"
+
+
+@test("latencia_lif_desde_espigas", "resumir() saca la primera espiga por ensayo y su mediana, a mano")
+def t_lat_lif():
+    import lif_shiu as ls
+    with tempfile.TemporaryDirectory() as d:
+        filas = [(0.002, 0, 10), (0.004, 1, 10), (0.010, 0, 11), (0.030, 0, 11), (0.020, 1, 11), (0.050, 1, 12),
+                 (0.060, 1, 12), (0.070, 0, 13)]
+        pd.DataFrame({"t": [f[0] for f in filas], "trial": [f[1] for f in filas],
+                      "flywire_id": [f[2] for f in filas]}).to_parquet(os.path.join(d, "s.parquet"))
+        r = ls.resumir(os.path.join(d, "s.parquet"), np.arange(10, 20), [10], 99, 2, 1.0)
+        assert r["S_LIF_ids"] == [11, 12] and r["S_LIF_idx"] == [1, 2], r
+        assert abs(r["lat_S_LIF"][0] - 0.015) < 1e-12 and abs(r["lat_S_LIF"][1] - 0.050) < 1e-12, r
+
+
+@test("nulos_g1_con_el_factor_del_real", "matriz_g1 escala el nulo con el factor del real y mide su radio crudo")
+def t_g1():
+    n = 60
+    pre, post, w = grafo_chico(n)
+    _, r_real = le.matriz(n, pre, post, w)
+    c = le.RHO / r_real
+    p2, q2, w2 = le.nulo(pre, post, w, "SHUF_G", 3)
+    Wg, r_nulo = le.matriz_g1(n, p2, q2, w2, c)
+    crudo = sp.coo_matrix((w2, (q2, p2)), shape=(n, n)).toarray()
+    assert abs(Wg.toarray() - crudo * c).max() <= 1e-15
+    r_densa = float(np.abs(np.linalg.eigvals(crudo)).max())
+    assert abs(r_nulo - r_densa) <= 1e-8 * r_densa, (r_nulo, r_densa)
+    Wn, _ = le.matriz(n, p2, q2, w2)
+    assert abs(Wg - Wn).max() > 0 or abs(r_nulo - r_real) < 1e-12, "G1 tiene que diferir del nulo a 0,9"
+
+
+@test("bandas_de_la_enmienda", "LIQ degenerada, LAT, MN9_G1, CONJUNTO_G1 y la lectura conjunta con numeros plantados")
+def t_bandas_048():
+    assert ag.degenerada([1e-10] * 10) and not ag.degenerada([1e-3] * 10) and not ag.degenerada([])
+    taus = list(range(30, 40))
+    lif = {i: float(i + 1) for i in range(20)}
+    orden = np.zeros(30, dtype=np.int16)
+    orden[:20] = np.arange(1, 21)
+    reves = np.zeros(30, dtype=np.int16)
+    reves[:20] = np.arange(20, 0, -1)
+    casi = orden.copy()
+    casi[[3, 4]] = casi[[4, 3]]
+    T = lambda x: {t: x for t in taus}
+    assert ag.h_lat("PASA", lif, T(orden), T(reves), taus)["LAT"] == "SOSTENIDA"
+    assert ag.h_lat("PASA", lif, T(reves), T(orden), taus)["LAT"] == "REFUTADA"
+    assert ag.h_lat("PASA", lif, T(orden), T(casi), taus)["LAT"] == "SIN_DECIDIR"
+    assert ag.h_lat("PASA", lif, T(orden), T(orden), taus)["LAT"] == "NO_MEDIDO", "brazos iguales"
+    pocos = orden.copy()
+    pocos[9:] = 0
+    assert ag.h_lat("PASA", lif, T(pocos), T(reves), taus)["LAT"] == "NO_MEDIDO", "S_LAT con 9"
+    assert ag.h_lat("FALLA", lif, T(orden), T(reves), taus)["LAT"] == "NO_MEDIDO"
+    assert ag.h_lat("PASA", lif, T(orden), T(reves), taus[:9])["LAT"] == "INCOMPLETO"
+    n40 = lambda v: {"SHUF_W": [v] * 40, "SHUF_G": [v] * 40}
+    g = ag.veredictos_g1("PASA", 100, 1.0, n40(0.5), 0.6, n40(0.2))
+    assert g["MN9_G1"] == "SOSTENIDA" and g["CONJUNTO_G1"] == "SOSTENIDA", g
+    cinco = {"SHUF_W": [2.0] * 5 + [0.5] * 35, "SHUF_G": [0.5] * 40}
+    assert ag.veredictos_g1("PASA", 100, 1.0, cinco, 0.6, n40(0.7))["MN9_G1"] == "REFUTADA"
+    assert ag.veredictos_g1("PASA", 100, 1.0, cinco, 0.6, n40(0.7))["CONJUNTO_G1"] == "REFUTADA"
+    assert ag.veredictos_g1("FALLA", 100, 1.0, n40(0.5), 0.6, n40(0.2))["MN9_G1"] == "NO_MEDIDO"
+    assert ag.veredictos_g1("PASA", 5, 1.0, n40(0.5), 0.6, n40(0.2))["CONJUNTO_G1"] == "NO_MEDIDO"
+    assert ag.lectura({"MN9": "REFUTADA"}, {"MN9_G1": "SOSTENIDA"}, "MN9") == ag.LECTURA[(False, True)]
+    assert ag.lectura({"MN9": "SOSTENIDA"}, {"MN9_G1": "SOSTENIDA"}, "MN9") == ag.LECTURA[(True, True)]
+    assert ag.lectura({"MN9": "NO_MEDIDO"}, {"MN9_G1": "SOSTENIDA"}, "MN9").startswith("sin lectura")
+
+
+@test("agregado_de_la_enmienda", "carpeta plantada con latencias y nulos G1 -> las lineas nuevas del agregado")
+def t_agregado_048():
+    with tempfile.TemporaryDirectory() as d:
+        s_lif = list(range(100, 200))
+        json.dump({"corridas": {"real": {"ensayos_mn9": 30, "n_run": 30, "tasa_mn9": 12.0, "K": 100,
+                                         "S_LIF_idx": s_lif, "lat_S_LIF": [float(i) for i in range(1, 101)]}}},
+                  open(os.path.join(d, "lif_real.json"), "w"))
+        for j in range(2):
+            json.dump({"corridas": {"SHUF_W_%d" % (10 * j + i): {"ensayos_mn9": 0, "n_run": 10} for i in range(10)}},
+                      open(os.path.join(d, "lif_shufW_k%03d.json" % (10 * j)), "w"))
+        tops = {"PROX": np.arange(150, 300)}
+        lats = {}
+        liq = {"LIQ": {}, "TASA": {}, "PROX": {"mn9": 0.1}}
+        orden = np.zeros(400, dtype=np.int16)
+        orden[100:200] = np.arange(1, 101)
+        reves = np.zeros(400, dtype=np.int16)
+        reves[100:200] = np.arange(100, 0, -1)
+        for s in range(30, 40):
+            tops["LIQ_%d" % s] = np.arange(110, 400)
+            tops["TASA_%d" % s] = np.arange(120, 400)
+            lats["LIQ_%d" % s], lats["TASA_%d" % s] = orden, reves
+            liq["LIQ"][str(s)] = {"mn9": 0.3, "dif_max_liq_tasa": 1e-10}
+            liq["TASA"][str(s)] = {"mn9": 0.2}
+        json.dump(liq, open(os.path.join(d, "liq_real.json"), "w"))
+        np.savez(os.path.join(d, "liq_real_top.npz"), **tops)
+        np.savez(os.path.join(d, "liq_real_lat.npz"), **lats)
+        for tipo in ("SHUF_W", "SHUF_G"):
+            for k0 in range(0, 40, 10):
+                nul = {str(k): {"mn9": 0.01, "radio_g1": 0.12} for k in range(k0, k0 + 10)}
+                json.dump({"tipo": tipo, "nulos": nul}, open(os.path.join(d, "liq_%s_k%03d.json" % (tipo, k0)), "w"))
+                np.savez(os.path.join(d, "liq_%s_k%03d_top.npz" % (tipo, k0)),
+                         **{"%s_%d" % (tipo, k): np.arange(1000, 1100) for k in range(k0, k0 + 10)})
+                json.dump({"tipo": tipo, "nulos": nul},
+                          open(os.path.join(d, "liq_G1_%s_k%03d.json" % (tipo, k0)), "w"))
+                np.savez(os.path.join(d, "liq_G1_%s_k%03d_top.npz" % (tipo, k0)),
+                         **{"G1_%s_%d" % (tipo, k): np.arange(1000, 1100) for k in range(k0, k0 + 10)})
+        viejo = sys.argv
+        sys.argv = ["agregar", "--dir", d]
+        try:
+            ag.main()
+        finally:
+            sys.argv = viejo
+        log = open(os.path.join(d, "agregado.log")).read()
+        for linea in ("VEREDICTO LIQ_ENMIENDA REFUTADA_DEGENERADA (banda_046=SOSTENIDA)", "VEREDICTO LAT SOSTENIDA",
+                      "VEREDICTO MN9_G1 SOSTENIDA", "VEREDICTO CONJUNTO_G1 SOSTENIDA",
+                      "LECTURA MN9: " + ag.LECTURA[(True, True)]):
+            assert linea in log, linea
+        e = json.load(open(os.path.join(d, "agregado.json")))["enmienda_048"]
+        assert abs(e["lat"]["D_LAT"] - 2.0) < 1e-12, e["lat"]
 
 
 def main():
@@ -244,6 +392,11 @@ def main():
     t_bandas()
     t_lectura()
     t_agregado()
+    t_latencia()
+    t_lat_lif()
+    t_g1()
+    t_bandas_048()
+    t_agregado_048()
     if a.ref:
         t_celda(a.ref)
     else:
@@ -257,7 +410,7 @@ def main():
         t_lif(a.shiu)
     else:
         print("SALTEADA lif_shiu_grafo_chico (shiu=%s brian2=%s)" % (bool(a.shiu), hay_brian2), flush=True)
-    esperadas = 8 if a.exigir else len(OK)
+    esperadas = 13 if a.exigir else len(OK)
     print("TESTS_OK %d de %d" % (len(OK), esperadas), flush=True)
     if len(OK) != esperadas:
         print("FALLA: faltan pruebas exigidas", flush=True)

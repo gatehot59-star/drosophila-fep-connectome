@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H_MOSCA_ENTERA, brazo LIF_SHIU (respuesta 2026-10-14-047).
+"""H_MOSCA_ENTERA, brazo LIF_SHIU (respuestas 2026-10-14-047 y 049).
 
 Corre el model.py de Shiu et al. 2024 sin cambios (philshiu/Drosophila_brain_model en 91bdd1e7, blob 5ba7083c) con
 default_params salvo r_poi = 100 Hz, sobre nuestro parquet (el mismo blob que su Connectivity_783.parquet) o sobre
@@ -7,6 +7,8 @@ un nulo SHUF_W (los pesos permutados entre aristas, con la misma funcion nulo() 
 Uso:
   python3 lif_shiu.py --shiu DIR --conn C --comp K --out D --modo real --n-run 30
   python3 lif_shiu.py --shiu DIR --conn C --comp K --out D --modo shuf --k0 0 --n 10 --n-run 10
+Enmienda 048: resumir() agrega la latencia de cada neurona de S_LIF (primera espiga de cada ensayo en que dispara,
+mediana sobre esos ensayos, en las unidades de la columna t de Shiu).
 """
 import argparse
 import hashlib
@@ -44,9 +46,14 @@ def resumir(ruta_spk, ids, estim_ids, mn9, n_run, t_run_s):
     excl = set(int(x) for x in estim_ids)
     s_lif = sorted(int(f) for f, v in tasa.items() if v >= UMBRAL_HZ and int(f) not in excl)
     pos = {int(f): i for i, f in enumerate(ids)}
+    lat = {}
+    if len(df):
+        primera = df.groupby(["flywire_id", "trial"])["t"].min()
+        lat = {int(f): float(v) for f, v in primera.groupby(level=0).median().items()}
     return {"ensayos_mn9": ens_mn9, "n_run": n_run, "tasa_mn9": float(tasa.get(mn9, 0.0)),
             "espigas": int(len(df)), "activas": int(len(cuenta)), "S_LIF_ids": s_lif,
-            "S_LIF_idx": [pos[f] for f in s_lif], "K": len(s_lif)}
+            "S_LIF_idx": [pos[f] for f in s_lif], "K": len(s_lif), "lat_S_LIF": [lat[f] for f in s_lif],
+            "lat_lectura": lat.get(int(mn9), float("nan"))}
 
 
 def main():
@@ -96,7 +103,7 @@ def main():
     params["r_poi"] = 100 * Hz
     params["n_run"] = a.n_run
     params["t_run"] = a.t_run_ms * ms
-    res = {"version": "2026-10-14-047", "humo": a.humo, "modo": a.modo, "model_blob": b, "brian2": brian2.__version__,
+    res = {"version": "2026-10-14-049", "humo": a.humo, "modo": a.modo, "model_blob": b, "brian2": brian2.__version__,
            "estim_ids": estim_ids, "leer": leer, "n_run": a.n_run, "t_run_ms": a.t_run_ms, "corridas": {}}
     if a.modo == "real":
         trabajos = [("real", a.conn)]

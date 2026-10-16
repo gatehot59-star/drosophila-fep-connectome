@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""H_MOSCA_ENTERA, brazos LIQ, TASA y PROX en el cerebro entero (respuesta 2026-10-14-047).
+"""H_MOSCA_ENTERA, brazos LIQ, TASA y PROX en el cerebro entero (respuestas 2026-10-14-047 y 049).
 
 Sello: tools/mosca_entera/SELLO-MOSCA-ENTERA.md (500f66d, md5 55bc4c76657e35f341300d0e082c7ebe).
 La celda es la de tools/factorial2/factorial2_mosca.py (md5 798a824cd47808155fa12adb9e652dac, rama
@@ -9,6 +9,11 @@ que sim() de alla, que matriz() y tau_por_root() sean las mismas, y que los nulo
 Uso:
   real:  python3 liq_entera.py --conn C --comp K --annot A --out D --modo real [--taus 30,...,39] [--humo]
   nulos: python3 liq_entera.py --conn C --comp K --annot A --out D --modo nulos --tipo SHUF_W --k0 0 --n 10
+  G1:    python3 liq_entera.py --conn C --comp K --annot A --out D --modo nulos_g1 --tipo SHUF_W --k0 0 --n 40
+Enmienda 048 (tools/mosca_entera/ENMIENDA-048.md, 778dc10, md5 022dbbdd87ce206e9f33efc62d8e7ee7): el modo real
+guarda ademas la latencia de cada neurona (latencias(), primer paso con z >= 0,5 r) y max|r_LIQ - r_TASA| por tau;
+el modo nulos_g1 escala cada nulo con el factor del real (RHO / radio crudo del real, medido en el mismo trabajo).
+simular() y matriz() no cambian.
 """
 import argparse
 import hashlib
@@ -106,6 +111,37 @@ def simular(W, tau, estim, liq, T=T_PASOS, A=AMPLITUD, ventana=VENTANA, registra
     return acum / (ventana[1] - ventana[0]), tray
 
 
+def latencias(W, tau, estim, liq, r, T=T_PASOS, A=AMPLITUD):
+    """Enmienda 048, seccion 2: primer paso t (1 a T) en que z_t >= 0,5 r, para las neuronas con r > 0; 0 para las
+    demas (sin latencia). Repite la cuenta de simular() paso a paso. Devuelve (lat, pendientes)."""
+    N = W.shape[0]
+    t0 = DT / tau
+    z = np.zeros(N)
+    lat = np.zeros(N, dtype=np.int16)
+    umbral = 0.5 * r
+    pend = r > 0
+    for t in range(T):
+        u = W @ z
+        u[estim] += A
+        tt = np.minimum(1.0, t0 * (1.0 + G_LIQ * np.abs(u))) if liq else t0
+        z = (1 - tt) * z + tt * np.tanh(u)
+        cruza = pend & (z >= umbral)
+        lat[cruza] = t + 1
+        pend &= ~cruza
+    return lat, int(pend.sum())
+
+
+def radio_crudo(W):
+    """El mismo eigs de matriz(), sin escalar."""
+    return float(np.abs(sla.eigs(W, k=1, which="LM", return_eigenvectors=False, tol=1e-10, maxiter=100000)).max())
+
+
+def matriz_g1(n, pre, post, w, c):
+    """Enmienda 048, seccion 3: el nulo con el factor c del real en vez del propio. Devuelve (W, radio crudo)."""
+    Wc = sp.coo_matrix((w, (post, pre)), shape=(n, n)).tocsr()
+    return (Wc * c).tocsr(), radio_crudo(Wc)
+
+
 def prox(W, estim, kmax=4):
     """Rival sin dinamica: suma de k = 1 a kmax de 0,5^k (|W|^k e)."""
     A = abs(W)
@@ -138,7 +174,7 @@ def main():
     ap.add_argument("--comp", required=True)
     ap.add_argument("--annot", required=True)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--modo", choices=("real", "nulos"), required=True)
+    ap.add_argument("--modo", choices=("real", "nulos", "nulos_g1"), required=True)
     ap.add_argument("--tipo", choices=tuple(CODIGO))
     ap.add_argument("--k0", type=int, default=0)
     ap.add_argument("--n", type=int, default=0)
@@ -168,9 +204,10 @@ def main():
     i_mn9 = int(indices(ids, [MN9])[0])
     pr("ESTIMULO azucar=%d de %d (falta %d en v783: %s) mn9_indice=%d" % (len(estim), len(SUGAR), FALTA_V783,
                                                                          FALTA_V783 not in set(ids.tolist()), i_mn9))
-    res = {"version": "2026-10-14-047", "humo": a.humo, "modo": a.modo, "md5": m, "n": n, "aristas": len(w),
+    res = {"version": "2026-10-14-049", "humo": a.humo, "modo": a.modo, "md5": m, "n": n, "aristas": len(w),
            "estim": estim.tolist(), "mn9": i_mn9, "T": T_PASOS, "ventana": list(VENTANA), "amplitud": AMPLITUD}
     tops = {}
+    lats = {}
     if a.modo == "real":
         t1 = time.time()
         W, radio = matriz(n, pre, post, w)
@@ -184,16 +221,43 @@ def main():
         res["LIQ"], res["TASA"] = {}, {}
         for st in taus:
             tau = tau_por_root(ids, st)
+            rs = {}
             for brazo, liq in (("LIQ", True), ("TASA", False)):
                 t1 = time.time()
                 r, _ = simular(W, tau, estim, liq)
+                rs[brazo] = r
                 tops["%s_%d" % (brazo, st)] = top_positivos(r, estim)
+                lat, pend = latencias(W, tau, estim, liq, r)
+                lats["%s_%d" % (brazo, st)] = lat
                 pos = int((r > 0).sum() - (r[estim] > 0).sum())
                 res[brazo][str(st)] = {"mn9": float(r[i_mn9]), "positivos": pos, "max": float(r.max()),
-                                       "min": float(r.min())}
-                pr("%s tau=%d mn9=%.6g positivos=%d max=%.4g min=%.4g | %.1f s" % (brazo, st, r[i_mn9], pos, r.max(),
-                                                                                  r.min(), time.time() - t1))
+                                       "min": float(r.min()), "lat_mn9": int(lat[i_mn9]), "lat_pendientes": pend}
+                pr("%s tau=%d mn9=%.6g positivos=%d max=%.4g min=%.4g lat_mn9=%d lat_pendientes=%d | %.1f s" % (
+                    brazo, st, r[i_mn9], pos, r.max(), r.min(), lat[i_mn9], pend, time.time() - t1))
+            dif = float(np.abs(rs["LIQ"] - rs["TASA"]).max())
+            res["LIQ"][str(st)]["dif_max_liq_tasa"] = dif
+            pr("DIF tau=%d max|r_LIQ - r_TASA|=%.3g" % (st, dif))
         nombre = "liq_real"
+    elif a.modo == "nulos_g1":
+        t1 = time.time()
+        Wr = sp.coo_matrix((w, (post, pre)), shape=(n, n)).tocsr()
+        radio_real = radio_crudo(Wr)
+        c = RHO / radio_real
+        del Wr
+        pr("G1 radio_crudo_real=%.6f factor=%.6g | %.1f s" % (radio_real, c, time.time() - t1))
+        tau = tau_por_root(ids, TAU_NULOS)
+        res.update({"tipo": a.tipo, "k0": a.k0, "nulos": {}, "radio_crudo_real": radio_real, "factor": c})
+        for k in range(a.k0, a.k0 + a.n):
+            t1 = time.time()
+            p2, q2, w2 = nulo(pre, post, w, a.tipo, k)
+            W, r_nulo = matriz_g1(n, p2, q2, w2, c)
+            r, _ = simular(W, tau, estim, True)
+            tops["G1_%s_%d" % (a.tipo, k)] = top_positivos(r, estim)
+            res["nulos"][str(k)] = {"mn9": float(r[i_mn9]), "radio_crudo": r_nulo, "radio_g1": c * r_nulo,
+                                    "positivos": int((r > 0).sum() - (r[estim] > 0).sum())}
+            pr("NULO_G1 %s k=%d radio_crudo=%.6f radio_g1=%.4f mn9=%.6g positivos=%d | %.1f s" % (
+                a.tipo, k, r_nulo, c * r_nulo, r[i_mn9], res["nulos"][str(k)]["positivos"], time.time() - t1))
+        nombre = "liq_G1_%s_k%03d" % (a.tipo, a.k0)
     else:
         tau = tau_por_root(ids, TAU_NULOS)
         res.update({"tipo": a.tipo, "k0": a.k0, "nulos": {}})
@@ -210,6 +274,8 @@ def main():
                                                                          time.time() - t1))
         nombre = "liq_%s_k%03d" % (a.tipo, a.k0)
     np.savez_compressed(os.path.join(a.out, nombre + "_top.npz"), **{k: v.astype(np.int64) for k, v in tops.items()})
+    if lats:
+        np.savez_compressed(os.path.join(a.out, nombre + "_lat.npz"), **lats)
     res["segundos"] = time.time() - t_ini
     with open(os.path.join(a.out, nombre + ".json"), "w") as f:
         json.dump(res, f, indent=1)

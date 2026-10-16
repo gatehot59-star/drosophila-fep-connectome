@@ -11,6 +11,16 @@ Bandas del sello (tools/mosca_entera/SELLO-MOSCA-ENTERA.md, md5 55bc4c76657e35f3
   RIVAL       J (LIQ, tau 30) - J (PROX): >= +0,05 SOSTENIDA; <= 0 REFUTADA; resto SIN_DECIDIR.
   LIQ         mediana sobre tau 30 a 39 de J (LIQ) - J (TASA): >= +0,02 SOSTENIDA; <= 0 REFUTADA; resto SIN_DECIDIR.
 Si REPRO_SHIU no pasa, las cuatro quedan NO_MEDIDO; si K no es sano, CONJUNTO, RIVAL y LIQ quedan NO_MEDIDO.
+Enmienda 048 (tools/mosca_entera/ENMIENDA-048.md, 778dc10, md5 022dbbdd87ce206e9f33efc62d8e7ee7), que agrega sin
+mover nada de lo anterior:
+  LIQ          si la mediana sobre tau de max|r_LIQ - r_TASA| es < 1e-6, se imprime REFUTADA_DEGENERADA (la banda
+               de la 046 se reporta al lado) y no cuenta como evidencia.
+  LAT          D_LAT = mediana sobre tau 30 a 39 de rho(LIQ) - rho(TASA), Spearman contra la latencia LIF sobre
+               S_LAT: >= +0,05 SOSTENIDA; <= 0 REFUTADA; resto SIN_DECIDIR. NO_MEDIDO si REPRO_SHIU no pasa, si
+               |S_LAT| < 10 en algun tau o si con tau 30 menos del 1% de S_LAT cambia de latencia entre brazos.
+  MN9_G1       r_MN9 real contra los 40 nulos G1 de cada tipo, bandas de MN9.
+  CONJUNTO_G1  J real contra los 40 nulos G1 de cada tipo, bandas de CONJUNTO.
+  LECTURA      la tabla de la seccion 4 de la enmienda, para MN9 y CONJUNTO.
 Con --humo todo sale marcado HUMO (numeros sin valor) y las bandas que piden 40 nulos dicen INCOMPLETO.
 Uso: python3 agregar_mosca_entera.py --dir D [--humo]
 """
@@ -21,6 +31,7 @@ import json
 import os
 
 import numpy as np
+from scipy.stats import spearmanr
 
 N_NULOS, N_SHUF_LIF, N_REAL, N_ENS_SHUF = 40, 20, 30, 10
 TAU_PRIM = 30
@@ -91,6 +102,72 @@ def veredictos(repro, k, mn9_real, mn9_nulos, j_real, j_nulos, j_prox, j_liq, j_
     return v
 
 
+LECTURA = {
+    (True, True): "el cableado lleva el azucar mejor que sus barajados, con y sin igualar ganancia",
+    (False, True): "la ventaja del real es ganancia concentrada en lazos, no ruteo especifico",
+    (True, False): "ruteo especifico que la ganancia de los nulos G1 no alcanza a mostrar (tension)",
+    (False, False): "la liquida en el cableado no reproduce por encima de sus barajados",
+}
+DECIDIDOS = ("SOSTENIDA", "REFUTADA", "SIN_DECIDIR")
+
+
+def degenerada(difs):
+    """Enmienda 048, seccion 1."""
+    return bool(difs) and float(np.median(difs)) < 1e-6
+
+
+def h_lat(repro, lat_lif, lat_liq, lat_tasa, taus, tau_prim=TAU_PRIM):
+    """Enmienda 048, seccion 2. lat_lif: {indice: latencia LIF} de S_LIF; lat_liq y lat_tasa: {tau: array por indice,
+    0 = sin latencia}. Devuelve un dict con LAT y los numeros que la sostienen."""
+    out = {"rho_liq": {}, "rho_tasa": {}, "n_lat": {}}
+    if repro != "PASA" or not lat_lif or not taus:
+        out["LAT"] = "NO_MEDIDO"
+        return out
+    ref = tau_prim if tau_prim in taus else taus[0]
+    idx = np.array(sorted(lat_lif), dtype=np.int64)
+    ll = np.array([lat_lif[i] for i in idx], dtype=float)
+    for t in taus:
+        a = np.asarray(lat_liq[t])[idx]
+        b = np.asarray(lat_tasa[t])[idx]
+        m = (a > 0) & (b > 0)
+        out["n_lat"][t] = int(m.sum())
+        if m.sum() >= 2:
+            out["rho_liq"][t] = float(spearmanr(ll[m], a[m])[0])
+            out["rho_tasa"][t] = float(spearmanr(ll[m], b[m])[0])
+        if t == ref:
+            out["frac_distinta"] = float((a[m] != b[m]).mean()) if m.sum() else 0.0
+    difs = [out["rho_liq"].get(t, float("nan")) - out["rho_tasa"].get(t, float("nan")) for t in taus]
+    out["difs"] = difs
+    if any(out["n_lat"][t] < 10 for t in taus) or out["frac_distinta"] < 0.01 or any(np.isnan(d) for d in difs):
+        out["LAT"] = "NO_MEDIDO"
+        return out
+    out["D_LAT"] = float(np.median(difs))
+    out["LAT"] = banda_diferencia(out["D_LAT"], 0.05) if len(taus) == 10 and ref == tau_prim else "INCOMPLETO"
+    return out
+
+
+def veredictos_g1(repro, k, mn9_real, mn9_g1, j_real, j_g1):
+    """Enmienda 048, seccion 3."""
+    v = {}
+    if repro != "PASA":
+        v["MN9_G1"] = v["CONJUNTO_G1"] = "NO_MEDIDO"
+        return v
+    v["MN9_G1"], v["MN9_G1_ge"] = banda_nulos(mn9_real, mn9_g1, True)
+    if not 10 <= k <= 5000:
+        v["CONJUNTO_G1"] = "NO_MEDIDO"
+        return v
+    v["CONJUNTO_G1"], v["CONJUNTO_G1_ge"] = banda_nulos(j_real, j_g1, False)
+    return v
+
+
+def lectura(v046, v048, h):
+    """Enmienda 048, seccion 4: la fila de la tabla para MN9 o CONJUNTO."""
+    a, b = v046.get(h), v048.get(h + "_G1")
+    if a not in DECIDIDOS or b not in DECIDIDOS:
+        return "sin lectura (%s contra 0,9; %s contra G1)" % (a, b)
+    return LECTURA[(a == "SOSTENIDA", b == "SOSTENIDA")]
+
+
 def md5(ruta):
     return hashlib.md5(open(ruta, "rb").read()).hexdigest()
 
@@ -101,7 +178,7 @@ def main():
     ap.add_argument("--humo", action="store_true")
     a = ap.parse_args()
     log = open(os.path.join(a.dir, "agregado.log"), "w")
-    pr("== agregar_mosca_entera.py :: H_MOSCA_ENTERA (2026-10-14-047)%s ==" % (" HUMO, NUMEROS SIN VALOR" if a.humo
+    pr("== agregar_mosca_entera.py :: H_MOSCA_ENTERA (2026-10-14-047 y 049)%s ==" % (" HUMO, NUMEROS SIN VALOR" if a.humo
                                                                             else ""), log)
     lif = json.load(open(os.path.join(a.dir, "lif_real.json")))
     real = lif["corridas"]["real"]
@@ -153,9 +230,55 @@ def main():
         if h == "LIQ" and "LIQ_mediana" in v:
             extra = " mediana=%+.4f" % v["LIQ_mediana"]
         pr("VEREDICTO%s %s %s%s" % ("_HUMO" if a.humo else "", h, v[h] if h != "REPRO_SHIU" else repro, extra), log)
+    # --- enmienda 048 ---
+    difs = [liq["LIQ"][str(t)]["dif_max_liq_tasa"] for t in taus if "dif_max_liq_tasa" in liq["LIQ"][str(t)]]
+    deg = degenerada(difs)
+    v["LIQ_degenerada"] = deg
+    v["LIQ_impreso"] = ("REFUTADA_DEGENERADA" if v["LIQ"] in DECIDIDOS else v["LIQ"] + "_DEGENERADA") if (
+        deg and v["LIQ"] != "NO_MEDIDO") else v["LIQ"]
+    pr("ENMIENDA LIQ mediana max|r_LIQ - r_TASA|=%s degenerada=%s" % (
+        "%.3g" % float(np.median(difs)) if difs else "-", deg), log)
+    lat_lif = dict(zip(real.get("S_LIF_idx", []), real.get("lat_S_LIF", [])))
+    ruta_lat = os.path.join(a.dir, "liq_real_lat.npz")
+    if os.path.exists(ruta_lat) and lat_lif:
+        zl = np.load(ruta_lat)
+        lat = h_lat(repro_ef, lat_lif, {t: zl["LIQ_%d" % t] for t in taus}, {t: zl["TASA_%d" % t] for t in taus}, taus)
+    else:
+        lat = {"LAT": "NO_MEDIDO", "falta": "latencias"}
+    for t in taus:
+        if t in lat.get("rho_liq", {}):
+            pr("LAT tau=%d n=%d rho_LIQ=%.4f rho_TASA=%.4f" % (t, lat["n_lat"][t], lat["rho_liq"][t],
+                                                             lat["rho_tasa"][t]), log)
+    if "frac_distinta" in lat:
+        pr("LAT fraccion de S_LAT con latencia distinta entre LIQ y TASA=%.4f" % lat["frac_distinta"], log)
+    mn9_g1, j_g1, rad_g1 = {"SHUF_W": [], "SHUF_G": []}, {"SHUF_W": [], "SHUF_G": []}, {"SHUF_W": [], "SHUF_G": []}
+    for p in sorted(glob.glob(os.path.join(a.dir, "liq_G1_SHUF_*_k*.json"))):
+        d = json.load(open(p))
+        tn = np.load(p.replace(".json", "_top.npz"))
+        for kk, vv in sorted(d["nulos"].items(), key=lambda x: int(x[0])):
+            mn9_g1[d["tipo"]].append(vv["mn9"])
+            j_g1[d["tipo"]].append(jaccard(tn["G1_%s_%s" % (d["tipo"], kk)][:k], s_lif))
+            rad_g1[d["tipo"]].append(vv["radio_g1"])
+    for tipo in mn9_g1:
+        pr("NULOS_G1 %s n=%d mn9_max=%s J_max=%s radio_g1_mediana=%s" % (
+            tipo, len(mn9_g1[tipo]), "%.6g" % max(mn9_g1[tipo]) if mn9_g1[tipo] else "-",
+            "%.4f" % max(j_g1[tipo]) if j_g1[tipo] else "-",
+            "%.4f" % float(np.median(rad_g1[tipo])) if rad_g1[tipo] else "-"), log)
+    vg = veredictos_g1(repro_ef, k, liq["LIQ"][str(t0)]["mn9"], mn9_g1, j_liq[t0], j_g1)
+    tag = "VEREDICTO%s" % ("_HUMO" if a.humo else "")
+    pr("%s LIQ_ENMIENDA %s (banda_046=%s)" % (tag, v["LIQ_impreso"], v["LIQ"]), log)
+    pr("%s LAT %s%s" % (tag, lat["LAT"], " D_LAT=%+.4f" % lat["D_LAT"] if "D_LAT" in lat else ""), log)
+    pr("%s MN9_G1 %s%s" % (tag, vg["MN9_G1"], " nulos_ge=%s" % vg["MN9_G1_ge"] if "MN9_G1_ge" in vg else ""), log)
+    pr("%s CONJUNTO_G1 %s%s" % (tag, vg["CONJUNTO_G1"],
+                                " nulos_ge=%s" % vg["CONJUNTO_G1_ge"] if "CONJUNTO_G1_ge" in vg else ""), log)
+    lect = {h: lectura(v, vg, h) for h in ("MN9", "CONJUNTO")}
+    for h in ("MN9", "CONJUNTO"):
+        pr("LECTURA%s %s: %s" % ("_HUMO" if a.humo else "", h, lect[h]), log)
     out = {"humo": a.humo, "K": k, "j_liq": j_liq, "j_tasa": j_tasa, "j_prox": j_prox, "mn9_nulos": mn9_nulos,
            "j_nulos": j_nulos, "veredictos": v, "lif_real": {x: real[x] for x in ("ensayos_mn9", "n_run", "tasa_mn9",
-                                                                                  "K")}}
+                                                                                  "K")},
+           "enmienda_048": {"lat": lat, "veredictos_g1": vg, "mn9_g1": mn9_g1, "j_g1": j_g1, "radio_g1": rad_g1,
+                            "lectura": lect, "difs_liq_tasa": difs}}
     with open(os.path.join(a.dir, "agregado.json"), "w") as f:
         json.dump(out, f, indent=1, default=float)
     log.close()
