@@ -1,0 +1,71 @@
+== liq_entera.py :: H_MOSCA_ENTERA, brazos LIQ, TASA y PROX (2026-10-14-047) ==
+ENTORNO python=3.12.15 numpy=2.5.3 scipy=1.18.1 pandas=3.0.5 maquina=runnervm8k3b6
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 annot=719904abad876c68ace1b5690c9b9b63 comp=031a4b6eac490bda17c75b65ccaa7906 -> True
+GRAFO neuronas=138639 aristas=15091983 sinapsis_abs=54492922 mapeo_ok=True | 0.5 s
+ESTIMULO azucar=20 de 21 (falta 720575940620900446 en v783: True) mn9_indice=138332
+G1 radio_crudo_real=2164.292802 factor=0.00041584 | 0.6 s
+NULO_G1 SHUF_W k=0 radio_crudo=267.518486 radio_g1=0.1112 mn9=1.6466e-05 positivos=67222 | 3.6 s
+NULO_G1 SHUF_W k=1 radio_crudo=203.118256 radio_g1=0.0845 mn9=5.68342e-06 positivos=71576 | 4.5 s
+NULO_G1 SHUF_W k=2 radio_crudo=215.448566 radio_g1=0.0896 mn9=-6.47906e-06 positivos=70042 | 4.2 s
+NULO_G1 SHUF_W k=3 radio_crudo=203.343046 radio_g1=0.0846 mn9=1.92244e-05 positivos=69875 | 4.2 s
+NULO_G1 SHUF_W k=4 radio_crudo=218.293585 radio_g1=0.0908 mn9=-5.89726e-05 positivos=67932 | 3.9 s
+NULO_G1 SHUF_W k=5 radio_crudo=284.249720 radio_g1=0.1182 mn9=-8.64849e-05 positivos=65389 | 3.6 s
+NULO_G1 SHUF_W k=6 radio_crudo=223.212633 radio_g1=0.0928 mn9=6.37926e-06 positivos=65398 | 3.9 s
+NULO_G1 SHUF_W k=7 radio_crudo=202.347240 radio_g1=0.0841 mn9=-5.72925e-06 positivos=69034 | 4.2 s
+NULO_G1 SHUF_W k=8 radio_crudo=201.366513 radio_g1=0.0837 mn9=-1.13023e-05 positivos=70737 | 4.3 s
+NULO_G1 SHUF_W k=9 radio_crudo=211.916766 radio_g1=0.0881 mn9=-2.77715e-05 positivos=72842 | 4.3 s
+NULO_G1 SHUF_W k=10 radio_crudo=204.218042 radio_g1=0.0849 mn9=4.39233e-05 positivos=68851 | 4.3 s
+NULO_G1 SHUF_W k=11 radio_crudo=314.667040 radio_g1=0.1309 mn9=1.31711e-05 positivos=71378 | 3.5 s
+NULO_G1 SHUF_W k=12 radio_crudo=202.427217 radio_g1=0.0842 mn9=2.80407e-05 positivos=67430 | 4.3 s
+NULO_G1 SHUF_W k=13 radio_crudo=207.128270 radio_g1=0.0861 mn9=-9.44643e-06 positivos=68280 | 4.3 s
+NULO_G1 SHUF_W k=14 radio_crudo=207.888713 radio_g1=0.0864 mn9=1.1041e-06 positivos=70761 | 4.4 s
+NULO_G1 SHUF_W k=15 radio_crudo=338.772773 radio_g1=0.1409 mn9=1.7924e-05 positivos=68227 | 3.3 s
+NULO_G1 SHUF_W k=16 radio_crudo=317.418238 radio_g1=0.1320 mn9=3.11628e-05 positivos=66573 | 3.3 s
+NULO_G1 SHUF_W k=17 radio_crudo=234.675770 radio_g1=0.0976 mn9=-7.49892e-06 positivos=71212 | 3.7 s
+NULO_G1 SHUF_W k=18 radio_crudo=208.050254 radio_g1=0.0865 mn9=-5.33018e-06 positivos=67721 | 4.3 s
+NULO_G1 SHUF_W k=19 radio_crudo=198.468616 radio_g1=0.0825 mn9=1.54483e-06 positivos=70785 | 4.5 s
+NULO_G1 SHUF_W k=20 radio_crudo=200.878251 radio_g1=0.0835 mn9=1.53512e-05 positivos=69983 | 4.4 s
+NULO_G1 SHUF_W k=21 radio_crudo=203.260490 radio_g1=0.0845 mn9=-3.23058e-05 positivos=66806 | 4.4 s
+NULO_G1 SHUF_W k=22 radio_crudo=234.392200 radio_g1=0.0975 mn9=1.62612e-05 positivos=70252 | 3.8 s
+NULO_G1 SHUF_W k=23 radio_crudo=203.158114 radio_g1=0.0845 mn9=0.000100214 positivos=71056 | 4.2 s
+NULO_G1 SHUF_W k=24 radio_crudo=206.355695 radio_g1=0.0858 mn9=7.70802e-06 positivos=70587 | 4.0 s
+NULO_G1 SHUF_W k=25 radio_crudo=202.475370 radio_g1=0.0842 mn9=-2.28725e-05 positivos=69543 | 4.4 s
+NULO_G1 SHUF_W k=26 radio_crudo=203.663956 radio_g1=0.0847 mn9=5.41797e-06 positivos=73655 | 4.3 s
+NULO_G1 SHUF_W k=27 radio_crudo=204.003572 radio_g1=0.0848 mn9=2.38003e-05 positivos=71013 | 4.3 s
+NULO_G1 SHUF_W k=28 radio_crudo=369.368650 radio_g1=0.1536 mn9=-1.31373e-05 positivos=68012 | 3.3 s
+NULO_G1 SHUF_W k=29 radio_crudo=208.046828 radio_g1=0.0865 mn9=5.67183e-05 positivos=72047 | 4.1 s
+NULO_G1 SHUF_W k=30 radio_crudo=202.128875 radio_g1=0.0841 mn9=-1.98953e-05 positivos=69793 | 4.6 s
+NULO_G1 SHUF_W k=31 radio_crudo=201.587658 radio_g1=0.0838 mn9=1.77953e-05 positivos=72510 | 4.2 s
+NULO_G1 SHUF_W k=32 radio_crudo=197.630222 radio_g1=0.0822 mn9=-3.40312e-05 positivos=69856 | 4.7 s
+NULO_G1 SHUF_W k=33 radio_crudo=203.014244 radio_g1=0.0844 mn9=1.76479e-05 positivos=68332 | 4.3 s
+NULO_G1 SHUF_W k=34 radio_crudo=207.873621 radio_g1=0.0864 mn9=2.06919e-06 positivos=71659 | 4.5 s
+NULO_G1 SHUF_W k=35 radio_crudo=203.781673 radio_g1=0.0847 mn9=-1.48715e-05 positivos=67483 | 4.6 s
+NULO_G1 SHUF_W k=36 radio_crudo=330.764649 radio_g1=0.1375 mn9=1.61823e-05 positivos=71740 | 3.6 s
+NULO_G1 SHUF_W k=37 radio_crudo=213.879517 radio_g1=0.0889 mn9=1.17567e-06 positivos=71126 | 4.1 s
+NULO_G1 SHUF_W k=38 radio_crudo=201.062652 radio_g1=0.0836 mn9=-4.88483e-05 positivos=68439 | 4.3 s
+NULO_G1 SHUF_W k=39 radio_crudo=202.542678 radio_g1=0.0842 mn9=-3.32118e-05 positivos=67020 | 4.4 s
+JSON liq_G1_SHUF_W_k000.json md5=f37cc860c54aee0d903f90a923846654
+FIN segundos=167.4
+	Command being timed: "python tools/mosca_entera/liq_entera.py --modo nulos_g1 --tipo SHUF_W --k0 0 --n 40 --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --annot /tmp/in/annotations.tsv --out out"
+	User time (seconds): 325.33
+	System time (seconds): 1.81
+	Percent of CPU this job got: 194%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:48.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2599068
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 217887
+	Voluntary context switches: 363
+	Involuntary context switches: 35372
+	Swaps: 0
+	File system inputs: 4056
+	File system outputs: 2400
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

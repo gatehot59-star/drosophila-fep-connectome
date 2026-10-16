@@ -1,0 +1,62 @@
+== liq_entera.py :: H_MOSCA_ENTERA, brazos LIQ, TASA y PROX (2026-10-14-047) ==
+ENTORNO python=3.12.15 numpy=2.5.3 scipy=1.18.1 pandas=3.0.5 maquina=runnervm8k3b6
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 annot=719904abad876c68ace1b5690c9b9b63 comp=031a4b6eac490bda17c75b65ccaa7906 -> True
+GRAFO neuronas=138639 aristas=15091983 sinapsis_abs=54492922 mapeo_ok=True | 0.7 s
+ESTIMULO azucar=20 de 21 (falta 720575940620900446 en v783: True) mn9_indice=138332
+RADIO crudo=2164.292802 -> 0.90 | 1.1 s
+PROX mn9=0.000486028 positivos=134116
+LIQ tau=30 mn9=0.00202666 positivos=48407 max=0.7694 min=-0.007742 lat_mn9=20 lat_pendientes=0 | 7.6 s
+TASA tau=30 mn9=0.00202666 positivos=48407 max=0.7694 min=-0.007742 lat_mn9=23 lat_pendientes=0 | 7.5 s
+DIF tau=30 max|r_LIQ - r_TASA|=3.77e-07
+LIQ tau=31 mn9=0.00202666 positivos=48407 max=0.7694 min=-0.007742 lat_mn9=24 lat_pendientes=0 | 7.7 s
+TASA tau=31 mn9=0.00202666 positivos=48409 max=0.7694 min=-0.007742 lat_mn9=27 lat_pendientes=0 | 7.5 s
+DIF tau=31 max|r_LIQ - r_TASA|=6.55e-07
+LIQ tau=32 mn9=0.00202666 positivos=48408 max=0.7694 min=-0.007742 lat_mn9=23 lat_pendientes=0 | 7.7 s
+TASA tau=32 mn9=0.00202666 positivos=48408 max=0.7694 min=-0.007742 lat_mn9=26 lat_pendientes=0 | 7.5 s
+DIF tau=32 max|r_LIQ - r_TASA|=6.15e-07
+LIQ tau=33 mn9=0.00202666 positivos=48413 max=0.7694 min=-0.007742 lat_mn9=20 lat_pendientes=0 | 7.7 s
+TASA tau=33 mn9=0.00202666 positivos=48413 max=0.7694 min=-0.007742 lat_mn9=23 lat_pendientes=0 | 7.7 s
+DIF tau=33 max|r_LIQ - r_TASA|=3.09e-07
+LIQ tau=34 mn9=0.00202666 positivos=48409 max=0.7694 min=-0.007742 lat_mn9=24 lat_pendientes=0 | 7.9 s
+TASA tau=34 mn9=0.00202666 positivos=48404 max=0.7694 min=-0.007742 lat_mn9=27 lat_pendientes=0 | 7.7 s
+DIF tau=34 max|r_LIQ - r_TASA|=8.69e-07
+LIQ tau=35 mn9=0.00202666 positivos=48419 max=0.7694 min=-0.007742 lat_mn9=20 lat_pendientes=0 | 7.7 s
+TASA tau=35 mn9=0.00202666 positivos=48416 max=0.7694 min=-0.007742 lat_mn9=23 lat_pendientes=0 | 7.6 s
+DIF tau=35 max|r_LIQ - r_TASA|=4.89e-07
+LIQ tau=36 mn9=0.00202666 positivos=48408 max=0.7694 min=-0.007742 lat_mn9=23 lat_pendientes=0 | 7.7 s
+TASA tau=36 mn9=0.00202666 positivos=48406 max=0.7694 min=-0.007742 lat_mn9=27 lat_pendientes=0 | 7.6 s
+DIF tau=36 max|r_LIQ - r_TASA|=4.92e-07
+LIQ tau=37 mn9=0.00202666 positivos=48409 max=0.7694 min=-0.007742 lat_mn9=24 lat_pendientes=0 | 7.9 s
+TASA tau=37 mn9=0.00202666 positivos=48410 max=0.7694 min=-0.007742 lat_mn9=27 lat_pendientes=0 | 7.7 s
+DIF tau=37 max|r_LIQ - r_TASA|=3.08e-07
+LIQ tau=38 mn9=0.00202666 positivos=48416 max=0.7694 min=-0.007742 lat_mn9=23 lat_pendientes=0 | 7.8 s
+TASA tau=38 mn9=0.00202666 positivos=48416 max=0.7694 min=-0.007742 lat_mn9=27 lat_pendientes=0 | 7.7 s
+DIF tau=38 max|r_LIQ - r_TASA|=1.52e-07
+LIQ tau=39 mn9=0.00202666 positivos=48418 max=0.7694 min=-0.007742 lat_mn9=22 lat_pendientes=0 | 7.7 s
+TASA tau=39 mn9=0.00202666 positivos=48417 max=0.7694 min=-0.007742 lat_mn9=26 lat_pendientes=0 | 7.5 s
+DIF tau=39 max|r_LIQ - r_TASA|=4.21e-07
+JSON liq_real.json md5=871b4d55864572f32a8aa0b724f9cc15
+FIN segundos=181.4
+	Command being timed: "python tools/mosca_entera/liq_entera.py --modo real --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --annot /tmp/in/annotations.tsv --out out"
+	User time (seconds): 185.58
+	System time (seconds): 0.41
+	Percent of CPU this job got: 102%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:02.12
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2244420
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 52634
+	Voluntary context switches: 217
+	Involuntary context switches: 2339
+	Swaps: 0
+	File system inputs: 4056
+	File system outputs: 4832
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

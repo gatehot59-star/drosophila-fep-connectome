@@ -1,0 +1,50 @@
+== liq_entera.py :: H_MOSCA_ENTERA, brazos LIQ, TASA y PROX (2026-10-14-047) ==
+ENTORNO python=3.12.15 numpy=2.5.3 scipy=1.18.1 pandas=3.0.5 maquina=runnervm8k3b6
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 annot=719904abad876c68ace1b5690c9b9b63 comp=031a4b6eac490bda17c75b65ccaa7906 -> True
+GRAFO neuronas=138639 aristas=15091983 sinapsis_abs=54492922 mapeo_ok=True | 0.7 s
+ESTIMULO azucar=20 de 21 (falta 720575940620900446 en v783: True) mn9_indice=138332
+NULO SHUF_W k=0 radio=267.518486 mn9=0.00205822 positivos=67776 | 6.4 s
+NULO SHUF_W k=1 radio=203.118256 mn9=0.00855067 positivos=77191 | 8.1 s
+NULO SHUF_W k=2 radio=215.448566 mn9=0.00301538 positivos=71787 | 7.3 s
+NULO SHUF_W k=3 radio=203.343046 mn9=0.0244121 positivos=72881 | 7.8 s
+NULO SHUF_W k=4 radio=218.293585 mn9=-0.00685166 positivos=72995 | 7.2 s
+NULO SHUF_W k=5 radio=284.249720 mn9=-0.00433882 positivos=64313 | 6.8 s
+NULO SHUF_W k=6 radio=223.212633 mn9=0.0060537 positivos=65133 | 7.3 s
+NULO SHUF_W k=7 radio=202.347240 mn9=-0.00289084 positivos=72649 | 7.7 s
+NULO SHUF_W k=8 radio=201.366513 mn9=0.0138918 positivos=75073 | 7.2 s
+NULO SHUF_W k=9 radio=211.916766 mn9=-0.00666376 positivos=79380 | 7.5 s
+NULO SHUF_W k=10 radio=204.218042 mn9=0.00995852 positivos=69513 | 7.2 s
+NULO SHUF_W k=11 radio=314.667040 mn9=-0.000677473 positivos=72226 | 6.1 s
+NULO SHUF_W k=12 radio=202.427217 mn9=0.00829782 positivos=64607 | 7.5 s
+NULO SHUF_W k=13 radio=207.128270 mn9=-0.00198672 positivos=70614 | 7.5 s
+NULO SHUF_W k=14 radio=207.888713 mn9=0.0020854 positivos=74158 | 7.1 s
+NULO SHUF_W k=15 radio=338.772773 mn9=0.000994973 positivos=66872 | 5.6 s
+NULO SHUF_W k=16 radio=317.418238 mn9=0.000799203 positivos=69918 | 5.9 s
+NULO SHUF_W k=17 radio=234.675770 mn9=0.000498725 positivos=72335 | 6.5 s
+NULO SHUF_W k=18 radio=208.050254 mn9=0.00509462 positivos=78185 | 7.5 s
+NULO SHUF_W k=19 radio=198.468616 mn9=0.00533363 positivos=76703 | 7.6 s
+JSON liq_SHUF_W_k000.json md5=7827cec74959ed6f9e7c1ecd6b9a38dd
+FIN segundos=145.2
+	Command being timed: "python tools/mosca_entera/liq_entera.py --modo nulos --tipo SHUF_W --k0 0 --n 20 --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --annot /tmp/in/annotations.tsv --out out"
+	User time (seconds): 277.97
+	System time (seconds): 1.42
+	Percent of CPU this job got: 191%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:25.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2586664
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 128820
+	Voluntary context switches: 255
+	Involuntary context switches: 29471
+	Swaps: 0
+	File system inputs: 4056
+	File system outputs: 1784
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

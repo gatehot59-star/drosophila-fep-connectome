@@ -1,0 +1,55 @@
+== lif_shiu.py :: H_MOSCA_ENTERA, brazo LIF_SHIU (2026-10-14-047) ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 -> True
+ESTIMULO 20 neuronas a 100 Hz, lectura 720575940660219265, n_run=10, t_run=1000 ms
+>>> Experiment:     SHUF_W_15
+    Output file:    out/SHUF_W_15.parquet
+    Excited neurons: 20
+    Elapsed time:   193 s
+CORRIDA SHUF_W_15 ensayos_con_espiga_lectura=0 de 10 tasa_lectura=0.00 Hz espigas=22389 activas=50 K=26 | 193.6 s
+>>> Experiment:     SHUF_W_16
+    Output file:    out/SHUF_W_16.parquet
+    Excited neurons: 20
+    Elapsed time:   135 s
+CORRIDA SHUF_W_16 ensayos_con_espiga_lectura=0 de 10 tasa_lectura=0.00 Hz espigas=24552 activas=55 K=28 | 135.8 s
+>>> Experiment:     SHUF_W_17
+    Output file:    out/SHUF_W_17.parquet
+    Excited neurons: 20
+    Elapsed time:   135 s
+CORRIDA SHUF_W_17 ensayos_con_espiga_lectura=0 de 10 tasa_lectura=0.00 Hz espigas=21760 activas=48 K=20 | 135.9 s
+>>> Experiment:     SHUF_W_18
+    Output file:    out/SHUF_W_18.parquet
+    Excited neurons: 20
+    Elapsed time:   183 s
+CORRIDA SHUF_W_18 ensayos_con_espiga_lectura=0 de 10 tasa_lectura=0.00 Hz espigas=22661 activas=47 K=20 | 183.4 s
+>>> Experiment:     SHUF_W_19
+    Output file:    out/SHUF_W_19.parquet
+    Excited neurons: 20
+    Elapsed time:   141 s
+CORRIDA SHUF_W_19 ensayos_con_espiga_lectura=0 de 10 tasa_lectura=0.00 Hz espigas=22146 activas=54 K=21 | 141.5 s
+JSON lif_shufW_k015.json md5=aa42ca79e4fbfcc64f5758ab82352da3
+FIN segundos=799.0
+	Command being timed: "python tools/mosca_entera/lif_shiu.py --modo shuf --k0 15 --n 5 --n-run 10 --n-proc 3 --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --out out"
+	User time (seconds): 1192.89
+	System time (seconds): 41.72
+	Percent of CPU this job got: 152%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:31.42
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2803852
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 391
+	Minor (reclaiming a frame) page faults: 7523466
+	Voluntary context switches: 106274
+	Involuntary context switches: 14593
+	Swaps: 0
+	File system inputs: 82448
+	File system outputs: 3357448
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
