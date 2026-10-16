@@ -1,0 +1,130 @@
+name: umb-correr
+# Respuesta 2026-10-14-051. CORRER de H_ENTERA_UMBRAL (sello SELLO-UMBRAL-050.md, 868ded6): el real con azucar y
+# calibracion a 321 activas; 40 SHUF_W y 40 SHUF_G de la 049 con el factor del real, en 8 trabajos de 10.
+# Solo se dispara al pushear results/mosca_umbral_2026-10-16/CORRER en esta rama.
+on:
+  push:
+    branches: ["titan/mosca-entera-2026-10-15"]
+    paths: ["results/mosca_umbral_2026-10-16/CORRER"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Connectivity_783.parquet
+  COMP_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+  LIF: results/mosca_entera_2026-10-15/actions_correr/lif_real.json
+jobs:
+  real:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: medir el real
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          mkdir -p /tmp/in out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/completeness.csv "$COMP_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          python -m pip freeze > out/versiones_real.txt
+          md5sum /tmp/in/* "$LIF" tools/mosca_entera/*.py >> out/versiones_real.txt
+          nproc >> out/versiones_real.txt
+          free -m >> out/versiones_real.txt
+          if [ -x /usr/bin/time ]; then TV="/usr/bin/time -v"; else TV=""; fi
+          $TV python tools/mosca_entera/umb_entera.py --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --annot /tmp/in/annotations.tsv --lif "$LIF" --out out --modo real 2>&1 | tee out/real.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: umb-correr-real
+          path: out/
+  nulos:
+    needs: [real]
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {parte: W_k000, cmd: "--tipo SHUF_W --k0 0 --n 10"}
+          - {parte: W_k010, cmd: "--tipo SHUF_W --k0 10 --n 10"}
+          - {parte: W_k020, cmd: "--tipo SHUF_W --k0 20 --n 10"}
+          - {parte: W_k030, cmd: "--tipo SHUF_W --k0 30 --n 10"}
+          - {parte: G_k000, cmd: "--tipo SHUF_G --k0 0 --n 10"}
+          - {parte: G_k010, cmd: "--tipo SHUF_G --k0 10 --n 10"}
+          - {parte: G_k020, cmd: "--tipo SHUF_G --k0 20 --n 10"}
+          - {parte: G_k030, cmd: "--tipo SHUF_G --k0 30 --n 10"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          name: umb-correr-real
+          path: real
+      - name: medir nulos
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          mkdir -p /tmp/in out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/completeness.csv "$COMP_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          python -m pip freeze > out/versiones_${{ matrix.parte }}.txt
+          md5sum /tmp/in/* "$LIF" real/umb_real.json tools/mosca_entera/*.py >> out/versiones_${{ matrix.parte }}.txt
+          nproc >> out/versiones_${{ matrix.parte }}.txt
+          free -m >> out/versiones_${{ matrix.parte }}.txt
+          if [ -x /usr/bin/time ]; then TV="/usr/bin/time -v"; else TV=""; fi
+          $TV python tools/mosca_entera/umb_entera.py --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --annot /tmp/in/annotations.tsv --lif "$LIF" --out out --modo nulos ${{ matrix.cmd }} --real-json real/umb_real.json 2>&1 | tee out/nulos_${{ matrix.parte }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: umb-correr-nulos-${{ matrix.parte }}
+          path: out/
+  agregar:
+    needs: [real, nulos]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: umb-correr-*
+          path: art
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          W=/tmp/todo
+          mkdir -p "$W"
+          find art -name '*.json' -exec cp {} "$W"/ \;
+          find art -name '*.npz' -exec cp {} "$W"/ \;
+          D=results/mosca_umbral_2026-10-16/actions_correr
+          mkdir -p "$D"
+          find art -name '*.log' -exec cp {} "$D"/ \;
+          find art -name 'versiones_*.txt' -exec cp {} "$D"/ \;
+          set +e
+          python tools/mosca_entera/agregar_umb.py --dir "$W" --lif "$LIF" 2>&1 | tee "$D"/agregar_stdout.log
+          RC=$?
+          set -e
+          echo "EXIT_AGREGAR=$RC" >> "$D"/agregar_stdout.log
+          cp "$W"/*.json "$D"/ 2>/dev/null || true
+          cp "$W"/agregado_umb.log "$D"/ 2>/dev/null || true
+          (cd "$D" && rm -f MD5SUMS.txt && md5sum * > MD5SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-14-051): CORRER de H_ENTERA_UMBRAL, aplicado en Actions" || echo nada_que_commitear
+          git pull --rebase origin titan/mosca-entera-2026-10-15 || true
+          git push origin HEAD:titan/mosca-entera-2026-10-15

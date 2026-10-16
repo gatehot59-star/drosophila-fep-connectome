@@ -1,0 +1,43 @@
+name: umb-prueba
+# Respuesta 2026-10-14-051. Prueba del instrumento de H_ENTERA_UMBRAL (sello tools/mosca_entera/SELLO-UMBRAL-050.md,
+# 868ded6): dinamica contra cuenta densa, neurona sola, regla de calibracion, estimulo del humo, nulos de la 049,
+# bandas y agregado. Solo se dispara al pushear results/mosca_umbral_2026-10-16_humo/PRUEBA en esta rama.
+on:
+  push:
+    branches: ["titan/mosca-entera-2026-10-15"]
+    paths: ["results/mosca_umbral_2026-10-16_humo/PRUEBA"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: prueba y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          D=results/mosca_umbral_2026-10-16_humo/actions_prueba
+          mkdir -p "$D"
+          python -m pip freeze > "$D"/versiones_prueba.txt
+          md5sum tools/mosca_entera/*.py >> "$D"/versiones_prueba.txt
+          set +e
+          python tools/mosca_entera/prueba_umb.py --exigir 2>&1 | tee "$D"/prueba.log
+          RC=$?
+          set -e
+          echo "EXIT_PRUEBA=$RC" >> "$D"/prueba.log
+          (cd "$D" && rm -f MD5SUMS.txt && md5sum *.log *.txt > MD5SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-051): prueba del instrumento de H_ENTERA_UMBRAL en Actions" || echo nada_que_commitear
+          git pull --rebase origin titan/mosca-entera-2026-10-15 || true
+          git push origin HEAD:titan/mosca-entera-2026-10-15
+          exit $RC
