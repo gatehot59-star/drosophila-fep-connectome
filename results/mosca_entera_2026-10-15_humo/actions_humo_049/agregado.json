@@ -1,0 +1,120 @@
+{
+ "humo": true,
+ "K": 312,
+ "j_liq": {
+  "99": 0.3684210526315789
+ },
+ "j_tasa": {
+  "99": 0.3684210526315789
+ },
+ "j_prox": 0.2606060606060606,
+ "mn9_nulos": {
+  "SHUF_W": [
+   -0.0020944062837284293
+  ],
+  "SHUF_G": [
+   -0.0024865744151127524
+  ]
+ },
+ "j_nulos": {
+  "SHUF_W": [
+   0.14705882352941177
+  ],
+  "SHUF_G": [
+   0.003215434083601286
+  ]
+ },
+ "veredictos": {
+  "REPRO_SHIU": "PASA",
+  "K": 312,
+  "K_SANO": true,
+  "MN9": "INCOMPLETO",
+  "MN9_ge": {
+   "SHUF_W": 0,
+   "SHUF_G": 0
+  },
+  "CONJUNTO": "INCOMPLETO",
+  "CONJUNTO_ge": {
+   "SHUF_W": 0,
+   "SHUF_G": 0
+  },
+  "RIVAL_d": 0.10781499202551831,
+  "RIVAL": "SOSTENIDA",
+  "LIQ_difs": [
+   0.0
+  ],
+  "LIQ_mediana": 0.0,
+  "LIQ": "INCOMPLETO",
+  "REPRO_SHIU_medido": "INCOMPLETO",
+  "LIQ_degenerada": true,
+  "LIQ_impreso": "INCOMPLETO_DEGENERADA"
+ },
+ "lif_real": {
+  "ensayos_mn9": 3,
+  "n_run": 3,
+  "tasa_mn9": 60.333333333333336,
+  "K": 312
+ },
+ "enmienda_048": {
+  "lat": {
+   "rho_liq": {
+    "99": 0.394845335435399
+   },
+   "rho_tasa": {
+    "99": 0.3806198425367878
+   },
+   "n_lat": {
+    "99": 280
+   },
+   "frac_distinta": 1.0,
+   "difs": [
+    0.014225492898611192
+   ],
+   "D_LAT": 0.014225492898611192,
+   "LAT": "INCOMPLETO"
+  },
+  "veredictos_g1": {
+   "MN9_G1": "INCOMPLETO",
+   "MN9_G1_ge": {
+    "SHUF_W": 0,
+    "SHUF_G": 0
+   },
+   "CONJUNTO_G1": "INCOMPLETO",
+   "CONJUNTO_G1_ge": {
+    "SHUF_W": 0,
+    "SHUF_G": 0
+   }
+  },
+  "mn9_g1": {
+   "SHUF_W": [
+    -4.3765900679720603e-07
+   ],
+   "SHUF_G": [
+    -6.337176214596449e-07
+   ]
+  },
+  "j_g1": {
+   "SHUF_W": [
+    0.13454545454545455
+   ],
+   "SHUF_G": [
+    0.003215434083601286
+   ]
+  },
+  "radio_g1": {
+   "SHUF_W": [
+    0.0870077981891478
+   ],
+   "SHUF_G": [
+    0.13291025330914957
+   ]
+  },
+  "lectura": {
+   "MN9": "sin lectura (INCOMPLETO contra 0,9; INCOMPLETO contra G1)",
+   "CONJUNTO": "sin lectura (INCOMPLETO contra 0,9; INCOMPLETO contra G1)"
+  },
+  "difs_liq_tasa": [
+   5.189515655471672e-07
+  ]
+ }
+}

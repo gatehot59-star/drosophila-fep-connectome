@@ -1,0 +1,35 @@
+== lif_shiu.py :: H_MOSCA_ENTERA, brazo LIF_SHIU (2026-10-14-047) ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 -> True
+ESTIMULO 20 neuronas a 100 Hz, lectura 720575940660219265, n_run=3, t_run=1000 ms
+>>> Experiment:     real
+    Output file:    out/real.parquet
+    Excited neurons: 20
+    Elapsed time:   62 s
+CORRIDA real ensayos_con_espiga_lectura=3 de 3 tasa_lectura=60.33 Hz espigas=26490 activas=354 K=312 | 62.4 s
+JSON lif_real.json md5=322ea2194565d0691be5286bbb237e8b
+FIN segundos=63.5
+	Command being timed: "python tools/mosca_entera/lif_shiu.py --modo real --n-run 3 --n-proc 3 --humo --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --out out"
+	User time (seconds): 73.80
+	System time (seconds): 4.07
+	Percent of CPU this job got: 116%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:06.61
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3056092
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 603
+	Minor (reclaiming a frame) page faults: 900651
+	Voluntary context switches: 10867
+	Involuntary context switches: 1554
+	Swaps: 0
+	File system inputs: 82840
+	File system outputs: 238640
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
