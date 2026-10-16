@@ -1,0 +1,125 @@
+== output_control_permutation_correction.py :: correccion por comparaciones multiples del nulo fuerte (006) ==
+ENTORNO python=3.12.14 numpy=2.5.3 scipy=1.18.1 pandas=3.0.5 maquina=brain-env
+PARAMETROS_006 seed=20261011 r=10000 n_estratos=100 veredicto_006=PASS | alfa=0.05 n_falsos=20 factor_control=3
+INPUT parquet /workspace/connectivity.parquet md5=3d802fd542b5d18570ba1ba0bb0abed9 pin_ok=True
+INPUT annotations /workspace/annotations.tsv md5=719904abad876c68ace1b5690c9b9b63 pin_ok=True
+INPUT json_006 results/output_control_permnull_2026-10-10/output_control_permutation_null.json md5=ec64172711d7d18040f6f09335d7521b pin_ok=True
+GRAFO n_nodos=138639 n_aristas=15091983 mapeo_biyectivo=True
+RESOLUCION r=10000 p_min_bilateral=0.000200 tests_por_familia=242 bonferroni=0.000207 holm_puede_rechazar=True
+ESTRATOS [>=1] n=86 iguales_006=True
+NULO [>=1] perm R=10000 segundos=181.5 d_igual_006=True p_iguales_006=True flags_iguales_006=True
+FAMILIA [>=1] perm D1 m=241 z_crit=14.96 | 006 SOBRE=44 BAJO=49 | maxT SOBRE=13 BAJO=5 | Holm SOBRE=35 BAJO=46 | BH SOBRE=56 BAJO=54 | BY SOBRE=46 BAJO=49
+FAMILIA [>=1] perm D2 m=242 z_crit=12.16 | 006 SOBRE=65 BAJO=66 | maxT SOBRE=51 BAJO=19 | Holm SOBRE=64 BAJO=61 | BH SOBRE=80 BAJO=73 | BY SOBRE=65 BAJO=66
+FALSOS [>=1] perm n=20 con_rechazo D1 maxT=1 Holm=1 BH=2 BY=0 | D2 maxT=0 Holm=0 BH=0 BY=0
+NULO [>=1] estr R=10000 segundos=181.2 d_igual_006=True p_iguales_006=True flags_iguales_006=True
+FAMILIA [>=1] estr D1 m=239 z_crit=15.25 | 006 SOBRE=55 BAJO=49 | maxT SOBRE=18 BAJO=3 | Holm SOBRE=42 BAJO=46 | BH SOBRE=72 BAJO=52 | BY SOBRE=61 BAJO=49
+FAMILIA [>=1] estr D2 m=242 z_crit=11.38 | 006 SOBRE=85 BAJO=62 | maxT SOBRE=66 BAJO=18 | Holm SOBRE=76 BAJO=62 | BH SOBRE=101 BAJO=63 | BY SOBRE=89 BAJO=62
+FALSOS [>=1] estr n=20 con_rechazo D1 maxT=1 Holm=4 BH=4 BY=0 | D2 maxT=1 Holm=3 BH=3 BY=0
+ESTRATOS [>=5] n=80 iguales_006=True
+NULO [>=5] perm R=10000 segundos=187.4 d_igual_006=True p_iguales_006=True flags_iguales_006=True
+FAMILIA [>=5] perm D1 m=231 z_crit=14.43 | 006 SOBRE=33 BAJO=36 | maxT SOBRE=10 BAJO=3 | Holm SOBRE=27 BAJO=30 | BH SOBRE=39 BAJO=43 | BY SOBRE=33 BAJO=36
+FAMILIA [>=5] perm D2 m=231 z_crit=13.26 | 006 SOBRE=50 BAJO=56 | maxT SOBRE=26 BAJO=10 | Holm SOBRE=43 BAJO=53 | BH SOBRE=58 BAJO=65 | BY SOBRE=51 BAJO=58
+FALSOS [>=5] perm n=20 con_rechazo D1 maxT=1 Holm=0 BH=0 BY=0 | D2 maxT=1 Holm=0 BH=0 BY=0
+NULO [>=5] estr R=10000 segundos=182.8 d_igual_006=True p_iguales_006=True flags_iguales_006=True
+FAMILIA [>=5] estr D1 m=228 z_crit=14.62 | 006 SOBRE=33 BAJO=32 | maxT SOBRE=9 BAJO=2 | Holm SOBRE=27 BAJO=30 | BH SOBRE=46 BAJO=37 | BY SOBRE=35 BAJO=32
+FAMILIA [>=5] estr D2 m=231 z_crit=14.37 | 006 SOBRE=58 BAJO=56 | maxT SOBRE=19 BAJO=8 | Holm SOBRE=52 BAJO=50 | BH SOBRE=68 BAJO=62 | BY SOBRE=60 BAJO=57
+FALSOS [>=5] estr n=20 con_rechazo D1 maxT=3 Holm=0 BH=0 BY=0 | D2 maxT=2 Holm=0 BH=0 BY=0
+-- NIVEL1 corregido (nulo estr, D1; orden: >=1, >=5) --
+NIVEL1 descending ascending           z=+34.0/+28.0 maxT=0.0045/0.0109 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 descending central             z=+30.3/+21.5 maxT=0.0075/0.0175 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 descending descending          z=+86.4/+60.2 maxT=0.0001/0.0015 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 descending endocrine           z=+0.1/+0.0 maxT=1.0000/1.0000 Holm=1.0000/1.0000 BH=0.7138/0.6739 BY=1.0000/1.0000
+NIVEL1 descending motor               z=+0.7/-0.7 maxT=1.0000/1.0000 Holm=1.0000/1.0000 BH=0.4699/0.5060 BY=1.0000/1.0000
+NIVEL1 descending optic               z=-60.5/-43.2 maxT=0.0007/0.0051 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 descending sensory             z=-0.9/+0.5 maxT=0.9997/1.0000 Holm=1.0000/1.0000 BH=0.5257/0.9759 BY=1.0000/1.0000
+NIVEL1 descending sensory_ascending   z=+31.7/+11.9 maxT=0.0069/0.0790 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 descending visual_centrifugal  z=-3.5/-2.8 maxT=0.7731/0.8840 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 descending visual_projection   z=-5.3/-4.6 maxT=0.3746/0.4787 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 descending sin_anotacion       z=-0.5/-0.2 maxT=1.0000/1.0000 Holm=1.0000/1.0000 BH=0.3301/1.0000 BY=1.0000/1.0000
+NIVEL1 motor      ascending           z=+8.2/+5.7 maxT=0.1445/0.3440 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 motor      central             z=+15.7/+12.6 maxT=0.0477/0.0757 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 motor      descending          z=+47.2/+41.8 maxT=0.0017/0.0061 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 motor      endocrine           z=+6.7/-0.4 maxT=0.2371/1.0000 Holm=0.1692/1.0000 BH=0.0029/1.0000 BY=0.0175/1.0000
+NIVEL1 motor      motor               z=+13.5/+7.0 maxT=0.0563/0.2369 Holm=0.0478/1.0000 BH=0.0005/0.0284 BY=0.0033/0.1708
+NIVEL1 motor      optic               z=-24.5/-20.2 maxT=0.0145/0.0209 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 motor      sensory             z=-3.4/-1.5 maxT=0.7747/0.9981 Holm=0.0478/1.0000 BH=0.0005/0.1999 BY=0.0033/1.0000
+NIVEL1 motor      sensory_ascending   z=+9.1/+4.5 maxT=0.1128/0.4985 Holm=0.0478/1.0000 BH=0.0005/0.0483 BY=0.0033/0.2905
+NIVEL1 motor      visual_centrifugal  z=-2.0/-2.1 maxT=0.9693/0.9802 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 motor      visual_projection   z=-5.5/-4.9 maxT=0.3592/0.4389 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 motor      sin_anotacion       z=-0.2/-0.2 maxT=1.0000/1.0000 Holm=1.0000/1.0000 BH=1.0000/1.0000 BY=1.0000/1.0000
+NIVEL1 endocrine  ascending           z=+15.1/+11.4 maxT=0.0493/0.0828 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 endocrine  central             z=+12.1/+6.8 maxT=0.0681/0.2442 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 endocrine  descending          z=+4.7/+3.3 maxT=0.4876/0.7813 Holm=0.6143/1.0000 BH=0.0102/0.0922 BY=0.0620/0.5537
+NIVEL1 endocrine  endocrine           z=+31.8/-0.0 maxT=0.0069/1.0000 Holm=0.0478/1.0000 BH=0.0005/1.0000 BY=0.0033/1.0000
+NIVEL1 endocrine  motor               z=-0.0/-0.1 maxT=1.0000/1.0000 Holm=1.0000/1.0000 BH=0.4897/1.0000 BY=1.0000/1.0000
+NIVEL1 endocrine  optic               z=-14.6/-9.6 maxT=0.0504/0.1249 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 endocrine  sensory             z=+0.3/+1.1 maxT=1.0000/0.9997 Holm=1.0000/1.0000 BH=0.9122/0.5130 BY=1.0000/1.0000
+NIVEL1 endocrine  sensory_ascending   z=+4.3/+2.5 maxT=0.5980/0.9263 Holm=1.0000/1.0000 BH=0.0650/0.1390 BY=0.3935/0.8355
+NIVEL1 endocrine  visual_centrifugal  z=-1.1/-0.8 maxT=0.9993/1.0000 Holm=0.0604/1.0000 BH=0.0011/0.3600 BY=0.0064/1.0000
+NIVEL1 endocrine  visual_projection   z=-3.4/-2.4 maxT=0.7751/0.9480 Holm=0.0478/0.0456 BH=0.0005/0.0008 BY=0.0033/0.0048
+NIVEL1 endocrine  sin_anotacion       z=-0.1/-0.1 maxT=1.0000/1.0000 Holm=1.0000/1.0000 BH=1.0000/1.0000 BY=1.0000/1.0000
+-- FIRMES DE LA 006 CON CORRECCION (nulo estr, D1, regla de la 006; p ajustado maximo entre >=1 y >=5; queda = <= 0.05 en los dos) --
+FIRME_006 ascending           -> descending                               SOBRE | p_max maxT=0.01090 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 ascending           -> motor                                    SOBRE | p_max maxT=0.34397 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 ascending           -> endocrine                                SOBRE | p_max maxT=0.08279 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 ascending           -> motor:antennal_motor_neuron              SOBRE | p_max maxT=0.09119 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 ascending           -> motor:sin_subclase                       SOBRE | p_max maxT=0.10409 Holm=0.06839 BH=0.00152 BY=0.00913 | queda maxT=NO Holm=NO BH=SI BY=SI
+FIRME_006 ascending           -> endocrine:lNSC_unknown                   SOBRE | p_max maxT=0.08929 Holm=0.06039 BH=0.00105 BY=0.00636 | queda maxT=NO Holm=NO BH=SI BY=SI
+FIRME_006 ascending           -> endocrine:Hugin-RG                       SOBRE | p_max maxT=0.07969 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> descending                               SOBRE | p_max maxT=0.01750 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 central             -> motor                                    SOBRE | p_max maxT=0.07569 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> endocrine                                SOBRE | p_max maxT=0.24418 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> motor:ingestion_motor_neuron             SOBRE | p_max maxT=0.11169 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> motor:proboscis_motor_neuron             SOBRE | p_max maxT=0.22978 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> motor:antennal_motor_neuron              SOBRE | p_max maxT=0.37406 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> motor:crop_motor_neuron                  SOBRE | p_max maxT=0.35516 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> motor:eye_motor_neuron                   SOBRE | p_max maxT=0.36446 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> motor:haustellum_motor_neuron            SOBRE | p_max maxT=0.27887 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> endocrine:IPC                            SOBRE | p_max maxT=0.57064 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> endocrine:mNSC_unknown                   SOBRE | p_max maxT=0.39726 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> endocrine:DH31                           SOBRE | p_max maxT=0.39716 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 central             -> endocrine:DH44                           SOBRE | p_max maxT=0.14409 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 descending          -> descending                               SOBRE | p_max maxT=0.00150 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 descending          -> motor                                    SOBRE | p_max maxT=0.00610 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 descending          -> motor:ingestion_motor_neuron             SOBRE | p_max maxT=0.29277 Holm=0.10079 BH=0.00224 BY=0.01347 | queda maxT=NO Holm=NO BH=SI BY=SI
+FIRME_006 descending          -> motor:neck_motor_neuron                  SOBRE | p_max maxT=0.00550 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 descending          -> motor:proboscis_motor_neuron             SOBRE | p_max maxT=0.01090 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 descending          -> motor:antennal_motor_neuron              SOBRE | p_max maxT=0.00610 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 descending          -> motor:eye_motor_neuron                   SOBRE | p_max maxT=0.18278 Holm=0.32797 BH=0.00701 BY=0.04215 | queda maxT=NO Holm=NO BH=SI BY=SI
+FIRME_006 descending          -> motor:haustellum_motor_neuron            SOBRE | p_max maxT=0.28057 Holm=0.13359 BH=0.00294 BY=0.01768 | queda maxT=NO Holm=NO BH=SI BY=SI
+FIRME_006 motor               -> motor:ingestion_motor_neuron             SOBRE | p_max maxT=0.03280 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 optic               -> descending                               BAJO  | p_max maxT=0.00510 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 optic               -> motor                                    BAJO  | p_max maxT=0.02090 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 optic               -> endocrine                                BAJO  | p_max maxT=0.12489 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 sensory             -> motor:ingestion_motor_neuron             SOBRE | p_max maxT=0.36396 Holm=0.06839 BH=0.00152 BY=0.00913 | queda maxT=NO Holm=NO BH=SI BY=SI
+FIRME_006 sensory             -> endocrine:CRZ                            SOBRE | p_max maxT=0.14439 Holm=0.11679 BH=0.00201 BY=0.01219 | queda maxT=NO Holm=NO BH=SI BY=SI
+FIRME_006 sensory_ascending   -> descending                               SOBRE | p_max maxT=0.07899 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 sensory_ascending   -> endocrine:DMS                            SOBRE | p_max maxT=0.03890 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=SI Holm=SI BH=SI BY=SI
+FIRME_006 visual_centrifugal  -> descending                               BAJO  | p_max maxT=0.88401 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 visual_centrifugal  -> motor                                    BAJO  | p_max maxT=0.98020 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 visual_projection   -> descending                               BAJO  | p_max maxT=0.47865 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 visual_projection   -> motor                                    BAJO  | p_max maxT=0.43886 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+FIRME_006 visual_projection   -> endocrine                                BAJO  | p_max maxT=0.94801 Holm=0.04780 BH=0.00080 BY=0.00481 | queda maxT=NO Holm=SI BH=SI BY=SI
+NUEVO_CORREGIDO BH   ascending           -> motor:neck_motor_neuron                  SOBRE | p_max=0.00760
+NUEVO_CORREGIDO BH   ascending           -> endocrine:IPC                            SOBRE | p_max=0.04671
+NUEVO_CORREGIDO BH   central             -> motor:neck_motor_neuron                  SOBRE | p_max=0.00977
+NUEVO_CORREGIDO BH   central             -> motor:salivary_motor_neuron              SOBRE | p_max=0.00817
+NUEVO_CORREGIDO BH   descending          -> endocrine:CAPA                           SOBRE | p_max=0.01602
+NUEVO_CORREGIDO BH   motor               -> motor                                    SOBRE | p_max=0.02842
+NUEVO_CORREGIDO BH   sensory             -> motor:crop_motor_neuron                  SOBRE | p_max=0.03521
+NUEVO_CORREGIDO BH   sensory             -> endocrine:DMS                            SOBRE | p_max=0.02128
+NUEVO_CORREGIDO BH   sensory_ascending   -> motor                                    SOBRE | p_max=0.04834
+NUEVO_CORREGIDO BH   sensory_ascending   -> motor:neck_motor_neuron                  SOBRE | p_max=0.00872
+NUEVO_CORREGIDO BH   sensory_ascending   -> motor:salivary_motor_neuron              SOBRE | p_max=0.03876
+NUEVO_CORREGIDO BH   sensory_ascending   -> endocrine:CRZ                            SOBRE | p_max=0.02923
+NUEVO_CORREGIDO BH   sensory_ascending   -> endocrine:CAPA                           SOBRE | p_max=0.01602
+NUEVO_CORREGIDO BY   ascending           -> motor:neck_motor_neuron                  SOBRE | p_max=0.04566
+NUEVO_CORREGIDO BY   central             -> motor:salivary_motor_neuron              SOBRE | p_max=0.04907
+RESUMEN firmes_006=41 (SOBRE=33 BAJO=8) | maxT quedan=11 nuevos=0 | Holm quedan=34 nuevos=0 | BH quedan=41 nuevos=13 | BY quedan=41 nuevos=2 | FWER (maxT y Holm) quedan=11, con alfa/2=0.025 quedan=0
+CRUCE_006 PASS clases=True estratos=True d=True p=True flags=True conservacion=True firmes=True max_dif_d=0 max_dif_p=0
+CONSISTENCIA PASS stepdown_le_singlestep=True monotono=True by_ge_bh=True holm_ge_bh=True holm_monotono=True
+CONTROL_NEGATIVO maxT=10/160 Holm=8/160 BH=9/160 BY=0/160 esperado=8.0 tope=24.0 OK=True
+R_PEDIDO_500 r=10000 veredicto_006=PASS ok=True
+JSON results/output_control_permcorr_2026-10-10/output_control_permutation_correction.json md5=91c602099e533a962c889efe8516ef70
+VEREDICTO_CORRECCION PASS
+FIN_CORRECCION segundos=778.3

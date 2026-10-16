@@ -1,0 +1,2 @@
+DIAG_FALSOS umbral=1 falsos=20 identicos_perm_estr=0 misma_etiqueta perm-estr=0.3851 perm-real=0.3850 estr-real=0.4655 esperado_al_azar=0.3848
+DIAG_FALSOS umbral=5 falsos=20 identicos_perm_estr=0 misma_etiqueta perm-estr=0.3847 perm-real=0.3852 estr-real=0.4354 esperado_al_azar=0.3848

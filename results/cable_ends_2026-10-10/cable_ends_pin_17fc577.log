@@ -1,0 +1,59 @@
+fuente=results/table7_reconstruida_2026-10-10/table7_reciprocity_by_class.json
+anotaciones=/workspace/annotations.tsv md5=719904abad876c68ace1b5690c9b9b63
+=== SIN UMBRAL ===
+neuronas=138639  aristas=15091983  reciprocas=4014518 (26.60%)
+clase | neuronas | %neur | salen | %aristas | entran | %aristas | recip_salen% | recip_entran%
+ascending | 1736 | 1.25 | 220578 | 1.46 | 76134 | 0.50 | 10.17 | 29.48
+central | 32379 | 23.35 | 5084954 | 33.69 | 5440406 | 36.05 | 26.33 | 24.61
+descending | 1299 | 0.94 | 163311 | 1.08 | 332213 | 2.20 | 26.83 | 13.19
+endocrine | 76 | 0.05 | 677 | 0.00 | 5671 | 0.04 | 29.99 | 3.58
+motor | 110 | 0.08 | 3708 | 0.02 | 19860 | 0.13 | 52.64 | 9.83
+optic | 77530 | 55.92 | 7740952 | 51.29 | 6914554 | 45.82 | 28.04 | 31.39
+sensory | 16352 | 11.79 | 291601 | 1.93 | 153858 | 1.02 | 21.53 | 40.80
+sensory_ascending | 581 | 0.42 | 14166 | 0.09 | 3384 | 0.02 | 7.78 | 32.57
+visual_centrifugal | 524 | 0.38 | 372151 | 2.47 | 190152 | 1.26 | 13.95 | 27.31
+visual_projection | 8038 | 5.80 | 1199491 | 7.95 | 1955045 | 12.95 | 26.79 | 16.44
+sin_anotacion | 14 | 0.01 | 394 | 0.00 | 706 | 0.00 | 28.17 | 15.72
+EMBUDO_SALIDA neuronas=1485 (1.07% del grafo)  aristas_que_entran=357744 (2.37% de todas)
+  hacia descending (332213 aristas) desde: central 202973 (61.10%, recip 13.80%); descending 38742 (11.66%, recip 22.40%); ascending 36364 (10.95%, recip 6.32%); sensory 24326 (7.32%, recip 8.65%)
+  hacia motor (19860 aristas) desde: central 11134 (56.06%, recip 12.76%); descending 4326 (21.78%, recip 5.46%); ascending 1844 (9.28%, recip 1.52%); sensory 1178 (5.93%, recip 3.57%)
+  hacia endocrine (5671 aristas) desde: central 4565 (80.50%, recip 3.42%); ascending 497 (8.76%, recip 2.01%); descending 292 (5.15%, recip 6.16%); sensory 125 (2.20%, recip 4.00%)
+  desde sensory (291601 aristas) hacia: central 159316 (54.63%, recip 24.20%); optic 50307 (17.25%, recip 18.49%); sensory 34107 (11.70%, recip 30.67%); descending 24326 (8.34%, recip 8.65%)
+  desde sensory_ascending (14166 aristas) hacia: central 8779 (61.97%, recip 3.94%); descending 2055 (14.51%, recip 3.45%); sensory_ascending 1315 (9.28%, recip 32.09%); ascending 1111 (7.84%, recip 21.69%)
+  desde ascending (220578 aristas) hacia: central 150447 (68.21%, recip 9.36%); descending 36364 (16.49%, recip 6.32%); ascending 14627 (6.63%, recip 21.43%); sensory 8171 (3.70%, recip 24.83%)
+  desde optic (7740952 aristas) hacia: optic 6201390 (80.11%, recip 31.98%); visual_projection 1419320 (18.34%, recip 10.34%); visual_centrifugal 84557 (1.09%, recip 35.92%); sensory 26661 (0.34%, recip 34.89%)
+  desde visual_projection (1199491 aristas) hacia: central 403136 (33.61%, recip 14.20%); optic 392500 (32.72%, recip 37.39%); visual_projection 346090 (28.85%, recip 29.73%); visual_centrifugal 34116 (2.84%, recip 35.26%)
+  desde central (5084954 aristas) hacia: central 4585828 (90.18%, recip 26.00%); descending 202973 (3.99%, recip 13.80%); visual_projection 109461 (2.15%, recip 52.30%); sensory 78839 (1.55%, recip 48.90%)
+  desde visual_centrifugal (372151 aristas) hacia: optic 265317 (71.29%, recip 11.45%); visual_projection 70272 (18.88%, recip 17.12%); central 25524 (6.86%, recip 24.09%); visual_centrifugal 7490 (2.01%, recip 36.90%)
+PARES con >=1000 aristas: 53
+  mas ida y vuelta: descending->visual_projection 60.90% de 2862; motor->central 56.57% de 2512; central->visual_projection 52.30% de 109461; central->sensory 48.90% de 78839; descending->sensory 41.47% de 5073; central->ascending 41.15% de 34227
+  mas una sola mano: sensory_ascending->central 3.94% de 8779; sensory->motor 3.57% de 1178; ascending->visual_centrifugal 3.49% de 4435; sensory_ascending->descending 3.45% de 2055; central->endocrine 3.42% de 4565; ascending->motor 1.52% de 1844
+=== UMBRAL >=5 SINAPSIS ===
+neuronas=138639  aristas=2700513  reciprocas=377448 (13.98%)
+clase | neuronas | %neur | salen | %aristas | entran | %aristas | recip_salen% | recip_entran%
+ascending | 1736 | 1.25 | 56624 | 2.10 | 10048 | 0.37 | 2.72 | 15.33
+central | 32379 | 23.35 | 966830 | 35.80 | 1054476 | 39.05 | 15.55 | 14.26
+descending | 1299 | 0.94 | 30982 | 1.15 | 93839 | 3.47 | 11.30 | 3.73
+endocrine | 76 | 0.05 | 31 | 0.00 | 1135 | 0.04 | 25.81 | 0.70
+motor | 110 | 0.08 | 389 | 0.01 | 7305 | 0.27 | 36.50 | 1.94
+optic | 77530 | 55.92 | 1322672 | 48.98 | 1172308 | 43.41 | 14.43 | 16.28
+sensory | 16352 | 11.79 | 60765 | 2.25 | 19458 | 0.72 | 10.35 | 32.31
+sensory_ascending | 581 | 0.42 | 2590 | 0.10 | 572 | 0.02 | 9.38 | 42.48
+visual_centrifugal | 524 | 0.38 | 68825 | 2.55 | 27798 | 1.03 | 7.55 | 18.70
+visual_projection | 8038 | 5.80 | 190767 | 7.06 | 313528 | 11.61 | 10.13 | 6.17
+sin_anotacion | 14 | 0.01 | 38 | 0.00 | 46 | 0.00 | 31.58 | 26.09
+EMBUDO_SALIDA neuronas=1485 (1.07% del grafo)  aristas_que_entran=102279 (3.79% de todas)
+  hacia descending (93839 aristas) desde: central 59636 (63.55%, recip 3.73%); ascending 10525 (11.22%, recip 0.98%); descending 10183 (10.85%, recip 9.05%); visual_projection 7654 (8.16%, recip 0.74%)
+  hacia motor (7305 aristas) desde: central 4548 (62.26%, recip 2.35%); descending 1569 (21.48%, recip 0.13%); ascending 549 (7.52%, recip 0.00%); sensory 373 (5.11%, recip 1.34%)
+  hacia endocrine (1135 aristas) desde: central 866 (76.30%, recip 0.00%); ascending 131 (11.54%, recip 0.00%); descending 69 (6.08%, recip 10.14%); sensory 41 (3.61%, recip 2.44%)
+  desde sensory (60765 aristas) hacia: central 33497 (55.13%, recip 13.76%); optic 17744 (29.20%, recip 5.09%); descending 4786 (7.88%, recip 2.84%); ascending 2412 (3.97%, recip 6.14%)
+  desde sensory_ascending (2590 aristas) hacia: central 1613 (62.28%, recip 4.34%); ascending 381 (14.71%, recip 26.51%); descending 293 (11.31%, recip 8.87%); sensory_ascending 154 (5.95%, recip 29.87%)
+  desde ascending (56624 aristas) hacia: central 40080 (70.78%, recip 2.51%); descending 10525 (18.59%, recip 0.98%); ascending 2125 (3.75%, recip 7.44%); visual_centrifugal 1158 (2.05%, recip 0.69%)
+  desde optic (1322672 aristas) hacia: optic 1069721 (80.88%, recip 17.11%); visual_projection 243558 (18.41%, recip 1.92%); visual_centrifugal 6406 (0.48%, recip 34.23%); sensory 2083 (0.16%, recip 43.35%)
+  desde visual_projection (190767 aristas) hacia: central 108577 (56.92%, recip 8.22%); optic 35161 (18.43%, recip 13.29%); visual_projection 32967 (17.28%, recip 10.11%); descending 7654 (4.01%, recip 0.74%)
+  desde central (966830 aristas) hacia: central 849928 (87.91%, recip 15.65%); descending 59636 (6.17%, recip 3.73%); visual_projection 20950 (2.17%, recip 42.61%); sensory 14274 (1.48%, recip 32.29%)
+  desde visual_centrifugal (68825 aristas) hacia: optic 49430 (71.82%, recip 4.44%); visual_projection 14603 (21.22%, recip 15.90%); central 2903 (4.22%, recip 11.95%); visual_centrifugal 1324 (1.92%, recip 23.41%)
+PARES con >=1000 aristas: 34
+  mas ida y vuelta: optic->sensory 43.35% de 2083; central->visual_projection 42.61% de 20950; sensory->sensory 37.45% de 1287; visual_projection->visual_centrifugal 37.31% de 6223; optic->visual_centrifugal 34.23% de 6406; central->sensory 32.29% de 14274
+  mas una sola mano: central->motor 2.35% de 4548; optic->visual_projection 1.92% de 243558; ascending->descending 0.98% de 10525; visual_projection->descending 0.74% de 7654; ascending->visual_centrifugal 0.69% de 1158; descending->motor 0.13% de 1569
+FIN_CABLES

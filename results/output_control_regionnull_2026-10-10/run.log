@@ -1,0 +1,337 @@
+== output_control_region_null.py :: nulo que conserva region y tamano para la 005 y la 006 ==
+ENTORNO python=3.12.14 numpy=2.5.3 scipy=1.18.1 pandas=3.0.5 maquina=brain-env
+PARAMETROS seed=20261012 r=5000 n_falsos=20 k_regiones=40,120 n_tam=30 p_flag=0.001 mezcla_min=0.1 z_max=6 factor_control=3
+INPUT parquet /workspace/connectivity.parquet md5=3d802fd542b5d18570ba1ba0bb0abed9 pin_ok=True
+INPUT annotations /workspace/annotations.tsv md5=719904abad876c68ace1b5690c9b9b63 pin_ok=True
+INPUT json_006 results/output_control_permnull_2026-10-10/output_control_permutation_null.json md5=ec64172711d7d18040f6f09335d7521b
+GRAFO n_nodos=138639 n_aristas=15091983 mapeo_biyectivo=True sinapsis_total=54492922
+CLASES ascending=1736 central=32379 descending=1299 endocrine=76 motor=110 optic=77530 sensory=16352 sensory_ascending=581 visual_centrifugal=524 visual_projection=8038 sin_anotacion=14
+POSICIONES con_pos=138625 sin_pos=14 rango_um x=88.0-902.9 y=51.4-442.9 z=0.6-278.7
+REGIONES k=40 iteraciones=74 convergio=True inercia_um2=2.249e+08 tam_min=1850 tam_mediana=3416 tam_max=5412 sin_posicion=14
+REGIONES k=120 iteraciones=100 convergio=False inercia_um2=9.485e+07 tam_min=355 tam_mediana=1218 tam_max=2381 sin_posicion=14
+CONJUNTOS 22 (nivel1 3 + finos 19) neuronas_de_salida=1485
+== VARIANTE >=1 | conjuntos_con_entrada=22/22 | tamano: estratos=31 ancho_log=0.3837 factor=1.468 ==
+ESTRATOS [>=1] reg40 n=935 unitarios=67 tam_max=1219
+ESTRATOS [>=1] reg120 n=2389 unitarios=260 tam_max=616
+MEZCLA [>=1] clase                    n   perm estr06  reg40 reg120
+MEZCLA [>=1] ascending             1736  0.987  0.981  0.436  0.226
+MEZCLA [>=1] central              32379  0.766  0.699  0.222  0.152
+MEZCLA [>=1] descending            1299  0.991  0.986  0.873  0.766
+MEZCLA [>=1] endocrine               76  0.999  0.990  0.712  0.324
+MEZCLA [>=1] motor                  110  0.999  0.993  0.855  0.645
+MEZCLA [>=1] optic                77530  0.441  0.402  0.126  0.092
+MEZCLA [>=1] sensory              16352  0.882  0.529  0.250  0.190
+MEZCLA [>=1] sensory_ascending      581  0.996  0.976  0.645  0.544
+MEZCLA [>=1] visual_centrifugal     524  0.996  0.949  0.876  0.777
+MEZCLA [>=1] visual_projection     8038  0.942  0.920  0.798  0.672
+MEZCLA [>=1] sin_anotacion           14  1.000  0.999  0.000  0.000
+NULO [>=1] reg40 R=5000 segundos=144.5 conteos_ok=True estratos_ok=True media_max_z=3.72 var_ratio_mediana=1.0028
+NULO [>=1] reg120 R=5000 segundos=143.8 conteos_ok=True estratos_ok=True media_max_z=3.40 var_ratio_mediana=0.9998
+-- NIVEL1 descending [>=1] | con_entrada=1299
+clase                   D1% estr06   enrE  reg40%    x40 f40   reg120%   x120 f120 
+ascending             12.98 SOBRE    5.61   14.39   0.90 BAJO    13.31   0.98 azar 
+central               60.23 SOBRE    1.63   56.10   1.07 SOBRE   59.78   1.01 azar 
+descending            15.17 SOBRE   15.09    4.61   3.29 SOBRE    5.81   2.61 SOBRE
+endocrine              0.01 azar     1.12    0.02   0.57 azar     0.02   0.62 azar 
+motor                  0.06 azar     1.50    0.08   0.76 azar     0.09   0.64 azar 
+optic                  0.45 BAJO     0.01    8.09   0.06 BAJO     5.95   0.08 BAJO 
+sensory                4.28 azar     0.96    8.20   0.52 BAJO     6.89   0.62 BAJO 
+sensory_ascending      1.62 SOBRE   10.87    2.09   0.77 BAJO     1.80   0.90 azar 
+visual_centrifugal     0.58 BAJO     0.47    1.42   0.41 BAJO     1.55   0.37 BAJO 
+visual_projection      4.61 BAJO     0.68    5.01   0.92 azar     4.79   0.96 azar 
+sin_anotacion          0.00 azar     0.01    0.00   1.00 NM       0.00   1.00 NM   
+-- NIVEL1 motor [>=1] | con_entrada=110
+clase                   D1% estr06   enrE  reg40%    x40 f40   reg120%   x120 f120 
+ascending              6.92 SOBRE    3.45   10.37   0.67 BAJO     7.20   0.96 azar 
+central               64.34 SOBRE    1.86   49.02   1.31 SOBRE   55.60   1.16 SOBRE
+descending            21.48 SOBRE   19.96    5.82   3.69 SOBRE    6.70   3.21 SOBRE
+endocrine              0.15 SOBRE   10.85    0.09   1.75 azar     0.15   0.99 azar 
+motor                  1.03 SOBRE   22.86    0.20   5.11 azar     0.37   2.81 azar 
+optic                  0.00 BAJO     0.00   14.24   0.00 BAJO    10.99   0.00 BAJO 
+sensory                3.57 BAJO     0.60   10.91   0.33 BAJO     9.11   0.39 BAJO 
+sensory_ascending      1.48 SOBRE    7.85    2.36   0.63 azar     2.04   0.73 azar 
+visual_centrifugal     0.03 BAJO     0.03    1.05   0.02 BAJO     1.27   0.02 BAJO 
+visual_projection      1.01 BAJO     0.15    5.94   0.17 BAJO     6.58   0.15 BAJO 
+sin_anotacion          0.00 azar     0.00    0.00    nan NM       0.00    nan NM   
+-- NIVEL1 endocrine [>=1] | con_entrada=73
+clase                   D1% estr06   enrE  reg40%    x40 f40   reg120%   x120 f120 
+ascending             15.93 SOBRE   10.24   15.84   1.01 azar    13.49   1.18 azar 
+central               73.03 SOBRE    2.29   66.90   1.09 azar    70.72   1.03 azar 
+descending             4.37 azar     4.92    3.47   1.26 azar     3.48   1.25 azar 
+endocrine              0.69 SOBRE  116.11    0.12   5.79 azar     0.30   2.30 SOBRE
+motor                  0.02 azar     0.79    0.04   0.55 azar     0.13   0.16 azar 
+optic                  0.00 BAJO     0.00    1.96   0.00 BAJO     1.80   0.00 BAJO 
+sensory                4.27 azar     1.10    7.26   0.59 azar     6.45   0.66 azar 
+sensory_ascending      1.31 azar     9.52    2.19   0.60 azar     1.94   0.68 azar 
+visual_centrifugal     0.00 BAJO     0.00    0.67   0.00 BAJO     0.36   0.00 BAJO 
+visual_projection      0.37 BAJO     0.05    1.54   0.24 azar     1.33   0.28 azar 
+sin_anotacion          0.00 azar     0.00    0.00    nan NM       0.00    nan NM   
+-- FINAS [>=1] (D1, top 3; flags estr06 / reg40 / reg120) --
+FINA [>=1] motor:ingestion_motor_neuron             con_entrada=  28 : central 83.66% estr=SOBRE reg40=SOBRE reg120=SOBRE | descending 6.38% estr=SOBRE reg40=azar reg120=azar | sensory 6.03% estr=SOBRE reg40=azar reg120=azar
+FINA [>=1] motor:neck_motor_neuron                  con_entrada=  26 : central 40.15% estr=SOBRE reg40=azar reg120=azar | descending 39.96% estr=SOBRE reg40=SOBRE reg120=SOBRE | ascending 9.98% estr=SOBRE reg40=BAJO reg120=azar
+FINA [>=1] motor:proboscis_motor_neuron             con_entrada=  24 : central 68.85% estr=SOBRE reg40=SOBRE reg120=SOBRE | descending 24.72% estr=SOBRE reg40=SOBRE reg120=SOBRE | ascending 4.04% estr=azar reg40=BAJO reg120=azar
+FINA [>=1] motor:antennal_motor_neuron              con_entrada=  10 : central 50.52% estr=SOBRE reg40=SOBRE reg120=azar | descending 32.06% estr=SOBRE reg40=SOBRE reg120=SOBRE | ascending 13.41% estr=SOBRE reg40=azar reg120=azar
+FINA [>=1] motor:crop_motor_neuron                  con_entrada=   8 : central 86.42% estr=SOBRE reg40=SOBRE reg120=azar | sensory 12.42% estr=azar reg40=azar reg120=azar | motor 0.77% estr=azar reg40=azar reg120=azar
+FINA [>=1] motor:eye_motor_neuron                   con_entrada=   4 : central 78.09% estr=SOBRE reg40=SOBRE reg120=azar | descending 13.63% estr=SOBRE reg40=azar reg120=azar | ascending 3.82% estr=azar reg40=BAJO reg120=azar
+FINA [>=1] motor:haustellum_motor_neuron            con_entrada=   4 : central 74.46% estr=SOBRE reg40=SOBRE reg120=SOBRE | descending 12.10% estr=SOBRE reg40=azar reg120=azar | ascending 8.53% estr=azar reg40=azar reg120=azar
+FINA [>=1] motor:sin_subclase                       con_entrada=   4 : ascending 42.45% estr=SOBRE reg40=azar reg120=azar | descending 28.08% estr=SOBRE reg40=azar reg120=azar | central 20.11% estr=azar reg40=BAJO reg120=BAJO
+FINA [>=1] motor:salivary_motor_neuron              con_entrada=   2 : central 75.45% estr=SOBRE reg40=azar reg120=azar | descending 7.58% estr=azar reg40=azar reg120=azar | sensory 6.92% estr=azar reg40=azar reg120=azar
+FINA [>=1] endocrine:IPC                            con_entrada=  18 : central 87.94% estr=SOBRE reg40=azar reg120=azar | ascending 11.05% estr=azar reg40=azar reg120=azar | descending 0.50% estr=azar reg40=azar reg120=azar
+FINA [>=1] endocrine:lNSC_unknown                   con_entrada=  14 : central 68.10% estr=azar reg40=azar reg120=azar | ascending 30.48% estr=SOBRE reg40=azar reg120=azar | visual_projection 0.92% estr=azar reg40=azar reg120=azar
+FINA [>=1] endocrine:mNSC_unknown                   con_entrada=  10 : central 88.56% estr=SOBRE reg40=SOBRE reg120=azar | ascending 4.97% estr=azar reg40=BAJO reg120=azar | endocrine 2.80% estr=SOBRE reg40=azar reg120=SOBRE
+FINA [>=1] endocrine:CRZ                            con_entrada=   6 : sensory 29.68% estr=SOBRE reg40=azar reg120=azar | ascending 23.84% estr=SOBRE reg40=azar reg120=azar | central 23.79% estr=azar reg40=BAJO reg120=BAJO
+FINA [>=1] endocrine:DH31                           con_entrada=   6 : central 94.73% estr=SOBRE reg40=SOBRE reg120=azar | visual_projection 2.12% estr=azar reg40=azar reg120=azar | descending 1.61% estr=azar reg40=azar reg120=azar
+FINA [>=1] endocrine:DH44                           con_entrada=   6 : central 90.92% estr=SOBRE reg40=SOBRE reg120=SOBRE | descending 4.97% estr=azar reg40=azar reg120=azar | ascending 3.13% estr=azar reg40=BAJO reg120=azar
+FINA [>=1] endocrine:DMS                            con_entrada=   6 : central 63.76% estr=SOBRE reg40=azar reg120=azar | sensory 15.18% estr=SOBRE reg40=azar reg120=azar | ascending 8.54% estr=azar reg40=azar reg120=azar
+FINA [>=1] endocrine:Hugin-RG                       con_entrada=   4 : ascending 61.08% estr=SOBRE reg40=azar reg120=azar | central 19.32% estr=azar reg40=BAJO reg120=azar | descending 18.72% estr=azar reg40=azar reg120=azar
+FINA [>=1] endocrine:ITP                            con_entrada=   1 : central 100.00% estr=azar reg40=azar reg120=azar | ascending 0.00% estr=azar reg40=azar reg120=azar | descending 0.00% estr=azar reg40=azar reg120=azar
+FINA [>=1] endocrine:CAPA                           con_entrada=   2 : central 46.31% estr=azar reg40=BAJO reg120=azar | sensory 18.19% estr=azar reg40=azar reg120=azar | descending 14.93% estr=azar reg40=azar reg120=azar
+INESTABLE [>=1] descending                               ascending           estr06=SOBRE reg40=BAJO  reg120=azar  D1 12.98% x0.90/x0.98
+INESTABLE [>=1] descending                               central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 60.23% x1.07/x1.01
+NUEVO     [>=1] descending                               sensory             estr06=azar  -> region=BAJO  D1 4.28% x0.52/x0.62
+INESTABLE [>=1] descending                               sensory_ascending   estr06=SOBRE reg40=BAJO  reg120=azar  D1 1.62% x0.77/x0.90
+CAMBIA    [>=1] descending                               visual_projection   estr06=BAJO  -> region=azar  D1 4.61% x0.92/x0.96
+INESTABLE [>=1] motor                                    ascending           estr06=SOBRE reg40=BAJO  reg120=azar  D1 6.92% x0.67/x0.96
+CAMBIA    [>=1] motor                                    endocrine           estr06=SOBRE -> region=azar  D1 0.15% x1.75/x0.99
+CAMBIA    [>=1] motor                                    motor               estr06=SOBRE -> region=azar  D1 1.03% x5.11/x2.81
+CAMBIA    [>=1] motor                                    sensory_ascending   estr06=SOBRE -> region=azar  D1 1.48% x0.63/x0.73
+CAMBIA    [>=1] endocrine                                ascending           estr06=SOBRE -> region=azar  D1 15.93% x1.01/x1.18
+CAMBIA    [>=1] endocrine                                central             estr06=SOBRE -> region=azar  D1 73.03% x1.09/x1.03
+INESTABLE [>=1] endocrine                                endocrine           estr06=SOBRE reg40=azar  reg120=SOBRE D1 0.69% x5.79/x2.30
+CAMBIA    [>=1] endocrine                                visual_projection   estr06=BAJO  -> region=azar  D1 0.37% x0.24/x0.28
+INESTABLE [>=1] motor:ingestion_motor_neuron             ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 1.33% x0.37/x0.76
+CAMBIA    [>=1] motor:ingestion_motor_neuron             descending          estr06=SOBRE -> region=azar  D1 6.38% x1.50/x1.60
+CAMBIA    [>=1] motor:ingestion_motor_neuron             sensory             estr06=SOBRE -> region=azar  D1 6.03% x0.71/x0.73
+NUEVO     [>=1] motor:ingestion_motor_neuron             sensory_ascending   estr06=azar  -> region=BAJO  D1 0.00% x0.00/x0.00
+INESTABLE [>=1] motor:neck_motor_neuron                  ascending           estr06=SOBRE reg40=BAJO  reg120=azar  D1 9.98% x0.58/x0.85
+CAMBIA    [>=1] motor:neck_motor_neuron                  central             estr06=SOBRE -> region=azar  D1 40.15% x1.26/x1.00
+CAMBIA    [>=1] motor:neck_motor_neuron                  sensory_ascending   estr06=SOBRE -> region=azar  D1 5.56% x0.94/x1.13
+INESTABLE [>=1] motor:neck_motor_neuron                  visual_centrifugal  estr06=azar  reg40=azar  reg120=BAJO  D1 0.05% x0.05/x0.03
+INESTABLE [>=1] motor:proboscis_motor_neuron             ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 4.04% x0.46/x0.81
+NUEVO     [>=1] motor:proboscis_motor_neuron             sensory             estr06=azar  -> region=BAJO  D1 2.01% x0.29/x0.30
+NUEVO     [>=1] motor:proboscis_motor_neuron             sensory_ascending   estr06=azar  -> region=BAJO  D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] motor:antennal_motor_neuron              ascending           estr06=SOBRE -> region=azar  D1 13.41% x0.80/x1.02
+INESTABLE [>=1] motor:antennal_motor_neuron              central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 50.52% x1.21/x1.07
+NUEVO     [>=1] motor:antennal_motor_neuron              sensory_ascending   estr06=azar  -> region=BAJO  D1 0.64% x0.28/x0.33
+NUEVO     [>=1] motor:antennal_motor_neuron              visual_centrifugal  estr06=azar  -> region=BAJO  D1 0.05% x0.05/x0.04
+INESTABLE [>=1] motor:crop_motor_neuron                  ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 0.18% x0.04/x0.60
+INESTABLE [>=1] motor:crop_motor_neuron                  central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 86.42% x1.33/x1.14
+INESTABLE [>=1] motor:crop_motor_neuron                  descending          estr06=azar  reg40=BAJO  reg120=azar  D1 0.11% x0.03/x0.04
+CAMBIA    [>=1] motor:crop_motor_neuron                  visual_projection   estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+INESTABLE [>=1] motor:eye_motor_neuron                   ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 3.82% x0.43/x0.98
+INESTABLE [>=1] motor:eye_motor_neuron                   central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 78.09% x1.31/x1.15
+CAMBIA    [>=1] motor:eye_motor_neuron                   descending          estr06=SOBRE -> region=azar  D1 13.63% x3.05/x2.08
+INESTABLE [>=1] motor:eye_motor_neuron                   sensory_ascending   estr06=azar  reg40=BAJO  reg120=azar  D1 0.31% x0.12/x0.35
+CAMBIA    [>=1] motor:haustellum_motor_neuron            descending          estr06=SOBRE -> region=azar  D1 12.10% x1.82/x2.00
+NUEVO     [>=1] motor:haustellum_motor_neuron            sensory_ascending   estr06=azar  -> region=BAJO  D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] motor:sin_subclase                       ascending           estr06=SOBRE -> region=azar  D1 42.45% x1.81/x1.41
+NUEVO     [>=1] motor:sin_subclase                       central             estr06=azar  -> region=BAJO  D1 20.11% x0.40/x0.48
+CAMBIA    [>=1] motor:sin_subclase                       descending          estr06=SOBRE -> region=azar  D1 28.08% x3.81/x3.78
+CAMBIA    [>=1] motor:sin_subclase                       endocrine           estr06=SOBRE -> region=azar  D1 4.05% x1.93/x1.06
+INESTABLE [>=1] motor:sin_subclase                       optic               estr06=BAJO  reg40=azar  reg120=NM    D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] motor:salivary_motor_neuron              central             estr06=SOBRE -> region=azar  D1 75.45% x1.34/x1.23
+INESTABLE [>=1] motor:salivary_motor_neuron              sensory_ascending   estr06=azar  reg40=SOBRE reg120=azar  D1 3.66% x5.11/x4.93
+CAMBIA    [>=1] motor:salivary_motor_neuron              visual_projection   estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] endocrine:IPC                            central             estr06=SOBRE -> region=azar  D1 87.94% x1.11/x1.06
+INESTABLE [>=1] endocrine:IPC                            endocrine           estr06=SOBRE reg40=azar  reg120=SOBRE D1 0.48% x4.92/x1.54
+INESTABLE [>=1] endocrine:IPC                            optic               estr06=BAJO  reg40=BAJO  reg120=NM    D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] endocrine:IPC                            visual_projection   estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] endocrine:lNSC_unknown                   ascending           estr06=SOBRE -> region=azar  D1 30.48% x1.54/x1.14
+INESTABLE [>=1] endocrine:lNSC_unknown                   sensory             estr06=azar  reg40=BAJO  reg120=azar  D1 0.00% x0.00/x0.00
+INESTABLE [>=1] endocrine:mNSC_unknown                   ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 4.97% x0.36/x0.89
+INESTABLE [>=1] endocrine:mNSC_unknown                   central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 88.56% x1.20/x1.06
+INESTABLE [>=1] endocrine:mNSC_unknown                   endocrine           estr06=SOBRE reg40=azar  reg120=SOBRE D1 2.80% x7.80/x4.96
+INESTABLE [>=1] endocrine:mNSC_unknown                   optic               estr06=BAJO  reg40=BAJO  reg120=NM    D1 0.00% x0.00/x0.00
+INESTABLE [>=1] endocrine:mNSC_unknown                   sensory_ascending   estr06=azar  reg40=azar  reg120=SOBRE D1 2.16% x1.49/x6.17
+CAMBIA    [>=1] endocrine:mNSC_unknown                   visual_projection   estr06=BAJO  -> region=azar  D1 0.15% x0.17/x0.15
+CAMBIA    [>=1] endocrine:CRZ                            ascending           estr06=SOBRE -> region=azar  D1 23.84% x1.06/x0.85
+NUEVO     [>=1] endocrine:CRZ                            central             estr06=azar  -> region=BAJO  D1 23.79% x0.41/x0.49
+CAMBIA    [>=1] endocrine:CRZ                            descending          estr06=SOBRE -> region=azar  D1 16.75% x2.88/x4.93
+INESTABLE [>=1] endocrine:CRZ                            endocrine           estr06=SOBRE reg40=SOBRE reg120=azar  D1 1.21% x3.77/x1.30
+INESTABLE [>=1] endocrine:CRZ                            optic               estr06=BAJO  reg40=azar  reg120=NM    D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] endocrine:CRZ                            sensory             estr06=SOBRE -> region=azar  D1 29.68% x3.11/x2.20
+CAMBIA    [>=1] endocrine:CRZ                            sensory_ascending   estr06=SOBRE -> region=azar  D1 4.59% x2.15/x1.55
+CAMBIA    [>=1] endocrine:CRZ                            visual_projection   estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+INESTABLE [>=1] endocrine:DH31                           ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 1.34% x0.38/x1.09
+INESTABLE [>=1] endocrine:DH31                           central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 94.73% x1.15/x1.01
+CAMBIA    [>=1] endocrine:DH31                           endocrine           estr06=SOBRE -> region=azar  D1 0.19% x2.86/x1.00
+INESTABLE [>=1] endocrine:DH44                           ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 3.13% x0.11/x1.20
+INESTABLE [>=1] endocrine:DH44                           endocrine           estr06=SOBRE reg40=azar  reg120=SOBRE D1 0.12% x10.15/x2.03
+INESTABLE [>=1] endocrine:DH44                           optic               estr06=BAJO  reg40=BAJO  reg120=NM    D1 0.00% x0.00/x0.00
+INESTABLE [>=1] endocrine:DH44                           sensory             estr06=azar  reg40=BAJO  reg120=azar  D1 0.75% x0.08/x0.12
+CAMBIA    [>=1] endocrine:DH44                           visual_projection   estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] endocrine:DMS                            central             estr06=SOBRE -> region=azar  D1 63.76% x0.94/x0.88
+CAMBIA    [>=1] endocrine:DMS                            endocrine           estr06=SOBRE -> region=azar  D1 0.40% x5.27/x1.33
+INESTABLE [>=1] endocrine:DMS                            optic               estr06=BAJO  reg40=BAJO  reg120=NM    D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] endocrine:DMS                            sensory             estr06=SOBRE -> region=azar  D1 15.18% x1.75/x1.85
+CAMBIA    [>=1] endocrine:DMS                            sensory_ascending   estr06=SOBRE -> region=azar  D1 4.34% x3.41/x4.50
+INESTABLE [>=1] endocrine:DMS                            visual_projection   estr06=BAJO  reg40=azar  reg120=BAJO  D1 0.00% x0.00/x0.00
+CAMBIA    [>=1] endocrine:Hugin-RG                       ascending           estr06=SOBRE -> region=azar  D1 61.08% x1.79/x1.44
+INESTABLE [>=1] endocrine:Hugin-RG                       central             estr06=azar  reg40=BAJO  reg120=azar  D1 19.32% x0.46/x0.58
+INESTABLE [>=1] endocrine:Hugin-RG                       optic               estr06=BAJO  reg40=azar  reg120=NM    D1 0.00% x0.00/x0.00
+INESTABLE [>=1] endocrine:Hugin-RG                       sensory             estr06=BAJO  reg40=BAJO  reg120=azar  D1 0.00% x0.00/x0.00
+INESTABLE [>=1] endocrine:ITP                            optic               estr06=azar  reg40=azar  reg120=NM    D1 0.00% x0.00/x0.00
+INESTABLE [>=1] endocrine:CAPA                           central             estr06=azar  reg40=BAJO  reg120=azar  D1 46.31% x0.62/x0.68
+INESTABLE [>=1] endocrine:CAPA                           endocrine           estr06=azar  reg40=SOBRE reg120=azar  D1 0.26% x4.85/x1.91
+INESTABLE [>=1] endocrine:CAPA                           optic               estr06=BAJO  reg40=azar  reg120=NM    D1 0.00% x0.00/x0.00
+INESTABLE [>=1] endocrine:CAPA                           sensory_ascending   estr06=SOBRE reg40=SOBRE reg120=azar  D1 9.17% x3.81/x2.87
+CAMBIA    [>=1] endocrine:CAPA                           visual_projection   estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+RESUMEN [>=1] D1 tests=242 | estr06 SOBRE=55 BAJO=49 | reg40 SOBRE=21 BAJO=61 NM=22 | reg120 SOBRE=16 BAJO=41 NM=31 | acuerdo_reg40_reg120=198/242 | estr06->region se_mantienen=41 cambian=37 nuevos=9 inestables=44
+CRUCE_006 [>=1] PASS max_dif=0.0 faltan=0 n_con_entrada_distinto=0
+CONTROL_NEGATIVO [>=1] reg40 flags=11/4840 esperado=9.68 tope=29.04 OK=True
+CONTROL_NEGATIVO [>=1] reg120 flags=1/4840 esperado=9.68 tope=29.04 OK=True
+== VARIANTE >=5 | conjuntos_con_entrada=21/22 | tamano: estratos=28 ancho_log=0.3813 factor=1.464 ==
+ESTRATOS [>=5] reg40 n=816 unitarios=43 tam_max=1130
+ESTRATOS [>=5] reg120 n=2268 unitarios=136 tam_max=491
+MEZCLA [>=5] clase                    n   perm estr06  reg40 reg120
+MEZCLA [>=5] ascending             1736  0.987  0.981  0.439  0.236
+MEZCLA [>=5] central              32379  0.766  0.709  0.227  0.155
+MEZCLA [>=5] descending            1299  0.991  0.985  0.894  0.804
+MEZCLA [>=5] endocrine               76  0.999  0.993  0.867  0.693
+MEZCLA [>=5] motor                  110  0.999  0.993  0.918  0.779
+MEZCLA [>=5] optic                77530  0.441  0.415  0.141  0.104
+MEZCLA [>=5] sensory              16352  0.882  0.700  0.343  0.252
+MEZCLA [>=5] sensory_ascending      581  0.996  0.982  0.680  0.580
+MEZCLA [>=5] visual_centrifugal     524  0.996  0.960  0.902  0.814
+MEZCLA [>=5] visual_projection     8038  0.942  0.925  0.804  0.681
+MEZCLA [>=5] sin_anotacion           14  1.000  0.999  0.000  0.000
+NULO [>=5] reg40 R=5000 segundos=145.5 conteos_ok=True estratos_ok=True media_max_z=3.10 var_ratio_mediana=0.9994
+NULO [>=5] reg120 R=5000 segundos=145.6 conteos_ok=True estratos_ok=True media_max_z=2.43 var_ratio_mediana=0.9954
+-- NIVEL1 descending [>=5] | con_entrada=1262
+clase                   D1% estr06   enrE  reg40%    x40 f40   reg120%   x120 f120 
+ascending             13.62 SOBRE    5.15   14.75   0.92 azar    13.74   0.99 azar 
+central               62.42 SOBRE    1.53   58.07   1.07 SOBRE   61.88   1.01 azar 
+descending            14.43 SOBRE   13.97    4.31   3.35 SOBRE    5.37   2.69 SOBRE
+endocrine              0.01 azar     1.03    0.01   0.60 azar     0.01   0.55 azar 
+motor                  0.00 azar     0.15    0.04   0.12 azar     0.05   0.09 azar 
+optic                  0.33 BAJO     0.01    7.31   0.04 BAJO     5.33   0.06 BAJO 
+sensory                3.43 azar     1.04    7.10   0.48 BAJO     5.91   0.58 BAJO 
+sensory_ascending      0.88 SOBRE    7.21    1.70   0.52 BAJO     1.41   0.63 BAJO 
+visual_centrifugal     0.51 BAJO     0.34    1.55   0.33 BAJO     1.56   0.33 BAJO 
+visual_projection      4.37 BAJO     0.64    5.15   0.85 azar     4.74   0.92 azar 
+sin_anotacion          0.00 azar     0.00    0.00    nan NM       0.00    nan NM   
+-- NIVEL1 motor [>=5] | con_entrada=109
+clase                   D1% estr06   enrE  reg40%    x40 f40   reg120%   x120 f120 
+ascending              6.62 SOBRE    2.80    9.80   0.68 BAJO     6.69   0.99 azar 
+central               65.54 SOBRE    1.72   51.69   1.27 SOBRE   58.71   1.12 SOBRE
+descending            21.89 SOBRE   20.01    5.94   3.69 SOBRE    6.73   3.25 SOBRE
+endocrine              0.00 azar     0.00    0.01   0.00 azar     0.02   0.00 azar 
+motor                  0.68 azar    18.24    0.09   7.26 azar     0.15   4.53 azar 
+optic                  0.00 BAJO     0.00   12.69   0.00 BAJO    10.11   0.00 BAJO 
+sensory                3.15 azar     0.68   10.78   0.29 BAJO     8.90   0.35 BAJO 
+sensory_ascending      1.03 azar     5.90    2.01   0.51 azar     1.81   0.57 azar 
+visual_centrifugal     0.01 BAJO     0.01    1.09   0.01 BAJO     1.27   0.01 BAJO 
+visual_projection      1.08 BAJO     0.16    5.90   0.18 BAJO     5.61   0.19 BAJO 
+sin_anotacion          0.00 azar     0.00    0.00    nan NM       0.00    nan NM   
+-- NIVEL1 endocrine [>=5] | con_entrada=69
+clase                   D1% estr06   enrE  reg40%    x40 f40   reg120%   x120 f120 
+ascending             20.31 SOBRE   10.48   15.58   1.30 azar    15.85   1.28 azar 
+central               67.88 SOBRE    2.03   66.18   1.03 azar    67.12   1.01 azar 
+descending             4.31 azar     5.00    3.76   1.15 azar     3.33   1.29 azar 
+endocrine              0.00 azar     0.00    0.02   0.00 azar     0.00   0.00 azar 
+motor                  0.00 azar     0.00    0.05   0.00 azar     0.12   0.00 azar 
+optic                  0.00 BAJO     0.00    1.46   0.00 BAJO     0.82   0.00 azar 
+sensory                6.16 azar     1.56    8.60   0.72 azar     8.52   0.72 azar 
+sensory_ascending      1.24 azar     8.50    2.68   0.46 azar     3.02   0.41 azar 
+visual_centrifugal     0.00 azar     0.00    0.56   0.00 azar     0.46   0.00 azar 
+visual_projection      0.11 BAJO     0.02    1.12   0.10 azar     0.75   0.15 azar 
+sin_anotacion          0.00 azar     0.00    0.00    nan NM       0.00    nan NM   
+-- FINAS [>=5] (D1, top 3; flags estr06 / reg40 / reg120) --
+FINA [>=5] motor:ingestion_motor_neuron             con_entrada=  28 : central 84.99% estr=SOBRE reg40=SOBRE reg120=SOBRE | descending 5.89% estr=SOBRE reg40=azar reg120=azar | sensory 5.73% estr=SOBRE reg40=azar reg120=azar
+FINA [>=5] motor:neck_motor_neuron                  con_entrada=  26 : descending 43.07% estr=SOBRE reg40=SOBRE reg120=SOBRE | central 40.76% estr=azar reg40=azar reg120=azar | ascending 8.00% estr=azar reg40=BAJO reg120=azar
+FINA [>=5] motor:proboscis_motor_neuron             con_entrada=  24 : central 69.58% estr=SOBRE reg40=SOBRE reg120=SOBRE | descending 25.12% estr=SOBRE reg40=SOBRE reg120=SOBRE | ascending 3.44% estr=azar reg40=BAJO reg120=azar
+FINA [>=5] motor:antennal_motor_neuron              con_entrada=  10 : central 51.93% estr=SOBRE reg40=SOBRE reg120=azar | descending 32.26% estr=SOBRE reg40=SOBRE reg120=SOBRE | ascending 12.90% estr=SOBRE reg40=azar reg120=azar
+FINA [>=5] motor:crop_motor_neuron                  con_entrada=   8 : central 88.87% estr=SOBRE reg40=SOBRE reg120=azar | sensory 10.71% estr=azar reg40=azar reg120=azar | motor 0.41% estr=azar reg40=azar reg120=azar
+FINA [>=5] motor:eye_motor_neuron                   con_entrada=   4 : central 79.32% estr=SOBRE reg40=SOBRE reg120=azar | descending 13.70% estr=SOBRE reg40=azar reg120=azar | ascending 3.42% estr=azar reg40=BAJO reg120=azar
+FINA [>=5] motor:haustellum_motor_neuron            con_entrada=   4 : central 78.05% estr=SOBRE reg40=SOBRE reg120=SOBRE | descending 11.17% estr=SOBRE reg40=azar reg120=azar | ascending 7.82% estr=azar reg40=azar reg120=azar
+FINA [>=5] motor:sin_subclase                       con_entrada=   3 : ascending 71.32% estr=SOBRE reg40=azar reg120=azar | descending 22.37% estr=azar reg40=azar reg120=azar | central 6.30% estr=azar reg40=BAJO reg120=azar
+FINA [>=5] motor:salivary_motor_neuron              con_entrada=   2 : central 77.98% estr=azar reg40=azar reg120=azar | ascending 6.69% estr=azar reg40=azar reg120=azar | sensory 6.62% estr=azar reg40=azar reg120=azar
+FINA [>=5] endocrine:IPC                            con_entrada=  18 : central 82.13% estr=SOBRE reg40=azar reg120=azar | ascending 17.61% estr=azar reg40=azar reg120=azar | descending 0.26% estr=azar reg40=azar reg120=azar
+FINA [>=5] endocrine:lNSC_unknown                   con_entrada=  14 : central 58.86% estr=azar reg40=azar reg120=azar | ascending 41.14% estr=SOBRE reg40=azar reg120=azar | descending 0.00% estr=azar reg40=azar reg120=azar
+FINA [>=5] endocrine:mNSC_unknown                   con_entrada=   7 : central 96.83% estr=SOBRE reg40=azar reg120=azar | ascending 3.17% estr=azar reg40=azar reg120=azar | descending 0.00% estr=azar reg40=azar reg120=azar
+FINA [>=5] endocrine:CRZ                            con_entrada=   6 : sensory 46.33% estr=SOBRE reg40=azar reg120=azar | ascending 21.64% estr=azar reg40=azar reg120=azar | descending 17.49% estr=azar reg40=azar reg120=azar
+FINA [>=5] endocrine:DH31                           con_entrada=   6 : central 97.03% estr=SOBRE reg40=SOBRE reg120=azar | visual_projection 1.31% estr=azar reg40=azar reg120=azar | ascending 0.88% estr=azar reg40=azar reg120=azar
+FINA [>=5] endocrine:DH44                           con_entrada=   6 : central 93.94% estr=SOBRE reg40=SOBRE reg120=SOBRE | descending 3.96% estr=azar reg40=azar reg120=azar | ascending 1.41% estr=azar reg40=BAJO reg120=azar
+FINA [>=5] endocrine:DMS                            con_entrada=   6 : central 61.48% estr=azar reg40=azar reg120=azar | sensory 16.95% estr=azar reg40=azar reg120=azar | descending 8.64% estr=azar reg40=azar reg120=azar
+FINA [>=5] endocrine:Hugin-RG                       con_entrada=   4 : ascending 72.30% estr=SOBRE reg40=azar reg120=azar | descending 19.91% estr=azar reg40=azar reg120=azar | central 7.79% estr=azar reg40=BAJO reg120=azar
+FINA [>=5] endocrine:ITP                            con_entrada=   0 : ascending 0.00% estr=NA reg40=NA reg120=NA | central 0.00% estr=NA reg40=NA reg120=NA | descending 0.00% estr=NA reg40=NA reg120=NA
+FINA [>=5] endocrine:CAPA                           con_entrada=   2 : central 47.08% estr=azar reg40=BAJO reg120=azar | sensory 20.51% estr=azar reg40=azar reg120=azar | descending 13.83% estr=azar reg40=azar reg120=azar
+CAMBIA    [>=5] descending                               ascending           estr06=SOBRE -> region=azar  D1 13.62% x0.92/x0.99
+INESTABLE [>=5] descending                               central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 62.42% x1.07/x1.01
+NUEVO     [>=5] descending                               sensory             estr06=azar  -> region=BAJO  D1 3.43% x0.48/x0.58
+CAMBIA    [>=5] descending                               sensory_ascending   estr06=SOBRE -> region=BAJO  D1 0.88% x0.52/x0.63
+CAMBIA    [>=5] descending                               visual_projection   estr06=BAJO  -> region=azar  D1 4.37% x0.85/x0.92
+INESTABLE [>=5] motor                                    ascending           estr06=SOBRE reg40=BAJO  reg120=azar  D1 6.62% x0.68/x0.99
+NUEVO     [>=5] motor                                    sensory             estr06=azar  -> region=BAJO  D1 3.15% x0.29/x0.35
+CAMBIA    [>=5] endocrine                                ascending           estr06=SOBRE -> region=azar  D1 20.31% x1.30/x1.28
+CAMBIA    [>=5] endocrine                                central             estr06=SOBRE -> region=azar  D1 67.88% x1.03/x1.01
+INESTABLE [>=5] endocrine                                optic               estr06=BAJO  reg40=BAJO  reg120=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=5] endocrine                                visual_projection   estr06=BAJO  -> region=azar  D1 0.11% x0.10/x0.15
+INESTABLE [>=5] motor:ingestion_motor_neuron             ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 1.07% x0.31/x0.70
+CAMBIA    [>=5] motor:ingestion_motor_neuron             descending          estr06=SOBRE -> region=azar  D1 5.89% x1.46/x1.58
+CAMBIA    [>=5] motor:ingestion_motor_neuron             sensory             estr06=SOBRE -> region=azar  D1 5.73% x0.69/x0.70
+NUEVO     [>=5] motor:ingestion_motor_neuron             visual_centrifugal  estr06=azar  -> region=BAJO  D1 0.00% x0.00/x0.00
+INESTABLE [>=5] motor:neck_motor_neuron                  ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 8.00% x0.54/x0.82
+INESTABLE [>=5] motor:proboscis_motor_neuron             ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 3.44% x0.39/x0.77
+NUEVO     [>=5] motor:proboscis_motor_neuron             sensory             estr06=azar  -> region=BAJO  D1 1.77% x0.26/x0.28
+NUEVO     [>=5] motor:proboscis_motor_neuron             sensory_ascending   estr06=azar  -> region=BAJO  D1 0.00% x0.00/x0.00
+CAMBIA    [>=5] motor:antennal_motor_neuron              ascending           estr06=SOBRE -> region=azar  D1 12.90% x0.78/x1.02
+INESTABLE [>=5] motor:antennal_motor_neuron              central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 51.93% x1.24/x1.09
+NUEVO     [>=5] motor:antennal_motor_neuron              sensory             estr06=azar  -> region=BAJO  D1 2.65% x0.20/x0.24
+INESTABLE [>=5] motor:antennal_motor_neuron              sensory_ascending   estr06=azar  reg40=BAJO  reg120=azar  D1 0.26% x0.13/x0.18
+INESTABLE [>=5] motor:crop_motor_neuron                  ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 0.00% x0.00/xnan
+INESTABLE [>=5] motor:crop_motor_neuron                  central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 88.87% x1.30/x1.12
+CAMBIA    [>=5] motor:crop_motor_neuron                  optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+INESTABLE [>=5] motor:eye_motor_neuron                   ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 3.42% x0.38/x0.94
+INESTABLE [>=5] motor:eye_motor_neuron                   central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 79.32% x1.27/x1.09
+CAMBIA    [>=5] motor:eye_motor_neuron                   descending          estr06=SOBRE -> region=azar  D1 13.70% x3.20/x2.14
+INESTABLE [>=5] motor:eye_motor_neuron                   sensory_ascending   estr06=azar  reg40=BAJO  reg120=azar  D1 0.11% x0.05/x0.15
+CAMBIA    [>=5] motor:haustellum_motor_neuron            descending          estr06=SOBRE -> region=azar  D1 11.17% x1.69/x1.77
+INESTABLE [>=5] motor:haustellum_motor_neuron            visual_projection   estr06=BAJO  reg40=azar  reg120=BAJO  D1 0.00% x0.00/x0.00
+CAMBIA    [>=5] motor:sin_subclase                       ascending           estr06=SOBRE -> region=azar  D1 71.32% x2.12/x1.57
+INESTABLE [>=5] motor:sin_subclase                       central             estr06=azar  reg40=BAJO  reg120=azar  D1 6.30% x0.16/x0.24
+CAMBIA    [>=5] motor:salivary_motor_neuron              optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=5] endocrine:IPC                            central             estr06=SOBRE -> region=azar  D1 82.13% x1.02/x1.03
+CAMBIA    [>=5] endocrine:IPC                            optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=5] endocrine:IPC                            visual_projection   estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=5] endocrine:lNSC_unknown                   ascending           estr06=SOBRE -> region=azar  D1 41.14% x1.97/x1.17
+CAMBIA    [>=5] endocrine:lNSC_unknown                   optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/xnan
+CAMBIA    [>=5] endocrine:mNSC_unknown                   central             estr06=SOBRE -> region=azar  D1 96.83% x1.18/x1.11
+CAMBIA    [>=5] endocrine:mNSC_unknown                   optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+INESTABLE [>=5] endocrine:CRZ                            central             estr06=azar  reg40=BAJO  reg120=azar  D1 10.61% x0.19/x0.26
+CAMBIA    [>=5] endocrine:CRZ                            optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=5] endocrine:CRZ                            sensory             estr06=SOBRE -> region=azar  D1 46.33% x4.43/x2.16
+INESTABLE [>=5] endocrine:DH31                           central             estr06=SOBRE reg40=SOBRE reg120=azar  D1 97.03% x1.19/x1.03
+CAMBIA    [>=5] endocrine:DH31                           optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+INESTABLE [>=5] endocrine:DH44                           ascending           estr06=azar  reg40=BAJO  reg120=azar  D1 1.41% x0.05/x1.33
+CAMBIA    [>=5] endocrine:DH44                           optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+INESTABLE [>=5] endocrine:DH44                           sensory             estr06=azar  reg40=BAJO  reg120=azar  D1 0.69% x0.06/x0.11
+CAMBIA    [>=5] endocrine:DH44                           visual_projection   estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=5] endocrine:DMS                            optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/x0.00
+CAMBIA    [>=5] endocrine:DMS                            sensory_ascending   estr06=SOBRE -> region=azar  D1 7.03% x6.04/x5.35
+CAMBIA    [>=5] endocrine:Hugin-RG                       ascending           estr06=SOBRE -> region=azar  D1 72.30% x2.09/x1.53
+INESTABLE [>=5] endocrine:Hugin-RG                       central             estr06=azar  reg40=BAJO  reg120=azar  D1 7.79% x0.20/x0.31
+INESTABLE [>=5] endocrine:CAPA                           central             estr06=azar  reg40=BAJO  reg120=azar  D1 47.08% x0.60/x0.68
+CAMBIA    [>=5] endocrine:CAPA                           optic               estr06=BAJO  -> region=azar  D1 0.00% x0.00/xnan
+INESTABLE [>=5] endocrine:CAPA                           sensory_ascending   estr06=azar  reg40=SOBRE reg120=azar  D1 9.70% x4.21/x3.08
+RESUMEN [>=5] D1 tests=231 | estr06 SOBRE=33 BAJO=32 | reg40 SOBRE=17 BAJO=38 NM=21 | reg120 SOBRE=11 BAJO=24 NM=21 | acuerdo_reg40_reg120=209/231 | estr06->region se_mantienen=27 cambian=30 nuevos=6 inestables=22
+CRUCE_006 [>=5] PASS max_dif=0.0 faltan=0 n_con_entrada_distinto=0
+CONTROL_NEGATIVO [>=5] reg40 flags=5/4620 esperado=9.24 tope=27.72 OK=True
+CONTROL_NEGATIVO [>=5] reg120 flags=2/4620 esperado=9.24 tope=27.72 OK=True
+-- QUE CONTROLA CADA CLASE CON REGION Y TAMANO (D1; firme = igual en reg40, reg120, >=1 y >=5) --
+QUE_CONTROLA_REGION ascending: mezcla_min=0.226 con_poder | SOBRE: ninguna | BAJO: ninguna de nivel1 + 0 finos
+QUE_CONTROLA_REGION central: mezcla_min=0.152 con_poder | SOBRE: motor x1.31/x1.16, motor:ingestion_motor_neuron x1.31/x1.20, motor:proboscis_motor_neuron x1.48/x1.28, motor:haustellum_motor_neuron x1.73/x1.61, endocrine:DH44 x1.97/x1.20 | BAJO: ninguna de nivel1 + 0 finos
+QUE_CONTROLA_REGION descending: mezcla_min=0.766 con_poder | SOBRE: descending x3.29/x2.61, motor x3.69/x3.21, motor:neck_motor_neuron x5.06/x3.74, motor:proboscis_motor_neuron x4.37/x4.24, motor:antennal_motor_neuron x5.34/x3.83 | BAJO: ninguna de nivel1 + 0 finos
+QUE_CONTROLA_REGION endocrine: mezcla_min=0.324 con_poder | SOBRE: ninguna | BAJO: ninguna de nivel1 + 0 finos
+QUE_CONTROLA_REGION motor: mezcla_min=0.645 con_poder | SOBRE: motor:ingestion_motor_neuron x20.35/x8.00 | BAJO: ninguna de nivel1 + 0 finos
+QUE_CONTROLA_REGION optic: mezcla_min=0.092 sin_poder | SOBRE: ninguna | BAJO: descending, motor + 6 finos
+QUE_CONTROLA_REGION sensory: mezcla_min=0.190 con_poder | SOBRE: ninguna | BAJO: descending, motor + 4 finos
+QUE_CONTROLA_REGION sensory_ascending: mezcla_min=0.544 con_poder | SOBRE: ninguna | BAJO: ninguna de nivel1 + 1 finos
+QUE_CONTROLA_REGION visual_centrifugal: mezcla_min=0.777 con_poder | SOBRE: ninguna | BAJO: descending, motor + 1 finos
+QUE_CONTROLA_REGION visual_projection: mezcla_min=0.672 con_poder | SOBRE: ninguna | BAJO: motor + 3 finos
+QUE_CONTROLA_REGION sin_anotacion: mezcla_min=0.000 sin_poder | SOBRE: ninguna | BAJO: ninguna de nivel1 + 0 finos
+R_PEDIDO_500 r=5000 ok=True
+CHEQUEOS mapeo=True conteos_reg40_>=1=True estratos_reg40_>=1=True media_reg40_>=1=True varianza_reg40_>=1=True control_reg40_>=1=True conteos_reg120_>=1=True estratos_reg120_>=1=True media_reg120_>=1=True varianza_reg120_>=1=True control_reg120_>=1=True conteos_reg40_>=5=True estratos_reg40_>=5=True media_reg40_>=5=True varianza_reg40_>=5=True control_reg40_>=5=True conteos_reg120_>=5=True estratos_reg120_>=5=True media_reg120_>=5=True varianza_reg120_>=5=True control_reg120_>=5=True
+JSON results/output_control_regionnull_2026-10-10/output_control_region_null.json md5=72427fdc69a583ca796f448f6aaae0a5
+VEREDICTO_NULO PASS
+FIN_NULO segundos=679.5

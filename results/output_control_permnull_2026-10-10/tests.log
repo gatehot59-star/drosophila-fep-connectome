@@ -1,0 +1,8 @@
+TEST test_u_igual_fuerza_bruta_y_005 -> D1 y D2 por vectores u == fuerza bruta == medir() de la 005 (3 grafos x 2 umbrales)
+TEST test_permutador_conserva_conteos_y_los_brazos_difieren -> perm conserva clases; estr conserva clases por estrato; perm NO conserva estratos
+TEST test_esperanza_exacta_y_control_negativo -> media y varianza del nulo == formulas exactas (max z 2.73 / 1.66); 5% de error en la media o 50% en la varianza lo ponen en rojo; control OK
+TEST test_evento_raro_no_da_infinito -> clase de 2 neuronas y un solo presinaptico: el nulo nunca lo toca y z = 0.28 (antes daba infinito)
+TEST test_plantado_sobre_en_los_dos_nulos -> clase 0 que alimenta sola a O: SOBRE con perm y con estr
+TEST test_confusion_por_tamano_perm_cae_estr_no -> neuronas grandes con destinos al azar: perm=SOBRE, estr=azar
+TEST test_extremo_a_extremo_contra_la_005 -> extremo a extremo: cruce con la 005 PASS, R=300 da INCOMPLETO, un D1 movido 1e-6 da FAIL
+TESTS_OK 7
