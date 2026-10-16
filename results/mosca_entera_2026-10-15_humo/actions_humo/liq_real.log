@@ -1,0 +1,34 @@
+== liq_entera.py :: H_MOSCA_ENTERA, brazos LIQ, TASA y PROX (2026-10-14-047) ==
+ENTORNO python=3.12.15 numpy=2.5.3 scipy=1.18.1 pandas=3.0.5 maquina=runnervm8k3b6
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 annot=719904abad876c68ace1b5690c9b9b63 comp=031a4b6eac490bda17c75b65ccaa7906 -> True
+GRAFO neuronas=138639 aristas=15091983 sinapsis_abs=54492922 mapeo_ok=True | 0.5 s
+ESTIMULO azucar=20 de 21 (falta 720575940620900446 en v783: True) mn9_indice=138332
+RADIO crudo=2164.292802 -> 0.90 | 0.7 s
+PROX mn9=0.000486028 positivos=134116
+LIQ tau=30 mn9=0.00202666 positivos=48407 max=0.7694 min=-0.007742 | 2.1 s
+TASA tau=30 mn9=0.00202666 positivos=48407 max=0.7694 min=-0.007742 | 1.9 s
+JSON liq_real.json md5=a223b8fabee97825c4d77a8e1b355025
+FIN segundos=6.4
+	Command being timed: "python tools/mosca_entera/liq_entera.py --modo real --taus 30 --humo --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --annot /tmp/in/annotations.tsv --out out"
+	User time (seconds): 9.24
+	System time (seconds): 0.29
+	Percent of CPU this job got: 137%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:06.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2247916
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4
+	Minor (reclaiming a frame) page faults: 47197
+	Voluntary context switches: 205
+	Involuntary context switches: 669
+	Swaps: 0
+	File system inputs: 4056
+	File system outputs: 1272
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

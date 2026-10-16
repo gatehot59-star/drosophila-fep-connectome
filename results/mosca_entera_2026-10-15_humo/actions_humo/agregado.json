@@ -1,0 +1,56 @@
+{
+ "humo": true,
+ "K": 326,
+ "j_liq": {
+  "30": 0.3726315789473684
+ },
+ "j_tasa": {
+  "30": 0.3726315789473684
+ },
+ "j_prox": 0.26601941747572816,
+ "mn9_nulos": {
+  "SHUF_W": [
+   0.002058216573454528
+  ],
+  "SHUF_G": [
+   -4.8036333256383425e-05
+  ]
+ },
+ "j_nulos": {
+  "SHUF_W": [
+   0.19413919413919414
+  ],
+  "SHUF_G": [
+   0.003076923076923077
+  ]
+ },
+ "veredictos": {
+  "REPRO_SHIU": "PASA",
+  "K": 326,
+  "K_SANO": true,
+  "MN9": "INCOMPLETO",
+  "MN9_ge": {
+   "SHUF_W": 1,
+   "SHUF_G": 0
+  },
+  "CONJUNTO": "INCOMPLETO",
+  "CONJUNTO_ge": {
+   "SHUF_W": 0,
+   "SHUF_G": 0
+  },
+  "RIVAL_d": 0.10661216147164027,
+  "RIVAL": "SOSTENIDA",
+  "LIQ_difs": [
+   0.0
+  ],
+  "LIQ_mediana": 0.0,
+  "LIQ": "INCOMPLETO",
+  "REPRO_SHIU_medido": "INCOMPLETO"
+ },
+ "lif_real": {
+  "ensayos_mn9": 2,
+  "n_run": 2,
+  "tasa_mn9": 62.0,
+  "K": 326
+ }
+}

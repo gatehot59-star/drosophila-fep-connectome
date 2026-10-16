@@ -1,0 +1,30 @@
+Brian2==2.10.1
+cloudpickle==3.1.2
+Cython==3.1.3
+Jinja2==3.1.6
+joblib==1.6.0
+MarkupSafe==3.0.4
+mpmath==1.3.0
+numpy==2.5.3
+packaging==26.3
+pandas==3.0.5
+pyarrow==25.0.1
+pyparsing==3.3.3
+python-dateutil==2.9.0.post0
+scipy==1.18.1
+setuptools==84.0.0
+six==1.17.0
+sympy==1.14.0
+719904abad876c68ace1b5690c9b9b63  /tmp/in/annotations.tsv
+031a4b6eac490bda17c75b65ccaa7906  /tmp/in/completeness.csv
+3d802fd542b5d18570ba1ba0bb0abed9  /tmp/in/connectivity.parquet
+5886c9105b7fc9fd4a8ae8baf1b18965  /tmp/shiu/model.py
+b835f7f8028f78b11c8e0a7526ee5083  tools/mosca_entera/agregar_mosca_entera.py
+c82a835586846568cb35e1f1a5e9b14b  tools/mosca_entera/ids_shiu.py
+9012bd4cb0961f0d74c3b39ca9575dbd  tools/mosca_entera/lif_shiu.py
+3efe1176915f3d8df4cb710045214f6d  tools/mosca_entera/liq_entera.py
+12f2a3c086b185398ca6183096156b39  tools/mosca_entera/prueba_mosca_entera.py
+4
+               total        used        free      shared  buff/cache   available
+Mem:           15988         995       11920          43        3459       14993
+Swap:           3071           0        3071
