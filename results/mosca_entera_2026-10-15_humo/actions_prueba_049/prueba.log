@@ -1,0 +1,110 @@
+TEST nulos_conservan_lo_que_dicen -> SHUF_W conserva topologia y pesos; SHUF_G conserva grados y pesos por arista; difieren
+TEST prox_a_mano -> PROX en una cadena 0->1->2->3->4 == cuenta a mano
+TEST top_y_jaccard -> top_positivos excluye estimuladas y no positivos, empates por indice; Jaccard a mano
+TEST bandas_del_sello -> REPRO_SHIU, K_SANO, MN9, CONJUNTO, RIVAL y LIQ con numeros plantados dan lo que dice el sello
+TEST lectura_y_mapeo -> leer_grafo lee el parquet y el Completeness de Shiu; un id cambiado pone el mapeo en rojo
+== agregar_mosca_entera.py :: H_MOSCA_ENTERA (2026-10-14-047 y 049) ==
+LIF real ensayos_mn9=30 de 30 tasa_mn9=12.00 Hz K=100 | SHUF_W corridas=20 con_mn9>=5=0 -> REPRO_SHIU PASA
+TAU 30 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 31 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 32 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 33 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 34 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 35 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 36 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 37 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 38 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 39 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+PROX J=0.3333 mn9=0.1
+NULOS SHUF_W n=40 mn9_max=0.01 J_max=0.0000
+NULOS SHUF_G n=40 mn9_max=0.01 J_max=0.0000
+VEREDICTO REPRO_SHIU PASA
+VEREDICTO K_SANO True
+VEREDICTO MN9 SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO CONJUNTO SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO RIVAL SOSTENIDA d=+0.4848
+VEREDICTO LIQ SOSTENIDA mediana=+0.1515
+ENMIENDA LIQ mediana max|r_LIQ - r_TASA|=- degenerada=False
+NULOS_G1 SHUF_W n=0 mn9_max=- J_max=- radio_g1_mediana=-
+NULOS_G1 SHUF_G n=0 mn9_max=- J_max=- radio_g1_mediana=-
+VEREDICTO LIQ_ENMIENDA SOSTENIDA (banda_046=SOSTENIDA)
+VEREDICTO LAT NO_MEDIDO
+VEREDICTO MN9_G1 INCOMPLETO nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO CONJUNTO_G1 INCOMPLETO nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+LECTURA MN9: sin lectura (SOSTENIDA contra 0,9; INCOMPLETO contra G1)
+LECTURA CONJUNTO: sin lectura (SOSTENIDA contra 0,9; INCOMPLETO contra G1)
+MD5 agregado.json=0be63713552d1937ee12c2fdf8d007fb agregado.log=bd337f234d6060cf1408056b1201cc77
+TEST agregado_extremo_a_extremo -> carpeta plantada -> agregar_mosca_entera main: lee todo y escribe los veredictos
+TEST latencia_a_mano -> una neurona sola: r igual en LIQ y TASA, latencia 2 contra 4 como da la cuenta cerrada
+TEST latencia_lif_desde_espigas -> resumir() saca la primera espiga por ensayo y su mediana, a mano
+TEST nulos_g1_con_el_factor_del_real -> matriz_g1 escala el nulo con el factor del real y mide su radio crudo
+TEST bandas_de_la_enmienda -> LIQ degenerada, LAT, MN9_G1, CONJUNTO_G1 y la lectura conjunta con numeros plantados
+== agregar_mosca_entera.py :: H_MOSCA_ENTERA (2026-10-14-047 y 049) ==
+LIF real ensayos_mn9=30 de 30 tasa_mn9=12.00 Hz K=100 | SHUF_W corridas=20 con_mn9>=5=0 -> REPRO_SHIU PASA
+TAU 30 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 31 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 32 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 33 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 34 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 35 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 36 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 37 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 38 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+TAU 39 LIQ mn9=0.3 J=0.8182 | TASA mn9=0.2 J=0.6667
+PROX J=0.3333 mn9=0.1
+NULOS SHUF_W n=40 mn9_max=0.01 J_max=0.0000
+NULOS SHUF_G n=40 mn9_max=0.01 J_max=0.0000
+VEREDICTO REPRO_SHIU PASA
+VEREDICTO K_SANO True
+VEREDICTO MN9 SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO CONJUNTO SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO RIVAL SOSTENIDA d=+0.4848
+VEREDICTO LIQ SOSTENIDA mediana=+0.1515
+ENMIENDA LIQ mediana max|r_LIQ - r_TASA|=1e-10 degenerada=True
+LAT tau=30 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT tau=31 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT tau=32 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT tau=33 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT tau=34 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT tau=35 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT tau=36 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT tau=37 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT tau=38 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT tau=39 n=100 rho_LIQ=1.0000 rho_TASA=-1.0000
+LAT fraccion de S_LAT con latencia distinta entre LIQ y TASA=1.0000
+NULOS_G1 SHUF_W n=40 mn9_max=0.01 J_max=0.0000 radio_g1_mediana=0.1200
+NULOS_G1 SHUF_G n=40 mn9_max=0.01 J_max=0.0000 radio_g1_mediana=0.1200
+VEREDICTO LIQ_ENMIENDA REFUTADA_DEGENERADA (banda_046=SOSTENIDA)
+VEREDICTO LAT SOSTENIDA D_LAT=+2.0000
+VEREDICTO MN9_G1 SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO CONJUNTO_G1 SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+LECTURA MN9: el cableado lleva el azucar mejor que sus barajados, con y sin igualar ganancia
+LECTURA CONJUNTO: el cableado lleva el azucar mejor que sus barajados, con y sin igualar ganancia
+MD5 agregado.json=23373c71cc6b2db9e387475618e3af10 agregado.log=5579e00e63cc38e1e637076f5ce4f930
+TEST agregado_de_la_enmienda -> carpeta plantada con latencias y nulos G1 -> las lineas nuevas del agregado
+TEST celda_igual_factorial2 -> simular(), matriz() y tau_por_root() == factorial2_mosca.py sellado (liq y tasa)
+== lif_shiu.py :: H_MOSCA_ENTERA, brazo LIF_SHIU (2026-10-14-047) ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5
+ESTIMULO 2 neuronas a 100 Hz, lectura 1004, n_run=2, t_run=200 ms
+>>> Experiment:     real
+    Output file:    /tmp/tmpjy1xyidc/out/real.parquet
+    Excited neurons: 2
+    Elapsed time:   26 s
+CORRIDA real ensayos_con_espiga_lectura=2 de 2 tasa_lectura=107.50 Hz espigas=154 activas=4 K=2 | 26.9 s
+JSON lif_real.json md5=4860f39cb73b67b0fdb4fba5c8709cd3
+FIN segundos=27.0
+== lif_shiu.py :: H_MOSCA_ENTERA, brazo LIF_SHIU (2026-10-14-047) ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5
+ESTIMULO 2 neuronas a 100 Hz, lectura 1004, n_run=2, t_run=200 ms
+>>> Experiment:     SHUF_W_0
+    Output file:    /tmp/tmpjy1xyidc/out/SHUF_W_0.parquet
+    Excited neurons: 2
+    Elapsed time:   8 s
+CORRIDA SHUF_W_0 ensayos_con_espiga_lectura=2 de 2 tasa_lectura=120.00 Hz espigas=169 activas=4 K=2 | 8.0 s
+JSON lif_shufW_k000.json md5=42f6949f5a83b6294cd0d5659211f150
+FIN segundos=8.0
+TEST lif_shiu_grafo_chico -> el model.py de Shiu corre en 10 neuronas: la cadena estimulada dispara, la aislada no
+TESTS_OK 13 de 13
+EXIT_PRUEBA=0
