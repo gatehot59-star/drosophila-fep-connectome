@@ -1,0 +1,16 @@
+== agregar_umb.py :: H_ENTERA_UMBRAL (2026-10-14-051) HUMO, NUMEROS SIN VALOR ==
+LIF results/mosca_entera_2026-10-15/actions_correr/lif_real.json md5=f6383d18a0e05efb65696175949df9fa K=321
+REAL theta=0.0015758872 activas=321 estado=OK mn9=0.00637701 rango_mn9=41 J_umb=0.068220 J_tasa=0.3659574468
+NULOS SHUF_W n=1 mn9_max=0 J_max=0.1363 theta_mediana=8.18372e-05 estados={'OK': 1}
+SECUNDARIA SHUF_W theta_real fijo: nulos con mn9 >= real=0 activas_mediana=88
+NULOS SHUF_G n=1 mn9_max=0 J_max=0.0031 theta_mediana=0.00189614 estados={'OK': 1}
+SECUNDARIA SHUF_G theta_real fijo: nulos con mn9 >= real=0 activas_mediana=393
+CONTROL_HUMO PIN PASA
+CONTROL_HUMO CALIB_REAL PASA
+CONTROL_HUMO TASA_049 PASA
+VEREDICTO_HUMO H_UMB_MN9 INCOMPLETO nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO_HUMO H_UMB_CONJUNTO INCOMPLETO nulos_ge={'SHUF_W': 1, 'SHUF_G': 0}
+VEREDICTO_HUMO H_UMB_GANA REFUTADA d=-0.2977
+LECTURA_HUMO sin lectura (INCOMPLETO)
+MD5 agregado_umb.json=5f10474d5716a47af18d24957f4a94c9 agregado_umb.log=4bf7503b45b68192d27cefb79a8ff9e2
+EXIT_AGREGAR=0

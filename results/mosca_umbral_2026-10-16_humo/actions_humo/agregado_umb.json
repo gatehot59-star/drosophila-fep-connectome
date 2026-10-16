@@ -1,0 +1,83 @@
+{
+ "humo": true,
+ "K": 321,
+ "lif_md5": "f6383d18a0e05efb65696175949df9fa",
+ "real": {
+  "theta": 0.0015758872032165527,
+  "activas": 321,
+  "estado": "OK",
+  "mn9_umb": 0.006377014953045517,
+  "rango_mn9": 41
+ },
+ "J_umb": 0.06821963394342762,
+ "J_tasa": 0.3659574468085106,
+ "mn9_nulos": {
+  "SHUF_W": [
+   0.0
+  ],
+  "SHUF_G": [
+   0.0
+  ]
+ },
+ "j_nulos": {
+  "SHUF_W": [
+   0.13628318584070798
+  ],
+  "SHUF_G": [
+   0.003125
+  ]
+ },
+ "estados": {
+  "SHUF_W": [
+   "OK"
+  ],
+  "SHUF_G": [
+   "OK"
+  ]
+ },
+ "theta_nulos": {
+  "SHUF_W": [
+   8.183717727661133e-05
+  ],
+  "SHUF_G": [
+   0.0018961429595947266
+  ]
+ },
+ "mn9_fijo": {
+  "SHUF_W": [
+   0.0
+  ],
+  "SHUF_G": [
+   0.0
+  ]
+ },
+ "activas_fijo": {
+  "SHUF_W": [
+   88
+  ],
+  "SHUF_G": [
+   393
+  ]
+ },
+ "controles": {
+  "PIN": true,
+  "CALIB_REAL": true,
+  "TASA_049": true,
+  "ok": true
+ },
+ "veredictos": {
+  "MN9": "INCOMPLETO",
+  "MN9_ge": {
+   "SHUF_W": 0,
+   "SHUF_G": 0
+  },
+  "CONJUNTO": "INCOMPLETO",
+  "CONJUNTO_ge": {
+   "SHUF_W": 1,
+   "SHUF_G": 0
+  },
+  "GANA_d": -0.297737812865083,
+  "GANA": "REFUTADA"
+ },
+ "lectura": "sin lectura (INCOMPLETO)"
+}

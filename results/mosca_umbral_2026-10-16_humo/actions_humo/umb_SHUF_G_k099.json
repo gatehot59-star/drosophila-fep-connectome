@@ -1,0 +1,38 @@
+{
+ "version": "2026-10-14-051",
+ "humo": true,
+ "modo": "nulos",
+ "md5": {
+  "conn": "3d802fd542b5d18570ba1ba0bb0abed9",
+  "annot": "719904abad876c68ace1b5690c9b9b63",
+  "comp": "031a4b6eac490bda17c75b65ccaa7906",
+  "lif": "f6383d18a0e05efb65696175949df9fa"
+ },
+ "n": 138639,
+ "aristas": 15091983,
+ "mn9": 138332,
+ "K": 321,
+ "N_OBJ": 321,
+ "TOL": 32,
+ "tau": 30,
+ "tipo": "SHUF_G",
+ "k0": 99,
+ "nulos": {
+  "99": {
+   "mn9": 0.0,
+   "theta": 0.0018961429595947266,
+   "activas": 321,
+   "estado": "OK",
+   "probados": 26,
+   "radio_crudo": 319.61856064512546,
+   "radio_g1": 0.1329102533109724,
+   "mn9_fijo": 0.0,
+   "activas_fijo": 393
+  }
+ },
+ "radio_crudo_real": 2164.292802208251,
+ "factor": 0.0004158402223034334,
+ "theta_real": 0.0015758872032165527,
+ "real_humo": true,
+ "segundos": 105.97846102714539
+}

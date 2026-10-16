@@ -1,0 +1,12 @@
+5f10474d5716a47af18d24957f4a94c9  agregado_umb.json
+4bf7503b45b68192d27cefb79a8ff9e2  agregado_umb.log
+291d83b9c158a6a25bb15d88c28fdd5b  agregar_stdout.log
+81e1a74db7a5bfd3c9f955d502781aca  nulos_G_k099.log
+efaf03da36afc5ec7b9b770f054b1b97  nulos_W_k099.log
+a4678aa0a5f7d9192f024d4456c4ccb9  real.log
+dddfaeb2957cd40a2b202a39d931cf51  umb_SHUF_G_k099.json
+36fa540400f8a75d74c862876bcfc3c8  umb_SHUF_W_k099.json
+c91ee4d9e580ba5d37b96765a10032b1  umb_real.json
+4f0af7d30df02c4dd63f67e875aeea7b  versiones_G_k099.txt
+975b47589fa250cc2fad3aa3cfa90171  versiones_W_k099.txt
+c958afb1d1d88ddd9a504c31eeb3ea69  versiones_real.txt

@@ -1,0 +1,22 @@
+numpy==2.5.3
+pandas==3.0.5
+pyarrow==25.0.1
+python-dateutil==2.9.0.post0
+scipy==1.18.1
+six==1.17.0
+719904abad876c68ace1b5690c9b9b63  /tmp/in/annotations.tsv
+031a4b6eac490bda17c75b65ccaa7906  /tmp/in/completeness.csv
+3d802fd542b5d18570ba1ba0bb0abed9  /tmp/in/connectivity.parquet
+f6383d18a0e05efb65696175949df9fa  results/mosca_entera_2026-10-15/actions_correr/lif_real.json
+4eaf942c9b67e8b92aecc7aaa443f200  tools/mosca_entera/agregar_mosca_entera.py
+ada5b143f8abe7108c0026e1cd350cf8  tools/mosca_entera/agregar_umb.py
+c82a835586846568cb35e1f1a5e9b14b  tools/mosca_entera/ids_shiu.py
+88c8459eb87ed328de9f65f38337f8b4  tools/mosca_entera/lif_shiu.py
+ae3c1a2dd85a6faecfbfe76d71b0072f  tools/mosca_entera/liq_entera.py
+f83186f3d83314162314ad85490a29a0  tools/mosca_entera/prueba_mosca_entera.py
+456e02241c65b7a96125d9fcf44b5001  tools/mosca_entera/prueba_umb.py
+b9581ae42f938495e07f453097426257  tools/mosca_entera/umb_entera.py
+4
+               total        used        free      shared  buff/cache   available
+Mem:           15988        1172       11906          45        3290       14815
+Swap:           3071           0        3071
