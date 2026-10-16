@@ -1,0 +1,2 @@
+505d34be980ca0856ba21e0f9b3f14d3  prueba.log
+1a619769512bd0937bed976f3f9d5b67  versiones_prueba.txt

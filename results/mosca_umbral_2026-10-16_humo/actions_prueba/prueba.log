@@ -1,0 +1,24 @@
+TEST umb_contra_cuenta_densa -> simular_umb == una cuenta densa escrita aparte, con theta 0 y 0,2 (1e-12)
+TEST umbral_neurona_sola -> una neurona: theta 1,5 la deja en 0 exacto; theta 0,5 da la cuenta cerrada
+TEST calibracion_regla_del_sello -> theta = el mas chico probado con Activas <= N; NO_ALCANZA, NO_BAJA y conteo
+TEST estimulo_del_humo -> 20 no sensoriales al azar con semilla 99, sin azucar ni MN9, siempre las mismas
+TEST nulos_de_la_049 -> los nulos son nulo() y matriz_g1() de liq_entera: la misma matriz que la 049, bit a bit
+TEST bandas_y_controles -> MN9, CONJUNTO y GANA con numeros plantados; un control en rojo deja todo NO_MEDIDO
+== agregar_umb.py :: H_ENTERA_UMBRAL (2026-10-14-051) ==
+LIF /tmp/tmpy5g_n5o7/lif_real.json md5=91c0fc94aa12bb7d38b76cd9219dcb07 K=321
+REAL theta=0.01 activas=321 estado=OK mn9=0.3 rango_mn9=7 J_umb=0.637755 J_tasa=0.3659574468
+NULOS SHUF_W n=40 mn9_max=0 J_max=0.0000 theta_mediana=0.001 estados={'OK': 40}
+SECUNDARIA SHUF_W theta_real fijo: nulos con mn9 >= real=0 activas_mediana=50
+NULOS SHUF_G n=40 mn9_max=0 J_max=0.0000 theta_mediana=0.001 estados={'OK': 40}
+SECUNDARIA SHUF_G theta_real fijo: nulos con mn9 >= real=0 activas_mediana=50
+CONTROL PIN PASA
+CONTROL CALIB_REAL PASA
+CONTROL TASA_049 PASA
+VEREDICTO H_UMB_MN9 SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO H_UMB_CONJUNTO SOSTENIDA nulos_ge={'SHUF_W': 0, 'SHUF_G': 0}
+VEREDICTO H_UMB_GANA SOSTENIDA d=+0.2718
+LECTURA con el presupuesto de actividad del LIF el cableado real lleva el azucar a MN9 mejor que 80 barajados: la falla de la 049 era la no linealidad, no el cableado; con CONJUNTO SOSTENIDA se puede sellar la destilacion
+MD5 agregado_umb.json=1a2c112b0f1a536a4543d6c1145ca189 agregado_umb.log=3533209da001239347be313f5dedb8a3
+TEST agregado_punta_a_punta -> carpeta plantada -> agregar_umb main: lee todo y escribe veredictos y lectura
+TESTS_OK 7 de 7
+EXIT_PRUEBA=0
