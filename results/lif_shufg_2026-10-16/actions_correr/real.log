@@ -1,0 +1,36 @@
+== lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 -> True comp=031a4b6eac490bda17c75b65ccaa7906 -> True
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5 scipy=1.18.1
+GRAFO n=138639 aristas=15091983 estimulo=20 lectura=720575940660219265 (indice 138332) n_run=30 t_run=1000 ms r_poi=100 Hz
+ATAJO real n1=0 D1+=0.0 D2+=261.0
+>>> Experiment:     real
+    Output file:    out/real.parquet
+    Excited neurons: 20
+    Elapsed time:   504 s
+CORRIDA real E_MN9=30 de 30 F_MN9=62.50 Hz espigas=270242 activas=406 K=327 | 506.5 s
+JSON lif_shufg_real.json md5=926d07cb5a00323f8222a5b2aab6189f
+FIN segundos=507.2
+	Command being timed: "python tools/mosca_entera/lif_shufg.py --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --out out --n-proc 3 --modo real --n-run 30"
+	User time (seconds): 742.06
+	System time (seconds): 28.61
+	Percent of CPU this job got: 148%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 8:38.52
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3637416
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 485
+	Minor (reclaiming a frame) page faults: 4777272
+	Voluntary context switches: 71814
+	Involuntary context switches: 9944
+	Swaps: 0
+	File system inputs: 83184
+	File system outputs: 1680040
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

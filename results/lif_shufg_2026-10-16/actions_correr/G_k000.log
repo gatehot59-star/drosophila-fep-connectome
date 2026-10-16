@@ -1,0 +1,67 @@
+== lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+MODEL blob=5ba7083cf55bf6092967f8d9065e86cd677efed1 esperado=5ba7083cf55bf6092967f8d9065e86cd677efed1 -> True
+REF liq_SHUF_G_k000.json md5=05bedf6fc250ed8c053d99236f3052bf esperado=05bedf6fc250ed8c053d99236f3052bf -> True
+REF liq_SHUF_G_k020.json md5=62982026c51da6756caba9ba49f91eae esperado=62982026c51da6756caba9ba49f91eae -> True
+PIN conn=3d802fd542b5d18570ba1ba0bb0abed9 -> True comp=031a4b6eac490bda17c75b65ccaa7906 -> True
+ENTORNO brian2=2.10.1 numpy=2.5.3 pandas=3.0.5 scipy=1.18.1
+GRAFO n=138639 aristas=15091983 estimulo=20 lectura=720575940660219265 (indice 138332) n_run=10 t_run=1000 ms r_poi=100 Hz
+NULO_MISMO k=0 radio=339.676857969 ref=339.6768579687038 dif_rel=2.2084595435559514e-12 -> PASA
+ATAJO k=0 n1=0 D1+=0.0 D2+=2.0
+>>> Experiment:     SHUF_G_0
+    Output file:    out/SHUF_G_0.parquet
+    Excited neurons: 20
+    Elapsed time:   193 s
+CORRIDA SHUF_G_0 E_MN9=0 de 10 F_MN9=0.00 Hz espigas=22916 activas=83 K=33 | 193.8 s
+NULO_MISMO k=1 radio=368.154080447 ref=368.15408044723944 dif_rel=1.620749027301392e-12 -> PASA
+ATAJO k=1 n1=0 D1+=0.0 D2+=27.0
+>>> Experiment:     SHUF_G_1
+    Output file:    out/SHUF_G_1.parquet
+    Excited neurons: 20
+    Elapsed time:   135 s
+CORRIDA SHUF_G_1 E_MN9=0 de 10 F_MN9=0.00 Hz espigas=22800 activas=74 K=33 | 136.1 s
+NULO_MISMO k=2 radio=334.261622042 ref=334.26162204558574 dif_rel=9.595787803666503e-12 -> PASA
+ATAJO k=2 n1=0 D1+=0.0 D2+=24.0
+>>> Experiment:     SHUF_G_2
+    Output file:    out/SHUF_G_2.parquet
+    Excited neurons: 20
+    Elapsed time:   138 s
+CORRIDA SHUF_G_2 E_MN9=0 de 10 F_MN9=0.00 Hz espigas=23016 activas=82 K=34 | 138.7 s
+NULO_MISMO k=3 radio=329.115289713 ref=329.11528971279876 dif_rel=1.8798390418777763e-12 -> PASA
+ATAJO k=3 n1=0 D1+=0.0 D2+=0.0
+>>> Experiment:     SHUF_G_3
+    Output file:    out/SHUF_G_3.parquet
+    Excited neurons: 20
+    Elapsed time:   181 s
+CORRIDA SHUF_G_3 E_MN9=0 de 10 F_MN9=0.00 Hz espigas=23134 activas=79 K=33 | 181.6 s
+NULO_MISMO k=4 radio=262.415385748 ref=262.4153857454042 dif_rel=1.021691882270217e-11 -> PASA
+ATAJO k=4 n1=0 D1+=0.0 D2+=17.0
+>>> Experiment:     SHUF_G_4
+    Output file:    out/SHUF_G_4.parquet
+    Excited neurons: 20
+    Elapsed time:   141 s
+CORRIDA SHUF_G_4 E_MN9=0 de 10 F_MN9=0.00 Hz espigas=23178 activas=85 K=36 | 142.1 s
+JSON lif_shufg_G_k000.json md5=df0f9980ca60273981f05b4cf3132330
+FIN segundos=809.6
+	Command being timed: "python tools/mosca_entera/lif_shufg.py --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --out out --n-proc 3 --modo nulos --k0 0 --n 5 --n-run 10 --ref results/mosca_entera_2026-10-15/actions_correr/liq_SHUF_G_k000.json --ref results/mosca_entera_2026-10-15/actions_correr/liq_SHUF_G_k020.json"
+	User time (seconds): 1192.63
+	System time (seconds): 39.20
+	Percent of CPU this job got: 149%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 13:43.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2712972
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 475
+	Minor (reclaiming a frame) page faults: 7561418
+	Voluntary context switches: 107813
+	Involuntary context switches: 19710
+	Swaps: 0
+	File system inputs: 82888
+	File system outputs: 3331168
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

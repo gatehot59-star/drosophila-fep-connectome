@@ -1,0 +1,52 @@
+== agregar_lif_shufg.py :: H_LIF_SHUFG (2026-10-14-055), sello SELLO-LIF-SHUFG-054.md ==
+CONTROL PIN PASA 
+CONTROL CTRL_REAL PASA (30 de 30, minimo 27)
+REAL E_MN9=30 de 30 F_MN9=62.5000 Hz activas=406 espigas=270242 K=327 atajo n1=0 D1+=0.0 D2+=261.0
+NULO k=0 E_MN9=0 F_MN9=0.0000 activas=83 K=33 J=0.0028 n1=0 D1+=0.0 D2+=2.0 radio=339.676858 desbocado=False | 194 s
+NULO k=1 E_MN9=0 F_MN9=0.0000 activas=74 K=33 J=0.0000 n1=0 D1+=0.0 D2+=27.0 radio=368.154080 desbocado=False | 136 s
+NULO k=2 E_MN9=0 F_MN9=0.0000 activas=82 K=34 J=0.0000 n1=0 D1+=0.0 D2+=24.0 radio=334.261622 desbocado=False | 139 s
+NULO k=3 E_MN9=0 F_MN9=0.0000 activas=79 K=33 J=0.0000 n1=0 D1+=0.0 D2+=0.0 radio=329.115290 desbocado=False | 182 s
+NULO k=4 E_MN9=0 F_MN9=0.0000 activas=85 K=36 J=0.0028 n1=0 D1+=0.0 D2+=17.0 radio=262.415386 desbocado=False | 142 s
+NULO k=5 E_MN9=0 F_MN9=0.0000 activas=84 K=39 J=0.0000 n1=0 D1+=0.0 D2+=47.0 radio=249.506760 desbocado=False | 129 s
+NULO k=6 E_MN9=0 F_MN9=0.0000 activas=123 K=57 J=0.0000 n1=0 D1+=0.0 D2+=8.0 radio=254.466522 desbocado=False | 91 s
+NULO k=7 E_MN9=0 F_MN9=0.0000 activas=91 K=31 J=0.0000 n1=0 D1+=0.0 D2+=2.0 radio=1092.115144 desbocado=False | 95 s
+NULO k=8 E_MN9=0 F_MN9=0.0000 activas=93 K=43 J=0.0000 n1=0 D1+=0.0 D2+=141.0 radio=338.827609 desbocado=False | 122 s
+NULO k=9 E_MN9=0 F_MN9=0.0000 activas=105 K=36 J=0.0000 n1=0 D1+=0.0 D2+=12.0 radio=343.463666 desbocado=False | 93 s
+NULO k=10 E_MN9=0 F_MN9=0.0000 activas=85 K=34 J=0.0000 n1=0 D1+=0.0 D2+=4.0 radio=333.415135 desbocado=False | 196 s
+NULO k=11 E_MN9=0 F_MN9=0.0000 activas=104 K=50 J=0.0027 n1=0 D1+=0.0 D2+=14.0 radio=289.111646 desbocado=False | 142 s
+NULO k=12 E_MN9=0 F_MN9=0.0000 activas=83 K=40 J=0.0000 n1=0 D1+=0.0 D2+=33.0 radio=309.978969 desbocado=False | 136 s
+NULO k=13 E_MN9=0 F_MN9=0.0000 activas=82 K=34 J=0.0000 n1=0 D1+=0.0 D2+=18.0 radio=265.639174 desbocado=False | 182 s
+NULO k=14 E_MN9=0 F_MN9=0.0000 activas=81 K=32 J=0.0000 n1=0 D1+=0.0 D2+=82.0 radio=277.582367 desbocado=False | 142 s
+NULO k=15 E_MN9=0 F_MN9=0.0000 activas=95 K=43 J=0.0000 n1=0 D1+=0.0 D2+=66.0 radio=357.479490 desbocado=False | 160 s
+NULO k=16 E_MN9=0 F_MN9=0.0000 activas=91 K=36 J=0.0028 n1=0 D1+=0.0 D2+=22.0 radio=258.787567 desbocado=False | 111 s
+NULO k=17 E_MN9=0 F_MN9=0.0000 activas=101 K=55 J=0.0000 n1=0 D1+=0.0 D2+=5.0 radio=283.812616 desbocado=False | 117 s
+NULO k=18 E_MN9=0 F_MN9=0.0000 activas=104 K=41 J=0.0000 n1=0 D1+=0.0 D2+=2.0 radio=470.110123 desbocado=False | 152 s
+NULO k=19 E_MN9=0 F_MN9=0.0000 activas=89 K=35 J=0.0000 n1=0 D1+=0.0 D2+=39.0 radio=266.326956 desbocado=False | 117 s
+NULO k=20 E_MN9=0 F_MN9=0.0000 activas=95 K=45 J=0.0000 n1=0 D1+=0.0 D2+=80.0 radio=311.395848 desbocado=False | 198 s
+NULO k=21 E_MN9=0 F_MN9=0.0000 activas=82 K=36 J=0.0028 n1=0 D1+=0.0 D2+=2.0 radio=235.891987 desbocado=False | 136 s
+NULO k=22 E_MN9=0 F_MN9=0.0000 activas=103 K=42 J=0.0000 n1=0 D1+=0.0 D2+=127.0 radio=259.067428 desbocado=False | 139 s
+NULO k=23 E_MN9=0 F_MN9=0.0000 activas=142 K=61 J=0.0000 n1=0 D1+=0.0 D2+=14.0 radio=338.889626 desbocado=False | 181 s
+NULO k=24 E_MN9=0 F_MN9=0.0000 activas=99 K=42 J=0.0000 n1=0 D1+=0.0 D2+=18.0 radio=379.246604 desbocado=False | 141 s
+NULO k=25 E_MN9=0 F_MN9=0.0000 activas=102 K=46 J=0.0000 n1=0 D1+=0.0 D2+=87.0 radio=251.031765 desbocado=False | 210 s
+NULO k=26 E_MN9=0 F_MN9=0.0000 activas=101 K=51 J=0.0000 n1=0 D1+=0.0 D2+=21.0 radio=306.032871 desbocado=False | 149 s
+NULO k=27 E_MN9=0 F_MN9=0.0000 activas=87 K=35 J=0.0000 n1=0 D1+=0.0 D2+=7.0 radio=262.480965 desbocado=False | 146 s
+NULO k=28 E_MN9=0 F_MN9=0.0000 activas=89 K=41 J=0.0027 n1=0 D1+=0.0 D2+=38.0 radio=332.581997 desbocado=False | 194 s
+NULO k=29 E_MN9=0 F_MN9=0.0000 activas=84 K=37 J=0.0000 n1=0 D1+=0.0 D2+=17.0 radio=273.247114 desbocado=False | 150 s
+NULO k=30 E_MN9=0 F_MN9=0.0000 activas=78 K=33 J=0.0000 n1=0 D1+=0.0 D2+=2.0 radio=295.814411 desbocado=False | 150 s
+NULO k=31 E_MN9=0 F_MN9=0.0000 activas=103 K=46 J=0.0000 n1=0 D1+=0.0 D2+=24.0 radio=267.582061 desbocado=False | 102 s
+NULO k=32 E_MN9=0 F_MN9=0.0000 activas=79 K=36 J=0.0000 n1=1 D1+=11.0 D2+=20.0 radio=372.813237 desbocado=False | 103 s
+NULO k=33 E_MN9=0 F_MN9=0.0000 activas=78 K=36 J=0.0000 n1=0 D1+=0.0 D2+=31.0 radio=315.940092 desbocado=False | 134 s
+NULO k=34 E_MN9=0 F_MN9=0.0000 activas=85 K=36 J=0.0028 n1=0 D1+=0.0 D2+=5.0 radio=679.564310 desbocado=False | 106 s
+NULO k=35 E_MN9=0 F_MN9=0.0000 activas=85 K=33 J=0.0000 n1=0 D1+=0.0 D2+=108.0 radio=379.017307 desbocado=False | 200 s
+NULO k=36 E_MN9=0 F_MN9=0.0000 activas=123 K=47 J=0.0000 n1=0 D1+=0.0 D2+=79.0 radio=317.627836 desbocado=False | 139 s
+NULO k=37 E_MN9=0 F_MN9=0.0000 activas=80 K=38 J=0.0000 n1=0 D1+=0.0 D2+=73.0 radio=296.260628 desbocado=False | 144 s
+NULO k=38 E_MN9=0 F_MN9=0.0000 activas=92 K=33 J=0.0000 n1=0 D1+=0.0 D2+=179.0 radio=358.765681 desbocado=False | 186 s
+NULO k=39 E_MN9=0 F_MN9=0.0000 activas=89 K=35 J=0.0000 n1=0 D1+=0.0 D2+=482.0 radio=383.210436 desbocado=False | 144 s
+CONTROL NULO_MISMO PASA en 40 de 40 (otros estados 0, sin archivo 0)
+NULOS medidos=40 faltan=0 llegan=[] ge_real=[] desbocados=[]
+VEREDICTO H_LIF_G_SHIU SOSTENIDA (llegan=0, faltan=0)
+VEREDICTO H_LIF_G_VARA SOSTENIDA (con F_MN9 >= real=0, faltan=0, F_real=62.5000 Hz)
+VEREDICTO H_LIF_K32 NO_LLEGA (foco k=32)
+LECTURA K32 NO_LLEGA: el atajo de k32 es de nuestra celda de tasa; el LIF no lo toma. El freno de H_UMB_MN9 es de la neurona, no del barajado.
+DESCRIPTIVO nulos con n1>=1: [32] | foco n1=1 D1+=11.0 D2+=20.0 | foco unico con n1>=1: True
+DESCRIPTIVO activas mediana=89 max=142 | J mediana=0.0000 max=0.0028 | F_MN9 max=0.0000 Hz
