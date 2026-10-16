@@ -14,15 +14,18 @@ lang: en
 
 > **Relevancia (opinión, 2026-10-14-007):** baja a media. Es un mapa de consulta con nulos serios, no un descubrimiento.
 
+> **Relevancia, revisada (2026-10-14-044):** baja como mapa. BANC (Bates et al., Nature 2026) ya responde qué alimenta cada salida, Braun et al. (Nature 2024) ya tiene las redes de descendentes y Stürner et al. (Nature 2025) el atlas de descendentes y ascendentes. Lo único propio es el nulo de tamaño y región. Reencuadre recomendado: usar ese nulo para poner a prueba la afirmación de BANC sobre lazos locales, con la réplica en BANC v888 como corrida central (decide Abraham).
+
 ## Abstract [ESCRIBIR AL FINAL]
 
 Slots, in order: (1) the question; (2) the statistic: the share of each output neuron's synaptic input that comes from each class, at one and two hops; (3) three nulls of increasing strength (random destinations, size-matched label permutation, region-preserving permutation) and three corrections (Benjamini-Yekutieli, Holm, max-T); (4) what looks like control at first sight and turns out to be size or location; (5) what survives everything: descending neurons drive motor, neck and antennal outputs and other descending neurons, and the optic lobe is depleted onto descending neurons; (6) the visual escape as a worked case: vision reaches action only through the descending bottleneck.
 
-## 1. Introduction
+## 1. Introduction [2026-10-14-044]
 
 - The fly brain talks to the body through a few output classes: descending neurons to the nerve cord, motor neurons of the head and neurosecretory cells. [REFERENCIAS POR VERIFICAR]
 - A whole-brain connectome lets us count, for every output neuron, where its synaptic input comes from. Counting is easy; deciding which counts are more than size and location is not.
-- **[NO MEDIDO]** We did not find a published input map of all output classes against nulls that fix neuron size and brain region. It needs a literature review (descending and ascending connectomics in FlyWire, MANC and BANC) before it is written as a gap. For the escape case the review is done and it closed a door: the visual to descending counts are already published from the same dataset (see 3.5).
+- **[REVISADO]** The question is not open. Bates et al. (Nature 2026, the BANC brain-and-cord connectome) ask what influences each effector (motor neurons, endocrine cells and visceral efferents) and answer with an influence metric: local sensory cells in the same body part, linked by ascending and descending neurons. Braun et al. (Nature 2024) show networks of descending neurons that recruit other descending neurons, against a shuffled network. Stürner et al. (Nature 2025) give the complete atlas of descending and ascending neurons in FlyWire, FANC and MANC, including the sensory input of each descending neuron.
+- What is left for this paper is the expectation: how much of each input share survives nulls that fix size and brain region. **[NO MEDIDO]** Only the abstracts of the three papers and the introduction of BANC were read; their methods still have to be checked for size- or region-matched nulls. For the escape case the review is done and it closed the same door: the visual to descending counts are already published from the same dataset (see the escape case).
 - Contribution: a measured map with three nulls and three multiple-comparison corrections, with code and logs public.
 
 ## 2. Methods
@@ -123,7 +126,8 @@ Slots, in order: (1) the question; (2) the statistic: the share of each output n
 - [ ] Re-correr el nulo de neuropilo con DNp09 de 4 neuronas y con umbral de 5 sinapsis, para poder poner sus números de DNp09 al lado de los de la 060.
 - [ ] Leer el cotejo de la réplica de H_LECTOR antes de dejar el vínculo con el Paper 2 en la Discusión.
 - [ ] Réplica del mapa de salidas en BANC v888 (ya bajado en brain-env): es lo que más le suma.
-- [ ] Revisión de literatura de descendentes y ascendentes (FlyWire, MANC, BANC) para el hueco de §1.
+- [x] Revisión de literatura del §1 (2026-10-14-044): BANC, Braun 2024 y Stürner 2025 ya responden la pregunta como mapa; falta leer sus métodos completos buscando nulos de tamaño o región.
+- [ ] Reencuadre (decide Abraham): el Paper 3 como prueba con nulo regional de la afirmación de BANC sobre lazos locales, con la réplica en BANC v888 como corrida central.
 - [ ] Decidir sel_post: adentro, apéndice o afuera.
 - [ ] Figuras desde los logs, con script commiteado.
 - [ ] Referencias verificadas una por una.
