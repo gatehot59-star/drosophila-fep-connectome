@@ -55,7 +55,10 @@ def t_celda(ref):
     pre, post, w = grafo_chico(n)
     W1, r1 = le.matriz(n, pre, post, w)
     W2, r2 = f2.matriz(n, (pre, post, w), densa_ok=False)
-    assert abs(r1 - r2) <= 1e-12 * max(1.0, abs(r2)) and abs(W1 - W2).max() <= 1e-15
+    # eigs arranca de un vector al azar (ARPACK, sin v0) en las dos: el radio coincide a ~1e-11 relativo, no al bit
+    assert abs(r1 - r2) <= 1e-8 * abs(r2) and abs(W1 - W2).max() <= 1e-8 * abs(W2).max(), (r1, r2)
+    r_densa = float(np.abs(np.linalg.eigvals(sp.coo_matrix((w, (post, pre)), shape=(n, n)).toarray())).max())
+    assert abs(r1 - r_densa) <= 1e-8 * r_densa, (r1, r_densa)
     ids = np.arange(720575940600000000, 720575940600000000 + n)
     tau1, tau2 = le.tau_por_root(ids, 30), f2.tau_por_root(ids, 30)
     assert np.array_equal(tau1, tau2)
