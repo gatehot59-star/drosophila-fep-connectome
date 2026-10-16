@@ -1,0 +1,55 @@
+name: mosca-entera-prueba
+# Respuesta 2026-10-14-047. Prueba del instrumento de H_MOSCA_ENTERA (sello tools/mosca_entera/SELLO-MOSCA-ENTERA.md,
+# 500f66d): celda contra el factorial2_mosca.py sellado (8d305e9), nulos, PROX, bandas, agregado y el LIF de Shiu en un
+# grafo de 10 neuronas. Solo se dispara al pushear results/mosca_entera_2026-10-15_humo/PRUEBA en esta rama.
+on:
+  push:
+    branches: ["titan/mosca-entera-2026-10-15"]
+    paths: ["results/mosca_entera_2026-10-15_humo/PRUEBA"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  MODEL_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/model.py
+  REF_SHA: 8d305e97d40ef89385317c3579bfc6d1090c57ca
+jobs:
+  prueba:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: prueba y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          python -m pip install brian2 cython joblib
+          git fetch -q origin titan/lector-2026-10-15
+          git worktree add -q /tmp/ref "$REF_SHA"
+          mkdir -p /tmp/shiu
+          curl -fsSL -o /tmp/shiu/model.py "$MODEL_URL"
+          D=results/mosca_entera_2026-10-15_humo/actions_prueba
+          mkdir -p "$D"
+          python -m pip freeze > "$D"/versiones_prueba.txt
+          md5sum tools/mosca_entera/*.py /tmp/shiu/model.py /tmp/ref/tools/factorial2/factorial2_mosca.py >> "$D"/versiones_prueba.txt
+          git hash-object /tmp/shiu/model.py >> "$D"/versiones_prueba.txt
+          set +e
+          python tools/mosca_entera/prueba_mosca_entera.py --ref /tmp/ref --shiu /tmp/shiu --exigir 2>&1 | tee "$D"/prueba.log
+          RC=$?
+          set -e
+          echo "EXIT_PRUEBA=$RC" >> "$D"/prueba.log
+          (cd "$D" && md5sum *.log *.txt > MD5SUMS.txt)
+          git worktree remove --force /tmp/ref
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-047): prueba del instrumento de H_MOSCA_ENTERA en Actions" || echo nada_que_commitear
+          git pull --rebase origin titan/mosca-entera-2026-10-15 || true
+          git push origin HEAD:titan/mosca-entera-2026-10-15
+          exit $RC

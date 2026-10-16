@@ -1,0 +1,99 @@
+name: mosca-entera-humo
+# Respuesta 2026-10-14-047. Humo de H_MOSCA_ENTERA en el cerebro entero: numeros sin valor, mide tiempos y memoria de
+# cada brazo para partir la corrida de verdad. LIF de Shiu real y un SHUF_W con 2 ensayos; LIQ, TASA y PROX con tau 30;
+# un nulo SHUF_W y uno SHUF_G. Solo se dispara al pushear results/mosca_entera_2026-10-15_humo/HUMO en esta rama.
+on:
+  push:
+    branches: ["titan/mosca-entera-2026-10-15"]
+    paths: ["results/mosca_entera_2026-10-15_humo/HUMO"]
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Connectivity_783.parquet
+  COMP_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/Completeness_783.csv
+  MODEL_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960/model.py
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {parte: lif_real, cmd: "lif_shiu.py --modo real --n-run 2 --n-proc 2 --humo"}
+          - {parte: lif_shuf, cmd: "lif_shiu.py --modo shuf --k0 0 --n 1 --n-run 2 --n-proc 2 --humo"}
+          - {parte: liq_real, cmd: "liq_entera.py --modo real --taus 30 --humo"}
+          - {parte: liq_W, cmd: "liq_entera.py --modo nulos --tipo SHUF_W --k0 0 --n 1 --humo"}
+          - {parte: liq_G, cmd: "liq_entera.py --modo nulos --tipo SHUF_G --k0 0 --n 1 --humo"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: medir
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          C="${{ matrix.cmd }}"
+          if [[ "$C" == lif_* ]]; then python -m pip install brian2 cython joblib; fi
+          export PYTHONPATH=/tmp/shiu:$PWD/tools/mosca_entera
+          mkdir -p /tmp/in /tmp/shiu out
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/completeness.csv "$COMP_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          curl -fsSL -o /tmp/shiu/model.py "$MODEL_URL"
+          python -m pip freeze > out/versiones_${{ matrix.parte }}.txt
+          md5sum /tmp/in/* /tmp/shiu/model.py tools/mosca_entera/*.py >> out/versiones_${{ matrix.parte }}.txt
+          nproc >> out/versiones_${{ matrix.parte }}.txt
+          free -m >> out/versiones_${{ matrix.parte }}.txt
+          if [[ "$C" == lif_* ]]; then EXTRA="--shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --out out"; else EXTRA="--conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --annot /tmp/in/annotations.tsv --out out"; fi
+          if [ -x /usr/bin/time ]; then TV="/usr/bin/time -v"; else TV=""; fi
+          $TV python tools/mosca_entera/$C $EXTRA 2>&1 | tee out/${{ matrix.parte }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mosca-entera-humo-${{ matrix.parte }}
+          path: out/
+  agregar:
+    needs: [medir]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: mosca-entera-humo-*
+          path: art
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          W=/tmp/todo
+          mkdir -p "$W"
+          find art -name '*.json' -exec cp {} "$W"/ \;
+          find art -name '*_top.npz' -exec cp {} "$W"/ \;
+          D=results/mosca_entera_2026-10-15_humo/actions_humo
+          mkdir -p "$D"
+          find art -name '*.log' -exec cp {} "$D"/ \;
+          find art -name 'versiones_*.txt' -exec cp {} "$D"/ \;
+          set +e
+          python tools/mosca_entera/agregar_mosca_entera.py --dir "$W" --humo 2>&1 | tee "$D"/agregar_stdout.log
+          RC=$?
+          set -e
+          echo "EXIT_AGREGAR=$RC" >> "$D"/agregar_stdout.log
+          cp "$W"/*.json "$D"/ 2>/dev/null || true
+          cp "$W"/agregado.log "$D"/ 2>/dev/null || true
+          (cd "$D" && md5sum * > MD5SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-047): humo de H_MOSCA_ENTERA en el cerebro entero, numeros sin valor" || echo nada_que_commitear
+          git pull --rebase origin titan/mosca-entera-2026-10-15 || true
+          git push origin HEAD:titan/mosca-entera-2026-10-15
