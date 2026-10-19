@@ -1,0 +1,32 @@
+# maquina: runnervmxehtw | Linux-7.0.0-1017-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = e40c3a4f2a9e1aed9431f0bc1f8ecdc8
+PIN f3_60_json=True lector_json=True md5_SELLO_LECTOR=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_lector_MD5SUMS=True md5_lector_mosca.py=True md5_nulos_r2.py=True md5_rival_MD5SUMS=True md5_rival_mosca.py=True md5_tarea_mosca.py=True md5_taulibre_MD5SUMS=True md5_taulibre_mosca.py=True rival_6_json=True taulibre_4_reales=True
+SUJETO R2 neuronas=33489 entradas=564 -> True | 4.7 s
+RED radio_crudo=2032.307097 | taus=[22, 23] | taus publicadas por H_TAU_LIBRE=10
+CURVA entrenamiento=2400 prueba=2000 (semilla 12) n=[6, 12, 24, 48, 96, 192, 384, 768, 2400] repeticiones=20 anidados=True
+CONTROL_NEGATIVO MOSCA_L tau=22 n=2400 acierto=0.5000 azar=0.5000 tope=0.5500 -> True
+TAU 22 W=0.9490 MOSCA_L(n=2400)=0.9945 lambda=0.0001 repro_taulibre=True | 642.5 s
+CURVA MOSCA_L celda=0.3|0.15 tau=22 n=6 media=0.4556 min=0.3000 max=0.5905 | W_n media=0.5251 (7 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=22 n=12 media=0.5365 min=0.3000 max=0.7060 | W_n media=0.6035 (17 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=22 n=24 media=0.7274 min=0.4000 max=0.8275 | W_n media=0.7127 (19 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=22 n=48 media=0.8591 min=0.7865 max=0.9245 | W_n media=0.7981 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=22 n=96 media=0.9311 min=0.8795 max=0.9630 | W_n media=0.8657 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=22 n=192 media=0.9689 min=0.9335 max=0.9900 | W_n media=0.9075 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=22 n=384 media=0.9830 min=0.9675 max=0.9970 | W_n media=0.9307 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=22 n=768 media=0.9896 min=0.9825 max=0.9950 | W_n media=0.9414 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=22 n=2400 media=0.9945 min=0.9945 max=0.9945 | W_n media=- (0 de 0)
+TAU 23 W=0.9230 MOSCA_L(n=2400)=0.9950 lambda=0.01 repro_taulibre=True | 629.7 s
+CURVA MOSCA_L celda=0.3|0.15 tau=23 n=6 media=0.4466 min=0.3000 max=0.5630 | W_n media=0.5145 (7 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=23 n=12 media=0.5410 min=0.3000 max=0.7060 | W_n media=0.5918 (17 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=23 n=24 media=0.7326 min=0.4000 max=0.8160 | W_n media=0.6945 (19 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=23 n=48 media=0.8671 min=0.7880 max=0.9275 | W_n media=0.7825 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=23 n=96 media=0.9287 min=0.8790 max=0.9615 | W_n media=0.8512 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=23 n=192 media=0.9719 min=0.9365 max=0.9905 | W_n media=0.8832 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=23 n=384 media=0.9852 min=0.9695 max=0.9930 | W_n media=0.9086 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=23 n=768 media=0.9906 min=0.9820 max=0.9950 | W_n media=0.9164 (20 de 20)
+CURVA MOSCA_L celda=0.3|0.15 tau=23 n=2400 media=0.9950 min=0.9950 max=0.9950 | W_n media=- (0 de 0)
+CHEQUEO REPRO_TAULIBRE iguales=2/2 -> True
+CHEQUEO INSTRUMENTO R2_TAMANO=True PLAN_MOSCA=True PUBLICADOS=True SUBCONJUNTOS=True GUARDA_FUGA=True REPRO_TAULIBRE=True CONTROL_NEGATIVO=True RUTAS_EN_CLASES=True PIN=True -> VALIDO
+escrito mosca_c2_t22.json md5=4c531a5af872c24d453f80c80aab3811
+# duracion_s=1278.9
+EXIT_RUN=0

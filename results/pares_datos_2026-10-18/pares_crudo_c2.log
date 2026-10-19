@@ -1,0 +1,50 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = e40c3a4f2a9e1aed9431f0bc1f8ecdc8
+PIN f3_60_json=True lector_json=True md5_SELLO_LECTOR=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_lector_MD5SUMS=True md5_lector_mosca.py=True md5_nulos_r2.py=True md5_rival_MD5SUMS=True md5_rival_mosca.py=True md5_tarea_mosca.py=True md5_taulibre_MD5SUMS=True md5_taulibre_mosca.py=True rival_6_json=True taulibre_4_reales=True
+SUJETO R2 neuronas=33489 entradas=564 -> True | 4.5 s
+CURVA entrenamiento=2400 prueba=2000 rasgos=22560 n=[6, 12, 24, 48, 96, 192, 384, 768, 2400] repeticiones=20 anidados=True
+CONTROL_NEGATIVO CRUDO n=2400 acierto=0.5000 azar=0.5000 tope=0.5500 -> True
+CHEQUEO REPRO_CRUDO prueba=12 lambda=10 (H_RIVAL 10) -> True
+BRAZO CRUDO rutas_en_clases=True | 86.7 s
+BRAZO PCA_L componentes=240 varianza=0.5958 error_ortonormal=3.62e-13 -> True | 9.0 s
+BRAZO PROY_L k=0 | 6.0 s
+BRAZO PROY_L k=1 | 6.0 s
+BRAZO PROY_L k=2 | 5.9 s
+BRAZO PROY_L k=3 | 5.9 s
+BRAZO PROY_L k=4 | 5.9 s
+BRAZO PROY_L k=5 | 5.9 s
+BRAZO PROY_L k=6 | 5.9 s
+BRAZO PROY_L k=7 | 5.9 s
+BRAZO PROY_L k=8 | 6.0 s
+BRAZO PROY_L k=9 | 5.9 s
+CURVA CRUDO celda=0.3|0.15 n=6 media=0.4488 min=0.2975 max=0.6315
+CURVA CRUDO celda=0.3|0.15 n=12 media=0.4729 min=0.3000 max=0.6270
+CURVA CRUDO celda=0.3|0.15 n=24 media=0.7027 min=0.6035 max=0.8025
+CURVA CRUDO celda=0.3|0.15 n=48 media=0.8517 min=0.7635 max=0.9650
+CURVA CRUDO celda=0.3|0.15 n=96 media=0.9347 min=0.8645 max=0.9845
+CURVA CRUDO celda=0.3|0.15 n=192 media=0.9717 min=0.9265 max=0.9945
+CURVA CRUDO celda=0.3|0.15 n=384 media=0.9834 min=0.9565 max=0.9990
+CURVA CRUDO celda=0.3|0.15 n=768 media=0.9941 min=0.9845 max=0.9990
+CURVA CRUDO celda=0.3|0.15 n=2400 media=0.9995 min=0.9995 max=0.9995
+CURVA PCA_L celda=0.3|0.15 n=6 media=0.4092 min=0.3000 max=0.5065
+CURVA PCA_L celda=0.3|0.15 n=12 media=0.4255 min=0.3000 max=0.5130
+CURVA PCA_L celda=0.3|0.15 n=24 media=0.4581 min=0.4000 max=0.5505
+CURVA PCA_L celda=0.3|0.15 n=48 media=0.5214 min=0.4000 max=0.6140
+CURVA PCA_L celda=0.3|0.15 n=96 media=0.6615 min=0.5000 max=0.7465
+CURVA PCA_L celda=0.3|0.15 n=192 media=0.8276 min=0.7710 max=0.8975
+CURVA PCA_L celda=0.3|0.15 n=384 media=0.9442 min=0.9165 max=0.9675
+CURVA PCA_L celda=0.3|0.15 n=768 media=0.9930 min=0.9870 max=0.9965
+CURVA PCA_L celda=0.3|0.15 n=2400 media=0.9995 min=0.9995 max=0.9995
+CURVA PROY_L celda=0.3|0.15 n=6 media=0.4467 min_k=0.4327 max_k=0.4608
+CURVA PROY_L celda=0.3|0.15 n=12 media=0.5245 min_k=0.5157 max_k=0.5416
+CURVA PROY_L celda=0.3|0.15 n=24 media=0.7132 min_k=0.6981 max_k=0.7263
+CURVA PROY_L celda=0.3|0.15 n=48 media=0.8460 min_k=0.8355 max_k=0.8551
+CURVA PROY_L celda=0.3|0.15 n=96 media=0.9043 min_k=0.8962 max_k=0.9112
+CURVA PROY_L celda=0.3|0.15 n=192 media=0.9401 min_k=0.9347 max_k=0.9456
+CURVA PROY_L celda=0.3|0.15 n=384 media=0.9618 min_k=0.9552 max_k=0.9649
+CURVA PROY_L celda=0.3|0.15 n=768 media=0.9743 min_k=0.9693 max_k=0.9768
+CURVA PROY_L celda=0.3|0.15 n=2400 media=0.9831 min_k=0.9790 max_k=0.9865
+CHEQUEO INSTRUMENTO R2_TAMANO=True PLAN_CRUDO=True RIVAL_CELDA=True SUBCONJUNTOS=True GUARDA_FUGA=True CONTROL_NEGATIVO=True REPRO_CRUDO=True PCA_ORTONORMAL=True RUTAS_EN_CLASES=True PIN=True -> VALIDO
+escrito crudo_c2.json md5=56e1623198b17ff1e80e9165b6291caf
+# duracion_s=161.7
+EXIT_RUN=0
