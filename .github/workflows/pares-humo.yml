@@ -1,0 +1,79 @@
+name: pares-humo
+# Respuesta 2026-10-14-059. Humo ciego de H_PARES_DATOS (tools/pares/SELLO-PARES-DATOS.md, 0d30190): REPRO_TAULIBRE
+# (tau 20) y REPRO_CRUDO a tamano completo en c2 y c5, que reproducen resultados ya publicados; la prueba unitaria; y
+# las rutas de la curva con 600 y 200 ensayos en la semilla 99, sin aciertos nuevos.
+# Solo se dispara al pushear results/pares_datos_2026-10-18_humo/HUMO en esta rama.
+on:
+  push:
+    branches: ["titan/pares-datos-2026-10-18"]
+    paths: ["results/pares_datos_2026-10-18_humo/HUMO"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  humo:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {parte: mosca_c2, args: "--celda '0.3|0.15' --mosca --taus 20 --humo"}
+          - {parte: mosca_c5, args: "--celda '0.6|0.45' --mosca --taus 20 --humo"}
+          - {parte: crudo_c2, args: "--celda '0.3|0.15' --crudo --humo"}
+          - {parte: crudo_c5, args: "--celda '0.6|0.45' --crudo --humo"}
+          - {parte: prueba, args: ""}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: humo
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          python -m pip freeze > out/versiones_humo_${{ matrix.parte }}.txt
+          md5sum tools/pares/*.py tools/taulibre/taulibre_mosca.py tools/lector/lector_mosca.py >> out/versiones_humo_${{ matrix.parte }}.txt
+          if [ "${{ matrix.parte }}" = "prueba" ]; then
+            python tools/pares/prueba_pares.py 2>&1 | tee out/humo_prueba.log
+            exit $?
+          fi
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv >> out/versiones_humo_${{ matrix.parte }}.txt
+          python tools/pares/pares_datos.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out ${{ matrix.args }} 2>&1 | tee out/humo_${{ matrix.parte }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pares-humo-${{ matrix.parte }}
+          path: out/
+  commitear:
+    needs: [humo]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pares-humo-*
+          path: art
+      - name: commitear el humo
+        shell: bash
+        run: |
+          D=results/pares_datos_2026-10-18_humo/actions
+          mkdir -p "$D"
+          cp art/*/*.log art/*/*.txt art/*/*.json "$D"/ 2>/dev/null || true
+          (cd "$D" && md5sum *.log *.txt *.json > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "humo(2026-10-14-059): H_PARES_DATOS en Actions x64, REPRO a tamano completo y rutas ciegas" || echo nada_que_commitear
+          git pull --rebase origin titan/pares-datos-2026-10-18 || true
+          git push origin HEAD:titan/pares-datos-2026-10-18

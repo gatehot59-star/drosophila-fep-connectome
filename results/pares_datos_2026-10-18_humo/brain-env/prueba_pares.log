@@ -1,0 +1,13 @@
+# md5 pares_datos.py = e40c3a4f2a9e1aed9431f0bc1f8ecdc8
+# md5 agregar_pares.py = 6ca4306fe0f6c99d00a1007257b34b2b
+PRUEBA L_IGUAL cv_ridge_igual=True lambda=1 (lm 1) validacion_igual=True predicciones_iguales=True matriz_iguales=True acierto=0.692 -> True
+PRUEBA GUARDA un_estado=[3, 0, 0, 2] un_ensayo_en_vuelo=[2, 0, 1, 0, 1, 0] -> True
+PRUEBA SUBCONJUNTOS n=[6, 12, 24, 48, 96, 192, 384, 768, 2400] anidados=True deterministas=True -> True
+PRUEBA PCA error_ortonormal=1.55e-15 varianza=0.4852 proyecciones_deterministas=True -> True
+PRUEBA W_N sin_fondo=None con_fondo=True -> True
+PRUEBA AGREGADOR gana -> ('SOSTENIDA', 'SOSTENIDA', 'SOSTENIDA') (esperado ('SOSTENIDA', 'SOSTENIDA', 'SOSTENIDA'))
+PRUEBA AGREGADOR empata_pca -> ('REFUTADA', 'SOSTENIDA', 'SOSTENIDA') (esperado ('REFUTADA', 'SOSTENIDA', 'SOSTENIDA'))
+PRUEBA AGREGADOR alcanza_dia -> ('SOSTENIDA', 'SOSTENIDA', 'REFUTADA') (esperado ('SOSTENIDA', 'SOSTENIDA', 'REFUTADA'))
+PRUEBA AGREGADOR determinista=True n_alcanza=ok -> True
+PRUEBAS 6/6 -> VALIDO
+EXIT_RUN=0

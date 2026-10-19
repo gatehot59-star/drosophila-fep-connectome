@@ -1,0 +1,88 @@
+name: pares-datos
+# Respuesta 2026-10-14-059. H_PARES_DATOS sellado (tools/pares/SELLO-PARES-DATOS.md, 0d30190): 10 trabajos de la
+# mosca (c2 y c5, 2 taus cada uno: W, W_n y MOSCA_L con REPRO_TAULIBRE), 2 del crudo (CRUDO con REPRO_CRUDO, PCA_L y
+# PROY_L) y el agregador, que commitea results/pares_datos_2026-10-18/.
+# Solo se dispara al pushear results/pares_datos_2026-10-18/CORRER en esta rama.
+on:
+  push:
+    branches: ["titan/pares-datos-2026-10-18"]
+    paths: ["results/pares_datos_2026-10-18/CORRER"]
+  workflow_dispatch:
+permissions:
+  contents: write
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  CONN_URL: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+jobs:
+  medir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {parte: mosca_c2_t20, args: "--celda '0.3|0.15' --mosca --taus 20,21"}
+          - {parte: mosca_c2_t22, args: "--celda '0.3|0.15' --mosca --taus 22,23"}
+          - {parte: mosca_c2_t24, args: "--celda '0.3|0.15' --mosca --taus 24,25"}
+          - {parte: mosca_c2_t26, args: "--celda '0.3|0.15' --mosca --taus 26,27"}
+          - {parte: mosca_c2_t28, args: "--celda '0.3|0.15' --mosca --taus 28,29"}
+          - {parte: mosca_c5_t20, args: "--celda '0.6|0.45' --mosca --taus 20,21"}
+          - {parte: mosca_c5_t22, args: "--celda '0.6|0.45' --mosca --taus 22,23"}
+          - {parte: mosca_c5_t24, args: "--celda '0.6|0.45' --mosca --taus 24,25"}
+          - {parte: mosca_c5_t26, args: "--celda '0.6|0.45' --mosca --taus 26,27"}
+          - {parte: mosca_c5_t28, args: "--celda '0.6|0.45' --mosca --taus 28,29"}
+          - {parte: crudo_c2, args: "--celda '0.3|0.15' --crudo"}
+          - {parte: crudo_c5, args: "--celda '0.6|0.45' --crudo"}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: medir
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install $DEPS
+          python -m pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+          mkdir -p /tmp/in out
+          python -m pip freeze > out/versiones_${{ matrix.parte }}.txt
+          md5sum tools/pares/*.py tools/taulibre/taulibre_mosca.py tools/lector/lector_mosca.py >> out/versiones_${{ matrix.parte }}.txt
+          curl -fsSL -o /tmp/in/connectivity.parquet "$CONN_URL"
+          curl -fsSL -o /tmp/in/annotations.tsv "$ANNOT_URL"
+          md5sum /tmp/in/connectivity.parquet /tmp/in/annotations.tsv >> out/versiones_${{ matrix.parte }}.txt
+          python tools/pares/pares_datos.py --conn /tmp/in/connectivity.parquet --annot /tmp/in/annotations.tsv --out out ${{ matrix.args }} 2>&1 | tee out/pares_${{ matrix.parte }}.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pares-${{ matrix.parte }}
+          path: out/
+  agregar:
+    needs: [medir]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: pares-*
+          path: art
+      - name: agregar y commitear
+        shell: bash
+        run: |
+          set -o pipefail
+          python -m pip install numpy==2.5.3
+          D=results/pares_datos_2026-10-18
+          mkdir -p "$D"
+          cp art/*/*.log art/*/*.txt art/*/*.json "$D"/ 2>/dev/null || true
+          python tools/pares/agregar_pares.py --dir "$D" 2>&1 | tee "$D"/agregado.log || true
+          (cd "$D" && md5sum *.log *.txt *.json > MD5SUMS.txt || true)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-10-14-059): H_PARES_DATOS en Actions x64, 20 combinaciones de la mosca, 2 del crudo y agregado" || echo nada_que_commitear
+          git pull --rebase origin titan/pares-datos-2026-10-18 || true
+          git push origin HEAD:titan/pares-datos-2026-10-18
