@@ -119,5 +119,5 @@ Banco sellado (método y servicio); Topo, lenguaje de reflejos (v0, v0.1 grafo y
 ## NO MEDIDO en este arranque
 
 - Los links de la sección 9 salen del buscador del workspace y de la 060; no se abrieron uno por uno.
-- El índice v2 clasifica por título, sin abrir cada Doc, y se rehizo a mano sobre el de la 060 porque el sandbox se reinició y se llevó la enumeración fina.
+- El índice v2 clasifica por título, sin abrir cada Doc, y se rehízo a mano sobre el de la 060 porque el sandbox se reinició y se llevó la enumeración fina.
 - La prueba con un agente nuevo no es un chat nuevo de Abraham.
