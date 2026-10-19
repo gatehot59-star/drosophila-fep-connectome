@@ -1,0 +1,14 @@
+# maquina: runnervm8k3b6 | Linux-6.17.0-1022-azure-x86_64-with-glibc2.39 | Python 3.12.15 | numpy 2.5.3
+# md5 script = e40c3a4f2a9e1aed9431f0bc1f8ecdc8
+# HUMO: ciego, sin aciertos nuevos
+PIN f3_60_json=True lector_json=True md5_SELLO_LECTOR=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_lector_MD5SUMS=True md5_lector_mosca.py=True md5_nulos_r2.py=True md5_rival_MD5SUMS=True md5_rival_mosca.py=True md5_tarea_mosca.py=True md5_taulibre_MD5SUMS=True md5_taulibre_mosca.py=True rival_6_json=True taulibre_4_reales=True
+SUJETO R2 neuronas=33489 entradas=564 -> True | 4.5 s
+RED radio_crudo=2032.307097 | taus=[20] | taus publicadas por H_TAU_LIBRE=10
+REPRO_TAULIBRE tau=20 n=2400 lambda=0.01 (H_TAU_LIBRE 0.01) predicciones_iguales=True -> True | 570.9 s
+CURVA entrenamiento=600 prueba=200 (semilla 99) n=[6, 12, 24, 48, 96, 192, 384, 600] repeticiones=2 anidados=True
+CONTROL_NEGATIVO MOSCA_L tau=20 n=600 acierto=0.5000 azar=0.5000 tope=0.5500 -> True
+TAU 20 rutas_en_clases=True (humo: sin aciertos) | 104.2 s
+CHEQUEO INSTRUMENTO R2_TAMANO=True PLAN_MOSCA=True PUBLICADOS=True REPRO_TAULIBRE=True SUBCONJUNTOS=True GUARDA_FUGA=True CONTROL_NEGATIVO=True RUTAS_EN_CLASES=True PIN=True -> VALIDO
+escrito humo_mosca_c5_t20.json md5=2b8245107ef91462ca81ad3be4e78b1b
+# duracion_s=680.4
+EXIT_RUN=0
