@@ -119,6 +119,7 @@ Archivos de esta entrega: ARRANQUE 28.088 B, md5 3dcfb25939ff47bdb578494fd266317
 - Commit 82a745d (22:24:48Z). La 061 llegó igual byte a byte: blob 550b9783 en git y en el sandbox. El ARRANQUE y el parche llegaron con una tilde de menos, «rehizo» por «rehízo» (una línea de diff en cada uno; blob d682cc4a contra 00a1a343 y a488a09b contra 179ef6fc).
 - Bot ff2d2fb (22:24:55Z): parche aplicado, tres anclas con una aparición cada una, md5 del CONTEXTO de 1173ec1f a a07976bd. El parche de git (md5 b6bc1207), corrido en el sandbox sobre la copia real, da el mismo a07976bd.
 - Cierre (`tools/arranque/cierre_2026-10-14-061.py`, aplicado por Actions): pone la tilde en el ARRANQUE y en el CONTEXTO. Esperado y probado en el sandbox: ARRANQUE md5 3dcfb259 y blob 00a1a343, iguales a la copia del sandbox y del Doc; CONTEXTO md5 de0f8711, igual a la prueba del parche en el sandbox. Lo confirma el commit del bot «cierre(2026-10-14-061)». El parche que quedó en git conserva «rehizo»: es el que corrió.
+- Segunda vuelta del agente, después del push: los cinco problemas quedaron resueltos (la 061 en main, el blob 00a1a343, el CONTEXTO en la 061 y el Doc con sus dos páginas). Encontró uno nuevo y menor: «auditar el laboratorio» y «pedido a Tao» eran dos links a la misma tarea; queda uno solo (tools/arranque/cierre2_2026-10-14-061.py); el ARRANQUE final queda en md5 de659ba5 y blob d2beec25, y lo confirma el commit del bot del segundo cierre. Su veredicto: arrancaría sin preguntar.
 
 --- METODO PROMETEO ---
 Rol: síntesis y corrección (grande). Delicado: no.
