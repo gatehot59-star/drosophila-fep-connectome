@@ -1,5 +1,5 @@
-Humo ciego de H_PARES_DATOS (sello tools/pares/SELLO-PARES-DATOS.md, commit 0d30190).
-Pedido de Abraham, 18-oct 22:30 (America/Buenos_Aires): Sella H_PARES_DATOS y ejecuta la curva.
-Instrumento: pares_datos.py e40c3a4f2a9e1aed9431f0bc1f8ecdc8, agregar_pares.py 6ca4306fe0f6c99d00a1007257b34b2b, prueba_pares.py ead492f9c4dbe36e916f3dbe8b0ca6fc.
-Antes, en brain-env: prueba unitaria 6/6 VALIDO; ruta local de la mosca (c2, tau 20) y del crudo (c2) VALIDO; agregador local ciego VALIDO.
-La corrida completa (results/pares_datos_2026-10-18/CORRER) se dispara solo si este humo da VALIDO.
+Humo de H_PARES_DATOS (respuesta 2026-10-14-059), sello tools/pares/SELLO-PARES-DATOS.md (0d30190).
+
+Disparo 1: 19-oct-2026 02:11Z con fbba63a. Resultado en ec74109: mosca c2 y c5 (tau 20) y crudo c2 y c5 VALIDO, REPRO_TAULIBRE y REPRO_CRUDO reproducidos; el trabajo prueba fallo porque tools/pares/prueba_pares.py no estaba en ese push.
+
+Disparo 2: 19-oct-2026 ~16:45Z sobre 0c6086c (instrumento completo: pares_datos.py, agregar_pares.py, prueba_pares.py). Se repite el humo entero sin cambios en el sello ni en el instrumento. La corrida completa (results/pares_datos_2026-10-18/CORRER) espera este humo.
