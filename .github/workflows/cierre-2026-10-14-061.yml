@@ -1,0 +1,26 @@
+name: cierre-2026-10-14-061
+# Respuesta 2026-10-14-061: tilde en el ARRANQUE y el CONTEXTO y verificacion despues del push (tools/arranque/cierre_2026-10-14-061.py); el workflow se borra en el mismo commit.
+on:
+  push:
+    branches: ["main"]
+    paths: ["tools/arranque/cierre_2026-10-14-061.py"]
+permissions:
+  contents: write
+jobs:
+  aplicar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: aplicar el cierre y borrar este workflow
+        shell: bash
+        run: |
+          python3 tools/arranque/cierre_2026-10-14-061.py | tee /tmp/cierre.log
+          echo "blob ARRANQUE $(git hash-object docs/agents/ARRANQUE-NUEVO-CHAT.md)" | tee -a /tmp/cierre.log
+          echo "blob 061 $(git hash-object docs/agents/respuestas/2026-10-14-061-arranque-corregido-y-h-pares-datos-medido.md)" | tee -a /tmp/cierre.log
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git rm -q .github/workflows/cierre-2026-10-14-061.yml
+          git add docs/agents/ARRANQUE-NUEVO-CHAT.md docs/agents/CONTEXTO-drosophila-fep.md docs/agents/respuestas/2026-10-14-061-arranque-corregido-y-h-pares-datos-medido.md
+          git commit -m "cierre(2026-10-14-061): tilde en el ARRANQUE y el CONTEXTO y verificacion despues del push, aplicado en Actions" -m "$(cat /tmp/cierre.log)"
+          git pull --rebase origin main || true
+          git push origin HEAD:main
