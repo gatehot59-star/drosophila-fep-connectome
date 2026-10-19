@@ -2,23 +2,23 @@
 # md5 script = e40c3a4f2a9e1aed9431f0bc1f8ecdc8
 # HUMO: ciego, sin aciertos nuevos
 PIN f3_60_json=True lector_json=True md5_SELLO_LECTOR=True md5_annot=True md5_completa_log_015=True md5_conn=True md5_entrada_por_tipos.py=True md5_escape_aterrizaje_dbc3.py=True md5_f3_MD5SUMS=True md5_factorial2_mosca.py=True md5_htau_c0=True md5_htau_c1=True md5_htau_c2=True md5_htau_c3=True md5_htau_c4=True md5_htau_c5=True md5_htau_mosca.py=True md5_lector_MD5SUMS=True md5_lector_mosca.py=True md5_nulos_r2.py=True md5_rival_MD5SUMS=True md5_rival_mosca.py=True md5_tarea_mosca.py=True md5_taulibre_MD5SUMS=True md5_taulibre_mosca.py=True rival_6_json=True taulibre_4_reales=True
-SUJETO R2 neuronas=33489 entradas=564 -> True | 3.2 s
-REPRO_CRUDO prueba=12 n=2400 lambda=10 (H_RIVAL 10) predicciones_iguales=True -> True | 5.5 s
+SUJETO R2 neuronas=33489 entradas=564 -> True | 4.6 s
+REPRO_CRUDO prueba=12 n=2400 lambda=10 (H_RIVAL 10) predicciones_iguales=True -> True | 10.8 s
 CURVA entrenamiento=600 prueba=200 rasgos=22560 n=[6, 12, 24, 48, 96, 192, 384, 600] repeticiones=2 anidados=True
 CONTROL_NEGATIVO CRUDO n=600 acierto=0.5000 azar=0.5000 tope=0.5500 -> True
-BRAZO CRUDO rutas_en_clases=True | 2.0 s
-BRAZO PCA_L componentes=240 varianza=0.5225 error_ortonormal=8.38e-15 -> True | 0.3 s
-BRAZO PROY_L k=0 | 0.2 s
-BRAZO PROY_L k=1 | 0.2 s
-BRAZO PROY_L k=2 | 0.2 s
-BRAZO PROY_L k=3 | 0.2 s
-BRAZO PROY_L k=4 | 0.2 s
-BRAZO PROY_L k=5 | 0.2 s
-BRAZO PROY_L k=6 | 0.2 s
-BRAZO PROY_L k=7 | 0.2 s
-BRAZO PROY_L k=8 | 0.2 s
-BRAZO PROY_L k=9 | 0.2 s
+BRAZO CRUDO rutas_en_clases=True | 3.5 s
+BRAZO PCA_L componentes=240 varianza=0.5225 error_ortonormal=8.40e-15 -> True | 0.6 s
+BRAZO PROY_L k=0 | 0.4 s
+BRAZO PROY_L k=1 | 0.4 s
+BRAZO PROY_L k=2 | 0.4 s
+BRAZO PROY_L k=3 | 0.5 s
+BRAZO PROY_L k=4 | 0.4 s
+BRAZO PROY_L k=5 | 0.4 s
+BRAZO PROY_L k=6 | 0.4 s
+BRAZO PROY_L k=7 | 0.4 s
+BRAZO PROY_L k=8 | 0.4 s
+BRAZO PROY_L k=9 | 0.4 s
 CHEQUEO INSTRUMENTO R2_TAMANO=True PLAN_CRUDO=True RIVAL_CELDA=True REPRO_CRUDO=True SUBCONJUNTOS=True GUARDA_FUGA=True CONTROL_NEGATIVO=True PCA_ORTONORMAL=True RUTAS_EN_CLASES=True PIN=True -> VALIDO
-escrito humo_crudo_c5.json md5=fe17a1b1c9c650d5bde8a127410734f1
-# duracion_s=13.5
+escrito humo_crudo_c5.json md5=de8fe94ebb092a11c7e6d03ce2bcc99e
+# duracion_s=24.5
 EXIT_RUN=0

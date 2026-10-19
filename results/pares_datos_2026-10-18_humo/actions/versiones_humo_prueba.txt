@@ -14,6 +14,8 @@ six==1.17.0
 sympy==1.14.0
 torch==2.14.1+cpu
 typing_extensions==4.16.0
+6ca4306fe0f6c99d00a1007257b34b2b  tools/pares/agregar_pares.py
 e40c3a4f2a9e1aed9431f0bc1f8ecdc8  tools/pares/pares_datos.py
+ead492f9c4dbe36e916f3dbe8b0ca6fc  tools/pares/prueba_pares.py
 c65bebe270da1e0526a212cff29830fd  tools/taulibre/taulibre_mosca.py
 5b7fb79e55ab2b695c9751698c8205c4  tools/lector/lector_mosca.py
