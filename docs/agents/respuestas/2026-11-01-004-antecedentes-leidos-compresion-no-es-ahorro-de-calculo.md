@@ -163,3 +163,112 @@ Rubrica: N/A para la lectura focalizada.
 Review externo: no realizado; la misma instancia seleccionó e interpretó las fuentes.
 Instrumento: textos completos principales y archivos fijados; ast.parse sobre las 15 celdas, salida íntegra arriba.
 Artefactos: docs/agents/respuestas/2026-11-01-004-antecedentes-leidos-compresion-no-es-ahorro-de-calculo.md + https://app.clickup.com/90171457413/docs/2kza6fw5-26157
+
+## 7. Cierre anclado: contexto y evidencia documental
+
+El CONTEXTO incorpora la lectura principal, la corrección de distancia adulta, el límite de los arquetipos y el FAIL sintáctico. No cambia resultados experimentales. Esta sección se publica junto al CONTEXTO mediante push normal; la publicación se verifica leyendo main, no por el log.
+
+Instrumento: https://github.com/gatehot59-star/drosophila-fep-connectome/blob/3e1c5adf5237816f6ac82ccca26d057d7f172698/.github/workflows/contexto-topo-2026-11-01.yml
+
+Run: https://github.com/gatehot59-star/drosophila-fep-connectome/actions/runs/41318785055
+
+Comando: Python embebido en ese workflow, CONTEXTO_MODE=apply. Salida completa:
+
+```text
+SOURCE https://raw.githubusercontent.com/rbetzel/fafb_nested_communities/a25219060f467ddf3ee5635bf59ee77c23450e5e/py/sample_posterior_distribution_no_threshold.ipynb
+bytes=23991 git_blob=dac5a96a926133a3fb68f535b960859c3b318e37 sha256=f5ef5f1836d4729e8608d6d9d126d65deac77cfbcf9209b6ee4354329cd15768
+cell=1 id=43edbff7 SYNTAX_PASS
+cell=2 id=7b0d997f SYNTAX_PASS
+cell=3 id=42f9a539 SYNTAX_PASS
+cell=4 id=104654b8 SYNTAX_PASS
+cell=5 id=50eddc8d SYNTAX_PASS
+cell=6 id=ee448ed7 SYNTAX_PASS
+cell=7 id=38332a1d SYNTAX_PASS
+cell=8 id=78c9968d SYNTAX_FAIL IndentationError line=18 unexpected indent
+SOURCE_BEGIN
+# Filename for sampled partitions
+filename = outputdir + 'sampled_partitions_no_threshold.pickle'
+
+# Filename for nested blockstate after sampling procedure
+filename2 = outputdir + 'state_after_sampled_partitions_no_threshold.pickle'
+
+# Do both files already exist? If so ...
+if os.path.isfile(filename) and os.path.isfile(filename2):
+
+    # Load sampled partitions
+    file = open(filename,'rb')
+    # Load blockstate
+    file = open(filename2,'rb')
+    
+else:state = pickle.load(file)
+
+    # Define an empty list for storing partitions
+    bs = []
+    
+    # Collect force_niter partitions
+    gt.mcmc_equilibrate(state, force_niter=1000, mcmc_args=dict(niter=10),
+                        callback=collect_partitions)
+    
+    # Save the sampled partitions
+    with open(filename,'wb') as f:
+        pickle.dump(bs,f,pickle.HIGHEST_PROTOCOL)
+
+    # Save current blockstate
+    with open(filename2,'wb') as f:
+        pickle.dump(state,f,pickle.HIGHEST_PROTOCOL)
+SOURCE_END
+cell=9 id=929db638-97e1-48c9-9268-02e02e807a9a SYNTAX_PASS
+cell=10 id=7f841bc6-6bac-4271-99c7-a60bf062618e SYNTAX_PASS
+cell=11 id=94ac473f SYNTAX_PASS
+cell=12 id=396dfc3c SYNTAX_PASS
+cell=13 id=19d9ffd4 SYNTAX_PASS
+cell=14 id=2914eaff SYNTAX_PASS
+cell=15 id=9cbf2b9d SYNTAX_PASS
+TOTAL code_cells=15 pass=14 fail=1
+PARSER_POSITIVE pass
+PARSER_NEGATIVE rejected
+EXTERNAL_CODE_EXECUTED=false graph_tool_imported=false pickle_loaded=false
+source_blob=af3b24335a8b33939c4c88710b2e2dbffe2e7e60
+source_bytes=123453
+anchor_1_count=1
+anchor_2_count=1
+anchor_3_count=1
+anchor_4_count=1
+anchor_5_count=1
+positive_transform=PASS
+missing_anchor_1=REJECTED anchor_1: expected 1, got 0
+duplicate_anchor_1=REJECTED anchor_1: expected 1, got 2
+missing_anchor_2=REJECTED anchor_2: expected 1, got 0
+duplicate_anchor_2=REJECTED anchor_2: expected 1, got 2
+missing_anchor_3=REJECTED anchor_3: expected 1, got 0
+duplicate_anchor_3=REJECTED anchor_3: expected 1, got 2
+missing_anchor_4=REJECTED anchor_4: expected 1, got 0
+duplicate_anchor_4=REJECTED anchor_4: expected 1, got 2
+missing_anchor_5=REJECTED anchor_5: expected 1, got 0
+duplicate_anchor_5=REJECTED anchor_5: expected 1, got 2
+source_drift=REJECTED source blob changed
+repeat_application=REJECTED anchor_1: expected 1, got 0
+negative_controls=12/12
+historical_tail_bytes=119028
+historical_tail_sha256=b6c9d0cf10d6dd0b4bb6f9abd6e39c4ac1891bf7c101f169cef4f38ca5b31fb5
+historical_tail_unchanged=True
+reverse_roundtrip=PASS
+result_blob=68e8be1ef8d937d48e3c427de8617257ef44f0d2
+result_bytes=124737
+result_sha256=e31550410fa6602a745bf9546174fd0885f9494189de8a2e77ea092da70d8e76
+git_hash_object=68e8be1ef8d937d48e3c427de8617257ef44f0d2
+target_readback_equal=True
+```
+
+La respuesta original 004 se conserva como prefijo byte a byte; este cierre se agrega. El workflow queda en su rama, sin permisos nuevos, sin merge, sin force y con solo dos rutas staged.
+
+QA de mantenimiento: preflight 57/60 (95/100): completitud 15/15, ejecutabilidad 14/15, seguridad 14/15, documentación 10/10, proceso QA 4/5. Evidencia: ejecución previa del programa, cinco anclas, doce rechazos, reversión exacta y cola idéntica, YAML/shell/AST verificados, checkout fijado y rutas acotadas. Descuentos por runner todavía pendiente en preflight y falta de selección independiente de controles. N/A 40 puntos de testing, arquitectura, DevOps e innovación de producto. Este score no valida la hipótesis científica.
+
+--- METODO PROMETEO ---
+Accion delicada: SI, mantenimiento del workflow documental existente, sin permisos nuevos.
+Modo aplicado: FULL.
+Maquina: brain-env (preflight), Actions x64 (parche y AST), ClickUp (Doc).
+Rubrica: 57/60, 95/100; N/A 40 puntos de producto.
+Review externo: no realizado; sin independencia de selección o interpretación.
+Instrumento: workflow fijado y salida completa arriba.
+Artefactos: docs/agents/respuestas/2026-11-01-004-antecedentes-leidos-compresion-no-es-ahorro-de-calculo.md + https://app.clickup.com/90171457413/docs/2kza6fw5-26157
