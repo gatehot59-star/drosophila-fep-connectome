@@ -1,0 +1,37 @@
+== 1. Holm de H_REUSO con la funcion holm() copiada de reuso_mosca.py (blob 37b3583) ==
+p piso por permutacion = 0.004975 (log imprime 0.0050)
+HOLM 0.0199 0.0199 0.0199 0.0199 (log: HOLM 0.0199 0.0199 0.0199 0.0199)
+
+== 2. T1 contra su nulo, lineas crudas de reuso.log (blob ef631e9) ==
+FLYWIRE T1=0.8835 nulo_media=0.6823 nulo_max=0.7462 | obs-media=+0.2012 obs/media=1.295
+BANC T1=0.8260 nulo_media=0.3472 nulo_max=0.4744 | obs-media=+0.4788 obs/media=2.379
+
+== 3. Nucleo: tamano (SELLO-NUCLEO, blob 2a8190e) y lo que dice el mismo log (blob 86ce131) ==
+aristas 603219/4031897 = 14.9612 %
+sinapsis 9668248/16971919 = 56.9661 %
+primaria W_nucleo-W_R2 = -0.0459 (log -0.0459)
+nucleo real 0.9135 menos media SL 0.5913 = +0.3222 ; menos media T 0.6869 = +0.2266
+nucleo real 0.9135 menos max SL 0.7570 = +0.1565 ; menos max T 0.7680 = +0.1455
+
+== 4. Tabla beta por pares de tipos contra aristas agregadas ==
+tipos^2 = 71453209 ; aristas FlyWire agregadas = 15091983 ; cociente = 4.73
+
+== 5. c2 de H_PARES_DATOS: donde el crudo alcanza al embudo, lineas crudas de agregado.log (blob 66c19d1) ==
+c2 n=    6 MOSCA_L=0.4508 CRUDO=0.4488 PCA_L=0.4092 | crudo>=embudo: False | pca>=embudo: False
+c2 n=   12 MOSCA_L=0.5407 CRUDO=0.4729 PCA_L=0.4255 | crudo>=embudo: False | pca>=embudo: False
+c2 n=   24 MOSCA_L=0.7255 CRUDO=0.7027 PCA_L=0.4581 | crudo>=embudo: False | pca>=embudo: False
+c2 n=   48 MOSCA_L=0.8639 CRUDO=0.8517 PCA_L=0.5214 | crudo>=embudo: False | pca>=embudo: False
+c2 n=   96 MOSCA_L=0.9298 CRUDO=0.9347 PCA_L=0.6615 | crudo>=embudo: True | pca>=embudo: False
+c2 n=  192 MOSCA_L=0.9698 CRUDO=0.9717 PCA_L=0.8276 | crudo>=embudo: True | pca>=embudo: False
+c2 n=  384 MOSCA_L=0.9826 CRUDO=0.9834 PCA_L=0.9442 | crudo>=embudo: True | pca>=embudo: False
+c2 n=  768 MOSCA_L=0.9897 CRUDO=0.9941 PCA_L=0.9930 | crudo>=embudo: True | pca>=embudo: True
+c2 n= 2400 MOSCA_L=0.9943 CRUDO=0.9995 PCA_L=0.9995 | crudo>=embudo: True | pca>=embudo: True
+
+== 6. Indice de git: las regex exactas de tools/arranque/generar_indice.py (blob ef57d55) ==
+auditada s8 (linea real, URL sintetica)    RE_DOC=False links_clickup=1
+auditada METODO Artefactos (linea real)    RE_DOC=False links_clickup=0
+control + auditoria 2026-10-19-01          RE_DOC=False links_clickup=1
+control + estilo nota PROMETEO             RE_DOC=True  links_clickup=1
+control + estilo Doc publico               RE_DOC=True  links_clickup=1
+num del indice para 2026-11-01-01-topo-inverso-gra -> '2026-11-01-01-'
+num del indice para 2026-10-14-061-arranque-correg -> '2026-10-14-061'
