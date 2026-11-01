@@ -1,0 +1,43 @@
+$ python3 auditoria_estricto.py estricto.json run.log verificar_estricto.py verificacion.log
+pin estricto.json bytes=307449 sha256=ffce074c422835b426c717902e0510d6bcdd130ecff45d9fccce25e182a89282 OK
+pin run.log bytes=379396 sha256=00058fbd432f3d298c2d8edc7c5b4485f28ec95208413211fb1256f4d80a60f0 OK
+pin verificar_estricto.py bytes=8719 sha256=41ab582abb40fb707cc3f17d18fccd6e35309561b5116254b51d96b06248a9ef OK
+pin verificacion.log bytes=2537 sha256=7dc94d7832a52054368774c83e0de4ffaf093bdc4a94c9bcb4e7dbc488e039cc OK
+verificador re-ejecutado: exit=0 stdout_bytes=2411 stdout_sha256=05cecf82e9090af595e1139908163dba0e0d94becf902796eab34313eaac7915 igual_al_bloque_publicado=True stderr_bytes=0
+  NEGATIVE_REJECTED missing_draw incomplete plan
+  NEGATIVE_REJECTED changed_p Holm mismatch
+  NEGATIVE_REJECTED guard_disabled JSON and verbatim log disagree
+  NEGATIVE_REJECTED wrong_source source or seal mismatch
+  VERIFY_PASS 400/400 nulls; exact rational p; Holm; log parity; four negative controls
+status=VALID mode=full veredicto=SOSTENIDA holm=[0.01990049751243781, 0.01990049751243781, 0.01990049751243781, 0.01990049751243781]
+== flywire nulos=200 semilla=12029 estratos=72
+flywire identidad_t1 observado=True nulos_que_fallan=0
+flywire n_cab real=996 media=1625.4550 sd=18.6296 min=1582 max=1682 nulos_ge_real=200 nulos_le_real=0 z=-33.79
+flywire n_pares_ffi real=880 media=994.2800 sd=21.6586 min=932 max=1060 nulos_ge_real=200 nulos_le_real=0 z=-5.28
+flywire t1 real=0.883534 media=0.6117 sd=0.0102 min=0.579602 max=0.642157 nulos_ge_real=0 nulos_le_real=200 z=26.66
+flywire t2 real=698 media=565.0200 sd=18.9578 min=515 max=607 nulos_ge_real=0 nulos_le_real=200 z=7.01
+flywire n_x real=1118 media=1100.3250 sd=27.2410 min=1035 max=1182 nulos_ge_real=53 nulos_le_real=151 z=0.65
+flywire t2_por_x real=0.624329 media=0.513565 min=0.475588 max=0.555246 nulos_ge_real=0
+flywire pares_con_plantilla real_menos_media=-114.280
+flywire pearson n_cab_t1=0.1719 n_cab_pares=0.6571 n_x_t2=0.5925
+flywire margen_t1 real_sobre_max=1.3759 real_sobre_media=1.4445
+flywire margen_t2 real_sobre_max=1.1499 real_sobre_media=1.2354
+flywire guardas_ok=True movida_minima SD=0.994481 SX=0.998828 XD=0.996470 all=0.999211 destinos_distintos=200
+== banc nulos=200 semilla=12030 estratos=143
+banc identidad_t1 observado=True nulos_que_fallan=0
+banc n_cab real=753 media=908.2500 sd=11.2655 min=877 max=937 nulos_ge_real=200 nulos_le_real=0 z=-13.78
+banc n_pares_ffi real=622 media=324.0800 sd=15.6739 min=283 max=361 nulos_ge_real=0 nulos_le_real=200 z=19.01
+banc t1 real=0.826029 media=0.3568 sd=0.0162 min=0.314444 max=0.396807 nulos_ge_real=0 nulos_le_real=200 z=29.00
+banc t2 real=419 media=112.3850 sd=9.4410 min=88 max=141 nulos_ge_real=0 nulos_le_real=200 z=32.48
+banc n_x real=716 media=285.3750 sd=15.5329 min=240 max=329 nulos_ge_real=0 nulos_le_real=200 z=27.72
+banc t2_por_x real=0.585196 media=0.393988 min=0.329588 max=0.477966 nulos_ge_real=0
+banc pares_con_plantilla real_menos_media=297.920
+banc pearson n_cab_t1=0.1134 n_cab_pares=0.3636 n_x_t2=0.5550
+banc margen_t1 real_sobre_max=2.0817 real_sobre_media=2.3151
+banc margen_t2 real_sobre_max=2.9716 real_sobre_media=3.7283
+banc guardas_ok=True movida_minima SD=0.995020 SX=0.997780 XD=0.996978 all=0.998997 destinos_distintos=200
+AUDITORIA_DESCRIPTIVOS_OK
+exit=0
+$ python3 auditoria_estricto.py estricto_t2_678.json run.log verificar_estricto.py verificacion.log   # control negativo: un byte cambiado (t2 698 -> 678)
+pin estricto.json bytes=307449 sha256=fde139bf3fb6d495e67a335381baf32b679ad7d8e171ee103ff79e98af75c88c MISMATCH
+exit=2
