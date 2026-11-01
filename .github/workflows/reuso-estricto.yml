@@ -1,0 +1,121 @@
+name: reuso-estricto-2026-11-01
+on:
+  push:
+    branches: ["titan/reuso-estricto-2026-11-01"]
+    paths:
+      - "tools/reuso/reuso_estricto.py"
+      - ".github/workflows/reuso-estricto.yml"
+permissions:
+  contents: write
+concurrency:
+  group: reuso-estricto-2026-11-01
+  cancel-in-progress: false
+env:
+  OPENBLAS_NUM_THREADS: "1"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+  PYTHONUNBUFFERED: "1"
+jobs:
+  reuso-estricto:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12.14"
+      - name: Pruebas, humo ciego y full con el sello previo
+        shell: bash
+        run: |
+          set -euo pipefail
+          D=results/reuso_estricto_2026-11-01
+          if [ -e "$D/estricto.json" ] || [ -e "$D/run.log" ]; then
+            echo 'REFUSE: an earlier receipt exists; no automatic scientific rerun'
+            exit 4
+          fi
+          mkdir -p "$D" /tmp/reuso-input
+          exec > >(tee "$D/run.log") 2>&1
+          printf 'UTC_START '; date -u --iso-8601=seconds
+          printf 'SOURCE_COMMIT '; git rev-parse HEAD
+          printf '%s  %s\n' 'a0d35aa1810e6513bbacaba36ce17b768c3792132cf86b20012ae2d754588083' 'tools/reuso/reuso_estricto.py' | sha256sum --check -
+          python -m pip install numpy==2.5.3 pandas==3.0.5 pyarrow==25.0.1
+          python - <<'PY'
+          import hashlib, importlib.util, pathlib, shutil, subprocess, sys, tempfile
+          root = pathlib.Path('tools/reuso').resolve()
+          source = (root / 'reuso_estricto.py').read_text()
+          old = 'target_class=bool(np.array_equal(d["sc_code"][new], d["sc_code"][old]))'
+          assert source.count(old) == 1
+          q = pathlib.Path(tempfile.mkdtemp(prefix='reuso-mutant-'))
+          for name in ['reuso_mosca.py', 'prueba_reuso.py', 'SELLO-ESTRICTO-2026-11-01.md']:
+              shutil.copyfile(root / name, q / name)
+          (q / 'reuso_estricto.py').write_text(source.replace(old, 'target_class=True'))
+          command = [sys.executable, str(q / 'reuso_estricto.py'), '--mode', 'selftest']
+          print('MUTATION_COMMAND', command, flush=True)
+          broken = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True, timeout=120)
+          print(broken.stdout, end='', flush=True)
+          print('MUTATION_PROCESS_EXIT', broken.returncode, flush=True)
+          assert broken.returncode == 3
+          assert '"name": "class_swap_rejected", "ok": false' in broken.stdout
+          spec = importlib.util.spec_from_file_location('estricto', root / 'reuso_estricto.py')
+          e = importlib.util.module_from_spec(spec)
+          spec.loader.exec_module(e)
+          for planted in (True, False):
+              d = e.fixture(planted)
+              obs = e.base.estadisticas(d, d['post'])
+              target = {}
+              file = pathlib.Path(tempfile.mkdtemp(prefix='reuso-checkpoint-')) / 'checkpoint.json'
+              e.run_draws('flywire', d, obs, target, False, lambda: e.checkpoint(file, target))
+              assert e.complete_plan(target['nulls'], 200) and target['nonfrozen']
+              ps = target['p'] * 2
+              adj = e.base.holm(ps)
+              verdict = e.base.veredicto_conectoma(ps[:2], adj[:2])
+              expected = 'SOSTENIDA' if planted else 'REFUTADA'
+              assert verdict == expected
+              e.emit('SYNTHETIC_END_TO_END', dict(planted=planted, verdict=verdict, p=ps, holm=adj.tolist(), nulls=len(target['nulls']), checkpoint=file.exists()))
+          print('E2E_POSITIVE_AND_NEGATIVE_PASS', flush=True)
+          PY
+          curl --fail --silent --show-error --location --max-time 180 --retry 2 --output /tmp/reuso-input/connectivity.parquet 'https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/main/Connectivity_783.parquet'
+          curl --fail --silent --show-error --location --max-time 180 --retry 2 --output /tmp/reuso-input/annotations.tsv 'https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv'
+          curl --fail --silent --show-error --location --max-time 180 --retry 2 --output /tmp/reuso-input/banc_888_meta.feather 'https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/banc_888_meta.feather'
+          curl --fail --silent --show-error --location --max-time 180 --retry 2 --output /tmp/reuso-input/banc_888_edgelist_simple_v3.feather 'https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/banc_888_edgelist_simple_v3.feather'
+          python tools/reuso/reuso_estricto.py --mode full --inputs-dir /tmp/reuso-input --out "$D/estricto.json"
+          printf 'UTC_END '; date -u --iso-8601=seconds
+      - name: Conservar evidencia cruda aun si falla el ensayo
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import os, pathlib, subprocess
+          directory = pathlib.Path('results/reuso_estricto_2026-11-01')
+          directory.mkdir(parents=True, exist_ok=True)
+          log = directory / 'run.log'
+          result = directory / 'estricto.json'
+          if not log.is_file():
+              log.write_text('NO_MEDIDO: no instrument log was produced in this job\n')
+          files = [str(log)] + ([str(result)] if result.is_file() else [])
+          subprocess.run(['git', 'add', '--'] + files, check=True)
+          changed = subprocess.check_output(['git', 'diff', '--cached', '--name-only'], text=True).splitlines()
+          allowed = {'results/reuso_estricto_2026-11-01/run.log', 'results/reuso_estricto_2026-11-01/estricto.json'}
+          assert set(changed).issubset(allowed), changed
+          if not changed:
+              print('No new evidence to publish')
+              raise SystemExit(0)
+          subprocess.run(['git', 'config', 'user.name', 'github-actions[bot]'], check=True)
+          subprocess.run(['git', 'config', 'user.email', '41898333+github-actions[bot]@users.noreply.github.com'], check=True)
+          seal = pathlib.Path('tools/reuso/SELLO-ESTRICTO-2026-11-01.md').read_text()
+          doc = next(line[5:] for line in seal.splitlines() if line.startswith('Doc: '))
+          message = '\n'.join([
+              'medicion(reuso-estricto): conservar la salida sin sustituirla por un resumen',
+              '', '--- METODO PROMETEO ---',
+              'Accion delicada: NO, evidencia en rama experimental; sin merge.',
+              'Modo aplicado: FULL. El resultado cientifico esta en estricto.json, no en el exit del job.',
+              'Maquina: Actions x64. QA de resultados pendiente de relectura.',
+              'Instrumento: tools/reuso/reuso_estricto.py; salida cruda results/reuso_estricto_2026-11-01/run.log.',
+              'Fuente: ' + os.environ['GITHUB_SHA'],
+              'Run: https://github.com/gatehot59-star/drosophila-fep-connectome/actions/runs/' + os.environ['GITHUB_RUN_ID'],
+              'Artefactos: results/reuso_estricto_2026-11-01/estricto.json + ' + doc,
+          ])
+          subprocess.run(['git', 'commit', '-m', message], check=True)
+          subprocess.run(['git', 'push', 'origin', 'HEAD:refs/heads/titan/reuso-estricto-2026-11-01'], check=True)
+          PY
