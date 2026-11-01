@@ -1,0 +1,234 @@
+name: contexto-topo-2026-11-01
+
+on:
+  push:
+    branches: ["titan/contexto-topo-2026-11-01"]
+    paths: [".github/workflows/contexto-topo-2026-11-01.yml"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contexto-topo-2026-11-01
+  cancel-in-progress: false
+
+jobs:
+  aplicar:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Leer main sin incorporar la rama del instrumento
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Verificar anclas, probar rechazos y escribir solo documentacion
+        shell: bash
+        env:
+          CONTEXTO_MODE: apply
+          SOURCE_SHA: ${{ github.sha }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          # BEGIN_PATCH_PROGRAM
+          import hashlib
+          import os
+          from pathlib import Path
+          import subprocess
+
+          TARGET = "docs/agents/CONTEXTO-drosophila-fep.md"
+          RECEIPT = "docs/agents/respuestas/2026-11-01-002-contexto-topo-inverso-actualizado.md"
+          EXPECTED_BEFORE = "008b1533cf85700cce7de870e67959f44a87f2ba"
+          ROOT = Path(os.environ.get("CONTEXTO_ROOT", "."))
+          SOURCE_RESPONSE = ROOT / "docs/agents/respuestas/2026-11-01-001-topo-inverso-gramatica-funcional-por-medir.md"
+          DOC = next(line[5:].strip() for line in SOURCE_RESPONSE.read_text(encoding="utf-8").splitlines() if line.startswith("Doc: "))
+          if not DOC.startswith("https://app.clickup.com/"):
+              raise ValueError("Source response has no canonical ClickUp Doc URL")
+          OLD_UPDATE = "**Última actualización:** 2026-10-19, 19:40 (America/Buenos_Aires), con la respuesta 2026-10-14-061. **La sección «Madrugada y mañana del 13-oct» manda sobre lo que choque en el resto del archivo; después, la de «Tarde y noche del 12-oct (010 a 018)»**, que sigue escrito al estado de la 009 (11:58)."
+          NEW_UPDATE = "**Última actualización:** 2026-11-01 (America/Buenos_Aires), con la respuesta corregida 2026-11-01-001 y el cierre documental 2026-11-01-002. **La sección «1-nov-2026 · Topo inverso corregido» manda sobre las categorías, antecedentes y alcance que corrige; para los demás temas conserva la prioridad la sección «Madrugada y mañana del 13-oct», seguida por «Tarde y noche del 12-oct (010 a 018)».** El material anterior se conserva como historia, no como una nueva medición."
+          OLD_CANONICAL = "**Estado canónico:** `main`, con las respuestas del 10, 11 y 12 de octubre."
+          NEW_CANONICAL = "**Estado canónico:** `main`, con la auditoría 2026-11-01-01 y la respuesta corregida 2026-11-01-001, además de la bitácora anterior."
+          ANCHOR = "## Madrugada y mañana del 13-oct (019 a 2026-10-14-061) · manda sobre el resto"
+          BLOCK = f"""## 1-nov-2026 · Topo inverso corregido
+
+          - **Publicación corregida, no experimento nuevo:** [respuesta 2026-11-01-001](respuestas/2026-11-01-001-topo-inverso-gramatica-funcional-por-medir.md), en main desde `e65ec936522d5151237ef63f7e716a641078d71d`, y [Doc de Topo inverso]({DOC}). La [auditoría 2026-11-01-01](../auditorias/2026-11-01-01-topo-inverso-numeros-bien-bitacora-fuera-de-main.md), en `c1982e002fa5cc6186b91e683e608696978d5264`, confirmó los números de sus logs y refutó dos afirmaciones de la primera versión. Es de la misma instancia, no una revisión independiente. Ningún resultado experimental se recalculó en este parche.
+          - **Alcance:** tenemos piezas para buscar programas cortos que generen circuitos, todavía no una gramática funcional aprendida. Explicar la anatomía y rediseñar una red más barata son objetivos distintos. Una ventaja funcional, de compresión o de novedad de la propuesta sigue **NO MEDIDA**.
+          - **H_REUSO, categorías corregidas:** S es una unidad de proyección visual (`visual_projection`), no una neurona sensorial. X es una neurona inhibitoria de cualquier superclase salvo las usadas para S y D; no está demostrado que todas sean interneuronas. La superclase de `AN_multi_11` sigue **NO MEDIDA**. El signo proviene de neurotransmisor predicho en ambos conectomas. Los resultados históricos de H_REUSO se mantienen contra sus nulos originales, sin promoverlos a fisiología confirmada ni a resultado del control estricto.
+          - **H_REUSO_ESTRICTO sigue pendiente:** el nulo original no conserva lo que cada X envía a la clase descendente. **H_REUSO por superclase**, también pendiente, debe medir qué superclases aportan las X antes de restringir la gramática a interneuronas.
+          - **Embudo y compresión, alcance corregido:** la ventaja sellada de H_PARES_DATOS es agregada, no universal. En c2, el lector crudo alcanza o supera al embudo desde n = 96; PCA, desde n = 768. Los negativos de factorial 4 y núcleo fueron medidos con **W**, no con **MOSCA_L**. H_CONSENSO continúa REFUTADA (−4,59 puntos contra R2) y H_CABLEADO_NUCLEO SOSTENIDA frente a sus nulos; repetir esos negativos con MOSCA_L sigue **NO MEDIDO**.
+          - **Antecedentes directos, no novedad establecida:** Shuvaev et al. (PNAS 2024, cuello de botella genómico), Betzel et al. (bioRxiv 2025, SBM anidado del FlyWire adulto) y Barabási y Barabási (Neuron 2020, reglas genéticas y bicliques). Se leyeron resúmenes y fragmentos: la lectura completa de los tres queda **pendiente antes de sellar**. Betzel PNAS 2024 es la larva, no el adulto; la probabilidad de conexión sí decae con distancia somática allí. La regla de distancia en el adulto sigue NO MEDIDA.
+          - **Siguiente diseño propuesto, sin sellar ni ejecutar:** leer esos tres antecedentes; resolver el control estricto y el alcance por superclase; comparar G0 (tipos, lado y grados, o SBM reproducible) con G1 (añade el motivo), con anatomía reservada, interfaces y presupuestos pareados. Separar anatomía fuera de muestra, función, longitud de descripción y costo real, con controles capaces de refutar la propuesta.
+          - **Límite de esta autorización:** actualizar este CONTEXTO y su recibo documental. No autoriza sellos, experimentos, GPU, merges de código ni borrar la rama original `titan/docs-gramatica-conectoma-2026-11-01`, que se conserva.
+
+          """
+          REPLACEMENTS = [
+              (OLD_UPDATE.encode(), NEW_UPDATE.encode()),
+              (OLD_CANONICAL.encode(), NEW_CANONICAL.encode()),
+              (ANCHOR.encode(), (BLOCK + ANCHOR).encode()),
+          ]
+          LOG = []
+
+          class PatchError(Exception):
+              """Reject an unexpected source before any file is changed."""
+
+          def emit(message):
+              """Print and retain the exact evidence for the committed receipt."""
+              LOG.append(message)
+              print(message, flush=True)
+
+          def blob(data):
+              """Compute the Git blob identifier over the exact bytes."""
+              return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+
+          def transform(data, check_blob=True):
+              """Apply unique byte anchors in memory and prove reversibility."""
+              for i, (old, new) in enumerate(REPLACEMENTS, 1):
+                  count = data.count(old)
+                  if count != 1:
+                      raise PatchError(f"anchor_{i}: expected 1, got {count}")
+                  if new in data:
+                      raise PatchError(f"anchor_{i}: replacement already present")
+              if check_blob and blob(data) != EXPECTED_BEFORE:
+                  raise PatchError("source blob changed")
+              result = data
+              for old, new in REPLACEMENTS:
+                  result = result.replace(old, new, 1)
+              restored = result
+              for old, new in reversed(REPLACEMENTS):
+                  if restored.count(new) != 1:
+                      raise PatchError("reverse anchor is not unique")
+                  restored = restored.replace(new, old, 1)
+              if restored != data:
+                  raise PatchError("unrelated bytes changed")
+              tail = data[data.index(ANCHOR.encode()):]
+              if not result.endswith(tail):
+                  raise PatchError("historical tail changed")
+              return result
+
+          root = ROOT
+          target = root / TARGET
+          before = target.read_bytes()
+          after = transform(before)
+          emit("source_blob=" + blob(before))
+          emit("source_bytes=" + str(len(before)))
+          emit("source_md5=" + hashlib.md5(before).hexdigest())
+          for i, (old, new) in enumerate(REPLACEMENTS, 1):
+              emit(f"anchor_{i}_count=" + str(before.count(old)))
+          emit("positive_transform=PASS")
+          for i, (old, new) in enumerate(REPLACEMENTS, 1):
+              cases = [
+                  (f"missing_anchor_{i}", before.replace(old, b"", 1)),
+                  (f"duplicate_anchor_{i}", before + b"\n" + old),
+              ]
+              for label, damaged in cases:
+                  try:
+                      transform(damaged, check_blob=False)
+                  except PatchError as error:
+                      emit(label + "=REJECTED " + str(error))
+                  else:
+                      raise RuntimeError(label + " was accepted")
+          for label, damaged in [("source_drift", before + b"\n"), ("repeat_application", after)]:
+              try:
+                  transform(damaged)
+              except PatchError as error:
+                  emit(label + "=REJECTED " + str(error))
+              else:
+                  raise RuntimeError(label + " was accepted")
+          emit("negative_controls=8/8")
+          tail = before[before.index(ANCHOR.encode()):]
+          emit("historical_tail_bytes=" + str(len(tail)))
+          emit("historical_tail_sha256=" + hashlib.sha256(tail).hexdigest())
+          emit("historical_tail_unchanged=" + str(after.endswith(tail)))
+          emit("reverse_roundtrip=PASS")
+          emit("result_blob=" + blob(after))
+          emit("result_bytes=" + str(len(after)))
+          emit("result_md5=" + hashlib.md5(after).hexdigest())
+          if os.environ.get("CONTEXTO_MODE") == "preflight":
+              emit("preflight_only=True; files_written=0")
+          elif os.environ.get("CONTEXTO_MODE") == "apply":
+              for path, expected in [
+                  ("docs/agents/respuestas/2026-11-01-001-topo-inverso-gramatica-funcional-por-medir.md", "e9d3a7fd527277e0e74395dbeadc37a70b52d4ba"),
+                  ("docs/auditorias/2026-11-01-01-topo-inverso-numeros-bien-bitacora-fuera-de-main.md", "9493ee43d8b18f16f758979e46a240259ef60a12"),
+              ]:
+                  actual = blob((root / path).read_bytes())
+                  if actual != expected:
+                      raise PatchError("evidence source changed: " + path)
+                  emit("evidence_blob=" + actual + " " + path)
+              receipt = root / RECEIPT
+              if receipt.exists():
+                  raise PatchError("receipt already exists")
+              if target.read_bytes() != before:
+                  raise PatchError("target changed during validation")
+              target.write_bytes(after)
+              actual_git_blob = subprocess.check_output(["git", "hash-object", TARGET], cwd=root, text=True).strip()
+              if actual_git_blob != blob(after):
+                  raise PatchError("git hash-object disagrees")
+              emit("git_hash_object=" + actual_git_blob)
+              emit("target_readback_equal=" + str(target.read_bytes() == after))
+              source_sha = os.environ["SOURCE_SHA"]
+              instrument = "https://github.com/gatehot59-star/drosophila-fep-connectome/blob/" + source_sha + "/.github/workflows/contexto-topo-2026-11-01.yml"
+              lines = [
+                  "# 2026-11-01-002 · CONTEXTO actualizado con Topo inverso corregido",
+                  "", "Doc: " + DOC, "",
+                  "## 1. Pedido",
+                  "«Apply the anchored CONTEXTO patch». Actualizar el contexto canónico con la respuesta corregida y su auditoría, sin reescribir el contenido histórico ni ejecutar experimentos.", "",
+                  "## 2. Herramientas y máquina",
+                  "GitHub para lectura y publicación; brain-env para preflight de solo lectura; GitHub Actions x64, ubuntu-24.04, para aplicar el parche; ClickUp para registrar el cierre en el Doc existente. Repositorio público. Sin GPU, secretos nuevos, instalaciones ni merges de código.",
+                  "Instrumento: " + instrument,
+                  "Run: " + os.environ["RUN_URL"], "",
+                  "## 3. Qué se midió",
+                  "Tres anclas únicas, una transformación positiva y ocho controles negativos que rechazan entradas inválidas. Igualdad byte a byte de la cola histórica; reversión exacta de los tres cambios. El blob calculado por Python coincide con git hash-object. Este recibo y el CONTEXTO se publican juntos, mediante push normal sin force.",
+                  "La publicación se verifica leyendo el commit y su diff desde main. La existencia de este recibo en main documenta la publicación; el log de preflight por sí solo no la prueba.", "",
+                  "## 4. Evidencia cruda",
+                  "Comando: Python embebido en el workflow enlazado; CONTEXTO_MODE=apply.",
+                  "```text", "\n".join(LOG), "```", "",
+                  "## 5. Archivos",
+                  "- " + TARGET,
+                  "- " + RECEIPT,
+                  "El workflow permanece solo en titan/contexto-topo-2026-11-01. No se incorpora a main ni se borra. La rama original de la primera respuesta se conserva.",
+                  "El nuevo bloque remite a la respuesta 001 y a su auditoría. Registra H_REUSO_ESTRICTO, H_REUSO por superclase, lectura completa de los tres antecedentes antes de sellar, alcance W frente a MOSCA_L y la propuesta G0/G1 como pendientes.", "",
+                  "## 6. NO MEDIDO",
+                  "Gramática aprendida, novedad, ventaja funcional o de compresión; control estricto y superclases; repetición con MOSCA_L; nuevos resultados científicos. Revisión independiente no realizada. Los resultados históricos no cambian.",
+                  "El PR #2 abierto también contiene una versión del CONTEXTO; no se modifica ni se mergea. El guard de blob fija el estado leído de main y rechaza cualquier deriva posterior.", "",
+                  "## QA proporcional",
+                  "FULL por el workflow de mantenimiento. Preflight: 57/60 (95/100): completitud 15/15, ejecutabilidad 14/15, seguridad 14/15, documentación 10/10, proceso QA 4/5. Evidencia: tres anclas y ocho rechazos en el log, cola histórica y reversión exactas, YAML y shell comprobados antes del push, checkout fijado por SHA, permiso contents:write limitado al job documental, dos rutas permitidas y push sin force. Las deducciones reflejan que antes del push todavía faltaba la ejecución del runner y no hubo revisión independiente. Los 40 puntos de testing de producto, arquitectura, DevOps de producto e innovación son N/A: no se entrega producto ni experimento.",
+                  "", "--- METODO PROMETEO ---",
+                  "Rol: documentación e instrumento de mantenimiento.",
+                  "Delicado: sí, workflow nuevo en rama de trabajo; autorización: pedido de aplicar el parche anclado.",
+                  "Modo: FULL. Rúbrica de preflight: 57/60, 95/100; N/A: 40 puntos.",
+                  "Review externo: no realizado; no se presenta esta verificación como independiente.",
+                  "Máquinas: brain-env (preflight), Actions x64 (aplicación), ClickUp (Doc).",
+                  "Instrumento: workflow enlazado y evidencia cruda de esta sección 4.",
+                  "Archivo: " + RECEIPT,
+                  "Doc: " + DOC,
+              ]
+              receipt.write_text("\n".join(lines) + "\n", encoding="utf-8")
+          else:
+              raise PatchError("CONTEXTO_MODE must be preflight or apply")
+          # END_PATCH_PROGRAM
+          PY
+          git diff --check
+          git add -- docs/agents/CONTEXTO-drosophila-fep.md docs/agents/respuestas/2026-11-01-002-contexto-topo-inverso-actualizado.md
+          python3 - <<'PY'
+          import subprocess
+          expected = {
+              "docs/agents/CONTEXTO-drosophila-fep.md",
+              "docs/agents/respuestas/2026-11-01-002-contexto-topo-inverso-actualizado.md",
+          }
+          actual = set(subprocess.check_output(["git", "diff", "--cached", "--name-only"], text=True).splitlines())
+          if actual != expected:
+              raise SystemExit("Unexpected staged paths: " + repr(actual))
+          print("STAGED_PATHS_OK", sorted(actual))
+          PY
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          DOC_URL=$(sed -n 's/^Doc: //p' docs/agents/respuestas/2026-11-01-002-contexto-topo-inverso-actualizado.md | head -n 1)
+          git commit -m "estado(2026-11-01-002): incorporar Topo inverso corregido sin perder el contexto historico" -m "--- METODO PROMETEO ---
+          Delicado: si, workflow documental autorizado; sin merge de codigo.
+          Modo: FULL; preflight 57/60 (95/100), N/A 40 puntos.
+          Maquina: Actions x64; evidencia cruda en el recibo.
+          Review externo: no realizado.
+          Archivo: docs/agents/respuestas/2026-11-01-002-contexto-topo-inverso-actualizado.md
+          Doc: ${DOC_URL}"
+          git push origin HEAD:main
