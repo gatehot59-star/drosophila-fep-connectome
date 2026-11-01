@@ -31,183 +31,162 @@ jobs:
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          TEXT_CHANGES = [('**Última actualización:** 2026-11-01 (America/Buenos_Aires), con la respuesta corregida 2026-11-01-001 y el cierre documental 2026-11-01-002. **La sección «1-nov-2026 · Topo inverso corregido» manda sobre las categorías, antecedentes y alcance que corrige; para los demás temas conserva la prioridad la sección «Madrugada y mañana del 13-oct», seguida por «Tarde y noche del 12-oct (010 a 018)».** El material anterior se conserva como historia, no como una nueva medición.', '**Última actualización:** 2026-11-01 (America/Buenos_Aires), hasta la lectura de antecedentes 2026-11-01-004, posterior a la explicación 003. **La sección «1-nov-2026 · Topo inverso corregido» incorpora la corrección de alcance de la 004 y manda sobre las categorías, antecedentes y límites que corrige; para los demás temas conserva la prioridad «Madrugada y mañana del 13-oct», seguida por «Tarde y noche del 12-oct (010 a 018)».** Ningún experimento nuevo de Topo inverso se ejecutó.'), ('**Estado canónico:** `main`, con la auditoría 2026-11-01-01 y la respuesta corregida 2026-11-01-001, además de la bitácora anterior. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.', '**Estado canónico:** `main`, con la auditoría 2026-11-01-01 y las respuestas 2026-11-01-001 a 004, además de la bitácora anterior. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.'), ('- **Antecedentes directos, no novedad establecida:** Shuvaev et al. (PNAS 2024, cuello de botella genómico), Betzel et al. (bioRxiv 2025, SBM anidado del FlyWire adulto) y Barabási y Barabási (Neuron 2020, reglas genéticas y bicliques). Se leyeron resúmenes y fragmentos: la lectura completa de los tres queda **pendiente antes de sellar**. Betzel PNAS 2024 es la larva, no el adulto; la probabilidad de conexión sí decae con distancia somática allí. La regla de distancia en el adulto sigue NO MEDIDA.', '- **Antecedentes principales leídos, novedad no establecida:** [respuesta 2026-11-01-004](respuestas/2026-11-01-004-antecedentes-leidos-compresion-no-es-ahorro-de-calculo.md). Textos principales y métodos de Shuvaev (PNAS 2024), Betzel (bioRxiv v2, 17-jun-2026) y Barabási y Barabási (Neuron 2020, incluido STAR Methods y texto suplementario del PDF). Suplemento de Shuvaev no leído. Shuvaev comprime una inicialización que luego se expande, sin demostrar ahorro de ejecución. Los 45 arquetipos de Betzel son agrupamientos estructurales, no funciones validadas. Barabási es antecedente de reglas y bicliques, no de nuestra función ni del mismo motivo inhibitorio.\n- **Distancia adulta, corrección de la 001/002:** Betzel v2 informa que la probabilidad de conexión neuronal en FlyWire adulto decae con distancia entre somas (figura S2); entre pares conectados, cantidad de sinapsis y distancia correlacionan débilmente (r = 0,02; rho = 0,04). Hay evidencia externa adulta: «en el adulto sigue NO MEDIDA» era demasiado amplio. Nuestra réplica, el término geométrico y la oportunidad por arborizaciones siguen NO MEDIDOS.\n- **Comparador accesible, reproducción sin certificar:** datos y código de Betzel públicos en Zenodo. Notebook v1.0, commit `a25219060f467ddf3ee5635bf59ee77c23450e5e`, con `deg_corr=True` y pesos `discrete-geometric`. AST: 14/15 celdas con sintaxis válida; celda 8 falla por indentación. No se ejecutó graph-tool. La partición del grafo completo sirve para descripción, no como predicción ciega de sus propias aristas reservadas.'), ('- **Siguiente diseño propuesto, sin sellar ni ejecutar:** leer esos tres antecedentes; resolver el control estricto y el alcance por superclase; comparar G0 (tipos, lado y grados, o SBM reproducible) con G1 (añade el motivo), con anatomía reservada, interfaces y presupuestos pareados. Separar anatomía fuera de muestra, función, longitud de descripción y costo real, con controles capaces de refutar la propuesta.', '- **Siguiente diseño propuesto, sin sellar ni ejecutar:** resolver H_REUSO_ESTRICTO y el alcance por superclase antes de atribuir al motivo una regla especial; no bloquea construir G0. Retener identidades y superclases que el diccionario actual de `armar` no conserva; definir grados/fuerzas preservados y probar mezcla. Comparar G0 (tipos, lado y grados, o SBM reproducido) con G1 (añade el motivo), con anatomía reservada, interfaces y presupuestos pareados. Separar anatomía, función, descripción total y ejecución real. Menos parámetros almacenados no significa menos cálculo.'), ('- **Límite de esta autorización:** actualizar este CONTEXTO y su recibo documental. No autoriza sellos, experimentos, GPU, merges de código ni borrar la rama original `titan/docs-gramatica-conectoma-2026-11-01`, que se conserva.', '- **Alcance del «CONTINUA»:** lectura de antecedentes, comprobación sintáctica y registro en Git/Doc/CONTEXTO. No se sellaron ni corrieron experimentos, no se usó GPU, no se mergeó código ni se borró la rama original `titan/docs-gramatica-conectoma-2026-11-01`.')]
+          TEXT_CHANGES = [('**Última actualización:**', '**Última actualización:** 2026-11-01 (America/Buenos_Aires), hasta H_REUSO_ESTRICTO, respuesta 2026-11-01-005. **La sección «1-nov-2026 · Topo inverso corregido» incorpora la 005 y manda sobre categorías, controles y límites corregidos; para los demás temas conserva la prioridad «Madrugada y mañana del 13-oct», seguida por «Tarde y noche del 12-oct (010 a 018)».** El control estricto ya se ejecutó; G1 sigue sin diseño, implementación ni corrida.'), ('**Estado canónico:**', '**Estado canónico:** `main`, con la auditoría 2026-11-01-01 y las respuestas 2026-11-01-001 a 005, además de la bitácora anterior. El código y los resultados estrictos permanecen en `titan/reuso-estricto-2026-11-01`, sin merge. H4 auditado en `a4f5a8e9143173bf609eff430bcca3d5d8699c48`.'), ('- **H_REUSO, categorías corregidas:**', '- **H_REUSO, categorías precisadas en la 005:** S es una unidad tipo/lado de proyección visual (`visual_projection`), no sensorial. X es una neurona con signo inhibitorio predicho fuera de los conjuntos S/D elegibles (tipo y lado válidos), no automáticamente fuera de sus superclases completas. La frase anterior «salvo esas dos superclases» era demasiado fuerte. `AN_multi_11` está anotada como `ascending` en ambos atlas, ahora verificado. El signo continúa siendo una convención por neurotransmisor predicho, no fisiología confirmada.'), ('- **H_REUSO_ESTRICTO sigue pendiente:**', '- **H_REUSO_ESTRICTO VÁLIDA y SOSTENIDA en ambos conectomas:** [respuesta 2026-11-01-005](respuestas/2026-11-01-005-reuso-estricto-sostenido-en-flywire-y-banc.md). Sello `750f89a`, fuente `5497aa5`, resultado `0bc09b6`, verificador `6db5d08`; run 41320710194 completed/success. 200 nulos por conectoma, 400/400 completos y válidos. FlyWire: T1 880/996 = 88,35 % contra media 61,17 % y máximo 64,22 %; T2 698 contra media 565,02 y máximo 607. BANC: T1 622/753 = 82,60 % contra media 35,68 % y máximo 39,68 %; T2 419 contra media 112,385 y máximo 141. Cero superaciones en cada prueba; p = 1/201, Holm = 4/201 = 0,0199004975, no p = 0. El presupuesto saliente por clase no elimina el exceso bajo este nulo.\n- **Alcance del estricto:** permuta destinos por lado del origen, lado y superclase del destino, conservando filas/pesos salientes por origen y clase/lado. No conserva vecinos únicos tras agregar duplicados, fuerza entrante, tipo fino ni geometría; puede generar duplicados y autoaristas. Recalcula el denominador de T1 en cada red. El control no demuestra causalidad, función, gramática ni ahorro. BANC ya era conocido, no es test virgen.\n- **Superclases descriptivas medidas, inferencia aún pendiente:** FlyWire, 698 X compartidas = 662 central + 26 visual_centrifugal + 6 ascending + 4 optic. BANC, 419 = 398 central_brain_intrinsic + 18 visual_centrifugal + 3 ascending. Esto no completa H_REUSO estratificado por superclase ni con S sensoriales.\n- **Instrumento capaz de fallar:** 25/25 controles (incluye la batería histórica 7/7), mutación de clase 23/25 y exit 3, oráculo sintético distinto, positivo/negativo end-to-end, humo ciego y 400 guards. Verificador sin importar al productor: p racionales, Holm y paridad completa JSON/log; cuatro recibos corruptos rechazados. Misma instancia, no auditoría independiente. Actions x64: 396,73 s y 2,907 GiB RSS; costos del ensayo anatómico, no de G1.'), ('- **Siguiente diseño propuesto, sin sellar ni ejecutar:**', '- **Paso habilitado, no ejecutado:** el control estricto solicitado ya está cerrado. G1 sigue sin diseñar; una comparación futura G0/G1 deberá reservar anatomía, igualar interfaces y presupuestos y separar anatomía, función, descripción total y ejecución real. El resultado mantiene el motivo como candidato, no prueba que aporte frente a G0. Inferencia por superclase, signos desconocidos, geometría, alternativas que preserven fuerza entrante/vecinos únicos y compresión con MOSCA_L siguen pendientes.'), ('- **Alcance del «CONTINUA»:**', '- **Alcance y precedencia:** el «CONTINUA» de la 004 sólo autorizó lectura y documentación. Después se recibió «Run H_REUSO_ESTRICTO before designing G1» y se ejecutó el control en la 005. No se diseñó G1, no se usó GPU, no se mergeó código ni se borraron ramas. Las afirmaciones previas de estricto y AN_multi_11 «pendientes» quedan históricas frente a este resultado.')]
+          TARGET = "docs/agents/CONTEXTO-drosophila-fep.md"
+          RECEIPT = 'docs/agents/respuestas/2026-11-01-005-reuso-estricto-sostenido-en-flywire-y-banc.md'
+          EXPECTED_CONTEXT = "68e8be1ef8d937d48e3c427de8617257ef44f0d2"
+          EXPECTED_RESPONSE = '974d9567a64d97032c9d69c29bac9bc40cbd1375'
 
-          import ast
           import hashlib
-          import json
           import os
           from pathlib import Path
           import subprocess
-          import urllib.request
 
-          TARGET = "docs/agents/CONTEXTO-drosophila-fep.md"
-          RECEIPT = "docs/agents/respuestas/2026-11-01-004-antecedentes-leidos-compresion-no-es-ahorro-de-calculo.md"
-          ROOT = Path(os.environ.get("CONTEXTO_ROOT", "."))
-          EXPECTED_CONTEXT = "af3b24335a8b33939c4c88710b2e2dbffe2e7e60"
-          EXPECTED_RESPONSE = "bc38cf54e4ef31436deaf1ea5fefd47d8a9c003e"
-          TAIL = "## Madrugada y mañana del 13-oct (019 a 2026-10-14-061) · manda sobre el resto".encode()
-          CHANGES = [(a.encode(), b.encode()) for a, b in TEXT_CHANGES]
+          ROOT = Path(os.environ.get('CONTEXTO_ROOT', '.'))
+          TAIL = '## Madrugada y mañana del 13-oct (019 a 2026-10-14-061) · manda sobre el resto'.encode()
+          TAIL_SHA256 = 'b6c9d0cf10d6dd0b4bb6f9abd6e39c4ac1891bf7c101f169cef4f38ca5b31fb5'
           LOG = []
 
           class Rejected(Exception):
-              """Reject unexpected input before publication."""
+              """Reject an unexpected snapshot or an ambiguous edit before any write."""
 
           def emit(message):
-              """Retain the complete diagnostic output."""
-              print(message, flush=True)
+              """Record and print the complete validation output."""
               LOG.append(message)
+              print(message, flush=True)
 
           def blob(data):
-              """Compute a Git blob identity from exact bytes."""
-              return hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+              """Return the Git blob id for exact bytes."""
+              return hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
 
-          def transform(data, check_blob=True):
-              """Change only unique anchors and prove the reverse transformation."""
-              for i, (old, new) in enumerate(CHANGES, 1):
-                  if data.count(old) != 1:
-                      raise Rejected(f"anchor_{i}: expected 1, got {data.count(old)}")
-                  if new in data:
-                      raise Rejected(f"anchor_{i}: already present")
-              if check_blob and blob(data) != EXPECTED_CONTEXT:
-                  raise Rejected("source blob changed")
+          def anchors(data):
+              """Find exactly one complete line for each declared anchor."""
+              lines = data.splitlines(keepends=True)
+              found = []
+              for i, (key, replacement) in enumerate(TEXT_CHANGES, 1):
+                  hits = [line for line in lines if line.startswith(key.encode())]
+                  if len(hits) != 1:
+                      raise Rejected(f'anchor_{i}: expected 1, got {len(hits)}')
+                  if not hits[0].endswith(b'\n'):
+                      raise Rejected(f'anchor_{i}: missing newline')
+                  found.append((hits[0], (replacement + '\n').encode()))
+              return found
+
+          def transform(data):
+              """Apply the six anchored changes only to the exact approved snapshot."""
+              pairs = anchors(data)
+              if blob(data) != EXPECTED_CONTEXT:
+                  raise Rejected('source blob changed')
               if data.count(TAIL) != 1:
-                  raise Rejected("historical anchor not unique")
+                  raise Rejected('historical anchor ambiguous')
+              tail = data[data.index(TAIL):]
+              if len(tail) != 119028 or hashlib.sha256(tail).hexdigest() != TAIL_SHA256:
+                  raise Rejected('historical tail changed')
               result = data
-              for old, new in CHANGES:
+              for old, new in pairs:
+                  if result.count(old) != 1:
+                      raise Rejected('full anchor line ambiguous')
                   result = result.replace(old, new, 1)
+              if result[result.index(TAIL):] != tail:
+                  raise Rejected('historical bytes changed')
               reverse = result
-              for old, new in reversed(CHANGES):
+              for old, new in reversed(pairs):
                   if reverse.count(new) != 1:
-                      raise Rejected("reverse anchor not unique")
+                      raise Rejected('reverse anchor ambiguous')
                   reverse = reverse.replace(new, old, 1)
-              if reverse != data or not result.endswith(data[data.index(TAIL):]):
-                  raise Rejected("unrelated bytes changed")
+              if reverse != data:
+                  raise Rejected('reverse roundtrip mismatch')
               return result
 
-          url = "https://raw.githubusercontent.com/rbetzel/fafb_nested_communities/a25219060f467ddf3ee5635bf59ee77c23450e5e/py/sample_posterior_distribution_no_threshold.ipynb"
-          if os.environ.get("NOTEBOOK_FILE"):
-              raw = Path(os.environ["NOTEBOOK_FILE"]).read_bytes()
-          else:
-              with urllib.request.urlopen(url, timeout=45) as response:
-                  raw = response.read(100000)
-          if blob(raw) != "dac5a96a926133a3fb68f535b960859c3b318e37":
-              raise Rejected("notebook blob changed")
-          emit("SOURCE " + url)
-          emit("bytes=" + str(len(raw)) + " git_blob=" + blob(raw) + " sha256=" + hashlib.sha256(raw).hexdigest())
-          passed = 0
-          failed = []
-          for i, cell in enumerate(json.loads(raw)["cells"], 1):
-              if cell["cell_type"] != "code":
-                  continue
-              source = "".join(cell["source"])
+          def expect_rejected(name, data, reason):
+              """Require a negative fixture to fail for its intended reason."""
               try:
-                  ast.parse(source, filename="cell_" + str(i))
-                  passed += 1
-                  emit("cell=" + str(i) + " id=" + cell.get("id", "") + " SYNTAX_PASS")
-              except SyntaxError as error:
-                  failed.append((i, type(error).__name__, error.lineno))
-                  emit("cell=" + str(i) + " id=" + cell.get("id", "") + " SYNTAX_FAIL " + type(error).__name__ + " line=" + str(error.lineno) + " " + error.msg)
-                  emit("SOURCE_BEGIN\n" + source + "\nSOURCE_END")
-          emit("TOTAL code_cells=" + str(passed + len(failed)) + " pass=" + str(passed) + " fail=" + str(len(failed)))
-          if passed != 14 or failed != [(8, "IndentationError", 18)]:
-              raise Rejected("syntax result differs from report")
-          ast.parse("value = 1\n")
-          emit("PARSER_POSITIVE pass")
-          try:
-              ast.parse("value =\n")
-          except SyntaxError:
-              emit("PARSER_NEGATIVE rejected")
-          else:
-              raise Rejected("negative parser control accepted")
-          emit("EXTERNAL_CODE_EXECUTED=false graph_tool_imported=false pickle_loaded=false")
+                  transform(data)
+              except Rejected as exc:
+                  if reason not in str(exc):
+                      raise Rejected(name + ': wrong rejection: ' + str(exc)) from exc
+                  emit(name + '=REJECTED ' + str(exc))
+                  return
+              raise Rejected(name + ': unexpectedly accepted')
 
           target = ROOT / TARGET
           receipt = ROOT / RECEIPT
           before = target.read_bytes()
           report = receipt.read_bytes()
           if blob(report) != EXPECTED_RESPONSE:
-              raise Rejected("response 004 changed")
+              raise Rejected('response blob changed')
+          if b'## 8. Cierre anclado del estado 005' in report:
+              raise Rejected('closure already exists')
+          emit('source_blob=' + blob(before))
+          emit('source_bytes=' + str(len(before)))
+          emit('response_blob=' + blob(report))
+          emit('response_bytes=' + str(len(report)))
+          pairs = anchors(before)
+          for i in range(1, len(pairs) + 1):
+              emit(f'anchor_{i}_count=1')
           after = transform(before)
-          emit("source_blob=" + blob(before))
-          emit("source_bytes=" + str(len(before)))
-          for i, (old, new) in enumerate(CHANGES, 1):
-              emit(f"anchor_{i}_count=" + str(before.count(old)))
-          emit("positive_transform=PASS")
-          for i, (old, new) in enumerate(CHANGES, 1):
-              for label, damaged in [(f"missing_anchor_{i}", before.replace(old, b"", 1)), (f"duplicate_anchor_{i}", before + b"\n" + old)]:
-                  try:
-                      transform(damaged, check_blob=False)
-                  except Rejected as error:
-                      emit(label + "=REJECTED " + str(error))
-                  else:
-                      raise Rejected(label + " was accepted")
-          for label, damaged in [("source_drift", before + b"\n"), ("repeat_application", after)]:
-              try:
-                  transform(damaged)
-              except Rejected as error:
-                  emit(label + "=REJECTED " + str(error))
-              else:
-                  raise Rejected(label + " was accepted")
-          emit("negative_controls=12/12")
-          tail = before[before.index(TAIL):]
-          emit("historical_tail_bytes=" + str(len(tail)))
-          emit("historical_tail_sha256=" + hashlib.sha256(tail).hexdigest())
-          emit("historical_tail_unchanged=" + str(after.endswith(tail)))
-          emit("reverse_roundtrip=PASS")
-          emit("result_blob=" + blob(after))
-          emit("result_bytes=" + str(len(after)))
-          emit("result_sha256=" + hashlib.sha256(after).hexdigest())
-          if os.environ.get("CONTEXTO_MODE") == "preflight":
-              emit("preflight_only=True; files_written=0")
-          elif os.environ.get("CONTEXTO_MODE") == "apply":
+          emit('positive_transform=PASS')
+          for i, (old, new) in enumerate(pairs, 1):
+              expect_rejected(f'missing_anchor_{i}', before.replace(old, b'', 1), f'anchor_{i}: expected 1, got 0')
+              expect_rejected(f'duplicate_anchor_{i}', before.replace(old, old + old, 1), f'anchor_{i}: expected 1, got 2')
+          expect_rejected('source_drift', before + b'changed\n', 'source blob changed')
+          expect_rejected('repeat_application', after, 'anchor_3: expected 1, got 0')
+          emit('negative_controls=14/14')
+          emit('historical_tail_bytes=119028')
+          emit('historical_tail_sha256=' + TAIL_SHA256)
+          emit('historical_tail_unchanged=True')
+          emit('reverse_roundtrip=PASS')
+          emit('result_blob=' + blob(after))
+          emit('result_bytes=' + str(len(after)))
+          emit('result_sha256=' + hashlib.sha256(after).hexdigest())
+          mode = os.environ.get('CONTEXTO_MODE')
+          if mode == 'preflight':
+              emit('preflight_only=True; files_written=0')
+          elif mode == 'apply':
               if target.read_bytes() != before or receipt.read_bytes() != report:
-                  raise Rejected("target changed during validation")
-              doc = next(x[5:].strip() for x in report.decode().splitlines() if x.startswith("Doc: "))
-              if not doc.startswith("https://app.clickup.com/"):
-                  raise Rejected("canonical Doc URL missing")
+                  raise Rejected('input changed during validation')
+              docs = [line[5:].strip() for line in report.decode().splitlines() if line.startswith('Doc: ')]
+              if len(docs) != 1 or not docs[0].startswith('https://app.clickup.com/'):
+                  raise Rejected('canonical Doc URL missing')
               target.write_bytes(after)
-              actual = subprocess.check_output(["git", "hash-object", TARGET], cwd=ROOT, text=True).strip()
+              actual = subprocess.check_output(['git', 'hash-object', TARGET], cwd=ROOT, text=True).strip()
               if actual != blob(after) or target.read_bytes() != after:
-                  raise Rejected("target readback mismatch")
-              emit("git_hash_object=" + actual)
-              emit("target_readback_equal=True")
-              instrument = "https://github.com/gatehot59-star/drosophila-fep-connectome/blob/" + os.environ["SOURCE_SHA"] + "/.github/workflows/contexto-topo-2026-11-01.yml"
-              appendix = "\n## 7. Cierre anclado: contexto y evidencia documental\n\n"
-              appendix += "El CONTEXTO incorpora la lectura principal, la corrección de distancia adulta, el límite de los arquetipos y el FAIL sintáctico. No cambia resultados experimentales. Esta sección se publica junto al CONTEXTO mediante push normal; la publicación se verifica leyendo main, no por el log.\n\n"
-              appendix += "Instrumento: " + instrument + "\n\nRun: " + os.environ["RUN_URL"] + "\n\n"
-              appendix += "Comando: Python embebido en ese workflow, CONTEXTO_MODE=apply. Salida completa:\n\n```text\n" + "\n".join(LOG) + "\n```\n\n"
-              appendix += "La respuesta original 004 se conserva como prefijo byte a byte; este cierre se agrega. El workflow queda en su rama, sin permisos nuevos, sin merge, sin force y con solo dos rutas staged.\n\n"
-              appendix += "QA de mantenimiento: preflight 57/60 (95/100): completitud 15/15, ejecutabilidad 14/15, seguridad 14/15, documentación 10/10, proceso QA 4/5. Evidencia: ejecución previa del programa, cinco anclas, doce rechazos, reversión exacta y cola idéntica, YAML/shell/AST verificados, checkout fijado y rutas acotadas. Descuentos por runner todavía pendiente en preflight y falta de selección independiente de controles. N/A 40 puntos de testing, arquitectura, DevOps e innovación de producto. Este score no valida la hipótesis científica.\n\n"
-              appendix += "--- METODO PROMETEO ---\nAccion delicada: SI, mantenimiento del workflow documental existente, sin permisos nuevos.\nModo aplicado: FULL.\nMaquina: brain-env (preflight), Actions x64 (parche y AST), ClickUp (Doc).\nRubrica: 57/60, 95/100; N/A 40 puntos de producto.\nReview externo: no realizado; sin independencia de selección o interpretación.\nInstrumento: workflow fijado y salida completa arriba.\nArtefactos: " + RECEIPT + " + " + doc + "\n"
+                  raise Rejected('target readback mismatch')
+              emit('git_hash_object=' + actual)
+              emit('target_readback_equal=True')
+              instrument = 'https://github.com/gatehot59-star/drosophila-fep-connectome/blob/' + os.environ['SOURCE_SHA'] + '/.github/workflows/contexto-topo-2026-11-01.yml'
+              appendix = '\n## 8. Cierre anclado del estado 005\n\n'
+              appendix += 'El CONTEXTO incorpora el control estricto ya ejecutado, la categoria ascending de AN_multi_11 y la definicion precisa de X. G1 sigue sin diseno. No se vuelve a ejecutar el experimento.\n\n'
+              appendix += 'Instrumento: ' + instrument + '\n\nRun: ' + os.environ['RUN_URL'] + '\n\n'
+              appendix += 'Comando: Python embebido en el workflow, CONTEXTO_MODE=apply. Salida completa:\n\n```text\n' + '\n'.join(LOG) + '\n```\n\n'
+              appendix += 'Las seis anclas fueron probadas en copia antes de publicar; catorce entradas invalidas fueron rechazadas por el motivo esperado. Los 119.028 bytes historicos quedan identicos y la respuesta 005 anterior se conserva como prefijo exacto. Este cierre y CONTEXTO son las dos unicas rutas staged; push normal, sin force, permisos nuevos, merge ni cambios al ensayo cientifico. La publicacion efectiva se verifica leyendo main despues del push.\n\n'
+              appendix += 'QA previa de mantenimiento: 57/60 (95/100): completitud 15/15, ejecutabilidad 14/15 por runner aun pendiente, seguridad 14/15, documentacion 10/10 y proceso 4/5 por falta de seleccion independiente. Evidencia: programa ejecutado en copia, seis anclas, catorce rechazos especificos, reversibilidad, cola y prefijo exactos, YAML/Bash/AST validos, checkout fijado y staged acotado. N/A 40 puntos de producto. No es una medida de probabilidad cientifica.\n\n'
+              appendix += '--- METODO PROMETEO ---\nAccion delicada: SI, mantenimiento del workflow documental existente.\nModo aplicado: FULL.\nMaquina: brain-env para preflight y Actions x64 para el parche.\nRubrica previa: 57/60 (95/100); N/A 40 puntos de producto.\nReview externo: no realizado.\nInstrumento: workflow y salida completa enlazados arriba.\nArtefactos: ' + RECEIPT + ' + ' + docs[0] + '\n'
               receipt.write_bytes(report + appendix.encode())
               if not receipt.read_bytes().startswith(report):
-                  raise Rejected("response prefix changed")
+                  raise Rejected('response prefix changed')
           else:
-              raise Rejected("unknown mode")
+              raise Rejected('unknown mode')
+
           PY
-          # El recibo conserva espacios originales del codigo externo; no normalizar evidencia cruda.
           git diff --check -- docs/agents/CONTEXTO-drosophila-fep.md
-          git add -- docs/agents/CONTEXTO-drosophila-fep.md docs/agents/respuestas/2026-11-01-004-antecedentes-leidos-compresion-no-es-ahorro-de-calculo.md
+          git add -- docs/agents/CONTEXTO-drosophila-fep.md docs/agents/respuestas/2026-11-01-005-reuso-estricto-sostenido-en-flywire-y-banc.md
           python3 - <<'PY'
           import subprocess
-          expected = {
-              "docs/agents/CONTEXTO-drosophila-fep.md",
-              "docs/agents/respuestas/2026-11-01-004-antecedentes-leidos-compresion-no-es-ahorro-de-calculo.md",
-          }
-          actual = set(subprocess.check_output(["git", "diff", "--cached", "--name-only"], text=True).splitlines())
+          expected = {'docs/agents/CONTEXTO-drosophila-fep.md', 'docs/agents/respuestas/2026-11-01-005-reuso-estricto-sostenido-en-flywire-y-banc.md'}
+          actual = set(subprocess.check_output(['git', 'diff', '--cached', '--name-only'], text=True).splitlines())
           if actual != expected:
-              raise SystemExit("Unexpected staged paths: " + repr(actual))
-          print("STAGED_PATHS_OK", sorted(actual))
+              raise SystemExit('Unexpected staged paths: ' + repr(actual))
+          print('STAGED_PATHS_OK', sorted(actual))
           PY
           git config user.name "github-actions[bot]"
           git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
-          DOC_URL=$(sed -n 's/^Doc: //p' docs/agents/respuestas/2026-11-01-004-antecedentes-leidos-compresion-no-es-ahorro-de-calculo.md | head -n 1)
-          git commit -m "estado(004): registrar los antecedentes leidos sin reescribir la historia" -m "--- METODO PROMETEO ---
-          Delicado: si, workflow documental existente; sin permisos nuevos ni merge de codigo.
-          Modo: FULL; preflight 57/60 (95/100), N/A 40 puntos.
+          DOC_URL=$(sed -n 's/^Doc: //p' docs/agents/respuestas/2026-11-01-005-reuso-estricto-sostenido-en-flywire-y-banc.md | head -n 1)
+          git commit -m "estado(005): cerrar el control estricto sin adelantar G1" -m "--- METODO PROMETEO ---
+          Delicado: si, workflow documental existente; sin permisos nuevos ni merge.
+          Modo: FULL; preflight 57/60 (95/100), N/A 40 puntos de producto.
           Maquina: Actions x64; evidencia cruda en el recibo.
           Review externo: no realizado.
-          Archivo: docs/agents/respuestas/2026-11-01-004-antecedentes-leidos-compresion-no-es-ahorro-de-calculo.md
+          Archivo: docs/agents/respuestas/2026-11-01-005-reuso-estricto-sostenido-en-flywire-y-banc.md
           Doc: ${DOC_URL}"
           git push origin HEAD:main
