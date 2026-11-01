@@ -165,3 +165,64 @@ Rubrica: 58/60 = 96,7/100. N/A: 40 puntos de producto, justificados en sección 
 Review externo: no realizado; no hay independencia de selección ni interpretación.
 Instrumento: reuso_estricto.py, exit 0; verificar_estricto.py, exit 0; evidencia cruda completa enlazada en sección 3.
 Artefactos: docs/agents/respuestas/2026-11-01-005-reuso-estricto-sostenido-en-flywire-y-banc.md + https://app.clickup.com/90171457413/docs/2kza6fw5-26157
+
+## 8. Cierre anclado del estado 005
+
+El CONTEXTO incorpora el control estricto ya ejecutado, la categoria ascending de AN_multi_11 y la definicion precisa de X. G1 sigue sin diseno. No se vuelve a ejecutar el experimento.
+
+Instrumento: https://github.com/gatehot59-star/drosophila-fep-connectome/blob/4293ab19c91d101b1cf47a1f79ea5425e9395cbc/.github/workflows/contexto-topo-2026-11-01.yml
+
+Run: https://github.com/gatehot59-star/drosophila-fep-connectome/actions/runs/41322130809
+
+Comando: Python embebido en el workflow, CONTEXTO_MODE=apply. Salida completa:
+
+```text
+source_blob=68e8be1ef8d937d48e3c427de8617257ef44f0d2
+source_bytes=124737
+response_blob=974d9567a64d97032c9d69c29bac9bc40cbd1375
+response_bytes=17279
+anchor_1_count=1
+anchor_2_count=1
+anchor_3_count=1
+anchor_4_count=1
+anchor_5_count=1
+anchor_6_count=1
+positive_transform=PASS
+missing_anchor_1=REJECTED anchor_1: expected 1, got 0
+duplicate_anchor_1=REJECTED anchor_1: expected 1, got 2
+missing_anchor_2=REJECTED anchor_2: expected 1, got 0
+duplicate_anchor_2=REJECTED anchor_2: expected 1, got 2
+missing_anchor_3=REJECTED anchor_3: expected 1, got 0
+duplicate_anchor_3=REJECTED anchor_3: expected 1, got 2
+missing_anchor_4=REJECTED anchor_4: expected 1, got 0
+duplicate_anchor_4=REJECTED anchor_4: expected 1, got 2
+missing_anchor_5=REJECTED anchor_5: expected 1, got 0
+duplicate_anchor_5=REJECTED anchor_5: expected 1, got 2
+missing_anchor_6=REJECTED anchor_6: expected 1, got 0
+duplicate_anchor_6=REJECTED anchor_6: expected 1, got 2
+source_drift=REJECTED source blob changed
+repeat_application=REJECTED anchor_3: expected 1, got 0
+negative_controls=14/14
+historical_tail_bytes=119028
+historical_tail_sha256=b6c9d0cf10d6dd0b4bb6f9abd6e39c4ac1891bf7c101f169cef4f38ca5b31fb5
+historical_tail_unchanged=True
+reverse_roundtrip=PASS
+result_blob=f3bbbc2ecf9a3f6d05f5dbc84058201d5ecfdf2c
+result_bytes=126524
+result_sha256=9c24e919dcec1df4f009d0da91d7e63ea4c2bca0155b29ee24033ef910009413
+git_hash_object=f3bbbc2ecf9a3f6d05f5dbc84058201d5ecfdf2c
+target_readback_equal=True
+```
+
+Las seis anclas fueron probadas en copia antes de publicar; catorce entradas invalidas fueron rechazadas por el motivo esperado. Los 119.028 bytes historicos quedan identicos y la respuesta 005 anterior se conserva como prefijo exacto. Este cierre y CONTEXTO son las dos unicas rutas staged; push normal, sin force, permisos nuevos, merge ni cambios al ensayo cientifico. La publicacion efectiva se verifica leyendo main despues del push.
+
+QA previa de mantenimiento: 57/60 (95/100): completitud 15/15, ejecutabilidad 14/15 por runner aun pendiente, seguridad 14/15, documentacion 10/10 y proceso 4/5 por falta de seleccion independiente. Evidencia: programa ejecutado en copia, seis anclas, catorce rechazos especificos, reversibilidad, cola y prefijo exactos, YAML/Bash/AST validos, checkout fijado y staged acotado. N/A 40 puntos de producto. No es una medida de probabilidad cientifica.
+
+--- METODO PROMETEO ---
+Accion delicada: SI, mantenimiento del workflow documental existente.
+Modo aplicado: FULL.
+Maquina: brain-env para preflight y Actions x64 para el parche.
+Rubrica previa: 57/60 (95/100); N/A 40 puntos de producto.
+Review externo: no realizado.
+Instrumento: workflow y salida completa enlazados arriba.
+Artefactos: docs/agents/respuestas/2026-11-01-005-reuso-estricto-sostenido-en-flywire-y-banc.md + https://app.clickup.com/90171457413/docs/2kza6fw5-26157
