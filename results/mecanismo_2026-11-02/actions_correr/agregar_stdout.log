@@ -1,0 +1,36 @@
+== agregar_mecanismo.py :: H_MECANISMO (2026-11-02-002) celdas=9 ==
+CTRL_MN9 PASA ensayos_con_espiga=10
+ESTIMULO LC4 veredicto=INVALIDO guardas=['pin', 'celda_faltante', 'C0_C4_incompletas']
+  P1 media_dif=None p=1 p_holm=1 pasa=False
+  P2 media_dif=None p=1 p_holm=1 pasa=False
+  P3 media_dif=None p=1 p_holm=1 pasa=False
+  P4 media_dif=None p=1 p_holm=1 pasa=False
+  dSX/dX=None dXD/dX=None
+  TASAS rel20=0.620879918687382 rel50=None rel150=0.2965839297497589 -> SUSTRACTIVA
+  IZQUIERDA {"completa": false}
+ESTIMULO LPLC2 veredicto=INVALIDO guardas=['pin', 'celda_faltante', 'C0_C4_incompletas']
+  P1 media_dif=None p=1 p_holm=1 pasa=False
+  P2 media_dif=None p=1 p_holm=1 pasa=False
+  P3 media_dif=None p=1 p_holm=1 pasa=False
+  P4 media_dif=None p=1 p_holm=1 pasa=False
+  dSX/dX=None dXD/dX=None
+  TASAS rel20=0.5975703414089227 rel50=None rel150=0.338079377590196 -> DIVISIVA
+  IZQUIERDA {"completa": false}
+ESTIMULO LPLC1 veredicto=INVALIDO guardas=['pin', 'celda_faltante', 'C0_C4_incompletas']
+  P1 media_dif=None p=1 p_holm=1 pasa=False
+  P2 media_dif=None p=1 p_holm=1 pasa=False
+  P3 media_dif=None p=1 p_holm=1 pasa=False
+  P4 media_dif=None p=1 p_holm=1 pasa=False
+  dSX/dX=None dXD/dX=None
+  TASAS rel20=0.8602409638554217 rel50=None rel150=0.3930039493834126 -> SUSTRACTIVA
+  IZQUIERDA {"completa": false}
+ESTIMULO LPLC4 veredicto=INVALIDO guardas=['pin', 'celda_faltante', 'C0_C4_incompletas']
+  P1 media_dif=None p=1 p_holm=1 pasa=False
+  P2 media_dif=None p=1 p_holm=1 pasa=False
+  P3 media_dif=None p=1 p_holm=1 pasa=False
+  P4 media_dif=None p=1 p_holm=1 pasa=False
+  dSX/dX=None dXD/dX=None
+  TASAS rel20=0.3243118418621836 rel50=None rel150=0.22488303255991596 -> DIVISIVA
+  IZQUIERDA {"completa": false}
+H_MECANISMO INVALIDA (LC4=INVALIDO, LPLC2=INVALIDO, LPLC1=INVALIDO, LPLC4=INVALIDO)
+EXIT_AGREGAR=0

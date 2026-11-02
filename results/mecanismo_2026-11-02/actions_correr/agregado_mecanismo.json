@@ -1,0 +1,195 @@
+{
+ "ctrl_mn9": true,
+ "estimulos": {
+  "LC4": {
+   "dSX_sobre_dX": null,
+   "dXD_sobre_dX": null,
+   "guardas": {
+    "C0_C4_incompletas": true,
+    "celda_faltante": true,
+    "ctrl_mn9": false,
+    "pin": true
+   },
+   "pruebas": {
+    "P1": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P2": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P3": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P4": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    }
+   },
+   "veredicto": "INVALIDO"
+  },
+  "LPLC1": {
+   "dSX_sobre_dX": null,
+   "dXD_sobre_dX": null,
+   "guardas": {
+    "C0_C4_incompletas": true,
+    "celda_faltante": true,
+    "ctrl_mn9": false,
+    "pin": true
+   },
+   "pruebas": {
+    "P1": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P2": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P3": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P4": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    }
+   },
+   "veredicto": "INVALIDO"
+  },
+  "LPLC2": {
+   "dSX_sobre_dX": null,
+   "dXD_sobre_dX": null,
+   "guardas": {
+    "C0_C4_incompletas": true,
+    "celda_faltante": true,
+    "ctrl_mn9": false,
+    "pin": true
+   },
+   "pruebas": {
+    "P1": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P2": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P3": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P4": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    }
+   },
+   "veredicto": "INVALIDO"
+  },
+  "LPLC4": {
+   "dSX_sobre_dX": null,
+   "dXD_sobre_dX": null,
+   "guardas": {
+    "C0_C4_incompletas": true,
+    "celda_faltante": true,
+    "ctrl_mn9": false,
+    "pin": true
+   },
+   "pruebas": {
+    "P1": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P2": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P3": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    },
+    "P4": {
+     "media_dif": null,
+     "p": 1.0,
+     "p_holm": 1.0,
+     "pasa": false
+    }
+   },
+   "veredicto": "INVALIDO"
+  }
+ },
+ "global": "INVALIDA",
+ "izquierda": {
+  "LC4": {
+   "completa": false
+  },
+  "LPLC1": {
+   "completa": false
+  },
+  "LPLC2": {
+   "completa": false
+  },
+  "LPLC4": {
+   "completa": false
+  }
+ },
+ "tasas": {
+  "LC4": {
+   "lectura": "SUSTRACTIVA",
+   "t150": 0.2965839297497589,
+   "t20": 0.620879918687382,
+   "t50": null
+  },
+  "LPLC1": {
+   "lectura": "SUSTRACTIVA",
+   "t150": 0.3930039493834126,
+   "t20": 0.8602409638554217,
+   "t50": null
+  },
+  "LPLC2": {
+   "lectura": "DIVISIVA",
+   "t150": 0.338079377590196,
+   "t20": 0.5975703414089227,
+   "t50": null
+  },
+  "LPLC4": {
+   "lectura": "DIVISIVA",
+   "t150": 0.22488303255991596,
+   "t20": 0.3243118418621836,
+   "t50": null
+  }
+ },
+ "version": "2026-11-02-002"
+}
