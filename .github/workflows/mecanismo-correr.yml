@@ -1,0 +1,152 @@
+name: mecanismo-correr
+# Respuesta 2026-11-02-002. CORRER de H_MECANISMO con el sello tools/mecanismo/SELLO-MECANISMO-2026-11-02.md: cada
+# trabajo exige los sha256 del sello antes de medir. Censo y conjuntos reproducidos en Actions, 17 celdas del LIF de
+# Shiu sin cambios y el agregado con las reglas del sello. Solo se dispara al pushear results/mecanismo_2026-11-02/CORRER;
+# se niega a correr si ya hay resultados.
+on:
+  push:
+    branches: ["titan/mecanismo-2026-11-02"]
+    paths: ["results/mecanismo_2026-11-02/CORRER"]
+permissions:
+  contents: write
+concurrency:
+  group: mecanismo-correr
+  cancel-in-progress: false
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  LIFDEPS: brian2==2.10.1 cython==3.1.3 joblib==1.6.0
+  SHIU: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+  BANC: https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888
+  OPENBLAS_NUM_THREADS: "1"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+  PYTHONUNBUFFERED: "1"
+jobs:
+  censo:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: sello y negativa a repetir
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ -e results/mecanismo_2026-11-02/actions_correr ]; then echo 'REFUSE: ya hay resultados; no se repite la medicion'; exit 4; fi
+          grep -E '^[0-9a-f]{64}  ' tools/mecanismo/SELLO-MECANISMO-2026-11-02.md | sha256sum --check -
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12.14"
+      - name: censo (Paso 1-2 sin cambios) y conjuntos con el sha256 del sello
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          exec > >(tee out/censo.log) 2>&1
+          printf 'UTC_START '; date -u --iso-8601=seconds
+          printf 'SOURCE_COMMIT '; git rev-parse HEAD
+          python -m pip install $DEPS
+          sudo mkdir -p /workspace/banc_888 /workspace/mecanismo-2026-11-02
+          sudo chown -R "$USER" /workspace
+          curl -fsSL --retry 2 --max-time 300 -o /workspace/connectivity.parquet "$SHIU/Connectivity_783.parquet"
+          curl -fsSL --retry 2 --max-time 300 -o /workspace/annotations.tsv "$ANNOT_URL"
+          curl -fsSL --retry 2 --max-time 300 -o /workspace/banc_888/banc_888_meta.feather "$BANC/banc_888_meta.feather"
+          curl -fsSL --retry 2 --max-time 900 -o /workspace/banc_888/banc_888_edgelist_simple_v3.feather "$BANC/banc_888_edgelist_simple_v3.feather"
+          cp tools/reuso/reuso_mosca.py tools/mecanismo/paso12.py /workspace/mecanismo-2026-11-02/
+          printf '%s\n' \
+            'efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347  /workspace/connectivity.parquet' \
+            '9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be  /workspace/annotations.tsv' \
+            '86ccf5df0c67419f8c5f43e93a7ed38d23a080e9f7fde26737290252f3780098  /workspace/banc_888/banc_888_meta.feather' \
+            '8c296e946f3c69a8c7222f30ad75fa8a98eeb189124fec6df829c9125f4be64b  /workspace/banc_888/banc_888_edgelist_simple_v3.feather' \
+            'b604af62e053cacded85979002b34d70ca104d5399cfba1b8135a6626bf784eb  /workspace/mecanismo-2026-11-02/paso12.py' \
+            | sha256sum --check -
+          if [ -x /usr/bin/time ]; then TV="/usr/bin/time -v"; else TV=""; fi
+          $TV python /workspace/mecanismo-2026-11-02/paso12.py > out/paso12.log 2>&1 || { tail -60 out/paso12.log; exit 3; }
+          grep -E '^(PARITY|LOADED|DONE)' out/paso12.log || true
+          python tools/mecanismo/conjuntos.py --dir /workspace/mecanismo-2026-11-02 --out out/conjuntos_flywire.json
+          echo 'f3e8602a6bcf3daefc3b83965f7793a2648f59a22bf8df6209d09ed19e0a3c2d  out/conjuntos_flywire.json' | sha256sum --check -
+          printf 'UTC_END '; date -u --iso-8601=seconds
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mecanismo-correr-censo
+          path: out/
+  medir:
+    needs: [censo]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 330
+    strategy:
+      fail-fast: false
+      matrix:
+        celda: [ctrl_mn9, p_LC4_right, p_LPLC2_right, p_LPLC1_right, p_LPLC4_right, t20_LC4_right, t20_LPLC2_right, t20_LPLC1_right, t20_LPLC4_right, t150_LC4_right, t150_LPLC2_right, t150_LPLC1_right, t150_LPLC4_right, i_LC4_left, i_LPLC2_left, i_LPLC1_left, i_LPLC4_left]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12.14"
+      - uses: actions/download-artifact@v4
+        with:
+          name: mecanismo-correr-censo
+          path: censo
+      - name: medir ${{ matrix.celda }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out
+          exec > >(tee out/medir_${{ matrix.celda }}.log) 2>&1
+          printf 'UTC_START '; date -u --iso-8601=seconds
+          printf 'SOURCE_COMMIT '; git rev-parse HEAD
+          grep -E '^[0-9a-f]{64}  ' tools/mecanismo/SELLO-MECANISMO-2026-11-02.md | sha256sum --check -
+          python -m pip install $DEPS $LIFDEPS
+          mkdir -p /tmp/shiu /tmp/in
+          curl -fsSL --retry 2 --max-time 300 -o /tmp/in/connectivity.parquet "$SHIU/Connectivity_783.parquet"
+          curl -fsSL --retry 2 --max-time 300 -o /tmp/in/completeness.csv "$SHIU/Completeness_783.csv"
+          curl -fsSL --retry 2 --max-time 300 -o /tmp/shiu/model.py "$SHIU/model.py"
+          echo 'fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e  /tmp/shiu/model.py' | sha256sum --check -
+          printf '%s\n' '3d802fd542b5d18570ba1ba0bb0abed9  /tmp/in/connectivity.parquet' '031a4b6eac490bda17c75b65ccaa7906  /tmp/in/completeness.csv' | md5sum --check -
+          echo 'f3e8602a6bcf3daefc3b83965f7793a2648f59a22bf8df6209d09ed19e0a3c2d  censo/conjuntos_flywire.json' | sha256sum --check -
+          python -m pip freeze > out/versiones_${{ matrix.celda }}.txt
+          { nproc; free -m; } >> out/versiones_${{ matrix.celda }}.txt
+          if [ -x /usr/bin/time ]; then TV="/usr/bin/time -v"; else TV=""; fi
+          $TV python tools/mecanismo/intervenir.py --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --conjuntos censo/conjuntos_flywire.json --celda ${{ matrix.celda }} --out out --n-proc 3
+          printf 'UTC_END '; date -u --iso-8601=seconds
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mecanismo-correr-${{ matrix.celda }}
+          path: out/
+  agregar:
+    needs: [censo, medir]
+    if: always()
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12.14"
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: mecanismo-correr-*
+          path: art
+      - name: agregar con las reglas del sello y conservar todo
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install $DEPS
+          D=results/mecanismo_2026-11-02/actions_correr
+          mkdir -p "$D"
+          find art -type f \( -name '*.json' -o -name '*.log' -o -name '*.txt' \) -exec cp {} "$D"/ \;
+          set +e
+          python tools/mecanismo/agregar_mecanismo.py --dir "$D" > "$D"/agregar_stdout.log 2>&1
+          RC=$?
+          set -e
+          cat "$D"/agregar_stdout.log
+          echo "EXIT_AGREGAR=$RC" >> "$D"/agregar_stdout.log
+          printf 'censo=%s medir=%s fuente=%s run=%s\n' "${{ needs.censo.result }}" "${{ needs.medir.result }}" "$GITHUB_SHA" "$GITHUB_RUN_ID" > "$D"/RESULTADO.txt
+          (cd "$D" && md5sum * > MD5SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -m "medicion(2026-11-02-002): CORRER de H_MECANISMO aplicado en Actions, run $GITHUB_RUN_ID"
+          git pull --rebase origin titan/mecanismo-2026-11-02
+          git push origin HEAD:titan/mecanismo-2026-11-02
