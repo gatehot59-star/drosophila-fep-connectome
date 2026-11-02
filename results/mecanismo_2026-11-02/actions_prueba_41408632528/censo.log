@@ -1,0 +1,49 @@
+UTC_START 2026-11-02T07:48:18+00:00
+SOURCE_COMMIT 23e95e29b93e1a8cebf7d27ec5672daca4b58ca5
+Collecting numpy==2.5.3
+  Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pandas==3.0.5
+  Downloading pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting scipy==1.18.1
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting pyarrow==25.0.1
+  Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==3.0.5)
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting tzdata (from python-dateutil>=2.8.2->pandas==3.0.5)
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 15.5 MB/s  0:00:01
+Downloading pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.0/11.0 MB 30.3 MB/s  0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 49.6 MB/s  0:00:00
+Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (50.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.1/50.1 MB 62.3 MB/s  0:00:00
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, pyarrow, numpy, scipy, python-dateutil, pandas
+
+Successfully installed numpy-2.5.3 pandas-3.0.5 pyarrow-25.0.1 python-dateutil-4.0.0 scipy-1.18.1 tzdata-2026.6
+/workspace/connectivity.parquet: OK
+/workspace/annotations.tsv: OK
+/workspace/banc_888/banc_888_meta.feather: OK
+/workspace/banc_888/banc_888_edgelist_simple_v3.feather: OK
+/workspace/mecanismo-2026-11-02/paso12.py: OK
+LOADED {"D_units": 925, "S_units": 652, "connectome": "flywire", "neurons": 138639, "rows": 15091983, "seconds": 2.0}
+PARITY {"connectome": "flywire", "equal": true, "expected": {"n_cab": 996, "n_pares_ffi": 880, "n_x": 1118, "t2": 698}, "values": {"n_cab": 996, "n_pares_ffi": 880, "n_x": 1118, "t2": 698}}
+LOADED {"D_units": 901, "S_units": 842, "connectome": "banc", "neurons": 188508, "rows": 13620865, "seconds": 2.5}
+PARITY {"connectome": "banc", "equal": true, "expected": {"n_cab": 753, "n_pares_ffi": 622, "n_x": 716, "t2": 419}, "values": {"n_cab": 753, "n_pares_ffi": 622, "n_x": 716, "t2": 419}}
+DONE {"maxrss_kib": 1712036, "seconds": 22.6}
+ESTIMULO LC4_right S=50 D=10 unidades_D=10 X=49 X_glu=8 caminos=129
+ESTIMULO LC4_left S=54 D=11 unidades_D=11 X=45 X_glu=7 caminos=137
+ESTIMULO LPLC2_right S=102 D=14 unidades_D=14 X=27 X_glu=4 caminos=112
+ESTIMULO LPLC2_left S=108 D=15 unidades_D=15 X=25 X_glu=3 caminos=94
+ESTIMULO LPLC1_right S=72 D=7 unidades_D=7 X=32 X_glu=3 caminos=62
+ESTIMULO LPLC1_left S=68 D=7 unidades_D=7 X=34 X_glu=2 caminos=71
+ESTIMULO LPLC4_right S=54 D=21 unidades_D=19 X=83 X_glu=34 caminos=228
+ESTIMULO LPLC4_left S=56 D=23 unidades_D=21 X=95 X_glu=31 caminos=282
+FUENTES closing=6efe0494b043d5084b5151f1f290ade048e87d88bf9431bd2f1b08e09ad9e6ab npz=fa92fcd493162db96b7d185af4231c701bb30ec6a413ab913b401829d3a1e2df units=1031e70359bed6d6eb386add1222527f8a426dea4dce3a1b616b282177b4b615
+JSON out/conjuntos_flywire.json bytes=80557 sha256=f3e8602a6bcf3daefc3b83965f7793a2648f59a22bf8df6209d09ed19e0a3c2d
+out/conjuntos_flywire.json: OK
+UTC_END 2026-11-02T07:49:06+00:00

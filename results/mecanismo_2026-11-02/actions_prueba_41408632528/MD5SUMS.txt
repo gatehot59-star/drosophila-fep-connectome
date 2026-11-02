@@ -1,0 +1,8 @@
+50088f39bae0bddae2d2e3e3eee804b6  RESULTADO.txt
+8eba1d06b9b32bf7e1a33f0c3bb27682  celda_ctrl_mn9.json
+171abad9d93f59a12114925a445fc02c  censo.log
+50ff9b21171ed417ac043b591a201d33  conjuntos_flywire.json
+abdc4650c521f6568cc10600d0e03b85  paso12.log
+4165884ea02f6ae25e13ebb2858f78ae  prueba.log
+cb35489021c1bd4d7f65f5cefbcf9707  sha256_codigo.txt
+fe6e288da6c89ef41d13a386cf21ffe7  versiones.txt
