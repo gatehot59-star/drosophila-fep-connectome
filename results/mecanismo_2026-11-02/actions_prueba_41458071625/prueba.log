@@ -1,0 +1,188 @@
+UTC_START 2026-11-02T14:02:51+00:00
+Collecting numpy==2.5.3
+  Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pandas==3.0.5
+  Downloading pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting scipy==1.18.1
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting pyarrow==25.0.1
+  Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting brian2==2.10.1
+  Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.7 kB)
+Collecting cython==3.1.3
+  Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.7 kB)
+Collecting joblib==1.6.0
+  Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==3.0.5)
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting sympy>=1.2 (from brian2==2.10.1)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting pyparsing!=3.2.4,>=3 (from brian2==2.10.1)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting jinja2>=2.7 (from brian2==2.10.1)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting setuptools>=61 (from brian2==2.10.1)
+  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting packaging (from brian2==2.10.1)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting cloudpickle>=3.0 (from joblib==1.6.0)
+  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=2.7->brian2==2.10.1)
+  Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting tzdata (from python-dateutil>=2.8.2->pandas==3.0.5)
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.2->brian2==2.10.1)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 247.7 MB/s  0:00:00
+Downloading pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.0/11.0 MB 141.2 MB/s  0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 175.1 MB/s  0:00:00
+Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (50.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.1/50.1 MB 151.4 MB/s  0:00:00
+Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 26.9 MB/s  0:00:00
+Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 125.9 MB/s  0:00:00
+Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 161.3 MB/s  0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 243.9 MB/s  0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 95.2 MB/s  0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: mpmath, tzdata, sympy, setuptools, pyparsing, pyarrow, packaging, numpy, MarkupSafe, cython, cloudpickle, scipy, python-dateutil, joblib, jinja2, pandas, brian2
+
+Successfully installed MarkupSafe-3.0.4 brian2-2.10.1 cloudpickle-3.1.2 cython-3.1.3 jinja2-3.1.6 joblib-1.6.0 mpmath-1.3.0 numpy-2.5.3 packaging-26.3 pandas-3.0.5 pyarrow-25.0.1 pyparsing-3.3.3 python-dateutil-4.0.0 scipy-1.18.1 setuptools-84.2.1 sympy-1.14.0 tzdata-2026.6
+/tmp/shiu/model.py: OK
+/tmp/in/connectivity.parquet: OK
+/tmp/in/completeness.csv: OK
+censo/conjuntos_flywire.json: OK
+e0567fd520ed92165ae73ad23efa52d49dba8dd89f91ddc65ddffc4ae67a5c45  tools/mecanismo/agregar_mecanismo.py
+e51af3d4e193d8fbb587cf52efb23084d1bbcf78decaa5e1a99e84d329645b4d  tools/mecanismo/conjuntos.py
+e656d73eac31e4d955b0b78ec2345a65f67097de1c787f4617eb72048b699a2e  tools/mecanismo/intervenir.py
+b604af62e053cacded85979002b34d70ca104d5399cfba1b8135a6626bf784eb  tools/mecanismo/paso12.py
+1eda0695ec3dee0a8131bda29bbd9b02e3f4929ef585aaffb66134c226cb24e1  tools/mecanismo/prueba_mecanismo.py
+5c55328725e997457a701ff86e43eb38d33bfd0dde7e419165c1b68b4c28106b  tools/mecanismo/unir_celdas.py
+3650fc74967e35ec7fcd407964049ea91c3483b2a195790736dd2bfe58656f7d  tools/reuso/reuso_mosca.py
+fe96c5c0673a3db75cb06d2d864677f070bf87d0cc58390a713e4aabdd5c79db  .github/workflows/mecanismo-correr.yml
+dab498de4b2385541c22c0f4ac2d635afeace0a720193cd6d652fcaa207946ed  .github/workflows/mecanismo-correr2.yml
+e499bfc5dfbc2af9daf944d8005bcfe52df8bad57c7f153b160b35e8f644dac9  .github/workflows/mecanismo-prueba.yml
+PASS model_blob 
+WARNING    'i' is an internal variable of group 'default_synapses', but also exists in the run namespace with the value 5. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
+WARNING    'i' is an internal variable of group 'default_synapses', but also exists in the run namespace with the value 6. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
+WARNING    'i' is an internal variable of group 'default_synapses', but also exists in the run namespace with the value 11. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
+PASS silencio_igual_a_shiu filas_cero=8
+PASS orden_sinapsis_igual_parquet 
+PASS tocadas_C0 0 esperado 0
+PASS tocadas_C1 6 esperado 6
+PASS tocadas_C2 10 esperado 10
+PASS tocadas_C3 4 esperado 4
+PASS tocadas_C4 10 esperado 10
+PASS tocadas_R1 2 esperado 2
+PASS tocadas_R2 0 esperado 0
+PASS tocadas_R3 20 esperado 20
+PASS tocadas_R4 10 esperado 10
+PASS tocadas_M5 2 esperado 2
+PASS M5_invierte_solo_glu_a_D 
+PASS perm_6_positivos p=0.03175 exacto=0.03125
+PASS perm_ceros 
+PASS perm_mezcla_alta 
+PASS holm [0.03, 0.06, 0.06, 0.02]
+PASS veredicto_guarda 
+PASS veredicto_refutado 
+PASS veredicto_sostenido 
+PASS veredicto_parcial_ratio 
+PASS veredicto_parcial_p4 
+PASS k_regla 
+PASS k_sin_impulso 
+PASS global 
+PASS semilla_reproduce [7, 7, 10, 7, 12, 6, 6, 3, 3, 3, 6, 6, 0]
+PASS semilla_distinta_cambia 
+PASS silenciar_sin_salidas_no_cambia 
+PASS D_dispara_intacta 
+PASS estimulo_sin_refractario 
+== intervenir.py :: H_MECANISMO (2026-11-02-002) celda=p_SYN ==
+PINES {"comp": false, "conjuntos": false, "conn": false, "model": true} sin_pin=True
+GRAFO n=13 filas=39 indices_ok=True
+CONJUNTOS {"S": 5, "X": 2, "D": 2, "X_glu": 1, "desc": 1, "pool": 1} X_inhibitoria=True
+COND C0 tocadas=0 D=[2, 4, 6, 4, 6, 6, 6, 8, 6, 6, 6, 6] X=[10, 12, 12, 12, 12, 14, 12, 16, 14, 14, 16, 10] | 13.1 s
+COND C1 tocadas=6 D=[6, 6, 6, 8, 6, 8, 8, 12, 10, 10, 10, 6] X=[10, 12, 12, 12, 12, 14, 12, 16, 14, 14, 16, 10] | 11.3 s
+COND C2 tocadas=10 D=[6, 6, 6, 8, 6, 8, 8, 12, 10, 10, 10, 6] X=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | 11.1 s
+COND C3 tocadas=4 D=[6, 6, 6, 8, 6, 8, 8, 12, 10, 10, 10, 6] X=[10, 12, 12, 12, 12, 14, 12, 16, 14, 14, 16, 10] | 10.9 s
+COND C4 tocadas=10 D=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] X=[10, 12, 12, 12, 12, 14, 12, 16, 14, 14, 16, 10] | 11.0 s
+COND R1 tocadas=2 D=[2, 4, 6, 4, 6, 6, 6, 8, 6, 6, 6, 6] X=[10, 12, 12, 12, 12, 14, 12, 16, 14, 14, 16, 10] | 11.1 s
+COND R2 tocadas=0 D=[2, 4, 6, 4, 6, 6, 6, 8, 6, 6, 6, 6] X=[10, 12, 12, 12, 12, 14, 12, 16, 14, 14, 16, 10] | 11.2 s
+COND R3 tocadas=20 D=[6, 8, 8, 10, 6, 10, 8, 12, 10, 12, 10, 6] X=[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] | 11.2 s
+COND R4 tocadas=10 D=[4, 4, 6, 6, 4, 6, 6, 8, 6, 8, 8, 6] X=[10, 12, 12, 12, 12, 14, 12, 16, 14, 14, 16, 10] | 11.2 s
+COND M5 tocadas=2 D=[6, 6, 6, 8, 6, 8, 8, 12, 10, 10, 10, 6] X=[10, 12, 12, 12, 12, 14, 12, 16, 14, 14, 16, 10] | 11.0 s
+K drive_x=513.3 drive_k=123.3 n=1 alcanzo=False
+COND K tocadas=2 D=[4, 4, 6, 6, 4, 6, 6, 8, 6, 8, 8, 6] X=[10, 12, 12, 12, 12, 14, 12, 16, 14, 14, 16, 10] | 11.0 s
+FIN celda=p_SYN 124.8 s
+PASS intervenir_exit0 rc=0
+D_media {"C0": 5.5, "C1": 8.0, "C2": 8.0, "C3": 8.0, "C4": 0.0, "R1": 5.5, "R2": 5.5, "R3": 8.833333333333334, "R4": 6.0, "M5": 8.0, "K": 6.0} X_media {"C0": 12.833333333333334, "C1": 12.833333333333334, "C2": 0.0, "C3": 12.833333333333334, "C4": 12.833333333333334, "R1": 12.833333333333334, "R2": 12.833333333333334, "R3": 0.0, "R4": 12.833333333333334, "M5": 12.833333333333334, "K": 12.833333333333334} K {"drive_x": 513.3333333333334, "drive_k": 123.33333333333334, "alcanzo": false, "n": 1, "indices": [11], "syn_d_x": 80.0, "syn_d_k": 20.0}
+PASS e2e_C1_mayor 
+PASS e2e_C2_mayor 
+PASS e2e_C3_mayor 
+PASS e2e_C4_menor 
+PASS e2e_M5_mayor 
+PASS e2e_X_reclutada_y_silenciada 
+PASS e2e_K_elige_P {"drive_x": 513.3333333333334, "drive_k": 123.33333333333334, "alcanzo": false, "n": 1, "indices": [11], "syn_d_x": 80.0, "syn_d_k": 20.0}
+PASS e2e_K_sube_D 
+PASS e2e_igual_a_prueba_previa {"C0": [2, 4, 6, 4, 6, 6, 6, 8, 6, 6, 6, 6], "C1": [6, 6, 6, 8, 6, 8, 8, 12, 10, 10, 10, 6], "R3": [6, 8, 8, 10, 6, 10, 8, 12, 10, 12, 10, 6], "K": [4, 4, 6, 6, 4, 6, 6, 8, 6, 8, 8, 6]}
+PASS e2e_crn_S_identico 
+PASS agregar_positivo SOSTENIDA_EN_MODELO ['SOSTENIDO_EN_MODELO', 'SOSTENIDO_EN_MODELO', 'SOSTENIDO_EN_MODELO', 'SOSTENIDO_EN_MODELO']
+PASS agregar_X_sin_efecto_refuta REFUTADA
+PASS agregar_mn9_invalida INVALIDA
+PASS agregar_piso_invalida INVALIDA
+PASS agregar_techo_invalida INVALIDA
+PASS agregar_corte_vacio_invalida INVALIDA
+PASS agregar_sin_pin_invalida INVALIDA
+PASS unir_reconstruye {"a": "p_SYN_a", "b": "p_SYN_b", "C0_igual": true, "indices_igual": true, "pines_igual": true, "estado": "UNIDA"}
+PASS unir_rechaza_C0_distinto {"a": "p_SYN_a", "b": "p_SYN_b", "C0_igual": false, "indices_igual": true, "pines_igual": true, "estado": "DISCREPA"}
+PASS unir_solo_a 
+PASS partido_positivo SOSTENIDA_EN_MODELO
+PASS partido_C0_distinto_invalida INVALIDA
+PRUEBA_MECANISMO 54/54 PASS
+WARNING    The object 'default_synapses' is getting deleted, but was never included in a network. This probably means that you did not store the object reference in a variable, or that the variable was not used to construct the network.
+The object was created here (most recent call only):
+  File '/tmp/shiu/model.py', line 175, in create_model
+    syn = Synapses(neu, neu, 'w : volt', on_pre='g += w', delay=params['t_dly'], name='default_synapses') [brian2.core.base.unused_brian_object]
+== intervenir.py :: H_MECANISMO (2026-11-02-002) celda=ctrl_mn9 ==
+PINES {"comp": true, "conjuntos": true, "conn": true, "model": true} sin_pin=False
+GRAFO n=138639 filas=15091983 indices_ok=True
+CONJUNTOS {"S": 20, "X": 0, "D": 1, "X_glu": 0, "desc": 0, "pool": 0} X_inhibitoria=True
+COND C0 tocadas=0 D=[55, 56, 57] X=[0, 0, 0] | 50.4 s
+FIN celda=ctrl_mn9 52.2 s
+	Command being timed: "python tools/mecanismo/intervenir.py --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --conjuntos censo/conjuntos_flywire.json --celda ctrl_mn9 --n-run 3 --out out --n-proc 3"
+	User time (seconds): 68.15
+	System time (seconds): 5.77
+	Percent of CPU this job got: 140%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:52.67
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2973456
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 50
+	Minor (reclaiming a frame) page faults: 1493840
+	Voluntary context switches: 2664
+	Involuntary context switches: 1633
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 160768
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+UTC_END 2026-11-02T14:07:26+00:00
