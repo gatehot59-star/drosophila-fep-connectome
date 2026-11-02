@@ -2,7 +2,7 @@
 
 **Veredicto del pedido.** Sellado antes del instrumento, corrido en Actions y verificado con un instrumento propio que no importa al agregador: **SOSTENIDA_EN_MODELO**. Con LC4 derecho, cortar solo la fila DNp04→PVLP010 (1 fila, 190 sinapsis) sube D' (los descendentes sin DNp04) de 266,15 a 368,60 espigas por ensayo: r_Q1 = 0,4056 del freno entero de X. Silenciar PVLP010 la sube a 454,50 (r_Q2 = 0,7456). PVLP010 alimentado solo por DNp04 conserva el 96,8 % de sus espigas (s4 = 0,9677). Es causalidad del modelo de Shiu, no de la mosca.
 
-Doc: PENDIENTE. Va como página «2026-11-02-006 · H_MECANISMO_DNp04 SOSTENIDA en el modelo» dentro de https://app.clickup.com/90171457413/docs/2kza6fw5-26157; este turno se quedó sin pasos antes de crearla.
+Doc: https://app.clickup.com/90171457413/docs/2kza6fw5-26157/2kza6fw5-29357 (página 2026-11-02-006 del Doc Topo inverso, creada después del commit `2bacc94`, a pedido).
 
 ## 1. Pedido
 
@@ -131,7 +131,7 @@ En main: este archivo.
 ## 6. NO MEDIDO y pendiente
 
 - La mosca. Todo lo de arriba es causalidad del modelo.
-- La página del Doc de ClickUp no está creada: el turno se quedó sin pasos. Es lo primero del próximo turno.
+- La página del Doc no estaba creada en el commit `2bacc94`: se creó después, a pedido, en https://app.clickup.com/90171457413/docs/2kza6fw5-26157/2kza6fw5-29357.
 - verificar_dnp04.py (sha256 623f028c0646460bc18b7e01bc07405698f1aa887b3a0d554458910081ab48b7, 12.408 bytes) y su log completo corrieron en brain-env y **todavía no están commiteados**. Las líneas de arriba son verbatim.
 - El verificador corrió sin `--parquet`: el recuento propio de filas en el parquet no se hizo en esta lectura. Las filas reales están medidas en la prueba (filas_reales_Q1 a Q6).
 - CONTEXTO-drosophila-fep.md no está actualizado con este resultado. Las cinco anclas del parche aparecen una vez cada una en la base 64b5f6f3…. La cabecera del Doc Topo inverso tampoco está actualizada.
@@ -163,11 +163,15 @@ Total 80/90 → 89/100: **no llega al umbral de 90**. Lo que falta es ejecutar (
 Accion delicada: SI (disparo dos workflows de CI)
 Modo aplicado:   FULL
 Maquina:         Actions x64 ubuntu-24.04 (prueba y corrida) + brain-env (prueba local y verificador)
-Rubrica:         80/90 -> 89/100 (debajo del umbral; pendientes declarados)
+Rubrica:         80/90 -> 89/100 en 2bacc94; 82/90 -> 91/100 con el Doc (ver Actualizacion)
 N/A declarados:  10 (DevOps: no hay deployment)
 Review externo:  no pedido (no hay PR; deuda declarada)
 Instrumento:     agregar_dnp04.py en run 41481727412, EXIT_AGREGAR=0, evidencia en
                  results/mecanismo_dnp04_2026-11-02/actions_correr/ de titan/mecanismo-dnp04-2026-11-02;
                  verificar_dnp04.py en brain-env, exit 0, todo_igual=True (sin commitear, declarado)
-Artefactos:      docs/agents/respuestas/2026-11-02-006-mecanismo-dnp04-sostenida.md + Doc pendiente en https://app.clickup.com/90171457413/docs/2kza6fw5-26157
+Artefactos:      docs/agents/respuestas/2026-11-02-006-mecanismo-dnp04-sostenida.md + Doc https://app.clickup.com/90171457413/docs/2kza6fw5-26157/2kza6fw5-29357
 ```
+
+## Actualización · 2-nov-2026 (pedido de las 16:48 ART)
+
+Pedido: «Creá la página del Doc 006». Página creada en el Doc Topo inverso y leída de vuelta completa (banner, cuatro tablas, bloques de evidencia, rúbrica y bloque de método): https://app.clickup.com/90171457413/docs/2kza6fw5-26157/2kza6fw5-29357. Con la página, Completitud pasa a 13/15 y Documentación a 9/10: **82/90 → 91/100**. Siguen pendientes, y NO MEDIDOS: commitear verificar_dnp04.py y su log, el CONTEXTO y la cabecera de la página principal del Doc.
