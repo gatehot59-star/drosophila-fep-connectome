@@ -1,0 +1,7 @@
+== intervenir_dnp04.py :: H_MECANISMO_DNp04 (2026-11-02-006) celda=humo_LPLC4 ==
+PINES {"comp": true, "conjuntos": true, "conn": true, "intervenir": true, "model": true}
+GRAFO n=138639 filas=15091983 indices_ok=True
+CONJUNTOS S=54 X=83 D=21 desc=1270 mirar=1431 NOMBRES {"AVLP080": {"en_D": false, "en_S": false, "en_X": false, "indice": 6128, "root": 720575940608545219}, "DNp04": {"en_D": false, "en_S": false, "en_X": false, "indice": 95123, "root": 720575940629757036}, "LHAD1g1": {"en_D": false, "en_S": false, "en_X": false, "indice": 105779, "root": 720575940631842360}, "PVLP010": {"en_D": false, "en_S": false, "en_X": false, "indice": 37128, "root": 720575940618932763}}
+COND C0 tocadas=0 peso_abs=0.0 | 13.7 s
+COND Q2 tocadas=937 peso_abs=6789.0 | 7.1 s
+FIN celda=humo_LPLC4 22.2 s

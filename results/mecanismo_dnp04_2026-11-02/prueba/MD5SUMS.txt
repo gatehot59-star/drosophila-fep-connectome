@@ -1,0 +1,7 @@
+f165d4635fc8e0dc70eb092befeea638  ./RESULTADO.txt
+8f9cca69743db1e238a5e38ba51ec858  ./humo/celda_humo_LC4.json
+6991bf88294bf28aee6b37f278c824ab  ./humo/celda_humo_LPLC4.json
+473f252cd30bc66297b3a15e854ef9e8  ./humo/humo_LC4.log
+4af630620253a55f1919461dd65c8d10  ./humo/humo_LPLC4.log
+f53a14a8705e71bc92aa24d391fce89c  ./prueba.log
+f8a636eb1bace0e07bdaf5e3a6625406  ./versiones.txt
