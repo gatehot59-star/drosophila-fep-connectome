@@ -1,0 +1,1426 @@
+[
+  {
+    "k": 1,
+    "rank_17": 1,
+    "code": "R01_DNp35_CB0527",
+    "tier": "T1_SUPRALIMINAR_1ESPIGA",
+    "D_type": "DNp35",
+    "X_type": "CB0527",
+    "x_nt": "gaba",
+    "d_idx": 59804,
+    "d_root": 720575940623276168,
+    "d_side": "right",
+    "x_idx": 30887,
+    "x_root": 720575940617444130,
+    "w_Q1_fw": 235,
+    "psp_peak_mV": 10.18,
+    "w_max_banc": 184,
+    "regimen_visual_S": "LPLC1_right",
+    "w_S_to_D_driver": 904,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "LPLC1",
+        "w_in": 904
+      },
+      {
+        "pre_type": "LC11",
+        "w_in": 584
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 235.0
+      },
+      "Q2": {
+        "filas": 551,
+        "peso_abs": 4841.0
+      },
+      "Q3": {
+        "filas": 465,
+        "peso_abs": 2618.0
+      },
+      "Q4": {
+        "filas": 650,
+        "peso_abs": 5164.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 88284,
+      "d_root": 720575940628437291,
+      "x_idx": 60863,
+      "x_root": 720575940623455239,
+      "d_side": "left",
+      "w_Q1": 221,
+      "filas_Q1": 1,
+      "peso_Q1": 221.0,
+      "filas_Q2": 519,
+      "filas_Q3": 489,
+      "filas_Q4": 667
+    },
+    "Dp_targets": {
+      "n_Dp_total": 137,
+      "sum_w_XDp": 2672,
+      "max_w_XDp": 274,
+      "collateral_w_D_to_Dp": 1192,
+      "top3": [
+        {
+          "D_target_type": "DNa16",
+          "D_target_side": "right",
+          "D_target_idx": 49678,
+          "D_target_root": 720575940621519130,
+          "w_xd": 274
+        },
+        {
+          "D_target_type": "DNa15",
+          "D_target_side": "right",
+          "D_target_idx": 7546,
+          "D_target_root": 720575940609488942,
+          "w_xd": 200
+        },
+        {
+          "D_target_type": "DNa16",
+          "D_target_side": "left",
+          "D_target_idx": 110751,
+          "D_target_root": 720575940632962786,
+          "w_xd": 194
+        }
+      ]
+    }
+  },
+  {
+    "k": 2,
+    "rank_17": 3,
+    "code": "R02_DNpe016_cL22c",
+    "tier": "T1_SUPRALIMINAR_1ESPIGA",
+    "D_type": "DNpe016",
+    "X_type": "cL22c",
+    "x_nt": "gaba",
+    "d_idx": 61465,
+    "d_root": 720575940623556755,
+    "d_side": "left",
+    "x_idx": 80081,
+    "x_root": 720575940627068772,
+    "w_Q1_fw": 180,
+    "psp_peak_mV": 7.8,
+    "w_max_banc": 138,
+    "regimen_visual_S": "LTe65_left",
+    "w_S_to_D_driver": 136,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "PFL3",
+        "w_in": 336
+      },
+      {
+        "pre_type": "LTe65",
+        "w_in": 255
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 180.0
+      },
+      "Q2": {
+        "filas": 601,
+        "peso_abs": 6492.0
+      },
+      "Q3": {
+        "filas": 186,
+        "peso_abs": 1011.0
+      },
+      "Q4": {
+        "filas": 672,
+        "peso_abs": 4497.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 19718,
+      "d_root": 720575940614236200,
+      "x_idx": 132221,
+      "x_root": 720575940643290272,
+      "d_side": "right",
+      "w_Q1": 174,
+      "filas_Q1": 1,
+      "peso_Q1": 174.0,
+      "filas_Q2": 630,
+      "filas_Q3": 220,
+      "filas_Q4": 656
+    },
+    "Dp_targets": {
+      "n_Dp_total": 25,
+      "sum_w_XDp": 271,
+      "max_w_XDp": 96,
+      "collateral_w_D_to_Dp": 405,
+      "top3": [
+        {
+          "D_target_type": "DNp18",
+          "D_target_side": "right",
+          "D_target_idx": 85369,
+          "D_target_root": 720575940627949589,
+          "w_xd": 96
+        },
+        {
+          "D_target_type": "DNae007",
+          "D_target_side": "right",
+          "D_target_idx": 22415,
+          "D_target_root": 720575940615043222,
+          "w_xd": 79
+        },
+        {
+          "D_target_type": "DNpe017",
+          "D_target_side": "right",
+          "D_target_idx": 106116,
+          "D_target_root": 720575940631925156,
+          "w_xd": 28
+        }
+      ]
+    }
+  },
+  {
+    "k": 3,
+    "rank_17": 4,
+    "code": "R03_DNa03_PLP060",
+    "tier": "T1_SUPRALIMINAR_1ESPIGA",
+    "D_type": "DNa03",
+    "X_type": "PLP060",
+    "x_nt": "gaba",
+    "d_idx": 96843,
+    "d_root": 720575940630085583,
+    "d_side": "right",
+    "x_idx": 116067,
+    "x_root": 720575940634790648,
+    "w_Q1_fw": 165,
+    "psp_peak_mV": 7.15,
+    "w_max_banc": 105,
+    "regimen_visual_S": "LPT04_HST_right",
+    "w_S_to_D_driver": 21,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "PFL2",
+        "w_in": 599
+      },
+      {
+        "pre_type": "LAL014",
+        "w_in": 379
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 165.0
+      },
+      "Q2": {
+        "filas": 701,
+        "peso_abs": 6472.0
+      },
+      "Q3": {
+        "filas": 385,
+        "peso_abs": 4773.0
+      },
+      "Q4": {
+        "filas": 440,
+        "peso_abs": 4195.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 46248,
+      "d_root": 720575940620918789,
+      "x_idx": 51555,
+      "x_root": 720575940621819630,
+      "d_side": "left",
+      "w_Q1": 148,
+      "filas_Q1": 1,
+      "peso_Q1": 148.0,
+      "filas_Q2": 653,
+      "filas_Q3": 378,
+      "filas_Q4": 448
+    },
+    "Dp_targets": {
+      "n_Dp_total": 40,
+      "sum_w_XDp": 410,
+      "max_w_XDp": 72,
+      "collateral_w_D_to_Dp": 1944,
+      "top3": [
+        {
+          "D_target_type": "DNp05",
+          "D_target_side": "right",
+          "D_target_idx": 74399,
+          "D_target_root": 720575940626009852,
+          "w_xd": 72
+        },
+        {
+          "D_target_type": "DNb05",
+          "D_target_side": "right",
+          "D_target_idx": 93663,
+          "D_target_root": 720575940629461442,
+          "w_xd": 60
+        },
+        {
+          "D_target_type": "DNpe037",
+          "D_target_side": "right",
+          "D_target_idx": 118139,
+          "D_target_root": 720575940635552948,
+          "w_xd": 53
+        }
+      ]
+    }
+  },
+  {
+    "k": 4,
+    "rank_17": 5,
+    "code": "R04_DNpe023_CB0172",
+    "tier": "T2_HUB_CONVERGENTE_MULTI_D",
+    "D_type": "DNpe023",
+    "X_type": "CB0172",
+    "x_nt": "gaba",
+    "d_idx": 27878,
+    "d_root": 720575940616604817,
+    "d_side": "left",
+    "x_idx": 122969,
+    "x_root": 720575940637635305,
+    "w_Q1_fw": 155,
+    "psp_peak_mV": 6.71,
+    "w_max_banc": 188,
+    "regimen_visual_S": null,
+    "w_S_to_D_driver": 0,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "LAL014",
+        "w_in": 123
+      },
+      {
+        "pre_type": "CB0132",
+        "w_in": 87
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 155.0
+      },
+      "Q2": {
+        "filas": 267,
+        "peso_abs": 2259.0
+      },
+      "Q3": {
+        "filas": 415,
+        "peso_abs": 3270.0
+      },
+      "Q4": {
+        "filas": 298,
+        "peso_abs": 2769.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 110931,
+      "d_root": 720575940633011256,
+      "x_idx": 44709,
+      "x_root": 720575940620657857,
+      "d_side": "right",
+      "w_Q1": 68,
+      "filas_Q1": 1,
+      "peso_Q1": 68.0,
+      "filas_Q2": 266,
+      "filas_Q3": 303,
+      "filas_Q4": 296
+    },
+    "Dp_targets": {
+      "n_Dp_total": 75,
+      "sum_w_XDp": 907,
+      "max_w_XDp": 112,
+      "collateral_w_D_to_Dp": 772,
+      "top3": [
+        {
+          "D_target_type": "DNa02",
+          "D_target_side": "right",
+          "D_target_idx": 904,
+          "D_target_root": 720575940604737708,
+          "w_xd": 112
+        },
+        {
+          "D_target_type": "DNde003",
+          "D_target_side": "right",
+          "D_target_idx": 91709,
+          "D_target_root": 720575940629064186,
+          "w_xd": 105
+        },
+        {
+          "D_target_type": "DNa13",
+          "D_target_side": "right",
+          "D_target_idx": 71790,
+          "D_target_root": 720575940625502666,
+          "w_xd": 82
+        }
+      ]
+    }
+  },
+  {
+    "k": 5,
+    "rank_17": 6,
+    "code": "R05_DNp71_CB0534",
+    "tier": "T2_HUB_CONVERGENTE_MULTI_D",
+    "D_type": "DNp71",
+    "X_type": "CB0534",
+    "x_nt": "gaba",
+    "d_idx": 111205,
+    "d_root": 720575940633095137,
+    "d_side": "right",
+    "x_idx": 19257,
+    "x_root": 720575940614087219,
+    "w_Q1_fw": 154,
+    "psp_peak_mV": 6.67,
+    "w_max_banc": 187,
+    "regimen_visual_S": "LC9_right",
+    "w_S_to_D_driver": 231,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "LC9",
+        "w_in": 231
+      },
+      {
+        "pre_type": "LPLC2",
+        "w_in": 180
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 154.0
+      },
+      "Q2": {
+        "filas": 550,
+        "peso_abs": 4917.0
+      },
+      "Q3": {
+        "filas": 236,
+        "peso_abs": 2128.0
+      },
+      "Q4": {
+        "filas": 403,
+        "peso_abs": 2476.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 72597,
+      "d_root": 720575940625673196,
+      "x_idx": 11774,
+      "x_root": 720575940611610737,
+      "d_side": "left",
+      "w_Q1": 112,
+      "filas_Q1": 1,
+      "peso_Q1": 112.0,
+      "filas_Q2": 513,
+      "filas_Q3": 235,
+      "filas_Q4": 330
+    },
+    "Dp_targets": {
+      "n_Dp_total": 63,
+      "sum_w_XDp": 770,
+      "max_w_XDp": 202,
+      "collateral_w_D_to_Dp": 913,
+      "top3": [
+        {
+          "D_target_type": "DNg74_a",
+          "D_target_side": "left",
+          "D_target_idx": 112729,
+          "D_target_root": 720575940633529548,
+          "w_xd": 202
+        },
+        {
+          "D_target_type": "DNg74_a",
+          "D_target_side": "right",
+          "D_target_idx": 55407,
+          "D_target_root": 720575940622500172,
+          "w_xd": 193
+        },
+        {
+          "D_target_type": "DNge144",
+          "D_target_side": "right",
+          "D_target_idx": 75634,
+          "D_target_root": 720575940626268761,
+          "w_xd": 55
+        }
+      ]
+    }
+  },
+  {
+    "k": 6,
+    "rank_17": 7,
+    "code": "R06_DNp104_CB0626",
+    "tier": "T3_SUBUMBRAL_ALTO_80_161",
+    "D_type": "DNp104",
+    "X_type": "CB0626",
+    "x_nt": "gaba",
+    "d_idx": 58878,
+    "d_root": 720575940623122125,
+    "d_side": "right",
+    "x_idx": 676,
+    "x_root": 720575940604470240,
+    "w_Q1_fw": 153,
+    "psp_peak_mV": 6.63,
+    "w_max_banc": 91,
+    "regimen_visual_S": "LTe49_right",
+    "w_S_to_D_driver": 47,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "CL086_e",
+        "w_in": 155
+      },
+      {
+        "pre_type": "PLP093",
+        "w_in": 149
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 153.0
+      },
+      "Q2": {
+        "filas": 1184,
+        "peso_abs": 7413.0
+      },
+      "Q3": {
+        "filas": 364,
+        "peso_abs": 1692.0
+      },
+      "Q4": {
+        "filas": 1196,
+        "peso_abs": 6951.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 19410,
+      "d_root": 720575940614137907,
+      "x_idx": 117257,
+      "x_root": 720575940635211768,
+      "d_side": "left",
+      "w_Q1": 109,
+      "filas_Q1": 1,
+      "peso_Q1": 109.0,
+      "filas_Q2": 1065,
+      "filas_Q3": 336,
+      "filas_Q4": 1140
+    },
+    "Dp_targets": {
+      "n_Dp_total": 113,
+      "sum_w_XDp": 1318,
+      "max_w_XDp": 192,
+      "collateral_w_D_to_Dp": 218,
+      "top3": [
+        {
+          "D_target_type": "DNp69",
+          "D_target_side": "right",
+          "D_target_idx": 32330,
+          "D_target_root": 720575940617809181,
+          "w_xd": 192
+        },
+        {
+          "D_target_type": "DNpe043",
+          "D_target_side": "right",
+          "D_target_idx": 122916,
+          "D_target_root": 720575940637618142,
+          "w_xd": 69
+        },
+        {
+          "D_target_type": "DNp69",
+          "D_target_side": "left",
+          "D_target_idx": 130484,
+          "D_target_root": 720575940641173632,
+          "w_xd": 69
+        }
+      ]
+    }
+  },
+  {
+    "k": 7,
+    "rank_17": 8,
+    "code": "R07_DNg100_CB0534",
+    "tier": "T2_HUB_CONVERGENTE_MULTI_D",
+    "D_type": "DNg100",
+    "X_type": "CB0534",
+    "x_nt": "gaba",
+    "d_idx": 130297,
+    "d_root": 720575940640978048,
+    "d_side": "left",
+    "x_idx": 19257,
+    "x_root": 720575940614087219,
+    "w_Q1_fw": 128,
+    "psp_peak_mV": 5.54,
+    "w_max_banc": 82,
+    "regimen_visual_S": null,
+    "w_S_to_D_driver": 0,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "PVLP137",
+        "w_in": 381
+      },
+      {
+        "pre_type": "CB0529",
+        "w_in": 296
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 128.0
+      },
+      "Q2": {
+        "filas": 550,
+        "peso_abs": 4917.0
+      },
+      "Q3": {
+        "filas": 472,
+        "peso_abs": 2753.0
+      },
+      "Q4": {
+        "filas": 403,
+        "peso_abs": 2502.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 135733,
+      "d_root": 720575940647228468,
+      "x_idx": 11774,
+      "x_root": 720575940611610737,
+      "d_side": "right",
+      "w_Q1": 42,
+      "filas_Q1": 1,
+      "peso_Q1": 42.0,
+      "filas_Q2": 513,
+      "filas_Q3": 324,
+      "filas_Q4": 330
+    },
+    "Dp_targets": {
+      "n_Dp_total": 64,
+      "sum_w_XDp": 775,
+      "max_w_XDp": 202,
+      "collateral_w_D_to_Dp": 725,
+      "top3": [
+        {
+          "D_target_type": "DNg74_a",
+          "D_target_side": "left",
+          "D_target_idx": 112729,
+          "D_target_root": 720575940633529548,
+          "w_xd": 202
+        },
+        {
+          "D_target_type": "DNg74_a",
+          "D_target_side": "right",
+          "D_target_idx": 55407,
+          "D_target_root": 720575940622500172,
+          "w_xd": 193
+        },
+        {
+          "D_target_type": "DNge144",
+          "D_target_side": "right",
+          "D_target_idx": 75634,
+          "D_target_root": 720575940626268761,
+          "w_xd": 55
+        }
+      ]
+    }
+  },
+  {
+    "k": 8,
+    "rank_17": 9,
+    "code": "R08_DNa03_VES041",
+    "tier": "T3_SUBUMBRAL_ALTO_80_161",
+    "D_type": "DNa03",
+    "X_type": "VES041",
+    "x_nt": "gaba",
+    "d_idx": 96843,
+    "d_root": 720575940630085583,
+    "d_side": "right",
+    "x_idx": 117221,
+    "x_root": 720575940635202204,
+    "w_Q1_fw": 126,
+    "psp_peak_mV": 5.46,
+    "w_max_banc": 106,
+    "regimen_visual_S": "LPT04_HST_right",
+    "w_S_to_D_driver": 21,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "PFL2",
+        "w_in": 599
+      },
+      {
+        "pre_type": "LAL014",
+        "w_in": 379
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 126.0
+      },
+      "Q2": {
+        "filas": 1001,
+        "peso_abs": 8265.0
+      },
+      "Q3": {
+        "filas": 385,
+        "peso_abs": 4773.0
+      },
+      "Q4": {
+        "filas": 1487,
+        "peso_abs": 11273.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 46248,
+      "d_root": 720575940620918789,
+      "x_idx": 81321,
+      "x_root": 720575940627253604,
+      "d_side": "left",
+      "w_Q1": 105,
+      "filas_Q1": 1,
+      "peso_Q1": 105.0,
+      "filas_Q2": 1007,
+      "filas_Q3": 378,
+      "filas_Q4": 1382
+    },
+    "Dp_targets": {
+      "n_Dp_total": 70,
+      "sum_w_XDp": 404,
+      "max_w_XDp": 170,
+      "collateral_w_D_to_Dp": 1944,
+      "top3": [
+        {
+          "D_target_type": "DNa03",
+          "D_target_side": "left",
+          "D_target_idx": 46248,
+          "D_target_root": 720575940620918789,
+          "w_xd": 170
+        },
+        {
+          "D_target_type": "DNpe023",
+          "D_target_side": "left",
+          "D_target_idx": 27878,
+          "D_target_root": 720575940616604817,
+          "w_xd": 13
+        },
+        {
+          "D_target_type": "DNa16",
+          "D_target_side": "left",
+          "D_target_idx": 110751,
+          "D_target_root": 720575940632962786,
+          "w_xd": 12
+        }
+      ]
+    }
+  },
+  {
+    "k": 9,
+    "rank_17": 10,
+    "code": "R09_DNpe023_cL22b",
+    "tier": "T3_SUBUMBRAL_ALTO_80_161",
+    "D_type": "DNpe023",
+    "X_type": "cL22b",
+    "x_nt": "gaba",
+    "d_idx": 27878,
+    "d_root": 720575940616604817,
+    "d_side": "left",
+    "x_idx": 86580,
+    "x_root": 720575940628154364,
+    "w_Q1_fw": 120,
+    "psp_peak_mV": 5.2,
+    "w_max_banc": 115,
+    "regimen_visual_S": null,
+    "w_S_to_D_driver": 0,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "LAL014",
+        "w_in": 123
+      },
+      {
+        "pre_type": "CB0132",
+        "w_in": 87
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 120.0
+      },
+      "Q2": {
+        "filas": 1066,
+        "peso_abs": 9308.0
+      },
+      "Q3": {
+        "filas": 415,
+        "peso_abs": 3270.0
+      },
+      "Q4": {
+        "filas": 918,
+        "peso_abs": 6813.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 110931,
+      "d_root": 720575940633011256,
+      "x_idx": 97451,
+      "x_root": 720575940630204155,
+      "d_side": "right",
+      "w_Q1": 51,
+      "filas_Q1": 1,
+      "peso_Q1": 51.0,
+      "filas_Q2": 1104,
+      "filas_Q3": 303,
+      "filas_Q4": 1001
+    },
+    "Dp_targets": {
+      "n_Dp_total": 56,
+      "sum_w_XDp": 608,
+      "max_w_XDp": 310,
+      "collateral_w_D_to_Dp": 772,
+      "top3": [
+        {
+          "D_target_type": "DNpe016",
+          "D_target_side": "left",
+          "D_target_idx": 61465,
+          "D_target_root": 720575940623556755,
+          "w_xd": 310
+        },
+        {
+          "D_target_type": "DNp05",
+          "D_target_side": "right",
+          "D_target_idx": 74399,
+          "D_target_root": 720575940626009852,
+          "w_xd": 48
+        },
+        {
+          "D_target_type": "DNp102",
+          "D_target_side": "left",
+          "D_target_idx": 125253,
+          "D_target_root": 720575940638637501,
+          "w_xd": 43
+        }
+      ]
+    }
+  },
+  {
+    "k": 10,
+    "rank_17": 11,
+    "code": "R10_DNp47_CB0580",
+    "tier": "T2_HUB_CONVERGENTE_MULTI_D",
+    "D_type": "DNp47",
+    "X_type": "CB0580",
+    "x_nt": "gaba",
+    "d_idx": 41594,
+    "d_root": 720575940620038779,
+    "d_side": "right",
+    "x_idx": 33912,
+    "x_root": 720575940618165393,
+    "w_Q1_fw": 115,
+    "psp_peak_mV": 4.98,
+    "w_max_banc": 98,
+    "regimen_visual_S": "LPT52_right",
+    "w_S_to_D_driver": 62,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "CB3111",
+        "w_in": 127
+      },
+      {
+        "pre_type": "PVLP149",
+        "w_in": 101
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 115.0
+      },
+      "Q2": {
+        "filas": 1616,
+        "peso_abs": 10297.0
+      },
+      "Q3": {
+        "filas": 423,
+        "peso_abs": 2136.0
+      },
+      "Q4": {
+        "filas": 1228,
+        "peso_abs": 6487.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 23197,
+      "d_root": 720575940615251251,
+      "x_idx": 33912,
+      "x_root": 720575940618165393,
+      "d_side": "left",
+      "w_Q1": 88,
+      "filas_Q1": 1,
+      "peso_Q1": 88.0,
+      "filas_Q2": 1616,
+      "filas_Q3": 354,
+      "filas_Q4": 1228
+    },
+    "Dp_targets": {
+      "n_Dp_total": 138,
+      "sum_w_XDp": 1928,
+      "max_w_XDp": 212,
+      "collateral_w_D_to_Dp": 575,
+      "top3": [
+        {
+          "D_target_type": "DNp09",
+          "D_target_side": "right",
+          "D_target_idx": 83620,
+          "D_target_root": 720575940627652358,
+          "w_xd": 212
+        },
+        {
+          "D_target_type": "DNp71",
+          "D_target_side": "right",
+          "D_target_idx": 111205,
+          "D_target_root": 720575940633095137,
+          "w_xd": 154
+        },
+        {
+          "D_target_type": "DNp71",
+          "D_target_side": "left",
+          "D_target_idx": 72597,
+          "D_target_root": 720575940625673196,
+          "w_xd": 131
+        }
+      ]
+    }
+  },
+  {
+    "k": 11,
+    "rank_17": 12,
+    "code": "R11_DNa06_PS100",
+    "tier": "T2_HUB_CONVERGENTE_MULTI_D",
+    "D_type": "DNa06",
+    "X_type": "PS100",
+    "x_nt": "gaba",
+    "d_idx": 129110,
+    "d_root": 720575940640325429,
+    "d_side": "right",
+    "x_idx": 45293,
+    "x_root": 720575940620746478,
+    "w_Q1_fw": 111,
+    "psp_peak_mV": 4.81,
+    "w_max_banc": 94,
+    "regimen_visual_S": "LPT04_HST_right",
+    "w_S_to_D_driver": 31,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "CB0581",
+        "w_in": 290
+      },
+      {
+        "pre_type": "PS124",
+        "w_in": 275
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 111.0
+      },
+      "Q2": {
+        "filas": 507,
+        "peso_abs": 3690.0
+      },
+      "Q3": {
+        "filas": 328,
+        "peso_abs": 3436.0
+      },
+      "Q4": {
+        "filas": 686,
+        "peso_abs": 7835.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 69226,
+      "d_root": 720575940624986919,
+      "x_idx": 112031,
+      "x_root": 720575940633308371,
+      "d_side": "left",
+      "w_Q1": 77,
+      "filas_Q1": 1,
+      "peso_Q1": 77.0,
+      "filas_Q2": 439,
+      "filas_Q3": 249,
+      "filas_Q4": 576
+    },
+    "Dp_targets": {
+      "n_Dp_total": 192,
+      "sum_w_XDp": 2330,
+      "max_w_XDp": 272,
+      "collateral_w_D_to_Dp": 937,
+      "top3": [
+        {
+          "D_target_type": "DNa16",
+          "D_target_side": "right",
+          "D_target_idx": 49678,
+          "D_target_root": 720575940621519130,
+          "w_xd": 272
+        },
+        {
+          "D_target_type": "DNa15",
+          "D_target_side": "right",
+          "D_target_idx": 7546,
+          "D_target_root": 720575940609488942,
+          "w_xd": 149
+        },
+        {
+          "D_target_type": "DNa04",
+          "D_target_side": "right",
+          "D_target_idx": 82446,
+          "D_target_root": 720575940627432680,
+          "w_xd": 148
+        }
+      ]
+    }
+  },
+  {
+    "k": 12,
+    "rank_17": 13,
+    "code": "R12_DNae007_PS065",
+    "tier": "T3_SUBUMBRAL_ALTO_80_161",
+    "D_type": "DNae007",
+    "X_type": "PS065",
+    "x_nt": "gaba",
+    "d_idx": 22415,
+    "d_root": 720575940615043222,
+    "d_side": "right",
+    "x_idx": 83980,
+    "x_root": 720575940627715870,
+    "w_Q1_fw": 96,
+    "psp_peak_mV": 4.16,
+    "w_max_banc": 159,
+    "regimen_visual_S": "LTe42b_right",
+    "w_S_to_D_driver": 55,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "CB0755",
+        "w_in": 157
+      },
+      {
+        "pre_type": "VES011",
+        "w_in": 140
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 96.0
+      },
+      "Q2": {
+        "filas": 438,
+        "peso_abs": 3479.0
+      },
+      "Q3": {
+        "filas": 313,
+        "peso_abs": 2380.0
+      },
+      "Q4": {
+        "filas": 505,
+        "peso_abs": 5383.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 99517,
+      "d_root": 720575940630607738,
+      "x_idx": 111648,
+      "x_root": 720575940633208647,
+      "d_side": "left",
+      "w_Q1": 72,
+      "filas_Q1": 1,
+      "peso_Q1": 72.0,
+      "filas_Q2": 405,
+      "filas_Q3": 330,
+      "filas_Q4": 487
+    },
+    "Dp_targets": {
+      "n_Dp_total": 62,
+      "sum_w_XDp": 655,
+      "max_w_XDp": 152,
+      "collateral_w_D_to_Dp": 1222,
+      "top3": [
+        {
+          "D_target_type": "DNpe022",
+          "D_target_side": "right",
+          "D_target_idx": 110519,
+          "D_target_root": 720575940632900665,
+          "w_xd": 152
+        },
+        {
+          "D_target_type": "DNp57",
+          "D_target_side": "right",
+          "D_target_idx": 92256,
+          "D_target_root": 720575940629170250,
+          "w_xd": 80
+        },
+        {
+          "D_target_type": "DNp05",
+          "D_target_side": "right",
+          "D_target_idx": 74399,
+          "D_target_root": 720575940626009852,
+          "w_xd": 78
+        }
+      ]
+    }
+  },
+  {
+    "k": 13,
+    "rank_17": 14,
+    "code": "R13_DNp104_CB0580",
+    "tier": "T2_HUB_CONVERGENTE_MULTI_D",
+    "D_type": "DNp104",
+    "X_type": "CB0580",
+    "x_nt": "gaba",
+    "d_idx": 58878,
+    "d_root": 720575940623122125,
+    "d_side": "right",
+    "x_idx": 58129,
+    "x_root": 720575940622998627,
+    "w_Q1_fw": 93,
+    "psp_peak_mV": 4.03,
+    "w_max_banc": 85,
+    "regimen_visual_S": "LTe49_right",
+    "w_S_to_D_driver": 47,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "CL086_e",
+        "w_in": 155
+      },
+      {
+        "pre_type": "PLP093",
+        "w_in": 149
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 93.0
+      },
+      "Q2": {
+        "filas": 1140,
+        "peso_abs": 5354.0
+      },
+      "Q3": {
+        "filas": 364,
+        "peso_abs": 1692.0
+      },
+      "Q4": {
+        "filas": 1074,
+        "peso_abs": 5349.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 19410,
+      "d_root": 720575940614137907,
+      "x_idx": 33912,
+      "x_root": 720575940618165393,
+      "d_side": "left",
+      "w_Q1": 72,
+      "filas_Q1": 1,
+      "peso_Q1": 72.0,
+      "filas_Q2": 1616,
+      "filas_Q3": 336,
+      "filas_Q4": 1228
+    },
+    "Dp_targets": {
+      "n_Dp_total": 113,
+      "sum_w_XDp": 979,
+      "max_w_XDp": 134,
+      "collateral_w_D_to_Dp": 218,
+      "top3": [
+        {
+          "D_target_type": "DNp09",
+          "D_target_side": "right",
+          "D_target_idx": 83620,
+          "D_target_root": 720575940627652358,
+          "w_xd": 134
+        },
+        {
+          "D_target_type": "DNp71",
+          "D_target_side": "right",
+          "D_target_idx": 111205,
+          "D_target_root": 720575940633095137,
+          "w_xd": 129
+        },
+        {
+          "D_target_type": "DNpe024",
+          "D_target_side": "right",
+          "D_target_idx": 47652,
+          "D_target_root": 720575940621157645,
+          "w_xd": 52
+        }
+      ]
+    }
+  },
+  {
+    "k": 14,
+    "rank_17": 15,
+    "code": "R14_DNp101_CB0580",
+    "tier": "T2_HUB_CONVERGENTE_MULTI_D",
+    "D_type": "DNp101",
+    "X_type": "CB0580",
+    "x_nt": "gaba",
+    "d_idx": 104203,
+    "d_root": 720575940631483695,
+    "d_side": "left",
+    "x_idx": 33912,
+    "x_root": 720575940618165393,
+    "w_Q1_fw": 91,
+    "psp_peak_mV": 3.94,
+    "w_max_banc": 109,
+    "regimen_visual_S": null,
+    "w_S_to_D_driver": 0,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "CL215",
+        "w_in": 143
+      },
+      {
+        "pre_type": "CL095",
+        "w_in": 113
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 91.0
+      },
+      "Q2": {
+        "filas": 1616,
+        "peso_abs": 10297.0
+      },
+      "Q3": {
+        "filas": 257,
+        "peso_abs": 2489.0
+      },
+      "Q4": {
+        "filas": 1228,
+        "peso_abs": 6511.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 71368,
+      "d_root": 720575940625420986,
+      "x_idx": 58129,
+      "x_root": 720575940622998627,
+      "d_side": "right",
+      "w_Q1": 87,
+      "filas_Q1": 1,
+      "peso_Q1": 87.0,
+      "filas_Q2": 1140,
+      "filas_Q3": 258,
+      "filas_Q4": 1074
+    },
+    "Dp_targets": {
+      "n_Dp_total": 139,
+      "sum_w_XDp": 1963,
+      "max_w_XDp": 212,
+      "collateral_w_D_to_Dp": 1135,
+      "top3": [
+        {
+          "D_target_type": "DNp09",
+          "D_target_side": "right",
+          "D_target_idx": 83620,
+          "D_target_root": 720575940627652358,
+          "w_xd": 212
+        },
+        {
+          "D_target_type": "DNp71",
+          "D_target_side": "right",
+          "D_target_idx": 111205,
+          "D_target_root": 720575940633095137,
+          "w_xd": 154
+        },
+        {
+          "D_target_type": "DNp71",
+          "D_target_side": "left",
+          "D_target_idx": 72597,
+          "D_target_root": 720575940625673196,
+          "w_xd": 131
+        }
+      ]
+    }
+  },
+  {
+    "k": 15,
+    "rank_17": 16,
+    "code": "R15_DNge148_PS100",
+    "tier": "T2_HUB_CONVERGENTE_MULTI_D",
+    "D_type": "DNge148",
+    "X_type": "PS100",
+    "x_nt": "glutamate",
+    "d_idx": 84751,
+    "d_root": 720575940627845704,
+    "d_side": "right",
+    "x_idx": 112031,
+    "x_root": 720575940633308371,
+    "w_Q1_fw": 88,
+    "psp_peak_mV": 3.81,
+    "w_max_banc": 81,
+    "regimen_visual_S": "Nod5_left",
+    "w_S_to_D_driver": 20,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "nan",
+        "w_in": 52
+      },
+      {
+        "pre_type": "DNpe028",
+        "w_in": 37
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 88.0
+      },
+      "Q2": {
+        "filas": 439,
+        "peso_abs": 2780.0
+      },
+      "Q3": {
+        "filas": 324,
+        "peso_abs": 1464.0
+      },
+      "Q4": {
+        "filas": 576,
+        "peso_abs": 5739.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 53975,
+      "d_root": 720575940622248453,
+      "x_idx": 45293,
+      "x_root": 720575940620746478,
+      "d_side": "left",
+      "w_Q1": 87,
+      "filas_Q1": 1,
+      "peso_Q1": 87.0,
+      "filas_Q2": 507,
+      "filas_Q3": 239,
+      "filas_Q4": 686
+    },
+    "Dp_targets": {
+      "n_Dp_total": 173,
+      "sum_w_XDp": 1818,
+      "max_w_XDp": 211,
+      "collateral_w_D_to_Dp": 237,
+      "top3": [
+        {
+          "D_target_type": "DNa16",
+          "D_target_side": "left",
+          "D_target_idx": 110751,
+          "D_target_root": 720575940632962786,
+          "w_xd": 211
+        },
+        {
+          "D_target_type": "DNg75",
+          "D_target_side": "left",
+          "D_target_idx": 21384,
+          "D_target_root": 720575940614730914,
+          "w_xd": 113
+        },
+        {
+          "D_target_type": "DNa15",
+          "D_target_side": "left",
+          "D_target_idx": 105475,
+          "D_target_root": 720575940631759663,
+          "w_xd": 110
+        }
+      ]
+    }
+  },
+  {
+    "k": 16,
+    "rank_17": 17,
+    "code": "R16_DNae005_CB0172",
+    "tier": "T2_HUB_CONVERGENTE_MULTI_D",
+    "D_type": "DNae005",
+    "X_type": "CB0172",
+    "x_nt": "gaba",
+    "d_idx": 20277,
+    "d_root": 720575940614403178,
+    "d_side": "right",
+    "x_idx": 122969,
+    "x_root": 720575940637635305,
+    "w_Q1_fw": 88,
+    "psp_peak_mV": 3.81,
+    "w_max_banc": 82,
+    "regimen_visual_S": "LTe42c_right",
+    "w_S_to_D_driver": 212,
+    "top_driver_no_visual": [
+      {
+        "pre_type": "CB0316",
+        "w_in": 230
+      },
+      {
+        "pre_type": "LTe42c",
+        "w_in": 212
+      }
+    ],
+    "guardas_filas": {
+      "Q1": {
+        "filas": 1,
+        "peso_abs": 88.0
+      },
+      "Q2": {
+        "filas": 267,
+        "peso_abs": 2259.0
+      },
+      "Q3": {
+        "filas": 242,
+        "peso_abs": 1722.0
+      },
+      "Q4": {
+        "filas": 298,
+        "peso_abs": 2836.0
+      }
+    },
+    "mirror_contralateral": {
+      "d_idx": 6882,
+      "d_root": 720575940609097429,
+      "x_idx": 44709,
+      "x_root": 720575940620657857,
+      "d_side": "left",
+      "w_Q1": 77,
+      "filas_Q1": 1,
+      "peso_Q1": 77.0,
+      "filas_Q2": 266,
+      "filas_Q3": 239,
+      "filas_Q4": 296
+    },
+    "Dp_targets": {
+      "n_Dp_total": 75,
+      "sum_w_XDp": 917,
+      "max_w_XDp": 112,
+      "collateral_w_D_to_Dp": 1025,
+      "top3": [
+        {
+          "D_target_type": "DNa02",
+          "D_target_side": "right",
+          "D_target_idx": 904,
+          "D_target_root": 720575940604737708,
+          "w_xd": 112
+        },
+        {
+          "D_target_type": "DNde003",
+          "D_target_side": "right",
+          "D_target_idx": 91709,
+          "D_target_root": 720575940629064186,
+          "w_xd": 105
+        },
+        {
+          "D_target_type": "DNa13",
+          "D_target_side": "right",
+          "D_target_idx": 71790,
+          "D_target_root": 720575940625502666,
+          "w_xd": 82
+        }
+      ]
+    }
+  }
+]
