@@ -3,7 +3,8 @@
 
 1. Mascaras de Q1 a Q6 sobre un grafo sintetico completo, y C0 y C1 identicos a los de intervenir.py.
 2. Estadistica: permutacion exacta y Holm contra valores calculados a mano.
-3. El agregador con celdas sinteticas que plantan cada veredicto (SOSTENIDA, PARCIAL, REFUTADA) y cada guarda rota.
+3. El agregador con celdas sinteticas que plantan cada veredicto (SOSTENIDA, PARCIAL, REFUTADA), las tres salidas del
+   proxy, y cada guarda rota por separado: el caso tiene que dar INVALIDA con esa guarda en falso y las demas en verdadero.
 4. Datos reales, si se pasan: los cuatro root_id del sello, sus indices y pertenencias, y las filas que toca cada
    condicion en el parquet de Shiu.
 5. Humo, si se pasa --shiu: corre el instrumento sin mirar ninguna condicion de la hipotesis. C0 y C1 de LC4 contra
@@ -87,10 +88,16 @@ def efectos(e, caso):
             ef["Q1"] = {20: 6}
     elif e == "LPLC2":
         ef.update({"Q1": {20: 3}, "Q2": {20: 6}, "Q3": {20: 2}, "Q4": {20: 6}, "Q5": {20: 9}, "Q6": {21: 6}})
+        if caso == "proxy_parcial":
+            ef["Q5"], ef["Q6"] = {}, {}
     elif e == "LPLC1":
         ef.update({"Q1": {}, "Q2": {20: 6}, "Q3": {}, "Q4": {20: 6}, "Q5": {}, "Q6": {21: 18}})
+        if caso == "proxy_parcial":
+            ef["Q6"] = {}
     else:
         ef.update({"Q1": {}, "Q2": {}, "Q3": {}, "Q4": {}, "Q5": {21: 1}, "Q6": {22: 1}})
+    if caso == "proxy_falla":
+        ef["Q2"], ef["Q5"], ef["Q6"] = {}, {}, {}
     return ef
 
 
@@ -125,6 +132,11 @@ def sinteticas(tmp, caso):
                 for m, v in extra.items():
                     if m in pos:
                         c[pos[m]] += v
+                if e == "LPLC1" and caso == "invalida_techo":
+                    c[pos[20]] += 1500
+                if e == "LPLC1" and caso == "invalida_piso":
+                    for d in D:
+                        c[pos[d]] = 0
                 ens.append({"seed": 20261102 + t, "cuentas": c, "D_primera_ms": 5.0, "D_temprano": 3,
                             "espigas": 1000 + 2 * t + (7 if extra else 0), "activas": 300 + t + (1 if extra else 0),
                             "seg_run": 1.0})
@@ -175,26 +187,46 @@ def sinteticas(tmp, caso):
     elif caso == "invalida_mitades":
         def fn(c):
             c["conds"]["C0"]["ensayos"][3]["espigas"] += 1
-        editar(os.path.join(nueva, "celda_q_LPLC1_right_b.json"), fn)
+        editar(os.path.join(nueva, "celda_q_LPLC2_right_b.json"), fn)
     elif caso == "invalida_falta":
         os.remove(os.path.join(nueva, "celda_q_LPLC4_right_b.json"))
 
 
 def prueba_agregador():
-    casos = (("sostenida", "SOSTENIDA_EN_MODELO"), ("parcial", "PARCIAL"), ("refutada", "REFUTADA"),
-             ("invalida_replica", "INVALIDA"), ("invalida_tecnico", "INVALIDA"), ("invalida_filas", "INVALIDA"),
-             ("invalida_mitades", "INVALIDA"), ("invalida_falta", "INVALIDA"))
-    for caso, esp in casos:
+    todas = ("G1", "G2", "G3", "G4", "G5")
+    casos = (("sostenida", "SOSTENIDA_EN_MODELO", None), ("parcial", "PARCIAL", None), ("refutada", "REFUTADA", None),
+             ("proxy_falla", "PARCIAL", None), ("proxy_parcial", "SOSTENIDA_EN_MODELO", None),
+             ("invalida_replica", "INVALIDA", "G1"), ("invalida_mitades", "INVALIDA", "G2"),
+             ("invalida_filas", "INVALIDA", "G3"), ("invalida_tecnico", "INVALIDA", "G4"),
+             ("invalida_techo", "INVALIDA", "G5"), ("invalida_piso", "INVALIDA", "G5"),
+             ("invalida_falta", "INVALIDA", "faltan"))
+    valores = {"sostenida": ("r_Q1=0.4000 r_Q2=0.7000 s4=1.0000", "PROXY_VEREDICTO PROXY_UTIL 7/7"),
+               "parcial": ("r_Q1=0.2000 r_Q2=0.7000 s4=1.0000", "PROXY_VEREDICTO PROXY_UTIL 7/7"),
+               "refutada": ("r_Q1=0.0000 r_Q2=0.7000 s4=1.0000",),
+               "proxy_falla": ("r_Q1=0.4000 r_Q2=0.0000 s4=1.0000", "PROXY_VEREDICTO PROXY_FALLA 1/7"),
+               "proxy_parcial": ("r_Q1=0.4000 r_Q2=0.7000 s4=1.0000", "PROXY_VEREDICTO PROXY_PARCIAL 4/7")}
+    for caso, esp, rota in casos:
         with tempfile.TemporaryDirectory() as tmp:
             sinteticas(tmp, caso)
             r = subprocess.run([sys.executable, os.path.join(AQUI, "agregar_dnp04.py"), "--dir",
                                 os.path.join(tmp, "nueva"), "--previa", os.path.join(tmp, "previa")],
                                capture_output=True, text=True)
-            lin = [x for x in r.stdout.splitlines() if x.startswith("H_MECANISMO_DNp04 ")]
+            lineas = r.stdout.splitlines()
+            lin = [x for x in lineas if x.startswith("H_MECANISMO_DNp04 ")]
             got = lin[-1].split()[1] if lin else "SIN_LINEA"
-            chequeo("agregador_%s" % caso, r.returncode == 0 and got == esp,
-                    "dio=%s esperado=%s exit=%d" % (got, esp, r.returncode))
-            if got != esp or r.returncode != 0:
+            gl = [x for x in lineas if x.startswith("GUARDAS_GLOBALES ")]
+            if rota == "faltan":
+                gok = not gl and any(x.startswith("FALTAN ") and "celda_q_LPLC4_right_b.json" in x for x in lineas)
+                gdet = "faltan"
+            else:
+                g = json.loads(gl[-1].split(" ", 1)[1]) if gl else {}
+                gok = bool(g) and all(g.get(k) is (k != rota) for k in todas)
+                gdet = json.dumps(g, sort_keys=True)
+            vok = all(v in r.stdout for v in valores.get(caso, ()))
+            ok = r.returncode == 0 and got == esp and gok and vok
+            chequeo("agregador_%s" % caso, ok, "dio=%s esperado=%s guardas=%s valores=%s exit=%d" % (
+                got, esp, gdet, vok, r.returncode))
+            if not ok:
                 print(r.stdout[-2500:], r.stderr[-2500:], flush=True)
 
 
