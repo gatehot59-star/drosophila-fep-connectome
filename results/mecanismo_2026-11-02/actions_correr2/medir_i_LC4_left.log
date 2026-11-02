@@ -1,0 +1,113 @@
+UTC_START 2026-11-02T14:11:18+00:00
+SOURCE_COMMIT b3b398d8e50a548fa5df5ee4ecc7946bd19c0191
+tools/mecanismo/intervenir.py: OK
+tools/mecanismo/unir_celdas.py: OK
+tools/mecanismo/agregar_mecanismo.py: OK
+tools/mecanismo/conjuntos.py: OK
+tools/mecanismo/paso12.py: OK
+tools/mecanismo/prueba_mecanismo.py: OK
+tools/reuso/reuso_mosca.py: OK
+tools/mecanismo/SELLO-MECANISMO-2026-11-02.md: OK
+.github/workflows/mecanismo-correr2.yml: OK
+.github/workflows/mecanismo-prueba.yml: OK
+Collecting numpy==2.5.3
+  Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pandas==3.0.5
+  Downloading pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting scipy==1.18.1
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting pyarrow==25.0.1
+  Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting brian2==2.10.1
+  Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.7 kB)
+Collecting cython==3.1.3
+  Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.7 kB)
+Collecting joblib==1.6.0
+  Downloading joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==3.0.5)
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting sympy>=1.2 (from brian2==2.10.1)
+  Downloading sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting pyparsing!=3.2.4,>=3 (from brian2==2.10.1)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting jinja2>=2.7 (from brian2==2.10.1)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting setuptools>=61 (from brian2==2.10.1)
+  Downloading setuptools-84.2.1-py3-none-any.whl.metadata (6.6 kB)
+Collecting packaging (from brian2==2.10.1)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting cloudpickle>=3.0 (from joblib==1.6.0)
+  Downloading cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=2.7->brian2==2.10.1)
+  Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting tzdata (from python-dateutil>=2.8.2->pandas==3.0.5)
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.2->brian2==2.10.1)
+  Downloading mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 113.6 MB/s  0:00:00
+Downloading pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.0/11.0 MB 247.1 MB/s  0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 292.6 MB/s  0:00:00
+Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (50.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.1/50.1 MB 81.6 MB/s  0:00:00
+Downloading brian2-2.10.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 109.2 MB/s  0:00:00
+Downloading cython-3.1.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 109.3 MB/s  0:00:00
+Downloading joblib-1.6.0-py3-none-any.whl (306 kB)
+Downloading cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading setuptools-84.2.1-py3-none-any.whl (876 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 876.3/876.3 kB 167.1 MB/s  0:00:00
+Downloading sympy-1.14.0-py3-none-any.whl (6.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.3/6.3 MB 264.0 MB/s  0:00:00
+Downloading mpmath-1.3.0-py3-none-any.whl (536 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 536.2/536.2 kB 59.6 MB/s  0:00:00
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: mpmath, tzdata, sympy, setuptools, pyparsing, pyarrow, packaging, numpy, MarkupSafe, cython, cloudpickle, scipy, python-dateutil, joblib, jinja2, pandas, brian2
+
+Successfully installed MarkupSafe-3.0.4 brian2-2.10.1 cloudpickle-3.1.2 cython-3.1.3 jinja2-3.1.6 joblib-1.6.0 mpmath-1.3.0 numpy-2.5.3 packaging-26.3 pandas-3.0.5 pyarrow-25.0.1 pyparsing-3.3.3 python-dateutil-4.0.0 scipy-1.18.1 setuptools-84.2.1 sympy-1.14.0 tzdata-2026.6
+/tmp/shiu/model.py: OK
+/tmp/in/connectivity.parquet: OK
+/tmp/in/completeness.csv: OK
+censo/conjuntos_flywire.json: OK
+== intervenir.py :: H_MECANISMO (2026-11-02-002) celda=i_LC4_left ==
+PINES {"comp": true, "conjuntos": true, "conn": true, "model": true} sin_pin=False
+GRAFO n=138639 filas=15091983 indices_ok=True
+CONJUNTOS {"S": 54, "X": 45, "D": 11, "X_glu": 7, "desc": 1280, "pool": 533} X_inhibitoria=True
+COND C0 tocadas=0 D=[505, 492, 493, 498, 490, 498, 492, 493, 490, 485, 496, 493, 494, 489, 488, 503, 490, 495, 496, 474] X=[698, 706, 726, 710, 674, 714, 720, 698, 704, 703, 726, 701, 721, 709, 720, 711, 720, 738, 727, 704] | 218.7 s
+COND C1 tocadas=36778 D=[775, 763, 783, 783, 756, 787, 774, 770, 773, 776, 784, 783, 785, 768, 776, 776, 778, 786, 777, 778] X=[922, 933, 947, 933, 906, 948, 942, 917, 927, 930, 956, 927, 948, 945, 942, 948, 960, 967, 953, 933] | 87.9 s
+COND C2 tocadas=903 D=[622, 613, 608, 608, 592, 617, 640, 605, 626, 612, 636, 627, 631, 624, 618, 617, 634, 620, 619, 615] X=[201, 199, 199, 200, 193, 203, 200, 205, 198, 200, 197, 202, 206, 208, 212, 203, 208, 206, 203, 204] | 89.2 s
+COND C3 tocadas=224 D=[808, 788, 811, 794, 780, 808, 797, 792, 778, 799, 812, 802, 807, 800, 798, 803, 816, 801, 814, 798] X=[701, 712, 713, 709, 680, 711, 720, 697, 691, 707, 714, 702, 724, 709, 709, 718, 723, 732, 715, 704] | 91.4 s
+COND C4 tocadas=460 D=[18, 20, 19, 20, 25, 14, 21, 19, 15, 21, 19, 18, 12, 13, 13, 14, 16, 18, 16, 18] X=[572, 568, 593, 576, 547, 589, 588, 572, 575, 575, 594, 569, 591, 584, 584, 590, 588, 595, 592, 574] | 90.0 s
+FIN celda=i_LC4_left 579.6 s
+	Command being timed: "python tools/mecanismo/intervenir.py --shiu /tmp/shiu --conn /tmp/in/connectivity.parquet --comp /tmp/in/completeness.csv --conjuntos censo/conjuntos_flywire.json --celda i_LC4_left --out out --n-proc 3"
+	User time (seconds): 1344.13
+	System time (seconds): 93.86
+	Percent of CPU this job got: 247%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:40.22
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3082708
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 680
+	Minor (reclaiming a frame) page faults: 19479729
+	Voluntary context switches: 19577
+	Involuntary context switches: 31107
+	Swaps: 0
+	File system inputs: 71496
+	File system outputs: 537776
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+UTC_END 2026-11-02T14:21:24+00:00

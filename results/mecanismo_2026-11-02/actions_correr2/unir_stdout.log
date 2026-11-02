@@ -1,0 +1,5 @@
+UNION p_LC4_right {"C0_igual": true, "a": "p_LC4_right_a", "b": "p_LC4_right_b", "estado": "UNIDA", "indices_igual": true, "pines_igual": true}
+UNION p_LPLC2_right {"C0_igual": true, "a": "p_LPLC2_right_a", "b": "p_LPLC2_right_b", "estado": "UNIDA", "indices_igual": true, "pines_igual": true}
+UNION p_LPLC1_right {"C0_igual": true, "a": "p_LPLC1_right_a", "b": "p_LPLC1_right_b", "estado": "UNIDA", "indices_igual": true, "pines_igual": true}
+UNION p_LPLC4_right {"C0_igual": true, "a": "p_LPLC4_right_a", "b": "p_LPLC4_right_b", "estado": "UNIDA", "indices_igual": true, "pines_igual": true}
+EXIT_UNIR=0
