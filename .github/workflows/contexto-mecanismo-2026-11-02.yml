@@ -1,0 +1,44 @@
+name: contexto-mecanismo-2026-11-02
+
+on:
+  push:
+    branches: [titan/contexto-mecanismo-2026-11-02]
+    paths: ['tools/contexto/CORRER-mecanismo-2026-11-02']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contexto-main
+  cancel-in-progress: false
+
+jobs:
+  parche:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: rama
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          path: principal
+      - name: Aplicar parche anclado y publicar en main
+        run: |
+          set -euo pipefail
+          BASE=$(awk '/^BASE /{print $2}' rama/tools/contexto/CORRER-mecanismo-2026-11-02)
+          RES=$(awk '/^RESULTADO /{print $2}' rama/tools/contexto/CORRER-mecanismo-2026-11-02)
+          test -n "$BASE"
+          test -n "$RES"
+          cd principal
+          echo "MAIN_ANTES $(git rev-parse HEAD)"
+          python3 ../rama/tools/contexto/parche_contexto_mecanismo.py docs/agents/CONTEXTO-drosophila-fep.md --base "$BASE" --resultado "$RES" --escribir
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/agents/CONTEXTO-drosophila-fep.md
+          test "$(git diff --cached --name-only)" = "docs/agents/CONTEXTO-drosophila-fep.md"
+          git commit -m "contexto(topo-inverso): H_MECANISMO MIXTA en el modelo, respuesta 2026-11-02-004"
+          git push origin HEAD:main
+          echo "MAIN_DESPUES $(git rev-parse HEAD)"
+          sha256sum docs/agents/CONTEXTO-drosophila-fep.md
