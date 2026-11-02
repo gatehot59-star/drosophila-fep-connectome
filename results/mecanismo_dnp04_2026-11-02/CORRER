@@ -1,0 +1,6 @@
+2026-11-02-006 · corrida sellada de H_MECANISMO_DNp04.
+Sello: tools/mecanismo/dnp04/SELLO-DNP04-2026-11-02.md (40969fb, sha256 3ea514fa0933fbf572318322fe6de906a690108ad176b821ad8f575156c04ab6).
+Instrumento: 11881e3; prueba endurecida y HUELLAS.sha256: db369ad.
+Prueba: run 41480897832, PRUEBA 44/44 PASS (results/mecanismo_dnp04_2026-11-02/prueba/prueba.log).
+Ocho celdas q_<E>_right_a (C0, C1, Q1, Q2) y q_<E>_right_b (C0, Q3, Q4, Q5, Q6), 20 ensayos, semillas 20261102 + t.
+Si muere por infraestructura se declara y se relanza igual, sin tocar condiciones, semillas ni reglas.
