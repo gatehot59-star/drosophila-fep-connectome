@@ -1,0 +1,37 @@
+CONTROL_NEGATIVO detecta_1_espiga=True detecta_espigas_red=True detecta_semilla=True identico_consigo=True
+REPLICA ctrl_mn9 IDENTICA ensayos=10 cuentas=210 espigas_red=89142 pines=True target=auto/auto
+REPLICA t20_LC4_right IDENTICA ensayos=40 cuentas=75080 espigas_red=79080 pines=True target=auto/auto
+REPLICA t20_LPLC2_right IDENTICA ensayos=40 cuentas=85320 espigas_red=315640 pines=True target=auto/auto
+REPLICA t20_LPLC1_right IDENTICA ensayos=40 cuentas=72520 espigas_red=455729 pines=True target=auto/auto
+REPLICA t20_LPLC4_right IDENTICA ensayos=40 cuentas=90040 espigas_red=256971 pines=True target=auto/auto
+REPLICA t150_LC4_right IDENTICA ensayos=40 cuentas=75080 espigas_red=695642 pines=True target=auto/auto
+REPLICA t150_LPLC2_right IDENTICA ensayos=40 cuentas=85320 espigas_red=1689854 pines=True target=auto/auto
+REPLICA t150_LPLC1_right IDENTICA ensayos=40 cuentas=72520 espigas_red=1569905 pines=True target=auto/auto
+REPLICA t150_LPLC4_right IDENTICA ensayos=40 cuentas=90040 espigas_red=1488754 pines=True target=auto/auto
+TOTAL ensayos=330 cuentas=646130 espigas_red=6640717
+C0_A_B p_LC4_right IDENTICO ensayos=20
+C0_A_B p_LPLC2_right IDENTICO ensayos=20
+C0_A_B p_LPLC1_right IDENTICO ensayos=20
+C0_A_B p_LPLC4_right IDENTICO ensayos=20
+LOG medir_ctrl_mn9.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_i_LC4_left.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_i_LPLC1_left.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_i_LPLC2_left.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_i_LPLC4_left.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_p_LC4_right_a.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_p_LC4_right_b.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_p_LPLC1_right_a.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_p_LPLC1_right_b.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_p_LPLC2_right_a.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_p_LPLC2_right_b.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_p_LPLC4_right_a.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_p_LPLC4_right_b.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_t150_LC4_right.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_t150_LPLC1_right.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_t150_LPLC2_right.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_t150_LPLC4_right.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_t20_LC4_right.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_t20_LPLC1_right.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_t20_LPLC2_right.log ok_lines=14 pines=True fuente=b3b398d fin=True
+LOG medir_t20_LPLC4_right.log ok_lines=14 pines=True fuente=b3b398d fin=True
+REPLICA_CORRIDA2 PASS
