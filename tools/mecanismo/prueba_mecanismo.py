@@ -17,6 +17,7 @@ AQUI = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, AQUI)
 import agregar_mecanismo as ag  # noqa: E402
 import intervenir as iv  # noqa: E402
+import unir_celdas as uc  # noqa: E402
 
 RES = []
 
@@ -154,6 +155,11 @@ def main():
     chk("e2e_X_reclutada_y_silenciada", mx["C0"] > 0 and mx["C2"] < mx["C0"])
     chk("e2e_K_elige_P", c["K"]["indices"] == [P], json.dumps(c["K"]))
     chk("e2e_K_sube_D", m["K"] > m["C0"])
+    previa = {"C0": [2, 4, 6, 4, 6, 6, 6, 8, 6, 6, 6, 6], "C1": [6, 6, 6, 8, 6, 8, 8, 12, 10, 10, 10, 6],
+              "R3": [6, 8, 8, 10, 6, 10, 8, 12, 10, 12, 10, 6], "K": [4, 4, 6, 6, 4, 6, 6, 8, 6, 8, 8, 6]}
+    if a.n_run == 12 and a.t_run_ms == 200.0:  # runs 41408632528 (cython) y brain-env (numpy), con joblib
+        chk("e2e_igual_a_prueba_previa", all(c["conds"][k]["D"] == v for k, v in previa.items()),
+            json.dumps({k: c["conds"][k]["D"] for k in previa}))
     pos = {x: k for k, x in enumerate(c["indices"]["mirar"])}
     hs = {k: [[r["cuentas"][pos[s]] for s in S] for r in v["ensayos"]] for k, v in c["conds"].items()}
     chk("e2e_crn_S_identico", all(h == hs["C0"] for h in hs.values()))
@@ -222,6 +228,54 @@ def main():
                          stdout=subprocess.DEVNULL)
     g = json.load(open(os.path.join(agd, "agregado_mecanismo.json")))
     chk("agregar_sin_pin_invalida", g["global"] == "INVALIDA", g["global"])
+    # 6. enmienda: celdas partidas en _a y _b y unidas con unir_celdas.py
+    def mitad(cc, nombre, conds):
+        m = copy.deepcopy(cc)
+        m["celda"] = nombre
+        m["conds"] = {k: v for k, v in cc["conds"].items() if k in conds}
+        m["def"] = dict(cc["def"], conds=list(conds))
+        if "K" not in conds:
+            m.pop("K", None)
+        return m
+    ca, cb = mitad(c, "p_SYN_a", iv.PARTE_A), mitad(c, "p_SYN_b", iv.PARTE_B)
+    u, inf = uc.unir(ca, cb)
+    chk("unir_reconstruye", inf["estado"] == "UNIDA" and "error" not in u and u["celda"] == "p_SYN" and
+        all(u["conds"][k] == c["conds"][k] for k in iv.TODAS) and u["K"] == c["K"], json.dumps(inf))
+    cb2 = copy.deepcopy(cb)
+    cb2["conds"]["C0"]["ensayos"][0]["cuentas"][0] += 1
+    u2, inf2 = uc.unir(ca, cb2)
+    chk("unir_rechaza_C0_distinto", inf2["estado"] == "DISCREPA" and "error" in u2, json.dumps(inf2))
+    u3, inf3 = uc.unir(ca, None)
+    chk("unir_solo_a", inf3["estado"] == "SOLO_A" and "R1" not in u3["conds"] and "error" not in u3)
+
+    def armar_partido(romper_b):
+        for f in os.listdir(agd):
+            os.remove(os.path.join(agd, f))
+        for e in ag.ESTIM:
+            for nom in ("t20_%s_right", "t150_%s_right", "i_%s_left"):
+                cc = copy.deepcopy(c)
+                cc["celda"] = nom % e
+                json.dump(cc, open(os.path.join(agd, "celda_%s.json" % cc["celda"]), "w"))
+            for suf, conds in (("a", iv.PARTE_A), ("b", iv.PARTE_B)):
+                m = mitad(c, "p_%s_right_%s" % (e, suf), conds)
+                if suf == "b" and romper_b:
+                    m["conds"]["C0"]["ensayos"][3]["cuentas"][1] += 1
+                json.dump(m, open(os.path.join(agd, "celda_%s.json" % m["celda"]), "w"))
+        ct = copy.deepcopy(c)
+        ct["celda"] = "ctrl_mn9"
+        ct["n_run"] = 10
+        ct["conds"] = {"C0": {"D": [3] * 10, "X": [0] * 10, "tocadas": {"filas": 0}, "ensayos": []}}
+        json.dump(ct, open(os.path.join(agd, "celda_ctrl_mn9.json"), "w"))
+        r1 = subprocess.call([sys.executable, os.path.join(AQUI, "unir_celdas.py"), "--dir", agd],
+                             stdout=subprocess.DEVNULL)
+        r2 = subprocess.call([sys.executable, os.path.join(AQUI, "agregar_mecanismo.py"), "--dir", agd,
+                              "--permitir-sin-pin"], stdout=subprocess.DEVNULL)
+        return r1, r2, json.load(open(os.path.join(agd, "agregado_mecanismo.json")))
+
+    r1, r2, g = armar_partido(False)
+    chk("partido_positivo", r1 == 0 and r2 == 0 and g["global"] == "SOSTENIDA_EN_MODELO", g["global"])
+    _, _, g = armar_partido(True)
+    chk("partido_C0_distinto_invalida", g["global"] == "INVALIDA", g["global"])
     nf = sum(1 for _, ok in RES if not ok)
     print("PRUEBA_MECANISMO %d/%d %s" % (len(RES) - nf, len(RES), "PASS" if nf == 0 else "FAIL"), flush=True)
     raise SystemExit(0 if nf == 0 else 3)

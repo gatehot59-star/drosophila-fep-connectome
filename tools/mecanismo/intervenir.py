@@ -12,6 +12,9 @@ R2 X recibe solo desde S; R3 S conserva solo S->D; R4 S conserva solo S->D y S->
 excitatorias; K silenciar inhibicion no del motivo, reclutada y emparejada (regla en elegir_k).
 Semillas: brian2.seed(20261102 + t) antes de cada ensayo t, iguales en todas las condiciones (numeros aleatorios
 comunes). Esto mide causalidad DEL MODELO, no de la mosca.
+Enmienda (ENMIENDA-MECANISMO-2026-11-02.md): cada ensayo corre en un proceso nuevo (spawn, maxtasksperchild=1) para
+que la memoria no se acumule entre ensayos, y cada celda principal se parte en _a (C0-C4, M5) y _b (C0, R1-R4, K);
+unir_celdas.py las junta y exige que los dos C0 sean identicos. Condiciones, semillas y reglas no cambian.
 Uso: python3 intervenir.py --shiu DIR --conn C --comp K --conjuntos J --celda NOMBRE --out D [--n-proc 3]
 """
 import argparse
@@ -41,12 +44,16 @@ MN9 = 720575940660219265
 TODAS = ("C0", "C1", "C2", "C3", "C4", "R1", "R2", "R3", "R4", "M5", "K")
 BASICAS = ("C0", "C1", "C2", "C3", "C4")
 ESTIM = ("LC4", "LPLC2", "LPLC1", "LPLC4")
+PARTE_A = ("C0", "C1", "C2", "C3", "C4", "M5")
+PARTE_B = ("C0", "R1", "R2", "R3", "R4", "K")
 
 
 def _celdas():
     c = {}
     for e in ESTIM:
         c["p_%s_right" % e] = {"estimulo": e + "_right", "hz": 50.0, "conds": list(TODAS), "n_run": 20}
+        c["p_%s_right_a" % e] = {"estimulo": e + "_right", "hz": 50.0, "conds": list(PARTE_A), "n_run": 20}
+        c["p_%s_right_b" % e] = {"estimulo": e + "_right", "hz": 50.0, "conds": list(PARTE_B), "n_run": 20}
         c["t20_%s_right" % e] = {"estimulo": e + "_right", "hz": 20.0, "conds": ["C0", "C1"], "n_run": 20}
         c["t150_%s_right" % e] = {"estimulo": e + "_right", "hz": 150.0, "conds": ["C0", "C1"], "n_run": 20}
         c["i_%s_left" % e] = {"estimulo": e + "_left", "hz": 50.0, "conds": list(BASICAS), "n_run": 20}
@@ -171,11 +178,12 @@ def ensayo(model_dir, comp, conn, params, exc, seed, ops, mirar, d_idx, target):
 
 
 def correr_cond(a, params, exc, ops, mirar, d_idx, n_run, Hz, ms):
-    from joblib import Parallel, delayed, parallel_backend
+    """Los ensayos de una condicion, cada uno en un proceso nuevo: la memoria de un ensayo no pasa al siguiente."""
+    import multiprocessing as mp
     seeds = [SEMILLA0 + t for t in range(n_run)]
-    with parallel_backend("loky", n_jobs=a.n_proc):
-        res = Parallel()(delayed(ensayo)(a.shiu, a.comp, a.conn, params, exc, s, ops, mirar, d_idx, a.target)
-                         for s in seeds)
+    args = [(a.shiu, a.comp, a.conn, params, exc, s, ops, mirar, d_idx, a.target) for s in seeds]
+    with mp.get_context("spawn").Pool(processes=a.n_proc, maxtasksperchild=1) as pool:
+        res = pool.starmap(ensayo, args, chunksize=1)
     return res
 
 

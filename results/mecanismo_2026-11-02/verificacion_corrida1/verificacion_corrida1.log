@@ -1,0 +1,16 @@
+MD5SUMS archivos=34 discrepan=[]
+conjuntos_actions_sha256=f3e8602a6bcf3daefc3b83965f7793a2648f59a22bf8df6209d09ed19e0a3c2d
+t150_LC4_right D0=692.9 D1=985.0 cociente=1.42 rel=0.297 positivos=20/20 p_exacto=1.91e-06 (2/1048576) recomputo_igual=True semillas_iguales=True crn_S=20/20 S_dif=0.00% tasa_D0=69.3Hz tasa_D1=98.5Hz X0=1406 tocadas_C1=31422 pines=True
+t150_LPLC1_right D0=376.6 D1=620.4 cociente=1.65 rel=0.393 positivos=20/20 p_exacto=1.91e-06 (2/1048576) recomputo_igual=True semillas_iguales=True crn_S=2/20 S_dif=0.02% tasa_D0=53.8Hz tasa_D1=88.6Hz X0=1272 tocadas_C1=30861 pines=True
+t150_LPLC2_right D0=1301.7 D1=1966.5 cociente=1.51 rel=0.338 positivos=20/20 p_exacto=1.91e-06 (2/1048576) recomputo_igual=True semillas_iguales=True crn_S=0/20 S_dif=9.75% tasa_D0=93.0Hz tasa_D1=140.5Hz X0=1433 tocadas_C1=15645 pines=True
+t150_LPLC4_right D0=2029.5 D1=2618.2 cociente=1.29 rel=0.225 positivos=20/20 p_exacto=1.91e-06 (2/1048576) recomputo_igual=True semillas_iguales=True crn_S=0/20 S_dif=0.20% tasa_D0=96.6Hz tasa_D1=124.7Hz X0=4345 tocadas_C1=42200 pines=True
+t20_LC4_right D0=130.6 D1=344.4 cociente=2.64 rel=0.621 positivos=20/20 p_exacto=1.91e-06 (2/1048576) recomputo_igual=True semillas_iguales=True crn_S=20/20 S_dif=0.00% tasa_D0=13.1Hz tasa_D1=34.4Hz X0=210 tocadas_C1=31422 pines=True
+t20_LPLC1_right D0=23.2 D1=166.0 cociente=7.16 rel=0.860 positivos=20/20 p_exacto=1.91e-06 (2/1048576) recomputo_igual=True semillas_iguales=True crn_S=20/20 S_dif=0.00% tasa_D0=3.3Hz tasa_D1=23.7Hz X0=264 tocadas_C1=30861 pines=True
+t20_LPLC2_right D0=288.2 D1=716.1 cociente=2.48 rel=0.598 positivos=20/20 p_exacto=1.91e-06 (2/1048576) recomputo_igual=True semillas_iguales=True crn_S=19/20 S_dif=0.00% tasa_D0=20.6Hz tasa_D1=51.2Hz X0=403 tocadas_C1=15645 pines=True
+t20_LPLC4_right D0=731.5 D1=1082.6 cociente=1.48 rel=0.324 positivos=20/20 p_exacto=1.91e-06 (2/1048576) recomputo_igual=True semillas_iguales=True crn_S=20/20 S_dif=0.00% tasa_D0=34.8Hz tasa_D1=51.6Hz X0=878 tocadas_C1=42200 pines=True
+ctrl_mn9 ensayos_con_MN9=10/10 media=59.6 pines=True
+tocadas_independiente LC4_right filas_preX=31422 con_peso=31422 todas_negativas=True
+tocadas_independiente LPLC2_right filas_preX=15645 con_peso=15645 todas_negativas=True
+tocadas_independiente LPLC1_right filas_preX=30861 con_peso=30861 todas_negativas=True
+tocadas_independiente LPLC4_right filas_preX=42200 con_peso=42200 todas_negativas=True
+paso12_lineas_etiquetadas actions=179 brainenv=179 distintas=11 campos_que_difieren=['top_X', 'top_inhibitory']
