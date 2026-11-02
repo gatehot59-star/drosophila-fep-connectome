@@ -1,0 +1,60 @@
+X LC4 suma_C0=575.50 (agregado 575.50) C0_a_igual_b=True espigas_rel={"C0": 1.0, "C2": 0.385, "C4": 0.763, "R2": 0.755, "R3": 0.306} freno_rel={"C0": 1.0, "C2": 0.724, "C4": 0.472, "R2": 0.557, "R3": 0.922} 1-dSX/dX=0.711
+  ANAT LC4 sinapsis_S_a_X=3242 (0.015 de la entrada de X) sinapsis_D_a_X=1062 (0.0050) sinapsis_X_a_D=4017 freno_C0_glutamato=0.771
+  TIPO LC4 PVLP010    n=1 nt=glutamate sin_X_a_D=677 espigas_C0=106.7 freno=0.725 acum=0.725 C2/C0=0.90 C4/C0=0.34 R3/C0=0.93 entrada_desde_S=0.023 desde_D=0.025
+  TIPO LC4 PVLP024    n=4 nt=gaba sin_X_a_D=291 espigas_C0=155.6 freno=0.114 acum=0.839 C2/C0=0.00 C4/C0=1.17 R3/C0=0.00 entrada_desde_S=0.178 desde_D=0.003
+  TIPO LC4 AVLP016    n=1 nt=glutamate sin_X_a_D=69 espigas_C0=57.9 freno=0.040 acum=0.879 C2/C0=1.16 C4/C0=0.65 R3/C0=0.31 entrada_desde_S=0.001 desde_D=0.001
+  TIPO LC4 LHAD1g1    n=1 nt=gaba sin_X_a_D=1090 espigas_C0=1.9 freno=0.021 acum=0.900 C2/C0=0.21 C4/C0=0.00 R3/C0=10.59 entrada_desde_S=0.003 desde_D=0.008
+  TIPO LC4 CL140      n=1 nt=gaba sin_X_a_D=60 espigas_C0=33.2 freno=0.020 acum=0.921 C2/C0=0.51 C4/C0=0.00 R3/C0=0.43 entrada_desde_S=0.017 desde_D=0.016
+  TIPO LC4 CB3513b    n=1 nt=gaba sin_X_a_D=69 espigas_C0=28.4 freno=0.020 acum=0.940 C2/C0=0.57 C4/C0=0.02 R3/C0=0.00 entrada_desde_S=0.019 desde_D=0.009
+  TIPO LC4 PVLP021    n=2 nt=gaba sin_X_a_D=49 espigas_C0=77.3 freno=0.020 acum=0.960 C2/C0=0.00 C4/C0=1.00 R3/C0=0.00 entrada_desde_S=0.108 desde_D=0.001
+  TIPO LC4 PVLP022    n=1 nt=gaba sin_X_a_D=33 espigas_C0=49.4 freno=0.016 acum=0.976 C2/C0=0.00 C4/C0=0.96 R3/C0=0.00 entrada_desde_S=0.094 desde_D=0.011
+  TIPOS LC4 n_tipos=37 top3=0.879
+  D_A_X LC4 PVLP010 {"DNp04": 190, "DNp11": 8, "DNp01": 8, "DNg40": 5, "DNp06": 4, "DNp02": 4, "DNpe021": 4, "DNp35": 2, "DNp103": 1}
+  D_A_X LC4 PVLP024 {"DNg40": 9, "DNp04": 4, "DNp06": 1, "DNp05": 1, "DNpe021": 1, "DNp11": 1}
+  D_A_X LC4 AVLP016 {"DNp103": 7, "DNp06": 6, "DNp35": 5, "DNpe021": 3, "DNg40": 2, "DNp01": 2, "DNp02": 1, "DNp11": 1}
+  S LC4 C0=2498.85 rel={"C0": 1.0, "C1": 1.0, "C2": 1.0, "C3": 1.0, "C4": 1.0, "M5": 1.0, "R1": 1.0, "R2": 1.0, "R3": 1.0, "R4": 1.0, "K": 1.0}
+X LPLC2 suma_C0=776.25 (agregado 776.25) C0_a_igual_b=True espigas_rel={"C0": 1.0, "C2": 0.535, "C4": 0.869, "R2": 0.69, "R3": 0.194} freno_rel={"C0": 1.0, "C2": 0.647, "C4": 0.81, "R2": 0.61, "R3": 0.349} 1-dSX/dX=0.740
+  ANAT LPLC2 sinapsis_S_a_X=6394 (0.038 de la entrada de X) sinapsis_D_a_X=858 (0.0051) sinapsis_X_a_D=4908 freno_C0_glutamato=0.254
+  TIPO LPLC2 LHAD1g1    n=1 nt=gaba sin_X_a_D=1129 espigas_C0=79.2 freno=0.306 acum=0.306 C2/C0=0.03 C4/C0=0.88 R3/C0=0.25 entrada_desde_S=0.037 desde_D=0.010
+  TIPO LPLC2 AVLP080    n=1 nt=gaba sin_X_a_D=657 espigas_C0=88.8 freno=0.200 acum=0.506 C2/C0=1.04 C4/C0=1.07 R3/C0=0.00 entrada_desde_S=0.001 desde_D=0.001
+  TIPO LPLC2 PVLP010    n=1 nt=glutamate sin_X_a_D=712 espigas_C0=79.2 freno=0.193 acum=0.699 C2/C0=1.11 C4/C0=0.43 R3/C0=1.08 entrada_desde_S=0.001 desde_D=0.026
+  TIPO LPLC2 PVLP011    n=1 nt=gaba sin_X_a_D=157 espigas_C0=206.6 freno=0.111 acum=0.810 C2/C0=0.00 C4/C0=0.99 R3/C0=0.00 entrada_desde_S=0.182 desde_D=0.002
+  TIPO LPLC2 AVLP076    n=1 nt=gaba sin_X_a_D=502 espigas_C0=35.6 freno=0.061 acum=0.871 C2/C0=2.28 C4/C0=0.18 R3/C0=0.93 entrada_desde_S=0.001 desde_D=0.007
+  TIPO LPLC2 AVLP016    n=1 nt=glutamate sin_X_a_D=207 espigas_C0=79.5 freno=0.056 acum=0.927 C2/C0=0.78 C4/C0=1.02 R3/C0=0.10 entrada_desde_S=0.017 desde_D=0.002
+  TIPO LPLC2 PVLP017    n=1 nt=gaba sin_X_a_D=141 espigas_C0=64.6 freno=0.031 acum=0.958 C2/C0=0.53 C4/C0=0.95 R3/C0=0.00 entrada_desde_S=0.030 desde_D=0.001
+  TIPO LPLC2 AVLP531    n=1 nt=gaba sin_X_a_D=89 espigas_C0=74.4 freno=0.023 acum=0.981 C2/C0=0.00 C4/C0=1.18 R3/C0=0.00 entrada_desde_S=0.161 desde_D=0.001
+  TIPOS LPLC2 n_tipos=26 top3=0.699
+  D_A_X LPLC2 LHAD1g1 {"DNp04": 91, "DNg40": 28, "DNp55": 23, "DNp70": 7, "DNp06": 5, "DNp01": 5, "DNp103": 4, "DNp35": 4, "DNpe056": 3, "DNpe042": 1, "DNpe025": 1}
+  D_A_X LPLC2 AVLP080 {"DNpe056": 12, "DNp103": 3, "DNp35": 3, "DNp55": 2, "DNp06": 1, "DNpe042": 1, "DNp04": 1}
+  D_A_X LPLC2 PVLP010 {"DNp04": 190, "DNp70": 11, "DNp01": 8, "DNg40": 5, "DNp06": 4, "DNpe025": 3, "DNpe042": 2, "DNp35": 2, "DNp103": 1, "DNpe045": 1, "DNpe056": 1}
+  S LPLC2 C0=5082.00 rel={"C0": 1.0, "C1": 1.0331, "C2": 1.017, "C3": 1.0, "C4": 1.0, "M5": 1.0, "R1": 1.0256, "R2": 1.0, "R3": 1.0, "R4": 1.0, "K": 1.0}
+X LPLC1 suma_C0=554.60 (agregado 554.60) C0_a_igual_b=True espigas_rel={"C0": 1.0, "C2": 0.515, "C4": 0.988, "R2": 0.45, "R3": 0.0} freno_rel={"C0": 1.0, "C2": 0.881, "C4": 0.991, "R2": 0.173, "R3": 0.0} 1-dSX/dX=0.768
+  ANAT LPLC1 sinapsis_S_a_X=2921 (0.015 de la entrada de X) sinapsis_D_a_X=92 (0.0005) sinapsis_X_a_D=2333 freno_C0_glutamato=0.217
+  TIPO LPLC1 AVLP080    n=1 nt=gaba sin_X_a_D=626 espigas_C0=116.7 freno=0.624 acum=0.624 C2/C0=0.96 C4/C0=0.99 R3/C0=0.00 entrada_desde_S=0.005 desde_D=0.000
+  TIPO LPLC1 PVLP010    n=1 nt=glutamate sin_X_a_D=450 espigas_C0=56.5 freno=0.217 acum=0.841 C2/C0=1.14 C4/C0=1.01 R3/C0=0.00 entrada_desde_S=0.001 desde_D=0.002
+  TIPO LPLC1 PVLP011    n=1 nt=gaba sin_X_a_D=75 espigas_C0=148.8 freno=0.095 acum=0.936 C2/C0=0.00 C4/C0=0.99 R3/C0=0.00 entrada_desde_S=0.075 desde_D=0.001
+  TIPO LPLC1 CB2700     n=2 nt=gaba sin_X_a_D=229 espigas_C0=22.8 freno=0.023 acum=0.959 C2/C0=0.83 C4/C0=0.90 R3/C0=0.00 entrada_desde_S=0.018 desde_D=0.007
+  TIPO LPLC1 AVLP086    n=1 nt=gaba sin_X_a_D=218 espigas_C0=7.9 freno=0.015 acum=0.974 C2/C0=0.23 C4/C0=1.04 R3/C0=0.00 entrada_desde_S=0.001 desde_D=0.000
+  TIPO LPLC1 Li24       n=2 nt=gaba sin_X_a_D=21 espigas_C0=58.9 freno=0.006 acum=0.980 C2/C0=0.00 C4/C0=1.00 R3/C0=0.00 entrada_desde_S=0.041 desde_D=0.000
+  TIPO LPLC1 CB3513b    n=1 nt=gaba sin_X_a_D=30 espigas_C0=20.8 freno=0.005 acum=0.985 C2/C0=0.68 C4/C0=1.00 R3/C0=0.00 entrada_desde_S=0.004 desde_D=0.001
+  TIPO LPLC1 CB0563     n=1 nt=gaba sin_X_a_D=136 espigas_C0=3.5 freno=0.004 acum=0.989 C2/C0=0.99 C4/C0=0.96 R3/C0=0.00 entrada_desde_S=0.002 desde_D=0.002
+  TIPOS LPLC1 n_tipos=25 top3=0.936
+  D_A_X LPLC1 AVLP080 {"DNp103": 3, "DNp35": 3, "DNp06": 1}
+  D_A_X LPLC1 PVLP010 {"DNp11": 8, "DNp69": 6, "DNp06": 4, "DNp35": 2, "DNp103": 1}
+  D_A_X LPLC1 PVLP011 {"DNp35": 12, "DNp103": 5, "DNp03": 3, "DNp06": 2, "DNp69": 1, "DNp11": 1, "DNa07": 1}
+  S LPLC1 C0=3589.95 rel={"C0": 1.0, "C1": 1.0, "C2": 1.0, "C3": 1.0, "C4": 1.0, "M5": 1.0, "R1": 1.0, "R2": 1.0, "R3": 1.0, "R4": 1.0, "K": 1.0}
+X LPLC4 suma_C0=2146.25 (agregado 2146.25) C0_a_igual_b=True espigas_rel={"C0": 1.0, "C2": 0.484, "C4": 0.951, "R2": 0.849, "R3": 0.016} freno_rel={"C0": 1.0, "C2": 0.591, "C4": 0.95, "R2": 1.487, "R3": 0.009} 1-dSX/dX=0.513
+  ANAT LPLC4 sinapsis_S_a_X=11835 (0.047 de la entrada de X) sinapsis_D_a_X=612 (0.0024) sinapsis_X_a_D=7425 freno_C0_glutamato=0.175
+  TIPO LPLC4 PS065      n=1 nt=gaba sin_X_a_D=212 espigas_C0=109.9 freno=0.130 acum=0.130 C2/C0=0.33 C4/C0=1.00 R3/C0=0.00 entrada_desde_S=0.148 desde_D=0.001
+  TIPO LPLC4 PLP213     n=1 nt=gaba sin_X_a_D=382 espigas_C0=42.6 freno=0.091 acum=0.222 C2/C0=0.04 C4/C0=1.04 R3/C0=0.00 entrada_desde_S=0.175 desde_D=0.002
+  TIPO LPLC4 PS002      n=3 nt=gaba sin_X_a_D=215 espigas_C0=208.3 freno=0.083 acum=0.305 C2/C0=0.71 C4/C0=0.96 R3/C0=0.01 entrada_desde_S=0.059 desde_D=0.009
+  TIPO LPLC4 CL128a     n=3 nt=gaba sin_X_a_D=287 espigas_C0=126.3 freno=0.079 acum=0.384 C2/C0=0.98 C4/C0=1.00 R3/C0=0.00 entrada_desde_S=0.027 desde_D=0.004
+  TIPO LPLC4 PLP172     n=4 nt=gaba sin_X_a_D=139 espigas_C0=389.1 freno=0.071 acum=0.456 C2/C0=0.00 C4/C0=0.99 R3/C0=0.00 entrada_desde_S=0.407 desde_D=0.002
+  TIPO LPLC4 PLP173     n=2 nt=gaba sin_X_a_D=219 espigas_C0=115.4 freno=0.071 acum=0.526 C2/C0=0.41 C4/C0=0.98 R3/C0=0.00 entrada_desde_S=0.205 desde_D=0.005
+  TIPO LPLC4 IB008      n=2 nt=glutamate sin_X_a_D=665 espigas_C0=36.9 freno=0.068 acum=0.595 C2/C0=1.50 C4/C0=0.59 R3/C0=0.00 entrada_desde_S=0.004 desde_D=0.004
+  TIPO LPLC4 IB038      n=4 nt=glutamate sin_X_a_D=188 espigas_C0=223.6 freno=0.064 acum=0.658 C2/C0=0.53 C4/C0=0.95 R3/C0=0.00 entrada_desde_S=0.059 desde_D=0.004
+  TIPOS LPLC4 n_tipos=56 top3=0.305
+  D_A_X LPLC4 PS065 {"DNb05": 2, "DNp57": 1, "DNge041": 1, "DNbe007": 1}
+  D_A_X LPLC4 PLP213 {"DNp07": 2, "DNa10": 2, "DNbe007": 2, "DNp26": 1, "DNp31": 1}
+  D_A_X LPLC4 PS002 {"DNbe007": 71, "DNp07": 2, "DNbe001": 2, "DNb05": 1}
+  S LPLC4 C0=2701.45 rel={"C0": 1.0, "C1": 1.0, "C2": 1.0, "C3": 1.0, "C4": 1.0, "M5": 1.0, "R1": 1.0, "R2": 1.0, "R3": 1.0, "R4": 1.0, "K": 1.0}
