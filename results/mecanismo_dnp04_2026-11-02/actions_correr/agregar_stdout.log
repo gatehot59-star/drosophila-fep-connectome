@@ -1,0 +1,30 @@
+== agregar_dnp04.py :: H_MECANISMO_DNp04 (2026-11-02-006) ==
+ESTIMULO LC4 dXprima=252.60 Dprima={"C0": 266.15, "C1": 518.75, "Q1": 368.6, "Q2": 454.5, "Q3": 308.5, "Q4": 272.8, "Q5": 269.0, "Q6": 272.4} r={"Q1": 0.4056, "Q2": 0.7456, "Q3": 0.1677, "Q4": 0.0263, "Q5": 0.0113, "Q6": 0.0247} s4=0.9677 DprimaQ4/DprimaC0=1.0250
+  NOMBRES LC4 {"DNp04": {"C0": 107.3, "C1": 109.4, "Q1": 107.6, "Q2": 107.4, "Q3": 110.15, "Q4": 107.8, "Q5": 107.05, "Q6": 107.35}, "PVLP010": {"C0": 106.7, "C1": 109.1, "Q1": 46.35, "Q2": 106.95, "Q3": 42.55, "Q4": 103.25, "Q5": 106.5, "Q6": 106.7}, "LHAD1g1": {"C0": 1.95, "C1": 47.4, "Q1": 2.05, "Q2": 3.4, "Q3": 0.0, "Q4": 1.2, "Q5": 1.35, "Q6": 1.55}, "AVLP080": {"C0": 7.85, "C1": 31.85, "Q1": 9.05, "Q2": 10.4, "Q3": 0.0, "Q4": 7.95, "Q5": 8.05, "Q6": 8.1}}
+  GUARDAS LC4 G1={"C0": true, "C1": true} G2=True G3=True G4={} G5={"techo": true, "piso": true}
+ESTIMULO LPLC2 dXprima=663.30 Dprima={"C0": 505.55, "C1": 1168.85, "Q1": 580.0, "Q2": 670.55, "Q3": 584.35, "Q4": 490.85, "Q5": 643.4, "Q6": 522.85} r={"Q1": 0.1122, "Q2": 0.2488, "Q3": 0.1188, "Q4": -0.0222, "Q5": 0.2078, "Q6": 0.0261} s4=1.0852 DprimaQ4/DprimaC0=0.9709
+  NOMBRES LPLC2 {"DNp04": {"C0": 87.15, "C1": 98.0, "Q1": 88.2, "Q2": 89.0, "Q3": 90.2, "Q4": 86.4, "Q5": 89.3, "Q6": 86.0}, "PVLP010": {"C0": 79.25, "C1": 106.5, "Q1": 35.15, "Q2": 88.5, "Q3": 34.3, "Q4": 86.0, "Q5": 80.8, "Q6": 77.35}, "LHAD1g1": {"C0": 79.25, "C1": 138.6, "Q1": 84.05, "Q2": 91.3, "Q3": 71.2, "Q4": 77.15, "Q5": 77.4, "Q6": 79.5}, "AVLP080": {"C0": 88.8, "C1": 154.9, "Q1": 95.85, "Q2": 100.8, "Q3": 96.7, "Q4": 87.8, "Q5": 92.35, "Q6": 117.2}}
+  GUARDAS LPLC2 G1={"C0": true, "C1": true} G2=True G3=True G4={} G5={"techo": true, "piso": true}
+ESTIMULO LPLC1 dXprima=192.60 Dprima={"C0": 81.3, "C1": 273.9, "Q1": 81.3, "Q2": 174.5, "Q3": 81.3, "Q4": 174.5, "Q5": 98.2, "Q6": 144.8} r={"Q1": 0.0, "Q2": 0.4839, "Q3": 0.0, "Q4": 0.4839, "Q5": 0.0877, "Q6": 0.3297} s4=0.0000 DprimaQ4/DprimaC0=2.1464
+  NOMBRES LPLC1 {"DNp04": {"C0": 0.0, "C1": 0.0, "Q1": 0.0, "Q2": 0.0, "Q3": 0.0, "Q4": 0.0, "Q5": 0.0, "Q6": 0.0}, "PVLP010": {"C0": 56.5, "C1": 94.95, "Q1": 56.5, "Q2": 77.3, "Q3": 56.5, "Q4": 0.0, "Q5": 57.65, "Q6": 65.5}, "LHAD1g1": {"C0": 15.0, "C1": 40.9, "Q1": 15.0, "Q2": 12.55, "Q3": 15.0, "Q4": 12.55, "Q5": 12.65, "Q6": 25.85}, "AVLP080": {"C0": 116.7, "C1": 158.85, "Q1": 116.7, "Q2": 119.15, "Q3": 116.7, "Q4": 119.15, "Q5": 114.4, "Q6": 142.15}}
+  GUARDAS LPLC1 G1={"C0": true, "C1": true} G2=True G3=True G4={"Q1": true, "Q3": true} G5={"techo": true, "piso": true}
+ESTIMULO LPLC4 dXprima=503.95 Dprima={"C0": 1258.25, "C1": 1762.2, "Q1": 1258.25, "Q2": 1258.25, "Q3": 1258.25, "Q4": 1258.25, "Q5": 1255.9, "Q6": 1256.4} r={"Q1": 0.0, "Q2": 0.0, "Q3": 0.0, "Q4": 0.0, "Q5": -0.0047, "Q6": -0.0037} s4=nan DprimaQ4/DprimaC0=1.0000
+  NOMBRES LPLC4 {"DNp04": {"C0": 0.0, "C1": 0.0, "Q1": 0.0, "Q2": 0.0, "Q3": 0.0, "Q4": 0.0, "Q5": 0.0, "Q6": 0.0}, "PVLP010": {"C0": 0.0, "C1": 0.0, "Q1": 0.0, "Q2": 0.0, "Q3": 0.0, "Q4": 0.0, "Q5": 0.0, "Q6": 0.0}, "LHAD1g1": {"C0": 15.75, "C1": 21.9, "Q1": 15.75, "Q2": 15.75, "Q3": 15.75, "Q4": 15.75, "Q5": 16.6, "Q6": 21.5}, "AVLP080": {"C0": 7.95, "C1": 12.25, "Q1": 7.95, "Q2": 7.95, "Q3": 7.95, "Q4": 7.95, "Q5": 8.35, "Q6": 10.25}}
+  GUARDAS LPLC4 G1={"C0": true, "C1": true} G2=True G3=True G4={"Q1": true, "Q2": true, "Q3": true, "Q4": true} G5={"techo": true, "piso": true}
+PRUEBA P1 LC4 Q1 media_dif=102.45 positivos=20/20 negativos=0 p=1.91e-06 p_holm=7.63e-06 pasa=True
+PRUEBA P2 LPLC2 Q1 media_dif=74.45 positivos=20/20 negativos=0 p=1.91e-06 p_holm=7.63e-06 pasa=True
+PRUEBA P3 LC4 Q2 media_dif=188.35 positivos=20/20 negativos=0 p=1.91e-06 p_holm=7.63e-06 pasa=True
+PRUEBA P4 LC4 Q3 media_dif=42.35 positivos=20/20 negativos=0 p=1.91e-06 p_holm=7.63e-06 pasa=True
+PROXY PVLP010_LC4 predicho=0.729 medido=0.7456 pasa=True
+PROXY PVLP010_LPLC2 predicho=0.194 medido=0.2488 pasa=True
+PROXY PVLP010_LPLC1 predicho=0.217 medido=0.4839 pasa=False
+PROXY LHAD1g1_LC4 predicho=0.022 medido=0.0113 pasa=True
+PROXY LHAD1g1_LPLC2 predicho=0.308 medido=0.2078 pasa=True
+PROXY AVLP080_LPLC2 predicho=0.201 medido=0.0261 pasa=False
+PROXY AVLP080_LPLC1 predicho=0.624 medido=0.3297 pasa=False
+PROXY_FUERA_DE_X {"PVLP010_LPLC4": 0.0, "LHAD1g1_LPLC1": 0.0877, "LHAD1g1_LPLC4": -0.0047, "AVLP080_LC4": 0.0247, "AVLP080_LPLC4": -0.0037}
+PROXY_VEREDICTO PROXY_PARCIAL 4/7
+DESCRIPTIVOS LC4 r_Q3-r_Q1=-0.2379 DprimaQ4/DprimaC0=1.0250
+GUARDAS_GLOBALES {"G1": true, "G2": true, "G3": true, "G4": true, "G5": true}
+H_MECANISMO_DNp04 SOSTENIDA_EN_MODELO r_Q1=0.4056 r_Q2=0.7456 s4=0.9677
+EXIT_AGREGAR=0
