@@ -1,0 +1,4 @@
+H_MECANISMO 2026-11-02-002, corrida 2 (relanzamiento por falla de infraestructura de la corrida 1, run 41410027436)
+enmienda: tools/mecanismo/ENMIENDA-MECANISMO-2026-11-02.md en 3e34d460be41cf23aca9ad36bb42c60148f4b446, sha256 64578a9078be91fb51c0d36436aa0bd707c61b430e497f8c0c2d7de594679aa1
+sello original: tools/mecanismo/SELLO-MECANISMO-2026-11-02.md, sha256 ae904036f3862d447bacd0c8b512580cfd17694208e3b289e7c45ae2f337263f
+prueba de la enmienda: run 41458071625, 54/54 PASS
