@@ -30,6 +30,7 @@ jobs:
       run: |
         set -euo pipefail
         mkdir -p results/a1_prueba /workspace/banc_888 /workspace/mecanismo-2026-11-02
+        trap 'cp /tmp/paso12.log results/a1_prueba/paso12.log 2>/dev/null || true' EXIT
         curl -fsSL --retry 2 -o /workspace/connectivity.parquet "$SHIU/Connectivity_783.parquet"
         curl -fsSL --retry 2 -o /workspace/annotations.tsv "https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv"
         curl -fsSL --retry 2 -o /workspace/banc_888/banc_888_meta.feather "https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888/banc_888_meta.feather"
