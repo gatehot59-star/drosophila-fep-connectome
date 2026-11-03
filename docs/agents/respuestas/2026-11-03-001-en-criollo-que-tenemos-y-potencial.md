@@ -44,3 +44,9 @@ El 7/7 retrospectivo de 008 ayuda a formular esa prueba, pero no la sustituye: u
 - Modo: síntesis explicativa, no otra auditoría experimental. Funciones: lectura, interpretación y control documental del mismo operador, sin revisión externa nueva. Gate I experimental: N/A, no se ejecutó un instrumento científico nuevo. Gate II: explicación acotada, hechos separados de potencial. Gate III: se registra su cierre después de verificar publicación, Doc y continuidad.
 - Incidencia de consulta: el índice anónimo de GitHub respondió 403 por cuota; se recuperó por el conector y la fuente por lectura raw. No se atribuye a una falta de acceso al proyecto.
 - Escritura autorizada: esta nota, su Doc y continuidad. Sin editar papers, sellos, 009-A1 ni código; sin simulaciones, entrenamiento, Actions, GPU, merge o despliegue.
+
+## Cierre documental
+
+La nota inicial se recuperó desde el commit `e44d2d1e2a45ad87bc550a65d5f0276321b07a3b` y desde main: ambos contenidos coincidieron exactamente con el original de 6.846 bytes, SHA256 `ca9cf27b60a65a6ae1386599370c0576cafd068575aafdbfcf7e92a8fb9fd92c`. El [Doc de esta explicación](https://app.clickup.com/90171457413/docs/2kza6fw5-26397), público en el Space validado, fue leído completo. La continuidad quedó registrada en Nexus 150.
+
+Gate I experimental: N/A. Gate II: COMPLETADO para esta síntesis, sin nuevo veredicto científico. Gate III: publicación de la nota, lectura del Doc y registro de continuidad completos; la revisión y el hash finales se registran en Nexus 150 después de su cotejo remoto. Este cierre sólo agrega texto y conserva íntegros los 6.846 bytes originales. Sin procesos de simulación iniciados ni recomendaciones ejecutadas.
