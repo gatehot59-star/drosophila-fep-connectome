@@ -1,0 +1,91 @@
+Collecting numpy==2.5.3
+  Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pandas==3.0.5
+  Downloading pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting scipy==1.18.1
+  Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting pyarrow==25.0.1
+  Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (3.0 kB)
+Collecting python-dateutil>=2.8.2 (from pandas==3.0.5)
+  Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+Collecting tzdata (from python-dateutil>=2.8.2->pandas==3.0.5)
+  Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+Downloading numpy-2.5.3-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 298.5 MB/s  0:00:00
+Downloading pandas-3.0.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (11.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 11.0/11.0 MB 337.4 MB/s  0:00:00
+Downloading scipy-1.18.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 333.7 MB/s  0:00:00
+Downloading pyarrow-25.0.1-cp312-cp312-manylinux_2_28_x86_64.whl (50.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 50.1/50.1 MB 173.8 MB/s  0:00:00
+Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+Installing collected packages: tzdata, pyarrow, numpy, scipy, python-dateutil, pandas
+
+Successfully installed numpy-2.5.3 pandas-3.0.5 pyarrow-25.0.1 python-dateutil-4.0.0 scipy-1.18.1 tzdata-2026.6
+PLAN ensayos=8540 manifiesto=8540 bloques=20 min=340 max=440 duplicados=0 faltantes=0 extra=0 celdas_partidas=0 ok=True
+PRUEBA_PLAN limpio PASS
+PRUEBA_PLAN movido_parte_una_celda PASS
+PRUEBA_PLAN faltante PASS
+PRUEBA_PLAN duplicado PASS
+BLOQUE 00 ensayos=400 celdas=H1b|C,R01|A
+BLOQUE 01 ensayos=440 celdas=R01|B,R11|A
+BLOQUE 02 ensayos=440 celdas=R02|A,R11|B
+BLOQUE 03 ensayos=440 celdas=R02|B,R12|A
+BLOQUE 04 ensayos=440 celdas=R03|A,R12|B
+BLOQUE 05 ensayos=440 celdas=R03|B,R13|A
+BLOQUE 06 ensayos=440 celdas=R04|A,R13|B
+BLOQUE 07 ensayos=440 celdas=R04|B,R14|A
+BLOQUE 08 ensayos=440 celdas=R05|A,R14|B
+BLOQUE 09 ensayos=440 celdas=R05|B,R15|A
+BLOQUE 10 ensayos=440 celdas=R06|A,R15|B
+BLOQUE 11 ensayos=440 celdas=R06|B,R16|A
+BLOQUE 12 ensayos=440 celdas=R07|A,R16|B
+BLOQUE 13 ensayos=400 celdas=H1|C,R07|B
+BLOQUE 14 ensayos=360 celdas=H1|B,R08|A
+BLOQUE 15 ensayos=440 celdas=H1b|B,H2|C,R08|B
+BLOQUE 16 ensayos=440 celdas=H2|B,H3|C,R09|A
+BLOQUE 17 ensayos=440 celdas=H3|B,H4|C,R09|B
+BLOQUE 18 ensayos=440 celdas=H4b|C,H4|B,R10|A
+BLOQUE 19 ensayos=340 celdas=H4b|B,R10|B
+bloque=00 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=01 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=10 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=11 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=12 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=13 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=14 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=15 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=16 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=17 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=18 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=19 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=02 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=03 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=04 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=05 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=06 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=07 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=08 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+bloque=09 run=41684131931 fuente=e7490f59fee2f36c7a266a712415257f61361939 intento=success censo=success plan=success testigos=success ensayos=success validar=success
+JSONL bloque_00.jsonl lineas=400 sha256=4b93575024323b4145515aac6981f95bd229ea6a3934fbe95cfd2f90ff33a71b
+JSONL bloque_01.jsonl lineas=440 sha256=5217298714446702961d7ec0a256047c3c717614d845cf90a485cb0460724538
+JSONL bloque_10.jsonl lineas=440 sha256=6c5c0cca38b51c9c92515ce46d2d70ad88d08192433d5283d3b332e9fc3d5518
+JSONL bloque_11.jsonl lineas=440 sha256=845bd55a3ff967a1752769f6095aecda58aabdefcb6121e392d9a0ede9d127cb
+JSONL bloque_12.jsonl lineas=440 sha256=b32c1dc7e3d7c5ed1e0b1c1305eef534a31056cf6579cc2237b247154eecbd84
+JSONL bloque_13.jsonl lineas=400 sha256=dccb492bf69003f2eafd52731f4647e07c32eb637cb54424205fc06e9c44c879
+JSONL bloque_14.jsonl lineas=360 sha256=fa482f1eed80a24ed9685fba8ee090a4f0bd1eecf630a654f83733050255ae0d
+JSONL bloque_15.jsonl lineas=440 sha256=44a122b296e8ef107bf2cf37b0822a027f47a9f29476a1f9d4bb980b97cd0bea
+JSONL bloque_16.jsonl lineas=440 sha256=028daea866553f361a95a72fd82a218b8cb7b7a029261376fa111b297d6dbb3c
+JSONL bloque_17.jsonl lineas=440 sha256=9616b1d701d26b7e1dd1c24b9081ac9494230e3d7b5af902892c48054850fe53
+JSONL bloque_18.jsonl lineas=440 sha256=b22c40b756a06da2e315ea3ba92975b19403a70eaf5a6c4f8c023bfd00b6f786
+JSONL bloque_19.jsonl lineas=340 sha256=5d7b837fd6a3f0247d9be20ff9e2dc8227e47dd058d8495778dc750808eda363
+JSONL bloque_02.jsonl lineas=440 sha256=66bd6a8bcd5ab07e0effab879e99cb66b14d5761ac143f867782af32c19a6dc5
+JSONL bloque_03.jsonl lineas=440 sha256=0f3e070be670b9b58bd83a705f8b348cab9ec07b545b6a5db9f704ebde634ee4
+JSONL bloque_04.jsonl lineas=440 sha256=4f13bf681628340427f8792c38f6383a0413829e6129d6d5d2c53cbe7e3af480
+JSONL bloque_05.jsonl lineas=440 sha256=538a4da0c6d42fff6c9a48e488c5e7d6f311d936c72a90e2b4db522a43ce4c90
+JSONL bloque_06.jsonl lineas=440 sha256=c2ad9a981d68069e72f761f12a4ce151d3dba182f95107ede18fa112e8cae510
+JSONL bloque_07.jsonl lineas=440 sha256=c7e7a2f5484550078f75209994380805beb137f8a5aa6ddaefb3af833edb64f9
+JSONL bloque_08.jsonl lineas=440 sha256=0cb9b7f09a19e1efa185afa32e4bb5f16d8588ae639f6201dff69e40cadb0847
+JSONL bloque_09.jsonl lineas=440 sha256=bd472ab4049843254c3400f2d72f4df4877e6688950aa7b7789624e3ef136a3a
+VALIDACION_CORRIDA OK archivos=20 registros=8540 esperados=8540 fallos=0 por_codigo={}

@@ -1,0 +1,2 @@
+run=41684131931 dir=results/a1_2026-11-03/corrida_1 fuente=e7490f59fee2f36c7a266a712415257f61361939 bloques=success intento=success juntar=success
+UTC_END 2026-11-03T17:55:21+00:00

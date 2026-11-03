@@ -1,0 +1,469 @@
+== runner_a1.py 2026-11-03-005, manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 ==
+HUELLA model.py fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e OK
+HUELLA completeness bbb847a4cc2caaa7a16349722d220c087317b946d148d4d592d94d250617a311 OK
+HUELLA parquet efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347 OK
+HUELLA units_contenido 3e218ac3e83987b108c645341361897cb42038abdab1ca8af88d80770b24961b OK
+ENSAYO R08|B|C0|2 estado=OK x=36 G=[42] total=4832 sha=c57d3099f3631479 seg=5.026 motivo=
+ENSAYO R08|B|C0|1 estado=OK x=44 G=[62] total=4670 sha=1e515f19220587f2 seg=7.091 motivo=
+ENSAYO R08|B|C0|0 estado=OK x=39 G=[53] total=4859 sha=55686fdb68c8a461 seg=7.4 motivo=
+ENSAYO R08|B|C0|3 estado=OK x=36 G=[43] total=4700 sha=bb245891926e0f12 seg=5.56 motivo=
+ENSAYO R08|B|C0|5 estado=OK x=39 G=[59] total=5044 sha=c9d7c99ec80a3f72 seg=4.988 motivo=
+ENSAYO R08|B|C0|4 estado=OK x=34 G=[40] total=4743 sha=a4ea0d5c560a941e seg=6.21 motivo=
+ENSAYO R08|B|C0|6 estado=OK x=37 G=[46] total=4479 sha=03ea661db0745fa6 seg=6.341 motivo=
+ENSAYO R08|B|C0|7 estado=OK x=46 G=[59] total=5267 sha=2a404c4125d30c94 seg=4.663 motivo=
+ENSAYO R08|B|C0|8 estado=OK x=28 G=[38] total=4654 sha=8b25996d04ce8f6b seg=6.112 motivo=
+ENSAYO R08|B|C0|9 estado=OK x=34 G=[41] total=4350 sha=8c4c1b3ec4b93a02 seg=4.935 motivo=
+ENSAYO R08|B|C0|10 estado=OK x=37 G=[41] total=4861 sha=0e80f89d14f9cec9 seg=6.552 motivo=
+ENSAYO R08|B|C0|11 estado=OK x=33 G=[40] total=4337 sha=fb87aec0f0efb409 seg=6.924 motivo=
+ENSAYO R08|B|C0|12 estado=OK x=35 G=[41] total=4605 sha=d7d9d7a47fe4f996 seg=5.714 motivo=
+ENSAYO R08|B|C0|13 estado=OK x=37 G=[47] total=4488 sha=355d445bf9124e06 seg=5.362 motivo=
+ENSAYO R08|B|C0|14 estado=OK x=37 G=[46] total=4553 sha=bec7ab0ea4f7f84d seg=5.723 motivo=
+ENSAYO R08|B|C0|15 estado=OK x=40 G=[48] total=4598 sha=8907e1640055bd60 seg=4.935 motivo=
+ENSAYO R08|B|C0|16 estado=OK x=28 G=[35] total=4484 sha=eb4def7feee9082c seg=6.271 motivo=
+ENSAYO R08|B|C0|17 estado=OK x=41 G=[52] total=4623 sha=f05fa501b381b73f seg=4.926 motivo=
+ENSAYO R08|B|C0|18 estado=OK x=44 G=[57] total=5461 sha=c98a96c83666f3f0 seg=6.01 motivo=
+ENSAYO R08|B|C0|19 estado=OK x=38 G=[47] total=4295 sha=e4c438101f2d72e7 seg=6.87 motivo=
+ENSAYO R08|B|Q1|1 estado=OK x=11 G=[62] total=4731 sha=36f431552f507b76 seg=4.645 motivo=
+ENSAYO R08|B|Q1|0 estado=OK x=14 G=[53] total=4854 sha=ec57e84dc7642273 seg=6.564 motivo=
+ENSAYO R08|B|Q1|2 estado=OK x=15 G=[42] total=4840 sha=408515210fa04516 seg=5.326 motivo=
+ENSAYO R08|B|Q1|3 estado=OK x=15 G=[43] total=4637 sha=fd86154ee1d30ded seg=7.265 motivo=
+ENSAYO R08|B|Q1|4 estado=OK x=19 G=[40] total=4792 sha=ca8a05e341dd3a7a seg=7.333 motivo=
+ENSAYO R08|B|Q1|5 estado=OK x=9 G=[59] total=4809 sha=1f54fe455303f6e3 seg=5.008 motivo=
+ENSAYO R08|B|Q1|6 estado=OK x=15 G=[46] total=4870 sha=3216e73f7bd84de1 seg=5.055 motivo=
+ENSAYO R08|B|Q1|7 estado=OK x=17 G=[59] total=5263 sha=b925b129104186db seg=6.615 motivo=
+ENSAYO R08|B|Q1|8 estado=OK x=10 G=[38] total=4670 sha=678c228e2753cc94 seg=6.12 motivo=
+ENSAYO R08|B|Q1|9 estado=OK x=8 G=[41] total=4556 sha=8caf6e02974a28ec seg=6.227 motivo=
+ENSAYO R08|B|Q1|10 estado=OK x=15 G=[41] total=4918 sha=309981282db2e60a seg=5.674 motivo=
+ENSAYO R08|B|Q1|11 estado=OK x=12 G=[40] total=4445 sha=accae6dd76e0d6f5 seg=5.556 motivo=
+ENSAYO R08|B|Q1|12 estado=OK x=15 G=[41] total=4690 sha=e22c3c156fb5a5e7 seg=5.877 motivo=
+ENSAYO R08|B|Q1|13 estado=OK x=13 G=[47] total=4806 sha=410369f40cbfab80 seg=5.719 motivo=
+ENSAYO R08|B|Q1|14 estado=OK x=16 G=[46] total=4535 sha=d291d03b3b364701 seg=6.157 motivo=
+ENSAYO R08|B|Q1|16 estado=OK x=13 G=[35] total=4612 sha=40b40335dea88768 seg=5.316 motivo=
+ENSAYO R08|B|Q1|15 estado=OK x=15 G=[48] total=4778 sha=0e29f3b438886718 seg=7.12 motivo=
+ENSAYO R08|B|Q1|17 estado=OK x=15 G=[52] total=4923 sha=0cf3645f3531c513 seg=6.52 motivo=
+ENSAYO R08|B|Q1|19 estado=OK x=12 G=[47] total=4489 sha=8c4592fb641d5c74 seg=4.964 motivo=
+ENSAYO R08|B|Q1|18 estado=OK x=23 G=[57] total=5396 sha=4124379c4cbc0110 seg=6.215 motivo=
+ENSAYO R08|B|Q2|0 estado=OK x=40 G=[53] total=5071 sha=ee6a1ef13949bd15 seg=6.895 motivo=
+ENSAYO R08|B|Q2|1 estado=OK x=42 G=[62] total=4874 sha=b356b5f780c7eb8f seg=4.694 motivo=
+ENSAYO R08|B|Q2|2 estado=OK x=35 G=[42] total=4912 sha=dde1c35ccc74066e seg=5.887 motivo=
+ENSAYO R08|B|Q2|3 estado=OK x=38 G=[43] total=4628 sha=25943fc68bf14542 seg=5.525 motivo=
+ENSAYO R08|B|Q2|4 estado=OK x=34 G=[40] total=4820 sha=0f6f1065fb694b37 seg=6.279 motivo=
+ENSAYO R08|B|Q2|5 estado=OK x=42 G=[59] total=4969 sha=7f025b4885380330 seg=6.138 motivo=
+ENSAYO R08|B|Q2|6 estado=OK x=36 G=[46] total=4779 sha=cd5d82b352151a7f seg=5.942 motivo=
+ENSAYO R08|B|Q2|7 estado=OK x=45 G=[59] total=5509 sha=d112b7aff2915d30 seg=5.682 motivo=
+ENSAYO R08|B|Q2|8 estado=OK x=28 G=[38] total=4731 sha=38316f0eb36df932 seg=6.086 motivo=
+ENSAYO R08|B|Q2|9 estado=OK x=37 G=[41] total=4613 sha=663593ae82118f9c seg=5.659 motivo=
+ENSAYO R08|B|Q2|10 estado=OK x=36 G=[41] total=4653 sha=fd9ca1e768c9681c seg=5.756 motivo=
+ENSAYO R08|B|Q2|11 estado=OK x=31 G=[40] total=4645 sha=5168dfacfed0ff15 seg=6.524 motivo=
+ENSAYO R08|B|Q2|12 estado=OK x=35 G=[41] total=4594 sha=11071016af42dccc seg=6.343 motivo=
+ENSAYO R08|B|Q2|13 estado=OK x=38 G=[47] total=4725 sha=6171d202013a99d3 seg=5.076 motivo=
+ENSAYO R08|B|Q2|14 estado=OK x=38 G=[46] total=4660 sha=1b4882213649c796 seg=6.831 motivo=
+ENSAYO R08|B|Q2|16 estado=OK x=30 G=[35] total=4716 sha=75e88fbd98b459a6 seg=4.95 motivo=
+ENSAYO R08|B|Q2|15 estado=OK x=38 G=[48] total=4755 sha=aa07586f35e01aa9 seg=6.381 motivo=
+ENSAYO R08|B|Q2|18 estado=OK x=45 G=[57] total=5697 sha=d1f1e91b56f66c47 seg=4.852 motivo=
+ENSAYO R08|B|Q2|17 estado=OK x=42 G=[52] total=4936 sha=e7c755ca6eae08d6 seg=6.886 motivo=
+ENSAYO R08|B|Q2|19 estado=OK x=37 G=[47] total=4404 sha=329633b07f964874 seg=6.943 motivo=
+ENSAYO R08|B|Q3|0 estado=OK x=14 G=[53] total=4011 sha=d38512bac2eebb1f seg=6.204 motivo=
+ENSAYO R08|B|Q3|1 estado=OK x=15 G=[62] total=3716 sha=50909146c91db868 seg=6.337 motivo=
+ENSAYO R08|B|Q3|2 estado=OK x=15 G=[42] total=4137 sha=10c535cdab3bd057 seg=4.531 motivo=
+ENSAYO R08|B|Q3|4 estado=OK x=22 G=[40] total=4080 sha=9157fab6b93ee669 seg=4.587 motivo=
+ENSAYO R08|B|Q3|3 estado=OK x=14 G=[43] total=3782 sha=a8f481ae41ec6552 seg=7.017 motivo=
+ENSAYO R08|B|Q3|5 estado=OK x=10 G=[59] total=3803 sha=c6c75fa40ccaf92b seg=6.624 motivo=
+ENSAYO R08|B|Q3|6 estado=OK x=15 G=[46] total=4161 sha=d950a806cfef5e16 seg=4.686 motivo=
+ENSAYO R08|B|Q3|7 estado=OK x=19 G=[59] total=4182 sha=bc4eda0858762ce3 seg=6.27 motivo=
+ENSAYO R08|B|Q3|8 estado=OK x=11 G=[38] total=3835 sha=b41096f2bdf95986 seg=6.486 motivo=
+ENSAYO R08|B|Q3|9 estado=OK x=10 G=[41] total=3927 sha=a6449f6db6e17942 seg=4.985 motivo=
+ENSAYO R08|B|Q3|10 estado=OK x=17 G=[41] total=4254 sha=dbd1a517548744a1 seg=6.579 motivo=
+ENSAYO R08|B|Q3|12 estado=OK x=15 G=[41] total=3928 sha=8b8804141d155e24 seg=5.009 motivo=
+ENSAYO R08|B|Q3|11 estado=OK x=14 G=[41] total=3596 sha=bb9a8dab06e0d342 seg=6.665 motivo=
+ENSAYO R08|B|Q3|13 estado=OK x=16 G=[48] total=3892 sha=18b2ad1b9666a4ca seg=4.931 motivo=
+ENSAYO R08|B|Q3|14 estado=OK x=17 G=[47] total=3628 sha=637e37cd0213e2f3 seg=7.289 motivo=
+ENSAYO R08|B|Q3|15 estado=OK x=15 G=[49] total=3911 sha=2a45d972be95d0cf seg=7.128 motivo=
+ENSAYO R08|B|Q3|16 estado=OK x=13 G=[35] total=4019 sha=7a4d87c4c8be8215 seg=4.962 motivo=
+ENSAYO R08|B|Q3|18 estado=OK x=20 G=[57] total=4321 sha=290d42a6dc5de623 seg=4.896 motivo=
+ENSAYO R08|B|Q3|17 estado=OK x=17 G=[52] total=3845 sha=13c2441fc5cb812e seg=6.163 motivo=
+ENSAYO R08|B|Q3|19 estado=OK x=15 G=[47] total=3677 sha=f8328016f83cd640 seg=6.723 motivo=
+ENSAYO R08|B|Q4|1 estado=OK x=26 G=[62] total=4740 sha=b9c2469d0139094f seg=4.946 motivo=
+ENSAYO R08|B|Q4|0 estado=OK x=20 G=[53] total=4936 sha=2075aac89ab4fb82 seg=6.284 motivo=
+ENSAYO R08|B|Q4|2 estado=OK x=17 G=[42] total=4876 sha=f7752819c428229b seg=6.307 motivo=
+ENSAYO R08|B|Q4|3 estado=OK x=15 G=[43] total=4720 sha=282d7443b61de22a seg=4.92 motivo=
+ENSAYO R08|B|Q4|4 estado=OK x=15 G=[40] total=4856 sha=9b54e3b10c1e2dcc seg=6.56 motivo=
+ENSAYO R08|B|Q4|6 estado=OK x=21 G=[46] total=4617 sha=4185be2f310cdd08 seg=4.754 motivo=
+ENSAYO R08|B|Q4|5 estado=OK x=25 G=[59] total=4804 sha=66ca01f5a78d4acc seg=6.808 motivo=
+ENSAYO R08|B|Q4|7 estado=OK x=26 G=[59] total=5299 sha=7a8c3c70d092859f seg=5.945 motivo=
+ENSAYO R08|B|Q4|8 estado=OK x=13 G=[38] total=4490 sha=a21d479d2f9cb4e1 seg=5.894 motivo=
+ENSAYO R08|B|Q4|9 estado=OK x=17 G=[41] total=4517 sha=09be22e8c680224a seg=6.12 motivo=
+ENSAYO R08|B|Q4|10 estado=OK x=18 G=[41] total=4782 sha=8d03ff19cd52b90c seg=6.459 motivo=
+ENSAYO R08|B|Q4|11 estado=OK x=14 G=[40] total=4431 sha=5353040a1fe7dadd seg=5.191 motivo=
+ENSAYO R08|B|Q4|12 estado=OK x=16 G=[41] total=4701 sha=264fec56ce2cb148 seg=5.873 motivo=
+ENSAYO R08|B|Q4|13 estado=OK x=20 G=[47] total=4631 sha=f4e54feddbbee1c8 seg=5.95 motivo=
+ENSAYO R08|B|Q4|14 estado=OK x=16 G=[46] total=4584 sha=2e2c2bca9335e915 seg=5.625 motivo=
+ENSAYO R08|B|Q4|15 estado=OK x=19 G=[48] total=4719 sha=9762d6ac44fc5125 seg=6.197 motivo=
+ENSAYO R08|B|Q4|16 estado=OK x=10 G=[35] total=4548 sha=1c7315a5459dcddf seg=5.0 motivo=
+ENSAYO R08|B|Q4|17 estado=OK x=24 G=[52] total=4857 sha=b770fd8d476f3013 seg=6.644 motivo=
+ENSAYO R08|B|Q4|18 estado=OK x=24 G=[57] total=5395 sha=37e664b57766457b seg=6.7 motivo=
+ENSAYO R08|B|Q4|19 estado=OK x=18 G=[47] total=4258 sha=3200c7ba8792a28d seg=5.583 motivo=
+ENSAYO R08|B|QCOL|0 estado=OK x=36 G=[53] total=4025 sha=c24a35f29f3eb288 seg=5.302 motivo=
+ENSAYO R08|B|QCOL|1 estado=OK x=41 G=[62] total=3685 sha=8d332cc73b572dc5 seg=5.906 motivo=
+ENSAYO R08|B|QCOL|2 estado=OK x=33 G=[42] total=4058 sha=ec826d3c460f6147 seg=5.293 motivo=
+ENSAYO R08|B|QCOL|3 estado=OK x=32 G=[43] total=3987 sha=28c196dec5b3b510 seg=5.711 motivo=
+ENSAYO R08|B|QCOL|5 estado=OK x=37 G=[59] total=3790 sha=6daa1bbe642bbe33 seg=5.411 motivo=
+ENSAYO R08|B|QCOL|4 estado=OK x=34 G=[40] total=4001 sha=d825777920d5cca0 seg=6.692 motivo=
+ENSAYO R08|B|QCOL|6 estado=OK x=36 G=[46] total=3938 sha=e8ceb29ea7c7fd0e seg=5.874 motivo=
+ENSAYO R08|B|QCOL|8 estado=OK x=25 G=[38] total=4053 sha=9460939935e99451 seg=4.869 motivo=
+ENSAYO R08|B|QCOL|7 estado=OK x=42 G=[59] total=4485 sha=5fda31099cb87018 seg=6.802 motivo=
+ENSAYO R08|B|QCOL|9 estado=OK x=33 G=[41] total=3764 sha=0d23e1babd4bd04c seg=6.082 motivo=
+ENSAYO R08|B|QCOL|10 estado=OK x=33 G=[41] total=4132 sha=aff6648f57a665a5 seg=5.133 motivo=
+ENSAYO R08|B|QCOL|11 estado=OK x=31 G=[40] total=3591 sha=d4da197765ada642 seg=5.848 motivo=
+ENSAYO R08|B|QCOL|12 estado=OK x=32 G=[41] total=4107 sha=dea3f771268847e3 seg=5.499 motivo=
+ENSAYO R08|B|QCOL|13 estado=OK x=35 G=[47] total=3932 sha=e9acfb676be955b3 seg=7.355 motivo=
+ENSAYO R08|B|QCOL|15 estado=OK x=36 G=[48] total=3897 sha=25eb103dc83887db seg=4.542 motivo=
+ENSAYO R08|B|QCOL|14 estado=OK x=33 G=[46] total=3889 sha=356af2bc71da6bbb seg=7.263 motivo=
+ENSAYO R08|B|QCOL|17 estado=OK x=40 G=[52] total=3985 sha=3570887978ea3969 seg=4.818 motivo=
+ENSAYO R08|B|QCOL|16 estado=OK x=27 G=[35] total=3849 sha=4a812ab507c11bdc seg=7.2 motivo=
+ENSAYO R08|B|QCOL|18 estado=OK x=40 G=[57] total=4268 sha=17e07210ae396c5c seg=6.962 motivo=
+ENSAYO R08|B|QCOL|19 estado=OK x=31 G=[47] total=3778 sha=3a2478dbf8b1abdc seg=5.836 motivo=
+ENSAYO R08|B|Q1uQCOL|0 estado=OK x=8 G=[53] total=3955 sha=b1b4eb92ef967d6d seg=6.093 motivo=
+ENSAYO R08|B|Q1uQCOL|1 estado=OK x=8 G=[62] total=3876 sha=2526ab2cb536d196 seg=6.788 motivo=
+ENSAYO R08|B|Q1uQCOL|2 estado=OK x=11 G=[42] total=4276 sha=968720179a18072a seg=4.922 motivo=
+ENSAYO R08|B|Q1uQCOL|3 estado=OK x=11 G=[43] total=3974 sha=2d4a75c5c744f611 seg=6.223 motivo=
+ENSAYO R08|B|Q1uQCOL|4 estado=OK x=18 G=[40] total=4093 sha=cb22dd832f2d92e1 seg=5.943 motivo=
+ENSAYO R08|B|Q1uQCOL|5 estado=OK x=6 G=[59] total=3876 sha=fd406630c0ebbcbb seg=6.78 motivo=
+ENSAYO R08|B|Q1uQCOL|6 estado=OK x=11 G=[46] total=3904 sha=7931adfa143ff6fe seg=6.428 motivo=
+ENSAYO R08|B|Q1uQCOL|7 estado=OK x=12 G=[59] total=4430 sha=335a378256be3094 seg=4.882 motivo=
+ENSAYO R08|B|Q1uQCOL|8 estado=OK x=10 G=[38] total=4113 sha=369a071146cfd39e seg=5.66 motivo=
+ENSAYO R08|B|Q1uQCOL|9 estado=OK x=6 G=[41] total=4155 sha=bc568573c6486aed seg=7.51 motivo=
+ENSAYO R08|B|Q1uQCOL|10 estado=OK x=12 G=[41] total=4263 sha=20ab33868cfbcc11 seg=7.015 motivo=
+ENSAYO R08|B|Q1uQCOL|11 estado=OK x=12 G=[40] total=3729 sha=08f197daf2407d69 seg=4.48 motivo=
+ENSAYO R08|B|Q1uQCOL|13 estado=OK x=10 G=[47] total=3988 sha=c4fe01640781d17f seg=4.948 motivo=
+ENSAYO R08|B|Q1uQCOL|12 estado=OK x=12 G=[41] total=4109 sha=7cf818b8f82900fe seg=7.141 motivo=
+ENSAYO R08|B|Q1uQCOL|14 estado=OK x=11 G=[46] total=3858 sha=c10d900f63607d9a seg=7.036 motivo=
+ENSAYO R08|B|Q1uQCOL|15 estado=OK x=11 G=[48] total=3910 sha=0d5ebf150be5e826 seg=5.689 motivo=
+ENSAYO R08|B|Q1uQCOL|16 estado=OK x=9 G=[35] total=3983 sha=dab937ccbaec5cfd seg=5.374 motivo=
+ENSAYO R08|B|Q1uQCOL|17 estado=OK x=13 G=[52] total=3940 sha=f563ca48e66953c8 seg=6.928 motivo=
+ENSAYO R08|B|Q1uQCOL|18 estado=OK x=16 G=[57] total=4586 sha=54eeae0c4fa10aae seg=6.105 motivo=
+ENSAYO R08|B|Q1uQCOL|19 estado=OK x=9 G=[47] total=3885 sha=4fb4f3cae91e50de seg=5.294 motivo=
+ENSAYO R08|B|QXD|0 estado=OK x=39 G=[53] total=4985 sha=5a97002548bf4d5e seg=5.066 motivo=
+ENSAYO R08|B|QXD|1 estado=OK x=44 G=[62] total=4777 sha=3ca6a12daef80769 seg=5.827 motivo=
+ENSAYO R08|B|QXD|2 estado=OK x=35 G=[42] total=4786 sha=62dfa6c7047722b0 seg=6.046 motivo=
+ENSAYO R08|B|QXD|3 estado=OK x=34 G=[43] total=4609 sha=ab1f963ecea57b27 seg=6.397 motivo=
+ENSAYO R08|B|QXD|4 estado=OK x=35 G=[40] total=4889 sha=d2c3b57eed026b4b seg=6.0 motivo=
+ENSAYO R08|B|QXD|5 estado=OK x=40 G=[59] total=4756 sha=187ef6d844f61302 seg=5.459 motivo=
+ENSAYO R08|B|QXD|6 estado=OK x=38 G=[46] total=4744 sha=fa798d896591fe58 seg=6.447 motivo=
+ENSAYO R08|B|QXD|8 estado=OK x=27 G=[38] total=4767 sha=2c147da5e4703ee9 seg=4.923 motivo=
+ENSAYO R08|B|QXD|7 estado=OK x=48 G=[59] total=5415 sha=c5f9acd48c713617 seg=6.393 motivo=
+ENSAYO R08|B|QXD|9 estado=OK x=37 G=[41] total=4503 sha=8a56c5a08313276d seg=5.378 motivo=
+ENSAYO R08|B|QXD|10 estado=OK x=37 G=[41] total=4797 sha=76055a829d568e84 seg=7.447 motivo=
+ENSAYO R08|B|QXD|11 estado=OK x=33 G=[40] total=4690 sha=3c0313e1fbf2410a seg=7.125 motivo=
+ENSAYO R08|B|QXD|12 estado=OK x=36 G=[41] total=4556 sha=354affc177ec07af seg=4.668 motivo=
+ENSAYO R08|B|QXD|13 estado=OK x=38 G=[47] total=4579 sha=eead3bd97ec3888d seg=5.125 motivo=
+ENSAYO R08|B|QXD|14 estado=OK x=37 G=[46] total=4690 sha=6e0aceb99e9491a7 seg=6.931 motivo=
+ENSAYO R08|B|QXD|15 estado=OK x=41 G=[48] total=4634 sha=747d2660df47b586 seg=6.803 motivo=
+ENSAYO R08|B|QXD|16 estado=OK x=30 G=[35] total=4587 sha=c6fa3ea6916d8954 seg=6.313 motivo=
+ENSAYO R08|B|QXD|18 estado=OK x=44 G=[57] total=5491 sha=563b99cb880984ed seg=4.531 motivo=
+ENSAYO R08|B|QXD|17 estado=OK x=39 G=[52] total=4805 sha=45a355491d47aa49 seg=6.852 motivo=
+ENSAYO R08|B|QXD|19 estado=OK x=38 G=[47] total=4366 sha=e9b9cb2e1ebf41bc seg=5.507 motivo=
+ENSAYO R08|B|Q1uQXD|0 estado=OK x=14 G=[53] total=5080 sha=7fd1e8842f46f346 seg=6.204 motivo=
+ENSAYO R08|B|Q1uQXD|1 estado=OK x=12 G=[62] total=4719 sha=d784cd805066936d seg=6.735 motivo=
+ENSAYO R08|B|Q1uQXD|2 estado=OK x=15 G=[42] total=4684 sha=81020eb5bd6676cf seg=4.976 motivo=
+ENSAYO R08|B|Q1uQXD|3 estado=OK x=13 G=[43] total=4653 sha=f024eabbe77af6a7 seg=6.484 motivo=
+ENSAYO R08|B|Q1uQXD|5 estado=OK x=10 G=[59] total=5003 sha=84f0f7c19ca8cc4d seg=5.465 motivo=
+ENSAYO R08|B|Q1uQXD|4 estado=OK x=22 G=[40] total=4788 sha=8d95e4f8759a45ab seg=7.171 motivo=
+ENSAYO R08|B|Q1uQXD|6 estado=OK x=15 G=[46] total=4860 sha=ad28a2fcc59616c4 seg=5.844 motivo=
+ENSAYO R08|B|Q1uQXD|7 estado=OK x=17 G=[59] total=5093 sha=057c368cdf25cc7a seg=4.729 motivo=
+ENSAYO R08|B|Q1uQXD|8 estado=OK x=10 G=[38] total=4634 sha=c5a7ecfee5044a27 seg=6.303 motivo=
+ENSAYO R08|B|Q1uQXD|10 estado=OK x=14 G=[41] total=4852 sha=e7598420b441ca55 seg=4.851 motivo=
+ENSAYO R08|B|Q1uQXD|9 estado=OK x=8 G=[41] total=4748 sha=69826259bd92183b seg=6.278 motivo=
+ENSAYO R08|B|Q1uQXD|11 estado=OK x=13 G=[40] total=4548 sha=d186b3da19da1e52 seg=6.163 motivo=
+ENSAYO R08|B|Q1uQXD|12 estado=OK x=14 G=[41] total=4781 sha=56a2bb9f5d89c743 seg=5.115 motivo=
+ENSAYO R08|B|Q1uQXD|13 estado=OK x=12 G=[47] total=4913 sha=b57e3dfd3dae1906 seg=5.832 motivo=
+ENSAYO R08|B|Q1uQXD|14 estado=OK x=16 G=[46] total=4573 sha=69fe469ecb50a7b8 seg=6.435 motivo=
+ENSAYO R08|B|Q1uQXD|16 estado=OK x=13 G=[35] total=4675 sha=22a214fb2df6f0f4 seg=4.893 motivo=
+ENSAYO R08|B|Q1uQXD|15 estado=OK x=15 G=[48] total=4724 sha=27dea8719e3c36c8 seg=6.595 motivo=
+ENSAYO R08|B|Q1uQXD|17 estado=OK x=15 G=[53] total=4801 sha=922b1178061d1073 seg=5.648 motivo=
+ENSAYO R08|B|Q1uQXD|18 estado=OK x=21 G=[57] total=5553 sha=f318c59634450d37 seg=6.338 motivo=
+ENSAYO R08|B|Q1uQXD|19 estado=OK x=11 G=[47] total=4489 sha=7a1de037605ae37a seg=7.048 motivo=
+ENSAYO R08|B|QWEAK|0 estado=OK x=39 G=[53] total=4859 sha=55686fdb68c8a461 seg=4.908 motivo=
+ENSAYO R08|B|QWEAK|1 estado=OK x=44 G=[62] total=4670 sha=1e515f19220587f2 seg=6.056 motivo=
+ENSAYO R08|B|QWEAK|2 estado=OK x=36 G=[42] total=4832 sha=c57d3099f3631479 seg=5.8 motivo=
+ENSAYO R08|B|QWEAK|3 estado=OK x=36 G=[43] total=4700 sha=bb245891926e0f12 seg=6.078 motivo=
+ENSAYO R08|B|QWEAK|4 estado=OK x=34 G=[40] total=4743 sha=a4ea0d5c560a941e seg=5.798 motivo=
+ENSAYO R08|B|QWEAK|5 estado=OK x=39 G=[59] total=5044 sha=c9d7c99ec80a3f72 seg=6.182 motivo=
+ENSAYO R08|B|QWEAK|6 estado=OK x=37 G=[46] total=4479 sha=03ea661db0745fa6 seg=6.731 motivo=
+ENSAYO R08|B|QWEAK|7 estado=OK x=46 G=[59] total=5267 sha=2a404c4125d30c94 seg=4.761 motivo=
+ENSAYO R08|B|QWEAK|8 estado=OK x=28 G=[38] total=4654 sha=8b25996d04ce8f6b seg=5.914 motivo=
+ENSAYO R08|B|QWEAK|9 estado=OK x=34 G=[41] total=4350 sha=8c4c1b3ec4b93a02 seg=6.823 motivo=
+ENSAYO R08|B|QWEAK|10 estado=OK x=37 G=[41] total=4861 sha=0e80f89d14f9cec9 seg=6.723 motivo=
+ENSAYO R08|B|QWEAK|11 estado=OK x=33 G=[40] total=4337 sha=fb87aec0f0efb409 seg=5.307 motivo=
+ENSAYO R08|B|QWEAK|12 estado=OK x=35 G=[41] total=4605 sha=d7d9d7a47fe4f996 seg=5.363 motivo=
+ENSAYO R08|B|QWEAK|13 estado=OK x=37 G=[47] total=4488 sha=355d445bf9124e06 seg=5.969 motivo=
+ENSAYO R08|B|QWEAK|14 estado=OK x=37 G=[46] total=4553 sha=bec7ab0ea4f7f84d seg=5.779 motivo=
+ENSAYO R08|B|QWEAK|15 estado=OK x=40 G=[48] total=4598 sha=8907e1640055bd60 seg=6.435 motivo=
+ENSAYO R08|B|QWEAK|16 estado=OK x=28 G=[35] total=4484 sha=eb4def7feee9082c seg=5.283 motivo=
+ENSAYO R08|B|QWEAK|17 estado=OK x=41 G=[52] total=4623 sha=f05fa501b381b73f seg=6.423 motivo=
+ENSAYO R08|B|QWEAK|19 estado=OK x=38 G=[47] total=4295 sha=e4c438101f2d72e7 seg=5.057 motivo=
+ENSAYO R08|B|QWEAK|18 estado=OK x=44 G=[57] total=5461 sha=c98a96c83666f3f0 seg=5.901 motivo=
+ENSAYO R08|B|SHAM|0 estado=OK x=39 G=[53] total=4859 sha=55686fdb68c8a461 seg=6.518 motivo=
+ENSAYO R08|B|SHAM|1 estado=OK x=44 G=[62] total=4670 sha=1e515f19220587f2 seg=5.494 motivo=
+ENSAYO R08|B|SHAM|2 estado=OK x=36 G=[42] total=4832 sha=c57d3099f3631479 seg=5.802 motivo=
+ENSAYO R08|B|SHAM|3 estado=OK x=36 G=[43] total=4700 sha=bb245891926e0f12 seg=5.559 motivo=
+ENSAYO R08|B|SHAM|4 estado=OK x=34 G=[40] total=4743 sha=a4ea0d5c560a941e seg=6.865 motivo=
+ENSAYO R08|B|SHAM|5 estado=OK x=39 G=[59] total=5044 sha=c9d7c99ec80a3f72 seg=6.821 motivo=
+ENSAYO R08|B|SHAM|6 estado=OK x=37 G=[46] total=4479 sha=03ea661db0745fa6 seg=5.18 motivo=
+ENSAYO R08|B|SHAM|7 estado=OK x=46 G=[59] total=5267 sha=2a404c4125d30c94 seg=5.287 motivo=
+ENSAYO R08|B|SHAM|8 estado=OK x=28 G=[38] total=4654 sha=8b25996d04ce8f6b seg=6.283 motivo=
+ENSAYO R08|B|SHAM|9 estado=OK x=34 G=[41] total=4350 sha=8c4c1b3ec4b93a02 seg=5.929 motivo=
+ENSAYO R08|B|SHAM|10 estado=OK x=37 G=[41] total=4861 sha=0e80f89d14f9cec9 seg=5.667 motivo=
+ENSAYO R08|B|SHAM|12 estado=OK x=35 G=[41] total=4605 sha=d7d9d7a47fe4f996 seg=4.789 motivo=
+ENSAYO R08|B|SHAM|11 estado=OK x=33 G=[40] total=4337 sha=fb87aec0f0efb409 seg=6.453 motivo=
+ENSAYO R08|B|SHAM|13 estado=OK x=37 G=[47] total=4488 sha=355d445bf9124e06 seg=6.361 motivo=
+ENSAYO R08|B|SHAM|14 estado=OK x=37 G=[46] total=4553 sha=bec7ab0ea4f7f84d seg=4.735 motivo=
+ENSAYO R08|B|SHAM|15 estado=OK x=40 G=[48] total=4598 sha=8907e1640055bd60 seg=5.866 motivo=
+ENSAYO R08|B|SHAM|16 estado=OK x=28 G=[35] total=4484 sha=eb4def7feee9082c seg=5.501 motivo=
+ENSAYO R08|B|SHAM|17 estado=OK x=41 G=[52] total=4623 sha=f05fa501b381b73f seg=6.244 motivo=
+ENSAYO R08|B|SHAM|18 estado=OK x=44 G=[57] total=5461 sha=c98a96c83666f3f0 seg=6.86 motivo=
+ENSAYO R08|B|SHAM|19 estado=OK x=38 G=[47] total=4295 sha=e4c438101f2d72e7 seg=6.199 motivo=
+ENSAYO H1b|B|C0|0 estado=OK x=70 G=[35, 65] total=5769 sha=59a2798f81615d91 seg=4.733 motivo=
+ENSAYO H1b|B|C0|1 estado=OK x=71 G=[45, 64] total=5842 sha=2c8c5595e9401405 seg=6.933 motivo=
+ENSAYO H1b|B|C0|3 estado=OK x=74 G=[61, 48] total=5844 sha=61994cdc06875a82 seg=4.754 motivo=
+ENSAYO H1b|B|C0|2 estado=OK x=76 G=[52, 53] total=6140 sha=457d488c3cd9c236 seg=6.32 motivo=
+ENSAYO H1b|B|C0|4 estado=OK x=71 G=[53, 41] total=5893 sha=3c7bbbabc560744a seg=5.726 motivo=
+ENSAYO H1b|B|C0|5 estado=OK x=78 G=[58, 39] total=5966 sha=9fc31954d983cd48 seg=7.021 motivo=
+ENSAYO H1b|B|C0|6 estado=OK x=87 G=[60, 61] total=312146 sha=bfc1d7e47b484390 seg=7.537 motivo=
+ENSAYO H1b|B|C0|7 estado=OK x=71 G=[43, 45] total=5692 sha=b7016b0da9349723 seg=5.213 motivo=
+ENSAYO H1b|B|C0|8 estado=OK x=70 G=[45, 56] total=5679 sha=fec01bf2e87a2c7c seg=6.161 motivo=
+ENSAYO H1b|B|C0|9 estado=OK x=77 G=[54, 53] total=6126 sha=65f9ad88643dc432 seg=5.365 motivo=
+ENSAYO H1b|B|C0|10 estado=OK x=70 G=[51, 49] total=5568 sha=4fd87358326b97fb seg=6.253 motivo=
+ENSAYO H1b|B|C0|11 estado=OK x=77 G=[53, 53] total=9371 sha=631db820e55dfd58 seg=7.21 motivo=
+ENSAYO H1b|B|C0|12 estado=OK x=79 G=[55, 64] total=5963 sha=78de826b03fe220e seg=6.306 motivo=
+ENSAYO H1b|B|C0|13 estado=OK x=69 G=[57, 47] total=6135 sha=04a87fcf164ea282 seg=4.793 motivo=
+ENSAYO H1b|B|C0|14 estado=OK x=72 G=[57, 41] total=6130 sha=bd14df2db411231c seg=5.307 motivo=
+ENSAYO H1b|B|C0|15 estado=OK x=69 G=[54, 43] total=5535 sha=e9334413d3570db4 seg=7.081 motivo=
+ENSAYO H1b|B|C0|16 estado=OK x=77 G=[52, 53] total=5472 sha=8385e07892e7b969 seg=6.767 motivo=
+ENSAYO H1b|B|C0|17 estado=OK x=70 G=[51, 57] total=5631 sha=2601308a1b12b543 seg=5.447 motivo=
+ENSAYO H1b|B|C0|18 estado=OK x=73 G=[47, 44] total=6542 sha=d51e6023e50c1841 seg=4.997 motivo=
+ENSAYO H1b|B|C0|19 estado=OK x=66 G=[38, 51] total=6576 sha=e3f3cffb7f309e62 seg=5.69 motivo=
+ENSAYO H1b|B|Q2|0 estado=OK x=70 G=[35, 65] total=5826 sha=818004907ea21b41 seg=6.365 motivo=
+ENSAYO H1b|B|Q2|1 estado=OK x=72 G=[45, 64] total=5957 sha=14e5b03d47295e16 seg=6.461 motivo=
+ENSAYO H1b|B|Q2|2 estado=OK x=74 G=[52, 53] total=6277 sha=39553e9190de9977 seg=5.367 motivo=
+ENSAYO H1b|B|Q2|4 estado=OK x=71 G=[53, 41] total=5951 sha=d46acce00cfe774f seg=5.119 motivo=
+ENSAYO H1b|B|Q2|3 estado=OK x=75 G=[61, 48] total=5816 sha=b249c9f8dfaee399 seg=6.97 motivo=
+ENSAYO H1b|B|Q2|5 estado=OK x=79 G=[58, 39] total=6965 sha=b239dbfd1763b72d seg=6.663 motivo=
+ENSAYO H1b|B|Q2|8 estado=OK x=71 G=[45, 56] total=5630 sha=a6ff157e0962e0b2 seg=4.539 motivo=
+ENSAYO H1b|B|Q2|6 estado=OK x=78 G=[60, 61] total=7645 sha=1ba740c1d9eff1f0 seg=6.832 motivo=
+ENSAYO H1b|B|Q2|7 estado=OK x=72 G=[43, 45] total=5762 sha=0fd82b573cc3cbb5 seg=7.173 motivo=
+ENSAYO H1b|B|Q2|10 estado=OK x=72 G=[51, 49] total=5575 sha=12cf1a850352da92 seg=5.002 motivo=
+ENSAYO H1b|B|Q2|9 estado=OK x=77 G=[54, 53] total=6187 sha=6f3f0a5167ef9a82 seg=6.924 motivo=
+ENSAYO H1b|B|Q2|11 estado=OK x=73 G=[53, 53] total=6608 sha=6b865b27e93aad1b seg=6.806 motivo=
+ENSAYO H1b|B|Q2|12 estado=OK x=79 G=[55, 64] total=5948 sha=ea2c5b5ce3b69b02 seg=5.089 motivo=
+ENSAYO H1b|B|Q2|13 estado=OK x=70 G=[57, 47] total=6153 sha=4829d900f64eab1b seg=5.766 motivo=
+ENSAYO H1b|B|Q2|14 estado=OK x=72 G=[57, 41] total=5636 sha=9239914bc642b91f seg=6.472 motivo=
+ENSAYO H1b|B|Q2|15 estado=OK x=69 G=[54, 43] total=5537 sha=01c279f9db725542 seg=6.4 motivo=
+ENSAYO H1b|B|Q2|16 estado=OK x=76 G=[52, 53] total=5533 sha=d232ec451d5491e1 seg=4.637 motivo=
+ENSAYO H1b|B|Q2|17 estado=OK x=71 G=[51, 57] total=5647 sha=03ae41188c961f2f seg=6.697 motivo=
+ENSAYO H1b|B|Q2|19 estado=OK x=65 G=[38, 51] total=6230 sha=0707fad061f291cd seg=5.075 motivo=
+ENSAYO H1b|B|Q2|18 estado=OK x=73 G=[47, 44] total=6493 sha=c82fe8d73164105c seg=6.021 motivo=
+ENSAYO H1b|B|Q4conj|1 estado=OK x=38 G=[45, 64] total=5814 sha=a997123514326698 seg=4.676 motivo=
+ENSAYO H1b|B|Q4conj|0 estado=OK x=33 G=[35, 65] total=5733 sha=593230e0e23d4b29 seg=6.585 motivo=
+ENSAYO H1b|B|Q4conj|2 estado=OK x=35 G=[52, 53] total=6117 sha=012334f554e85eb6 seg=6.984 motivo=
+ENSAYO H1b|B|Q4conj|4 estado=OK x=29 G=[53, 41] total=5848 sha=3e914e580460980b seg=5.122 motivo=
+ENSAYO H1b|B|Q4conj|3 estado=OK x=37 G=[61, 48] total=5815 sha=e0a9c7b24ae1f331 seg=5.772 motivo=
+ENSAYO H1b|B|Q4conj|5 estado=OK x=33 G=[58, 39] total=5937 sha=da7e8aa35a9dee1a seg=5.814 motivo=
+ENSAYO H1b|B|Q4conj|6 estado=OK x=44 G=[60, 61] total=10331 sha=156ee9b78d90037d seg=5.153 motivo=
+ENSAYO H1b|B|Q4conj|7 estado=OK x=31 G=[43, 45] total=5678 sha=9be6b261aa761ea7 seg=6.207 motivo=
+ENSAYO H1b|B|Q4conj|8 estado=OK x=30 G=[45, 56] total=5590 sha=4750ca9a75fa9bb4 seg=6.269 motivo=
+ENSAYO H1b|B|Q4conj|9 estado=OK x=37 G=[54, 53] total=6033 sha=63bad791828c4fcf seg=4.847 motivo=
+ENSAYO H1b|B|Q4conj|10 estado=OK x=35 G=[51, 49] total=5534 sha=70675691bd14b9a3 seg=6.232 motivo=
+ENSAYO H1b|B|Q4conj|11 estado=OK x=36 G=[53, 53] total=7764 sha=e4abdcf98443755c seg=6.294 motivo=
+ENSAYO H1b|B|Q4conj|12 estado=OK x=42 G=[55, 64] total=5945 sha=2961aad38319f542 seg=6.819 motivo=
+ENSAYO H1b|B|Q4conj|13 estado=OK x=32 G=[57, 47] total=6085 sha=c59a3d0db293c71d seg=5.214 motivo=
+ENSAYO H1b|B|Q4conj|14 estado=OK x=31 G=[57, 41] total=5607 sha=cdbea3c04eae20a7 seg=7.005 motivo=
+ENSAYO H1b|B|Q4conj|16 estado=OK x=36 G=[52, 53] total=5468 sha=ec97807262970e07 seg=4.679 motivo=
+ENSAYO H1b|B|Q4conj|15 estado=OK x=31 G=[54, 43] total=5553 sha=a5c6fed54219602e seg=6.636 motivo=
+ENSAYO H1b|B|Q4conj|19 estado=OK x=27 G=[38, 51] total=7035 sha=f1ea3ef00dd0a541 seg=4.712 motivo=
+ENSAYO H1b|B|Q4conj|17 estado=OK x=33 G=[51, 57] total=5602 sha=0c0c63331c3f2294 seg=7.423 motivo=
+ENSAYO H1b|B|Q4conj|18 estado=OK x=33 G=[47, 44] total=167293 sha=f5a3c12870f00ffe seg=7.468 motivo=
+ENSAYO H1b|B|Q1_58878|0 estado=OK x=62 G=[35, 65] total=5757 sha=a9ba5796e1bb44a0 seg=5.121 motivo=
+ENSAYO H1b|B|Q1_58878|1 estado=OK x=63 G=[45, 64] total=5836 sha=f94256b9eac4ae41 seg=5.67 motivo=
+ENSAYO H1b|B|Q1_58878|2 estado=OK x=64 G=[52, 53] total=6245 sha=7a478da711449212 seg=6.485 motivo=
+ENSAYO H1b|B|Q1_58878|3 estado=OK x=59 G=[61, 48] total=5831 sha=0db8b7d2b7d0c4e6 seg=6.668 motivo=
+ENSAYO H1b|B|Q1_58878|4 estado=OK x=58 G=[53, 41] total=5883 sha=c02caa64ef7998c2 seg=6.179 motivo=
+ENSAYO H1b|B|Q1_58878|5 estado=OK x=61 G=[58, 39] total=5965 sha=27a3385561ce62dd seg=5.094 motivo=
+ENSAYO H1b|B|Q1_58878|7 estado=OK x=68 G=[43, 45] total=5662 sha=aea880f27bd970ee seg=4.49 motivo=
+ENSAYO H1b|B|Q1_58878|6 estado=OK x=80 G=[60, 61] total=312531 sha=178803bc77978591 seg=7.082 motivo=
+ENSAYO H1b|B|Q1_58878|8 estado=OK x=61 G=[45, 56] total=5668 sha=11598b205f3494e0 seg=6.886 motivo=
+ENSAYO H1b|B|Q1_58878|9 estado=OK x=64 G=[54, 53] total=6116 sha=47099d1de0b50d66 seg=5.191 motivo=
+ENSAYO H1b|B|Q1_58878|10 estado=OK x=59 G=[51, 49] total=5559 sha=8716a19a872fa32a seg=5.617 motivo=
+ENSAYO H1b|B|Q1_58878|11 estado=OK x=62 G=[53, 53] total=6845 sha=e5ead9914daeb6f0 seg=5.602 motivo=
+ENSAYO H1b|B|Q1_58878|12 estado=OK x=70 G=[55, 64] total=5951 sha=2a72fad5d5254c6c seg=5.09 motivo=
+ENSAYO H1b|B|Q1_58878|13 estado=OK x=58 G=[57, 47] total=6147 sha=24576a717931c8a7 seg=5.857 motivo=
+ENSAYO H1b|B|Q1_58878|14 estado=OK x=60 G=[57, 41] total=5631 sha=b3ba1713de4b4e47 seg=6.194 motivo=
+ENSAYO H1b|B|Q1_58878|15 estado=OK x=57 G=[54, 43] total=5527 sha=5d8d85f6d234e1ae seg=5.07 motivo=
+ENSAYO H1b|B|Q1_58878|17 estado=OK x=58 G=[51, 57] total=5584 sha=f0bfe7af3bfc9f53 seg=5.004 motivo=
+ENSAYO H1b|B|Q1_58878|16 estado=OK x=66 G=[52, 53] total=5467 sha=fe0f3926c2a512ec seg=7.072 motivo=
+ENSAYO H1b|B|Q1_58878|18 estado=OK x=63 G=[47, 44] total=7037 sha=1b118fb9f9208606 seg=6.274 motivo=
+ENSAYO H1b|B|Q1_71368|0 estado=OK x=54 G=[35, 65] total=5785 sha=1f4d722987840556 seg=5.252 motivo=
+ENSAYO H1b|B|Q1_58878|19 estado=OK x=57 G=[38, 51] total=7284 sha=5b44fd9ee4ea4ce7 seg=5.864 motivo=
+ENSAYO H1b|B|Q1_71368|1 estado=OK x=59 G=[45, 64] total=5884 sha=818b920de729949d seg=5.731 motivo=
+ENSAYO H1b|B|Q1_71368|2 estado=OK x=64 G=[52, 53] total=6162 sha=49b661279692c457 seg=6.565 motivo=
+ENSAYO H1b|B|Q1_71368|3 estado=OK x=63 G=[61, 48] total=5785 sha=f3d4022ece9f0e06 seg=6.79 motivo=
+ENSAYO H1b|B|Q1_71368|4 estado=OK x=63 G=[53, 41] total=5888 sha=8d3d949db3c0b4f1 seg=4.541 motivo=
+ENSAYO H1b|B|Q1_71368|5 estado=OK x=70 G=[58, 39] total=6554 sha=f8315f26df97f179 seg=5.119 motivo=
+ENSAYO H1b|B|Q1_71368|6 estado=OK x=77 G=[60, 61] total=312932 sha=eec71069abbd7b91 seg=6.436 motivo=
+ENSAYO H1b|B|Q1_71368|7 estado=OK x=63 G=[43, 45] total=5643 sha=ae79206b04b94306 seg=6.412 motivo=
+ENSAYO H1b|B|Q1_71368|8 estado=OK x=58 G=[45, 56] total=5667 sha=38c3f55f1ab730c5 seg=6.626 motivo=
+ENSAYO H1b|B|Q1_71368|10 estado=OK x=61 G=[51, 49] total=5558 sha=2a70fb075f76bfb1 seg=4.443 motivo=
+ENSAYO H1b|B|Q1_71368|9 estado=OK x=68 G=[54, 53] total=6105 sha=7899b90bd01e5c66 seg=6.123 motivo=
+ENSAYO H1b|B|Q1_71368|13 estado=OK x=60 G=[57, 47] total=6265 sha=f4ad0494c319c0e8 seg=4.3 motivo=
+ENSAYO H1b|B|Q1_71368|11 estado=OK x=63 G=[53, 53] total=6904 sha=a4f1a56e8e4d261e seg=7.038 motivo=
+ENSAYO H1b|B|Q1_71368|12 estado=OK x=66 G=[55, 64] total=5949 sha=97bc8ba0ef43945e seg=6.801 motivo=
+ENSAYO H1b|B|Q1_71368|16 estado=OK x=64 G=[52, 53] total=5465 sha=09c5325bf3db0cf9 seg=4.679 motivo=
+ENSAYO H1b|B|Q1_71368|14 estado=OK x=65 G=[57, 41] total=6857 sha=f4aa4e3385197ac4 seg=6.198 motivo=
+ENSAYO H1b|B|Q1_71368|15 estado=OK x=57 G=[54, 43] total=5527 sha=295dd2a5a6ebf9bd seg=6.638 motivo=
+ENSAYO H1b|B|Q1_71368|17 estado=OK x=60 G=[51, 57] total=5601 sha=c25abc61678dc71f seg=5.299 motivo=
+ENSAYO H1b|B|Q1_71368|18 estado=OK x=60 G=[47, 44] total=6532 sha=10b1750c7e49ac34 seg=5.058 motivo=
+ENSAYO H1b|B|Q1_71368|19 estado=OK x=56 G=[38, 51] total=6590 sha=e4ace84d63a68ab1 seg=6.738 motivo=
+ENSAYO H1b|B|Q1conj|0 estado=OK x=46 G=[35, 65] total=5745 sha=055d8e87e8bc8a57 seg=5.29 motivo=
+ENSAYO H1b|B|Q1conj|1 estado=OK x=46 G=[45, 64] total=5886 sha=cda25a84eea59244 seg=5.496 motivo=
+ENSAYO H1b|B|Q1conj|2 estado=OK x=49 G=[52, 53] total=6254 sha=af09f1f5a77ae22b seg=5.648 motivo=
+ENSAYO H1b|B|Q1conj|3 estado=OK x=48 G=[61, 48] total=5786 sha=a979c4267dbb8076 seg=5.522 motivo=
+ENSAYO H1b|B|Q1conj|4 estado=OK x=48 G=[53, 41] total=5875 sha=ea76f134cde4cdb4 seg=6.163 motivo=
+ENSAYO H1b|B|Q1conj|5 estado=OK x=54 G=[58, 39] total=5931 sha=1d6caf4bdd3a8a56 seg=5.537 motivo=
+ENSAYO H1b|B|Q1conj|6 estado=OK x=67 G=[60, 61] total=312367 sha=893313205ce7deb6 seg=5.82 motivo=
+ENSAYO H1b|B|Q1conj|7 estado=OK x=55 G=[43, 45] total=5676 sha=7c4d3dcc8cb59355 seg=6.356 motivo=
+ENSAYO H1b|B|Q1conj|8 estado=OK x=48 G=[45, 56] total=5653 sha=ac0805b0acb9c5d7 seg=5.924 motivo=
+ENSAYO H1b|B|Q1conj|9 estado=OK x=50 G=[54, 53] total=6068 sha=6f9411b4d9e755fe seg=6.909 motivo=
+ENSAYO H1b|B|Q1conj|10 estado=OK x=47 G=[51, 49] total=5561 sha=e0578db3d225d71a seg=6.242 motivo=
+ENSAYO H1b|B|Q1conj|11 estado=OK x=50 G=[53, 53] total=8108 sha=fc2d26c978296ae8 seg=5.075 motivo=
+ENSAYO H1b|B|Q1conj|12 estado=OK x=51 G=[55, 64] total=5922 sha=ae8c8618e770978e seg=4.853 motivo=
+ENSAYO H1b|B|Q1conj|13 estado=OK x=47 G=[57, 47] total=6063 sha=5abf5d69445aaff5 seg=6.744 motivo=
+ENSAYO H1b|B|Q1conj|14 estado=OK x=51 G=[57, 41] total=5607 sha=76efbf2430118852 seg=6.981 motivo=
+ENSAYO H1b|B|Q1conj|15 estado=OK x=43 G=[54, 43] total=5556 sha=9f4af6a96d4d52a4 seg=4.27 motivo=
+ENSAYO H1b|B|Q1conj|16 estado=OK x=47 G=[52, 53] total=5474 sha=7c18724a8555c7f8 seg=5.048 motivo=
+ENSAYO H1b|B|Q1conj|17 estado=OK x=46 G=[51, 57] total=5588 sha=130ecb7788f6011d seg=5.499 motivo=
+ENSAYO H1b|B|Q1conj|18 estado=OK x=49 G=[47, 44] total=6534 sha=4265fcdec7594f1a seg=6.132 motivo=
+ENSAYO H1b|B|Q1conj|19 estado=OK x=45 G=[38, 51] total=10056 sha=97d334c29de2d843 seg=5.373 motivo=
+ENSAYO H2|C|C_00|0 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=5.925 motivo=
+ENSAYO H2|C|C_00|1 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=4.97 motivo=
+ENSAYO H2|C|C_00|2 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.667 motivo=
+ENSAYO H2|C|C_00|4 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=4.529 motivo=
+ENSAYO H2|C|C_00|3 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.156 motivo=
+ENSAYO H2|C|C_00|5 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.525 motivo=
+ENSAYO H2|C|C_00|7 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=4.242 motivo=
+ENSAYO H2|C|C_00|6 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.941 motivo=
+ENSAYO H2|C|C_00|10 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=4.459 motivo=
+ENSAYO H2|C|C_00|8 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.552 motivo=
+ENSAYO H2|C|C_00|9 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.54 motivo=
+ENSAYO H2|C|C_00|11 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=4.769 motivo=
+ENSAYO H2|C|C_00|12 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=7.073 motivo=
+ENSAYO H2|C|C_00|13 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.973 motivo=
+ENSAYO H2|C|C_00|14 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=4.36 motivo=
+ENSAYO H2|C|C_00|17 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=4.452 motivo=
+ENSAYO H2|C|C_00|16 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.724 motivo=
+ENSAYO H2|C|C_00|15 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.792 motivo=
+ENSAYO H2|C|C_00|18 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=4.658 motivo=
+ENSAYO H2|C|C_10|0 estado=OK x=22 G=[0, 0] total=83 sha=61d4b0c191f5c1cb seg=5.869 motivo=
+ENSAYO H2|C|C_00|19 estado=OK x=0 G=[0, 0] total=0 sha=cbe5cfdf7c2118a9 seg=6.661 motivo=
+ENSAYO H2|C|C_10|1 estado=OK x=22 G=[0, 0] total=75 sha=45af0db8892acbcf seg=5.281 motivo=
+ENSAYO H2|C|C_10|2 estado=OK x=23 G=[0, 0] total=91 sha=8345f48d7e0eb36e seg=5.378 motivo=
+ENSAYO H2|C|C_10|3 estado=OK x=21 G=[0, 0] total=109 sha=7bdbb0593679992c seg=5.385 motivo=
+ENSAYO H2|C|C_10|4 estado=OK x=21 G=[0, 0] total=105 sha=5c81f0a3b36c3154 seg=5.801 motivo=
+ENSAYO H2|C|C_10|5 estado=OK x=23 G=[0, 0] total=101 sha=e3dad7dd29108cee seg=4.63 motivo=
+ENSAYO H2|C|C_10|6 estado=OK x=22 G=[0, 0] total=97 sha=d5287d611addf373 seg=6.79 motivo=
+ENSAYO H2|C|C_10|7 estado=OK x=19 G=[0, 0] total=87 sha=ebbd9ddff0716cf6 seg=5.854 motivo=
+ENSAYO H2|C|C_10|8 estado=OK x=23 G=[0, 0] total=91 sha=e1d32b0f3aff7b1a seg=4.957 motivo=
+ENSAYO H2|C|C_10|9 estado=OK x=23 G=[0, 0] total=82 sha=32d84baa503ce8f7 seg=5.51 motivo=
+ENSAYO H2|C|C_10|10 estado=OK x=21 G=[0, 0] total=84 sha=a73e9224f0aec5fd seg=5.766 motivo=
+ENSAYO H2|C|C_10|11 estado=OK x=20 G=[0, 0] total=92 sha=aa66256a9e42f4df seg=5.898 motivo=
+ENSAYO H2|C|C_10|12 estado=OK x=21 G=[0, 0] total=89 sha=80094dd54eb36c34 seg=6.017 motivo=
+ENSAYO H2|C|C_10|13 estado=OK x=22 G=[0, 0] total=85 sha=b406821880b20040 seg=4.606 motivo=
+ENSAYO H2|C|C_10|14 estado=OK x=21 G=[0, 0] total=93 sha=590b8c7fe86004fc seg=6.12 motivo=
+ENSAYO H2|C|C_10|15 estado=OK x=22 G=[0, 0] total=103 sha=99bf7f015ad5032d seg=5.407 motivo=
+ENSAYO H2|C|C_10|16 estado=OK x=21 G=[0, 0] total=92 sha=6b0573a79f9729b3 seg=6.259 motivo=
+ENSAYO H2|C|C_10|17 estado=OK x=22 G=[0, 0] total=87 sha=bfb41d47294a9c14 seg=6.601 motivo=
+ENSAYO H2|C|C_10|18 estado=OK x=22 G=[0, 0] total=95 sha=945fc7944756945c seg=4.902 motivo=
+ENSAYO H2|C|C_10|19 estado=OK x=24 G=[0, 0] total=91 sha=18ffd8762bb5c355 seg=5.917 motivo=
+ENSAYO H2|C|C_01|1 estado=OK x=21 G=[0, 0] total=252 sha=a88f123a190bfa93 seg=4.854 motivo=
+ENSAYO H2|C|C_01|0 estado=OK x=20 G=[0, 1] total=271 sha=08a817825faee47c seg=6.226 motivo=
+ENSAYO H2|C|C_01|2 estado=OK x=21 G=[0, 2] total=278 sha=ec8893c1ba985e01 seg=5.385 motivo=
+ENSAYO H2|C|C_01|3 estado=OK x=20 G=[0, 0] total=333 sha=6d436b2fbfef1a8b seg=5.711 motivo=
+ENSAYO H2|C|C_01|4 estado=OK x=19 G=[0, 0] total=338 sha=3e0e462db4254589 seg=6.076 motivo=
+ENSAYO H2|C|C_01|5 estado=OK x=20 G=[0, 0] total=306 sha=f118983539e359a4 seg=6.18 motivo=
+ENSAYO H2|C|C_01|6 estado=OK x=20 G=[0, 0] total=211 sha=98d0447b832924a3 seg=4.904 motivo=
+ENSAYO H2|C|C_01|7 estado=OK x=19 G=[0, 0] total=274 sha=92b1668db5daddda seg=6.162 motivo=
+ENSAYO H2|C|C_01|8 estado=OK x=21 G=[0, 0] total=267 sha=21c80c61e82231bb seg=5.195 motivo=
+ENSAYO H2|C|C_01|9 estado=OK x=19 G=[0, 0] total=236 sha=a1f5e4794ecc0da9 seg=6.343 motivo=
+ENSAYO H2|C|C_01|11 estado=OK x=18 G=[0, 0] total=238 sha=0d79059d677df498 seg=4.257 motivo=
+ENSAYO H2|C|C_01|10 estado=OK x=20 G=[0, 0] total=262 sha=edc5ef755e18b882 seg=6.665 motivo=
+ENSAYO H2|C|C_01|12 estado=OK x=19 G=[0, 0] total=245 sha=2a4e0aed2965aafd seg=5.298 motivo=
+ENSAYO H2|C|C_01|13 estado=OK x=21 G=[0, 0] total=289 sha=9eae3475801d0ff8 seg=7.31 motivo=
+ENSAYO H2|C|C_01|14 estado=OK x=20 G=[0, 0] total=275 sha=8aed43cfdaa68848 seg=7.053 motivo=
+ENSAYO H2|C|C_01|15 estado=OK x=21 G=[0, 1] total=282 sha=23abaaa8abd486f2 seg=4.209 motivo=
+ENSAYO H2|C|C_01|16 estado=OK x=17 G=[0, 2] total=266 sha=8fd6679ce4ede9f8 seg=4.491 motivo=
+ENSAYO H2|C|C_01|17 estado=OK x=21 G=[0, 0] total=218 sha=7eb2abc01e4e8d2f seg=6.172 motivo=
+ENSAYO H2|C|C_01|18 estado=OK x=19 G=[0, 0] total=273 sha=ca3c2744ae90f176 seg=6.613 motivo=
+ENSAYO H2|C|C_11|0 estado=OK x=43 G=[0, 0] total=467 sha=83bddafc80d9de52 seg=4.747 motivo=
+ENSAYO H2|C|C_01|19 estado=OK x=21 G=[0, 1] total=330 sha=3a0623b835741b27 seg=6.654 motivo=
+ENSAYO H2|C|C_11|1 estado=OK x=45 G=[0, 0] total=411 sha=19a6d7c1b1a36be5 seg=6.373 motivo=
+ENSAYO H2|C|C_11|2 estado=OK x=40 G=[0, 0] total=450 sha=ad782879d7b01039 seg=6.686 motivo=
+ENSAYO H2|C|C_11|4 estado=OK x=38 G=[0, 0] total=495 sha=c53e1728a8af7022 seg=4.249 motivo=
+ENSAYO H2|C|C_11|3 estado=OK x=37 G=[0, 0] total=527 sha=7b778eb87f5aee17 seg=6.972 motivo=
+ENSAYO H2|C|C_11|6 estado=OK x=39 G=[0, 0] total=458 sha=a6268b4c5cf3bcb2 seg=5.058 motivo=
+ENSAYO H2|C|C_11|5 estado=OK x=40 G=[0, 0] total=448 sha=c7d684dfadc9ce73 seg=6.235 motivo=
+ENSAYO H2|C|C_11|7 estado=OK x=41 G=[0, 0] total=498 sha=0a047b387af184b5 seg=6.932 motivo=
+ENSAYO H2|C|C_11|8 estado=OK x=41 G=[0, 0] total=411 sha=3546076e9ba1931a seg=6.382 motivo=
+ENSAYO H2|C|C_11|10 estado=OK x=42 G=[0, 0] total=494 sha=f46ab807cc2ec169 seg=4.751 motivo=
+ENSAYO H2|C|C_11|9 estado=OK x=44 G=[0, 0] total=482 sha=50b7041e63d1e543 seg=6.502 motivo=
+ENSAYO H2|C|C_11|12 estado=OK x=40 G=[0, 0] total=506 sha=df5e870bdc19a65e seg=4.803 motivo=
+ENSAYO H2|C|C_11|11 estado=OK x=38 G=[0, 0] total=461 sha=1ede761d1e6eb86e seg=6.614 motivo=
+ENSAYO H2|C|C_11|13 estado=OK x=42 G=[0, 0] total=504 sha=c56b9a2d898ae32b seg=7.042 motivo=
+ENSAYO H2|C|C_11|14 estado=OK x=41 G=[0, 0] total=487 sha=2e28c6df46f8887f seg=5.782 motivo=
+ENSAYO H2|C|C_11|15 estado=OK x=42 G=[0, 0] total=484 sha=137423cea821612c seg=5.206 motivo=
+ENSAYO H2|C|C_11|16 estado=OK x=41 G=[0, 0] total=442 sha=f9457fa628993de3 seg=6.812 motivo=
+ENSAYO H2|C|C_11|18 estado=OK x=41 G=[0, 0] total=506 sha=1f7881baf85b5bee seg=4.574 motivo=
+ENSAYO H2|C|C_11|17 estado=OK x=39 G=[0, 0] total=463 sha=a5c59cc69814a03a seg=6.687 motivo=
+ENSAYO H2|C|C_desplazado|0 estado=OK x=44 G=[0, 0] total=466 sha=da1872535ec9450d seg=4.641 motivo=
+ENSAYO H2|C|C_11|19 estado=OK x=42 G=[0, 0] total=447 sha=bd4e020f4fd4db7d seg=6.44 motivo=
+ENSAYO H2|C|C_desplazado|1 estado=OK x=46 G=[0, 0] total=398 sha=27ab5d185b10795b seg=5.791 motivo=
+ENSAYO H2|C|C_desplazado|2 estado=OK x=45 G=[0, 0] total=454 sha=abc3699f1aa55dd2 seg=5.5 motivo=
+ENSAYO H2|C|C_desplazado|3 estado=OK x=40 G=[0, 0] total=491 sha=eeddbdc4492ac2fb seg=6.025 motivo=
+ENSAYO H2|C|C_desplazado|4 estado=OK x=41 G=[0, 0] total=481 sha=bbbfeda3e6a7067e seg=5.569 motivo=
+ENSAYO H2|C|C_desplazado|5 estado=OK x=41 G=[0, 0] total=448 sha=73c5fd600a91953e seg=6.446 motivo=
+ENSAYO H2|C|C_desplazado|7 estado=OK x=42 G=[0, 0] total=461 sha=3128889b46fef5bc seg=4.483 motivo=
+ENSAYO H2|C|C_desplazado|6 estado=OK x=42 G=[0, 0] total=491 sha=971e8b1234ed504b seg=6.707 motivo=
+ENSAYO H2|C|C_desplazado|10 estado=OK x=44 G=[0, 0] total=472 sha=19776f7d6abbc435 seg=4.839 motivo=
+ENSAYO H2|C|C_desplazado|8 estado=OK x=44 G=[0, 0] total=400 sha=8da60f7752478514 seg=6.722 motivo=
+ENSAYO H2|C|C_desplazado|9 estado=OK x=43 G=[0, 0] total=435 sha=0112d86a747e5673 seg=6.474 motivo=
+ENSAYO H2|C|C_desplazado|13 estado=OK x=44 G=[0, 0] total=474 sha=b003d8aefcc165e1 seg=4.817 motivo=
+ENSAYO H2|C|C_desplazado|11 estado=OK x=43 G=[0, 0] total=474 sha=948c140094e6f33c seg=7.331 motivo=
+ENSAYO H2|C|C_desplazado|12 estado=OK x=40 G=[0, 0] total=483 sha=fee386ed000071fa seg=7.273 motivo=
+ENSAYO H2|C|C_desplazado|15 estado=OK x=45 G=[0, 0] total=464 sha=d82b9930df1f93db seg=5.161 motivo=
+ENSAYO H2|C|C_desplazado|14 estado=OK x=40 G=[0, 0] total=478 sha=3fc84b387897d4a9 seg=6.95 motivo=
+ENSAYO H2|C|C_desplazado|16 estado=OK x=42 G=[0, 0] total=388 sha=d7c2863416f2f3a8 seg=6.938 motivo=
+ENSAYO H2|C|C_desplazado|17 estado=OK x=43 G=[0, 0] total=419 sha=eee1ec1d9d99aa76 seg=5.131 motivo=
+ENSAYO H2|C|C_desplazado|18 estado=OK x=44 G=[0, 0] total=449 sha=10db43958a22af86 seg=5.525 motivo=
+ENSAYO H2|C|C_desplazado|19 estado=OK x=44 G=[0, 0] total=425 sha=dcb1fd2a301dd757 seg=5.074 motivo=
+RUNNER 440/440 OK, 0 INVALIDO_TECNICO, target=cython, 948.1 s
+	Command being timed: "python tools/a1/runner_a1.py --manifiesto results/a1_2026-11-03/prueba_1/manifiesto_a1.json --sha-manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 --ids R08|B|C0|0,R08|B|C0|1,R08|B|C0|2,R08|B|C0|3,R08|B|C0|4,R08|B|C0|5,R08|B|C0|6,R08|B|C0|7,R08|B|C0|8,R08|B|C0|9,R08|B|C0|10,R08|B|C0|11,R08|B|C0|12,R08|B|C0|13,R08|B|C0|14,R08|B|C0|15,R08|B|C0|16,R08|B|C0|17,R08|B|C0|18,R08|B|C0|19,R08|B|Q1|0,R08|B|Q1|1,R08|B|Q1|2,R08|B|Q1|3,R08|B|Q1|4,R08|B|Q1|5,R08|B|Q1|6,R08|B|Q1|7,R08|B|Q1|8,R08|B|Q1|9,R08|B|Q1|10,R08|B|Q1|11,R08|B|Q1|12,R08|B|Q1|13,R08|B|Q1|14,R08|B|Q1|15,R08|B|Q1|16,R08|B|Q1|17,R08|B|Q1|18,R08|B|Q1|19,R08|B|Q2|0,R08|B|Q2|1,R08|B|Q2|2,R08|B|Q2|3,R08|B|Q2|4,R08|B|Q2|5,R08|B|Q2|6,R08|B|Q2|7,R08|B|Q2|8,R08|B|Q2|9,R08|B|Q2|10,R08|B|Q2|11,R08|B|Q2|12,R08|B|Q2|13,R08|B|Q2|14,R08|B|Q2|15,R08|B|Q2|16,R08|B|Q2|17,R08|B|Q2|18,R08|B|Q2|19,R08|B|Q3|0,R08|B|Q3|1,R08|B|Q3|2,R08|B|Q3|3,R08|B|Q3|4,R08|B|Q3|5,R08|B|Q3|6,R08|B|Q3|7,R08|B|Q3|8,R08|B|Q3|9,R08|B|Q3|10,R08|B|Q3|11,R08|B|Q3|12,R08|B|Q3|13,R08|B|Q3|14,R08|B|Q3|15,R08|B|Q3|16,R08|B|Q3|17,R08|B|Q3|18,R08|B|Q3|19,R08|B|Q4|0,R08|B|Q4|1,R08|B|Q4|2,R08|B|Q4|3,R08|B|Q4|4,R08|B|Q4|5,R08|B|Q4|6,R08|B|Q4|7,R08|B|Q4|8,R08|B|Q4|9,R08|B|Q4|10,R08|B|Q4|11,R08|B|Q4|12,R08|B|Q4|13,R08|B|Q4|14,R08|B|Q4|15,R08|B|Q4|16,R08|B|Q4|17,R08|B|Q4|18,R08|B|Q4|19,R08|B|QCOL|0,R08|B|QCOL|1,R08|B|QCOL|2,R08|B|QCOL|3,R08|B|QCOL|4,R08|B|QCOL|5,R08|B|QCOL|6,R08|B|QCOL|7,R08|B|QCOL|8,R08|B|QCOL|9,R08|B|QCOL|10,R08|B|QCOL|11,R08|B|QCOL|12,R08|B|QCOL|13,R08|B|QCOL|14,R08|B|QCOL|15,R08|B|QCOL|16,R08|B|QCOL|17,R08|B|QCOL|18,R08|B|QCOL|19,R08|B|Q1uQCOL|0,R08|B|Q1uQCOL|1,R08|B|Q1uQCOL|2,R08|B|Q1uQCOL|3,R08|B|Q1uQCOL|4,R08|B|Q1uQCOL|5,R08|B|Q1uQCOL|6,R08|B|Q1uQCOL|7,R08|B|Q1uQCOL|8,R08|B|Q1uQCOL|9,R08|B|Q1uQCOL|10,R08|B|Q1uQCOL|11,R08|B|Q1uQCOL|12,R08|B|Q1uQCOL|13,R08|B|Q1uQCOL|14,R08|B|Q1uQCOL|15,R08|B|Q1uQCOL|16,R08|B|Q1uQCOL|17,R08|B|Q1uQCOL|18,R08|B|Q1uQCOL|19,R08|B|QXD|0,R08|B|QXD|1,R08|B|QXD|2,R08|B|QXD|3,R08|B|QXD|4,R08|B|QXD|5,R08|B|QXD|6,R08|B|QXD|7,R08|B|QXD|8,R08|B|QXD|9,R08|B|QXD|10,R08|B|QXD|11,R08|B|QXD|12,R08|B|QXD|13,R08|B|QXD|14,R08|B|QXD|15,R08|B|QXD|16,R08|B|QXD|17,R08|B|QXD|18,R08|B|QXD|19,R08|B|Q1uQXD|0,R08|B|Q1uQXD|1,R08|B|Q1uQXD|2,R08|B|Q1uQXD|3,R08|B|Q1uQXD|4,R08|B|Q1uQXD|5,R08|B|Q1uQXD|6,R08|B|Q1uQXD|7,R08|B|Q1uQXD|8,R08|B|Q1uQXD|9,R08|B|Q1uQXD|10,R08|B|Q1uQXD|11,R08|B|Q1uQXD|12,R08|B|Q1uQXD|13,R08|B|Q1uQXD|14,R08|B|Q1uQXD|15,R08|B|Q1uQXD|16,R08|B|Q1uQXD|17,R08|B|Q1uQXD|18,R08|B|Q1uQXD|19,R08|B|QWEAK|0,R08|B|QWEAK|1,R08|B|QWEAK|2,R08|B|QWEAK|3,R08|B|QWEAK|4,R08|B|QWEAK|5,R08|B|QWEAK|6,R08|B|QWEAK|7,R08|B|QWEAK|8,R08|B|QWEAK|9,R08|B|QWEAK|10,R08|B|QWEAK|11,R08|B|QWEAK|12,R08|B|QWEAK|13,R08|B|QWEAK|14,R08|B|QWEAK|15,R08|B|QWEAK|16,R08|B|QWEAK|17,R08|B|QWEAK|18,R08|B|QWEAK|19,R08|B|SHAM|0,R08|B|SHAM|1,R08|B|SHAM|2,R08|B|SHAM|3,R08|B|SHAM|4,R08|B|SHAM|5,R08|B|SHAM|6,R08|B|SHAM|7,R08|B|SHAM|8,R08|B|SHAM|9,R08|B|SHAM|10,R08|B|SHAM|11,R08|B|SHAM|12,R08|B|SHAM|13,R08|B|SHAM|14,R08|B|SHAM|15,R08|B|SHAM|16,R08|B|SHAM|17,R08|B|SHAM|18,R08|B|SHAM|19,H1b|B|C0|0,H1b|B|C0|1,H1b|B|C0|2,H1b|B|C0|3,H1b|B|C0|4,H1b|B|C0|5,H1b|B|C0|6,H1b|B|C0|7,H1b|B|C0|8,H1b|B|C0|9,H1b|B|C0|10,H1b|B|C0|11,H1b|B|C0|12,H1b|B|C0|13,H1b|B|C0|14,H1b|B|C0|15,H1b|B|C0|16,H1b|B|C0|17,H1b|B|C0|18,H1b|B|C0|19,H1b|B|Q2|0,H1b|B|Q2|1,H1b|B|Q2|2,H1b|B|Q2|3,H1b|B|Q2|4,H1b|B|Q2|5,H1b|B|Q2|6,H1b|B|Q2|7,H1b|B|Q2|8,H1b|B|Q2|9,H1b|B|Q2|10,H1b|B|Q2|11,H1b|B|Q2|12,H1b|B|Q2|13,H1b|B|Q2|14,H1b|B|Q2|15,H1b|B|Q2|16,H1b|B|Q2|17,H1b|B|Q2|18,H1b|B|Q2|19,H1b|B|Q4conj|0,H1b|B|Q4conj|1,H1b|B|Q4conj|2,H1b|B|Q4conj|3,H1b|B|Q4conj|4,H1b|B|Q4conj|5,H1b|B|Q4conj|6,H1b|B|Q4conj|7,H1b|B|Q4conj|8,H1b|B|Q4conj|9,H1b|B|Q4conj|10,H1b|B|Q4conj|11,H1b|B|Q4conj|12,H1b|B|Q4conj|13,H1b|B|Q4conj|14,H1b|B|Q4conj|15,H1b|B|Q4conj|16,H1b|B|Q4conj|17,H1b|B|Q4conj|18,H1b|B|Q4conj|19,H1b|B|Q1_58878|0,H1b|B|Q1_58878|1,H1b|B|Q1_58878|2,H1b|B|Q1_58878|3,H1b|B|Q1_58878|4,H1b|B|Q1_58878|5,H1b|B|Q1_58878|6,H1b|B|Q1_58878|7,H1b|B|Q1_58878|8,H1b|B|Q1_58878|9,H1b|B|Q1_58878|10,H1b|B|Q1_58878|11,H1b|B|Q1_58878|12,H1b|B|Q1_58878|13,H1b|B|Q1_58878|14,H1b|B|Q1_58878|15,H1b|B|Q1_58878|16,H1b|B|Q1_58878|17,H1b|B|Q1_58878|18,H1b|B|Q1_58878|19,H1b|B|Q1_71368|0,H1b|B|Q1_71368|1,H1b|B|Q1_71368|2,H1b|B|Q1_71368|3,H1b|B|Q1_71368|4,H1b|B|Q1_71368|5,H1b|B|Q1_71368|6,H1b|B|Q1_71368|7,H1b|B|Q1_71368|8,H1b|B|Q1_71368|9,H1b|B|Q1_71368|10,H1b|B|Q1_71368|11,H1b|B|Q1_71368|12,H1b|B|Q1_71368|13,H1b|B|Q1_71368|14,H1b|B|Q1_71368|15,H1b|B|Q1_71368|16,H1b|B|Q1_71368|17,H1b|B|Q1_71368|18,H1b|B|Q1_71368|19,H1b|B|Q1conj|0,H1b|B|Q1conj|1,H1b|B|Q1conj|2,H1b|B|Q1conj|3,H1b|B|Q1conj|4,H1b|B|Q1conj|5,H1b|B|Q1conj|6,H1b|B|Q1conj|7,H1b|B|Q1conj|8,H1b|B|Q1conj|9,H1b|B|Q1conj|10,H1b|B|Q1conj|11,H1b|B|Q1conj|12,H1b|B|Q1conj|13,H1b|B|Q1conj|14,H1b|B|Q1conj|15,H1b|B|Q1conj|16,H1b|B|Q1conj|17,H1b|B|Q1conj|18,H1b|B|Q1conj|19,H2|C|C_00|0,H2|C|C_00|1,H2|C|C_00|2,H2|C|C_00|3,H2|C|C_00|4,H2|C|C_00|5,H2|C|C_00|6,H2|C|C_00|7,H2|C|C_00|8,H2|C|C_00|9,H2|C|C_00|10,H2|C|C_00|11,H2|C|C_00|12,H2|C|C_00|13,H2|C|C_00|14,H2|C|C_00|15,H2|C|C_00|16,H2|C|C_00|17,H2|C|C_00|18,H2|C|C_00|19,H2|C|C_10|0,H2|C|C_10|1,H2|C|C_10|2,H2|C|C_10|3,H2|C|C_10|4,H2|C|C_10|5,H2|C|C_10|6,H2|C|C_10|7,H2|C|C_10|8,H2|C|C_10|9,H2|C|C_10|10,H2|C|C_10|11,H2|C|C_10|12,H2|C|C_10|13,H2|C|C_10|14,H2|C|C_10|15,H2|C|C_10|16,H2|C|C_10|17,H2|C|C_10|18,H2|C|C_10|19,H2|C|C_01|0,H2|C|C_01|1,H2|C|C_01|2,H2|C|C_01|3,H2|C|C_01|4,H2|C|C_01|5,H2|C|C_01|6,H2|C|C_01|7,H2|C|C_01|8,H2|C|C_01|9,H2|C|C_01|10,H2|C|C_01|11,H2|C|C_01|12,H2|C|C_01|13,H2|C|C_01|14,H2|C|C_01|15,H2|C|C_01|16,H2|C|C_01|17,H2|C|C_01|18,H2|C|C_01|19,H2|C|C_11|0,H2|C|C_11|1,H2|C|C_11|2,H2|C|C_11|3,H2|C|C_11|4,H2|C|C_11|5,H2|C|C_11|6,H2|C|C_11|7,H2|C|C_11|8,H2|C|C_11|9,H2|C|C_11|10,H2|C|C_11|11,H2|C|C_11|12,H2|C|C_11|13,H2|C|C_11|14,H2|C|C_11|15,H2|C|C_11|16,H2|C|C_11|17,H2|C|C_11|18,H2|C|C_11|19,H2|C|C_desplazado|0,H2|C|C_desplazado|1,H2|C|C_desplazado|2,H2|C|C_desplazado|3,H2|C|C_desplazado|4,H2|C|C_desplazado|5,H2|C|C_desplazado|6,H2|C|C_desplazado|7,H2|C|C_desplazado|8,H2|C|C_desplazado|9,H2|C|C_desplazado|10,H2|C|C_desplazado|11,H2|C|C_desplazado|12,H2|C|C_desplazado|13,H2|C|C_desplazado|14,H2|C|C_desplazado|15,H2|C|C_desplazado|16,H2|C|C_desplazado|17,H2|C|C_desplazado|18,H2|C|C_desplazado|19 --shiu /workspace/a1/shiu --comp /workspace/a1/in/completeness.csv --conn /workspace/connectivity.parquet --units /workspace/mecanismo-2026-11-02/flywire_units.npz --salida /tmp/a1out/registros --n-proc 3 --target cython --code-commit e7490f59fee2f36c7a266a712415257f61361939"
+	User time (seconds): 2550.12
+	System time (seconds): 300.22
+	Percent of CPU this job got: 300%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 15:48.31
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 3254676
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 57
+	Minor (reclaiming a frame) page faults: 73722780
+	Voluntary context switches: 71638
+	Involuntary context switches: 123040
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 105600
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

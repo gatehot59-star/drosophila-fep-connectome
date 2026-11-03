@@ -1,0 +1,24 @@
+UTC_START 2026-11-03T17:25:46+00:00
+SOURCE_COMMIT e7490f59fee2f36c7a266a712415257f61361939
+RUN 41684131931 ATTEMPT 1 BLOQUE 05
+tools/a1/comun_a1.py: OK
+tools/a1/manifiesto_a1.py: OK
+tools/a1/runner_a1.py: OK
+tools/a1/validar_a1.py: OK
+tools/a1/prueba_a1.py: OK
+tools/a1/plan_a1.py: OK
+tools/a1/juntar_a1.py: OK
+.github/workflows/a1-prueba.yml: OK
+.github/workflows/a1-corrida.yml: OK
+tools/mecanismo/paso12.py: OK
+tools/reuso/reuso_mosca.py: OK
+results/a1_2026-11-03/prueba_1/manifiesto_a1.json: OK
+CPU(s):                                  4
+Model name:                              AMD EPYC 9V45 96-Core Processor
+Thread(s) per core:                      2
+Core(s) per socket:                      2
+FLAGS fma avx2 avx512f 
+NPROC_ALL 4
+               total        used        free      shared  buff/cache   available
+Mem:           15983         985       14394          41         929       14998
+Swap:           3071           0        3071
