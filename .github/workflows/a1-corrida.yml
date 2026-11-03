@@ -1,0 +1,242 @@
+name: a1-corrida
+# Respuesta 2026-11-03-006. Corrida grande de 009-A1, autorizada por Abraham el 3-nov a las 14:16: los 8.540 ensayos
+# del plan (semillas 0..19) en 20 bloques que no parten ninguna celda (plan_a1.py). Cada bloque verifica las huellas
+# del codigo, rehace el censo y el manifiesto y exige que sea byte a byte el del intento 1, rehace los 10 ensayos de
+# humo como testigos de maquina, corre su bloque, lo valida y lo empaqueta. El job final junta los 20 bloques, valida
+# el plan completo y commitea todo en results/a1_2026-11-03/corrida_<N>. Aca nadie lee estimandos.
+on:
+  push:
+    branches: ["titan/a1-runner-2026-11-03"]
+    paths: ["tools/a1/CORRER"]
+permissions:
+  contents: read
+concurrency:
+  group: a1-corrida
+  cancel-in-progress: false
+env:
+  DEPS: numpy==2.5.3 pandas==3.0.5 scipy==1.18.1 pyarrow==25.0.1
+  LIFDEPS: brian2==2.10.1 cython==3.1.3 joblib==1.6.0
+  SHIU: https://raw.githubusercontent.com/philshiu/Drosophila_brain_model/91bdd1e7dcf193f3e7ca5a8933497fcef63b7960
+  ANNOT_URL: https://raw.githubusercontent.com/flyconnectome/flywire_annotations/17fc57722002e1a7d38cdd0c89ac382bf92718da/supplemental_files/Supplemental_file1_neuron_annotations.tsv
+  BANC: https://storage.googleapis.com/lee-lab_brain-and-nerve-cord-fly-connectome/compiled_data/banc_888
+  MAIN_EVID: https://raw.githubusercontent.com/gatehot59-star/drosophila-fep-connectome/28c52c61134c26fd71b4a0df39751fcb885e96d4
+  MANIFIESTO: 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9
+  P1: results/a1_2026-11-03/prueba_1
+  NBLOQUES: "20"
+  L: /tmp/a1logs
+  O: /tmp/a1out
+  OPENBLAS_NUM_THREADS: "1"
+  OMP_NUM_THREADS: "1"
+  MKL_NUM_THREADS: "1"
+  PYTHONUNBUFFERED: "1"
+jobs:
+  bloque:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      max-parallel: 20
+      matrix:
+        bloque: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: corrida, huellas y negativa a repetir
+        id: intento
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$L" "$O"
+          exec > >(tee "$L/intento.log") 2>&1
+          KK=$(printf '%02d' "${{ matrix.bloque }}")
+          echo "KK=$KK" >> "$GITHUB_ENV"
+          printf 'UTC_START '; date -u --iso-8601=seconds
+          printf 'SOURCE_COMMIT '; git rev-parse HEAD
+          printf 'RUN %s ATTEMPT %s BLOQUE %s\n' "$GITHUB_RUN_ID" "$GITHUB_RUN_ATTEMPT" "$KK"
+          N=$(sed -n 's/^corrida=\([0-9][0-9]*\)$/\1/p' tools/a1/CORRER | head -1)
+          if [ -z "$N" ]; then echo 'REFUSE: tools/a1/CORRER no dice corrida=N'; exit 4; fi
+          if [ -e "results/a1_2026-11-03/corrida_$N" ]; then echo "REFUSE: corrida_$N ya existe; no se repite"; exit 4; fi
+          echo "N=$N" >> "$GITHUB_ENV"
+          sha256sum --check tools/a1/HUELLAS.sha256
+          echo "$MANIFIESTO  $P1/manifiesto_a1.json" | sha256sum --check -
+          lscpu | grep -E '^(Model name|CPU\(s\)|Thread|Core)' || true
+          printf 'FLAGS '; grep -m1 '^flags' /proc/cpuinfo | tr ' ' '\n' | grep -E '^(avx2|avx512f|fma)$' | tr '\n' ' '; echo
+          printf 'NPROC_ALL '; nproc --all
+          free -m
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12.14"
+      - name: censo y manifiesto rehecho
+        id: censo
+        shell: bash
+        run: |
+          set -euo pipefail
+          exec > >(tee "$L/censo.log") 2>&1
+          python -m pip install $DEPS $LIFDEPS
+          python -m pip freeze > "$L/pip_freeze.txt"
+          python -c "import brian2; print('GCC_ARGS', brian2.prefs.codegen.cpp.extra_compile_args_gcc)"
+          sudo mkdir -p /workspace/banc_888 /workspace/mecanismo-2026-11-02 /workspace/a1/shiu /workspace/a1/in
+          sudo chown -R "$USER" /workspace
+          B="curl -fsSL --retry 5 --retry-all-errors --retry-delay 5 --max-time 900"
+          $B -o /workspace/connectivity.parquet "$SHIU/Connectivity_783.parquet"
+          $B -o /workspace/a1/in/completeness.csv "$SHIU/Completeness_783.csv"
+          $B -o /workspace/a1/shiu/model.py "$SHIU/model.py"
+          $B -o /workspace/annotations.tsv "$ANNOT_URL"
+          $B -o /workspace/banc_888/banc_888_meta.feather "$BANC/banc_888_meta.feather"
+          $B -o /workspace/banc_888/banc_888_edgelist_simple_v3.feather "$BANC/banc_888_edgelist_simple_v3.feather"
+          $B -o /workspace/a1/in/sello_diseno_16_relevos.json "$MAIN_EVID/docs/auditorias/evidencia/2026-11-02-02/sello_diseno_16_relevos.json"
+          $B -o /workspace/a1/in/evid010.md "$MAIN_EVID/docs/agents/evidencia/2026-11-02-010-guardas-enmienda-009-a1.md"
+          cp tools/reuso/reuso_mosca.py tools/mecanismo/paso12.py /workspace/mecanismo-2026-11-02/
+          printf '%s\n' \
+            'efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347  /workspace/connectivity.parquet' \
+            'bbb847a4cc2caaa7a16349722d220c087317b946d148d4d592d94d250617a311  /workspace/a1/in/completeness.csv' \
+            'fc45837d7122c6ce2a7f3f2f23c515992e4b232aadb919efabb72337fac88e4e  /workspace/a1/shiu/model.py' \
+            '9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be  /workspace/annotations.tsv' \
+            '86ccf5df0c67419f8c5f43e93a7ed38d23a080e9f7fde26737290252f3780098  /workspace/banc_888/banc_888_meta.feather' \
+            '8c296e946f3c69a8c7222f30ad75fa8a98eeb189124fec6df829c9125f4be64b  /workspace/banc_888/banc_888_edgelist_simple_v3.feather' \
+            '210b581792d183517d1e4e7771b8435e4a6acb537bc1ad383e5725c500073e93  /workspace/a1/in/sello_diseno_16_relevos.json' \
+            'd5d9b7bad373c13bc240581153fbef8820e2d5587979b263a7908e76daa4eeb8  /workspace/a1/in/evid010.md' \
+            'b604af62e053cacded85979002b34d70ca104d5399cfba1b8135a6626bf784eb  /workspace/mecanismo-2026-11-02/paso12.py' \
+            | sha256sum --check -
+          python /workspace/mecanismo-2026-11-02/paso12.py > "$L/paso12.log" 2>&1 || { tail -60 "$L/paso12.log"; exit 3; }
+          grep -E '^(PARITY|DONE)' "$L/paso12.log" || true
+          python tools/a1/manifiesto_a1.py --parquet /workspace/connectivity.parquet --units /workspace/mecanismo-2026-11-02/flywire_units.npz --sello /workspace/a1/in/sello_diseno_16_relevos.json --evid010 /workspace/a1/in/evid010.md --salida /tmp/manifiesto_rehecho.json
+          cmp /tmp/manifiesto_rehecho.json "$P1/manifiesto_a1.json"
+          echo "MANIFIESTO_REHECHO_IGUAL_AL_DEL_INTENTO_1 $MANIFIESTO"
+      - name: plan del bloque
+        id: plan
+        shell: bash
+        run: |
+          set -euo pipefail
+          exec > >(tee "$L/plan.log") 2>&1
+          python tools/a1/plan_a1.py --manifiesto "$P1/manifiesto_a1.json" --sha-manifiesto "$MANIFIESTO" --bloques "$NBLOQUES" --bloque "${{ matrix.bloque }}" --salida "$O/ids_bloque.txt" --resumen
+      - name: testigos de maquina
+        id: testigos
+        shell: bash
+        run: |
+          set -euo pipefail
+          exec > >(tee "$L/testigos.log") 2>&1
+          python tools/a1/runner_a1.py --manifiesto "$P1/manifiesto_a1.json" --sha-manifiesto "$MANIFIESTO" --humo --shiu /workspace/a1/shiu --comp /workspace/a1/in/completeness.csv --conn /workspace/connectivity.parquet --units /workspace/mecanismo-2026-11-02/flywire_units.npz --salida "$O/testigos" --n-proc 3 --target cython --code-commit "$GITHUB_SHA"
+          python tools/a1/juntar_a1.py testigos --registros "$O/testigos" --referencia "$P1/registros_humo"
+      - name: ensayos del bloque
+        id: ensayos
+        if: always() && steps.plan.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          exec > >(tee "$L/ensayos.log") 2>&1
+          if [ -x /usr/bin/time ]; then TV="/usr/bin/time -v"; else TV=""; fi
+          $TV python tools/a1/runner_a1.py --manifiesto "$P1/manifiesto_a1.json" --sha-manifiesto "$MANIFIESTO" --ids "$(cat "$O/ids_bloque.txt")" --shiu /workspace/a1/shiu --comp /workspace/a1/in/completeness.csv --conn /workspace/connectivity.parquet --units /workspace/mecanismo-2026-11-02/flywire_units.npz --salida "$O/registros" --n-proc 3 --target cython --code-commit "$GITHUB_SHA"
+      - name: validar y empaquetar el bloque
+        id: validar
+        if: always() && steps.plan.outcome == 'success'
+        shell: bash
+        run: |
+          set -euo pipefail
+          exec > >(tee "$L/validar.log") 2>&1
+          mkdir -p "$O/registros"
+          python tools/a1/juntar_a1.py empaquetar --registros "$O/registros" --salida "$O/bloque_$KK.jsonl"
+          python tools/a1/validar_a1.py --manifiesto "$P1/manifiesto_a1.json" --sha-manifiesto "$MANIFIESTO" --registros "$O/registros" --ids "$(cat "$O/ids_bloque.txt")" --salida "$O/validacion_bloque_$KK.json"
+      - name: estado del bloque
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$O"
+          printf 'bloque=%s run=%s fuente=%s intento=%s censo=%s plan=%s testigos=%s ensayos=%s validar=%s\n' \
+            "${KK:-NA}" "$GITHUB_RUN_ID" "$GITHUB_SHA" "${{ steps.intento.outcome }}" "${{ steps.censo.outcome }}" "${{ steps.plan.outcome }}" \
+            "${{ steps.testigos.outcome }}" "${{ steps.ensayos.outcome }}" "${{ steps.validar.outcome }}" > "$O/ESTADO_BLOQUE.txt"
+          cp "$L"/*.log "$L"/*.txt "$O"/ 2>/dev/null || true
+          cat "$O/ESTADO_BLOQUE.txt"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: a1-corrida-bloque-${{ matrix.bloque }}
+          path: |
+            /tmp/a1out
+            !/tmp/a1out/registros
+          if-no-files-found: warn
+          retention-days: 90
+      - name: veredicto del bloque
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${{ steps.intento.outcome }}" = success
+          test "${{ steps.censo.outcome }}" = success
+          test "${{ steps.plan.outcome }}" = success
+          test "${{ steps.testigos.outcome }}" = success
+          test "${{ steps.ensayos.outcome }}" = success
+          test "${{ steps.validar.outcome }}" = success
+  juntar:
+    needs: [bloque]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: corrida, huellas y negativa a repetir
+        id: intento
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$L"
+          exec > >(tee "$L/juntar_intento.log") 2>&1
+          printf 'UTC_START '; date -u --iso-8601=seconds
+          printf 'SOURCE_COMMIT '; git rev-parse HEAD
+          N=$(sed -n 's/^corrida=\([0-9][0-9]*\)$/\1/p' tools/a1/CORRER | head -1)
+          if [ -z "$N" ]; then echo 'REFUSE: tools/a1/CORRER no dice corrida=N'; exit 4; fi
+          D="results/a1_2026-11-03/corrida_$N"
+          if [ -e "$D" ]; then echo "REFUSE: $D ya existe; no se repite"; exit 4; fi
+          mkdir -p "$D"
+          echo "$D" > /tmp/a1_propio
+          echo "D=$D" >> "$GITHUB_ENV"
+          echo "N=$N" >> "$GITHUB_ENV"
+          sha256sum --check tools/a1/HUELLAS.sha256
+          echo "$MANIFIESTO  $P1/manifiesto_a1.json" | sha256sum --check -
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: "3.12.14"
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          pattern: a1-corrida-bloque-*
+          path: /tmp/art
+      - name: validar el plan completo
+        id: juntar
+        shell: bash
+        run: |
+          set -euo pipefail
+          exec > >(tee "$L/juntar.log") 2>&1
+          python -m pip install $DEPS
+          python tools/a1/plan_a1.py --manifiesto "$P1/manifiesto_a1.json" --sha-manifiesto "$MANIFIESTO" --bloques "$NBLOQUES" --resumen --prueba
+          find /tmp/art -maxdepth 2 -name 'ESTADO_BLOQUE.txt' | sort | xargs cat
+          python tools/a1/juntar_a1.py validar-todo --manifiesto "$P1/manifiesto_a1.json" --sha-manifiesto "$MANIFIESTO" --jsonl '/tmp/art/**/bloque_*.jsonl' --salida "$D/validacion_corrida.json"
+      - name: conservar la corrida
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ ! -f /tmp/a1_propio ]; then echo 'Sin directorio propio: nada que conservar'; exit 0; fi
+          D=$(cat /tmp/a1_propio)
+          mkdir -p "$D/bloques"
+          for a in /tmp/art/a1-corrida-bloque-*; do
+            [ -d "$a" ] || continue
+            kk=$(printf '%02d' "${a##*-}")
+            mkdir -p "$D/bloques/$kk"
+            cp -r "$a"/. "$D/bloques/$kk"/
+          done
+          cp "$L"/*.log "$D"/ 2>/dev/null || true
+          printf 'run=%s dir=%s fuente=%s bloques=%s intento=%s juntar=%s\n' "$GITHUB_RUN_ID" "$D" "$GITHUB_SHA" \
+            "${{ needs.bloque.result }}" "${{ steps.intento.outcome }}" "${{ steps.juntar.outcome }}" > "$D/RESULTADO.txt"
+          { printf 'UTC_END '; date -u --iso-8601=seconds; } >> "$D/RESULTADO.txt"
+          (cd "$D" && find . -type f ! -name SHA256SUMS.txt -print0 | sort -z | xargs -0 sha256sum > SHA256SUMS.txt)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$D"
+          git commit -q -m "medicion(2026-11-03-006): corrida 009-A1 en $D, run $GITHUB_RUN_ID" || true
+          for i in 1 2 3; do
+            if git pull -q --rebase --autostash origin "$GITHUB_REF_NAME" && git push -q origin HEAD:"$GITHUB_REF_NAME"; then break; fi
+            sleep 15
+          done
+          git log -1 --format='CONSERVADO %H'
