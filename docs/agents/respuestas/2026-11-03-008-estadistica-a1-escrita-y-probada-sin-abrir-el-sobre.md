@@ -55,3 +55,9 @@ Máquina: brain-env sobre los bytes de 5c9492ff bajados de raw; desarrollo en el
 Código: https://github.com/gatehot59-star/drosophila-fep-connectome/tree/titan/a1-runner-2026-11-03/tools/a1
 Respuesta: docs/agents/respuestas/2026-11-03-008-estadistica-a1-escrita-y-probada-sin-abrir-el-sobre.md
 Doc: https://app.clickup.com/90171457413/docs/2kza6fw5-26157
+
+## Adenda, 3-nov-2026 (respuesta 009)
+
+*   **Mutantes en brain-env:** terminaron a las 19:33:37Z con exit 0. Murieron 28 de 28 y el control quedó en 21/21. Con eso termina el NO MEDIDO de la sección 6. La salida cruda está en `docs/agents/evidencia/2026-11-03-009-verificador-a1/mutantes_008_brain_env.log`.
+*   **Decisión de Abraham** (18:36): dejar 010 tal cual. La regla del BCa degenerado sigue y el código queda en `5c9492ff`.
+*   **Verificador independiente:** quedó como orden para otro agente, en `docs/agents/ordenes/2026-11-03-009-verificador-independiente-a1.md`.

@@ -1,0 +1,22 @@
+RAW 801487ca comun_a1.py bytes=8679 sha256=756e81aba922824f0bf4e6374936b944b7f30c17e88b659adc35b9416c0d93ed IGUAL
+RAW 801487ca plan_a1.py bytes=5408 sha256=d1b26450ecf8e9ca5211ab7a78beadf536ff61c4db659ed79c3dd9e142662e5d IGUAL
+RAW 801487ca juntar_a1.py bytes=7757 sha256=051d0b474a911930db692fed5826839b426df2953eebd39a86ab69538260d414 IGUAL
+RAW 801487ca validar_a1.py bytes=6401 sha256=189eb6477e1f9e3685d273d89aaee4dca8c8c8a63a82a734dae74b2a6ad34e20 IGUAL
+RAW 801487ca estadistica_a1.py bytes=36891 sha256=37ab63d7dc94913c010cdc51d89a23a0ace0a4e6e511b4c344ffad15b24503e3 IGUAL
+RAW 801487ca sobre_sintetico_a1.py bytes=20188 sha256=c89ef7f52ddb017c9cca15c56bbadd4fe974962100454aeefb918d99d1848119 IGUAL
+RAW 801487ca prueba_sobre_sintetico_a1.py bytes=14081 sha256=975f4b2a3cae55b1804abb59d874100440a396bc9b1e839cf7b2713e47031966 IGUAL
+RAW 801487ca mutantes_sobre_sintetico_a1.py bytes=4964 sha256=a31752b643cc253fee958c954f6c0ba2294ab51d4ccf0820bdbfbd448a3c2959 IGUAL
+REF main/docs/agents/respuestas/2026-11-02-010-enmienda-009-a1-sello-original-intacto.md bytes=34776 sha256=e10b7756ecf5e1bfebdf285e3e37c1af901256327d3e08f0a4abbc8551611127
+REF main/docs/agents/respuestas/2026-11-02-009-diseno-corte-causal-16-relevos-recurrentes.md bytes=30215 sha256=61ab66b7839bc38f1ad6caaee43e60e7f0524fddb3e37ff58ff49acb5c48f1ea
+REF main/docs/auditorias/evidencia/2026-11-02-02/sello_diseno_16_relevos.json bytes=31673 sha256=210b581792d183517d1e4e7771b8435e4a6acb537bc1ad383e5725c500073e93
+REF main/docs/agents/respuestas/2026-11-03-008-estadistica-a1-escrita-y-probada-sin-abrir-el-sobre.md bytes=6801 sha256=052442afd4af04b9ca2ac537c4a38579545c860453dd6755b6ca5a8da85ab4e1
+REF titan/a1-runner-2026-11-03/results/a1_2026-11-03/corrida_1/SHA256SUMS.txt bytes=45000 sha256=bf9ebde69cc12f6c1f5b1c85925aebeeb36fd7fe6f23052aef35706a74cc7e38
+  SHA256SUMS lineas=444 bloques=20 ejemplo=['4b93575024323b4145515aac6981f95bd229ea6a3934fbe95cfd2f90ff33a71b  ./bloques/00/bloque_00.jsonl', '5217298714446702961d7ec0a256047c3c717614d845cf90a485cb0460724538  ./bloques/01/bloque_01.jsonl']
+REF titan/a1-runner-2026-11-03/results/a1_2026-11-03/corrida_1/validacion_corrida.json bytes=2931 sha256=443976def90ba60ce946fa24b6d96bb26546aa4ff6698e52ff15aa3de22e11af
+  validacion estado=OK registros=8540 esperados=8540 fallos=0
+REF titan/a1-runner-2026-11-03/results/a1_2026-11-03/corrida_1/RESULTADO.txt bytes=181 sha256=f9f9e759e41e5ac2c04afaf1315f3b49da8816ad39926740449a7e07cd2621a0
+REF titan/a1-runner-2026-11-03/results/a1_2026-11-03/prueba_1/manifiesto_a1.json bytes=640908 sha256=267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9
+REF titan/a1-runner-2026-11-03/tools/a1/HUELLAS_ESTADISTICA.sha256 bytes=295 sha256=0b91d455b16f2bbda939709dd0c652d50c6715f0dc1f2a387f20b522f8027e25
+  37ab63d7dc94913c010cdc51d89a23a0ace0a4e6e511b4c344ffad15b24503e3  tools/a1/estadistica_a1.py | 74aec761d7e63b7607256d97e09cf0941cdf3d5d858b4a65c390ca5d9c0fd108  tools/a1/prueba_estadistica_a1.py | 86c5e4f78426c3114a80a02b6a9e04bfe2309319cd9e47a9862f18a61f6ac5b2  tools/a1/mutantes_estadistica_a1.py
+MANIFIESTO local sha256=267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9
+ENTORNO python numpy scipy host = 3.12.14 2.5.3 1.18.1 6c09d8604b07

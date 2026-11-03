@@ -1,0 +1,22 @@
+GENERAR limpio exit=0 3.7 s SOBRE_SINTETICO escenario=limpio lineas=8540 bloques=20 corrupciones=0 sha256sums=121045455135271846cb8b45121f40994e10cbae5349fc0ede3f2d64129b82b6 
+GENERAR limpio_bis exit=0 3.5 s SOBRE_SINTETICO escenario=limpio lineas=8540 bloques=20 corrupciones=0 sha256sums=121045455135271846cb8b45121f40994e10cbae5349fc0ede3f2d64129b82b6 
+GENERAR sucio exit=0 4.1 s SOBRE_SINTETICO escenario=sucio lineas=8541 bloques=20 corrupciones=19 sha256sums=4546466dd7b1d7425da21c4a353396b9166cd80ba6056b9f0be973cf38709fa1 
+GENERAR global exit=0 4.0 s SOBRE_SINTETICO escenario=global lineas=8541 bloques=20 corrupciones=1 sha256sums=76c6a87a237241f23f3c44a878e9554e1d7c57c2a1b0c0d36de8d496f0a11abd 
+PRUEBA S01_generador_determinista PASS SHA256SUMS=121045455135271846cb8b45121f40994e10cbae5349fc0ede3f2d64129b82b6
+PRUEBA S02_rechaza_ruta_de_corrida PASS exit=2
+PRUEBA S03_limpio_pasa_el_control_del_productor PASS estado=OK registros=8540 fallos=0 todos_sinteticos=True
+PRUEBA S04_sucio_el_control_marca_las_13_detectables PASS corrupciones=13 pares=15 esperados=15 sobran=[] faltan=[]
+PRUEBA S05_sucio_el_control_no_ve_las_6_ciegas PASS ciegas=H2|C,H4b|B,H4|C,R12|A,R15|B,R16|A
+PRUEBA S06_global_una_linea_ilegible_sin_celda PASS fallos=[('ILEGIBLE', 'bloque_07.jsonl:441')]
+ESTADISTICA limpio exit=0 12.8 s agregado_sha256=bf8e90b867af195b7c276137f7afce5c257b8bb8dec80b73c69747aefea96219 
+ESTADISTICA limpio_bis exit=0 11.6 s agregado_sha256=bf8e90b867af195b7c276137f7afce5c257b8bb8dec80b73c69747aefea96219 
+ESTADISTICA sucio exit=1 10.6 s agregado_sha256=c050a9ebba767b488e7f18ecc38df994651a89579c2d2d208144ac8fea3eef1b 
+ESTADISTICA global exit=1 7.6 s agregado_sha256=b873a1cbc95d716e82c993ed0d6905888db2388b303ae61ca7c1b2a158cf81d3 
+PRUEBA S07_estadistica_limpio_exit_0_y_determinista PASS sha=bf8e90b867af195b7c276137f7afce5c257b8bb8dec80b73c69747aefea96219
+PRUEBA S08_sucio_invalida_las_13_celdas_y_ninguna_ciega PASS invalidas=A|R05,A|R07,A|R09,A|R11,A|R13,B|H3,B|R04,B|R06,B|R08,B|R10,B|R12,B|R14,C|H1
+PRUEBA S09_D4_celdas_sanas_con_intervalos_identicos_y_las_ciegas_contaminan PASS identicos=450 distintos_en_ciegas=2 distintos_indebidos=[]
+PRUEBA S10_global_invalida_las_44 PASS invalidas=44
+PRUEBA S11_trampa_del_bca_degenerado_tal_cual_010 PASS {"B|H3|c_Xconj": "DEGENERADO", "B|H3|r_Q1conj": "DEGENERADO", "B|R02|c_X": "DEGENERADO", "B|R02|r_Q1": "DEGENERADO", "P_T1_B": "SIN_DECIDIR", "T1 R02": "NO_PASA:SIN_DECIDIR", "T2 H3": "NO_PASA:SIN_DECIDIR"}
+PRUEBA S12_cada_rama_sembrada_aparece_en_el_agregado PASS 21/21 faltan=[]
+PRUEBA S13_registro_de_722_ids_igual_en_los_tres_escenarios PASS n=722 sha256=7c6dadc180b56d1d0c2be39782e948c3b7f73b994294412a345b8d011691c40a
+PRUEBA_SOBRE_SINTETICO 13/13 PASS (64.5 s)
