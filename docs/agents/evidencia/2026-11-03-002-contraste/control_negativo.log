@@ -1,0 +1,22 @@
+# Control negativo de guardas_a1_brain.py v2, brain-env, 2026-11-03.
+# Se copio el instrumento cambiando un solo valor esperado: el colateral de R03 que traia el diseno 009 (1944) en lugar del de 010 (452).
+$ diff guardas_a1_brain.py guardas_a1_brain_negativo.py
+35c35
+<  'R03': (40, (19, 452), (20, 617), (40, 410), (41, 575)),
+---
+>  'R03': (40, (19, 1944), (20, 617), (40, 410), (41, 575)),
+exit 1
+$ python3 guardas_a1_brain_negativo.py > guardas_a1_brain_negativo.log; echo $?
+1
+$ diff guardas_a1_brain.log guardas_a1_brain_negativo.log
+41c41
+< CHK R03 QCOL obtenido= (19, 452) esperado= (19, 452) OK
+---
+> CHK R03 QCOL obtenido= (19, 452) esperado= (19, 1944) DIFERENTE
+361c361
+< GUARDAS_A1_BRAIN 314 / 314 DIFERENTES [] segundos 49.8
+---
+> GUARDAS_A1_BRAIN 313 / 314 DIFERENTES ['R03 QCOL'] segundos 56.7
+exit 1
+# sha256 guardas_a1_brain_negativo.py 37d49c19b489e124f13aff9213b32f8e2819e09b1bbf014f5c8a686c22a4950a
+# sha256 guardas_a1_brain_negativo.log 043d0ec04272dc91d3d61a028bb87d61950ae6e2cd91a91eab18f37d7c6dc688

@@ -1,0 +1,9 @@
+ENTRADA results/reuso_cierre_2026-11-01/cierre.json @7f3cbc1b1ff2243149ba45d10c18abb4ce5311e4 371287 a5c689d4153a9f4fcfadc573cac58521f1ade330b82d1d122dfae6f15c41aceb OK
+flywire t1 n_nulos 200 media 0.496606 min 0.45883534136546184 max 0.5261044176706827 observado 0.8835341365461847 media_resumen_archivado 0.49660642570281127 igual_al_resumen True seccion15_dice 0.8026 seccion15_coincide False
+flywire t2 n_nulos 200 media 286.04 min 257.0 max 326.0 observado 698 media_resumen_archivado 286.04 igual_al_resumen True seccion15_dice 539.86 seccion15_coincide False
+flywire p_por_prueba [0.004975124378109453, 0.004975124378109453]
+banc t1 n_nulos 200 media 0.350106 min 0.3094289508632138 max 0.3798140770252324 observado 0.8260292164674635 media_resumen_archivado 0.3501062416998672 igual_al_resumen True seccion15_dice 0.7431 seccion15_coincide False
+banc t2 n_nulos 200 media 76.515 min 57.0 max 95.0 observado 419 media_resumen_archivado 76.515 igual_al_resumen True seccion15_dice 328.99 seccion15_coincide False
+banc p_por_prueba [0.004975124378109453, 0.004975124378109453]
+p [0.004975124378109453, 0.004975124378109453, 0.004975124378109453, 0.004975124378109453] holm [0.01990049751243781, 0.01990049751243781, 0.01990049751243781, 0.01990049751243781] H_REUSO_CIERRE SOSTENIDA
+EXIT 0
