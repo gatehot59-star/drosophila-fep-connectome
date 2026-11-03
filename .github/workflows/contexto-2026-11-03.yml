@@ -1,0 +1,49 @@
+name: contexto-2026-11-03
+
+# Flujo documental: aplica en main el parche anclado del CONTEXTO de la respuesta 2026-11-03-002.
+# Solo se dispara al empujar tools/contexto/CORRER-2026-11-03 en esta rama. El parche falla cerrado:
+# base distinta (2), ancla ausente o repetida (3) o resultado distinto (4) cortan antes de escribir.
+
+on:
+  push:
+    branches: [titan/contexto-2026-11-03]
+    paths: ['tools/contexto/CORRER-2026-11-03']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contexto-main
+  cancel-in-progress: false
+
+jobs:
+  parche:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          path: rama
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: principal
+      - name: Aplicar parche anclado y publicar en main
+        run: |
+          set -euo pipefail
+          BASE=$(awk '/^BASE /{print $2}' rama/tools/contexto/CORRER-2026-11-03)
+          RES=$(awk '/^RESULTADO /{print $2}' rama/tools/contexto/CORRER-2026-11-03)
+          test -n "$BASE"
+          test -n "$RES"
+          sha256sum rama/tools/contexto/parche_contexto_2026_11_03.py
+          cd principal
+          echo "MAIN_ANTES $(git rev-parse HEAD)"
+          python3 ../rama/tools/contexto/parche_contexto_2026_11_03.py docs/agents/CONTEXTO-drosophila-fep.md --base "$BASE" --resultado "$RES" --escribir
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/agents/CONTEXTO-drosophila-fep.md
+          test "$(git diff --cached --name-only)" = "docs/agents/CONTEXTO-drosophila-fep.md"
+          git commit -m "contexto(topo-inverso): absorbe 006 a 011, 2026-11-03-001 y las auditorias de Astra; guardas 009-A1 314/314, respuesta 2026-11-03-002"
+          git push origin HEAD:main
+          echo "MAIN_DESPUES $(git rev-parse HEAD)"
+          sha256sum docs/agents/CONTEXTO-drosophila-fep.md
