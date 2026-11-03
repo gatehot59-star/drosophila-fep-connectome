@@ -1,0 +1,361 @@
+HUELLA parquet efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347 OK
+HUELLA units fa92fcd493162db96b7d185af4231c701bb30ec6a413ab913b401829d3a1e2df OK
+HUELLA sello 210b581792d183517d1e4e7771b8435e4a6acb537bc1ad383e5725c500073e93 OK
+HUELLA evid010 d5d9b7bad373c13bc240581153fbef8820e2d5587979b263a7908e76daa4eeb8 OK
+FILAS 15091983 abs(w)==con True con>0 True
+PARES_UNICOS True
+NEURONAS 138639 D_elegibles 1291
+CHK R01 raiz_d obtenido= 720575940623276168 esperado= 720575940623276168 OK
+CHK R01 raiz_x obtenido= 720575940617444130 esperado= 720575940617444130 OK
+CHK R01 Q1_sello obtenido= (1, 235) esperado= (1, 235) OK
+CHK R01 Q2_sello obtenido= (551, 4841) esperado= (551, 4841) OK
+CHK R01 Q3_sello obtenido= (465, 2618) esperado= (465, 2618) OK
+CHK R01 Q4_sello obtenido= (650, 5164) esperado= (650, 5164) OK
+CHK R01 nDp obtenido= 137 esperado= 137 OK
+CHK R01 QCOL obtenido= (27, 935) esperado= (27, 935) OK
+CHK R01 Q1uQCOL obtenido= (28, 1170) esperado= (28, 1170) OK
+CHK R01 QXD obtenido= (137, 2672) esperado= (137, 2672) OK
+CHK R01 Q1uQXD obtenido= (138, 2907) esperado= (138, 2907) OK
+QWEAK R01 fila 60688 -> 30887 peso 4 tipo_origen DNp15
+DPRIME R01 n 137 sha256 5f7126bf39e07b5ecdcd5a3804901a27f99ef94de3e331a6667be28babb07615
+CHK R02 raiz_d obtenido= 720575940623556755 esperado= 720575940623556755 OK
+CHK R02 raiz_x obtenido= 720575940627068772 esperado= 720575940627068772 OK
+CHK R02 Q1_sello obtenido= (1, 180) esperado= (1, 180) OK
+CHK R02 Q2_sello obtenido= (601, 6492) esperado= (601, 6492) OK
+CHK R02 Q3_sello obtenido= (186, 1011) esperado= (186, 1011) OK
+CHK R02 Q4_sello obtenido= (672, 4497) esperado= (672, 4497) OK
+CHK R02 nDp obtenido= 25 esperado= 25 OK
+CHK R02 QCOL obtenido= (6, 135) esperado= (6, 135) OK
+CHK R02 Q1uQCOL obtenido= (7, 315) esperado= (7, 315) OK
+CHK R02 QXD obtenido= (25, 271) esperado= (25, 271) OK
+CHK R02 Q1uQXD obtenido= (26, 451) esperado= (26, 451) OK
+QWEAK R02 fila 11615 -> 80081 peso 5 tipo_origen DNge115
+DPRIME R02 n 25 sha256 4f98954f217e47a94b70eb3ba1aa9a9f566c6330c26e7daada7870476b268dab
+CHK R03 raiz_d obtenido= 720575940630085583 esperado= 720575940630085583 OK
+CHK R03 raiz_x obtenido= 720575940634790648 esperado= 720575940634790648 OK
+CHK R03 Q1_sello obtenido= (1, 165) esperado= (1, 165) OK
+CHK R03 Q2_sello obtenido= (701, 6472) esperado= (701, 6472) OK
+CHK R03 Q3_sello obtenido= (385, 4773) esperado= (385, 4773) OK
+CHK R03 Q4_sello obtenido= (440, 4195) esperado= (440, 4195) OK
+CHK R03 nDp obtenido= 40 esperado= 40 OK
+CHK R03 QCOL obtenido= (19, 452) esperado= (19, 452) OK
+CHK R03 Q1uQCOL obtenido= (20, 617) esperado= (20, 617) OK
+CHK R03 QXD obtenido= (40, 410) esperado= (40, 410) OK
+CHK R03 Q1uQXD obtenido= (41, 575) esperado= (41, 575) OK
+QWEAK R03 fila 100972 -> 116067 peso 3 tipo_origen DNae010
+DPRIME R03 n 40 sha256 1f7df930a6e5dcc8bb43a1f0bb4e06e19b1893335feeb5f1b428b74ff9991a61
+CHK R04 raiz_d obtenido= 720575940616604817 esperado= 720575940616604817 OK
+CHK R04 raiz_x obtenido= 720575940637635305 esperado= 720575940637635305 OK
+CHK R04 Q1_sello obtenido= (1, 155) esperado= (1, 155) OK
+CHK R04 Q2_sello obtenido= (267, 2259) esperado= (267, 2259) OK
+CHK R04 Q3_sello obtenido= (415, 3270) esperado= (415, 3270) OK
+CHK R04 Q4_sello obtenido= (298, 2769) esperado= (298, 2769) OK
+CHK R04 nDp obtenido= 75 esperado= 75 OK
+CHK R04 QCOL obtenido= (35, 566) esperado= (35, 566) OK
+CHK R04 Q1uQCOL obtenido= (36, 721) esperado= (36, 721) OK
+CHK R04 QXD obtenido= (75, 907) esperado= (75, 907) OK
+CHK R04 Q1uQXD obtenido= (76, 1062) esperado= (76, 1062) OK
+QWEAK R04 fila 8808 -> 122969 peso 5 tipo_origen MDN
+DPRIME R04 n 75 sha256 afad6776a917a934fc0bd96a3d6d6326e0ee80130647ac0bb229a54faff87fe6
+CHK R05 raiz_d obtenido= 720575940633095137 esperado= 720575940633095137 OK
+CHK R05 raiz_x obtenido= 720575940614087219 esperado= 720575940614087219 OK
+CHK R05 Q1_sello obtenido= (1, 154) esperado= (1, 154) OK
+CHK R05 Q2_sello obtenido= (550, 4917) esperado= (550, 4917) OK
+CHK R05 Q3_sello obtenido= (236, 2128) esperado= (236, 2128) OK
+CHK R05 Q4_sello obtenido= (403, 2476) esperado= (403, 2476) OK
+CHK R05 nDp obtenido= 63 esperado= 63 OK
+CHK R05 QCOL obtenido= (20, 237) esperado= (20, 237) OK
+CHK R05 Q1uQCOL obtenido= (21, 391) esperado= (21, 391) OK
+CHK R05 QXD obtenido= (63, 770) esperado= (63, 770) OK
+CHK R05 Q1uQXD obtenido= (64, 924) esperado= (64, 924) OK
+QWEAK R05 fila 58902 -> 19257 peso 5 tipo_origen DNpe020
+DPRIME R05 n 63 sha256 7ff129dc132900f6c655daf33f07461de24cd807ec5b866f146d136db10aa3ea
+CHK R06 raiz_d obtenido= 720575940623122125 esperado= 720575940623122125 OK
+CHK R06 raiz_x obtenido= 720575940604470240 esperado= 720575940604470240 OK
+CHK R06 Q1_sello obtenido= (1, 153) esperado= (1, 153) OK
+CHK R06 Q2_sello obtenido= (1184, 7413) esperado= (1184, 7413) OK
+CHK R06 Q3_sello obtenido= (364, 1692) esperado= (364, 1692) OK
+CHK R06 Q4_sello obtenido= (1196, 6951) esperado= (1196, 6951) OK
+CHK R06 nDp obtenido= 113 esperado= 113 OK
+CHK R06 QCOL obtenido= (11, 69) esperado= (11, 69) OK
+CHK R06 Q1uQCOL obtenido= (12, 222) esperado= (12, 222) OK
+CHK R06 QXD obtenido= (113, 1318) esperado= (113, 1318) OK
+CHK R06 Q1uQXD obtenido= (114, 1471) esperado= (114, 1471) OK
+QWEAK R06 fila 1101 -> 676 peso 5 tipo_origen DNge019
+DPRIME R06 n 113 sha256 d65392f748075d2a41b181e727bba2028d19cf1773a054274738a054128e0ae8
+CHK R07 raiz_d obtenido= 720575940640978048 esperado= 720575940640978048 OK
+CHK R07 raiz_x obtenido= 720575940614087219 esperado= 720575940614087219 OK
+CHK R07 Q1_sello obtenido= (1, 128) esperado= (1, 128) OK
+CHK R07 Q2_sello obtenido= (550, 4917) esperado= (550, 4917) OK
+CHK R07 Q3_sello obtenido= (472, 2753) esperado= (472, 2753) OK
+CHK R07 Q4_sello obtenido= (403, 2502) esperado= (403, 2502) OK
+CHK R07 nDp obtenido= 64 esperado= 64 OK
+CHK R07 QCOL obtenido= (19, 84) esperado= (19, 84) OK
+CHK R07 Q1uQCOL obtenido= (20, 212) esperado= (20, 212) OK
+CHK R07 QXD obtenido= (64, 775) esperado= (64, 775) OK
+CHK R07 Q1uQXD obtenido= (65, 903) esperado= (65, 903) OK
+QWEAK R07 fila 58902 -> 19257 peso 5 tipo_origen DNpe020
+DPRIME R07 n 64 sha256 0a43f61f32a648ad20ef7cd5ed7b1088f942ce5fac80b630f8197e7ce5a11266
+CHK R08 raiz_d obtenido= 720575940630085583 esperado= 720575940630085583 OK
+CHK R08 raiz_x obtenido= 720575940635202204 esperado= 720575940635202204 OK
+CHK R08 Q1_sello obtenido= (1, 126) esperado= (1, 126) OK
+CHK R08 Q2_sello obtenido= (1001, 8265) esperado= (1001, 8265) OK
+CHK R08 Q3_sello obtenido= (385, 4773) esperado= (385, 4773) OK
+CHK R08 Q4_sello obtenido= (1487, 11273) esperado= (1487, 11273) OK
+CHK R08 nDp obtenido= 70 esperado= 70 OK
+CHK R08 QCOL obtenido= (27, 1527) esperado= (27, 1527) OK
+CHK R08 Q1uQCOL obtenido= (28, 1653) esperado= (28, 1653) OK
+CHK R08 QXD obtenido= (70, 404) esperado= (70, 404) OK
+CHK R08 Q1uQXD obtenido= (71, 530) esperado= (71, 530) OK
+QWEAK R08 fila 11888 -> 117221 peso 5 tipo_origen DNge030
+DPRIME R08 n 70 sha256 2d3106c6d115aef252b62811cfa4a72636b9e5100487ea99596f9940dd3e92dc
+CHK R09 raiz_d obtenido= 720575940616604817 esperado= 720575940616604817 OK
+CHK R09 raiz_x obtenido= 720575940628154364 esperado= 720575940628154364 OK
+CHK R09 Q1_sello obtenido= (1, 120) esperado= (1, 120) OK
+CHK R09 Q2_sello obtenido= (1066, 9308) esperado= (1066, 9308) OK
+CHK R09 Q3_sello obtenido= (415, 3270) esperado= (415, 3270) OK
+CHK R09 Q4_sello obtenido= (918, 6813) esperado= (918, 6813) OK
+CHK R09 nDp obtenido= 56 esperado= 56 OK
+CHK R09 QCOL obtenido= (17, 307) esperado= (17, 307) OK
+CHK R09 Q1uQCOL obtenido= (18, 427) esperado= (18, 427) OK
+CHK R09 QXD obtenido= (56, 608) esperado= (56, 608) OK
+CHK R09 Q1uQXD obtenido= (57, 728) esperado= (57, 728) OK
+QWEAK R09 fila 100972 -> 86580 peso 5 tipo_origen DNae010
+DPRIME R09 n 56 sha256 8781a5bc5ff6be0d9118c7ee0e1c148959819517080d11905119b254fd678438
+CHK R10 raiz_d obtenido= 720575940620038779 esperado= 720575940620038779 OK
+CHK R10 raiz_x obtenido= 720575940618165393 esperado= 720575940618165393 OK
+CHK R10 Q1_sello obtenido= (1, 115) esperado= (1, 115) OK
+CHK R10 Q2_sello obtenido= (1616, 10297) esperado= (1616, 10297) OK
+CHK R10 Q3_sello obtenido= (423, 2136) esperado= (423, 2136) OK
+CHK R10 Q4_sello obtenido= (1228, 6487) esperado= (1228, 6487) OK
+CHK R10 nDp obtenido= 138 esperado= 138 OK
+CHK R10 QCOL obtenido= (11, 27) esperado= (11, 27) OK
+CHK R10 Q1uQCOL obtenido= (12, 142) esperado= (12, 142) OK
+CHK R10 QXD obtenido= (138, 1928) esperado= (138, 1928) OK
+CHK R10 Q1uQXD obtenido= (139, 2043) esperado= (139, 2043) OK
+QWEAK R10 fila 6344 -> 33912 peso 5 tipo_origen DNge133
+DPRIME R10 n 138 sha256 60aaa5802dfaa266a57f859dbbd5c3600a7edc25103eebd9f7763f2181179956
+CHK R11 raiz_d obtenido= 720575940640325429 esperado= 720575940640325429 OK
+CHK R11 raiz_x obtenido= 720575940620746478 esperado= 720575940620746478 OK
+CHK R11 Q1_sello obtenido= (1, 111) esperado= (1, 111) OK
+CHK R11 Q2_sello obtenido= (507, 3690) esperado= (507, 3690) OK
+CHK R11 Q3_sello obtenido= (328, 3436) esperado= (328, 3436) OK
+CHK R11 Q4_sello obtenido= (686, 7835) esperado= (686, 7835) OK
+CHK R11 nDp obtenido= 192 esperado= 192 OK
+CHK R11 QCOL obtenido= (41, 670) esperado= (41, 670) OK
+CHK R11 Q1uQCOL obtenido= (42, 781) esperado= (42, 781) OK
+CHK R11 QXD obtenido= (192, 2330) esperado= (192, 2330) OK
+CHK R11 Q1uQXD obtenido= (193, 2441) esperado= (193, 2441) OK
+QWEAK R11 fila 22374 -> 45293 peso 5 tipo_origen DNg58
+DPRIME R11 n 192 sha256 3b411d0f45cc171ee85e4afd81774a0ce35228eb79c4b39dc774fc951c24b32b
+CHK R12 raiz_d obtenido= 720575940615043222 esperado= 720575940615043222 OK
+CHK R12 raiz_x obtenido= 720575940627715870 esperado= 720575940627715870 OK
+CHK R12 Q1_sello obtenido= (1, 96) esperado= (1, 96) OK
+CHK R12 Q2_sello obtenido= (438, 3479) esperado= (438, 3479) OK
+CHK R12 Q3_sello obtenido= (313, 2380) esperado= (313, 2380) OK
+CHK R12 Q4_sello obtenido= (505, 5383) esperado= (505, 5383) OK
+CHK R12 nDp obtenido= 62 esperado= 62 OK
+CHK R12 QCOL obtenido= (28, 750) esperado= (28, 750) OK
+CHK R12 Q1uQCOL obtenido= (29, 846) esperado= (29, 846) OK
+CHK R12 QXD obtenido= (62, 655) esperado= (62, 655) OK
+CHK R12 Q1uQXD obtenido= (63, 751) esperado= (63, 751) OK
+QWEAK R12 fila 122882 -> 83980 peso 5 tipo_origen DNa13
+DPRIME R12 n 62 sha256 0167226ce8967065e304354023717ea5d44256cb0c4e76aa9807be2ffd6a5a15
+CHK R13 raiz_d obtenido= 720575940623122125 esperado= 720575940623122125 OK
+CHK R13 raiz_x obtenido= 720575940622998627 esperado= 720575940622998627 OK
+CHK R13 Q1_sello obtenido= (1, 93) esperado= (1, 93) OK
+CHK R13 Q2_sello obtenido= (1140, 5354) esperado= (1140, 5354) OK
+CHK R13 Q3_sello obtenido= (364, 1692) esperado= (364, 1692) OK
+CHK R13 Q4_sello obtenido= (1074, 5349) esperado= (1074, 5349) OK
+CHK R13 nDp obtenido= 113 esperado= 113 OK
+CHK R13 QCOL obtenido= (8, 10) esperado= (8, 10) OK
+CHK R13 Q1uQCOL obtenido= (9, 103) esperado= (9, 103) OK
+CHK R13 QXD obtenido= (113, 979) esperado= (113, 979) OK
+CHK R13 Q1uQXD obtenido= (114, 1072) esperado= (114, 1072) OK
+QWEAK R13 fila 49035 -> 58129 peso 4 tipo_origen DNpe025
+DPRIME R13 n 113 sha256 78b69833b6767f0a4cf4fe48f564ebb7a3678f606e259a648469ce0ee19f8a6d
+CHK R14 raiz_d obtenido= 720575940631483695 esperado= 720575940631483695 OK
+CHK R14 raiz_x obtenido= 720575940618165393 esperado= 720575940618165393 OK
+CHK R14 Q1_sello obtenido= (1, 91) esperado= (1, 91) OK
+CHK R14 Q2_sello obtenido= (1616, 10297) esperado= (1616, 10297) OK
+CHK R14 Q3_sello obtenido= (257, 2489) esperado= (257, 2489) OK
+CHK R14 Q4_sello obtenido= (1228, 6511) esperado= (1228, 6511) OK
+CHK R14 nDp obtenido= 139 esperado= 139 OK
+CHK R14 QCOL obtenido= (8, 70) esperado= (8, 70) OK
+CHK R14 Q1uQCOL obtenido= (9, 161) esperado= (9, 161) OK
+CHK R14 QXD obtenido= (139, 1963) esperado= (139, 1963) OK
+CHK R14 Q1uQXD obtenido= (140, 2054) esperado= (140, 2054) OK
+QWEAK R14 fila 6344 -> 33912 peso 5 tipo_origen DNge133
+DPRIME R14 n 139 sha256 706c23416fbc2fd48f028e03ac4a15f9a56f5d1d10fae49e1123ca8619e32205
+CHK R15 raiz_d obtenido= 720575940627845704 esperado= 720575940627845704 OK
+CHK R15 raiz_x obtenido= 720575940633308371 esperado= 720575940633308371 OK
+CHK R15 Q1_sello obtenido= (1, 88) esperado= (1, 88) OK
+CHK R15 Q2_sello obtenido= (439, 2780) esperado= (439, 2780) OK
+CHK R15 Q3_sello obtenido= (324, 1464) esperado= (324, 1464) OK
+CHK R15 Q4_sello obtenido= (576, 5739) esperado= (576, 5739) OK
+CHK R15 nDp obtenido= 173 esperado= 173 OK
+CHK R15 QCOL obtenido= (22, 118) esperado= (22, 118) OK
+CHK R15 Q1uQCOL obtenido= (23, 206) esperado= (23, 206) OK
+CHK R15 QXD obtenido= (173, 1818) esperado= (173, 1818) OK
+CHK R15 Q1uQXD obtenido= (174, 1906) esperado= (174, 1906) OK
+QWEAK R15 fila 64278 -> 112031 peso 5 tipo_origen DNg04
+DPRIME R15 n 173 sha256 36256ac2dd0b3260eb2b09f2454a91f92f7e5ae2f052afb13f0dd8d20a4ceaa5
+CHK R16 raiz_d obtenido= 720575940614403178 esperado= 720575940614403178 OK
+CHK R16 raiz_x obtenido= 720575940637635305 esperado= 720575940637635305 OK
+CHK R16 Q1_sello obtenido= (1, 88) esperado= (1, 88) OK
+CHK R16 Q2_sello obtenido= (267, 2259) esperado= (267, 2259) OK
+CHK R16 Q3_sello obtenido= (242, 1722) esperado= (242, 1722) OK
+CHK R16 Q4_sello obtenido= (298, 2836) esperado= (298, 2836) OK
+CHK R16 nDp obtenido= 75 esperado= 75 OK
+CHK R16 QCOL obtenido= (32, 734) esperado= (32, 734) OK
+CHK R16 Q1uQCOL obtenido= (33, 822) esperado= (33, 822) OK
+CHK R16 QXD obtenido= (75, 917) esperado= (75, 917) OK
+CHK R16 Q1uQXD obtenido= (76, 1005) esperado= (76, 1005) OK
+QWEAK R16 fila 8808 -> 122969 peso 5 tipo_origen MDN
+DPRIME R16 n 75 sha256 bd5eb75bc3a29afa93ae0f363dfe4460c6169f95fe125318c2cb95c5cddf379b
+CHK H1 nDp_conj obtenido= 137 esperado= 137 OK
+CHK H1 QCOL_conj obtenido= (29, 147) esperado= (29, 147) OK
+CHK H1 QXD_conj obtenido= (137, 1904) esperado= (137, 1904) OK
+DPRIME H1 n 137 sha256 2b647791f1309551938944818860b1224e8f4bc282872610431a2e424dc3be65 drivers [(41594, 'DNp47', 1), (104203, 'DNp101', 0), (19410, 'DNp104', 0)]
+CHK H1b nDp_conj obtenido= 113 esperado= 113 OK
+CHK H1b QCOL_conj obtenido= (12, 271) esperado= (12, 271) OK
+CHK H1b QXD_conj obtenido= (113, 979) esperado= (113, 979) OK
+DPRIME H1b n 113 sha256 78b69833b6767f0a4cf4fe48f564ebb7a3678f606e259a648469ce0ee19f8a6d drivers [(58878, 'DNp104', 1), (71368, 'DNp101', 1)]
+CHK H2 nDp_conj obtenido= 63 esperado= 63 OK
+CHK H2 QCOL_conj obtenido= (39, 321) esperado= (39, 321) OK
+CHK H2 QXD_conj obtenido= (63, 770) esperado= (63, 770) OK
+DPRIME H2 n 63 sha256 7ff129dc132900f6c655daf33f07461de24cd807ec5b866f146d136db10aa3ea drivers [(111205, 'DNp71', 1), (130297, 'DNg100', 0)]
+CHK H3 nDp_conj obtenido= 74 esperado= 74 OK
+CHK H3 QCOL_conj obtenido= (67, 1300) esperado= (67, 1300) OK
+CHK H3 QXD_conj obtenido= (74, 896) esperado= (74, 896) OK
+DPRIME H3 n 74 sha256 e423e1424008ee939ae78084f3907c69a751ed409ebd4c446837ee69591a5363 drivers [(27878, 'DNpe023', 0), (20277, 'DNae005', 1)]
+CHK H4 nDp_conj obtenido= 191 esperado= 191 OK
+CHK H4 QCOL_conj obtenido= (68, 750) esperado= (68, 750) OK
+CHK H4 QXD_conj obtenido= (191, 2329) esperado= (191, 2329) OK
+DPRIME H4 n 191 sha256 9fc354d7132f3b78339c69f983a1d4c2494b248137b3f475e51392c8175ae9d7 drivers [(129110, 'DNa06', 1), (53975, 'DNge148', 0)]
+CHK H4b nDp_conj obtenido= 172 esperado= 172 OK
+CHK H4b QCOL_conj obtenido= (53, 446) esperado= (53, 446) OK
+CHK H4b QXD_conj obtenido= (172, 1784) esperado= (172, 1784) OK
+DPRIME H4b n 172 sha256 eba946f4b6a05f3b20f70b92a95442dfbec5ee337ef76ba7032c6ada00dc5c5b drivers [(84751, 'DNge148', 1), (69226, 'DNa06', 0)]
+CHK ZA obtenido= (1, 388) esperado= (1, 388) OK
+CHK ZAuQ1_R01 obtenido= (2, 623) esperado= (2, 623) OK
+CHK Q6 obtenido= (1677, 18623) esperado= (1677, 18623) OK
+CHK Q6uQ1_R01 obtenido= (1678, 18858) esperado= (1678, 18858) OK
+CODIGO_LADO {'right': 1, 'left': 0}
+CHK POB LPLC1_right obtenido= 72 esperado= 72 OK
+CHK POB LTe65_left obtenido= 3 esperado= 3 OK
+CHK POB LPT04_HST_right obtenido= 1 esperado= 1 OK
+CHK POB LC9_right obtenido= 92 esperado= 92 OK
+CHK POB LTe49_right obtenido= 14 esperado= 14 OK
+CHK POB LPT52_right obtenido= [47682] esperado= [47682] OK
+CHK POB LTe42b_right obtenido= [71560] esperado= [71560] OK
+CHK POB Nod5_left obtenido= [113236] esperado= [113236] OK
+CHK POB LTe42c_right obtenido= [138092] esperado= [138092] OK
+CHK PRE_A driver 27878 obtenido= [61826, 70277] esperado= [61826, 70277] OK
+CHK PRE_A driver 130297 obtenido= [29603, 29939, 61559, 116669] esperado= [29603, 29939, 61559, 116669] OK
+CHK PRE_A driver 104203 obtenido= [23917, 48054, 52007, 84088, 113573, 118025] esperado= [23917, 48054, 52007, 84088, 113573, 118025] OK
+CHK R01 huella_Dp obtenido= (137, '68cd1363c7bc482f9a37814ba9f54ae4b4de880f771c687eef74231bd3e4e968') esperado= (137, '68cd1363c7bc482f9a37814ba9f54ae4b4de880f771c687eef74231bd3e4e968') OK
+CHK R01 QWEAK obtenido= (60688, 30887, 4) esperado= (60688, 30887, 4) OK
+CHK R01 huella_A obtenido= (72, '03524357de1bf5bc906b3713a0a02fc6defcc556e5a986f711d396eb186d0c0c') esperado= (72, '03524357de1bf5bc906b3713a0a02fc6defcc556e5a986f711d396eb186d0c0c') OK
+CHK R01 peso_A_a_driver obtenido= 904 esperado= 904 OK
+CHK R01 lado_driver obtenido= 1 esperado= 1 OK
+CHK R02 huella_Dp obtenido= (25, '5084be5e97ff5f7bc569fbe0f5f6f3150f29981ba836763a4e30f878af79a0ad') esperado= (25, '5084be5e97ff5f7bc569fbe0f5f6f3150f29981ba836763a4e30f878af79a0ad') OK
+CHK R02 QWEAK obtenido= (11615, 80081, 5) esperado= (11615, 80081, 5) OK
+CHK R02 huella_A obtenido= (3, '6f2c5e9f5e15b1ab2791b9974fcbcc7c7a008d640e8fa276920e3d92bb00ffa2') esperado= (3, '6f2c5e9f5e15b1ab2791b9974fcbcc7c7a008d640e8fa276920e3d92bb00ffa2') OK
+CHK R02 peso_A_a_driver obtenido= 136 esperado= 136 OK
+CHK R02 lado_driver obtenido= 0 esperado= 0 OK
+CHK R03 huella_Dp obtenido= (40, '555d5facaeb3864a2ff57ab00090d39e3593a66e6f21bb79a07d6fd386cb8272') esperado= (40, '555d5facaeb3864a2ff57ab00090d39e3593a66e6f21bb79a07d6fd386cb8272') OK
+CHK R03 QWEAK obtenido= (100972, 116067, 3) esperado= (100972, 116067, 3) OK
+CHK R03 huella_A obtenido= (1, '06cce63bdcb5bad17d274677bd9cea7b731ef51da79c673bd6b6b53769552a02') esperado= (1, '06cce63bdcb5bad17d274677bd9cea7b731ef51da79c673bd6b6b53769552a02') OK
+CHK R03 peso_A_a_driver obtenido= 21 esperado= 21 OK
+CHK R03 lado_driver obtenido= 1 esperado= 1 OK
+CHK R04 huella_Dp obtenido= (75, '4de8b4e7e5e28b8b2f1ae14338af147e07611118ae37b1a17464f5708c6906b8') esperado= (75, '4de8b4e7e5e28b8b2f1ae14338af147e07611118ae37b1a17464f5708c6906b8') OK
+CHK R04 QWEAK obtenido= (8808, 122969, 5) esperado= (8808, 122969, 5) OK
+CHK R04 huella_A obtenido= (2, 'c9f7a4cf02c7343c1aae7da6cce59df082de24fdd969bf34178f072a24619bbe') esperado= (2, 'c9f7a4cf02c7343c1aae7da6cce59df082de24fdd969bf34178f072a24619bbe') OK
+CHK R04 peso_A_a_driver obtenido= 210 esperado= 210 OK
+CHK R04 lado_driver obtenido= 0 esperado= 0 OK
+CHK R05 huella_Dp obtenido= (63, '61b7c8caf50fc7dcd55bf7ca4077882bfe6ac901854c20d40d7b127e31c41964') esperado= (63, '61b7c8caf50fc7dcd55bf7ca4077882bfe6ac901854c20d40d7b127e31c41964') OK
+CHK R05 QWEAK obtenido= (58902, 19257, 5) esperado= (58902, 19257, 5) OK
+CHK R05 huella_A obtenido= (92, 'ae761edb4333b84d33d5fdc00e28cbfdfaf86ebd874e32d421a1c6e3fac0b05b') esperado= (92, 'ae761edb4333b84d33d5fdc00e28cbfdfaf86ebd874e32d421a1c6e3fac0b05b') OK
+CHK R05 peso_A_a_driver obtenido= 231 esperado= 231 OK
+CHK R05 lado_driver obtenido= 1 esperado= 1 OK
+CHK R06 huella_Dp obtenido= (113, '107fa079707db4e0654563cc8e238ef011dd8acf258d0386d4015ea492f0d62a') esperado= (113, '107fa079707db4e0654563cc8e238ef011dd8acf258d0386d4015ea492f0d62a') OK
+CHK R06 QWEAK obtenido= (1101, 676, 5) esperado= (1101, 676, 5) OK
+CHK R06 huella_A obtenido= (14, 'fe42778351e3d5ab43bdedac844f238db93e8e1681c4bd7638bb4949739ae6b4') esperado= (14, 'fe42778351e3d5ab43bdedac844f238db93e8e1681c4bd7638bb4949739ae6b4') OK
+CHK R06 peso_A_a_driver obtenido= 47 esperado= 47 OK
+CHK R06 lado_driver obtenido= 1 esperado= 1 OK
+CHK R07 huella_Dp obtenido= (64, '3f8829c6fc937c16a067d6508b5660548de3565034747e17a1d97f0096412ea3') esperado= (64, '3f8829c6fc937c16a067d6508b5660548de3565034747e17a1d97f0096412ea3') OK
+CHK R07 QWEAK obtenido= (58902, 19257, 5) esperado= (58902, 19257, 5) OK
+CHK R07 huella_A obtenido= (4, 'b09def618b147c545a618733fa1d0416446188dd6d08f044fb8f5c0064c86a08') esperado= (4, 'b09def618b147c545a618733fa1d0416446188dd6d08f044fb8f5c0064c86a08') OK
+CHK R07 peso_A_a_driver obtenido= 677 esperado= 677 OK
+CHK R07 lado_driver obtenido= 0 esperado= 0 OK
+CHK R08 huella_Dp obtenido= (70, 'b45aace382bb690ac885f8d7df589b397020e853a21c21837a06755a4a36666a') esperado= (70, 'b45aace382bb690ac885f8d7df589b397020e853a21c21837a06755a4a36666a') OK
+CHK R08 QWEAK obtenido= (11888, 117221, 5) esperado= (11888, 117221, 5) OK
+CHK R08 huella_A obtenido= (1, '06cce63bdcb5bad17d274677bd9cea7b731ef51da79c673bd6b6b53769552a02') esperado= (1, '06cce63bdcb5bad17d274677bd9cea7b731ef51da79c673bd6b6b53769552a02') OK
+CHK R08 peso_A_a_driver obtenido= 21 esperado= 21 OK
+CHK R08 lado_driver obtenido= 1 esperado= 1 OK
+CHK R09 huella_Dp obtenido= (56, '43c26c92535cf309e573b3d0f1ba4f67e117f55b703119a8e013c28cd3bc6671') esperado= (56, '43c26c92535cf309e573b3d0f1ba4f67e117f55b703119a8e013c28cd3bc6671') OK
+CHK R09 QWEAK obtenido= (100972, 86580, 5) esperado= (100972, 86580, 5) OK
+CHK R09 huella_A obtenido= (2, 'c9f7a4cf02c7343c1aae7da6cce59df082de24fdd969bf34178f072a24619bbe') esperado= (2, 'c9f7a4cf02c7343c1aae7da6cce59df082de24fdd969bf34178f072a24619bbe') OK
+CHK R09 peso_A_a_driver obtenido= 210 esperado= 210 OK
+CHK R09 lado_driver obtenido= 0 esperado= 0 OK
+CHK R10 huella_Dp obtenido= (138, 'af33ddefd73cd137f5244d49a9269642905350c28314acaedaf19ed98e9345d9') esperado= (138, 'af33ddefd73cd137f5244d49a9269642905350c28314acaedaf19ed98e9345d9') OK
+CHK R10 QWEAK obtenido= (6344, 33912, 5) esperado= (6344, 33912, 5) OK
+CHK R10 huella_A obtenido= (1, 'f63cc1b36de59ceafaaa86bb14cfeed6257ea6e1148a4627dcefadc7bd8db58c') esperado= (1, 'f63cc1b36de59ceafaaa86bb14cfeed6257ea6e1148a4627dcefadc7bd8db58c') OK
+CHK R10 peso_A_a_driver obtenido= 62 esperado= 62 OK
+CHK R10 lado_driver obtenido= 1 esperado= 1 OK
+CHK R11 huella_Dp obtenido= (192, 'aba114ac45ef6db0d68a69be817e3cbed6d3462a740b83e815082539db6206c2') esperado= (192, 'aba114ac45ef6db0d68a69be817e3cbed6d3462a740b83e815082539db6206c2') OK
+CHK R11 QWEAK obtenido= (22374, 45293, 5) esperado= (22374, 45293, 5) OK
+CHK R11 huella_A obtenido= (1, '06cce63bdcb5bad17d274677bd9cea7b731ef51da79c673bd6b6b53769552a02') esperado= (1, '06cce63bdcb5bad17d274677bd9cea7b731ef51da79c673bd6b6b53769552a02') OK
+CHK R11 peso_A_a_driver obtenido= 31 esperado= 31 OK
+CHK R11 lado_driver obtenido= 1 esperado= 1 OK
+CHK R12 huella_Dp obtenido= (62, 'adca1a2d562adf06c2b3a1009f84d7f76bbf653e7801cf82dbf9835419d526a6') esperado= (62, 'adca1a2d562adf06c2b3a1009f84d7f76bbf653e7801cf82dbf9835419d526a6') OK
+CHK R12 QWEAK obtenido= (122882, 83980, 5) esperado= (122882, 83980, 5) OK
+CHK R12 huella_A obtenido= (1, 'ef604aec53a13ff0d1c11ef9cbb99cc82f2e13c8b05dda98440482bfa3791f19') esperado= (1, 'ef604aec53a13ff0d1c11ef9cbb99cc82f2e13c8b05dda98440482bfa3791f19') OK
+CHK R12 peso_A_a_driver obtenido= 55 esperado= 55 OK
+CHK R12 lado_driver obtenido= 1 esperado= 1 OK
+CHK R13 huella_Dp obtenido= (113, '4b4f1f038719c7e60a4a8e1fd57d116bcf97affeace4cb540f1fddfa8f6b7fdc') esperado= (113, '4b4f1f038719c7e60a4a8e1fd57d116bcf97affeace4cb540f1fddfa8f6b7fdc') OK
+CHK R13 QWEAK obtenido= (49035, 58129, 4) esperado= (49035, 58129, 4) OK
+CHK R13 huella_A obtenido= (14, 'fe42778351e3d5ab43bdedac844f238db93e8e1681c4bd7638bb4949739ae6b4') esperado= (14, 'fe42778351e3d5ab43bdedac844f238db93e8e1681c4bd7638bb4949739ae6b4') OK
+CHK R13 peso_A_a_driver obtenido= 47 esperado= 47 OK
+CHK R13 lado_driver obtenido= 1 esperado= 1 OK
+CHK R14 huella_Dp obtenido= (139, '28291d3b1731d56b413d284e238b668a5ff441624a632b69c8778dfb00cfdb57') esperado= (139, '28291d3b1731d56b413d284e238b668a5ff441624a632b69c8778dfb00cfdb57') OK
+CHK R14 QWEAK obtenido= (6344, 33912, 5) esperado= (6344, 33912, 5) OK
+CHK R14 huella_A obtenido= (6, 'aa1b42292a869e39c0501c7570df189903c2f8b94399f6ef292cbd6e2149911d') esperado= (6, 'aa1b42292a869e39c0501c7570df189903c2f8b94399f6ef292cbd6e2149911d') OK
+CHK R14 peso_A_a_driver obtenido= 256 esperado= 256 OK
+CHK R14 lado_driver obtenido= 0 esperado= 0 OK
+CHK R15 huella_Dp obtenido= (173, 'ec8b91de68b080176f9fe779e912188ad4dfada0c5b7d0a170022e268dde42b8') esperado= (173, 'ec8b91de68b080176f9fe779e912188ad4dfada0c5b7d0a170022e268dde42b8') OK
+CHK R15 QWEAK obtenido= (64278, 112031, 5) esperado= (64278, 112031, 5) OK
+CHK R15 huella_A obtenido= (1, '941b7738cc434f62d86f3250d53b1dc243bf42cfa77cc7bb31f7e4898683c05c') esperado= (1, '941b7738cc434f62d86f3250d53b1dc243bf42cfa77cc7bb31f7e4898683c05c') OK
+CHK R15 peso_A_a_driver obtenido= 20 esperado= 20 OK
+CHK R15 lado_driver obtenido= 1 esperado= 1 OK
+CHK R16 huella_Dp obtenido= (75, '3db9c96169f2140d4e7fa358d04c464ad65b099dfac167ee2ce37530b0baf0f5') esperado= (75, '3db9c96169f2140d4e7fa358d04c464ad65b099dfac167ee2ce37530b0baf0f5') OK
+CHK R16 QWEAK obtenido= (8808, 122969, 5) esperado= (8808, 122969, 5) OK
+CHK R16 huella_A obtenido= (1, '915522d2dfbbab8b9710db087ffbbcc7e126de41860bd154f69ed93fb725e39e') esperado= (1, '915522d2dfbbab8b9710db087ffbbcc7e126de41860bd154f69ed93fb725e39e') OK
+CHK R16 peso_A_a_driver obtenido= 212 esperado= 212 OK
+CHK R16 lado_driver obtenido= 1 esperado= 1 OK
+CHK H1 huella_Dp_conj obtenido= (137, 'c4cad1622d280dd273f801617adb9880023cc5a9a9e94a83c955337fd6bbe3a3') esperado= (137, 'c4cad1622d280dd273f801617adb9880023cc5a9a9e94a83c955337fd6bbe3a3') OK
+CHK H1 Q1conjuQCOL obtenido= [32, 425] esperado= [32, 425] OK
+CHK H1 Q1conjuQXD obtenido= [140, 2182] esperado= [140, 2182] OK
+CHK H1 QWEAK_conj obtenido= (6344, 33912, 5) esperado= (6344, 33912, 5) OK
+CHK H1b huella_Dp_conj obtenido= (113, '4b4f1f038719c7e60a4a8e1fd57d116bcf97affeace4cb540f1fddfa8f6b7fdc') esperado= (113, '4b4f1f038719c7e60a4a8e1fd57d116bcf97affeace4cb540f1fddfa8f6b7fdc') OK
+CHK H1b Q1conjuQCOL obtenido= [14, 451] esperado= [14, 451] OK
+CHK H1b Q1conjuQXD obtenido= [115, 1159] esperado= [115, 1159] OK
+CHK H1b QWEAK_conj obtenido= (49035, 58129, 4) esperado= (49035, 58129, 4) OK
+CHK H2 huella_Dp_conj obtenido= (63, '61b7c8caf50fc7dcd55bf7ca4077882bfe6ac901854c20d40d7b127e31c41964') esperado= (63, '61b7c8caf50fc7dcd55bf7ca4077882bfe6ac901854c20d40d7b127e31c41964') OK
+CHK H2 Q1conjuQCOL obtenido= [41, 603] esperado= [41, 603] OK
+CHK H2 Q1conjuQXD obtenido= [65, 1052] esperado= [65, 1052] OK
+CHK H2 QWEAK_conj obtenido= (58902, 19257, 5) esperado= (58902, 19257, 5) OK
+CHK H3 huella_Dp_conj obtenido= (74, '4bacdee60f08125df35be2159d903dde1ebe43b6950a61366a6d5bb011bcaa86') esperado= (74, '4bacdee60f08125df35be2159d903dde1ebe43b6950a61366a6d5bb011bcaa86') OK
+CHK H3 Q1conjuQCOL obtenido= [69, 1543] esperado= [69, 1543] OK
+CHK H3 Q1conjuQXD obtenido= [76, 1139] esperado= [76, 1139] OK
+CHK H3 QWEAK_conj obtenido= (8808, 122969, 5) esperado= (8808, 122969, 5) OK
+CHK H4 huella_Dp_conj obtenido= (191, 'c91a4e88d43bd21d4c1a78f0ef7ff25c18ab33f1f3708313e923f99d72578292') esperado= (191, 'c91a4e88d43bd21d4c1a78f0ef7ff25c18ab33f1f3708313e923f99d72578292') OK
+CHK H4 Q1conjuQCOL obtenido= [70, 948] esperado= [70, 948] OK
+CHK H4 Q1conjuQXD obtenido= [193, 2527] esperado= [193, 2527] OK
+CHK H4 QWEAK_conj obtenido= (22374, 45293, 5) esperado= (22374, 45293, 5) OK
+CHK H4b huella_Dp_conj obtenido= (172, '66080c0ac56573587a3b3a10322c383f00eb4794b2333ce4d297794602b27428') esperado= (172, '66080c0ac56573587a3b3a10322c383f00eb4794b2333ce4d297794602b27428') OK
+CHK H4b Q1conjuQCOL obtenido= [55, 611] esperado= [55, 611] OK
+CHK H4b Q1conjuQXD obtenido= [174, 1949] esperado= [174, 1949] OK
+CHK H4b QWEAK_conj obtenido= (64278, 112031, 5) esperado= (64278, 112031, 5) OK
+GUARDAS_A1_BRAIN 314 / 314 DIFERENTES [] segundos 49.8
