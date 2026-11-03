@@ -1,0 +1,13 @@
+CHEQUEO K1_sha256sums IGUAL archivos=444 distintos=[]
+CHEQUEO K2_bloques IGUAL bloques=20 con_problemas=[]
+MAQUINA AMD EPYC 7763 64-Core Processor | fma avx2 bloques=00,01,02,03,12,13,14,16,17
+MAQUINA AMD EPYC 9V45 96-Core Processor | fma avx2 avx512f bloques=05,06,07,10,11,15,18
+MAQUINA AMD EPYC 9V74 80-Core Processor | fma avx2 bloques=08
+MAQUINA AMD EPYC 9V74 80-Core Processor | fma avx2 avx512f bloques=09
+MAQUINA INTEL(R) XEON(R) PLATINUM 8573C | fma avx2 avx512f bloques=19
+MAQUINA Intel(R) Xeon(R) 6975P-C | fma avx2 avx512f bloques=04
+CHEQUEO K3_jsonl IGUAL archivos=20 lineas=8540 sha_como_anotados=True
+CHEQUEO K4_validacion_actions IGUAL estado=OK registros=8540 esperados=8540 fallos=0
+CHEQUEO K5_validacion_rehecha IGUAL manifiesto=267ca1d0820193ff estado=OK registros=8540 esperados=8540 fallos=0 por_codigo={}
+CHEQUEO K6_recibos IGUAL recibos=8540 commit=['e7490f59fee2f36c7a266a712415257f61361939'] manifiesto=['267ca1d0820193ff'] estados=['OK'] codeobj=['CythonCodeObject']
+RESULTADO 6/6 IGUAL
