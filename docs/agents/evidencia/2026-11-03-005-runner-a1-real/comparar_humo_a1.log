@@ -1,0 +1,17 @@
+CHEQUEO C6_sha256sums IGUAL archivos=39 distintos=[]
+CHEQUEO C1_manifiesto IGUAL actions=267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9/640908 brain_env=267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9/640908
+CHEQUEO C2_fixture_numpy_vs_cython IGUAL ensayos numpy=12 cython=12 distintos=[]
+CHEQUEO C3_recibos IGUAL n=10 estados=['OK'] codeobj=['CythonCodeObject'] manifiesto=['267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9'] commit=['dee4d670557b3c5e6c6a5b4ab7d2f352b2a07754']
+CHEQUEO C4_sham_y_q1 IGUAL R01|A|900 SHAM==C0 True; R01|B|900 SHAM==C0 True; R01|B|900 Q1!=C0 True x_C0=30 x_Q1=0; R01|B|901 SHAM==C0 True; R01|B|901 Q1!=C0 True x_C0=16 x_Q1=0
+CHEQUEO C5_entrada_pareada IGUAL H2|C|900 brazos=2 huellas_entrada=1; R01|A|900 brazos=2 huellas_entrada=1; R01|B|900 brazos=3 huellas_entrada=1; R01|B|901 brazos=3 huellas_entrada=1
+RECIBO H2__C__C_11__s900.json x=41 G=[0, 0] total=436 sim_s=2.198 seg=4.133 Dprime_n=63 eventos=50 mask_n=1110
+RECIBO H2__C__C_desplazado__s900.json x=43 G=[0, 0] total=428 sim_s=2.113 seg=3.971 Dprime_n=63 eventos=50 mask_n=1110
+RECIBO R01__A__C0__s900.json x=87 G=[95] total=33992 sim_s=4.399 seg=6.592 Dprime_n=137 eventos=10752 mask_n=0
+RECIBO R01__A__SHAM__s900.json x=87 G=[95] total=33992 sim_s=4.253 seg=6.422 Dprime_n=137 eventos=10752 mask_n=0
+RECIBO R01__B__C0__s900.json x=30 G=[54] total=5154 sim_s=3.69 seg=5.787 Dprime_n=137 eventos=3419 mask_n=0
+RECIBO R01__B__C0__s901.json x=16 G=[41] total=5804 sim_s=3.794 seg=5.788 Dprime_n=137 eventos=3438 mask_n=0
+RECIBO R01__B__Q1__s900.json x=0 G=[54] total=5274 sim_s=2.236 seg=4.789 Dprime_n=137 eventos=3419 mask_n=1
+RECIBO R01__B__Q1__s901.json x=0 G=[41] total=5837 sim_s=2.219 seg=4.419 Dprime_n=137 eventos=3438 mask_n=1
+RECIBO R01__B__SHAM__s900.json x=30 G=[54] total=5154 sim_s=4.219 seg=6.606 Dprime_n=137 eventos=3419 mask_n=0
+RECIBO R01__B__SHAM__s901.json x=16 G=[41] total=5804 sim_s=3.929 seg=6.578 Dprime_n=137 eventos=3438 mask_n=0
+RESULTADO 6/6 IGUAL
