@@ -1,0 +1,74 @@
+RATE 200 {'limit': 60, 'remaining': 24, 'reset': 1793722563, 'used': 36}
+RUNS 200
+RUN 41648392927 H4 integrated regression push 7966f71c441a055b990d02b748321e5a59500334 completed success created 2026-11-03T13:53:22Z started 2026-11-03T13:53:22Z updated 2026-11-03T13:53:33Z attempt 1
+RUN 41648392932 a1-prueba push 7966f71c441a055b990d02b748321e5a59500334 completed failure created 2026-11-03T13:53:22Z started 2026-11-03T13:53:22Z updated 2026-11-03T13:54:05Z attempt 1
+RUN 41648182953 a1-prueba push 7ffe6356bb0199f30d33522cf9c04c6ddac6e353 completed failure created 2026-11-03T13:52:00Z started 2026-11-03T13:52:00Z updated 2026-11-03T13:53:22Z attempt 1
+RUN 41648182882 H4 integrated regression push 7ffe6356bb0199f30d33522cf9c04c6ddac6e353 completed success created 2026-11-03T13:52:00Z started 2026-11-03T13:52:00Z updated 2026-11-03T13:52:08Z attempt 1
+RUN 41648167250 a1-prueba push 73cc060b05b7937b08fe14378002adb03b274f2a completed failure created 2026-11-03T13:51:54Z started 2026-11-03T13:51:54Z updated 2026-11-03T13:52:38Z attempt 1
+RUN 41648166945 H4 integrated regression push 73cc060b05b7937b08fe14378002adb03b274f2a completed success created 2026-11-03T13:51:54Z started 2026-11-03T13:51:54Z updated 2026-11-03T13:52:03Z attempt 1
+JOB 41648392927 125959721704 integrated-contracts completed success 2026-11-03T13:53:25Z 2026-11-03T13:53:33Z GitHub Actions 1000008461
+   STEP 1 'Set up job' completed success 2026-11-03T13:53:26Z 2026-11-03T13:53:26Z
+   STEP 2 'checkout' completed success 2026-11-03T13:53:26Z 2026-11-03T13:53:28Z
+   STEP 3 'alignment contracts' completed success 2026-11-03T13:53:28Z 2026-11-03T13:53:28Z
+   STEP 4 'loader contracts' completed success 2026-11-03T13:53:28Z 2026-11-03T13:53:28Z
+   STEP 5 'aligned feature contracts' completed success 2026-11-03T13:53:28Z 2026-11-03T13:53:28Z
+   STEP 6 'block-null contracts' completed success 2026-11-03T13:53:28Z 2026-11-03T13:53:28Z
+   STEP 7 'trial-generalization contracts' completed success 2026-11-03T13:53:28Z 2026-11-03T13:53:28Z
+   STEP 8 'temporal-half contracts' completed success 2026-11-03T13:53:28Z 2026-11-03T13:53:28Z
+   STEP 9 'roi-anatomy mapping contracts' completed success 2026-11-03T13:53:28Z 2026-11-03T13:53:28Z
+   STEP 18 'Post checkout' completed success 2026-11-03T13:53:28Z 2026-11-03T13:53:29Z
+   STEP 19 'Complete job' completed success 2026-11-03T13:53:29Z 2026-11-03T13:53:29Z
+JOB 41648392932 125959723707 a1 completed failure 2026-11-03T13:53:25Z 2026-11-03T13:54:04Z GitHub Actions 1000008462
+   STEP 1 'Set up job' completed success 2026-11-03T13:53:25Z 2026-11-03T13:53:26Z
+   STEP 2 'Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262' completed success 2026-11-03T13:53:26Z 2026-11-03T13:53:27Z
+   STEP 3 'Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' completed success 2026-11-03T13:53:27Z 2026-11-03T13:53:34Z
+   STEP 4 'fixtures' completed success 2026-11-03T13:53:34Z 2026-11-03T13:54:00Z
+   STEP 5 'manifest and smoke' completed failure 2026-11-03T13:54:00Z 2026-11-03T13:54:00Z
+   STEP 6 'conservar resultado' completed success 2026-11-03T13:54:00Z 2026-11-03T13:54:03Z
+   STEP 11 'Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' completed skipped 2026-11-03T13:54:03Z 2026-11-03T13:54:03Z
+   STEP 12 'Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262' completed success 2026-11-03T13:54:03Z 2026-11-03T13:54:03Z
+   STEP 13 'Complete job' completed success 2026-11-03T13:54:03Z 2026-11-03T13:54:03Z
+JOB 41648182953 125959324626 a1 completed failure 2026-11-03T13:52:40Z 2026-11-03T13:53:21Z GitHub Actions 1000008460
+   STEP 1 'Set up job' completed success 2026-11-03T13:52:41Z 2026-11-03T13:52:42Z
+   STEP 2 'Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262' completed success 2026-11-03T13:52:42Z 2026-11-03T13:52:43Z
+   STEP 3 'Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' completed success 2026-11-03T13:52:43Z 2026-11-03T13:52:51Z
+   STEP 4 'fixtures' completed success 2026-11-03T13:52:51Z 2026-11-03T13:53:17Z
+   STEP 5 'manifest and smoke' completed failure 2026-11-03T13:53:17Z 2026-11-03T13:53:17Z
+   STEP 6 'conservar resultado' completed failure 2026-11-03T13:53:17Z 2026-11-03T13:53:18Z
+   STEP 11 'Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' completed skipped 2026-11-03T13:53:18Z 2026-11-03T13:53:18Z
+   STEP 12 'Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262' completed success 2026-11-03T13:53:18Z 2026-11-03T13:53:18Z
+   STEP 13 'Complete job' completed success 2026-11-03T13:53:18Z 2026-11-03T13:53:18Z
+JOB 41648182882 125958988544 integrated-contracts completed success 2026-11-03T13:52:02Z 2026-11-03T13:52:08Z GitHub Actions 1000008459
+   STEP 1 'Set up job' completed success 2026-11-03T13:52:03Z 2026-11-03T13:52:03Z
+   STEP 2 'checkout' completed success 2026-11-03T13:52:03Z 2026-11-03T13:52:04Z
+   STEP 3 'alignment contracts' completed success 2026-11-03T13:52:04Z 2026-11-03T13:52:05Z
+   STEP 4 'loader contracts' completed success 2026-11-03T13:52:05Z 2026-11-03T13:52:05Z
+   STEP 5 'aligned feature contracts' completed success 2026-11-03T13:52:05Z 2026-11-03T13:52:05Z
+   STEP 6 'block-null contracts' completed success 2026-11-03T13:52:05Z 2026-11-03T13:52:05Z
+   STEP 7 'trial-generalization contracts' completed success 2026-11-03T13:52:05Z 2026-11-03T13:52:05Z
+   STEP 8 'temporal-half contracts' completed success 2026-11-03T13:52:05Z 2026-11-03T13:52:05Z
+   STEP 9 'roi-anatomy mapping contracts' completed success 2026-11-03T13:52:05Z 2026-11-03T13:52:05Z
+   STEP 18 'Post checkout' completed success 2026-11-03T13:52:05Z 2026-11-03T13:52:05Z
+   STEP 19 'Complete job' completed success 2026-11-03T13:52:05Z 2026-11-03T13:52:05Z
+JOB 41648167250 125958935392 a1 completed failure 2026-11-03T13:51:57Z 2026-11-03T13:52:38Z GitHub Actions 1000008458
+   STEP 1 'Set up job' completed success 2026-11-03T13:51:58Z 2026-11-03T13:51:58Z
+   STEP 2 'Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262' completed success 2026-11-03T13:51:58Z 2026-11-03T13:52:00Z
+   STEP 3 'Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' completed success 2026-11-03T13:52:00Z 2026-11-03T13:52:07Z
+   STEP 4 'fixtures' completed success 2026-11-03T13:52:07Z 2026-11-03T13:52:33Z
+   STEP 5 'manifest and smoke' completed failure 2026-11-03T13:52:33Z 2026-11-03T13:52:33Z
+   STEP 6 'conservar resultado' completed success 2026-11-03T13:52:33Z 2026-11-03T13:52:35Z
+   STEP 11 'Post Run actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065' completed skipped 2026-11-03T13:52:35Z 2026-11-03T13:52:35Z
+   STEP 12 'Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262' completed success 2026-11-03T13:52:35Z 2026-11-03T13:52:35Z
+   STEP 13 'Complete job' completed success 2026-11-03T13:52:35Z 2026-11-03T13:52:35Z
+JOB 41648166945 125958933652 integrated-contracts completed success 2026-11-03T13:51:56Z 2026-11-03T13:52:02Z GitHub Actions 1000008457
+   STEP 1 'Set up job' completed success 2026-11-03T13:51:57Z 2026-11-03T13:51:57Z
+   STEP 2 'checkout' completed success 2026-11-03T13:51:57Z 2026-11-03T13:51:58Z
+   STEP 3 'alignment contracts' completed success 2026-11-03T13:51:58Z 2026-11-03T13:51:58Z
+   STEP 4 'loader contracts' completed success 2026-11-03T13:51:58Z 2026-11-03T13:51:58Z
+   STEP 5 'aligned feature contracts' completed success 2026-11-03T13:51:58Z 2026-11-03T13:51:59Z
+   STEP 6 'block-null contracts' completed success 2026-11-03T13:51:59Z 2026-11-03T13:51:59Z
+   STEP 7 'trial-generalization contracts' completed success 2026-11-03T13:51:59Z 2026-11-03T13:51:59Z
+   STEP 8 'temporal-half contracts' completed success 2026-11-03T13:51:59Z 2026-11-03T13:51:59Z
+   STEP 9 'roi-anatomy mapping contracts' completed success 2026-11-03T13:51:59Z 2026-11-03T13:51:59Z
+   STEP 18 'Post checkout' completed success 2026-11-03T13:51:59Z 2026-11-03T13:51:59Z
+   STEP 19 'Complete job' completed success 2026-11-03T13:51:59Z 2026-11-03T13:51:59Z

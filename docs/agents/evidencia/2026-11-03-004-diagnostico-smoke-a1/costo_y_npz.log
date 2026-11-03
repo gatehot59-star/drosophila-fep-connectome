@@ -1,0 +1,15 @@
+FILAS 15091983 PRE_UNICOS 138005 POST_UNICOS 137090 carga_s 18.7
+SEG_POR_FLATNONZERO 0.02898 EXTRAPOLADO_bypre_min 66.7 EXTRAPOLADO_bypost_min 66.2 TOTAL_h 2.21
+ORDEN_CLAVES ['S', 'D', 'inh', 'excl', 'root', 'tipo', 'sl']
+SAVEZ_a 70ea7e61cf1732d84301c2ebec4093211035ba5119a5a67ad20ea41de0febf4f SAVEZ_b 70ea7e61cf1732d84301c2ebec4093211035ba5119a5a67ad20ea41de0febf4f COMPRIMIDO fa92fcd493162db96b7d185af4231c701bb30ec6a413ab913b401829d3a1e2df ORIGINAL fa92fcd493162db96b7d185af4231c701bb30ec6a413ab913b401829d3a1e2df 19827061 993755
+GREP runner_a1.py brian2= 0 create_model= 0 net.run= 0 59804= 1 aferente= 0 blanco= 0
+GREP manifiesto_a1.py brian2= 0 create_model= 0 net.run= 0 59804= 1 aferente= 0 blanco= 0
+GREP prueba_a1.py brian2= 0 create_model= 0 net.run= 0 59804= 1 aferente= 0 blanco= 0
+TAUTOLOGIA check('empty_mask',mask_hash([])==hashlib.sha256(np.array([],dtype='<i8').tobytes()).hexdigest())
+TAUTOLOGIA check('paired_input',np.array_equal(e,bernoulli_events(5428794271745577241,50)))
+LINEA tab=pq.read_table(parquet,columns=['Presynaptic_Index','Postsynaptic_Index','Connectivity','Excitatory x Connectivity']); pre=tab.column(0).to_numpy().astype(np.int64); post=tab.column(1).to_numpy().astype(np.int64); con=tab.column(2).to_numpy().astype(np.int6
+LINEA role='replay' if g.startswith('C_') else 'driver'; idx=19257 if g=='C_H2' else 59804; text,seed=seed_for(g,s,idx,role); ev=replay_ticks(seed) if role=='replay' else bernoulli_events(seed,50); events.append({'group':g,'s':s,'index':idx,'role':role,'seed_text':t
+LINEA ap=argparse.ArgumentParser(); ap.add_argument('--parquet',required=True); ap.add_argument('--units',required=True); ap.add_argument('--sello',required=True); ap.add_argument('--out',required=True); a=ap.parse_args(); m=load(a.sello,a.parquet,a.units); assert m
+SUDO_EN_WORKFLOW 0
+RECETA_VIEJA sudo mkdir -p /workspace/banc_888 /workspace/mecanismo-2026-11-02
+RECETA_VIEJA sudo chown -R "$USER" /workspace

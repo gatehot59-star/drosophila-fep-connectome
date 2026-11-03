@@ -1,0 +1,23 @@
+ANNOT run 41648167250 job 125958935392 http 200
+    warning |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ | linea 2
+    failure |  | Process completed with exit code 1. | linea 35
+ANNOT run 41648182953 job 125959324626 http 200
+    warning |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ | linea 2
+    failure |  | Process completed with exit code 1. | linea 44
+    failure |  | Process completed with exit code 1. | linea 35
+ANNOT run 41648392932 job 125959723707 http 200
+    warning |  | Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/ | linea 2
+    failure |  | Process completed with exit code 1. | linea 36
+LOG_JOB1 http 403 {"message":"Must have admin rights to Repository.","documentation_url":"https://docs.github.com/rest/actions/workflow-jobs#download-job-logs-for-a-wor
+RESULTADO_3ac80dd 200 b'run=41648392932 status=a1 sha=7966f71c441a055b990d02b748321e5a59500334\n'
+RESULTADO_92b4713 200 b'run=41648167250 status=a1 sha=73cc060b05b7937b08fe14378002adb03b274f2a\n'
+SHA 73cc060 tools/a1/comun_a1.py 1437 e914770ad71c0a0fe14880f16798cf57186c952aa91e32ab851110423364b0ab DISTINTO_DE_003
+SHA 73cc060 tools/a1/manifiesto_a1.py 4235 0f11d576bc582c389228ef95f6b90877742a40c14949f2a50c707304892810ef DISTINTO_DE_003
+SHA 73cc060 tools/a1/runner_a1.py 1567 b4c74b305e10511e3740fced4e96d4822f9f5e17abca3a4e992794820b4fdfc6 DISTINTO_DE_003
+SHA 73cc060 tools/a1/prueba_a1.py 867 d501045da455137fac96ce7bf2cb93fb3a34d44f690af8772e1327dde6fb2a45 DISTINTO_DE_003
+SHA 73cc060 .github/workflows/a1-prueba.yml 3553 f0b74ceecc337947f33e7b7af9e4f468dd2780629fe6047cf608b060f9907655 DISTINTO_DE_003
+SHA 7966f71 tools/a1/comun_a1.py 1437 e914770ad71c0a0fe14880f16798cf57186c952aa91e32ab851110423364b0ab DISTINTO_DE_003
+SHA 7966f71 tools/a1/manifiesto_a1.py 4235 0f11d576bc582c389228ef95f6b90877742a40c14949f2a50c707304892810ef DISTINTO_DE_003
+SHA 7966f71 tools/a1/runner_a1.py 1567 b4c74b305e10511e3740fced4e96d4822f9f5e17abca3a4e992794820b4fdfc6 DISTINTO_DE_003
+SHA 7966f71 tools/a1/prueba_a1.py 867 d501045da455137fac96ce7bf2cb93fb3a34d44f690af8772e1327dde6fb2a45 DISTINTO_DE_003
+SHA 7966f71 .github/workflows/a1-prueba.yml 3641 4b1a23f7c13103d2ff9cffa3720ea2a0a1f232375a9a860bec1210ebd52821ef DISTINTO_DE_003
