@@ -1,0 +1,30 @@
+== prueba_a1.py 2026-11-03-005 target=cython; manifiesto del fixture 94ccafee272ff2ff6b374b06a469e46e8e27416de7f19d0f78632da7d643184b, 19209 bytes ==
+PRUEBA T01_semilla_y_eventos PASS tres respuestas conocidas, 64 bits sin truncar, replay 50 unicos
+PRUEBA T02_colisiones PASS reales=0 claves=286; plantada=12
+PRUEBA T03_guardas_del_manifiesto PASS 26/26; con un esperado falso: ['F1 QCOL']
+PRUEBA T04_mascaras_exactas PASS D, A, QCOL, QXD, Q4, QWEAK, ZA y conjuntas por fila; QXD con signo invertido=[]
+PRUEBA T05_equivalencia_con_PoissonInput PASS espigas=1324 (fuentes 452, resto 872); identico=True; negativo distinto=True
+WARNING    'w' is an internal variable of group 'default_synapses', but also exists in the run namespace with the value 0.06875. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
+WARNING    'w' is an internal variable of group 'default_synapses', but also exists in the run namespace with the value 0.06875. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
+PRUEBA T06_entrada_en_turno_synapses PASS espigas=175; igual a v+=w en synapses=True; distinto en start=True
+ENSAYO F1|B|SHAM|900 estado=OK x=46 G=[61] total=175 sha=97b837fc8f9ddc6d seg=1.137 motivo=
+ENSAYO F1|B|C0|900 estado=OK x=46 G=[61] total=175 sha=97b837fc8f9ddc6d seg=1.716 motivo=
+ENSAYO F1|B|Q1|900 estado=OK x=0 G=[61] total=132 sha=51b13ee5f136d530 seg=1.724 motivo=
+ENSAYO F1|B|C0|901 estado=OK x=40 G=[48] total=175 sha=ffd6b5a45ef3b0c1 seg=1.477 motivo=
+ENSAYO F1|B|SHAM|901 estado=OK x=40 G=[48] total=175 sha=ffd6b5a45ef3b0c1 seg=1.368 motivo=
+ENSAYO F1|B|Q1|901 estado=OK x=0 G=[48] total=137 sha=cddc7c05fec1743e seg=1.421 motivo=
+ENSAYO F1|A|C0|900 estado=OK x=108 G=[128] total=1285 sha=ecfbfa62b42b54f6 seg=1.331 motivo=
+ENSAYO F1|A|ZA|900 estado=OK x=115 G=[133] total=1289 sha=4a103ceb4da7d100 seg=1.425 motivo=
+ENSAYO FH|B|C0|900 estado=OK x=75 G=[73, 43] total=254 sha=fde10909f2e51ddd seg=1.641 motivo=
+ENSAYO FH|B|Q1conj|900 estado=OK x=0 G=[78, 43] total=187 sha=90b63fb9e617e089 seg=1.668 motivo=
+ENSAYO FH|C|C_desplazado|900 estado=OK x=62 G=[34, 0] total=96 sha=bd034f81db490924 seg=7.441 motivo=
+ENSAYO FH|C|C_11|900 estado=OK x=45 G=[37, 0] total=82 sha=1c7bbb3a6b2538b5 seg=7.8 motivo=
+PRUEBA T07_runner_sobre_fixture PASS recibos=12 OK=True validacion=OK SHAM=C0=True Q1!=C0=True pareado=True banco=True x(C0,Q1)=46,0
+PRUEBA T08_replay_sin_duplicar PASS con supresion 100.000000 llegadas de 100 esperadas, d1 endogena=37; sin supresion 135.000000
+PRUEBA T09_recibos_corruptos PASS limpio=True; rechazados 9/9: [('root', True), ('indice', True), ('signo_invertido', True), ('entrada_desigual', True), ('faltante', True), ('duplicado', True), ('sham_distinto', True), ('estado', True), ('mascara_ajena', True)]
+ENSAYO F1|B|Q1|900 estado=INVALIDO_TECNICO x=None G=None total=None sha=None seg=0.175 motivo=mascara Q1 distinta del manifiesto
+ENSAYO F1|B|C0|900 estado=INVALIDO_TECNICO x=None G=None total=None sha=None seg=0.175 motivo=eventos distintos del manifiesto
+ABORTA: el manifiesto /workspace/a1/fx/manifiesto_fx.json tiene sha256 94ccafee272ff2ff6b374b06a469e46e8e27416de7f19d0f78632da7d643184b y se esperaba ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+PRUEBA T10_runner_rechaza_manifiesto_adulterado PASS motivos=['eventos distintos del manifiesto', 'mascara Q1 distinta del manifiesto']; sha ajeno rechazado=True
+PRUEBA T11_manifiesto_real PASS chequeos 308/308, sujetos=22, grupos=40, ensayos=8540, colisiones=0, claves=55396
+PRUEBA_A1 11/11 PASS

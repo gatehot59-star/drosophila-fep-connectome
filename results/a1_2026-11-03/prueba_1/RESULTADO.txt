@@ -1,0 +1,2 @@
+run=41679588168 dir=results/a1_2026-11-03/prueba_1 fuente=dee4d670557b3c5e6c6a5b4ab7d2f352b2a07754 job=success intento=success censo=success manifiesto=success fixtures=success humo=success validar=success
+UTC_END 2026-11-03T17:00:28+00:00
