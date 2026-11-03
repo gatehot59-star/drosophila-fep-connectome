@@ -284,3 +284,21 @@ W6pAXMI2BtWu7kTUSnpa4fYDMh2WOeW5ztuio4oCogfQ0xYsv+5ELcm0pL8hoKrekxtDBP2xrGZtORQN
 ```
 <!-- /EVIDENCE-PART-1 -->
 </details>
+
+## 15. Cierre de entrega verificado
+
+Este cierre se agrega sin modificar el cuerpo anterior ni ninguno de los dos bloques de evidencia. No añade experimentos ni amplía el alcance científico.
+
+- **Git:** informe recuperado desde `102ccd546ebb683820e191fbcb9fa777efdf1d66`, confirmado como main antes del cierre. Sus 45.608 bytes coincidieron exactamente con la captura local; SHA256 `d7fdb09927b245a3a94d14b3c96133fadcab10f27baa5aed3d9e5538d78ec4b6`. El bloque 2 recuperado también coincidió byte a byte.
+- **Reconstrucción remota:** se concatenaron los bloques leídos desde Git, se decodificaron Base64 y Brotli y se recuperaron los 802.987 bytes del JSON original sin diferencias. Se comprobaron **43/43 archivos incluidos** y **33/33 referencias inmutables**, obtenidas de 27 URLs únicas, contra sus tamaños, SHA256 y copias locales. Se conservan los intentos fallidos, no sólo los resultados favorables.
+- **Originales protegidos:** diseño 009, sello JSON, generador original y enmienda A1 coinciden con las cuatro huellas de §11. La comparación entre la base `871ebac94fe0b219d954f135625bbfba4c3cbdb8` y `102ccd546ebb683820e191fbcb9fa777efdf1d66` contiene únicamente los dos archivos nuevos de esta reauditoría. No se modificaron los papers ni sus resultados.
+- **Doc:** [2026-11-02 · Reauditoría de Papers 1-3 y Topo: H_LECTOR cotejado y ruta visual no-DN](https://app.clickup.com/90171457413/docs/2kza6fw5-26377), público para quienes acceden al Space validado. Se recuperó y leyó completo: diez secciones, tablas, límites y fuentes. Es la presentación legible del informe, no una réplica byte a byte del Markdown ni del apéndice Base64.
+- **Continuidad:** Nexus confirmó la inserción del reporte propio **149**, turno `2026-11-02-03-reauditoria-papers`, con sujeto, revisiones, instrumentos, resultados, archivos, Doc, pendientes y procesos terminados. El registro conserva el commit del cuerpo medido; la huella del cierre documental se incorpora allí después de su cotejo final.
+
+La verificación remota del paquete y los originales quedó registrada a `2026-11-03T02:49:13.144127+00:00` (2-nov, ART). El commit que incorpora este apéndice sólo cierra la entrega documental. Revisiones posteriores de los sujetos científicos no quedan cubiertas automáticamente.
+
+La primera preparación local de este cierre falló por exigir un doble LF final inexistente. No hubo escritura remota en ese intento. Se conservó el cuerpo exacto y se añadió únicamente el separador necesario antes de este apéndice.
+
+**Gate I: PASA**, acotado a los cinco instrumentos finales y sus controles. **Gate II: COMPLETADO**, con hallazgos, límites y falsos positivos propios declarados. **Gate III: COMPLETA**, para el informe, evidencia reconstruida, Doc leído y continuidad registrada. Esto no aprueba un runner, un merge, una corrida futura ni validación biológica.
+
+**N/A por alcance:** despliegue, merge, piloto y cambio de producto. **NO MEDIDO:** todo lo enumerado en §12 permanece abierto. No se lanzaron nuevas simulaciones neuronales ni entrenamientos para cerrar esta entrega.
