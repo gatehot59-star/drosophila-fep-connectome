@@ -1,0 +1,11 @@
+verificador_a1.py sha256 a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0
+ver/verificador_a1.json antes de K sha256 ad65761bb84ee6632d65f03de88b263a209da5a4242e1055d92bd2f4a8432334
+prod/agregado_a1.json sha256 7fcc6ddc27774fd5b1b702803de3dd3953c2b91b724294c04c9159442ceba02a
+comando /usr/local/bin/python3 /workspace/a1/v2/apertura/codigo/verificador_a1/verificador_a1.py --manifiesto /workspace/a1/v2/manifiesto_a1.json --sha-manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 --sobre /workspace/a1/v2/apertura/corrida_1 --salida /workspace/a1/v2/apertura/ver --fases ETK --agregado-productor /workspace/a1/v2/apertura/prod/agregado_a1.json --abrir-sobre
+ETK rc 0 3.8 s inicio 03:03:00Z
+ver/verificador_a1.json despues de K sha256 ad65761bb84ee6632d65f03de88b263a209da5a4242e1055d92bd2f4a8432334
+ver/cotejo_a1.json 1290 B sha256 584db4dd4eea62749ee7d3e489eaa073785fc9d72abbf4042527a0fbd7cc9c1d
+ver/registro_ids.txt 9063 B sha256 7c6dadc180b56d1d0c2be39782e948c3b7f73b994294412a345b8d011691c40a
+ver/verificacion_tecnica.json 1857 B sha256 548198678ec30f6a2060eed81f4498630bb20a0fc49f60be816cb92ee857d0c8
+ver/verificador_a1.json 283090 B sha256 ad65761bb84ee6632d65f03de88b263a209da5a4242e1055d92bd2f4a8432334
+FIN 2026-11-04T03:03:04Z

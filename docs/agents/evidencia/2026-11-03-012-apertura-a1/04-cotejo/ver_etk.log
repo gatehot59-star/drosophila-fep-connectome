@@ -1,0 +1,12 @@
+verificador_a1 2026-11-03-010 | python 3.12.14 | numpy 2.5.3 | scipy 1.18.1
+verificador_sha256 a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0
+E: OK | manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 | fallas 0
+E: conteo {'celdas': 44, 'condiciones': 427, 'ensayos': 8540, 'n_ensayos_plan': 8540} | registro 722 ids sha256 7c6dadc180b56d1d0c2be39782e948c3b7f73b994294412a345b8d011691c40a
+T: OK | lineas 8540 | fallas 0 (globales 0) | celdas invalidas 0 | entorno uniforme True
+T: por codigo {}
+verificacion_tecnica.json sha256 548198678ec30f6a2060eed81f4498630bb20a0fc49f60be816cb92ee857d0c8
+S: leido verificador_a1.json ya escrito, sha256 ad65761bb84ee6632d65f03de88b263a209da5a4242e1055d92bd2f4a8432334
+K: agregado del productor sha256 7fcc6ddc27774fd5b1b702803de3dd3953c2b91b724294c04c9159442ceba02a
+K: CONCORDANTE | sin clasificar 0 | K1 0 celdas | K2 espejo 0 diferencias | K3 propio 0 diferencias
+cotejo_a1.json sha256 584db4dd4eea62749ee7d3e489eaa073785fc9d72abbf4042527a0fbd7cc9c1d
+tiempo total 2.0 s

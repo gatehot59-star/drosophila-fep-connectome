@@ -1,0 +1,51 @@
+{
+ "K1_celdas_invalidas": {
+  "diferencias": [],
+  "productor": [],
+  "verificador": []
+ },
+ "K2_espejo": {
+  "diferencias": [],
+  "n_diferencias": 0,
+  "que_es": "fase S propia con las celdas invalidas del productor: aisla los motores"
+ },
+ "K3_propio": {
+  "diferencias": [],
+  "n_diferencias": 0,
+  "que_es": "fase S propia con la regla de invalidez propia",
+  "veredictos_productor": {
+   "F_C": {
+    "H1": "SIN_DECIDIR",
+    "H1b": "SIN_DECIDIR",
+    "H2": "SIN_DECIDIR",
+    "H3": "SIN_DECIDIR",
+    "H4": "SIN_DECIDIR",
+    "H4b": "SOSTENIDA"
+   },
+   "F_R01": "SOSTENIDA",
+   "P_T1_B": "NO_INFORMATIVO_EN_B",
+   "P_T2_B": "SIN_DECIDIR"
+  },
+  "veredictos_verificador": {
+   "F_C": {
+    "H1": "SIN_DECIDIR",
+    "H1b": "SIN_DECIDIR",
+    "H2": "SIN_DECIDIR",
+    "H3": "SIN_DECIDIR",
+    "H4": "SIN_DECIDIR",
+    "H4b": "SOSTENIDA"
+   },
+   "F_R01": "SOSTENIDA",
+   "P_T1_B": "NO_INFORMATIVO_EN_B",
+   "P_T2_B": "SIN_DECIDIR"
+  }
+ },
+ "agregado_productor_sha256": "7fcc6ddc27774fd5b1b702803de3dd3953c2b91b724294c04c9159442ceba02a",
+ "resultado": "CONCORDANTE",
+ "sin_clasificar": 0,
+ "tolerancias": {
+  "intervalos": "abs <= 1e-9 * max(1, |productor|)",
+  "pruebas": "abs <= 1e-12"
+ },
+ "verificador_a1_sha256": "ad65761bb84ee6632d65f03de88b263a209da5a4242e1055d92bd2f4a8432334"
+}
