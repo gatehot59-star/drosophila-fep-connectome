@@ -1,0 +1,298 @@
+{
+ "chequeos": [
+  {
+   "chequeo": "limpio: huellas del anexo C",
+   "detalle": "SHA256SUMS 1210454551352718 IGUAL | agregado bf8e90b867af195b IGUAL",
+   "ok": true
+  },
+  {
+   "chequeo": "limpio: 0 fallas tecnicas",
+   "detalle": "fallas 0",
+   "ok": true
+  },
+  {
+   "chequeo": "limpio: cotejo CONCORDANTE sin diferencias",
+   "detalle": "CONCORDANTE | K1 0 | K2 0",
+   "ok": true
+  },
+  {
+   "chequeo": "limpio: fase S identica en dos corridas",
+   "detalle": "b6561ada6611f414 / b6561ada6611f414",
+   "ok": true
+  },
+  {
+   "chequeo": "sucio: huellas del anexo C",
+   "detalle": "SHA256SUMS 4546466dd7b1d742 IGUAL | agregado c050a9ebba767b48 IGUAL",
+   "ok": true
+  },
+  {
+   "chequeo": "sucio: las 19 corrupciones vistas",
+   "detalle": "faltan []",
+   "ok": true
+  },
+  {
+   "chequeo": "sucio: ninguna celda invalidada de mas",
+   "detalle": "sobran []",
+   "ok": true
+  },
+  {
+   "chequeo": "sucio: las 6 ciegas como HUECO_DEL_CONTROL",
+   "detalle": "K1 ['A|R12', 'A|R16', 'B|H4b', 'B|R15', 'C|H2', 'C|H4']",
+   "ok": true
+  },
+  {
+   "chequeo": "sucio: espejo sin diferencias y cotejo CONCORDANTE",
+   "detalle": "CONCORDANTE | K2 0 | K3 167 derivadas de invalidas",
+   "ok": true
+  },
+  {
+   "chequeo": "global: huellas del anexo C",
+   "detalle": "SHA256SUMS 76c6a87a237241f2 IGUAL | agregado b873a1cbc95d716e IGUAL",
+   "ok": true
+  },
+  {
+   "chequeo": "global: falla sin celda que invalida las 44",
+   "detalle": "[('ILEGIBLE', 'bloque_07.jsonl:441')] | invalidas 44",
+   "ok": true
+  },
+  {
+   "chequeo": "global: cotejo CONCORDANTE",
+   "detalle": "CONCORDANTE | K1 0 | K2 0",
+   "ok": true
+  }
+ ],
+ "escenarios": {
+  "global": {
+   "K1": [],
+   "K2": 0,
+   "K3": 0,
+   "celdas_invalidas": [
+    "A|R01",
+    "A|R02",
+    "A|R03",
+    "A|R04",
+    "A|R05",
+    "A|R06",
+    "A|R07",
+    "A|R08",
+    "A|R09",
+    "A|R10",
+    "A|R11",
+    "A|R12",
+    "A|R13",
+    "A|R14",
+    "A|R15",
+    "A|R16",
+    "B|H1",
+    "B|H1b",
+    "B|H2",
+    "B|H3",
+    "B|H4",
+    "B|H4b",
+    "B|R01",
+    "B|R02",
+    "B|R03",
+    "B|R04",
+    "B|R05",
+    "B|R06",
+    "B|R07",
+    "B|R08",
+    "B|R09",
+    "B|R10",
+    "B|R11",
+    "B|R12",
+    "B|R13",
+    "B|R14",
+    "B|R15",
+    "B|R16",
+    "C|H1",
+    "C|H1b",
+    "C|H2",
+    "C|H3",
+    "C|H4",
+    "C|H4b"
+   ],
+   "exit": 1,
+   "fallas_T": 1,
+   "por_codigo": {
+    "ILEGIBLE": 1
+   },
+   "resultado_K": "CONCORDANTE",
+   "segundos": 8.1,
+   "sha_cotejo_a1": "710de1338e722ced0c5095aeaba33d79fca5d2bc2609dc345dadaafb51b9ae88",
+   "sha_verificador_a1": "5a6fe4bc6d61c967235b771dcc1dd5615fb4be7d0bcaa51662b8895207dd0b95",
+   "sin_clasificar": 0,
+   "veredictos_productor": {
+    "F_C": {
+     "H1": "INVALIDO_TECNICO",
+     "H1b": "INVALIDO_TECNICO",
+     "H2": "INVALIDO_TECNICO",
+     "H3": "INVALIDO_TECNICO",
+     "H4": "INVALIDO_TECNICO",
+     "H4b": "INVALIDO_TECNICO"
+    },
+    "F_R01": "INVALIDO_TECNICO",
+    "P_T1_B": "INVALIDO_TECNICO",
+    "P_T2_B": "INVALIDO_TECNICO"
+   },
+   "veredictos_verificador": {
+    "F_C": {
+     "H1": "INVALIDO_TECNICO",
+     "H1b": "INVALIDO_TECNICO",
+     "H2": "INVALIDO_TECNICO",
+     "H3": "INVALIDO_TECNICO",
+     "H4": "INVALIDO_TECNICO",
+     "H4b": "INVALIDO_TECNICO"
+    },
+    "F_R01": "INVALIDO_TECNICO",
+    "P_T1_B": "INVALIDO_TECNICO",
+    "P_T2_B": "INVALIDO_TECNICO"
+   }
+  },
+  "limpio": {
+   "K1": [],
+   "K2": 0,
+   "K3": 0,
+   "celdas_invalidas": [],
+   "exit": 0,
+   "fallas_T": 0,
+   "por_codigo": {},
+   "resultado_K": "CONCORDANTE",
+   "segundos": 29.2,
+   "sha_cotejo_a1": "91bbaeacd012a47568b302a5eb2243f0e468a38aaaff70c899ffab93f37b261f",
+   "sha_verificador_a1": "b6561ada6611f4144c6896c7710e83e019125cd56444884aed5a4aced8120484",
+   "sin_clasificar": 0,
+   "veredictos_productor": {
+    "F_C": {
+     "H1": "SOSTENIDA",
+     "H1b": "SOSTENIDA",
+     "H2": "SOSTENIDA",
+     "H3": "SOSTENIDA",
+     "H4": "SIN_DECIDIR",
+     "H4b": "SOSTENIDA"
+    },
+    "F_R01": "SOSTENIDA",
+    "P_T1_B": "SIN_DECIDIR",
+    "P_T2_B": "SOSTENIDA"
+   },
+   "veredictos_verificador": {
+    "F_C": {
+     "H1": "SOSTENIDA",
+     "H1b": "SOSTENIDA",
+     "H2": "SOSTENIDA",
+     "H3": "SOSTENIDA",
+     "H4": "SIN_DECIDIR",
+     "H4b": "SOSTENIDA"
+    },
+    "F_R01": "SOSTENIDA",
+    "P_T1_B": "SIN_DECIDIR",
+    "P_T2_B": "SOSTENIDA"
+   }
+  },
+  "sucio": {
+   "K1": [
+    [
+     "A|R12",
+     "HUECO_DEL_CONTROL"
+    ],
+    [
+     "A|R16",
+     "HUECO_DEL_CONTROL"
+    ],
+    [
+     "B|H4b",
+     "HUECO_DEL_CONTROL"
+    ],
+    [
+     "B|R15",
+     "HUECO_DEL_CONTROL"
+    ],
+    [
+     "C|H2",
+     "HUECO_DEL_CONTROL"
+    ],
+    [
+     "C|H4",
+     "HUECO_DEL_CONTROL"
+    ]
+   ],
+   "K2": 0,
+   "K3": 167,
+   "celdas_invalidas": [
+    "A|R05",
+    "A|R07",
+    "A|R09",
+    "A|R11",
+    "A|R12",
+    "A|R13",
+    "A|R16",
+    "B|H3",
+    "B|H4b",
+    "B|R04",
+    "B|R06",
+    "B|R08",
+    "B|R10",
+    "B|R12",
+    "B|R14",
+    "B|R15",
+    "C|H1",
+    "C|H2",
+    "C|H4"
+   ],
+   "exit": 1,
+   "fallas_T": 22,
+   "por_codigo": {
+    "CHEQUEO_INTERNO": 1,
+    "COHERENCIA": 5,
+    "DPRIME": 1,
+    "DUPLICADO": 1,
+    "ENTRADAS": 1,
+    "ENTRADA_DESIGUAL": 1,
+    "ESTADO_TECNICO": 1,
+    "EVENTOS": 1,
+    "FALTANTE": 1,
+    "FUERA_DEL_PLAN": 1,
+    "IDENTIDAD": 1,
+    "LECTURA": 1,
+    "MANIFIESTO": 1,
+    "MASCARA": 1,
+    "MIRAR": 1,
+    "PROTOCOLO": 1,
+    "RUNNER_VERSION": 1,
+    "SHAM_DISTINTO_DE_C0": 1
+   },
+   "resultado_K": "CONCORDANTE",
+   "segundos": 35.2,
+   "sha_cotejo_a1": "88e8d3a718c561bc9071dd07669026dd07acbb0b351a6ed60bb3765e6f80bf1f",
+   "sha_verificador_a1": "83abee6f4b508b7a8d118de0066cad7982c05fd1b44018bb55a613cd0f494140",
+   "sin_clasificar": 0,
+   "veredictos_productor": {
+    "F_C": {
+     "H1": "INVALIDO_TECNICO",
+     "H1b": "SOSTENIDA",
+     "H2": "SOSTENIDA",
+     "H3": "SOSTENIDA",
+     "H4": "SIN_DECIDIR",
+     "H4b": "SOSTENIDA"
+    },
+    "F_R01": "SOSTENIDA",
+    "P_T1_B": "SIN_DECIDIR",
+    "P_T2_B": "SOSTENIDA"
+   },
+   "veredictos_verificador": {
+    "F_C": {
+     "H1": "INVALIDO_TECNICO",
+     "H1b": "SOSTENIDA",
+     "H2": "INVALIDO_TECNICO",
+     "H3": "SOSTENIDA",
+     "H4": "INVALIDO_TECNICO",
+     "H4b": "SOSTENIDA"
+    },
+    "F_R01": "SOSTENIDA",
+    "P_T1_B": "SIN_DECIDIR",
+    "P_T2_B": "INVALIDO_TECNICO"
+   }
+  }
+ },
+ "verificador_sha256": "a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0"
+}

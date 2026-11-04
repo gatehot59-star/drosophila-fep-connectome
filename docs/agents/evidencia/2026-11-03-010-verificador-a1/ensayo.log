@@ -1,0 +1,15 @@
+verificador codigo/tools/verificador_a1/verificador_a1.py sha256 a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0
+PASS limpio: huellas del anexo C | SHA256SUMS 1210454551352718 IGUAL | agregado bf8e90b867af195b IGUAL
+PASS limpio: 0 fallas tecnicas | fallas 0
+PASS limpio: cotejo CONCORDANTE sin diferencias | CONCORDANTE | K1 0 | K2 0
+PASS limpio: fase S identica en dos corridas | b6561ada6611f414 / b6561ada6611f414
+PASS sucio: huellas del anexo C | SHA256SUMS 4546466dd7b1d742 IGUAL | agregado c050a9ebba767b48 IGUAL
+PASS sucio: las 19 corrupciones vistas | faltan []
+PASS sucio: ninguna celda invalidada de mas | sobran []
+PASS sucio: las 6 ciegas como HUECO_DEL_CONTROL | K1 ['A|R12', 'A|R16', 'B|H4b', 'B|R15', 'C|H2', 'C|H4']
+PASS sucio: espejo sin diferencias y cotejo CONCORDANTE | CONCORDANTE | K2 0 | K3 167 derivadas de invalidas
+PASS global: huellas del anexo C | SHA256SUMS 76c6a87a237241f2 IGUAL | agregado b873a1cbc95d716e IGUAL
+PASS global: falla sin celda que invalida las 44 | [('ILEGIBLE', 'bloque_07.jsonl:441')] | invalidas 44
+PASS global: cotejo CONCORDANTE | CONCORDANTE | K1 0 | K2 0
+RESUMEN 12/12 PASS
+exit 0

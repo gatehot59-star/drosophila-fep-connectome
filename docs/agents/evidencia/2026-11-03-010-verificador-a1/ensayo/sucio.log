@@ -1,0 +1,47 @@
+$ /usr/local/bin/python3 codigo/tools/verificador_a1/verificador_a1.py --manifiesto /workspace/a1/v2/manifiesto_a1.json --sha-manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 --sobre /workspace/a1/v2/evid9/ensayo/sobre_sucio --agregado-productor /workspace/a1/v2/evid9/ensayo/est_sucio/agregado_a1.json --salida ensayo/sucio
+verificador_a1 2026-11-03-010 | python 3.12.14 | numpy 2.5.3 | scipy 1.18.1
+verificador_sha256 a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0
+E: OK | manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 | fallas 0
+E: conteo {'celdas': 44, 'condiciones': 427, 'ensayos': 8540, 'n_ensayos_plan': 8540} | registro 722 ids sha256 7c6dadc180b56d1d0c2be39782e948c3b7f73b994294412a345b8d011691c40a
+T: FALLAS | lineas 8541 | fallas 22 (globales 0) | celdas invalidas 19 | entorno uniforme False
+T: por codigo {"CHEQUEO_INTERNO": 1, "COHERENCIA": 5, "DPRIME": 1, "DUPLICADO": 1, "ENTRADAS": 1, "ENTRADA_DESIGUAL": 1, "ESTADO_TECNICO": 1, "EVENTOS": 1, "FALTANTE": 1, "FUERA_DEL_PLAN": 1, "IDENTIDAD": 1, "LECTURA": 1, "MANIFIESTO": 1, "MASCARA": 1, "MIRAR": 1, "PROTOCOLO": 1, "RUNNER_VERSION": 1, "SHAM_DISTINTO_DE_C0": 1}
+T FALLA FUERA_DEL_PLAN | R14|B|C0|900 | B|R14 | bloque_08.jsonl:242 | condicion o semilla fuera
+T FALLA DUPLICADO | R05|A|Q2|3 | A|R05 | bloque_08.jsonl:94,bloque_08.jsonl:95 | 
+T FALLA FALTANTE | R04|B|QXD|7 | B|R04 | None | 
+T FALLA DPRIME | H1|C|C_101|4 | C|H1 | bloque_13.jsonl:115 | 
+T FALLA ENTRADAS | H2|C|C_11|13 | C|H2 | bloque_15.jsonl:186 | input_hashes distinto de manifiesto.entradas
+T FALLA ESTADO_TECNICO | H3|B|Q2|12 | B|H3 | bloque_17.jsonl:85 | estado o exit no son OK y 0
+T FALLA MIRAR | H3|B|Q2|12 | B|H3 | bloque_17.jsonl:85 | 
+T FALLA LECTURA | H3|B|Q2|12 | B|H3 | bloque_17.jsonl:85 | cuentas ausentes o de tipo invalido
+T FALLA COHERENCIA | H4|C|C_10|17 | C|H4 | bloque_17.jsonl:170 | cuentas_G distinto de cuentas_mirar[pos(G)]
+T FALLA EVENTOS | R07|A|Q3|5 | A|R07 | bloque_12.jsonl:116 | 
+T FALLA MASCARA | R08|B|QCOL|0 | B|R08 | bloque_15.jsonl:361 | 
+T FALLA IDENTIDAD | R09|A|C0|2 | A|R09 | bloque_16.jsonl:233 | 
+T FALLA PROTOCOLO | R10|B|Q4|9 | B|R10 | bloque_19.jsonl:260 | 
+T FALLA MANIFIESTO | R11|A|QWEAK|15 | A|R11 | bloque_01.jsonl:388 | 
+T FALLA COHERENCIA | R12|A|Q4|14 | A|R12 | bloque_03.jsonl:347 | la suma de cuentas_mirar supera espigas_total
+T FALLA CHEQUEO_INTERNO | R12|B|Q3|19 | B|R12 | bloque_04.jsonl:332 | algun chequeo falta o no es true
+T FALLA COHERENCIA | R13|A|Q1|8 | A|R13 | bloque_05.jsonl:299 | len(cuentas_mirar) distinto de len(mirar)
+T FALLA COHERENCIA | R15|B|Q1|6 | B|R15 | bloque_10.jsonl:297 | cuenta_x distinto de cuentas_mirar[pos(x)]
+T FALLA COHERENCIA | R16|A|Q4|10 | A|R16 | bloque_11.jsonl:343 | hay una cuenta no entera o negativa
+T FALLA ENTRADA_DESIGUAL | R07|A|*|5 | A|R07 | None | input_events_hash distinto entre condiciones
+T FALLA SHAM_DISTINTO_DE_C0 | R06|B|SHAM|11 | B|R06 | None | 
+T FALLA RUNNER_VERSION | H4b|B|C0|1 | B|H4b | bloque_19.jsonl:2 | runner_version distinto del mayoritario
+verificacion_tecnica.json sha256 ee7781a08fef24e43dbf656b88a76077a17a7d66ea78b0c24ffa4e7933b8a577
+S: 15.1 s | invalidas 19 | no calculables 0 | motores {"degenerados": 25, "scipy_llamadas": 390}
+verificador_a1.json sha256 83abee6f4b508b7a8d118de0066cad7982c05fd1b44018bb55a613cd0f494140
+S (sintetico): veredictos {"F_C": {"H1": "INVALIDO_TECNICO", "H1b": "SOSTENIDA", "H2": "INVALIDO_TECNICO", "H3": "SOSTENIDA", "H4": "INVALIDO_TECNICO", "H4b": "SOSTENIDA"}, "F_R01": "SOSTENIDA", "P_T1_B": "SIN_DECIDIR", "P_T2_B": "INVALIDO_TECNICO"}
+K: agregado del productor sha256 c050a9ebba767b488e7f18ecc38df994651a89579c2d2d208144ac8fea3eef1b
+S espejo: 15.1 s | verificador_a1_espejo.json sha256 c1939943632514e32a89c6746f13157f54f5e74dced84184ee80646bdd6e2f08
+K: CONCORDANTE | sin clasificar 0 | K1 6 celdas | K2 espejo 0 diferencias | K3 propio 167 diferencias
+K1 A|R12 solo_verificador HUECO_DEL_CONTROL ['COHERENCIA']
+K1 A|R16 solo_verificador HUECO_DEL_CONTROL ['COHERENCIA']
+K1 B|H4b solo_verificador HUECO_DEL_CONTROL ['RUNNER_VERSION']
+K1 B|R15 solo_verificador HUECO_DEL_CONTROL ['COHERENCIA']
+K1 C|H2 solo_verificador HUECO_DEL_CONTROL ['ENTRADAS']
+K1 C|H4 solo_verificador HUECO_DEL_CONTROL ['COHERENCIA']
+K3 (sintetico) veredictos productor {"F_C": {"H1": "INVALIDO_TECNICO", "H1b": "SOSTENIDA", "H2": "SOSTENIDA", "H3": "SOSTENIDA", "H4": "SIN_DECIDIR", "H4b": "SOSTENIDA"}, "F_R01": "SOSTENIDA", "P_T1_B": "SIN_DECIDIR", "P_T2_B": "SOSTENIDA"}
+K3 (sintetico) veredictos verificador {"F_C": {"H1": "INVALIDO_TECNICO", "H1b": "SOSTENIDA", "H2": "INVALIDO_TECNICO", "H3": "SOSTENIDA", "H4": "INVALIDO_TECNICO", "H4b": "SOSTENIDA"}, "F_R01": "SOSTENIDA", "P_T1_B": "SIN_DECIDIR", "P_T2_B": "INVALIDO_TECNICO"}
+cotejo_a1.json sha256 88e8d3a718c561bc9071dd07669026dd07acbb0b351a6ed60bb3765e6f80bf1f
+tiempo total 32.9 s
+exit 1 | 35.2 s

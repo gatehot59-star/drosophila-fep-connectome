@@ -1,0 +1,17 @@
+verificador bajo prueba codigo/tools/verificador_a1/verificador_a1.py sha256 a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0
+V01 PASS (0.0 s) huella([3,1,2]) = sha256("[1,2,3]\n")
+V02 PASS (2.4 s) cerrados 3/3 y fuerza bruta 3/3
+V03 PASS (0.0 s) ejemplo a mano y centinela p_familia = 1
+V04 PASS (0.4 s) 6 intervalos con empates: flujo, distribucion e IC literal iguales a scipy
+V05 PASS (0.0 s) constante y r = 1 exacto: DEGENERADO, sin IC
+V06 PASS (0.0 s) SIN_ESTIMADO e INDEFINIDO
+V07 PASS (41.5 s) 702 ids sin cambio con B|R07 invalida
+V08 PASS (0.0 s) registro 7c6dadc180b56d1d0c2be39782e948c3b7f73b994294412a345b8d011691c40a
+V09 PASS (0.0 s) 8.540 recibos, 0 fallas
+V10 PASS (3.5 s) 13 recibos corruptos: 15 pares exactos en 13 celdas
+V11 PASS (9.8 s) invalidan las 44: CODE_COMMIT_MIXTO, INTEGRIDAD, ILEGIBLE
+V12 PASS (1.8 s) corrida_ sin --abrir-sobre: rc 2 sin salida; recibo no sintetico: NEGADO
+V13 PASS (0.1 s) auto-cotejo 0 y una perturbacion de 1e-6 detectada en A|R01|COL_cortado
+V14 PASS (0.0 s) CONCORDANTE contra el agregado del productor
+RESUMEN 14/14 PASS
+exit 0

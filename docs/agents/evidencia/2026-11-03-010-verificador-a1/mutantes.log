@@ -1,0 +1,13 @@
+CONTROL rc 0 RESUMEN 9/9 PASS
+M01 MUERTO (V10) T7 sin el chequeo de cuenta_x | V10 FAIL (3.3 s) AssertionError: sobran []; faltan [('COHERENCIA', 'B|R07')]
+M02 MUERTO (V03) Holm cambiado por Bonferroni | V03 FAIL (0.0 s) AssertionError: holm [0.04, 0.16, 0.12, 0.02], esperado [0.03, 0.06, 0.06, 0.02]
+M03 MUERTO (V02) inversion de signos con la tolerancia al reves | V02 FAIL (0.0 s) AssertionError: unos: 0.0
+M04 MUERTO (V07) D4: no consume el bloque de las celdas invalidas | V07 FAIL (44.2 s) AssertionError: cambian 167 ids, por ejemplo ['B|R08|COL_interaccion', 'B|R08|DQ1', 'B|R08|DQ1uQCOL']
+M05 MUERTO (V06) D3 sin INDEFINIDO | V06 FAIL (0.0 s) AssertionError: {'tipo': 'cociente', 'numerador': 1.0, 'denominador': 0.525, 'estimado': 1.9047619047619047, 'ic95': [0.6451612903225806, 1.904
+M06 MUERTO (V11) una falla sin celda ya no invalida las 44 | V11 FAIL (4.2 s) AssertionError: ('commit', 0)
+M07 MUERTO (V05,V14) la trampa del BCa degenerado arreglada en vez de reproducida | V05 FAIL (0.0 s) AssertionError: {'tipo': 'media', 'estimado': 3.0, 'ic95': None, 'estado_ic': 'MOTOR_INCONSISTENTE', 'motivo': 'scipy devolvio un limite no fin
+M08 MUERTO (V10) T5 sin el chequeo de SHAM contra C0 | V10 FAIL (3.7 s) AssertionError: sobran []; faltan [('SHAM_DISTINTO_DE_C0', 'A|R08')]
+M09 MUERTO (V14) activacion con drivers a 1 Hz en vez de 10 | V14 FAIL (30.8 s) AssertionError: (21, [{'donde': 'casos/B|R06', 'campo': 'estado', 'productor': 'NO_INFORMATIVO_EN_B', 'verificador': 'ACTIVADO', 'regla': 'dis
+M10 MUERTO (V04,V14) z0 sin la mitad de los empates | V04 FAIL (0.2 s) AssertionError: chequeos del motor: {'bca_literal_distinto': 6}
+RESUMEN 10/10 MUERTOS
+exit 0

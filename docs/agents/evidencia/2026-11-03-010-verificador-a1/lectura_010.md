@@ -1,0 +1,27 @@
+# Lectura de 010 para D1 a D15 (orden 009, §10)
+
+**Quién la escribe:** BRAIN, el mismo autor de `estadistica_a1.py`. Por eso esta lectura **no da independencia de selección** (W-01): es la del productor puesta por escrito contra la letra de 010. La orden 009 sigue abierta para que otro agente la haga de nuevo.
+
+**Fuente:** `main:docs/agents/respuestas/2026-11-02-010-enmienda-009-a1-sello-original-intacto.md` (34.776 bytes, `e10b7756…`). Las citas son textuales.
+
+**Escala:** `SIGUE` cuando 010 lo dice; `COMPLETA` cuando 010 calla y la decisión llena el hueco sin contradecirlo; `AMBIGUEDAD_010` cuando 010 admite otra lectura que cambia algo. Decide Abraham.
+
+| D | Lectura | Cita de 010 | Nota |
+| --- | --- | --- | --- |
+| D1 | **AMBIGUEDAD_010** | §7: «Los casos no evaluables conservan su posición: `p_observado=null`, `p_para_familia=1`, estado y motivo explícitos.» | D1 lee «no evaluable» como «sin datos válidos o con varianza cero», no como «no activado». La otra lectura (centinela 1 también para las pruebas T1/T2 de celdas NO_INFORMATIVO_EN_B) es circular: la activación depende del Holm de F_B, y ese Holm dependería de la activación. D1 es la única lectura no circular, pero es menos conservadora. |
+| D2 | COMPLETA | §7: «IC95: bootstrap BCa de 20.000 remuestreos pareados de semillas […] BCa degenerado no se convierte en certeza: intervalo no definido y SIN_DECIDIR para el criterio que lo necesite» | 010 no define cuándo el BCa es degenerado. D2 usa la definición estándar (la de `scipy.stats.bootstrap`): z0 con la mitad de los empates, aceleración por jackknife y cuantiles lineales. |
+| D3 | SIGUE | §7: «Se recalculan cocientes de medias en cada remuestreo. No se desechan remuestreos con denominador no positivo: en ese caso el intervalo del cociente queda INDEFINIDO.» y «Denominador ≤0 […]: cociente primario `null`, con numerador, denominador y motivo.» | Agrega el jackknife con denominador ≤ 0, que el BCa necesita para la aceleración. |
+| D4 | COMPLETA | §7: «Semilla del remuestreo: `2026110209`, con PCG64; orden de contrastes lexicográfico por identificador.» | 010 no dice si un id no calculable consume el flujo. D4 lo consume siempre, así el intervalo de una celda no depende de que otra sea inválida (prueba V07). |
+| D5 | SIGUE | §7: «el IC95 de ΔQ2 excluye cero» | Límite inferior > 0 o superior < 0. |
+| D6 | SIGUE | §8: «\|r_weak\|<0,05 es pequeño; 0,05≤\|r_weak\|<0,10, intermedio; ≥0,10, sensibilidad alta […] Si el denominador no es informativo, se reporta Δweak sin ratio. Ningún rango invalida por sí solo el instrumento.» | La banda usa el valor puntual. |
+| D7 | SIGUE | §5, Colaterales y ruta directa: «Efecto de quitar colaterales con relevo cortado: `Y(Q1∪QCOL)-Y(Q1)`. Interacción: diferencia entre esos dos efectos.» y «se compara `Y(Q1∪QXD)-Y(QXD)` con `Y(Q1)-Y(C0)`» | Literal. |
+| D8 | SIGUE, con una nota | §7: «En A […] Sus cocientes secundarios requieren denominador positivo e IC95 que excluya cero» | La letra de D8 pide denominador positivo e IC95. El productor aplica el IC95 para poner NULO y deja el denominador no positivo a D3, que lo marca SIN_ESTIMADO. El efecto es el mismo: en los dos casos el cociente queda sin publicar. Sólo cambia la etiqueta, y el anexo B de la orden la describe como el productor. Ver hallazgo 1 de la respuesta 010. |
+| D9 | SIGUE y COMPLETA | §7: «CB0580 pasa como tipo sólo si pasan H1 y H1b […] Se sostiene si pasan al menos tres de esos cuatro tipos.» y «Un fallo técnico conserva INVALIDO_TECNICO y bloquea el veredicto afectado» | Completa con la regla de bloqueo: INVALIDO_TECNICO si las unidades bloqueadas podrían completar k. |
+| D10 | SIGUE | §6, Banco C: «≥10 Hz se marca ON, ≤2 Hz OFF y el intervalo intermedio queda indeterminado. OR compatible en C: vacío OFF y todos los subconjuntos no vacíos ON. AND compatible en C: conjunto completo ON y todos los subconjuntos propios OFF.» | Literal. |
+| D11 | SIGUE | §7: «En A se publican esos criterios de magnitud y el intervalo del freno como perfil descriptivo, sin trasladarle los p ajustados de B ni inventar una familia A.» | RECLUTADO usa las magnitudes de B sin Holm. |
+| D12 | **AMBIGUEDAD_010** | §6: «Se conserva el índice original de ablación sólo como descriptivo, con denominador declarado y sin epsilon.» | 010 pide conservarlo y no lo define, y 009 y el sello tampoco. D12 no lo implementa y publica DQ1conj, cada DQ1 y T2c. Es descriptivo y no entra en ninguna familia. |
+| D13 | SIGUE y COMPLETA | §7: «Fallo de identidad, integridad, pareado, máscara, SHAM o plan completo: INVALIDO_TECNICO.» | Completa con a quién invalida: la celda nombrada, o las 44 si la falla no tiene celda. El verificador agrega fallas de coherencia interna, que entran en «integridad». |
+| D14 | SIGUE y COMPLETA | §7: «Si la t tiene varianza cero, `p_observado=null` y `p_para_familia=1`; no se inventa un p.» | Las tolerancias numéricas (1e-12 y 1e-9) son de implementación. |
+| D15 | SIGUE | §5: «Y se expresa en Hz poblacionales, no Hz por neurona. Se publican además las tasas por neurona.» y §6: «`tasa_DNp35(ZA)-tasa_DNp35(C0)>0`» | ZA1 usa la tasa del driver de R01 que es blanco de ZA (`cascada_ZA[1]`). |
+
+**Lo que pide decisión de Abraham:** D1 y D12. Ninguna de las dos cambia el cotejo, porque productor y verificador las aplican igual. D1 sí puede mover un p ajustado de F_B en el sobre real, si alguna celda B no queda activada y sus T1/T2 traen p chicos.

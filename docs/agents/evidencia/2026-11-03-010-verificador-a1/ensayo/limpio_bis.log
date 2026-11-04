@@ -1,0 +1,16 @@
+$ /usr/local/bin/python3 codigo/tools/verificador_a1/verificador_a1.py --manifiesto /workspace/a1/v2/manifiesto_a1.json --sha-manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 --sobre /workspace/a1/v2/evid9/ensayo/sobre_limpio --agregado-productor /workspace/a1/v2/evid9/ensayo/est_limpio/agregado_a1.json --salida ensayo/limpio_bis
+verificador_a1 2026-11-03-010 | python 3.12.14 | numpy 2.5.3 | scipy 1.18.1
+verificador_sha256 a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0
+E: OK | manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 | fallas 0
+E: conteo {'celdas': 44, 'condiciones': 427, 'ensayos': 8540, 'n_ensayos_plan': 8540} | registro 722 ids sha256 7c6dadc180b56d1d0c2be39782e948c3b7f73b994294412a345b8d011691c40a
+T: OK | lineas 8540 | fallas 0 (globales 0) | celdas invalidas 0 | entorno uniforme True
+T: por codigo {}
+verificacion_tecnica.json sha256 f4767078cf62d4abfba2282e240c942022567b24cf1135b4be5a3bef11814aa7
+S: 22.3 s | invalidas 0 | no calculables 0 | motores {"degenerados": 52, "scipy_llamadas": 664}
+verificador_a1.json sha256 b6561ada6611f4144c6896c7710e83e019125cd56444884aed5a4aced8120484
+S (sintetico): veredictos {"F_C": {"H1": "SOSTENIDA", "H1b": "SOSTENIDA", "H2": "SOSTENIDA", "H3": "SOSTENIDA", "H4": "SIN_DECIDIR", "H4b": "SOSTENIDA"}, "F_R01": "SOSTENIDA", "P_T1_B": "SIN_DECIDIR", "P_T2_B": "SOSTENIDA"}
+K: agregado del productor sha256 bf8e90b867af195b7c276137f7afce5c257b8bb8dec80b73c69747aefea96219
+K: CONCORDANTE | sin clasificar 0 | K1 0 celdas | K2 espejo 0 diferencias | K3 propio 0 diferencias
+cotejo_a1.json sha256 91bbaeacd012a47568b302a5eb2243f0e468a38aaaff70c899ffab93f37b261f
+tiempo total 24.9 s
+exit 0 | 27.6 s

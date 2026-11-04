@@ -1,0 +1,17 @@
+$ /usr/local/bin/python3 codigo/tools/verificador_a1/verificador_a1.py --manifiesto /workspace/a1/v2/manifiesto_a1.json --sha-manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 --sobre /workspace/a1/v2/evid9/ensayo/sobre_global --agregado-productor /workspace/a1/v2/evid9/ensayo/est_global/agregado_a1.json --salida ensayo/global
+verificador_a1 2026-11-03-010 | python 3.12.14 | numpy 2.5.3 | scipy 1.18.1
+verificador_sha256 a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0
+E: OK | manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 | fallas 0
+E: conteo {'celdas': 44, 'condiciones': 427, 'ensayos': 8540, 'n_ensayos_plan': 8540} | registro 722 ids sha256 7c6dadc180b56d1d0c2be39782e948c3b7f73b994294412a345b8d011691c40a
+T: FALLAS | lineas 8540 | fallas 1 (globales 1) | celdas invalidas 44 | entorno uniforme True
+T: por codigo {"ILEGIBLE": 1}
+T FALLA ILEGIBLE | None | None | bloque_07.jsonl:441 | la linea no se lee como JSON
+verificacion_tecnica.json sha256 c027c00da2e39ba2ae4c77e583a0077faa7cefbfbd7ba953fa0a0f2bc0f83ae7
+S: 2.9 s | invalidas 44 | no calculables 0 | motores {}
+verificador_a1.json sha256 5a6fe4bc6d61c967235b771dcc1dd5615fb4be7d0bcaa51662b8895207dd0b95
+S (sintetico): veredictos {"F_C": {"H1": "INVALIDO_TECNICO", "H1b": "INVALIDO_TECNICO", "H2": "INVALIDO_TECNICO", "H3": "INVALIDO_TECNICO", "H4": "INVALIDO_TECNICO", "H4b": "INVALIDO_TECNICO"}, "F_R01": "INVALIDO_TECNICO", "P_T1_B": "INVALIDO_TECNICO", "P_T2_B": "INVALIDO_TECNICO"}
+K: agregado del productor sha256 b873a1cbc95d716e82c993ed0d6905888db2388b303ae61ca7c1b2a158cf81d3
+K: CONCORDANTE | sin clasificar 0 | K1 0 celdas | K2 espejo 0 diferencias | K3 propio 0 diferencias
+cotejo_a1.json sha256 710de1338e722ced0c5095aeaba33d79fca5d2bc2609dc345dadaafb51b9ae88
+tiempo total 5.5 s
+exit 1 | 8.1 s

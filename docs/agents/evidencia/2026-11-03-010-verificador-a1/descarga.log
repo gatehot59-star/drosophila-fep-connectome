@@ -1,0 +1,18 @@
+commit 5eaf35d08117a34bb37a325a1e4422ffb316b650
+README.md 3212 bb89869e09c22110b6c5ec5cb68cd57b5bd4110aa6cf16fbfa7665eb4e12799c
+verificador_a1.py 65252 a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0
+prueba_verificador_a1.py 17291 5a569c04e06dd56f3a2c3ba562aae0254fbce03583cb14cb17538f658efbb10c
+mutantes_verificador_a1.py 4621 bdef3f8b19105a221bd9e7f79a74bd996427a50bbe5758c7896999f10fb354b5
+ensayo_verificador_a1.py 7844 8bb8be83d9e8616bf8b2e07b897868bbedb369eb84a38d9b9f39fe3478afe9f6
+manifiesto 640908 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9
+limpio SHA256SUMS 121045455135271846cb8b45121f40994e10cbae5349fc0ede3f2d64129b82b6 agregado bf8e90b867af195b7c276137f7afce5c257b8bb8dec80b73c69747aefea96219
+sucio SHA256SUMS 4546466dd7b1d7425da21c4a353396b9166cd80ba6056b9f0be973cf38709fa1 agregado c050a9ebba767b488e7f18ecc38df994651a89579c2d2d208144ac8fea3eef1b
+global SHA256SUMS 76c6a87a237241f23f3c44a878e9554e1d7c57c2a1b0c0d36de8d496f0a11abd agregado b873a1cbc95d716e82c993ed0d6905888db2388b303ae61ca7c1b2a158cf81d3
+host 6c09d8604b07 python 3.12.14 numpy 2.5.3 scipy 1.18.1 nproc 4
+               total        used        free      shared  buff/cache   available
+Mem:            7802        6863         240         247        1214         939
+Swap:          20479       10087       10392
+
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sda4       406G  316G   72G  82% /workspace
+
