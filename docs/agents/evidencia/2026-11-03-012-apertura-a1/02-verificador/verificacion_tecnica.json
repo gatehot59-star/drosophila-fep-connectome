@@ -1,0 +1,63 @@
+{
+ "entorno": {
+  "numpy": "2.5.3",
+  "python": "3.12.14",
+  "scipy": "1.18.1",
+  "verificador_sha256": "a7b553f7d456920f76b7f8e9da2459437439c523381908fce923676a1947abd0",
+  "verificador_version": "2026-11-03-010"
+ },
+ "fase_E": {
+  "conteo": {
+   "celdas": 44,
+   "condiciones": 427,
+   "ensayos": 8540,
+   "n_ensayos_plan": 8540
+  },
+  "estado": "OK",
+  "fallas": [],
+  "manifiesto": "manifiesto_a1.json",
+  "notas": [],
+  "registro": {
+   "n": 722,
+   "sha256": "7c6dadc180b56d1d0c2be39782e948c3b7f73b994294412a345b8d011691c40a"
+  },
+  "sha256": "267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9",
+  "sha_pin": "267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9"
+ },
+ "fase_T": {
+  "celdas_invalidas": [],
+  "code_commit": [
+   "e7490f59fee2f36c7a266a712415257f61361939"
+  ],
+  "comparacion_D13": "igual a D13 en lo que D13 nombra; agrega como fallas de celda MIRAR, GRUPO, FILAS, ENTRADAS, RUNNER_VERSION y COHERENCIA, que D13 no menciona porque el control del productor no las mira",
+  "entorno": {
+   "mayoritario": {
+    "brian2": "2.10.1",
+    "codeobj": "CythonCodeObject",
+    "dt_s": 0.0001,
+    "numpy": "2.5.3",
+    "python": "3.12.14",
+    "t_run_s": 1.0,
+    "target_pedido": "cython"
+   },
+   "uniforme": true,
+   "variantes": 1
+  },
+  "estado": "OK",
+  "fallas": [],
+  "fallas_globales": 0,
+  "n_bloques": 20,
+  "n_fallas": 0,
+  "n_lineas_leidas": 8540,
+  "n_listados": 444,
+  "por_codigo": {},
+  "regla": "una falla con celda invalida su celda (sujeto, regimen); una falla sin celda (integridad, linea ilegible, esquema, celda inexistente, code_commit mixto) invalida las 44",
+  "runner_version": {
+   "2026-11-03-005": 8540
+  },
+  "sha256_SHA256SUMS": "bf9ebde69cc12f6c1f5b1c85925aebeeb36fd7fe6f23052aef35706a74cc7e38",
+  "sobre": "corrida_1",
+  "todos_sinteticos": false
+ },
+ "version": "2026-11-03-010"
+}

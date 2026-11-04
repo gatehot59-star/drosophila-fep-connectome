@@ -1,0 +1,19 @@
+inicio 2026-11-04T02:53:22Z sello 7d953dc8577ecf1fdbaecc4859b902af8854e79b
+top SHA256SUMS.txt 45000 B sha256 bf9ebde69cc12f6c1f5b1c85925aebeeb36fd7fe6f23052aef35706a74cc7e38
+top validacion_corrida.json 2931 B sha256 443976def90ba60ce946fa24b6d96bb26546aa4ff6698e52ff15aa3de22e11af
+top RESULTADO.txt 181 B sha256 f9f9e759e41e5ac2c04afaf1315f3b49da8816ad39926740449a7e07cd2621a0
+top juntar.log 8635 B sha256 95d651034ec350ec0b55beafb618a18e0bd6d8cfefe65baeaee5f5dae5185f29
+top juntar_intento.log 463 B sha256 576826778db0e103041c4ec0459c71c8b57c0173052520700098558ee63b9463
+progreso 0/444
+progreso 50/444
+progreso 100/444
+progreso 150/444
+progreso 200/444
+progreso 250/444
+progreso 300/444
+progreso 350/444
+progreso 400/444
+tipos de archivo en SHA256SUMS: [('/*/json', 1), ('/*/log', 2), ('/*/txt', 1), ('bloques/*/json', 220), ('bloques/*/jsonl', 20), ('bloques/*/log', 140), ('bloques/*/txt', 60)]
+archivos en SHA256SUMS 444 iguales 444 distintos 0 bytes 22571291
+fin 2026-11-04T02:56:44Z
+EXIT 0
