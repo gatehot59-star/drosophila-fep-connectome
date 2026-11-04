@@ -1,0 +1,25 @@
+host 6c09d8604b07 utc 2026-11-04T01:08:34Z
+rama main cabeza bb956c6a5533fb3dbc93578a2a10fa69b7e8a1d4 2026-11-04T00:39:05Z | docs(a1): respuesta 010, verificador independiente ensayado en brain-env y sobre real cerrado
+rama titan/a1-runner-2026-11-03 cabeza 801487cad19747e96bb346d98ffad1c3d508847c 2026-11-03T22:08:57Z | feat(a1): sobre sintetico para el ensayo general del verificador independiente
+rama titan/verificador-a1-independiente cabeza 5eaf35d08117a34bb37a325a1e4422ffb316b650 2026-11-04T00:23:26Z | feat(a1): verificador independiente de 009-A1, escrito sin codigo del productor
+commits que tocan results/a1_2026-11-03/corrida_1 en titan/a1-runner-2026-11-03: 1
+  7d953dc8577ecf1fdbaecc4859b902af8854e79b 2026-11-03T17:55:22Z | medicion(2026-11-03-006): corrida 009-A1 en results/a1_2026-11-03/corrida_1, run 41684131931
+api rate restante 1
+SHA256SUMS.txt en 801487ca: 45000 B sha256 bf9ebde69cc12f6c1f5b1c85925aebeeb36fd7fe6f23052aef35706a74cc7e38 lineas 444
+igual al pin bf9ebde6 del sello: True
+CONTEXTO en main bb956c6a: 136411 B sha256 93992ac790ee58a7713fa1e9acb42e0c0f1e54f03594183224ed6b92c57934b8 lineas 567
+CR 0 tabs 0 lineas-con-espacio-final 0 nbsp 0 zw 0 emdash 0 endash 6 termina-en-newline True
+   1 # CONTEXTO VIVO · conectoma / paper / H4
+   7 ## 1-nov-2026 · Topo inverso corregido
+  38 ## Madrugada y mañana del 13-oct (019 a 2026-10-14-061) · manda sobre el resto
+ 187 ## Tarde y noche del 12-oct (010 a 018)
+ 207 ## Mapa del repo (respuesta 2026-10-11-004)
+ 227 ## Veredicto operativo
+ 252 ## v2.0 del Paper 1 (respuesta 2026-10-12-007)
+ 289 ## Auditoría del laboratorio por TITÁN Tao (pedido 2026-10-12)
+ 311 ## Paper y Tabla 7 (respuestas 002 a 009 del 10-oct y 003 y 004 del 11-oct)
+ 332 ## Estado confirmado en main (H4)
+ 342 ## Estado de producto y ciencia
+ 441 ## Próximos pasos
+ 487 ## Fuentes
+ 531 ## NO MEDIDO
