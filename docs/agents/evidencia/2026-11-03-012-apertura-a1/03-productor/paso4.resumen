@@ -1,0 +1,12 @@
+estadistica_a1.py sha256 37ab63d7dc94913c010cdc51d89a23a0ace0a4e6e511b4c344ffad15b24503e3
+comun_a1.py sha256 756e81aba922824f0bf4e6374936b944b7f30c17e88b659adc35b9416c0d93ed
+plan_a1.py sha256 d1b26450ecf8e9ca5211ab7a78beadf536ff61c4db659ed79c3dd9e142662e5d
+validar_a1.py sha256 189eb6477e1f9e3685d273d89aaee4dca8c8c8a63a82a734dae74b2a6ad34e20
+juntar_a1.py sha256 051d0b474a911930db692fed5826839b426df2953eebd39a86ab69538260d414
+comando /usr/local/bin/python3 /workspace/a1/v2/apertura/codigo/a1/estadistica_a1.py --manifiesto /workspace/a1/v2/manifiesto_a1.json --sha-manifiesto 267ca1d0820193fff08a79875a1d1bd6a36d8633e203db9e0ee3d7304c5e3dd9 --jsonl /workspace/a1/v2/apertura/corrida_1/bloques/**/bloque_*.jsonl --salida /workspace/a1/v2/apertura/prod --abrir-sobre
+rc 0 8.7 s inicio 03:01:07Z
+stdout 9744 B sha256 d6b1ff711c8ac1406e49da5a0943a9772108b50b45e4c9025ccc1155c123d55b | stderr 0 B
+prod/agregado_a1.json 339460 B sha256 7fcc6ddc27774fd5b1b702803de3dd3953c2b91b724294c04c9159442ceba02a
+prod/estadistica_a1.log 9744 B sha256 d6b1ff711c8ac1406e49da5a0943a9772108b50b45e4c9025ccc1155c123d55b
+prod/tasas_por_neurona.csv 1152346 B sha256 c7cc155de8d803104fbb298be6bc4a6af9d47c274f166c4bb010fc7f05b7a329
+FIN 2026-11-04T03:01:15Z
