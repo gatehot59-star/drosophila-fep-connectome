@@ -1,0 +1,61 @@
+lectura_a1 | agregado 7fcc6ddc27774fd5b1b702803de3dd3953c2b91b724294c04c9159442ceba02a | verificador ad65761bb84ee6632d65f03de88b263a209da5a4242e1055d92bd2f4a8432334
+veredictos decisivos iguales en productor y verificador: {"F_C": true, "F_R01": true, "P_T1_B": true, "P_T2_B": true, "T3": true}
+QWEAK igual en DQWEAK_Hz y banda: True (el productor agrega una nota de texto por celda)
+P_ESTRATOS productor 'RETIRADA_COMO_PRIMARIA_EN_A1 (010, seccion 8): no se evalua' | verificador 'retirada (010 seccion 8): no se evalua'
+P_T1_B NO_INFORMATIVO_EN_B casos {"R01": "PASA", "R02": "NO_PASA:NO_INFORMATIVO_EN_B", "R03": "PASA"}
+P_T2_B SIN_DECIDIR tipos {"CB0172": "NO_PASA:SIN_DECIDIR", "CB0534": "PASA", "CB0580": "NO_PASA:SIN_DECIDIR", "PS100": "NO_PASA:SIN_DECIDIR"}
+P_T2_B instancias {"H1": "NO_PASA:SIN_DECIDIR", "H1b": "NO_PASA:NO_INFORMATIVO_EN_B", "H2": "PASA", "H3": "NO_PASA:SIN_DECIDIR", "H4": "NO_PASA:SIN_DECIDIR", "H4b": "NO_PASA:SIN_DECIDIR"}
+F_C {"H1": "SIN_DECIDIR", "H1b": "SIN_DECIDIR", "H2": "SIN_DECIDIR", "H3": "SIN_DECIDIR", "H4": "SIN_DECIDIR", "H4b": "SOSTENIDA"}
+F_R01 SOSTENIDA contrastes {"ZA1": true, "ZA2": true, "ZA3": true}
+B | celda | estado | DQ2_Hz [IC95] | x_C0_Hz | c_X | r_Q1 | s4 | criterio
+B | H1 | ACTIVADO | 17.10 [14.000, 20.800] | 83.75 | conj 0.383 [0.371, 0.398] | conj 0.330 [0.186, 0.474] | conj 0.568 [0.552, 0.587] | T2 NO_PASA:SIN_DECIDIR
+B | H1b | NO_INFORMATIVO_EN_B | -18.20 [-105.760, 4.100] | 73.35 | conj NA [NA, NA] NULO | conj NA [NA, NA] NULO | conj NA [NA, NA] NULO | T2 NO_PASA:NO_INFORMATIVO_EN_B
+B | H2 | ACTIVADO | 28.75 [26.250, 31.350] | 49.00 | conj 0.955 [0.943, 0.967] | conj 0.941 [0.892, 0.980] | conj 0.868 [0.844, 0.891] | T2 PASA
+B | H3 | ACTIVADO | 84.25 [79.700, 89.150] | 72.15 | conj 0.390 [0.375, 0.404] | conj 0.403 [0.350, 0.456] | conj 0.526 [0.505, 0.546] | T2 NO_PASA:SIN_DECIDIR
+B | H4 | ACTIVADO | 378.20 [362.500, 395.150] | 109.95 | conj 0.154 [0.142, 0.164] | conj 0.093 [0.072, 0.110] | conj 0.501 [0.490, 0.511] | T2 NO_PASA:SIN_DECIDIR
+B | H4b | ACTIVADO | 248.95 [237.400, 259.100] | 85.05 | conj 0.238 [0.225, 0.252] | conj 0.163 [0.130, 0.185] | conj 0.477 [0.460, 0.488] | T2 NO_PASA:SIN_DECIDIR
+B | R01 | ACTIVADO | 56.05 [45.750, 67.450] | 25.45 | 0.994 [0.985, 0.998] | 1.003 [1.000, 1.015] | 1.652 [1.566, 1.803] | T1 PASA
+B | R02 | NO_INFORMATIVO_EN_B | -0.05 [-0.550, 0.450] | 28.75 | NA [NA, NA] NULO | NA [NA, NA] NULO | NA [NA, NA] NULO | T1 NO_PASA:NO_INFORMATIVO_EN_B
+B | R03 | ACTIVADO | 7.80 [5.700, 10.100] | 38.10 | 0.997 [0.992, 1.000] | 0.994 [0.956, 1.000] | 0.958 [0.942, 0.974] | T1 PASA
+B | R04 | ACTIVADO | 73.30 [66.550, 79.350] | 67.45 | 0.265 [0.248, 0.284] | 0.322 [0.264, 0.394] | 0.354 [0.335, 0.371] | 
+B | R05 | ACTIVADO | 20.75 [18.100, 23.850] | 28.55 | 0.925 [0.896, 0.943] | 0.949 [0.898, 0.985] | 0.765 [0.740, 0.804] | 
+B | R06 | ACTIVADO | 16.25 [11.600, 21.450] | 71.10 | 0.233 [0.218, 0.250] | 0.391 [0.178, 0.635] | 0.312 [0.292, 0.328] | 
+B | R07 | ACTIVADO | 17.10 [14.800, 19.600] | 36.15 | 0.566 [0.546, 0.593] | 0.404 [0.319, 0.507] | 0.534 [0.506, 0.560] | 
+B | R08 | ACTIVADO | 17.65 [11.300, 23.350] | 37.15 | 0.620 [0.583, 0.657] | 0.782 [0.513, 1.085] | 0.503 [0.474, 0.534] | 
+B | R09 | NO_INFORMATIVO_EN_B | 0.35 [-0.850, 1.150] | 14.95 | NA [NA, NA] NULO | NA [NA, NA] NULO | NA [NA, NA] NULO | 
+B | R10 | ACTIVADO | 17.90 [15.500, 20.700] | 72.00 | 0.169 [0.157, 0.185] | 0.223 [0.099, 0.359] | 0.244 [0.233, 0.257] | 
+B | R11 | ACTIVADO | 368.25 [351.800, 382.345] | 107.20 | 0.110 [0.101, 0.118] | 0.042 [0.024, 0.059] | 0.398 [0.385, 0.411] | 
+B | R12 | NO_INFORMATIVO_EN_B | 3.45 [1.000, 6.850] | 18.55 | NA [NA, NA] NULO | NA [NA, NA] NULO | NA [NA, NA] NULO | 
+B | R13 | NO_INFORMATIVO_EN_B | 1.10 [-0.900, 2.650] | 62.00 | NA [NA, NA] NULO | NA [NA, NA] NULO | NA [NA, NA] NULO | 
+B | R14 | ACTIVADO | 19.70 [17.150, 21.750] | 75.15 | 0.134 [0.126, 0.146] | 0.056 [-0.015, 0.125] | 0.192 [0.176, 0.209] | 
+B | R15 | ACTIVADO | 265.95 [251.700, 278.250] | 80.05 | 0.117 [0.106, 0.130] | 0.068 [0.051, 0.085] | 0.186 [0.171, 0.201] | 
+B | R16 | ACTIVADO | 72.25 [66.150, 77.800] | 64.55 | 0.178 [0.159, 0.197] | 0.183 [0.118, 0.249] | 0.223 [0.203, 0.242] | 
+B conteo de estados: relevos {'ACTIVADO': 12, 'NO_INFORMATIVO_EN_B': 4} | hubs {'ACTIVADO': 5, 'NO_INFORMATIVO_EN_B': 1}
+C | H1 | FC SIN_DECIDIR | sincronizado menos corrido -4.500 Hz [-5.450, -3.350] | transferencia INDETERMINADO
+C | H1b | FC SIN_DECIDIR | sincronizado menos corrido 0.350 Hz [-1.000, 1.550] | transferencia OR_COMPATIBLE_EN_C
+C | H2 | FC SIN_DECIDIR | sincronizado menos corrido -2.050 Hz [-2.750, -1.300] | transferencia OR_COMPATIBLE_EN_C
+C | H3 | FC SIN_DECIDIR | sincronizado menos corrido -1.800 Hz [-2.550, -1.250] | transferencia OR_COMPATIBLE_EN_C
+C | H4 | FC SIN_DECIDIR | sincronizado menos corrido -0.750 Hz [-1.900, 0.300] | transferencia OR_COMPATIBLE_EN_C
+C | H4b | FC SOSTENIDA | sincronizado menos corrido 5.850 Hz [4.950, 6.850] | transferencia OR_COMPATIBLE_EN_C
+A (descriptivo) | celda | estado | DQ2_Hz [IC95] | c_X | r_Q1 | s4
+A (descriptivo) | R01 | RECLUTADO | 254.25 [221.700, 283.250] | 0.821 [0.800, 0.837] | 0.761 [0.650, 0.904] | 0.888 [0.859, 0.916]
+A (descriptivo) | R02 | RECLUTADO | 6.25 [4.700, 7.700] | 1.000 [NA, NA] DEGENERADO | 1.000 [NA, NA] DEGENERADO | 0.993 [0.984, 0.999]
+A (descriptivo) | R03 | NO_RECLUTADO_EN_A
+A (descriptivo) | R04 | RECLUTADO | 15.90 [12.150, 20.400] | 1.000 [NA, NA] DEGENERADO | 1.000 [NA, NA] DEGENERADO | 0.879 [0.865, 0.890]
+A (descriptivo) | R05 | NO_RECLUTADO_EN_A
+A (descriptivo) | R06 | NO_RECLUTADO_EN_A
+A (descriptivo) | R07 | NO_RECLUTADO_EN_A
+A (descriptivo) | R08 | NO_RECLUTADO_EN_A
+A (descriptivo) | R09 | NO_RECLUTADO_EN_A
+A (descriptivo) | R10 | NO_RECLUTADO_EN_A
+A (descriptivo) | R11 | NO_RECLUTADO_EN_A
+A (descriptivo) | R12 | NO_RECLUTADO_EN_A
+A (descriptivo) | R13 | NO_RECLUTADO_EN_A
+A (descriptivo) | R14 | RECLUTADO | 33.30 [26.600, 39.800] | 0.588 [0.575, 0.600] | 0.521 [0.420, 0.657] | 0.668 [0.653, 0.679]
+A (descriptivo) | R15 | NO_RECLUTADO_EN_A
+A (descriptivo) | R16 | RECLUTADO | 56.95 [52.250, 62.136] | 0.971 [0.961, 0.982] | 0.967 [0.949, 0.980] | 0.775 [0.760, 0.790]
+A | R01 | ZA1 | 62.000 [58.700, 65.450]
+A | R01 | ZA2 | 40.850 [38.250, 44.450]
+A | R01 | ZA3 | 65.950 [26.700, 111.468]
+T3 {"A|R06": {"DQ2_Hz": -0.75, "c_X": 1.0, "estado": "NO_RECLUTADO_EN_A", "r_Q1": null, "s4": 0.8363636363636363}, "A|R08": {"DQ2_Hz": 0.0, "c_X": null, "estado": "NO_RECLUTADO_EN_A", "r_Q1": null, "s4": null}, "A|R09": {"DQ2_Hz": -0.15, "c_X": 1.0, "estado": "NO_RECLUTADO_EN_A", "r_Q1": null, "s4": 1.044831880448319}, "A|R12": {"DQ2_Hz": 0.4, "c_X": 1.0, "estado": "NO_RECLUTADO_EN_A", "r_Q1": null, "s4": 0.45098039215686275}, "B|R06": {"DQ2_Hz": 16.25, "c_X": 0.2327707454289733, "estado": "ACTIVADO", "r_Q1": 0.39076923076923076, "s4": 0.31223628691983124}, "B|R08": {"DQ2_Hz": 17.65, "c_X": 0.6204576043068641, "estado": "ACTIVADO", "r_Q1": 0.7818696883852693, "s4": 0.5033647375504711}, "B|R09": {"DQ2_Hz": 0.35, "c_X": null, "estado": "NO_INFORMATIVO_EN_B", "r_Q1": null, "s4": null}, "B|R12": {"DQ2_Hz": 3.45, "c_X": null, "estado": "NO_INFORMATIVO_EN_B", "r_Q1": null, "s4": null}}
+motores del verificador: {"degenerados": 104, "scipy_llamadas": 584}
