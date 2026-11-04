@@ -1,0 +1,470 @@
+{
+ "banc": {
+  "conectoma": "BANC 888",
+  "liviano_inh_sin_pesado": {
+   "n_L1_marginal": 1227654,
+   "n_M1_marginal": 25783,
+   "n_X": 2017,
+   "n_Y1_marginal": 6980,
+   "n_aristas_relevo": 6493,
+   "n_pares": 1812760
+  },
+  "liviano_inh_sin_pesado_cerebro": {
+   "n_L1_marginal": 309857,
+   "n_M1_marginal": 6797,
+   "n_X": 526,
+   "n_Y1_marginal": 4892,
+   "n_aristas_relevo": 1087,
+   "n_pares": 472839
+  },
+  "n_X_excitatorias_candidatas": 134304,
+  "n_X_inhibitorias_candidatas": 45685,
+  "n_X_inhibitorias_candidatas_cerebro": 36173,
+  "n_aristas": 13620865,
+  "n_neuronas": 188508,
+  "n_neuronas_DN": 1310,
+  "n_pares_D_D_coimpulsados": 1996,
+  "n_pares_S_D_cableados": 753,
+  "n_unidades_D": 901,
+  "n_unidades_S": 842,
+  "pesado_exc": {
+   "n_L1_marginal": 120876,
+   "n_M1_marginal": 903,
+   "n_X": 227,
+   "n_Y1_marginal": 694,
+   "n_aristas_relevo": 314,
+   "n_pares": 204213
+  },
+  "pesado_exc_cerebro": {
+   "n_L1_marginal": 20216,
+   "n_M1_marginal": 125,
+   "n_X": 36,
+   "n_Y1_marginal": 400,
+   "n_aristas_relevo": 51,
+   "n_pares": 32385
+  },
+  "pesado_inh": {
+   "n_L1_marginal": 172402,
+   "n_M1_marginal": 2477,
+   "n_X": 293,
+   "n_Y1_marginal": 1340,
+   "n_aristas_relevo": 516,
+   "n_pares": 263480
+  },
+  "pesado_inh_cerebro": {
+   "n_L1_marginal": 39492,
+   "n_M1_marginal": 864,
+   "n_X": 68,
+   "n_Y1_marginal": 985,
+   "n_aristas_relevo": 119,
+   "n_pares": 61149
+  }
+ },
+ "entorno": {
+  "host": "6c09d8604b07",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "pyarrow": "25.0.1",
+  "python": "3.12.14"
+ },
+ "flywire": {
+  "conectoma": "FlyWire 783",
+  "liviano_inh_sin_pesado": {
+   "n_L1_marginal": 422292,
+   "n_M1_marginal": 10785,
+   "n_X": 703,
+   "n_Y1_marginal": 7534,
+   "n_aristas_relevo": 1913,
+   "n_pares": 648930
+  },
+  "n_X_excitatorias_candidatas": 89355,
+  "n_X_inhibitorias_candidatas": 39983,
+  "n_aristas": 15091983,
+  "n_neuronas": 138639,
+  "n_neuronas_DN": 1291,
+  "n_pares_D_D_coimpulsados": 2866,
+  "n_pares_S_D_cableados": 996,
+  "n_unidades_D": 925,
+  "n_unidades_S": 652,
+  "pesado_exc": {
+   "n_L1_marginal": 58570,
+   "n_M1_marginal": 762,
+   "n_X": 104,
+   "n_Y1_marginal": 859,
+   "n_aristas_relevo": 170,
+   "n_pares": 96032
+  },
+  "pesado_inh": {
+   "n_L1_marginal": 69195,
+   "n_M1_marginal": 1828,
+   "n_X": 121,
+   "n_Y1_marginal": 2189,
+   "n_aristas_relevo": 176,
+   "n_pares": 111751
+  }
+ },
+ "huellas_banc": [
+  {
+   "bytes": 57503026,
+   "md5": "8c2b93a608c7163ec9d94d68e0756ff4",
+   "ruta": "/workspace/banc_888/banc_888_meta.feather",
+   "sha256": "86ccf5df0c67419f8c5f43e93a7ed38d23a080e9f7fde26737290252f3780098"
+  },
+  {
+   "bytes": 359161658,
+   "md5": "08542b0771db7418ed474be60dc9886c",
+   "ruta": "/workspace/banc_888/banc_888_edgelist_simple_v3.feather",
+   "sha256": "8c296e946f3c69a8c7222f30ad75fa8a98eeb189124fec6df829c9125f4be64b"
+  }
+ ],
+ "huellas_flywire": [
+  {
+   "bytes": 100804642,
+   "md5": "3d802fd542b5d18570ba1ba0bb0abed9",
+   "ruta": "/workspace/connectivity.parquet",
+   "sha256": "efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347"
+  },
+  {
+   "bytes": 31718505,
+   "md5": "719904abad876c68ace1b5690c9b9b63",
+   "ruta": "/workspace/annotations.tsv",
+   "sha256": "9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be"
+  }
+ ],
+ "segundos": 47.4,
+ "semilla_g1f": {
+  "filas": [
+   {
+    "c_X_B": 0.38328358208955227,
+    "drivers": [
+     41594,
+     104203,
+     19410
+    ],
+    "entrada_exc": 5118,
+    "entrada_inh": 1484,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0543,
+    "r_Q1_B": 0.3304093567251462,
+    "sinapsis_de_drivers": 278,
+    "sujeto": "H1",
+    "x": 33912
+   },
+   {
+    "c_X_B": null,
+    "drivers": [
+     58878,
+     71368
+    ],
+    "entrada_exc": 4253,
+    "entrada_inh": 1189,
+    "estado_B": "NO_INFORMATIVO_EN_B",
+    "fraccion_exc_de_drivers": 0.0423,
+    "r_Q1_B": null,
+    "sinapsis_de_drivers": 180,
+    "sujeto": "H1b",
+    "x": 58129
+   },
+   {
+    "c_X_B": 0.9551020408163264,
+    "drivers": [
+     111205,
+     130297
+    ],
+    "entrada_exc": 1556,
+    "entrada_inh": 1074,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.1812,
+    "r_Q1_B": 0.9408695652173913,
+    "sinapsis_de_drivers": 282,
+    "sujeto": "H2",
+    "x": 19257
+   },
+   {
+    "c_X_B": 0.3901593901593901,
+    "drivers": [
+     27878,
+     20277
+    ],
+    "entrada_exc": 1881,
+    "entrada_inh": 1043,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.1292,
+    "r_Q1_B": 0.4029673590504451,
+    "sinapsis_de_drivers": 243,
+    "sujeto": "H3",
+    "x": 122969
+   },
+   {
+    "c_X_B": 0.15416098226466574,
+    "drivers": [
+     129110,
+     53975
+    ],
+    "entrada_exc": 4979,
+    "entrada_inh": 2967,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0398,
+    "r_Q1_B": 0.093204653622422,
+    "sinapsis_de_drivers": 198,
+    "sujeto": "H4",
+    "x": 45293
+   },
+   {
+    "c_X_B": 0.23750734861845973,
+    "drivers": [
+     84751,
+     69226
+    ],
+    "entrada_exc": 3384,
+    "entrada_inh": 2443,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0488,
+    "r_Q1_B": 0.1628841132757582,
+    "sinapsis_de_drivers": 165,
+    "sujeto": "H4b",
+    "x": 112031
+   },
+   {
+    "c_X_B": 0.994106090373281,
+    "drivers": [
+     59804
+    ],
+    "entrada_exc": 3585,
+    "entrada_inh": 1814,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0656,
+    "r_Q1_B": 1.0026761819803747,
+    "sinapsis_de_drivers": 235,
+    "sujeto": "R01",
+    "x": 30887
+   },
+   {
+    "c_X_B": null,
+    "drivers": [
+     61465
+    ],
+    "entrada_exc": 2593,
+    "entrada_inh": 2084,
+    "estado_B": "NO_INFORMATIVO_EN_B",
+    "fraccion_exc_de_drivers": 0.0694,
+    "r_Q1_B": null,
+    "sinapsis_de_drivers": 180,
+    "sujeto": "R02",
+    "x": 80081
+   },
+   {
+    "c_X_B": 0.9973753280839894,
+    "drivers": [
+     96843
+    ],
+    "entrada_exc": 2900,
+    "entrada_inh": 1460,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0569,
+    "r_Q1_B": 0.9935897435897436,
+    "sinapsis_de_drivers": 165,
+    "sujeto": "R03",
+    "x": 116067
+   },
+   {
+    "c_X_B": 0.26538176426982946,
+    "drivers": [
+     27878
+    ],
+    "entrada_exc": 1881,
+    "entrada_inh": 1043,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0824,
+    "r_Q1_B": 0.32196452933151437,
+    "sinapsis_de_drivers": 155,
+    "sujeto": "R04",
+    "x": 122969
+   },
+   {
+    "c_X_B": 0.924693520140105,
+    "drivers": [
+     111205
+    ],
+    "entrada_exc": 1556,
+    "entrada_inh": 1074,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.099,
+    "r_Q1_B": 0.9493975903614458,
+    "sinapsis_de_drivers": 154,
+    "sujeto": "R05",
+    "x": 19257
+   },
+   {
+    "c_X_B": 0.2327707454289733,
+    "drivers": [
+     58878
+    ],
+    "entrada_exc": 5678,
+    "entrada_inh": 1426,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0269,
+    "r_Q1_B": 0.39076923076923076,
+    "sinapsis_de_drivers": 153,
+    "sujeto": "R06",
+    "x": 676
+   },
+   {
+    "c_X_B": 0.5656984785615491,
+    "drivers": [
+     130297
+    ],
+    "entrada_exc": 1556,
+    "entrada_inh": 1074,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0823,
+    "r_Q1_B": 0.40350877192982454,
+    "sinapsis_de_drivers": 128,
+    "sujeto": "R07",
+    "x": 19257
+   },
+   {
+    "c_X_B": 0.6204576043068641,
+    "drivers": [
+     96843
+    ],
+    "entrada_exc": 8090,
+    "entrada_inh": 3309,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0156,
+    "r_Q1_B": 0.7818696883852693,
+    "sinapsis_de_drivers": 126,
+    "sujeto": "R08",
+    "x": 117221
+   },
+   {
+    "c_X_B": null,
+    "drivers": [
+     27878
+    ],
+    "entrada_exc": 3888,
+    "entrada_inh": 3045,
+    "estado_B": "NO_INFORMATIVO_EN_B",
+    "fraccion_exc_de_drivers": 0.0309,
+    "r_Q1_B": null,
+    "sinapsis_de_drivers": 120,
+    "sujeto": "R09",
+    "x": 86580
+   },
+   {
+    "c_X_B": 0.16944444444444443,
+    "drivers": [
+     41594
+    ],
+    "entrada_exc": 5118,
+    "entrada_inh": 1484,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0225,
+    "r_Q1_B": 0.223463687150838,
+    "sinapsis_de_drivers": 115,
+    "sujeto": "R10",
+    "x": 33912
+   },
+   {
+    "c_X_B": 0.11007462686567164,
+    "drivers": [
+     129110
+    ],
+    "entrada_exc": 4979,
+    "entrada_inh": 2967,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0223,
+    "r_Q1_B": 0.042498302783435166,
+    "sinapsis_de_drivers": 111,
+    "sujeto": "R11",
+    "x": 45293
+   },
+   {
+    "c_X_B": null,
+    "drivers": [
+     22415
+    ],
+    "entrada_exc": 3315,
+    "entrada_inh": 2164,
+    "estado_B": "NO_INFORMATIVO_EN_B",
+    "fraccion_exc_de_drivers": 0.029,
+    "r_Q1_B": null,
+    "sinapsis_de_drivers": 96,
+    "sujeto": "R12",
+    "x": 83980
+   },
+   {
+    "c_X_B": null,
+    "drivers": [
+     58878
+    ],
+    "entrada_exc": 4253,
+    "entrada_inh": 1189,
+    "estado_B": "NO_INFORMATIVO_EN_B",
+    "fraccion_exc_de_drivers": 0.0219,
+    "r_Q1_B": null,
+    "sinapsis_de_drivers": 93,
+    "sujeto": "R13",
+    "x": 58129
+   },
+   {
+    "c_X_B": 0.13439787092481703,
+    "drivers": [
+     104203
+    ],
+    "entrada_exc": 5118,
+    "entrada_inh": 1484,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0178,
+    "r_Q1_B": 0.05583756345177666,
+    "sinapsis_de_drivers": 91,
+    "sujeto": "R14",
+    "x": 33912
+   },
+   {
+    "c_X_B": 0.11680199875078076,
+    "drivers": [
+     84751
+    ],
+    "entrada_exc": 3384,
+    "entrada_inh": 2443,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.026,
+    "r_Q1_B": 0.06805790562135741,
+    "sinapsis_de_drivers": 88,
+    "sujeto": "R15",
+    "x": 112031
+   },
+   {
+    "c_X_B": 0.17815646785437647,
+    "drivers": [
+     20277
+    ],
+    "entrada_exc": 1881,
+    "entrada_inh": 1043,
+    "estado_B": "ACTIVADO",
+    "fraccion_exc_de_drivers": 0.0468,
+    "r_Q1_B": 0.18339100346020762,
+    "sinapsis_de_drivers": 88,
+    "sujeto": "R16",
+    "x": 122969
+   }
+  ],
+  "n_activados": 17,
+  "spearman_fraccion_vs_cX": [
+   0.6544117647058824,
+   0.004367978540420788
+  ],
+  "spearman_fraccion_vs_rQ1": [
+   0.5980392156862745,
+   0.011221090083450335
+  ]
+ },
+ "umbrales": {
+  "W_DIR": 20,
+  "W_LIVIANO": 20,
+  "W_PESADO": 80,
+  "W_X": 5
+ },
+ "version": "g1_censo 2026-11-04-001"
+}
