@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/workspace/a1/v2/g1/a/pruebas_g1a.py", line 79, in <module>
+    anota('T1_censo_' + '_'.join(cl), all(ok.values()), cuentas=cu, ok=ok)
+TypeError: anota() got multiple values for argument 'ok'
