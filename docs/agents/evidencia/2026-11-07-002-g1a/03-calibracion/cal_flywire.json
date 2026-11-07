@@ -1,0 +1,169 @@
+{
+ "banco": {
+  "chequeos_ok": 1000,
+  "fraccion_aristas_reales_media": 0.0942,
+  "intercambios_media": 8264.7,
+  "n": 1000,
+  "n_aristas": 996,
+  "semilla": 7830711,
+  "sha256": "982cc13bb3adbfc6dc51a0edf6486b25bc0852ff5c22a1dac4947677ade0eb0e"
+ },
+ "banco_M": {
+  "M1_max": 2615,
+  "M1_media": 2077.498,
+  "M1_min": 1617
+ },
+ "betas": [
+  0.0,
+  0.4,
+  0.7,
+  1.1
+ ],
+ "criterios": {
+  "COB_MIN": 181,
+  "FP01_MAX": 6,
+  "FP05_MAX": 19,
+  "SESGO_MAX": 0.1
+ },
+ "cuentas": {
+  "n_L1": 69195,
+  "n_M1": 1828,
+  "n_X": 121,
+  "n_Y1": 2189,
+  "n_cab": 996,
+  "n_pares": 111751
+ },
+ "entorno": {
+  "OMP_NUM_THREADS": "1",
+  "host": "6c09d8604b07",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "pyarrow": "25.0.1",
+  "python": "3.12.14",
+  "scipy": "1.18.1"
+ },
+ "g0_con_y_real": {
+  "conv": true,
+  "gamma": 0.19664739577142046,
+  "gmax": 8.941333581521937e-09,
+  "it": 10,
+  "ll": -8405.037753207323,
+  "n_D_info": 583,
+  "n_X_info": 115,
+  "n_pares_info": 66911
+ },
+ "grupo": "inh_entero_pesado",
+ "huellas": [
+  {
+   "bytes": 100804642,
+   "md5": "3d802fd542b5d18570ba1ba0bb0abed9",
+   "ruta": "/workspace/connectivity.parquet",
+   "sha256": "efeb23fb99098e9c390f6869969b2a121a2ee92c833cfc45ecb2c1d8e1af0347"
+  },
+  {
+   "bytes": 31718505,
+   "md5": "719904abad876c68ace1b5690c9b9b63",
+   "ruta": "/workspace/annotations.tsv",
+   "sha256": "9a4f8b2f843196074431ebd7cd883536afa1be86c8a4ce90970441e8be81d1be"
+  }
+ ],
+ "mosca": "flywire",
+ "n_rep": 200,
+ "pasa": true,
+ "resumen": {
+  "0.0": {
+   "cobertura": 191,
+   "de_beta_hat": 0.12447152014240173,
+   "de_beta_tilde": 0.09919022970912775,
+   "media_beta_hat": -0.033127470047512146,
+   "media_beta_tilde": -0.027255007249012565,
+   "media_se_modelo": 0.12875658829978623,
+   "media_se_robusto": 0.12841092188009673,
+   "n": 200,
+   "n_beta_tilde_no_finito": 0,
+   "n_finitos": 200,
+   "n_p_menor_0005": 0,
+   "n_p_menor_001": 1,
+   "n_p_menor_005": 3,
+   "pasa_cobertura": true,
+   "pasa_convergencia": true,
+   "pasa_falsos_positivos": true,
+   "pasa_sesgo": true,
+   "potencia_completa": 0.0,
+   "potencia_p": 0.0,
+   "sesgo": -0.033127470047512146,
+   "todos_convergen": true
+  },
+  "0.4": {
+   "cobertura": 185,
+   "de_beta_hat": 0.12232648340018788,
+   "de_beta_tilde": 0.09094262867389082,
+   "media_beta_hat": 0.40764577060228474,
+   "media_beta_tilde": 0.3118182706075942,
+   "media_se_modelo": 0.11359932933472212,
+   "media_se_robusto": 0.11411283369888903,
+   "n": 200,
+   "n_beta_tilde_no_finito": 0,
+   "n_finitos": 200,
+   "n_p_menor_0005": 119,
+   "n_p_menor_001": 146,
+   "n_p_menor_005": 178,
+   "pasa_cobertura": true,
+   "pasa_convergencia": true,
+   "pasa_sesgo": true,
+   "potencia_completa": 0.425,
+   "potencia_p": 0.595,
+   "sesgo": 0.007645770602284718,
+   "todos_convergen": true
+  },
+  "0.7": {
+   "cobertura": 195,
+   "de_beta_hat": 0.10053667130065862,
+   "de_beta_tilde": 0.07114104216011606,
+   "media_beta_hat": 0.7067193264279767,
+   "media_beta_tilde": 0.5257948851558878,
+   "media_se_modelo": 0.10548034009976032,
+   "media_se_robusto": 0.10493357360644992,
+   "n": 200,
+   "n_beta_tilde_no_finito": 0,
+   "n_finitos": 200,
+   "n_p_menor_0005": 200,
+   "n_p_menor_001": 200,
+   "n_p_menor_005": 200,
+   "pasa_cobertura": true,
+   "pasa_convergencia": true,
+   "pasa_sesgo": true,
+   "potencia_completa": 1.0,
+   "potencia_p": 1.0,
+   "sesgo": 0.006719326427976791,
+   "todos_convergen": true
+  },
+  "1.1": {
+   "cobertura": 184,
+   "de_beta_hat": 0.09564359980874805,
+   "de_beta_tilde": 0.06219494395503211,
+   "media_beta_hat": 1.1253455574402957,
+   "media_beta_tilde": 0.8029353498964662,
+   "media_se_modelo": 0.09691511714609374,
+   "media_se_robusto": 0.09613069954567212,
+   "n": 200,
+   "n_beta_tilde_no_finito": 0,
+   "n_finitos": 200,
+   "n_p_menor_0005": 200,
+   "n_p_menor_001": 200,
+   "n_p_menor_005": 200,
+   "pasa_cobertura": true,
+   "pasa_convergencia": true,
+   "pasa_sesgo": true,
+   "potencia_completa": 1.0,
+   "potencia_p": 1.0,
+   "sesgo": 0.025345557440295652,
+   "todos_convergen": true
+  }
+ },
+ "segundos_total": 856.7,
+ "semilla_cal": 7830712,
+ "sha256_instrumento": "a1c5ec691636ca57763fd3a37b78a59fd0acc27f14a8b47d948ac1a3db6dcd5e",
+ "sha256_replicas": "26343a16f91d9d03ad3fa3cc4ec30644628b31544cc0d5a4a89c358fbbb5d3ce",
+ "version": "g1a 2026-11-07-002"
+}

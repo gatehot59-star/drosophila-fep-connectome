@@ -1,0 +1,11 @@
+{"VmHWM_MiB": 172.2, "VmRSS_MiB": 172.2, "etapa": "inicio", "mosca": "banc", "n_rep": 200, "s": 0.0, "sha256_instrumento": "a1c5ec691636ca57763fd3a37b78a59fd0acc27f14a8b47d948ac1a3db6dcd5e", "version": "g1a 2026-11-07-002"}
+{"VmHWM_MiB": 1219.0, "VmRSS_MiB": 1209.5, "etapa": "mosca_cargada", "n_aristas": 13620865, "n_neuronas": 188508, "s": 11.58}
+{"VmHWM_MiB": 1309.3, "VmRSS_MiB": 1062.5, "clave": "inh_cerebro_pesado", "etapa": "grupo", "n_L1": 39492, "n_M1": 864, "n_X": 68, "n_Y1": 985, "n_cab": 753, "n_pares": 61149, "s": 13.63}
+{"VmHWM_MiB": 1309.3, "VmRSS_MiB": 1063.4, "chequeos_ok": 1000, "etapa": "banco", "fraccion_aristas_reales_media": 0.1038, "intercambios_media": 6081.9, "s": 32.92, "sha256": "1a2cef420148044f82a6d8989ce2726665455875c7061e612e1785a75a6a12ce"}
+{"M1_max": 1133, "M1_media": 872.922, "M1_min": 655, "VmHWM_MiB": 1309.3, "VmRSS_MiB": 1064.2, "etapa": "banco_M", "s": 37.66}
+{"VmHWM_MiB": 1309.3, "VmRSS_MiB": 1067.1, "conv": true, "etapa": "g0_con_y_real", "gamma": 0.2955101187410668, "gmax": 5.36842488865763e-11, "it": 10, "ll": -3767.855276042571, "n_D_info": 446, "n_X_info": 60, "n_pares_info": 26685, "s": 37.8}
+{"VmHWM_MiB": 1309.3, "VmRSS_MiB": 1055.1, "beta": 0.0, "etapa": "beta_hecho", "s": 151.17}
+{"VmHWM_MiB": 1309.3, "VmRSS_MiB": 1055.4, "beta": 0.4, "etapa": "beta_hecho", "s": 259.94}
+{"VmHWM_MiB": 1309.3, "VmRSS_MiB": 1055.4, "beta": 0.7, "etapa": "beta_hecho", "s": 367.93}
+{"VmHWM_MiB": 1309.3, "VmRSS_MiB": 1055.4, "beta": 1.1, "etapa": "beta_hecho", "s": 481.25}
+{"VmHWM_MiB": 1309.3, "VmRSS_MiB": 1055.8, "etapa": "FIN", "pasa": true, "s": 481.3}

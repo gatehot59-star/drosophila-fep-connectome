@@ -1,0 +1,2 @@
+{"args": ["/workspace/a1/v2/g1/a/g1a.py", "calibrar", "flywire", "/workspace/a1/v2/g1/a/corrida"], "fin": "2026-11-07T20:31:28Z", "nombre": "cal_flywire", "rc": 0, "segundos": 860.1}
+{"args": ["/workspace/a1/v2/g1/a/g1a.py", "calibrar", "banc", "/workspace/a1/v2/g1/a/corrida"], "fin": "2026-11-07T20:31:28Z", "nombre": "cal_banc", "rc": 0, "segundos": 860.1}
