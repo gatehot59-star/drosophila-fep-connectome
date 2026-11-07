@@ -1,0 +1,9 @@
+{"RssAnon_MiB": 69.4, "RssFile_MiB": 54.1, "VmHWM_MiB": 123.4, "VmRSS_MiB": 123.4, "etapa": "inicio", "s": 0.0}
+{"RssAnon_MiB": 321.2, "RssFile_MiB": 65.8, "VmHWM_MiB": 704.8, "VmRSS_MiB": 387.0, "etapa": "mosca_cargada", "n_aristas": 15091983, "n_neuronas": 138639, "s": 2.96}
+{"RssAnon_MiB": 215.7, "RssFile_MiB": 66.7, "VmHWM_MiB": 704.8, "VmRSS_MiB": 282.4, "etapa": "estructuras_y_mosca_liberada", "n_L1": 69195, "n_X": 121, "n_Y1": 2189, "n_aristas_cab": 996, "n_pares": 111751, "s": 4.01}
+{"RssAnon_MiB": 215.7, "RssFile_MiB": 66.7, "VmHWM_MiB": 704.8, "VmRSS_MiB": 282.4, "etapa": "y_sintetica", "n_D_con_info": 846, "n_X_con_info": 115, "n_pares_con_info": 97144, "s": 4.07}
+{"RssAnon_MiB": 221.8, "RssFile_MiB": 67.9, "VmHWM_MiB": 704.8, "VmRSS_MiB": 289.7, "etapa": "g0_ajustado", "iteraciones": 11, "n_parametros": 962, "s": 5.52}
+{"RssAnon_MiB": 221.8, "RssFile_MiB": 67.9, "VmHWM_MiB": 704.8, "VmRSS_MiB": 289.7, "etapa": "antes_del_nulo", "n_aristas_por_lado": [489, 507], "s": 5.56}
+{"RssAnon_MiB": 221.8, "RssFile_MiB": 67.9, "VmHWM_MiB": 704.8, "VmRSS_MiB": 289.7, "etapa": "despues_del_nulo", "recableados": 1000, "s": 25.75, "segundos_nulo": 20.19}
+{"RssAnon_MiB": 221.8, "RssFile_MiB": 67.9, "VmHWM_MiB": 704.8, "VmRSS_MiB": 289.7, "etapa": "traza", "recableados": 50, "s": 41.97, "tracemalloc_actual_MiB": 0.109, "tracemalloc_pico_MiB": 1.938}
+{"RssAnon_MiB": 221.8, "RssFile_MiB": 67.9, "VmHWM_MiB": 704.8, "VmRSS_MiB": 289.7, "etapa": "FIN", "s": 42.35}

@@ -1,0 +1,236 @@
+{
+ "configuracion": {
+  "alcance": "cerebro",
+  "grupo": "pesado",
+  "intentos_por_lado": "10 x aristas del lado",
+  "mosca": "banc",
+  "n_nulo": 1000,
+  "n_traza": 50,
+  "semilla": 20261107
+ },
+ "cuadra_con_censo": {
+  "n_L1": true,
+  "n_X": true,
+  "n_Y1": true,
+  "n_aristas_cab": true,
+  "n_pares": true
+ },
+ "cuentas": {
+  "n_L1": 39492,
+  "n_X": 68,
+  "n_Y1": 985,
+  "n_aristas_cab": 753,
+  "n_pares": 61149
+ },
+ "entorno": {
+  "host": "6c09d8604b07",
+  "numpy": "2.5.3",
+  "pandas": "3.0.5",
+  "pyarrow": "25.0.1",
+  "python": "3.12.14",
+  "scipy": "1.18.1"
+ },
+ "entradas": [
+  {
+   "bytes": 57503026,
+   "md5": "8c2b93a608c7163ec9d94d68e0756ff4",
+   "ruta": "/workspace/banc_888/banc_888_meta.feather"
+  },
+  {
+   "bytes": 359161658,
+   "md5": "08542b0771db7418ed474be60dc9886c",
+   "ruta": "/workspace/banc_888/banc_888_edgelist_simple_v3.feather"
+  }
+ ],
+ "etapas": [
+  {
+   "RssAnon_MiB": 71.3,
+   "RssFile_MiB": 54.8,
+   "VmHWM_MiB": 126.2,
+   "VmRSS_MiB": 126.2,
+   "etapa": "inicio",
+   "s": 0.0
+  },
+  {
+   "RssAnon_MiB": 1192.1,
+   "RssFile_MiB": 60.6,
+   "VmHWM_MiB": 1262.5,
+   "VmRSS_MiB": 1252.7,
+   "etapa": "mosca_cargada",
+   "n_aristas": 13620865,
+   "n_neuronas": 188508,
+   "s": 8.69
+  },
+  {
+   "RssAnon_MiB": 1086.8,
+   "RssFile_MiB": 59.8,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1146.6,
+   "etapa": "estructuras_y_mosca_liberada",
+   "n_L1": 39492,
+   "n_X": 68,
+   "n_Y1": 985,
+   "n_aristas_cab": 753,
+   "n_pares": 61149,
+   "s": 10.39
+  },
+  {
+   "RssAnon_MiB": 1086.8,
+   "RssFile_MiB": 59.8,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1146.6,
+   "etapa": "y_sintetica",
+   "n_D_con_info": 594,
+   "n_X_con_info": 60,
+   "n_pares_con_info": 35577,
+   "s": 10.44
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "etapa": "g0_ajustado",
+   "iteraciones": 10,
+   "n_parametros": 655,
+   "s": 11.18
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "etapa": "antes_del_nulo",
+   "n_aristas_por_lado": [
+    363,
+    390
+   ],
+   "s": 11.25
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "etapa": "despues_del_nulo",
+   "recableados": 1000,
+   "s": 27.7,
+   "segundos_nulo": 16.45
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "etapa": "traza",
+   "recableados": 50,
+   "s": 39.67,
+   "tracemalloc_actual_MiB": 0.046,
+   "tracemalloc_pico_MiB": 0.993
+  }
+ ],
+ "guardado_bytes": {
+  "betas_float64": 8000,
+  "tablas_int16_si_se_guardan": 3012000
+ },
+ "muestras_rss": [
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 1
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 10
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 100
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 200
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 300
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 400
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 500
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 600
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 700
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 800
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 900
+  },
+  {
+   "RssAnon_MiB": 1090.9,
+   "RssFile_MiB": 60.9,
+   "VmHWM_MiB": 1368.9,
+   "VmRSS_MiB": 1151.8,
+   "r": 1000
+  }
+ ],
+ "nulo": {
+  "M1_max": 712,
+  "M1_media": 543.2,
+  "M1_min": 374,
+  "beta_finitos": 1000,
+  "beta_sintetica_de": 0.1951,
+  "beta_sintetica_media": -0.1181,
+  "grados_conservados": 1000,
+  "intercambios_efectivos_media": 6081.4,
+  "segundos": 16.45,
+  "segundos_por_recableado": 0.0164
+ },
+ "segundos_total": 41.2,
+ "version": "g1_memoria_nulo 2026-11-07-001"
+}
