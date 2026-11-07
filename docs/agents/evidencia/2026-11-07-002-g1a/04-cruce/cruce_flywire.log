@@ -1,0 +1,10 @@
+{"VmHWM_MiB": 168.5, "VmRSS_MiB": 168.5, "commit_sello": "f98cd9d36e8ae1a886442865592bac9745167525", "etapa": "inicio", "mosca": "flywire", "s": 0.0, "sha256_instrumento": "a1c5ec691636ca57763fd3a37b78a59fd0acc27f14a8b47d948ac1a3db6dcd5e", "version": "g1a 2026-11-07-002"}
+{"VmHWM_MiB": 746.6, "VmRSS_MiB": 700.6, "etapa": "mosca_cargada", "n_aristas": 15091983, "n_neuronas": 138639, "s": 3.57}
+{"VmHWM_MiB": 782.9, "VmRSS_MiB": 727.4, "clave": "inh_entero_pesado", "etapa": "grupo", "n_L1": 69195, "n_M1": 1828, "n_X": 121, "n_Y1": 2189, "n_cab": 996, "n_pares": 111751, "s": 4.44}
+{"VmHWM_MiB": 785.6, "VmRSS_MiB": 728.3, "clave": "exc_entero_pesado", "etapa": "grupo", "n_L1": 58570, "n_M1": 762, "n_X": 104, "n_Y1": 859, "n_cab": 996, "n_pares": 96032, "s": 4.95}
+{"VmHWM_MiB": 786.6, "VmRSS_MiB": 736.5, "clave": "inh_entero_liviano", "etapa": "grupo", "n_L1": 422292, "n_M1": 10785, "n_X": 703, "n_Y1": 7534, "n_cab": 996, "n_pares": 648930, "s": 5.75}
+{"VmHWM_MiB": 786.6, "VmRSS_MiB": 555.2, "chequeos_ok": 1000, "etapa": "banco", "s": 21.86, "sha256": "982cc13bb3adbfc6dc51a0edf6486b25bc0852ff5c22a1dac4947677ade0eb0e"}
+{"VmHWM_MiB": 786.6, "VmRSS_MiB": 558.1, "clave": "inh_entero_pesado", "etapa": "grupo_cruzado", "s": 26.93}
+{"VmHWM_MiB": 786.6, "VmRSS_MiB": 564.6, "clave": "exc_entero_pesado", "etapa": "grupo_cruzado", "s": 31.17}
+{"VmHWM_MiB": 1085.8, "VmRSS_MiB": 718.3, "clave": "inh_entero_liviano", "etapa": "grupo_cruzado", "s": 55.06}
+{"VmHWM_MiB": 1085.8, "VmRSS_MiB": 718.3, "etapa": "FIN", "s": 55.06}

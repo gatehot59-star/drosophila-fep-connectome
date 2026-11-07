@@ -1,0 +1,148 @@
+{
+ "calibracion_ok": true,
+ "commit_sello": [
+  "f98cd9d36e8ae1a886442865592bac9745167525"
+ ],
+ "costo": {
+  "banc": {
+   "exc_cerebro_pesado": {
+    "VmHWM_MiB": 1371.6,
+    "VmRSS_MiB": 1152.1,
+    "segundos": 2.4
+   },
+   "inh_cerebro_liviano": {
+    "VmHWM_MiB": 1456.7,
+    "VmRSS_MiB": 1230.9,
+    "segundos": 16.15
+   },
+   "inh_cerebro_pesado": {
+    "VmHWM_MiB": 1371.6,
+    "VmRSS_MiB": 1152.1,
+    "segundos": 3.31
+   },
+   "inh_entero_pesado": {
+    "VmHWM_MiB": 1456.7,
+    "VmRSS_MiB": 1175.5,
+    "segundos": 8.39
+   }
+  },
+  "flywire": {
+   "exc_entero_pesado": {
+    "VmHWM_MiB": 786.6,
+    "VmRSS_MiB": 564.6,
+    "segundos": 4.25
+   },
+   "inh_entero_liviano": {
+    "VmHWM_MiB": 1085.8,
+    "VmRSS_MiB": 718.3,
+    "segundos": 23.88
+   },
+   "inh_entero_pesado": {
+    "VmHWM_MiB": 786.6,
+    "VmRSS_MiB": 558.1,
+    "segundos": 5.06
+   }
+  }
+ },
+ "instrumento_unico": true,
+ "primario": {
+  "banc": {
+   "OR": 2.9928063684382438,
+   "OR_hi": 5.981966382245224,
+   "OR_lo": 1.49731532854297,
+   "beta_hat": 1.0962115319692907,
+   "esperado_G0_en_M": 46.187413051975994,
+   "ic_debajo": false,
+   "ic_incluye": true,
+   "n_Y1_en_M": 88,
+   "p": 0.000999000999000999,
+   "p_holm": 0.001998001998001998,
+   "pasa": true,
+   "se_robusto": 0.3533421092768741
+  },
+  "flywire": {
+   "OR": 2.321445164358853,
+   "OR_hi": 4.0529062128648965,
+   "OR_lo": 1.3296897011874544,
+   "beta_hat": 0.8421899074187019,
+   "esperado_G0_en_M": 88.49551680375865,
+   "ic_debajo": false,
+   "ic_incluye": true,
+   "n_Y1_en_M": 152,
+   "p": 0.000999000999000999,
+   "p_holm": 0.001998001998001998,
+   "pasa": true,
+   "se_robusto": 0.2843135405439924
+  }
+ },
+ "secundarias": {
+  "banc": {
+   "banc_entero": {
+    "OR": 2.8692815214635123,
+    "OR_hi": 5.402153392099796,
+    "OR_lo": 1.5239805040433922,
+    "beta_hat": 1.0540616574775226,
+    "esperado_G0_en_M": 45.685863013612334,
+    "n_Y1_en_M": 91,
+    "p_nulo": 0.000999000999000999,
+    "se_robusto": 0.3228304182670096
+   },
+   "descripcion_bits": 27.639632271204256,
+   "dosis": {
+    "beta_otro": 0.9677933080369782,
+    "beta_primario": 1.0962115319692907,
+    "delta": 0.1284182239323125,
+    "ic_hi": 0.8773383599276413,
+    "ic_lo": -0.6205019120630163,
+    "lectura": "no_distinguible",
+    "se": 0.38210913154665865
+   },
+   "especificidad": {
+    "beta_otro": 1.6141844272533674,
+    "beta_primario": 1.0962115319692907,
+    "delta": -0.5179728952840768,
+    "ic_hi": 1.2544475129307908,
+    "ic_lo": -2.290393303498944,
+    "lectura": "no_distinguible",
+    "se": 0.904312743599114
+   },
+   "transferencia": {
+    "beta_flywire": 0.8421899074187019,
+    "bits": 32.96726278111286,
+    "bits_G1_propio_por_positivo": 0.03552436849405289,
+    "bits_por_positivo": 0.033469302315850616,
+    "conv": true,
+    "it": 5,
+    "ll_G0": -3767.855276042571,
+    "ll_con_beta_flywire": -3745.0041107950638
+   }
+  },
+  "flywire": {
+   "descripcion_bits": 32.68995379262354,
+   "dosis": {
+    "beta_otro": 1.1668995756289249,
+    "beta_primario": 0.8421899074187019,
+    "delta": -0.32470966821022296,
+    "ic_hi": 0.2853648949074953,
+    "ic_lo": -0.9347842313279412,
+    "lectura": "no_distinguible",
+    "se": 0.311268251830089
+   },
+   "especificidad": {
+    "beta_otro": 1.787915226097642,
+    "beta_primario": 0.8421899074187019,
+    "delta": -0.9457253186789402,
+    "ic_hi": 0.006933300654437313,
+    "ic_lo": -1.8983839380123175,
+    "lectura": "no_distinguible",
+    "se": 0.4860592474391505
+   }
+  }
+ },
+ "sello_unico": true,
+ "sha256_instrumento": [
+  "a1c5ec691636ca57763fd3a37b78a59fd0acc27f14a8b47d948ac1a3db6dcd5e"
+ ],
+ "veredicto": "SOSTENIDA",
+ "version": "g1a 2026-11-07-002"
+}

@@ -1,0 +1,11 @@
+VEREDICTO H_G1_VETO: SOSTENIDA
+flywire: beta 0.8422, OR 2.321 [1.330; 4.053], p 0.000999, p Holm 0.001998, Y1 en M 152 (G0 espera 88.5), pasa True
+banc: beta 1.0962, OR 2.993 [1.497; 5.982], p 0.000999, p Holm 0.001998, Y1 en M 88 (G0 espera 46.2), pasa True
+flywire dosis: delta -0.3247 [-0.9348; 0.2854] no_distinguible
+flywire especificidad: delta -0.9457 [-1.8984; 0.0069] no_distinguible
+flywire descripcion: 32.69 bits
+banc dosis: delta 0.1284 [-0.6205; 0.8773] no_distinguible
+banc especificidad: delta -0.5180 [-2.2904; 1.2544] no_distinguible
+banc descripcion: 27.64 bits
+banc entero: {"OR": 2.8692815214635123, "OR_hi": 5.402153392099796, "OR_lo": 1.5239805040433922, "beta_hat": 1.0540616574775226, "esperado_G0_en_M": 45.685863013612334, "n_Y1_en_M": 91, "p_nulo": 0.000999000999000999, "se_robusto": 0.3228304182670096}
+transferencia: {"beta_flywire": 0.8421899074187019, "bits": 32.96726278111286, "bits_G1_propio_por_positivo": 0.03552436849405289, "bits_por_positivo": 0.033469302315850616, "conv": true, "it": 5, "ll_G0": -3767.855276042571, "ll_con_beta_flywire": -3745.0041107950638}
